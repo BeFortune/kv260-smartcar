@@ -1,0 +1,20 @@
+{
+  "zip": "D:\\ffn_build\\retry04\\hls\\build\\ffn_accel_modern\\ffn_accel.zip",
+  "zip_bytes": 282096,
+  "zip_sha256": "6f5851655aa44bc6552a95c7fd347ffab18f0c4c7348147fe39fa3f181dd395e",
+  "catalog_directory": "D:\\ffn_build\\retry04\\ip_repo",
+  "identity": {
+    "vendor": "xilinx.com",
+    "library": "hls",
+    "name": "ffn_accel",
+    "version": "1.0"
+  },
+  "packaged_master_address_widths": {
+    "m_axi_gmem0_ARADDR": 64,
+    "m_axi_gmem0_AWADDR": 64,
+    "m_axi_gmem1_ARADDR": 64,
+    "m_axi_gmem1_AWADDR": 64
+  },
+  "component_xml_sha256": "7d9241dc489c276250f587c21bdcf5265b10f3d113adbde78a9e80b429cac13f",
+  "status": "package_staged_not_system_verified"
+}

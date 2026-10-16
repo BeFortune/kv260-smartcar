@@ -1,0 +1,49 @@
+{
+  "evidence_kind": "transcribed_tool_results",
+  "client_info_tool": "mcp__vivado__vivado_client_info",
+  "client_info_result": {
+    "client_name": "zcode",
+    "client_type": "unknown",
+    "client_version": "0.16.9",
+    "has_gui": false,
+    "has_sidebar": false,
+    "has_terminal": false,
+    "mcp_capabilities": {
+      "elicitation": true,
+      "roots": false,
+      "sampling": false,
+      "tasks": false
+    },
+    "optional_tools_skipped": [
+      {
+        "available": false,
+        "reason": "not available in this build",
+        "tool": "vivado_feedback"
+      },
+      {
+        "available": false,
+        "reason": "disabled by VIVADO_ENABLE_LSF / --enable-lsf=false",
+        "tool": "vivado_lsf"
+      },
+      {
+        "available": false,
+        "reason": "disabled by VIVADO_ENABLE_SSH / --enable-ssh=false",
+        "tool": "vivado_ssh"
+      }
+    ],
+    "raw_info": "zcode 0.16.9",
+    "recommendations": [
+      "Terminal output will be returned as text (no live terminal view)",
+      "Todo updates will be returned as JSON (no sidebar UI)"
+    ],
+    "server": {
+      "channel": "customer",
+      "commit": "2c4e86e5",
+      "pid": 20768,
+      "version": "2026.9.1"
+    }
+  },
+  "list_sessions_tool": "mcp__vivado__vivado_list_sessions",
+  "list_sessions_result": "No active Vivado sessions. Use vivado_start to create a session.",
+  "interpretation": "MCP metadata requests responded. No active Vivado session was present; no MCP Vivado session was launched. This does not establish K26 device availability or successful synthesis."
+}

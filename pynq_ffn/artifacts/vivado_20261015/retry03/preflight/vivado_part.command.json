@@ -1,0 +1,22 @@
+{
+  "cwd": "D:\\ffn_build\\retry03",
+  "tool": "D:\\Learning\\AMDDesignTools\\2026.1\\Vivado\\bin\\vivado.bat",
+  "arguments": [
+    "-mode",
+    "batch",
+    "-nolog",
+    "-nojournal",
+    "-source",
+    "D:/ffn_build/retry03/verify_part_20261015.tcl"
+  ],
+  "command": "\"D:\\Learning\\AMDDesignTools\\2026.1\\Vivado\\bin\\vivado.bat\" -mode batch -nolog -nojournal -source D:/ffn_build/retry03/verify_part_20261015.tcl",
+  "invocation": "\"C:\\WINDOWS\\system32\\cmd.exe\" /d /s /c \"\"D:\\Learning\\AMDDesignTools\\2026.1\\Vivado\\bin\\vivado.bat\" -mode batch -nolog -nojournal -source D:/ffn_build/retry03/verify_part_20261015.tcl\"",
+  "environment_overrides": {},
+  "path_modified_by_runner": false,
+  "started": "2026-10-15T18:00:13.448594+08:00",
+  "status": "completed",
+  "exit_code": 0,
+  "pid": 12268,
+  "finished": "2026-10-15T18:00:16.889519+08:00",
+  "elapsed_seconds": 3.439
+}

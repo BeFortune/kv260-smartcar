@@ -1,0 +1,144 @@
+{
+  "attempt": "retry03",
+  "recorded_at": "2026-10-15T18:03:34.235781+08:00",
+  "actual_repository": "D:\\Learning\\FPGA\\pynq_ffn",
+  "cwd": "D:\\ffn_build\\retry03",
+  "preflight_process_exit_code": 0,
+  "preflight_gate": "failed_device_not_found",
+  "license_startup_check": "passed",
+  "expected_part": "xck26-sfvc784-2LV-c",
+  "query": "get_parts *xck26*",
+  "matching_parts": [],
+  "reported_warning": "WARNING: [Coretcl 2-179] No part matched the expression you provided (\"*xck26*\").",
+  "mcp_metadata_connection": "responded",
+  "mcp_active_sessions": 0,
+  "mcp_vivado_session_started": false,
+  "command": {
+    "cwd": "D:\\ffn_build\\retry03",
+    "tool": "D:\\Learning\\AMDDesignTools\\2026.1\\Vivado\\bin\\vivado.bat",
+    "arguments": [
+      "-mode",
+      "batch",
+      "-nolog",
+      "-nojournal",
+      "-source",
+      "D:/ffn_build/retry03/verify_part_20261015.tcl"
+    ],
+    "command": "\"D:\\Learning\\AMDDesignTools\\2026.1\\Vivado\\bin\\vivado.bat\" -mode batch -nolog -nojournal -source D:/ffn_build/retry03/verify_part_20261015.tcl",
+    "invocation": "\"C:\\WINDOWS\\system32\\cmd.exe\" /d /s /c \"\"D:\\Learning\\AMDDesignTools\\2026.1\\Vivado\\bin\\vivado.bat\" -mode batch -nolog -nojournal -source D:/ffn_build/retry03/verify_part_20261015.tcl\"",
+    "environment_overrides": {},
+    "path_modified_by_runner": false,
+    "started": "2026-10-15T18:00:13.448594+08:00",
+    "status": "completed",
+    "exit_code": 0,
+    "pid": 12268,
+    "finished": "2026-10-15T18:00:16.889519+08:00",
+    "elapsed_seconds": 3.439
+  },
+  "readonly_observations": {
+    "zynquplus_directory_present": true,
+    "kv260_board_xml_present": true,
+    "board_metadata_not_device_support_proof": true,
+    "snapshot_files": [
+      "preflight/device_database_snapshot.json",
+      "preflight/zynquplus_directory_snapshot.json"
+    ]
+  },
+  "stages": [
+    {
+      "name": "source_staging",
+      "status": "not_run",
+      "exit_code": null,
+      "reason": "Mandatory device gate failed: get_parts matched no K26 device"
+    },
+    {
+      "name": "config_generation",
+      "status": "not_run",
+      "exit_code": null,
+      "reason": "Mandatory device gate failed: get_parts matched no K26 device"
+    },
+    {
+      "name": "hls_csim",
+      "status": "not_run",
+      "exit_code": null,
+      "reason": "Mandatory device gate failed: get_parts matched no K26 device"
+    },
+    {
+      "name": "hls_csynth",
+      "status": "not_run",
+      "exit_code": null,
+      "reason": "Mandatory device gate failed: get_parts matched no K26 device"
+    },
+    {
+      "name": "rtl_register_and_addr64_check",
+      "status": "not_run",
+      "exit_code": null,
+      "reason": "Mandatory device gate failed: get_parts matched no K26 device"
+    },
+    {
+      "name": "hls_cosim",
+      "status": "not_run",
+      "exit_code": null,
+      "reason": "Mandatory device gate failed: get_parts matched no K26 device"
+    },
+    {
+      "name": "hls_impl",
+      "status": "not_run",
+      "exit_code": null,
+      "reason": "Mandatory device gate failed: get_parts matched no K26 device"
+    },
+    {
+      "name": "ip_export",
+      "status": "not_run",
+      "exit_code": null,
+      "reason": "Mandatory device gate failed: get_parts matched no K26 device"
+    },
+    {
+      "name": "vivado_bd_validate",
+      "status": "not_run",
+      "exit_code": null,
+      "reason": "Mandatory device gate failed: get_parts matched no K26 device"
+    },
+    {
+      "name": "vivado_synthesis",
+      "status": "not_run",
+      "exit_code": null,
+      "reason": "Mandatory device gate failed: get_parts matched no K26 device"
+    },
+    {
+      "name": "vivado_implementation",
+      "status": "not_run",
+      "exit_code": null,
+      "reason": "Mandatory device gate failed: get_parts matched no K26 device"
+    },
+    {
+      "name": "timing_check",
+      "status": "not_run",
+      "exit_code": null,
+      "reason": "Mandatory device gate failed: get_parts matched no K26 device"
+    },
+    {
+      "name": "bit_hwh_export",
+      "status": "not_run",
+      "exit_code": null,
+      "reason": "Mandatory device gate failed: get_parts matched no K26 device"
+    },
+    {
+      "name": "hwh_driver_notebook_crosscheck",
+      "status": "not_run",
+      "exit_code": null,
+      "reason": "Mandatory device gate failed: get_parts matched no K26 device"
+    },
+    {
+      "name": "board_execution",
+      "status": "not_run",
+      "exit_code": null,
+      "reason": "Mandatory device gate failed: get_parts matched no K26 device"
+    }
+  ],
+  "produced_bit": false,
+  "produced_hwh": false,
+  "path_changed": false,
+  "tool_installation_changed": false,
+  "license_configuration_changed": false
+}

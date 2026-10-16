@@ -1,0 +1,37 @@
+{
+  "cwd": "D:\\Learning\\FPGA\\pynq_ffn",
+  "tool": "C:\\Users\\JW\\.zcode\\tmp\\fpga-ps-baseline-20261014\\Scripts\\python.exe",
+  "arguments": [
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_pynq_backend.py",
+    "--junitxml=D:/ffn_build/retry04/evidence/software/pynq_backend_final_tests.xml"
+  ],
+  "command": "C:\\Users\\JW\\.zcode\\tmp\\fpga-ps-baseline-20261014\\Scripts\\python.exe -B -m pytest -p no:cacheprovider -q tests/test_pynq_backend.py --junitxml=D:/ffn_build/retry04/evidence/software/pynq_backend_final_tests.xml",
+  "invocation": [
+    "C:\\Users\\JW\\.zcode\\tmp\\fpga-ps-baseline-20261014\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "tests/test_pynq_backend.py",
+    "--junitxml=D:/ffn_build/retry04/evidence/software/pynq_backend_final_tests.xml"
+  ],
+  "environment_overrides": {
+    "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "path_modified_by_runner": false,
+  "started": "2026-10-15T21:04:37.184498+08:00",
+  "status": "completed",
+  "exit_code": 0,
+  "pid": 20828,
+  "finished": "2026-10-15T21:04:37.659612+08:00",
+  "elapsed_seconds": 0.475
+}

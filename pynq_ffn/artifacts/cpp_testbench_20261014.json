@@ -1,0 +1,10 @@
+{
+  "kind": "Host C++ testbench; not HLS C simulation",
+  "hardware_execution": false,
+  "command": [
+    "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\pynq_ffn\\hls\\build\\testbench.exe"
+  ],
+  "exit_code": 0,
+  "stdout": "PASS small/boundary tokens=1 max_abs=7.43869e-07 tail_abs=7.43869e-07\nPASS small/boundary tokens=2 max_abs=1.47476e-06 tail_abs=1.47476e-06\nPASS small/boundary tokens=3 max_abs=1.47476e-06 tail_abs=8.18542e-07\nPASS small/boundary tokens=4 max_abs=1.47476e-06 tail_abs=9.82648e-07\nPASS small/boundary tokens=5 max_abs=1.47476e-06 tail_abs=9.38147e-07\nPASS small/boundary tokens=7 max_abs=1.8403e-06 tail_abs=1.8403e-06\nPASS small/boundary tokens=8 max_abs=1.8403e-06 tail_abs=7.45098e-07\nPASS small/boundary tokens=9 max_abs=1.8403e-06 tail_abs=1.37338e-06\nPASS near-maximum tokens=659 max_abs=2.22897e-06 tail_abs=1.49152e-06\nPASS camera-A tokens=660 max_abs=2.22897e-06 tail_abs=8.08659e-07\nPASS camera-B/reload tokens=660 max_abs=1.89373e-06 tail_abs=5.63358e-07\nPASS cross-A/reload tokens=4 max_abs=1.46859e-06 tail_abs=1.46859e-06\nPASS cross-B/reload tokens=4 max_abs=1.39514e-06 tail_abs=7.48595e-07\nPASS camera-A/revisit tokens=1 max_abs=7.43869e-07 tail_abs=7.43869e-07\nPASS zero tokens=4 max_abs=0 tail_abs=0\nPASS bias/exact-erf tokens=4 max_abs=6.26898e-07 tail_abs=6.26898e-07\nPASS invalid tokens=0 no buffer accesses\nPASS invalid tokens=661 no buffer accesses\nPASS invalid tokens=4294967295 no buffer accesses\nAll FFN reference tests passed.\n",
+  "stderr": ""
+}

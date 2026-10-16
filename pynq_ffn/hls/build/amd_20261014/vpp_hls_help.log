@@ -1,0 +1,29 @@
+Usage: v++ [options] <input file...>
+
+Options allowed only on a command line:
+  -c [ --compile ]        Run a compile flow
+  -h [ --help ]           Display usage message
+  -m [ --mode ] arg       [aie|aiebu|hls] Specify a mode. Must be used with 
+                          --compile/-c option
+  -v [ --version ]        Display version information
+  --config arg            Config file
+  --work_dir arg          Specify a working directory for output files and 
+                          directories
+
+Options allowed in a config file or a command line:
+
+  -f [ --platform ] arg   Specify path to a platform specification(XPFM) or 
+                          hardware specification(XSA)
+  --freqhz arg            Specify a PL clock frequency in Hz or MHz.
+                          E.g. In Hz  : 100000000
+                               In Mhz : 100Mhz
+  --part arg              Specify a part
+
+[hls] section:
+  --hls.* arg             Specify hls section options. For more information, 
+                          see: <https://docs.amd.com/r/en-US/ug1702-vitis-accel
+                          erated-reference/v-Mode-HLS>
+
+For more information about config files, see:
+<https://docs.amd.com/access/sources/dita/topic?isLatest=true&url=ug1702-vitis-accelerated-reference&resourceid=vif1532067628032.html&ft:locale=en-US>
+

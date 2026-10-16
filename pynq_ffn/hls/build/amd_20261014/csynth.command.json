@@ -1,0 +1,8 @@
+{
+  "cwd": "C:/Users/JW/.zcode/tmp/fpga-hls-20261014/run02",
+  "argv": "cmd.exe /d /s /c \"\"D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\bin\\v++.bat\" --compile --mode hls --config C:/Users/JW/.zcode/tmp/fpga-hls-20261014/run02/build/hls_config.cfg --work_dir C:/Users/JW/.zcode/tmp/fpga-hls-20261014/run02/build/work\"",
+  "command": "\"D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\bin\\v++.bat\" --compile --mode hls --config C:/Users/JW/.zcode/tmp/fpga-hls-20261014/run02/build/hls_config.cfg --work_dir C:/Users/JW/.zcode/tmp/fpga-hls-20261014/run02/build/work",
+  "started": "2026-10-14T23:48:44.391034",
+  "exit_code": 1,
+  "finished": "2026-10-14T23:48:49.330644"
+}

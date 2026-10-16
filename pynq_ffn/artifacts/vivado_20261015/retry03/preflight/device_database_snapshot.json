@@ -1,0 +1,264 @@
+{
+  "recorded_at": "2026-10-15T18:01:56.005955+08:00",
+  "scope": "Read-only immediate part-database directory listing and board metadata; not a new Vivado invocation or complete installation diagnosis",
+  "part_database_roots": [
+    {
+      "path": "D:\\Learning\\AMDDesignTools\\2026.1\\Vivado\\data\\parts\\xilinx",
+      "exists": true,
+      "immediate_entries": [
+        {
+          "name": "artix7",
+          "is_dir": true
+        },
+        {
+          "name": "attributes",
+          "is_dir": true
+        },
+        {
+          "name": "collateral",
+          "is_dir": true
+        },
+        {
+          "name": "common",
+          "is_dir": true
+        },
+        {
+          "name": "constraints",
+          "is_dir": true
+        },
+        {
+          "name": "devint",
+          "is_dir": true
+        },
+        {
+          "name": "estimation",
+          "is_dir": true
+        },
+        {
+          "name": "kintex7",
+          "is_dir": true
+        },
+        {
+          "name": "kintexuplus",
+          "is_dir": true
+        },
+        {
+          "name": "rtl",
+          "is_dir": true
+        },
+        {
+          "name": "spartan3",
+          "is_dir": true
+        },
+        {
+          "name": "spartan3a",
+          "is_dir": true
+        },
+        {
+          "name": "spartan3adsp",
+          "is_dir": true
+        },
+        {
+          "name": "spartan3e",
+          "is_dir": true
+        },
+        {
+          "name": "spartan6",
+          "is_dir": true
+        },
+        {
+          "name": "spartan7",
+          "is_dir": true
+        },
+        {
+          "name": "spartanuplus",
+          "is_dir": true
+        },
+        {
+          "name": "templates",
+          "is_dir": true
+        },
+        {
+          "name": "versal",
+          "is_dir": true
+        },
+        {
+          "name": "virtex4",
+          "is_dir": true
+        },
+        {
+          "name": "virtex5",
+          "is_dir": true
+        },
+        {
+          "name": "virtex6",
+          "is_dir": true
+        },
+        {
+          "name": "virtex7",
+          "is_dir": true
+        },
+        {
+          "name": "virtexu",
+          "is_dir": true
+        },
+        {
+          "name": "virtexuplus",
+          "is_dir": true
+        },
+        {
+          "name": "virtexuplus58g",
+          "is_dir": true
+        },
+        {
+          "name": "virtexuplusHBM",
+          "is_dir": true
+        },
+        {
+          "name": "zynquplus",
+          "is_dir": true
+        }
+      ]
+    },
+    {
+      "path": "D:\\Learning\\AMDDesignTools\\2026.1\\data\\parts\\xilinx",
+      "exists": true,
+      "immediate_entries": [
+        {
+          "name": "artix7",
+          "is_dir": true
+        },
+        {
+          "name": "attributes",
+          "is_dir": true
+        },
+        {
+          "name": "collateral",
+          "is_dir": true
+        },
+        {
+          "name": "common",
+          "is_dir": true
+        },
+        {
+          "name": "constraints",
+          "is_dir": true
+        },
+        {
+          "name": "devint",
+          "is_dir": true
+        },
+        {
+          "name": "estimation",
+          "is_dir": true
+        },
+        {
+          "name": "kintex7",
+          "is_dir": true
+        },
+        {
+          "name": "kintexuplus",
+          "is_dir": true
+        },
+        {
+          "name": "rtl",
+          "is_dir": true
+        },
+        {
+          "name": "spartan3",
+          "is_dir": true
+        },
+        {
+          "name": "spartan3a",
+          "is_dir": true
+        },
+        {
+          "name": "spartan3adsp",
+          "is_dir": true
+        },
+        {
+          "name": "spartan3e",
+          "is_dir": true
+        },
+        {
+          "name": "spartan6",
+          "is_dir": true
+        },
+        {
+          "name": "spartan7",
+          "is_dir": true
+        },
+        {
+          "name": "spartanuplus",
+          "is_dir": true
+        },
+        {
+          "name": "templates",
+          "is_dir": true
+        },
+        {
+          "name": "versal",
+          "is_dir": true
+        },
+        {
+          "name": "virtex4",
+          "is_dir": true
+        },
+        {
+          "name": "virtex5",
+          "is_dir": true
+        },
+        {
+          "name": "virtex6",
+          "is_dir": true
+        },
+        {
+          "name": "virtex7",
+          "is_dir": true
+        },
+        {
+          "name": "virtexu",
+          "is_dir": true
+        },
+        {
+          "name": "virtexuplus",
+          "is_dir": true
+        },
+        {
+          "name": "virtexuplus58g",
+          "is_dir": true
+        },
+        {
+          "name": "virtexuplusHBM",
+          "is_dir": true
+        },
+        {
+          "name": "zynquplus",
+          "is_dir": true
+        }
+      ]
+    }
+  ],
+  "board_metadata": [
+    {
+      "path": "D:\\Learning\\AMDDesignTools\\2026.1\\data\\xhub\\boards\\XilinxBoardStore\\boards\\Xilinx\\kv260_som\\2.0\\board.xml",
+      "exists": true,
+      "part_lines": [
+        {
+          "line": 290,
+          "text": "<component name=\"part0\" display_name=\"VISION SOM Evaluation Platform\" type=\"fpga\" part_name=\"xck26-sfvc784-2LV-c\" pin_map_file=\"part0_pins.xml\" vendor=\"xilinx\" spec_url=\"www.xilinx.com\">"
+        }
+      ]
+    },
+    {
+      "path": "D:\\Learning\\AMDDesignTools\\2026.1\\data\\xhub\\boards\\XilinxBoardStore\\boards\\Xilinx\\k26c\\2.0\\board.xml",
+      "exists": true,
+      "part_lines": [
+        {
+          "line": 536,
+          "text": "<component name=\"part0\" display_name=\"VISION SOM Evaluation Platform\" type=\"fpga\" part_name=\"xck26-sfvc784-2LV-c\" pin_map_file=\"part0_pins.xml\" vendor=\"xilinx\" spec_url=\"www.xilinx.com\">"
+        }
+      ]
+    }
+  ]
+}

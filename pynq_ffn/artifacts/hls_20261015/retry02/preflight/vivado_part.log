@@ -1,0 +1,15 @@
+INFO: [Common 17-3922] A valid Vivado Design Suite ALVEO license has been detected. Your current license is active and will expire on 15-oct-2027.
+
+****** Vivado v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Thu Oct 15 17:27:50 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source D:/ffn_build/retry02/verify_part_20261015.tcl
+WARNING: [Coretcl 2-179] No part matched the expression you provided ("*xck26*").
+# puts [get_parts *xck26*]
+
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 15 17:27:52 2026...

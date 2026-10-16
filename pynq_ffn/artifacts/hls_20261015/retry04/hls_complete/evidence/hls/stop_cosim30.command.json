@@ -1,0 +1,20 @@
+{
+  "cwd": "D:\\ffn_build\\retry04",
+  "tool": "C:\\Python314\\python.exe",
+  "arguments": [
+    "D:/ffn_build/retry04/stop_cosim30.py"
+  ],
+  "command": "C:\\Python314\\python.exe D:/ffn_build/retry04/stop_cosim30.py",
+  "invocation": [
+    "C:\\Python314\\python.exe",
+    "D:/ffn_build/retry04/stop_cosim30.py"
+  ],
+  "environment_overrides": {},
+  "path_modified_by_runner": false,
+  "started": "2026-10-15T19:32:31.759958+08:00",
+  "status": "completed",
+  "exit_code": 0,
+  "pid": 8960,
+  "finished": "2026-10-15T19:32:33.782517+08:00",
+  "elapsed_seconds": 2.022
+}

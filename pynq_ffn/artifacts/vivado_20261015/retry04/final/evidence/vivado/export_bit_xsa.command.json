@@ -1,0 +1,22 @@
+{
+  "cwd": "D:\\ffn_build\\retry04",
+  "tool": "D:\\Learning\\AMDDesignTools\\2026.1\\Vivado\\bin\\vivado.bat",
+  "arguments": [
+    "-mode",
+    "batch",
+    "-nolog",
+    "-nojournal",
+    "-source",
+    "D:/ffn_build/retry04/export_overlay.tcl"
+  ],
+  "command": "\"D:\\Learning\\AMDDesignTools\\2026.1\\Vivado\\bin\\vivado.bat\" -mode batch -nolog -nojournal -source D:/ffn_build/retry04/export_overlay.tcl",
+  "invocation": "\"C:\\WINDOWS\\system32\\cmd.exe\" /d /s /c \"\"D:\\Learning\\AMDDesignTools\\2026.1\\Vivado\\bin\\vivado.bat\" -mode batch -nolog -nojournal -source D:/ffn_build/retry04/export_overlay.tcl\"",
+  "environment_overrides": {},
+  "path_modified_by_runner": false,
+  "started": "2026-10-15T20:41:32.842068+08:00",
+  "status": "completed",
+  "exit_code": 1,
+  "pid": 29200,
+  "finished": "2026-10-15T20:43:18.420441+08:00",
+  "elapsed_seconds": 105.578
+}

@@ -1,0 +1,6 @@
+   Build using "D:/Learning/AMDDesignTools/2026.1/Vitis/win64/tools/clang-16/bin/clang++"
+   Compiling apatb_ffn_accel.cpp
+   Compiling ffn_accel.cpp_pre.cpp
+   Compiling testbench_cosim_smoke.cpp_pre.cpp
+   Compiling apatb_ffn_accel_ir.ll
+   Generating cosim.tv.exe

@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "D:\ffn_build\retry04\extract_verify_hwh.py", line 145, in <module>
+    main()
+  File "D:\ffn_build\retry04\extract_verify_hwh.py", line 44, in main
+    raise RuntimeError("Inspect XSA members before extracting: " + str(archive.namelist()))
+RuntimeError: Inspect XSA members before extracting: ['drivers/ffn_accel_v1_0/data/ffn_accel.mdd', 'drivers/ffn_accel_v1_0/data/ffn_accel.tcl', 'drivers/ffn_accel_v1_0/data/ffn_accel.yaml', 'drivers/ffn_accel_v1_0/src/CMakeLists.txt', 'drivers/ffn_accel_v1_0/src/Makefile', 'drivers/ffn_accel_v1_0/src/xffn_accel.c', 'drivers/ffn_accel_v1_0/src/xffn_accel.h', 'drivers/ffn_accel_v1_0/src/xffn_accel_hw.h', 'drivers/ffn_accel_v1_0/src/xffn_accel_linux.c', 'drivers/ffn_accel_v1_0/src/xffn_accel_sinit.c', 'ffn_overlay.bda', 'ffn_overlay.hwh', 'ffn_overlay_control_sc_0.hwh', 'ffn_overlay_memory_sc_0.hwh', 'ffn_overlay_wrapper.bit', 'ffn_overlay_wrapper.nts', 'kv260_board.png', 'psu_init.c', 'psu_init.h', 'psu_init.html', 'psu_init.tcl', 'psu_init_gpl.c', 'psu_init_gpl.h', 'sysdef.xml', 'xsa.json', 'xsa.xml']

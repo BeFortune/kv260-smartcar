@@ -1,0 +1,205 @@
+{
+  "passed": true,
+  "protocol": "ap_ctrl_hs",
+  "control_offset": "0x00",
+  "control_data_width": 32,
+  "control_fields": {
+    "ap_start": 0,
+    "ap_done": 1,
+    "ap_idle": 2,
+    "ap_ready": 3,
+    "auto_restart": 7
+  },
+  "pointers": [
+    {
+      "argument": "x",
+      "low": "0x10",
+      "high": "0x14",
+      "bits": 64
+    },
+    {
+      "argument": "y",
+      "low": "0x1c",
+      "high": "0x20",
+      "bits": 64
+    },
+    {
+      "argument": "w1",
+      "low": "0x28",
+      "high": "0x2c",
+      "bits": 64
+    },
+    {
+      "argument": "b1",
+      "low": "0x34",
+      "high": "0x38",
+      "bits": 64
+    },
+    {
+      "argument": "w2",
+      "low": "0x40",
+      "high": "0x44",
+      "bits": 64
+    },
+    {
+      "argument": "b2",
+      "low": "0x4c",
+      "high": "0x50",
+      "bits": 64
+    }
+  ],
+  "num_tokens": {
+    "offset": "0x58",
+    "bits": 32
+  },
+  "emitted_master_address_widths": {
+    "m_axi_gmem0_ARADDR": 64,
+    "m_axi_gmem0_AWADDR": 64,
+    "m_axi_gmem1_ARADDR": 64,
+    "m_axi_gmem1_AWADDR": 64
+  },
+  "resources_hls_estimate": {
+    "BRAM_18K": 124,
+    "DSP": 247,
+    "FF": 29226,
+    "LUT": 25154,
+    "URAM": 0
+  },
+  "latency_hls_estimate": {
+    "unit": "clock cycles",
+    "Best-caseLatency": "1",
+    "Average-caseLatency": "43330968",
+    "Worst-caseLatency": "173252285",
+    "Best-caseRealTimeLatency": "10.000 ns",
+    "Average-caseRealTimeLatency": "0.433 sec",
+    "Worst-caseRealTimeLatency": "1.733 sec",
+    "Interval-min": "2",
+    "Interval-max": "173252286",
+    "PerformancePragma": "-"
+  },
+  "timing_hls_estimate": {
+    "unit": "ns",
+    "EstimatedClockPeriod": "7.300"
+  },
+  "loops": [
+    {
+      "report": "ffn_accel_csynth.xml",
+      "Slack": "7.30",
+      "TripCount": "256",
+      "isPerfectNested": "0",
+      "Latency": "38656",
+      "AbsoluteTimeLatency": "386560",
+      "IterationLatency": "151",
+      "PerformancePragma": "-",
+      "InstanceList": "\n"
+    },
+    {
+      "report": "ffn_accel_csynth.xml",
+      "Slack": "7.30",
+      "TripCount": "\n",
+      "isPerfectNested": "0",
+      "Latency": "\n",
+      "AbsoluteTimeLatency": "\n",
+      "IterationLatency": "262395",
+      "PerformancePragma": "-",
+      "InstanceList": "\n"
+    },
+    {
+      "report": "ffn_accel_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2_csynth.xml",
+      "Slack": "7.30",
+      "TripCount": "32768",
+      "isPerfectNested": "0",
+      "Latency": "32769",
+      "AbsoluteTimeLatency": "327690",
+      "PipelineII": "1",
+      "PipelineDepth": "3",
+      "PerformancePragma": "-",
+      "InstanceList": "\n"
+    },
+    {
+      "report": "ffn_accel_Pipeline_VITIS_LOOP_59_4_csynth.xml",
+      "Slack": "7.30",
+      "TripCount": "128",
+      "isPerfectNested": "0",
+      "Latency": "137",
+      "AbsoluteTimeLatency": "1370",
+      "PipelineII": "1",
+      "PipelineDepth": "11",
+      "PerformancePragma": "-",
+      "InstanceList": "\n"
+    },
+    {
+      "report": "ffn_accel_Pipeline_VITIS_LOOP_65_5_csynth.xml",
+      "Slack": "7.30",
+      "TripCount": "128",
+      "isPerfectNested": "0",
+      "Latency": "129",
+      "AbsoluteTimeLatency": "1290",
+      "PipelineII": "1",
+      "PipelineDepth": "3",
+      "PerformancePragma": "-",
+      "InstanceList": "\n"
+    },
+    {
+      "report": "ffn_accel_Pipeline_VITIS_LOOP_72_7_csynth.xml",
+      "Slack": "7.30",
+      "TripCount": "128",
+      "isPerfectNested": "0",
+      "Latency": "129",
+      "AbsoluteTimeLatency": "1290",
+      "PipelineII": "1",
+      "PipelineDepth": "3",
+      "PerformancePragma": "-",
+      "InstanceList": "\n"
+    },
+    {
+      "report": "ffn_accel_Pipeline_VITIS_LOOP_76_8_VITIS_LOOP_78_9_csynth.xml",
+      "Slack": "7.30",
+      "TripCount": "32768",
+      "isPerfectNested": "0",
+      "Latency": "131172",
+      "AbsoluteTimeLatency": "1311720",
+      "PipelineII": "4",
+      "PipelineDepth": "105",
+      "PerformancePragma": "-",
+      "InstanceList": "\n"
+    },
+    {
+      "report": "ffn_accel_Pipeline_VITIS_LOOP_84_10_VITIS_LOOP_86_11_csynth.xml",
+      "Slack": "7.30",
+      "TripCount": "32768",
+      "isPerfectNested": "0",
+      "Latency": "131082",
+      "AbsoluteTimeLatency": "1310820",
+      "PipelineII": "4",
+      "PipelineDepth": "15",
+      "PerformancePragma": "-",
+      "InstanceList": "\n"
+    }
+  ],
+  "evidence_files": [
+    {
+      "path": "D:\\ffn_build\\retry04\\hls\\build\\ffn_accel_modern\\hls\\impl\\misc\\drivers\\ffn_accel_v1_0\\src\\xffn_accel_hw.h",
+      "sha256": "c69e75007368c801992e0b5dcf8d6aa4b138721bebc96b38822ef606663a94ee"
+    },
+    {
+      "path": "D:\\ffn_build\\retry04\\hls\\build\\ffn_accel_modern\\hls\\syn\\verilog\\ffn_accel_control_s_axi.v",
+      "sha256": "7a9376ece077fd849f3c3524a741162fae437ddb4a6777500e933c18bf183c37"
+    },
+    {
+      "path": "D:\\ffn_build\\retry04\\hls\\build\\ffn_accel_modern\\hls\\syn\\verilog\\ffn_accel.v",
+      "sha256": "beb67fb1ad9cff8a0d3ef395c12390adcf2d298390059570fda89b2a3b7d49c4"
+    },
+    {
+      "path": "D:\\ffn_build\\retry04\\hls\\build\\ffn_accel_modern\\hls\\syn\\report\\ffn_accel_csynth.xml",
+      "sha256": "a6cbc49fa28734552b98db230d67e001cbd323c803f2ca6e1a408d32abffa0b0"
+    }
+  ],
+  "not_verified_here": [
+    "cosimulation",
+    "packaged_IP",
+    "Vivado system address mapping",
+    "implemented timing",
+    "board execution"
+  ]
+}

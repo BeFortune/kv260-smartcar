@@ -1,0 +1,161 @@
+{
+  "passed": true,
+  "verified_at": "2026-10-15T21:15:07.896073+08:00",
+  "attempt": "retry04",
+  "stages": [
+    {
+      "stage": "preflight/vivado_part",
+      "exit_code": 0,
+      "started": "2026-10-15T18:31:12.872117+08:00",
+      "finished": "2026-10-15T18:31:15.789391+08:00"
+    },
+    {
+      "stage": "hls/make_config",
+      "exit_code": 0,
+      "started": "2026-10-15T18:33:11.934501+08:00",
+      "finished": "2026-10-15T18:33:12.002020+08:00"
+    },
+    {
+      "stage": "hls/csim",
+      "exit_code": 0,
+      "started": "2026-10-15T18:34:29.640456+08:00",
+      "finished": "2026-10-15T18:34:56.149000+08:00"
+    },
+    {
+      "stage": "hls/csynth",
+      "exit_code": 0,
+      "started": "2026-10-15T18:35:48.007543+08:00",
+      "finished": "2026-10-15T18:36:38.302201+08:00"
+    },
+    {
+      "stage": "hls/rtl_abi_check",
+      "exit_code": 0,
+      "started": "2026-10-15T18:39:12.927926+08:00",
+      "finished": "2026-10-15T18:39:13.005296+08:00"
+    },
+    {
+      "stage": "hls/cosim_small",
+      "exit_code": 1,
+      "started": "2026-10-15T18:42:59.809638+08:00",
+      "finished": "2026-10-15T19:32:33.762383+08:00"
+    },
+    {
+      "stage": "hls/cosim_smoke",
+      "exit_code": 0,
+      "started": "2026-10-15T19:36:23.991256+08:00",
+      "finished": "2026-10-15T19:48:35.888982+08:00"
+    },
+    {
+      "stage": "hls/impl",
+      "exit_code": 0,
+      "started": "2026-10-15T19:49:56.337947+08:00",
+      "finished": "2026-10-15T20:04:48.881985+08:00"
+    },
+    {
+      "stage": "hls/ip_package_check",
+      "exit_code": 0,
+      "started": "2026-10-15T20:06:51.911419+08:00",
+      "finished": "2026-10-15T20:06:52.050139+08:00"
+    },
+    {
+      "stage": "vivado/create_bd",
+      "exit_code": 1,
+      "started": "2026-10-15T20:08:02.138998+08:00",
+      "finished": "2026-10-15T20:08:27.868568+08:00"
+    },
+    {
+      "stage": "vivado/create_bd_attempt02",
+      "exit_code": 1,
+      "started": "2026-10-15T20:12:55.163058+08:00",
+      "finished": "2026-10-15T20:13:24.762267+08:00"
+    },
+    {
+      "stage": "vivado/create_bd_attempt03",
+      "exit_code": 0,
+      "started": "2026-10-15T20:18:24.520636+08:00",
+      "finished": "2026-10-15T20:19:19.973728+08:00"
+    },
+    {
+      "stage": "vivado/synthesis",
+      "exit_code": 0,
+      "started": "2026-10-15T20:21:22.557664+08:00",
+      "finished": "2026-10-15T20:27:35.913903+08:00"
+    },
+    {
+      "stage": "vivado/implementation",
+      "exit_code": 0,
+      "started": "2026-10-15T20:28:54.365802+08:00",
+      "finished": "2026-10-15T20:39:00.277920+08:00"
+    },
+    {
+      "stage": "vivado/export_bit_xsa",
+      "exit_code": 1,
+      "started": "2026-10-15T20:41:32.842068+08:00",
+      "finished": "2026-10-15T20:43:18.420441+08:00"
+    },
+    {
+      "stage": "vivado/finalize_bit_xsa",
+      "exit_code": 0,
+      "started": "2026-10-15T20:46:55.817686+08:00",
+      "finished": "2026-10-15T20:49:54.610479+08:00"
+    },
+    {
+      "stage": "software/hwh_abi_check",
+      "exit_code": 1,
+      "started": "2026-10-15T20:50:57.122011+08:00",
+      "finished": "2026-10-15T20:50:57.216795+08:00"
+    },
+    {
+      "stage": "software/hwh_abi_check_attempt02",
+      "exit_code": 0,
+      "started": "2026-10-15T20:57:08.067014+08:00",
+      "finished": "2026-10-15T20:57:08.300337+08:00"
+    },
+    {
+      "stage": "software/pynq_backend_final_tests",
+      "exit_code": 0,
+      "started": "2026-10-15T21:04:37.184498+08:00",
+      "finished": "2026-10-15T21:04:37.659612+08:00"
+    },
+    {
+      "stage": "software/notebook_cpu_validation",
+      "exit_code": 0,
+      "started": "2026-10-15T21:07:11.097015+08:00",
+      "finished": "2026-10-15T21:07:11.671988+08:00"
+    }
+  ],
+  "matching_pair_verified": true,
+  "implemented_timing_passed": true,
+  "wns_ns": 2.338,
+  "whs_ns": 0.01,
+  "tns_ns": 0.0,
+  "protected_hls_sources_unchanged": true,
+  "hwh_abi_addr64_and_ddr_mappings_passed": true,
+  "notebook_download_disabled": true,
+  "mocked_driver_tests_passed": 20,
+  "cpu_only_notebook_cells_passed": 6,
+  "cosim_scope": "one-token smoke only; 30-token attempt stopped exit 1; full RTL verification NOT performed",
+  "board_execution": "not_run",
+  "independent_clean_rebuild": "not_run",
+  "delivery_directory": "D:\\Learning\\FPGA\\pynq_ffn\\artifacts\\vivado_20261015\\retry04\\overlay",
+  "deliverable_hashes": [
+    {
+      "name": "ffn_overlay_wrapper.bit",
+      "bytes": 7797910,
+      "sha256": "8e22a7ffbc308c7741c697cb06d6c3d9c6faa4d886d23cf236014e5c9cb47409"
+    },
+    {
+      "name": "ffn_overlay_wrapper.hwh",
+      "bytes": 274964,
+      "sha256": "bc305bab1cf1201bd3182aab2872694fa3d31e7ba54334fbc8e5ed2507fdcf70"
+    },
+    {
+      "name": "ffn_overlay_wrapper.xsa",
+      "bytes": 2187775,
+      "sha256": "b34ca29ef719c185eaeaf0498fdc4a433854fd35d01bc68fc2a03f0dc3117be5"
+    }
+  ],
+  "driver_sha256": "40df956f45d8c2a8f6caf6f09440684b07e4798512d96ff4579db3000e0b4bb7",
+  "notebook_sha256": "0fde8c20bfa1bbea95b5f2c674a34bcfd18f0092be2ff6293a54c90d1a774cd9",
+  "validation_record_sha256": "8c48006145462e0d97a62350c8da8ab846494922384186724b4a01d2ccaec6f6"
+}

@@ -1,0 +1,42 @@
+{
+  "scope": "Read-only immediate contents of newly present Zynq UltraScale+ part-database directories; no installation changes",
+  "recorded_at": "2026-10-15T18:02:21.956469+08:00",
+  "directories": [
+    {
+      "path": "D:\\Learning\\AMDDesignTools\\2026.1\\Vivado\\data\\parts\\xilinx\\zynquplus",
+      "resolved_path": "D:\\Learning\\AMDDesignTools\\2026.1\\data\\parts\\xilinx\\zynquplus",
+      "immediate_entries": [
+        {
+          "name": "devint",
+          "is_dir": true,
+          "bytes": null,
+          "modified": "2026-10-15T17:56:23.704752+08:00"
+        },
+        {
+          "name": "public",
+          "is_dir": true,
+          "bytes": null,
+          "modified": "2026-10-15T17:56:23.724818+08:00"
+        }
+      ]
+    },
+    {
+      "path": "D:\\Learning\\AMDDesignTools\\2026.1\\data\\parts\\xilinx\\zynquplus",
+      "resolved_path": "D:\\Learning\\AMDDesignTools\\2026.1\\data\\parts\\xilinx\\zynquplus",
+      "immediate_entries": [
+        {
+          "name": "devint",
+          "is_dir": true,
+          "bytes": null,
+          "modified": "2026-10-15T17:56:23.704752+08:00"
+        },
+        {
+          "name": "public",
+          "is_dir": true,
+          "bytes": null,
+          "modified": "2026-10-15T17:56:23.724818+08:00"
+        }
+      ]
+    }
+  ]
+}

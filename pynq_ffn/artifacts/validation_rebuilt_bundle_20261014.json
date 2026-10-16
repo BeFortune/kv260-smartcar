@@ -1,0 +1,148 @@
+{
+  "status": "pass",
+  "hardware_execution": false,
+  "timing_scope": "Host CPU only; not KV260 measurements; includes no initialization or warmup",
+  "python": "3.12.0",
+  "machine": "AMD64",
+  "numpy": "1.26.4",
+  "onnxruntime": "1.20.1",
+  "threads": 1,
+  "atol": 0.001,
+  "rtol": 0,
+  "cases": [
+    {
+      "name": "random_0",
+      "comparisons": {
+        "split-ort": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "floats_pass": true,
+          "speed_integer_mismatches": 0
+        },
+        "split-numpy": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 2.3283064365386963e-08,
+            "region_probs": 7.450580596923828e-09
+          },
+          "floats_pass": true,
+          "speed_integer_mismatches": 0
+        }
+      },
+      "timings_ms": {
+        "golden": {
+          "golden": 9.038999996846542,
+          "total": 9.040000004461035
+        },
+        "split-ort": {
+          "stage_0": 2.805600001011044,
+          "camera_0": 0.9740999958012253,
+          "stage_1": 2.370000001974404,
+          "camera_1": 0.9649999992689118,
+          "stage_2": 0.859500010847114,
+          "cross_0": 0.02819999644998461,
+          "stage_3": 0.8036999934120104,
+          "cross_1": 0.02820001100189984,
+          "stage_4": 0.048299989430233836,
+          "total": 9.114600004977547
+        },
+        "split-numpy": {
+          "stage_0": 2.7491000073496252,
+          "camera_0": 17.616600001929328,
+          "stage_1": 2.5785000034375116,
+          "camera_1": 17.061000005924143,
+          "stage_2": 1.0796999995363876,
+          "cross_0": 0.17090000619646162,
+          "stage_3": 0.8091999916359782,
+          "cross_1": 0.15279999934136868,
+          "stage_4": 0.07390000973828137,
+          "total": 42.38539999641944
+        }
+      },
+      "ffn_pipeline_numpy_vs_ort_max_abs": {
+        "camera_0": 2.2351741790771484e-08,
+        "camera_1": 8.940696716308594e-08,
+        "cross_0": 5.960464477539063e-08,
+        "cross_1": 2.086162567138672e-07
+      },
+      "ffn_same_input_numpy_vs_ort_max_abs": {
+        "camera_0": 2.2351741790771484e-08,
+        "camera_1": 2.9802322387695312e-08,
+        "cross_0": 1.4901161193847656e-08,
+        "cross_1": 2.9802322387695312e-08
+      }
+    },
+    {
+      "name": "first_input:\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\kv260_v1\\artifacts\\results\\single_100\\first_input.npy",
+      "comparisons": {
+        "split-ort": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "floats_pass": true,
+          "speed_integer_mismatches": 0
+        },
+        "split-numpy": {
+          "max_abs_error": {
+            "speed_norm": 5.960464477539063e-08,
+            "speed_raw": 0.0,
+            "region_logits": 2.3283064365386963e-08,
+            "region_probs": 7.450580596923828e-09
+          },
+          "floats_pass": true,
+          "speed_integer_mismatches": 0
+        }
+      },
+      "timings_ms": {
+        "golden": {
+          "golden": 7.772500001010485,
+          "total": 7.773400007863529
+        },
+        "split-ort": {
+          "stage_0": 2.727200000663288,
+          "camera_0": 0.7680999988224357,
+          "stage_1": 2.2492999996757135,
+          "camera_1": 0.753400003304705,
+          "stage_2": 0.6719000084558502,
+          "cross_0": 0.029700007871724665,
+          "stage_3": 0.7554000039817765,
+          "cross_1": 0.032500000088475645,
+          "stage_4": 0.05919999966863543,
+          "total": 8.121599996229634
+        },
+        "split-numpy": {
+          "stage_0": 2.601700005470775,
+          "camera_0": 17.152200001874007,
+          "stage_1": 2.5514000008115545,
+          "camera_1": 17.174200009321794,
+          "stage_2": 0.8681000035721809,
+          "cross_0": 0.2238000015495345,
+          "stage_3": 0.6856999971205369,
+          "cross_1": 0.1568000006955117,
+          "stage_4": 0.06550000398419797,
+          "total": 41.75839999516029
+        }
+      },
+      "ffn_pipeline_numpy_vs_ort_max_abs": {
+        "camera_0": 2.9802322387695312e-08,
+        "camera_1": 8.940696716308594e-08,
+        "cross_0": 7.450580596923828e-08,
+        "cross_1": 8.940696716308594e-08
+      },
+      "ffn_same_input_numpy_vs_ort_max_abs": {
+        "camera_0": 2.9802322387695312e-08,
+        "camera_1": 2.9802322387695312e-08,
+        "cross_0": 1.4901161193847656e-08,
+        "cross_1": 4.470348358154297e-08
+      }
+    }
+  ]
+}

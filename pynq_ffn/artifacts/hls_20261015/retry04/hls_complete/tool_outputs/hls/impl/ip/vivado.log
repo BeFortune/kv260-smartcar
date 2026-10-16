@@ -1,0 +1,95 @@
+INFO: [Common 17-3922] A valid Vivado Design Suite ENTERPRISE license has been detected. Your current license is active and will expire on 14-dec-2026.
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Thu Oct 15 19:50:04 2026
+# Process ID         : 1512
+# Current directory  : D:/ffn_build/retry04/hls/build/ffn_accel_modern/hls/impl/ip
+# Command line       : vivado.exe -notrace -mode batch -source run_ippack.tcl
+# Log file           : D:/ffn_build/retry04/hls/build/ffn_accel_modern/hls/impl/ip/vivado.log
+# Journal file       : D:/ffn_build/retry04/hls/build/ffn_accel_modern/hls/impl/ip\vivado.jou
+# Running On         : JasonWenDsek
+# Platform           : Windows 11
+# Operating System   : 26200
+# Processor Detail   : AMD Ryzen 7 7800X3D 8-Core Processor           
+# CPU Frequency      : 4200 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 33520 MB
+# Swap memory        : 9126 MB
+# Total Virtual      : 42647 MB
+# Available Virtual  : 18405 MB
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace
+INFO: calling package_hls_ip ip_types=vitis sysgen json_file=D:/ffn_build/retry04/hls/build/ffn_accel_modern/hls/hls_data.json outdir=D:/ffn_build/retry04/hls/build/ffn_accel_modern/hls/impl/ip srcdir=D:/ffn_build/retry04/hls/build/ffn_accel_modern/hls ippack_options_dict= ippack_options_dict=
+INFO: Copied 1 ipmisc file(s) to D:/ffn_build/retry04/hls/build/ffn_accel_modern/hls/impl/ip/misc
+INFO: Copied 27 verilog file(s) to D:/ffn_build/retry04/hls/build/ffn_accel_modern/hls/impl/ip/hdl/verilog
+INFO: Copied 24 vhdl file(s) to D:/ffn_build/retry04/hls/build/ffn_accel_modern/hls/impl/ip/hdl/vhdl
+INFO: Copied 10 swdriver file(s) to D:/ffn_build/retry04/hls/build/ffn_accel_modern/hls/impl/ip/drivers
+Generating 7 subcores in D:/ffn_build/retry04/hls/build/ffn_accel_modern/hls/impl/ip/subcore_prj:
+impl/misc/ffn_accel_fadd_32ns_32ns_32_4_full_dsp_1_ip.tcl
+impl/misc/ffn_accel_fadd_32ns_32ns_32_4_full_dsp_1_x_ip.tcl
+impl/misc/ffn_accel_faddfsub_32ns_32ns_32_4_full_dsp_1_ip.tcl
+impl/misc/ffn_accel_fdiv_32ns_32ns_32_9_no_dsp_1_ip.tcl
+impl/misc/ffn_accel_fexp_32ns_32ns_32_8_full_dsp_1_ip.tcl
+impl/misc/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip.tcl
+impl/misc/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip.tcl
+INFO: Using COE_DIR=D:/ffn_build/retry04/hls/build/ffn_accel_modern/hls/impl/ip/hdl/verilog
+INFO: Generating ffn_accel_fadd_32ns_32ns_32_4_full_dsp_1_ip via file impl/misc/ffn_accel_fadd_32ns_32ns_32_4_full_dsp_1_ip.tcl
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Learning/AMDDesignTools/2026.1/Vivado/data/ip'.
+WARNING: [IP_Flow 19-4832] The IP name 'ffn_accel_fadd_32ns_32ns_32_4_full_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ffn_accel_fadd_32ns_32ns_32_4_full_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ffn_accel_fadd_32ns_32ns_32_4_full_dsp_1_ip'...
+INFO: Done generating ffn_accel_fadd_32ns_32ns_32_4_full_dsp_1_ip via file impl/misc/ffn_accel_fadd_32ns_32ns_32_4_full_dsp_1_ip.tcl
+INFO: Generating ffn_accel_fadd_32ns_32ns_32_4_full_dsp_1_x_ip via file impl/misc/ffn_accel_fadd_32ns_32ns_32_4_full_dsp_1_x_ip.tcl
+WARNING: [IP_Flow 19-4832] The IP name 'ffn_accel_fadd_32ns_32ns_32_4_full_dsp_1_x_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ffn_accel_fadd_32ns_32ns_32_4_full_dsp_1_x_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ffn_accel_fadd_32ns_32ns_32_4_full_dsp_1_x_ip'...
+INFO: Done generating ffn_accel_fadd_32ns_32ns_32_4_full_dsp_1_x_ip via file impl/misc/ffn_accel_fadd_32ns_32ns_32_4_full_dsp_1_x_ip.tcl
+INFO: Generating ffn_accel_faddfsub_32ns_32ns_32_4_full_dsp_1_ip via file impl/misc/ffn_accel_faddfsub_32ns_32ns_32_4_full_dsp_1_ip.tcl
+WARNING: [IP_Flow 19-4832] The IP name 'ffn_accel_faddfsub_32ns_32ns_32_4_full_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ffn_accel_faddfsub_32ns_32ns_32_4_full_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ffn_accel_faddfsub_32ns_32ns_32_4_full_dsp_1_ip'...
+INFO: Done generating ffn_accel_faddfsub_32ns_32ns_32_4_full_dsp_1_ip via file impl/misc/ffn_accel_faddfsub_32ns_32ns_32_4_full_dsp_1_ip.tcl
+INFO: Generating ffn_accel_fdiv_32ns_32ns_32_9_no_dsp_1_ip via file impl/misc/ffn_accel_fdiv_32ns_32ns_32_9_no_dsp_1_ip.tcl
+WARNING: [IP_Flow 19-4832] The IP name 'ffn_accel_fdiv_32ns_32ns_32_9_no_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ffn_accel_fdiv_32ns_32ns_32_9_no_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ffn_accel_fdiv_32ns_32ns_32_9_no_dsp_1_ip'...
+INFO: Done generating ffn_accel_fdiv_32ns_32ns_32_9_no_dsp_1_ip via file impl/misc/ffn_accel_fdiv_32ns_32ns_32_9_no_dsp_1_ip.tcl
+INFO: Generating ffn_accel_fexp_32ns_32ns_32_8_full_dsp_1_ip via file impl/misc/ffn_accel_fexp_32ns_32ns_32_8_full_dsp_1_ip.tcl
+WARNING: [IP_Flow 19-4832] The IP name 'ffn_accel_fexp_32ns_32ns_32_8_full_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ffn_accel_fexp_32ns_32ns_32_8_full_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ffn_accel_fexp_32ns_32ns_32_8_full_dsp_1_ip'...
+INFO: Done generating ffn_accel_fexp_32ns_32ns_32_8_full_dsp_1_ip via file impl/misc/ffn_accel_fexp_32ns_32ns_32_8_full_dsp_1_ip.tcl
+INFO: Generating ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip via file impl/misc/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip.tcl
+WARNING: [IP_Flow 19-4832] The IP name 'ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip'...
+INFO: Done generating ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip via file impl/misc/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip.tcl
+INFO: Generating ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip via file impl/misc/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip.tcl
+WARNING: [IP_Flow 19-4832] The IP name 'ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip'...
+INFO: Done generating ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip via file impl/misc/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip.tcl
+INFO: Found 1 unique subcore IP: xilinx.com:ip:floating_point:7.1
+INFO: Copied 7 subcore files: D:/ffn_build/retry04/hls/build/ffn_accel_modern/hls/impl/ip/hdl/ip/ffn_accel_faddfsub_32ns_32ns_32_4_full_dsp_1_ip/ffn_accel_faddfsub_32ns_32ns_32_4_full_dsp_1_ip.xci D:/ffn_build/retry04/hls/build/ffn_accel_modern/hls/impl/ip/hdl/ip/ffn_accel_fadd_32ns_32ns_32_4_full_dsp_1_ip/ffn_accel_fadd_32ns_32ns_32_4_full_dsp_1_ip.xci D:/ffn_build/retry04/hls/build/ffn_accel_modern/hls/impl/ip/hdl/ip/ffn_accel_fadd_32ns_32ns_32_4_full_dsp_1_x_ip/ffn_accel_fadd_32ns_32ns_32_4_full_dsp_1_x_ip.xci D:/ffn_build/retry04/hls/build/ffn_accel_modern/hls/impl/ip/hdl/ip/ffn_accel_fdiv_32ns_32ns_32_9_no_dsp_1_ip/ffn_accel_fdiv_32ns_32ns_32_9_no_dsp_1_ip.xci D:/ffn_build/retry04/hls/build/ffn_accel_modern/hls/impl/ip/hdl/ip/ffn_accel_fexp_32ns_32ns_32_8_full_dsp_1_ip/ffn_accel_fexp_32ns_32ns_32_8_full_dsp_1_ip.xci D:/ffn_build/retry04/hls/build/ffn_accel_modern/hls/impl/ip/hdl/ip/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip.xci D:/ffn_build/retry04/hls/build/ffn_accel_modern/hls/impl/ip/hdl/ip/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip.xci
+INFO: Import ports from HDL: D:/ffn_build/retry04/hls/build/ffn_accel_modern/hls/impl/ip/hdl/vhdl/ffn_accel.vhd (ffn_accel)
+INFO: Add axi4lite interface s_axi_control
+INFO: Add clock interface ap_clk
+INFO: Add reset interface ap_rst_n
+INFO: Add interrupt interface interrupt
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Learning/AMDDesignTools/2026.1/Vivado/data/ip'.
+INFO: Add axi4full interface m_axi_gmem0
+INFO: Add axi4full interface m_axi_gmem1
+INFO: Calling post_process_vitis to specialize IP
+INFO: Calling post_process_sysgen to specialize IP
+Generating sysgen info xml from json file
+INFO: Created IP D:/ffn_build/retry04/hls/build/ffn_accel_modern/hls/impl/ip/component.xml
+INFO: Created IP archive D:/ffn_build/retry04/hls/build/ffn_accel_modern/hls/impl/ip/xilinx_com_hls_ffn_accel_1_0.zip
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 15 19:50:14 2026...

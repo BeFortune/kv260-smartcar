@@ -1,0 +1,116 @@
+{
+  "platform": "Windows-11-10.0.26200-SP0",
+  "hardware_execution": false,
+  "commands": [
+    {
+      "command": [
+        "C:\\Users\\JW\\.zcode\\tmp\\fpga-ps-validation-20261014\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\pynq_ffn\\tests",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--junitxml=\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\all_tests_20261014.xml"
+      ],
+      "cwd": "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "exit_code": 0,
+      "stdout": "....................                                                     [100%]\n20 passed in 2.33s\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\JW\\.zcode\\tmp\\fpga-ps-validation-20261014\\Scripts\\python.exe",
+        "-B",
+        "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\pynq_ffn\\tools\\validate_split.py",
+        "--bundle",
+        "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\bundle_20261014",
+        "--first-input",
+        "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\kv260_v1\\artifacts\\results\\single_100\\first_input.npy",
+        "--recording",
+        "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\sample_recording_1779374497",
+        "--random-cases",
+        "3",
+        "--output",
+        "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\validation_final_20261014.json"
+      ],
+      "cwd": "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"pass\",\n  \"hardware_execution\": false,\n  \"timing_scope\": \"Host CPU only; not KV260 measurements; includes no initialization or warmup\",\n  \"python\": \"3.12.0\",\n  \"machine\": \"AMD64\",\n  \"numpy\": \"2.5.4\",\n  \"onnxruntime\": \"1.31.0\",\n  \"threads\": 1,\n  \"atol\": 0.001,\n  \"rtol\": 0,\n  \"cases\": [\n    {\n      \"name\": \"random_0\",\n      \"comparisons\": {\n        \"split-ort\": {\n          \"max_abs_error\": {\n            \"speed_norm\": 0.0,\n            \"speed_raw\": 0.0,\n            \"region_logits\": 0.0,\n            \"region_probs\": 0.0\n          },\n          \"floats_pass\": true,\n          \"speed_integer_mismatches\": 0\n        },\n        \"split-numpy\": {\n          \"max_abs_error\": {\n            \"speed_norm\": 8.940696716308594e-08,\n            \"speed_raw\": 6.103515625e-05,\n            \"region_logits\": 3.725290298461914e-08,\n            \"region_probs\": 0.0\n          },\n          \"floats_pass\": true,\n          \"speed_integer_mismatches\": 0\n        }\n      },\n      \"timings_ms\": {\n        \"golden\": {\n          \"golden\": 8.87479999801144,\n          \"total\": 8.875899991835468\n        },\n        \"split-ort\": {\n          \"stage_0\": 3.445500013185665,\n          \"camera_0\": 1.1119999981019646,\n          \"stage_1\": 3.3174000127473846,\n          \"camera_1\": 1.1877000069944188,\n          \"stage_2\": 1.2916999985463917,\n          \"cross_0\": 0.09800000407267362,\n          \"stage_3\": 1.191799994558096,\n          \"cross_1\": 0.06410000787582248,\n          \"stage_4\": 0.1078000059351325,\n          \"total\": 12.24240000010468\n        },\n        \"split-numpy\": {\n          \"stage_0\": 3.362400006153621,\n          \"camera_0\": 17.309200004092418,\n          \"stage_1\": 2.904699998907745,\n          \"camera_1\": 22.599899995839223,\n          \"stage_2\": 1.117099993280135,\n          \"cross_0\": 0.17600000137463212,\n          \"stage_3\": 1.2258000060683116,\n          \"cross_1\": 0.1598999951966107,\n          \"stage_4\": 0.10459999612066895,\n          \"total\": 49.18790000374429\n        }\n      },\n      \"ffn_pipeline_numpy_vs_ort_max_abs\": {\n        \"camera_0\": 2.2351741790771484e-08,\n        \"camera_1\": 7.450580596923828e-08,\n        \"cross_0\": 1.043081283569336e-07,\n        \"cross_1\": 1.043081283569336e-07\n      },\n      \"ffn_same_input_numpy_vs_ort_max_abs\": {\n        \"camera_0\": 2.2351741790771484e-08,\n        \"camera_1\": 2.9802322387695312e-08,\n        \"cross_0\": 1.4901161193847656e-08,\n        \"cross_1\": 4.470348358154297e-08\n      }\n    },\n    {\n      \"name\": \"random_1\",\n      \"comparisons\": {\n        \"split-ort\": {\n          \"max_abs_error\": {\n            \"speed_norm\": 0.0,\n            \"speed_raw\": 0.0,\n            \"region_logits\": 0.0,\n            \"region_probs\": 0.0\n          },\n          \"floats_pass\": true,\n          \"speed_integer_mismatches\": 0\n        },\n        \"split-numpy\": {\n          \"max_abs_error\": {\n            \"speed_norm\": 0.0,\n            \"speed_raw\": 0.0,\n            \"region_logits\": 3.725290298461914e-08,\n            \"region_probs\": 7.450580596923828e-09\n          },\n          \"floats_pass\": true,\n          \"speed_integer_mismatches\": 0\n        }\n      },\n      \"timings_ms\": {\n        \"golden\": {\n          \"golden\": 9.662700002081692,\n          \"total\": 9.66379999590572\n        },\n        \"split-ort\": {\n          \"stage_0\": 2.860499997041188,\n          \"camera_0\": 0.9832000068854541,\n          \"stage_1\": 2.309700008481741,\n          \"camera_1\": 1.1270000104559585,\n          \"stage_2\": 0.7733000093139708,\n          \"cross_0\": 0.044800006435252726,\n          \"stage_3\": 0.8090000046649948,\n          \"cross_1\": 0.052700008382089436,\n          \"stage_4\": 0.08910000906325877,\n          \"total\": 9.42610000493005\n        },\n        \"split-numpy\": {\n          \"stage_0\": 2.613700009533204,\n          \"camera_0\": 23.524600008386187,\n          \"stage_1\": 2.6796000020112842,\n          \"camera_1\": 24.23760000965558,\n          \"stage_2\": 1.1300999904051423,\n          \"cross_0\": 0.2437999937683344,\n          \"stage_3\": 0.9148000099230558,\n          \"cross_1\": 0.21749999723397195,\n          \"stage_4\": 0.12060000153724104,\n          \"total\": 55.80280000867788\n        }\n      },\n      \"ffn_pipeline_numpy_vs_ort_max_abs\": {\n        \"camera_0\": 4.470348358154297e-08,\n        \"camera_1\": 8.940696716308594e-08,\n        \"cross_0\": 7.450580596923828e-08,\n        \"cross_1\": 8.940696716308594e-08\n      },\n      \"ffn_same_input_numpy_vs_ort_max_abs\": {\n        \"camera_0\": 4.470348358154297e-08,\n        \"camera_1\": 3.725290298461914e-08,\n        \"cross_0\": 1.4901161193847656e-08,\n        \"cross_1\": 4.470348358154297e-08\n      }\n    },\n    {\n      \"name\": \"random_2\",\n      \"comparisons\": {\n        \"split-ort\": {\n          \"max_abs_error\": {\n            \"speed_norm\": 0.0,\n            \"speed_raw\": 0.0,\n            \"region_logits\": 0.0,\n            \"region_probs\": 0.0\n          },\n          \"floats_pass\": true,\n          \"speed_integer_mismatches\": 0\n        },\n        \"split-numpy\": {\n          \"max_abs_error\": {\n            \"speed_norm\": 5.960464477539063e-08,\n            \"speed_raw\": 0.0,\n            \"region_logits\": 5.960464477539063e-08,\n            \"region_probs\": 7.450580596923828e-09\n          },\n          \"floats_pass\": true,\n          \"speed_integer_mismatches\": 0\n        }\n      },\n      \"timings_ms\": {\n        \"golden\": {\n          \"golden\": 6.388699999661185,\n          \"total\": 6.389399990439415\n        },\n        \"split-ort\": {\n          \"stage_0\": 2.113800001097843,\n          \"camera_0\": 0.767599995015189,\n          \"stage_1\": 1.7665000050328672,\n          \"camera_1\": 0.79340000229422,\n          \"stage_2\": 0.6329999887384474,\n          \"cross_0\": 0.060699996538460255,\n          \"stage_3\": 0.7202999986475334,\n          \"cross_1\": 0.0433000095654279,\n          \"stage_4\": 0.08340000931639224,\n          \"total\": 7.302600002731197\n        },\n        \"split-numpy\": {\n          \"stage_0\": 2.6422000082675368,\n          \"camera_0\": 20.10860000154935,\n          \"stage_1\": 1.7798999906517565,\n          \"camera_1\": 25.054999990970828,\n          \"stage_2\": 0.9546999935992062,\n          \"cross_0\": 0.3797999961534515,\n          \"stage_3\": 1.0450999980093911,\n          \"cross_1\": 0.33819999953266233,\n          \"stage_4\": 0.1644000003580004,\n          \"total\": 52.932699996745214\n        }\n      },\n      \"ffn_pipeline_numpy_vs_ort_max_abs\": {\n        \"camera_0\": 2.9802322387695312e-08,\n        \"camera_1\": 7.450580596923828e-08,\n        \"cross_0\": 6.705522537231445e-08,\n        \"cross_1\": 1.043081283569336e-07\n      },\n      \"ffn_same_input_numpy_vs_ort_max_abs\": {\n        \"camera_0\": 2.9802322387695312e-08,\n        \"camera_1\": 4.470348358154297e-08,\n        \"cross_0\": 2.9802322387695312e-08,\n        \"cross_1\": 2.9802322387695312e-08\n      }\n    },\n    {\n      \"name\": \"first_input:\\\\\\\\ENERTCOUNT-EX\\\\Source\\\\Repos\\\\FPGA\\\\kv260_v1\\\\artifacts\\\\results\\\\single_100\\\\first_input.npy\",\n      \"comparisons\": {\n        \"split-ort\": {\n          \"max_abs_error\": {\n            \"speed_norm\": 0.0,\n            \"speed_raw\": 0.0,\n            \"region_logits\": 0.0,\n            \"region_probs\": 0.0\n          },\n          \"floats_pass\": true,\n          \"speed_integer_mismatches\": 0\n        },\n        \"split-numpy\": {\n          \"max_abs_error\": {\n            \"speed_norm\": 0.0,\n            \"speed_raw\": 0.0,\n            \"region_logits\": 3.5390257835388184e-08,\n            \"region_probs\": 7.450580596923828e-09\n          },\n          \"floats_pass\": true,\n          \"speed_integer_mismatches\": 0\n        }\n      },\n      \"timings_ms\": {\n        \"golden\": {\n          \"golden\": 7.056100002955645,\n          \"total\": 7.056999995256774\n        },\n        \"split-ort\": {\n          \"stage_0\": 2.179300005082041,\n          \"camera_0\": 0.8842999959597364,\n          \"stage_1\": 2.4788000009721145,\n          \"camera_1\": 1.5840999985812232,\n          \"stage_2\": 0.8457999938400462,\n          \"cross_0\": 0.0658999924780801,\n          \"stage_3\": 0.8441999962087721,\n          \"cross_1\": 0.05200000305194408,\n          \"stage_4\": 0.08259998867288232,\n          \"total\": 9.171599987894297\n        },\n        \"split-numpy\": {\n          \"stage_0\": 2.3865999974077567,\n          \"camera_0\": 16.953699989244342,\n          \"stage_1\": 3.1138000049395487,\n          \"camera_1\": 19.178999995347112,\n          \"stage_2\": 1.2164999934611842,\n          \"cross_0\": 0.38550001045223325,\n          \"stage_3\": 1.0947000118903816,\n          \"cross_1\": 0.26649999199435115,\n          \"stage_4\": 0.16030001279432327,\n          \"total\": 45.2755000005709\n        }\n      },\n      \"ffn_pipeline_numpy_vs_ort_max_abs\": {\n        \"camera_0\": 2.9802322387695312e-08,\n        \"camera_1\": 1.043081283569336e-07,\n        \"cross_0\": 7.450580596923828e-08,\n        \"cross_1\": 1.7881393432617188e-07\n      },\n      \"ffn_same_input_numpy_vs_ort_max_abs\": {\n        \"camera_0\": 2.9802322387695312e-08,\n        \"camera_1\": 4.470348358154297e-08,\n        \"cross_0\": 2.2351741790771484e-08,\n        \"cross_1\": 2.9802322387695312e-08\n      }\n    },\n    {\n      \"name\": \"recording:sample_recording_1779374497:1\",\n      \"comparisons\": {\n        \"split-ort\": {\n          \"max_abs_error\": {\n            \"speed_norm\": 0.0,\n            \"speed_raw\": 0.0,\n            \"region_logits\": 0.0,\n            \"region_probs\": 0.0\n          },\n          \"floats_pass\": true,\n          \"speed_integer_mismatches\": 0\n        },\n        \"split-numpy\": {\n          \"max_abs_error\": {\n            \"speed_norm\": 0.0,\n            \"speed_raw\": 0.0,\n            \"region_logits\": 2.7939677238464355e-08,\n            \"region_probs\": 7.450580596923828e-09\n          },\n          \"floats_pass\": true,\n          \"speed_integer_mismatches\": 0\n        }\n      },\n      \"timings_ms\": {\n        \"golden\": {\n          \"golden\": 6.4867000037338585,\n          \"total\": 6.487799997557886\n        },\n        \"split-ort\": {\n          \"stage_0\": 2.340599996387027,\n          \"camera_0\": 0.7882999925641343,\n          \"stage_1\": 1.8720000080065802,\n          \"camera_1\": 0.7909999985713512,\n          \"stage_2\": 0.5577999982051551,\n          \"cross_0\": 0.03850000211969018,\n          \"stage_3\": 0.5535000091185793,\n          \"cross_1\": 0.0450000079581514,\n          \"stage_4\": 0.07180000829976052,\n          \"total\": 7.174899990786798\n        },\n        \"split-numpy\": {\n          \"stage_0\": 2.244599992991425,\n          \"camera_0\": 16.833699992275797,\n          \"stage_1\": 1.7959000106202438,\n          \"camera_1\": 16.890800005057827,\n          \"stage_2\": 0.5729000113205984,\n          \"cross_0\": 0.23269999655894935,\n          \"stage_3\": 0.7944999961182475,\n          \"cross_1\": 0.23599999258294702,\n          \"stage_4\": 0.11930000619031489,\n          \"total\": 40.02810000383761\n        }\n      },\n      \"ffn_pipeline_numpy_vs_ort_max_abs\": {\n        \"camera_0\": 2.9802322387695312e-08,\n        \"camera_1\": 8.940696716308594e-08,\n        \"cross_0\": 5.960464477539063e-08,\n        \"cross_1\": 1.1920928955078125e-07\n      },\n      \"ffn_same_input_numpy_vs_ort_max_abs\": {\n        \"camera_0\": 2.9802322387695312e-08,\n        \"camera_1\": 2.9802322387695312e-08,\n        \"cross_0\": 1.4901161193847656e-08,\n        \"cross_1\": 2.9802322387695312e-08\n      }\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\JW\\.zcode\\tmp\\fpga-ps-validation-20261014\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "ps.replay",
+        "--recording",
+        "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\sample_recording_1779374497",
+        "--bundle",
+        "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\bundle_20261014",
+        "--backend",
+        "golden",
+        "--output-dir",
+        "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\replay_golden_20261014",
+        "--threads",
+        "1",
+        "--limit",
+        "1"
+      ],
+      "cwd": "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "exit_code": 0,
+      "stdout": "{\"status\": \"complete\", \"frames_expected\": 1, \"frames_completed\": 1, \"backend\": \"golden\", \"threads\": 1, \"hardware_execution\": false, \"timing_scope\": \"Host CPU software replay, not board performance; excludes startup, capture, serial and vehicle response\", \"elapsed_s\": 0.09123159998853225}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\JW\\.zcode\\tmp\\fpga-ps-validation-20261014\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "ps.replay",
+        "--recording",
+        "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\sample_recording_1779374497",
+        "--bundle",
+        "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\bundle_20261014",
+        "--backend",
+        "split-ort",
+        "--output-dir",
+        "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\replay_split-ort_20261014",
+        "--threads",
+        "1",
+        "--limit",
+        "1"
+      ],
+      "cwd": "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "exit_code": 0,
+      "stdout": "{\"status\": \"complete\", \"frames_expected\": 1, \"frames_completed\": 1, \"backend\": \"split-ort\", \"threads\": 1, \"hardware_execution\": false, \"timing_scope\": \"Host CPU software replay, not board performance; excludes startup, capture, serial and vehicle response\", \"elapsed_s\": 0.09533409999858122}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\JW\\.zcode\\tmp\\fpga-ps-validation-20261014\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "ps.replay",
+        "--recording",
+        "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\sample_recording_1779374497",
+        "--bundle",
+        "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\bundle_20261014",
+        "--backend",
+        "split-numpy",
+        "--output-dir",
+        "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\replay_split-numpy_20261014",
+        "--threads",
+        "1",
+        "--limit",
+        "1"
+      ],
+      "cwd": "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "exit_code": 0,
+      "stdout": "{\"status\": \"complete\", \"frames_expected\": 1, \"frames_completed\": 1, \"backend\": \"split-numpy\", \"threads\": 1, \"hardware_execution\": false, \"timing_scope\": \"Host CPU software replay, not board performance; excludes startup, capture, serial and vehicle response\", \"elapsed_s\": 0.16788959999394137}\n",
+      "stderr": ""
+    }
+  ]
+}

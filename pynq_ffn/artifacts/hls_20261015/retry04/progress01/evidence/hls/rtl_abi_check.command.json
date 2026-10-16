@@ -1,0 +1,20 @@
+{
+  "cwd": "D:\\ffn_build\\retry04",
+  "tool": "C:\\Python314\\python.exe",
+  "arguments": [
+    "D:/ffn_build/retry04/verify_hls_abi.py"
+  ],
+  "command": "C:\\Python314\\python.exe D:/ffn_build/retry04/verify_hls_abi.py",
+  "invocation": [
+    "C:\\Python314\\python.exe",
+    "D:/ffn_build/retry04/verify_hls_abi.py"
+  ],
+  "environment_overrides": {},
+  "path_modified_by_runner": false,
+  "started": "2026-10-15T18:39:12.927926+08:00",
+  "status": "completed",
+  "exit_code": 0,
+  "pid": 32580,
+  "finished": "2026-10-15T18:39:13.005296+08:00",
+  "elapsed_seconds": 0.077
+}

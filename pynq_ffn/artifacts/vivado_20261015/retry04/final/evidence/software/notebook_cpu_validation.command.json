@@ -1,0 +1,24 @@
+{
+  "cwd": "D:\\Learning\\FPGA\\pynq_ffn",
+  "tool": "C:\\Users\\JW\\.zcode\\tmp\\fpga-ps-baseline-20261014\\Scripts\\python.exe",
+  "arguments": [
+    "-B",
+    "D:/ffn_build/retry04/validate_notebook_cpu.py"
+  ],
+  "command": "C:\\Users\\JW\\.zcode\\tmp\\fpga-ps-baseline-20261014\\Scripts\\python.exe -B D:/ffn_build/retry04/validate_notebook_cpu.py",
+  "invocation": [
+    "C:\\Users\\JW\\.zcode\\tmp\\fpga-ps-baseline-20261014\\Scripts\\python.exe",
+    "-B",
+    "D:/ffn_build/retry04/validate_notebook_cpu.py"
+  ],
+  "environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "path_modified_by_runner": false,
+  "started": "2026-10-15T21:07:11.097015+08:00",
+  "status": "completed",
+  "exit_code": 0,
+  "pid": 35308,
+  "finished": "2026-10-15T21:07:11.671988+08:00",
+  "elapsed_seconds": 0.575
+}

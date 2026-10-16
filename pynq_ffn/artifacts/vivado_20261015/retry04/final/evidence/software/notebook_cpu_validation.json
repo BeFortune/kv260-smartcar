@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "notebook": "D:\\Learning\\FPGA\\pynq_ffn\\notebooks\\01_ps_to_pl.ipynb",
+  "notebook_sha256": "0fde8c20bfa1bbea95b5f2c674a34bcfd18f0092be2ff6293a54c90d1a774cd9",
+  "cells": [
+    {
+      "cell_index": 1,
+      "status": "passed",
+      "started": "2026-10-15T21:07:11.148215+08:00",
+      "finished": "2026-10-15T21:07:11.367860+08:00"
+    },
+    {
+      "cell_index": 3,
+      "status": "passed",
+      "started": "2026-10-15T21:07:11.367860+08:00",
+      "finished": "2026-10-15T21:07:11.482221+08:00"
+    },
+    {
+      "cell_index": 5,
+      "status": "passed",
+      "started": "2026-10-15T21:07:11.482221+08:00",
+      "finished": "2026-10-15T21:07:11.629848+08:00"
+    },
+    {
+      "cell_index": 7,
+      "status": "passed",
+      "started": "2026-10-15T21:07:11.629848+08:00",
+      "finished": "2026-10-15T21:07:11.629848+08:00"
+    },
+    {
+      "cell_index": 9,
+      "status": "passed",
+      "started": "2026-10-15T21:07:11.629848+08:00",
+      "finished": "2026-10-15T21:07:11.629848+08:00"
+    },
+    {
+      "cell_index": 11,
+      "status": "passed",
+      "started": "2026-10-15T21:07:11.629848+08:00",
+      "finished": "2026-10-15T21:07:11.629848+08:00"
+    }
+  ],
+  "bitstream": "D:\\Learning\\FPGA\\pynq_ffn\\artifacts\\vivado_20261015\\retry04\\overlay\\ffn_overlay_wrapper.bit",
+  "ip_name": "ffn_accel_0",
+  "allow_pl_download": false,
+  "pynq_imported": false,
+  "hardware_execution": false,
+  "scope": "CPU-only notebook execution and matched overlay file hashes, not board acceptance"
+}

@@ -1,0 +1,24 @@
+{
+  "cwd": "D:\\ffn_build\\retry04",
+  "tool": "C:\\Users\\JW\\.zcode\\tmp\\fpga-ps-baseline-20261014\\Scripts\\python.exe",
+  "arguments": [
+    "-B",
+    "D:/ffn_build/retry04/extract_verify_hwh.py"
+  ],
+  "command": "C:\\Users\\JW\\.zcode\\tmp\\fpga-ps-baseline-20261014\\Scripts\\python.exe -B D:/ffn_build/retry04/extract_verify_hwh.py",
+  "invocation": [
+    "C:\\Users\\JW\\.zcode\\tmp\\fpga-ps-baseline-20261014\\Scripts\\python.exe",
+    "-B",
+    "D:/ffn_build/retry04/extract_verify_hwh.py"
+  ],
+  "environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "path_modified_by_runner": false,
+  "started": "2026-10-15T20:50:57.122011+08:00",
+  "status": "completed",
+  "exit_code": 1,
+  "pid": 34708,
+  "finished": "2026-10-15T20:50:57.216795+08:00",
+  "elapsed_seconds": 0.095
+}

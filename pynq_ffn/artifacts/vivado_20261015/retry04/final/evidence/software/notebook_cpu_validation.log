@@ -1,0 +1,58 @@
+{'python': 'C:\\Users\\JW\\.zcode\\tmp\\fpga-ps-baseline-20261014\\Scripts\\python.exe', 'bundle': 'D:\\Learning\\FPGA\\pynq_ffn\\artifacts\\bundle_20261014', 'hardware_execution': False}
+recorded_three_camera_frame (1, 3, 3, 66, 200) float32
+{'speed_norm': [[0.3513003885746002, 0.3836044371128082]], 'speed_raw': [[175.65020751953125, 191.80218505859375]], 'region_logits': [[0.017400406301021576, -0.08105853945016861, -0.024279169738292694, 0.08559271693229675, 0.017057102173566818, -0.05364803224802017, -0.0682566687464714, -0.013491458259522915, -0.004947304725646973, 0.017710691317915916, 0.0552392452955246, 0.01301465556025505, 0.045875925570726395, -0.00512203574180603, -0.031534697860479355]], 'region_probs': [[0.06790802627801895, 0.06154048815369606, 0.06513582170009613, 0.0727003738284111, 0.06788472086191177, 0.06325067579746246, 0.06233338266611099, 0.06584229320287704, 0.06640727072954178, 0.06792909651994705, 0.07052681595087051, 0.06761085242033005, 0.06986954063177109, 0.06639566272497177, 0.06466493755578995]]}
+split-ort {'max_abs_error': {'speed_norm': 0.0, 'speed_raw': 0.0, 'region_logits': 0.0, 'region_probs': 0.0}, 'integer_mismatches': 0, 'host_ms': {'stage_0': 3.2321999988198513, 'camera_0': 1.184699998702854, 'stage_1': 3.0882999999448657, 'camera_1': 1.1529999992490048, 'stage_2': 1.115600000048289, 'cross_0': 0.03860000106215011, 'stage_3': 1.0142000010091579, 'cross_1': 0.03619999915827066, 'stage_4': 0.06770000072719995, 'total': 11.306700000204728}}
+split-numpy {'max_abs_error': {'speed_norm': 5.960464477539063e-08, 'speed_raw': 0.0, 'region_logits': 2.3283064365386963e-08, 'region_probs': 7.450580596923828e-09}, 'integer_mismatches': 0, 'host_ms': {'stage_0': 3.4580999999889173, 'camera_0': 21.146900000530877, 'stage_1': 3.3528000003570924, 'camera_1': 18.53350000055798, 'stage_2': 1.3589000009233132, 'cross_0': 0.4473999997571809, 'stage_3': 1.1203000012756092, 'cross_1': 0.1627000001462875, 'stage_4': 0.08629999865661375, 'total': 49.78159999882337}}
+{'camera_0': [3, 220, 128], 'camera_1': [3, 220, 128], 'cross_0': [1, 4, 128], 'cross_1': [1, 4, 128]}
+PL 未加载；本次仅CPU演示。
+跳过PL单层及混合模型验收，不代表通过。
+没有创建硬件缓冲区。
+{
+  "passed": true,
+  "notebook": "D:\\Learning\\FPGA\\pynq_ffn\\notebooks\\01_ps_to_pl.ipynb",
+  "notebook_sha256": "0fde8c20bfa1bbea95b5f2c674a34bcfd18f0092be2ff6293a54c90d1a774cd9",
+  "cells": [
+    {
+      "cell_index": 1,
+      "status": "passed",
+      "started": "2026-10-15T21:07:11.148215+08:00",
+      "finished": "2026-10-15T21:07:11.367860+08:00"
+    },
+    {
+      "cell_index": 3,
+      "status": "passed",
+      "started": "2026-10-15T21:07:11.367860+08:00",
+      "finished": "2026-10-15T21:07:11.482221+08:00"
+    },
+    {
+      "cell_index": 5,
+      "status": "passed",
+      "started": "2026-10-15T21:07:11.482221+08:00",
+      "finished": "2026-10-15T21:07:11.629848+08:00"
+    },
+    {
+      "cell_index": 7,
+      "status": "passed",
+      "started": "2026-10-15T21:07:11.629848+08:00",
+      "finished": "2026-10-15T21:07:11.629848+08:00"
+    },
+    {
+      "cell_index": 9,
+      "status": "passed",
+      "started": "2026-10-15T21:07:11.629848+08:00",
+      "finished": "2026-10-15T21:07:11.629848+08:00"
+    },
+    {
+      "cell_index": 11,
+      "status": "passed",
+      "started": "2026-10-15T21:07:11.629848+08:00",
+      "finished": "2026-10-15T21:07:11.629848+08:00"
+    }
+  ],
+  "bitstream": "D:\\Learning\\FPGA\\pynq_ffn\\artifacts\\vivado_20261015\\retry04\\overlay\\ffn_overlay_wrapper.bit",
+  "ip_name": "ffn_accel_0",
+  "allow_pl_download": false,
+  "pynq_imported": false,
+  "hardware_execution": false,
+  "scope": "CPU-only notebook execution and matched overlay file hashes, not board acceptance"
+}

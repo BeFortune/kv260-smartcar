@@ -1,0 +1,15 @@
+ADDRESS_SPACE /ffn_accel_0/Data_m_axi_gmem0
+  /ffn_accel_0/Data_m_axi_gmem0/SEG_zynq_ultra_ps_e_0_HP0_DDR_HIGH OFFSET=0x0000000800000000 RANGE=0x0000000800000000
+  /ffn_accel_0/Data_m_axi_gmem0/SEG_zynq_ultra_ps_e_0_HP0_DDR_LOW OFFSET=0x0000000000000000 RANGE=0x0000000080000000
+ADDRESS_SPACE /ffn_accel_0/Data_m_axi_gmem1
+  /ffn_accel_0/Data_m_axi_gmem1/SEG_zynq_ultra_ps_e_0_HP0_DDR_HIGH OFFSET=0x0000000800000000 RANGE=0x0000000800000000
+  /ffn_accel_0/Data_m_axi_gmem1/SEG_zynq_ultra_ps_e_0_HP0_DDR_LOW OFFSET=0x0000000000000000 RANGE=0x0000000080000000
+ADDRESS_SPACE /ffn_accel_0/s_axi_control
+  /ffn_accel_0/s_axi_control/Reg OFFSET= RANGE=0x00010000
+ADDRESS_SPACE /zynq_ultra_ps_e_0/Data
+  /zynq_ultra_ps_e_0/Data/SEG_ffn_accel_0_Reg OFFSET=0x00A0000000 RANGE=0x0000010000
+ADDRESS_SPACE /zynq_ultra_ps_e_0/SAXIGP2
+  /zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_LOW OFFSET= RANGE=0x80000000
+  /zynq_ultra_ps_e_0/SAXIGP2/HP0_QSPI OFFSET= RANGE=0x20000000
+  /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM OFFSET= RANGE=0x01000000
+  /zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_HIGH OFFSET= RANGE=0x000800000000

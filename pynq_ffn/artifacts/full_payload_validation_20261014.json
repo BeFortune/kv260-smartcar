@@ -1,0 +1,214 @@
+{
+  "schema": "pynq_ffn.payload_validation.v1",
+  "status": "pass",
+  "hardware_execution": false,
+  "host": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "python": "3.12.0",
+    "windows_host": true,
+    "kv260": false,
+    "pl_fpga": false
+  },
+  "environment": {
+    "numpy": "1.26.4",
+    "onnxruntime": "1.20.1",
+    "opencv": "4.10.0"
+  },
+  "threads": 4,
+  "atol": 0.001,
+  "rtol": 0,
+  "timing_scope": "Host CPU software replay only. Not KV260 measurements. Includes no board init, capture, serial transport, PL execution or vehicle response.",
+  "not_covered": [
+    "KV260 / ARM board execution and PL (FPGA) datapath",
+    "accuracy against ground-truth or held-out labels",
+    "vehicle control, actuator or safety response",
+    "device, serial and network IO"
+  ],
+  "source": {
+    "zip": "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\kv260_v1\\v1_payload.zip",
+    "zip_bytes": 119435772,
+    "payload_manifest_version": "v1.0.0",
+    "declared_recordings": [
+      {
+        "segment": "1779374497",
+        "frames": 100
+      },
+      {
+        "segment": "1779374509",
+        "frames": 53
+      },
+      {
+        "segment": "1779534615",
+        "frames": 10
+      },
+      {
+        "segment": "1779534653",
+        "frames": 10
+      }
+    ],
+    "declared_total_frames": 173,
+    "observed_total_frames": 173,
+    "observed_recordings": {
+      "1779374497": 100,
+      "1779374509": 53,
+      "1779534615": 10,
+      "1779534653": 10
+    },
+    "declared_matches_observed": true
+  },
+  "model_sha": {
+    "golden_model_sha256": "ad58d1fc9168da94b9ce076ba8cc9754c371ead87974da8bc9cc601ad1650d5b",
+    "payload_manifest_model_sha256": "ad58d1fc9168da94b9ce076ba8cc9754c371ead87974da8bc9cc601ad1650d5b",
+    "source_zip_model_sha256": "ad58d1fc9168da94b9ce076ba8cc9754c371ead87974da8bc9cc601ad1650d5b",
+    "source_zip_model_member": "model/model_current.onnx",
+    "bundle_model_onnx_sha256": "ad58d1fc9168da94b9ce076ba8cc9754c371ead87974da8bc9cc601ad1650d5b",
+    "bundle_matches_golden": true,
+    "source_matches_golden": true
+  },
+  "totals": {
+    "frames_processed": 173,
+    "speed_integer_mismatches": {
+      "split-ort": 0,
+      "split-numpy": 0
+    },
+    "max_abs_error": {
+      "split-ort": {
+        "speed_norm": 0.0,
+        "speed_raw": 0.0,
+        "region_logits": 0.0,
+        "region_probs": 0.0
+      },
+      "split-numpy": {
+        "speed_norm": 1.1920928955078125e-07,
+        "speed_raw": 6.103515625e-05,
+        "region_logits": 8.195638656616211e-08,
+        "region_probs": 1.4901161193847656e-08
+      }
+    },
+    "worst_frame": {
+      "split-ort:speed_norm": {
+        "error": 0.0,
+        "segment": "1779374497",
+        "frame_index": 1
+      },
+      "split-ort:speed_raw": {
+        "error": 0.0,
+        "segment": "1779374497",
+        "frame_index": 1
+      },
+      "split-ort:region_logits": {
+        "error": 0.0,
+        "segment": "1779374497",
+        "frame_index": 1
+      },
+      "split-ort:region_probs": {
+        "error": 0.0,
+        "segment": "1779374497",
+        "frame_index": 1
+      },
+      "split-numpy:speed_norm": {
+        "error": 1.1920928955078125e-07,
+        "segment": "1779534653",
+        "frame_index": 1
+      },
+      "split-numpy:speed_raw": {
+        "error": 6.103515625e-05,
+        "segment": "1779374497",
+        "frame_index": 10
+      },
+      "split-numpy:region_logits": {
+        "error": 8.195638656616211e-08,
+        "segment": "1779374509",
+        "frame_index": 7
+      },
+      "split-numpy:region_probs": {
+        "error": 1.4901161193847656e-08,
+        "segment": "1779374509",
+        "frame_index": 16
+      }
+    },
+    "ffn_cutpoints": {
+      "stages": [
+        "camera_0",
+        "camera_1",
+        "cross_0",
+        "cross_1"
+      ],
+      "pipeline_numpy_vs_ort_max_abs": {
+        "camera_0": 5.960464477539063e-08,
+        "camera_1": 1.6391277313232422e-07,
+        "cross_0": 1.341104507446289e-07,
+        "cross_1": 1.9371509552001953e-07
+      },
+      "same_input_numpy_vs_ort_max_abs": {
+        "camera_0": 5.960464477539063e-08,
+        "camera_1": 4.470348358154297e-08,
+        "cross_0": 2.9802322387695312e-08,
+        "cross_1": 5.960464477539063e-08
+      },
+      "worst_frame": {
+        "pipeline:camera_0": {
+          "error": 5.960464477539063e-08,
+          "segment": "1779374509",
+          "frame_index": 39
+        },
+        "same_input:camera_0": {
+          "error": 5.960464477539063e-08,
+          "segment": "1779374509",
+          "frame_index": 39
+        },
+        "pipeline:camera_1": {
+          "error": 1.6391277313232422e-07,
+          "segment": "1779374497",
+          "frame_index": 59
+        },
+        "same_input:camera_1": {
+          "error": 4.470348358154297e-08,
+          "segment": "1779374497",
+          "frame_index": 14
+        },
+        "pipeline:cross_0": {
+          "error": 1.341104507446289e-07,
+          "segment": "1779374497",
+          "frame_index": 10
+        },
+        "same_input:cross_0": {
+          "error": 2.9802322387695312e-08,
+          "segment": "1779374497",
+          "frame_index": 8
+        },
+        "pipeline:cross_1": {
+          "error": 1.9371509552001953e-07,
+          "segment": "1779374509",
+          "frame_index": 47
+        },
+        "same_input:cross_1": {
+          "error": 5.960464477539063e-08,
+          "segment": "1779374509",
+          "frame_index": 6
+        }
+      },
+      "pass": true
+    },
+    "elapsed_s": 21.542677500008722
+  },
+  "segments": {
+    "1779374497": {
+      "frames": 100,
+      "status": "pass"
+    },
+    "1779374509": {
+      "frames": 53,
+      "status": "pass"
+    },
+    "1779534615": {
+      "frames": 10,
+      "status": "pass"
+    },
+    "1779534653": {
+      "frames": 10,
+      "status": "pass"
+    }
+  }
+}

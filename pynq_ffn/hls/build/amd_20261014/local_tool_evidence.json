@@ -1,0 +1,119 @@
+{
+  "tool_root": "D:\\Learning\\AMDDesignTools\\2026.1",
+  "local_part_evidence": [
+    {
+      "path": "D:\\Learning\\AMDDesignTools\\2026.1\\data\\xhub\\boards\\XilinxBoardStore\\boards\\Xilinx\\kv260_som\\2.0\\board.xml",
+      "line": 290,
+      "text": "<component name=\"part0\" display_name=\"VISION SOM Evaluation Platform\" type=\"fpga\" part_name=\"xck26-sfvc784-2LV-c\" pin_map_file=\"part0_pins.xml\" vendor=\"xilinx\" spec_url=\"www.xilinx.com\">"
+    },
+    {
+      "path": "D:\\Learning\\AMDDesignTools\\2026.1\\data\\xhub\\boards\\XilinxBoardStore\\boards\\Xilinx\\k26c\\2.0\\board.xml",
+      "line": 536,
+      "text": "<component name=\"part0\" display_name=\"VISION SOM Evaluation Platform\" type=\"fpga\" part_name=\"xck26-sfvc784-2LV-c\" pin_map_file=\"part0_pins.xml\" vendor=\"xilinx\" spec_url=\"www.xilinx.com\">"
+    }
+  ],
+  "header_evidence": [
+    {
+      "path": "D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\include\\hls_math.h",
+      "line": 31,
+      "text": "namespace hls {"
+    },
+    {
+      "path": "D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\include\\hls_math.h",
+      "line": 887,
+      "text": "float  erff(float);"
+    },
+    {
+      "path": "D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\include\\hls_math.h",
+      "line": 1077,
+      "text": "namespace hls {"
+    },
+    {
+      "path": "D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\common\\technology\\autopilot\\hls_math.h",
+      "line": 31,
+      "text": "namespace hls {"
+    },
+    {
+      "path": "D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\common\\technology\\autopilot\\hls_math.h",
+      "line": 887,
+      "text": "float  erff(float);"
+    },
+    {
+      "path": "D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\common\\technology\\autopilot\\hls_math.h",
+      "line": 1077,
+      "text": "namespace hls {"
+    }
+  ],
+  "option_evidence": [
+    {
+      "path": "D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\ide\\electron-app\\win64\\resources\\app\\node_modules\\@rigel\\config-editor\\src\\browser\\hls-form\\hls_options.json",
+      "start_line": 755,
+      "text": "              \"option\": \"hls.syn.interface.m_axi_addr64\",\n              \"type\": \"boolean\",\n              \"description\": \"Enable 64-bit addressing for all m_axi interfaces\",\n              \"defaultValue\": \"1\""
+    }
+  ],
+  "device_database_directories": {
+    "D:\\Learning\\AMDDesignTools\\2026.1\\Vivado\\data\\parts\\xilinx": [
+      "artix7",
+      "attributes",
+      "collateral",
+      "common",
+      "constraints",
+      "devint",
+      "estimation",
+      "kintex7",
+      "kintexuplus",
+      "rtl",
+      "spartan3",
+      "spartan3a",
+      "spartan3adsp",
+      "spartan3e",
+      "spartan6",
+      "spartan7",
+      "spartanuplus",
+      "templates",
+      "versal",
+      "virtex4",
+      "virtex5",
+      "virtex6",
+      "virtex7",
+      "virtexu",
+      "virtexuplus",
+      "virtexuplus58g",
+      "virtexuplusHBM"
+    ],
+    "D:\\Learning\\AMDDesignTools\\2026.1\\data\\parts\\xilinx": [
+      "artix7",
+      "attributes",
+      "collateral",
+      "common",
+      "constraints",
+      "devint",
+      "estimation",
+      "kintex7",
+      "kintexuplus",
+      "rtl",
+      "spartan3",
+      "spartan3a",
+      "spartan3adsp",
+      "spartan3e",
+      "spartan6",
+      "spartan7",
+      "spartanuplus",
+      "templates",
+      "versal",
+      "virtex4",
+      "virtex5",
+      "virtex6",
+      "virtex7",
+      "virtexu",
+      "virtexuplus",
+      "virtexuplus58g",
+      "virtexuplusHBM"
+    ]
+  },
+  "kernel_sha256": {
+    "ffn_accel.cpp": "9587ed0b7def53cdb6d186c40aaf15e40b82f0823ae5b6137f0f42c6bbe37eea",
+    "ffn_accel.hpp": "d9dc254a84ce1423c99cb502d7516c0471c8c630cc5995db744a0bcb0aa2d9e6",
+    "testbench.cpp": "d6a717629d812901e22bd2ebe5d2e4b051cf49f99abe139d17a534f9336b97b1"
+  }
+}

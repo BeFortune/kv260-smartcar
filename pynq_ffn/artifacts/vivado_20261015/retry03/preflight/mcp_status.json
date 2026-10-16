@@ -1,0 +1,17 @@
+{
+  "evidence_kind": "transcribed_tool_results",
+  "client_info_tool": "mcp__vivado__vivado_client_info",
+  "client_info_result": {
+    "client_name": "zcode",
+    "client_version": "0.16.9",
+    "server": {
+      "channel": "customer",
+      "commit": "2c4e86e5",
+      "pid": 20768,
+      "version": "2026.9.1"
+    }
+  },
+  "list_sessions_tool": "mcp__vivado__vivado_list_sessions",
+  "list_sessions_result": "No active Vivado sessions. Use vivado_start to create a session.",
+  "interpretation": "MCP metadata requests responded. No active Vivado session was present, and no MCP Vivado session was launched. K26 availability was checked separately by the required fresh batch process."
+}

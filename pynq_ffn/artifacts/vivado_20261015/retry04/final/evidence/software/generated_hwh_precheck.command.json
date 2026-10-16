@@ -1,0 +1,24 @@
+{
+  "cwd": "D:\\ffn_build\\retry04",
+  "tool": "C:\\Users\\JW\\.zcode\\tmp\\fpga-ps-baseline-20261014\\Scripts\\python.exe",
+  "arguments": [
+    "-B",
+    "D:/ffn_build/retry04/precheck_hwh.py"
+  ],
+  "command": "C:\\Users\\JW\\.zcode\\tmp\\fpga-ps-baseline-20261014\\Scripts\\python.exe -B D:/ffn_build/retry04/precheck_hwh.py",
+  "invocation": [
+    "C:\\Users\\JW\\.zcode\\tmp\\fpga-ps-baseline-20261014\\Scripts\\python.exe",
+    "-B",
+    "D:/ffn_build/retry04/precheck_hwh.py"
+  ],
+  "environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "path_modified_by_runner": false,
+  "started": "2026-10-15T20:33:55.918288+08:00",
+  "status": "completed",
+  "exit_code": 0,
+  "pid": 37432,
+  "finished": "2026-10-15T20:33:56.127938+08:00",
+  "elapsed_seconds": 0.209
+}

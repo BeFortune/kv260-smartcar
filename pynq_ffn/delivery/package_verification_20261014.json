@@ -1,0 +1,60 @@
+{
+  "schema": "pynq_ffn.package_verification.v1",
+  "status": "pass",
+  "archive": "pynq_ffn_delivery_20261014.zip",
+  "archive_bytes": 6450286,
+  "archive_sha256": "5445d980bc3ecab2a83f1b4976dde27b1dd81b8f74c9798436a6c6303f3c2b9a",
+  "manifest_files": 109,
+  "archive_members_including_manifest": 110,
+  "python_ast_files": 19,
+  "local_document_links": "pass",
+  "zip_crc_and_per_file_sha256": "pass",
+  "smoke_extraction": "C:\\Users\\JW\\.zcode\\tmp\\fpga-delivery-smoke-ndhqaxxp\\pynq_ffn",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\JW\\.zcode\\tmp\\fpga-ps-baseline-20261014\\Scripts\\python.exe",
+        "-B",
+        "tools/validate_split.py",
+        "--bundle",
+        "artifacts/bundle_20261014",
+        "--recording",
+        "artifacts/sample_recording_1779374497",
+        "--random-cases",
+        "3",
+        "--threads",
+        "4",
+        "--output",
+        "artifacts/delivery_smoke.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"pass\",\n  \"hardware_execution\": false,\n  \"timing_scope\": \"Host CPU only; not KV260 measurements; includes no initialization or warmup\",\n  \"python\": \"3.12.0\",\n  \"machine\": \"AMD64\",\n  \"numpy\": \"1.26.4\",\n  \"onnxruntime\": \"1.20.1\",\n  \"threads\": 4,\n  \"atol\": 0.001,\n  \"rtol\": 0,\n  \"cases\": [\n    {\n      \"name\": \"random_0\",\n      \"comparisons\": {\n        \"split-ort\": {\n          \"max_abs_error\": {\n            \"speed_norm\": 0.0,\n            \"speed_raw\": 0.0,\n            \"region_logits\": 0.0,\n            \"region_probs\": 0.0\n          },\n          \"floats_pass\": true,\n          \"pass\": true,\n          \"speed_integer_mismatches\": 0\n        },\n        \"split-numpy\": {\n          \"max_abs_error\": {\n            \"speed_norm\": 8.940696716308594e-08,\n            \"speed_raw\": 6.103515625e-05,\n            \"region_logits\": 3.725290298461914e-08,\n            \"region_probs\": 7.450580596923828e-09\n          },\n          \"floats_pass\": true,\n          \"pass\": true,\n          \"speed_integer_mismatches\": 0\n        }\n      },\n      \"timings_ms\": {\n        \"golden\": {\n          \"golden\": 5.487299989908934,\n          \"total\": 5.4887999867787585\n        },\n        \"split-ort\": {\n          \"stage_0\": 3.6232999991625547,\n          \"camera_0\": 0.5148000054759905,\n          \"stage_1\": 6.3590999925509095,\n          \"camera_1\": 0.8331999997608364,\n          \"stage_2\": 14.145900000585243,\n          \"cross_0\": 0.07829999958630651,\n          \"stage_3\": 1.97130000742618,\n          \"cross_1\": 0.05289999535307288,\n          \"stage_4\": 0.08789999992586672,\n          \"total\": 28.018900004099123\n        },\n        \"split-numpy\": {\n          \"stage_0\": 2.4433999933535233,\n          \"camera_0\": 35.16420000232756,\n          \"stage_1\": 1.3257000100566074,\n          \"camera_1\": 20.14469999994617,\n          \"stage_2\": 0.643899998976849,\n          \"cross_0\": 0.18590000399854034,\n          \"stage_3\": 0.6162999925436452,\n          \"cross_1\": 0.16250000044237822,\n          \"stage_4\": 0.09299999510403723,\n          \"total\": 61.00660000811331\n        }\n      },\n      \"ffn_pipeline_numpy_vs_ort_max_abs\": {\n        \"camera_0\": 2.9802322387695312e-08,\n        \"camera_1\": 8.195638656616211e-08,\n        \"cross_0\": 5.960464477539063e-08,\n        \"cross_1\": 1.1920928955078125e-07\n      },\n      \"ffn_pipeline_pass\": true,\n      \"ffn_same_input_numpy_vs_ort_max_abs\": {\n        \"camera_0\": 2.9802322387695312e-08,\n        \"camera_1\": 2.2351741790771484e-08,\n        \"cross_0\": 1.4901161193847656e-08,\n        \"cross_1\": 2.9802322387695312e-08\n      }\n    },\n    {\n      \"name\": \"random_1\",\n      \"comparisons\": {\n        \"split-ort\": {\n          \"max_abs_error\": {\n            \"speed_norm\": 0.0,\n            \"speed_raw\": 0.0,\n            \"region_logits\": 0.0,\n            \"region_probs\": 0.0\n          },\n          \"floats_pass\": true,\n          \"pass\": true,\n          \"speed_integer_mismatches\": 0\n        },\n        \"split-numpy\": {\n          \"max_abs_error\": {\n            \"speed_norm\": 5.960464477539063e-08,\n            \"speed_raw\": 6.103515625e-05,\n            \"region_logits\": 2.9802322387695312e-08,\n            \"region_probs\": 7.450580596923828e-09\n          },\n          \"floats_pass\": true,\n          \"pass\": true,\n          \"speed_integer_mismatches\": 0\n        }\n      },\n      \"timings_ms\": {\n        \"golden\": {\n          \"golden\": 3.834699993603863,\n          \"total\": 3.8358000019798055\n        },\n        \"split-ort\": {\n          \"stage_0\": 1.356099994154647,\n          \"camera_0\": 0.4609000025084242,\n          \"stage_1\": 1.2953999976161867,\n          \"camera_1\": 0.3293000045232475,\n          \"stage_2\": 0.8975999953690916,\n          \"cross_0\": 0.04260000423528254,\n          \"stage_3\": 1.0809000086737797,\n          \"cross_1\": 0.04949999856762588,\n          \"stage_4\": 0.07870000263210386,\n          \"total\": 5.744800000684336\n        },\n        \"split-numpy\": {\n          \"stage_0\": 3.282799996668473,\n          \"camera_0\": 36.159900002530776,\n          \"stage_1\": 1.273000001674518,\n          \"camera_1\": 17.641999991610646,\n          \"stage_2\": 0.4938000056426972,\n          \"cross_0\": 0.17210000078193843,\n          \"stage_3\": 0.42070000199601054,\n          \"cross_1\": 0.1610999897820875,\n          \"stage_4\": 0.08369999704882503,\n          \"total\": 59.903599991230294\n        }\n      },\n      \"ffn_pipeline_numpy_vs_ort_max_abs\": {\n        \"camera_0\": 2.9802322387695312e-08,\n        \"camera_1\": 7.450580596923828e-08,\n        \"cross_0\": 7.450580596923828e-08,\n        \"cross_1\": 8.940696716308594e-08\n      },\n      \"ffn_pipeline_pass\": true,\n      \"ffn_same_input_numpy_vs_ort_max_abs\": {\n        \"camera_0\": 2.9802322387695312e-08,\n        \"camera_1\": 2.9802322387695312e-08,\n        \"cross_0\": 1.4901161193847656e-08,\n        \"cross_1\": 2.9802322387695312e-08\n      }\n    },\n    {\n      \"name\": \"random_2\",\n      \"comparisons\": {\n        \"split-ort\": {\n          \"max_abs_error\": {\n            \"speed_norm\": 0.0,\n            \"speed_raw\": 0.0,\n            \"region_logits\": 0.0,\n            \"region_probs\": 0.0\n          },\n          \"floats_pass\": true,\n          \"pass\": true,\n          \"speed_integer_mismatches\": 0\n        },\n        \"split-numpy\": {\n          \"max_abs_error\": {\n            \"speed_norm\": 8.940696716308594e-08,\n            \"speed_raw\": 0.0,\n            \"region_logits\": 3.3527612686157227e-08,\n            \"region_probs\": 7.450580596923828e-09\n          },\n          \"floats_pass\": true,\n          \"pass\": true,\n          \"speed_integer_mismatches\": 0\n        }\n      },\n      \"timings_ms\": {\n        \"golden\": {\n          \"golden\": 3.1205999985104427,\n          \"total\": 3.1214000046020374\n        },\n        \"split-ort\": {\n          \"stage_0\": 1.2197999894851819,\n          \"camera_0\": 0.6856999971205369,\n          \"stage_1\": 1.1402000091038644,\n          \"camera_1\": 1.0809999948833138,\n          \"stage_2\": 0.9528000082354993,\n          \"cross_0\": 0.046899993321858346,\n          \"stage_3\": 0.8322999929077923,\n          \"cross_1\": 0.04130000888835639,\n          \"stage_4\": 0.07650000043213367,\n          \"total\": 6.354199998895638\n        },\n        \"split-numpy\": {\n          \"stage_0\": 3.4912999981315807,\n          \"camera_0\": 36.96050000144169,\n          \"stage_1\": 0.9831000061240047,\n          \"camera_1\": 18.77019999665208,\n          \"stage_2\": 0.3775999939534813,\n          \"cross_0\": 0.17179999849759042,\n          \"stage_3\": 0.3423000016482547,\n          \"cross_1\": 0.15720000374130905,\n          \"stage_4\": 0.08070000330917537,\n          \"total\": 61.535999993793666\n        }\n      },\n      \"ffn_pipeline_numpy_vs_ort_max_abs\": {\n        \"camera_0\": 2.2351741790771484e-08,\n        \"camera_1\": 9.685754776000977e-08,\n        \"cross_0\": 7.450580596923828e-08,\n        \"cross_1\": 8.940696716308594e-08\n      },\n      \"ffn_pipeline_pass\": true,\n      \"ffn_same_input_numpy_vs_ort_max_abs\": {\n        \"camera_0\": 2.2351741790771484e-08,\n        \"camera_1\": 2.9802322387695312e-08,\n        \"cross_0\": 2.9802322387695312e-08,\n        \"cross_1\": 2.9802322387695312e-08\n      }\n    },\n    {\n      \"name\": \"recording:sample_recording_1779374497:1\",\n      \"comparisons\": {\n        \"split-ort\": {\n          \"max_abs_error\": {\n            \"speed_norm\": 0.0,\n            \"speed_raw\": 0.0,\n            \"region_logits\": 0.0,\n            \"region_probs\": 0.0\n          },\n          \"floats_pass\": true,\n          \"pass\": true,\n          \"speed_integer_mismatches\": 0\n        },\n        \"split-numpy\": {\n          \"max_abs_error\": {\n            \"speed_norm\": 2.9802322387695312e-08,\n            \"speed_raw\": 0.0,\n            \"region_logits\": 3.3527612686157227e-08,\n            \"region_probs\": 7.450580596923828e-09\n          },\n          \"floats_pass\": true,\n          \"pass\": true,\n          \"speed_integer_mismatches\": 0\n        }\n      },\n      \"timings_ms\": {\n        \"golden\": {\n          \"golden\": 3.843699989374727,\n          \"total\": 3.844599996227771\n        },\n        \"split-ort\": {\n          \"stage_0\": 1.2866000033682212,\n          \"camera_0\": 0.3325999859953299,\n          \"stage_1\": 1.2117000005673617,\n          \"camera_1\": 0.5787999980384484,\n          \"stage_2\": 0.898600002983585,\n          \"cross_0\": 0.05149999924469739,\n          \"stage_3\": 0.7893000001786277,\n          \"cross_1\": 0.04199999966658652,\n          \"stage_4\": 0.07699998968746513,\n          \"total\": 5.37820000317879\n        },\n        \"split-numpy\": {\n          \"stage_0\": 2.8623999969568104,\n          \"camera_0\": 36.832800004049204,\n          \"stage_1\": 0.8012999896891415,\n          \"camera_1\": 17.098800002713688,\n          \"stage_2\": 0.3951999970013276,\n          \"cross_0\": 0.1703999878372997,\n          \"stage_3\": 0.3609000123105943,\n          \"cross_1\": 0.15469999925699085,\n          \"stage_4\": 0.07159999222494662,\n          \"total\": 58.913000000757165\n        }\n      },\n      \"ffn_pipeline_numpy_vs_ort_max_abs\": {\n        \"camera_0\": 2.9802322387695312e-08,\n        \"camera_1\": 1.1920928955078125e-07,\n        \"cross_0\": 5.960464477539063e-08,\n        \"cross_1\": 1.1920928955078125e-07\n      },\n      \"ffn_pipeline_pass\": true,\n      \"ffn_same_input_numpy_vs_ort_max_abs\": {\n        \"camera_0\": 2.9802322387695312e-08,\n        \"camera_1\": 2.9802322387695312e-08,\n        \"cross_0\": 2.2351741790771484e-08,\n        \"cross_1\": 2.9802322387695312e-08\n      }\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\JW\\.zcode\\tmp\\fpga-ps-baseline-20261014\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "ps.replay",
+        "--bundle",
+        "artifacts/bundle_20261014",
+        "--recording",
+        "artifacts/sample_recording_1779374497",
+        "--backend",
+        "split-ort",
+        "--threads",
+        "4",
+        "--output-dir",
+        "artifacts/delivery_replay"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"status\": \"complete\", \"frames_expected\": 1, \"frames_completed\": 1, \"backend\": \"split-ort\", \"threads\": 4, \"hardware_execution\": false, \"timing_scope\": \"Host CPU software replay, not board performance; excludes startup, capture, serial and vehicle response\", \"elapsed_s\": 0.039017100003547966}\n",
+      "stderr": ""
+    }
+  ],
+  "validation_status": "pass",
+  "replay_status": "complete",
+  "replay_frames_completed": 1,
+  "hardware_execution": false
+}

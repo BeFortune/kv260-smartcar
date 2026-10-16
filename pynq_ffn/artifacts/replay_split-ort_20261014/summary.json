@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "frames_expected": 1,
+  "frames_completed": 1,
+  "backend": "split-ort",
+  "threads": 1,
+  "hardware_execution": false,
+  "timing_scope": "Host CPU software replay, not board performance; excludes startup, capture, serial and vehicle response",
+  "elapsed_s": 0.09533409999858122
+}

@@ -1,0 +1,20 @@
+{
+  "cwd": "D:\\ffn_build\\retry04",
+  "tool": "C:\\Python314\\python.exe",
+  "arguments": [
+    "D:/ffn_build/retry04/final_verify.py"
+  ],
+  "command": "C:\\Python314\\python.exe D:/ffn_build/retry04/final_verify.py",
+  "invocation": [
+    "C:\\Python314\\python.exe",
+    "D:/ffn_build/retry04/final_verify.py"
+  ],
+  "environment_overrides": {},
+  "path_modified_by_runner": false,
+  "started": "2026-10-15T21:15:07.811170+08:00",
+  "status": "completed",
+  "exit_code": 0,
+  "pid": 472,
+  "finished": "2026-10-15T21:15:07.902087+08:00",
+  "elapsed_seconds": 0.091
+}

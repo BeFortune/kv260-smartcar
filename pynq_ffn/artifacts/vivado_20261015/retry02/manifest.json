@@ -1,0 +1,30 @@
+{
+  "attempt": "retry02",
+  "archived_files": [
+    {
+      "path": "preflight/verify_part_20261015.tcl",
+      "bytes": 25,
+      "sha256": "7876e7b8ee9d4b3ade3d10adb15ab2663b45fcfcb92b67dbec84ee01adbb52a4"
+    },
+    {
+      "path": "preflight/vivado_part.log",
+      "bytes": 793,
+      "sha256": "bbf4a12516e941167813555b54bbe9086803add89a0c282adcb9b9eb13ac7ee9"
+    },
+    {
+      "path": "preflight/vivado_part.command.json",
+      "bytes": 918,
+      "sha256": "7ed89d05978282c893860a3fabea02f6842ad2648bf709c17114852537078d96"
+    },
+    {
+      "path": "preflight/mcp_status.json",
+      "bytes": 1574,
+      "sha256": "7d68f271b7ab2d62d01a969b020b9992652f25b213ec0a947ef25a99a77e6858"
+    },
+    {
+      "path": "run_stage.py",
+      "bytes": 3333,
+      "sha256": "cadde5d76040f88f38d8140cddfdaacdfb00661a2ecbb4af45ea1fc8e4a0f7e5"
+    }
+  ]
+}

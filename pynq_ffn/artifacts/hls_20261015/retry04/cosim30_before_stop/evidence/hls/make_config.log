@@ -1,0 +1,3 @@
+Wrote Vitis 2026.1 configuration: D:\ffn_build\retry04\hls\build\hls_config.cfg
+Explicit syn.interface.m_axi_addr64=true; verify generated RTL and ABI.
+No Vitis command was executed by this generator; no build success is claimed.
