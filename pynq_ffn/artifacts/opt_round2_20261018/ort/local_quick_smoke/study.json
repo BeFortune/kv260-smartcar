@@ -1,0 +1,544 @@
+{
+  "status": "\u5df2\u9a8c\u8bc1",
+  "exit_code": 0,
+  "actual_command": [
+    "C:/Users/BeFortuneEX/Source/Repos/FPGA/pynq_ffn/tools/ort_thread_study.py",
+    "--mode",
+    "quick",
+    "--bundle",
+    "C:/Users/BeFortuneEX/Source/Repos/FPGA/pynq_ffn/artifacts/bundle_20261014",
+    "--inputs",
+    "C:/Users/BeFortuneEX/Source/Repos/FPGA/kv260_v1/artifacts/results/single_100/first_input.npy",
+    "--frames",
+    "1",
+    "--warmup",
+    "3",
+    "--rounds",
+    "2",
+    "--profile-condition",
+    "split4",
+    "--profile-condition",
+    "split4_off",
+    "--profile-condition",
+    "mixed4_1_off",
+    "--output",
+    "C:/Users/BeFortuneEX/Source/Repos/FPGA/pynq_ffn/artifacts/opt_round2_20261018/ort/local_quick_smoke"
+  ],
+  "hardware_execution": false,
+  "versions": {
+    "python": "3.12.7",
+    "numpy": "1.26.4",
+    "onnxruntime": "1.20.1",
+    "opencv": "4.10.0",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "machine": "AMD64",
+    "logical_cpus": 16,
+    "affinity": null,
+    "thread_environment": {
+      "OMP_NUM_THREADS": "16",
+      "OPENBLAS_NUM_THREADS": null,
+      "MKL_NUM_THREADS": null,
+      "ORT_NUM_THREADS": null
+    }
+  },
+  "source_hashes": {
+    "tools\\ort_thread_study.py": "3d8cd5ee52ec6234b88b61502c88596b001f63d073753b70e419ac5a708447c5",
+    "ps\\runtime.py": "023327eadeaa935ec8392ec16095c6df2a1155368595afd37fe233b4cc6ed298",
+    "ps\\preprocess.py": "6134e12a3a2f67d92c8b43f7801f21b0e9d570d0f153ce81ca75d623d8120ddb",
+    "ps\\backends.py": "9dfa98b816521abd091473366a31f3bd00634a5b1ab4932f82fd93477036fe0f"
+  },
+  "date_utc": "2026-10-18T04:14:14Z",
+  "runs": [
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r1_01_golden4",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r1_02_split1",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r1_03_split4",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r1_04_split4_off",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r1_05_mixed4_1",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r1_06_mixed4_1_off",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r2_01_mixed4_1_off",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r2_02_mixed4_1",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r2_03_split4_off",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r2_04_split4",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r2_05_split1",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r2_06_golden4"
+  ],
+  "bundle_manifest": {
+    "schema": "pynq_ffn.bundle.v1",
+    "source_sha256": "ad58d1fc9168da94b9ce076ba8cc9754c371ead87974da8bc9cc601ad1650d5b",
+    "source": "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\kv260_v1\\v1_payload.zip",
+    "source_member": "model/model_current.onnx",
+    "files": {
+      "ABI.json": {
+        "sha256": "2be276fe46733e5f746fcabae7e249595088d19bd7060e9bda56b246f0f37be9",
+        "bytes": 9232
+      },
+      "camera_0.onnx": {
+        "sha256": "0ebf5a5309df686d4a6b21ea057ca36edb42a1de233b31f09be6bcab6a773a90",
+        "bytes": 266136
+      },
+      "camera_1.onnx": {
+        "sha256": "67cf178351805292ace31a63b9936889fd563b5a61896d7d838a4b1344315018",
+        "bytes": 266136
+      },
+      "cross_0.onnx": {
+        "sha256": "0b5ad044410fbc32279365addfc7edee92fb20afc0841fea2a520b90b5700665",
+        "bytes": 266010
+      },
+      "cross_1.onnx": {
+        "sha256": "fa7d65aa5682dbebd4192f73edf30b7ed4d87eac2ccce995c8df631d3ca14828",
+        "bytes": 266010
+      },
+      "model.onnx": {
+        "sha256": "ad58d1fc9168da94b9ce076ba8cc9754c371ead87974da8bc9cc601ad1650d5b",
+        "bytes": 2779255
+      },
+      "stage_0.onnx": {
+        "sha256": "e67e0a2ac4b4de22fa59c12f7efc762afc39009a66f05998e36b69e641c69019",
+        "bytes": 491415
+      },
+      "stage_1.onnx": {
+        "sha256": "1cc7316857e71b8e6769789a6dde9244617049de6dea04e137283fd64204aeab",
+        "bytes": 282353
+      },
+      "stage_2.onnx": {
+        "sha256": "78289a0ebe76b46026ceadc3749b63c5765c6b5d6618b48ce1fe17ba98c3a448",
+        "bytes": 284109
+      },
+      "stage_3.onnx": {
+        "sha256": "90c8f648b6d6b7e1a55f40932365a6f83f9c3992b3f970832f2f62cefe7ad999",
+        "bytes": 280919
+      },
+      "stage_4.onnx": {
+        "sha256": "933b70cce1ac6dd5731581e19c4b6cf619741c04cc4c0e13dd5ca8571a9bc2dd",
+        "bytes": 378985
+      },
+      "weights.npz": {
+        "sha256": "7401693d33963989cc8e73501c8a359652810f89bf0f3e2d5862201abef86fca",
+        "bytes": 1058790
+      }
+    }
+  },
+  "manifest_sha256": "de727e32df9f1ebd0fe84bac0d33cc8e786a5962053dc746b955b175527f4b77",
+  "orders": [
+    [
+      "golden4",
+      "split1",
+      "split4",
+      "split4_off",
+      "mixed4_1",
+      "mixed4_1_off"
+    ],
+    [
+      "mixed4_1_off",
+      "mixed4_1",
+      "split4_off",
+      "split4",
+      "split1",
+      "golden4"
+    ]
+  ],
+  "reference_crosschecks": {
+    "golden4": {
+      "max_abs_error": {
+        "speed_norm": 0.0,
+        "speed_raw": 0.0,
+        "region_logits": 0.0,
+        "region_probs": 0.0
+      },
+      "speed_integer_mismatches": 0,
+      "atol": 0.001,
+      "rtol": 0,
+      "pass": true
+    },
+    "golden1": {
+      "max_abs_error": {
+        "speed_norm": 5.960464477539063e-08,
+        "speed_raw": 0.0,
+        "region_logits": 3.725290298461914e-08,
+        "region_probs": 7.450580596923828e-09
+      },
+      "speed_integer_mismatches": 0,
+      "atol": 0.001,
+      "rtol": 0,
+      "pass": true
+    },
+    "golden4_off": {
+      "max_abs_error": {
+        "speed_norm": 0.0,
+        "speed_raw": 0.0,
+        "region_logits": 0.0,
+        "region_probs": 0.0
+      },
+      "speed_integer_mismatches": 0,
+      "atol": 0.001,
+      "rtol": 0,
+      "pass": true
+    }
+  },
+  "analysis": {
+    "rows": [
+      {
+        "run": "perf_r1_01_golden4",
+        "policy": "golden4",
+        "status": "\u5df2\u9a8c\u8bc1",
+        "run_total_ms": {
+          "n": 1,
+          "mean": 4.651299999750336,
+          "p50": 4.651299999750336,
+          "p95": 4.651299999750336,
+          "p99": 4.651299999750336,
+          "max": 4.651299999750336,
+          "min": 4.651299999750336
+        },
+        "cpu_wall_ratio": 13.338739969545161,
+        "threads": null,
+        "context_switches": null,
+        "comparison": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "speed_integer_mismatches": 0,
+          "atol": 0.001,
+          "rtol": 0,
+          "pass": true
+        },
+        "evidence": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r1_01_golden4\\report.json"
+      },
+      {
+        "run": "perf_r1_02_split1",
+        "policy": "split1",
+        "status": "\u5df2\u9a8c\u8bc1",
+        "run_total_ms": {
+          "n": 1,
+          "mean": 12.9612000000634,
+          "p50": 12.9612000000634,
+          "p95": 12.9612000000634,
+          "p99": 12.9612000000634,
+          "max": 12.9612000000634,
+          "min": 12.9612000000634
+        },
+        "cpu_wall_ratio": 1.2014702150781664,
+        "threads": null,
+        "context_switches": null,
+        "comparison": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "speed_integer_mismatches": 0,
+          "atol": 0.001,
+          "rtol": 0,
+          "pass": true
+        },
+        "evidence": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r1_02_split1\\report.json"
+      },
+      {
+        "run": "perf_r1_03_split4",
+        "policy": "split4",
+        "status": "\u5df2\u9a8c\u8bc1",
+        "run_total_ms": {
+          "n": 1,
+          "mean": 18.678100000215636,
+          "p50": 18.678100000215636,
+          "p95": 18.678100000215636,
+          "p99": 18.678100000215636,
+          "max": 18.678100000215636,
+          "min": 18.678100000215636
+        },
+        "cpu_wall_ratio": 7.51402618214392,
+        "threads": null,
+        "context_switches": null,
+        "comparison": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "speed_integer_mismatches": 0,
+          "atol": 0.001,
+          "rtol": 0,
+          "pass": true
+        },
+        "evidence": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r1_03_split4\\report.json"
+      },
+      {
+        "run": "perf_r1_04_split4_off",
+        "policy": "split4_off",
+        "status": "\u5df2\u9a8c\u8bc1",
+        "run_total_ms": {
+          "n": 1,
+          "mean": 7.661999999982072,
+          "p50": 7.661999999982072,
+          "p95": 7.661999999982072,
+          "p99": 7.661999999982072,
+          "max": 7.661999999982072,
+          "min": 7.661999999982072
+        },
+        "cpu_wall_ratio": 0.0,
+        "threads": null,
+        "context_switches": null,
+        "comparison": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "speed_integer_mismatches": 0,
+          "atol": 0.001,
+          "rtol": 0,
+          "pass": true
+        },
+        "evidence": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r1_04_split4_off\\report.json"
+      },
+      {
+        "run": "perf_r1_05_mixed4_1",
+        "policy": "mixed4_1",
+        "status": "\u5df2\u9a8c\u8bc1",
+        "run_total_ms": {
+          "n": 1,
+          "mean": 27.3602999996001,
+          "p50": 27.3602999996001,
+          "p95": 27.3602999996001,
+          "p99": 27.3602999996001,
+          "max": 27.3602999996001,
+          "min": 27.3602999996001
+        },
+        "cpu_wall_ratio": 10.835961338936752,
+        "threads": null,
+        "context_switches": null,
+        "comparison": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "speed_integer_mismatches": 0,
+          "atol": 0.001,
+          "rtol": 0,
+          "pass": true
+        },
+        "evidence": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r1_05_mixed4_1\\report.json"
+      },
+      {
+        "run": "perf_r1_06_mixed4_1_off",
+        "policy": "mixed4_1_off",
+        "status": "\u5df2\u9a8c\u8bc1",
+        "run_total_ms": {
+          "n": 1,
+          "mean": 9.269999999560241,
+          "p50": 9.269999999560241,
+          "p95": 9.269999999560241,
+          "p99": 9.269999999560241,
+          "max": 9.269999999560241,
+          "min": 9.269999999560241
+        },
+        "cpu_wall_ratio": 1.6790964579536105,
+        "threads": null,
+        "context_switches": null,
+        "comparison": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "speed_integer_mismatches": 0,
+          "atol": 0.001,
+          "rtol": 0,
+          "pass": true
+        },
+        "evidence": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r1_06_mixed4_1_off\\report.json"
+      },
+      {
+        "run": "perf_r2_01_mixed4_1_off",
+        "policy": "mixed4_1_off",
+        "status": "\u5df2\u9a8c\u8bc1",
+        "run_total_ms": {
+          "n": 1,
+          "mean": 8.062599999902886,
+          "p50": 8.062599999902886,
+          "p95": 8.062599999902886,
+          "p99": 8.062599999902886,
+          "max": 8.062599999902886,
+          "min": 8.062599999902886
+        },
+        "cpu_wall_ratio": 7.70701029695426,
+        "threads": null,
+        "context_switches": null,
+        "comparison": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "speed_integer_mismatches": 0,
+          "atol": 0.001,
+          "rtol": 0,
+          "pass": true
+        },
+        "evidence": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r2_01_mixed4_1_off\\report.json"
+      },
+      {
+        "run": "perf_r2_02_mixed4_1",
+        "policy": "mixed4_1",
+        "status": "\u5df2\u9a8c\u8bc1",
+        "run_total_ms": {
+          "n": 1,
+          "mean": 24.218699999437376,
+          "p50": 24.218699999437376,
+          "p95": 24.218699999437376,
+          "p99": 24.218699999437376,
+          "max": 24.218699999437376,
+          "min": 24.218699999437376
+        },
+        "cpu_wall_ratio": 8.37459647314677,
+        "threads": null,
+        "context_switches": null,
+        "comparison": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "speed_integer_mismatches": 0,
+          "atol": 0.001,
+          "rtol": 0,
+          "pass": true
+        },
+        "evidence": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r2_02_mixed4_1\\report.json"
+      },
+      {
+        "run": "perf_r2_03_split4_off",
+        "policy": "split4_off",
+        "status": "\u5df2\u9a8c\u8bc1",
+        "run_total_ms": {
+          "n": 1,
+          "mean": 7.87419999960548,
+          "p50": 7.87419999960548,
+          "p95": 7.87419999960548,
+          "p99": 7.87419999960548,
+          "max": 7.87419999960548,
+          "min": 7.87419999960548
+        },
+        "cpu_wall_ratio": 1.973052833547884,
+        "threads": null,
+        "context_switches": null,
+        "comparison": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "speed_integer_mismatches": 0,
+          "atol": 0.001,
+          "rtol": 0,
+          "pass": true
+        },
+        "evidence": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r2_03_split4_off\\report.json"
+      },
+      {
+        "run": "perf_r2_04_split4",
+        "policy": "split4",
+        "status": "\u5df2\u9a8c\u8bc1",
+        "run_total_ms": {
+          "n": 1,
+          "mean": 26.54400000028545,
+          "p50": 26.54400000028545,
+          "p95": 26.54400000028545,
+          "p99": 26.54400000028545,
+          "max": 26.54400000028545,
+          "min": 26.54400000028545
+        },
+        "cpu_wall_ratio": 11.168355792391592,
+        "threads": null,
+        "context_switches": null,
+        "comparison": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "speed_integer_mismatches": 0,
+          "atol": 0.001,
+          "rtol": 0,
+          "pass": true
+        },
+        "evidence": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r2_04_split4\\report.json"
+      },
+      {
+        "run": "perf_r2_05_split1",
+        "policy": "split1",
+        "status": "\u5df2\u9a8c\u8bc1",
+        "run_total_ms": {
+          "n": 1,
+          "mean": 13.084799999887764,
+          "p50": 13.084799999887764,
+          "p95": 13.084799999887764,
+          "p99": 13.084799999887764,
+          "max": 13.084799999887764,
+          "min": 13.084799999887764
+        },
+        "cpu_wall_ratio": 1.1916564978148672,
+        "threads": null,
+        "context_switches": null,
+        "comparison": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "speed_integer_mismatches": 0,
+          "atol": 0.001,
+          "rtol": 0,
+          "pass": true
+        },
+        "evidence": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r2_05_split1\\report.json"
+      },
+      {
+        "run": "perf_r2_06_golden4",
+        "policy": "golden4",
+        "status": "\u5df2\u9a8c\u8bc1",
+        "run_total_ms": {
+          "n": 1,
+          "mean": 7.01030000072933,
+          "p50": 7.01030000072933,
+          "p95": 7.01030000072933,
+          "p99": 7.01030000072933,
+          "max": 7.01030000072933,
+          "min": 7.01030000072933
+        },
+        "cpu_wall_ratio": 0.0,
+        "threads": null,
+        "context_switches": null,
+        "comparison": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "speed_integer_mismatches": 0,
+          "atol": 0.001,
+          "rtol": 0,
+          "pass": true
+        },
+        "evidence": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r2_06_golden4\\report.json"
+      }
+    ],
+    "limitation": "CPU-only thread/spin intervention. No causal attribution to graph fusion; profiling is separate. Compare both orders and numerical gates before adopting any policy."
+  },
+  "end_utc": "2026-10-18T04:14:37Z"
+}

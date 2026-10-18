@@ -15,9 +15,11 @@ OUTPUT_NAMES = ("speed_norm", "speed_raw", "region_logits", "region_probs")
 
 
 class Runtime:
-    def __init__(self, bundle, mode="split-ort", threads=1, backend=None):
+    def __init__(self, bundle, mode="split-ort", threads=1, backend=None, *, spinning: bool | None = None):
         if mode not in ("golden", "split-ort", "split-numpy") or threads not in (1, 2, 3, 4):
             raise ValueError("Invalid runtime mode or thread count")
+        if spinning is not None and type(spinning) is not bool:
+            raise ValueError("spinning must be None or bool")
         if backend is not None and mode != "split-numpy":
             raise ValueError("Injected backend requires split-numpy mode")
         self.bundle = Path(bundle).resolve()
@@ -56,6 +58,10 @@ class Runtime:
         options.execution_mode = ort.ExecutionMode.ORT_SEQUENTIAL
         options.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_EXTENDED
         options.log_severity_level = 3
+        if spinning is not None:
+            value = "1" if spinning else "0"
+            options.add_session_config_entry("session.intra_op.allow_spinning", value)
+            options.add_session_config_entry("session.inter_op.allow_spinning", value)
         def session(name):
             return ort.InferenceSession(str(self.bundle / name), sess_options=options, providers=["CPUExecutionProvider"])
         self.sessions = {}

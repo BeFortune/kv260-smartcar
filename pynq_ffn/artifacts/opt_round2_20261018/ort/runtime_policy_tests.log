@@ -1,0 +1,56 @@
+F..F...............                                                      [100%]
+================================== FAILURES ===================================
+__ test_spinning_config_is_optional_and_applied_to_every_session[None-None] ___
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000018F81C9A7E0>
+spinning = None, expected = None
+
+    @pytest.mark.skipif(not BUNDLE.is_dir(), reason="Reviewed bundle unavailable")
+    @pytest.mark.parametrize("spinning,expected", [(None, None), (False, "0"), (True, "1")])
+    def test_spinning_config_is_optional_and_applied_to_every_session(monkeypatch, spinning, expected):
+        captured = []
+        original = runtime_module.ort.InferenceSession
+        def record(path, sess_options=None, providers=None):
+            captured.append((Path(path).name, sess_options))
+            return original(path, sess_options=sess_options, providers=providers)
+        monkeypatch.setattr(runtime_module.ort, "InferenceSession", record)
+        runtime = Runtime(BUNDLE, mode="split-ort", threads=4, spinning=spinning)
+        assert len(captured) == 9
+        assert len(runtime.sessions) == 9
+        for _, options in captured:
+            assert options.intra_op_num_threads == 4
+            assert options.inter_op_num_threads == 1
+            if expected is None:
+>               with pytest.raises(RuntimeError, match="not found"):
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               AssertionError: Regex pattern did not match.
+E                 Expected regex: 'not found'
+E                 Actual message: 'SessionOptions does not have configuration with key: session.intra_op.allow_spinning'
+
+pynq_ffn\tests\test_runtime_thread_policy.py:32: AssertionError
+________________ test_golden_default_and_explicit_spin_values _________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000018FA2057800>
+
+    @pytest.mark.skipif(not BUNDLE.is_dir(), reason="Reviewed bundle unavailable")
+    def test_golden_default_and_explicit_spin_values(monkeypatch):
+        captured = []
+        original = runtime_module.ort.InferenceSession
+        def record(path, sess_options=None, providers=None):
+            captured.append((Path(path).name, sess_options))
+            return original(path, sess_options=sess_options, providers=providers)
+        monkeypatch.setattr(runtime_module.ort, "InferenceSession", record)
+        Runtime(BUNDLE, mode="golden")
+        assert len(captured) == 1 and captured[-1][0] == "model.onnx"
+        for key in ("session.intra_op.allow_spinning", "session.inter_op.allow_spinning"):
+>           with pytest.raises(RuntimeError, match="not found"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           AssertionError: Regex pattern did not match.
+E             Expected regex: 'not found'
+E             Actual message: 'SessionOptions does not have configuration with key: session.intra_op.allow_spinning'
+
+pynq_ffn\tests\test_runtime_thread_policy.py:53: AssertionError
+=========================== short test summary info ===========================
+FAILED pynq_ffn/tests/test_runtime_thread_policy.py::test_spinning_config_is_optional_and_applied_to_every_session[None-None]
+FAILED pynq_ffn/tests/test_runtime_thread_policy.py::test_golden_default_and_explicit_spin_values
+2 failed, 17 passed in 2.86s

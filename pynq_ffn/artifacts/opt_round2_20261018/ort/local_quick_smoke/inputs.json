@@ -1,0 +1,23 @@
+{
+  "source": [
+    {
+      "path": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\kv260_v1\\artifacts\\results\\single_100\\first_input.npy",
+      "sha256": "9c84cfffdf8d8646f2dbfac227e98f217b6e2ecd947294c3f3246908120d27b2"
+    }
+  ],
+  "preprocessing_ms": [],
+  "decode_preprocess_in_run_total": false,
+  "preprocessing_summary_ms": null,
+  "n": 1,
+  "shape": [
+    1,
+    1,
+    3,
+    3,
+    66,
+    200
+  ],
+  "dtype": "float32",
+  "snapshot_sha256": "62ef4f31720d414a9d1be522af7e8bf2992a6155de4b871661dc9f9ee3463d4a",
+  "prepare_wall_ms": 14.768300000469026
+}

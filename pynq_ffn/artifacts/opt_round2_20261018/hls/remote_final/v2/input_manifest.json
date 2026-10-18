@@ -1,0 +1,129 @@
+{
+  "candidate": "interleaved_r04_v2",
+  "state": "frozen_local_input_only",
+  "files": {
+    "ffn_accel.cpp": {
+      "sha256": "553b9c9b36fee41d791908f1fc3b8314ea4631db403743f5e80665d18fad1350",
+      "bytes": 7491
+    },
+    "ffn_accel.hpp": {
+      "sha256": "fcdced1362b460a6cea73fc5869564e6797c041469a50b9c56deba1253cd7478",
+      "bytes": 877
+    },
+    "host_bridge.cpp": {
+      "sha256": "a8cfe5dc62eb66fa3e3102e4d12eb75a265abbea20e04e4d5b104cecfc480740",
+      "bytes": 503
+    },
+    "test_support.hpp": {
+      "sha256": "e04e6932815d2a9875c166b82a19e79dde05fe59e24d9ec26f2fc3d966cceab3",
+      "bytes": 5811
+    },
+    "testbench.cpp": {
+      "sha256": "d0bbaa59b24a1d37f253f4478645fd08f5aef469d50a14f92e37890a7f8769ba",
+      "bytes": 2142
+    },
+    "testbench_small.cpp": {
+      "sha256": "d3b420cbb6cdaf2ae2a037c3e468dfa6543c25ac0f4f246359c71e456f416d1d",
+      "bytes": 1495
+    },
+    "make_config.py": {
+      "sha256": "c2b814af547601b31dfd3987841303a8a0305d8851ee78b023ec1860d7c45bcc",
+      "bytes": 2155
+    },
+    "build/full.cfg": {
+      "sha256": "a5da7a9349c61aa1761f12b83f96f6d4cf15d53fa8327eb0439f33c9304509fe",
+      "bytes": 538
+    },
+    "build/small.cfg": {
+      "sha256": "7066c842dd523ccf025b72934af2cc108603063e83a49f8abbd43cfb216d6119",
+      "bytes": 550
+    }
+  },
+  "part": "xck26-sfvc784-2LV-c",
+  "clock_ns": 10,
+  "token_tile": 8,
+  "output_lanes": 16,
+  "fc1_step_count": 1024,
+  "fc2_step_count": 2048,
+  "target_step_ii": 1,
+  "fp_contract": "off",
+  "fadd": {
+    "impl": "fulldsp",
+    "latency": 6
+  },
+  "fmul": {
+    "impl": "maxdsp",
+    "latency": 3
+  },
+  "dependence": "true RAW distance=8, ctx=step&7, reduction_index=step>>3",
+  "tool_reference": "https://docs.amd.com/r/en-US/ug1399-vitis-hls/Bind_op",
+  "small_rtl_scope": {
+    "valid_tokens": 30,
+    "transactions": 10,
+    "valid_calls": [
+      {
+        "tokens": 1,
+        "weights": "A"
+      },
+      {
+        "tokens": 3,
+        "weights": "B/reload"
+      },
+      {
+        "tokens": 7,
+        "weights": "A/revisit"
+      },
+      {
+        "tokens": 8,
+        "weights": "zero"
+      },
+      {
+        "tokens": 9,
+        "weights": "bias/exact-erf"
+      },
+      {
+        "tokens": 1,
+        "weights": "C/reload"
+      },
+      {
+        "tokens": 1,
+        "weights": "A/revisit"
+      }
+    ],
+    "invalid_call_counts": [
+      0,
+      661,
+      4294967295
+    ],
+    "covers_659_660": false
+  },
+  "full_tb_transactions": 30,
+  "full_tb_boundary_counts": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    15,
+    16,
+    17,
+    659,
+    660
+  ],
+  "full_tb_repeated_tail_counts": [
+    9,
+    7,
+    1,
+    15,
+    17,
+    2,
+    659,
+    9
+  ],
+  "hls_executed_here": false,
+  "hardware_executed_here": false,
+  "narrow_correction_budget_used": true
+}

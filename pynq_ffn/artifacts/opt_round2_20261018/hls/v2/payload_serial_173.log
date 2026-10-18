@@ -1,0 +1,18 @@
+payload frames=10 status=pass
+payload frames=20 status=pass
+payload frames=30 status=pass
+payload frames=40 status=pass
+payload frames=50 status=pass
+payload frames=60 status=pass
+payload frames=70 status=pass
+payload frames=80 status=pass
+payload frames=90 status=pass
+payload frames=100 status=pass
+payload frames=110 status=pass
+payload frames=120 status=pass
+payload frames=130 status=pass
+payload frames=140 status=pass
+payload frames=150 status=pass
+payload frames=160 status=pass
+payload frames=170 status=pass
+{"status": "pass", "output": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\v2\\payload_serial_173.json", "synthetic_cases": 19, "payload_frames": 173}

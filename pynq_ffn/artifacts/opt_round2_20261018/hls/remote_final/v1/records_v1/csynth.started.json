@@ -1,0 +1,53 @@
+{
+  "stage": "csynth",
+  "status": "未执行",
+  "started": "2026-10-18T04:17:32.392467+00:00",
+  "cwd": "D:\\i4",
+  "command": "\"C:\\WINDOWS\\system32\\cmd.exe\" /d /s /v:off /c \"\"D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\bin\\v++.bat\" \"--compile\" \"--mode\" \"hls\" \"--config\" \"D:\\i4\\build\\full.cfg\" \"--work_dir\" \"D:\\i4\\work\"\"",
+  "arguments": [
+    "D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\bin\\v++.bat",
+    "--compile",
+    "--mode",
+    "hls",
+    "--config",
+    "D:\\i4\\build\\full.cfg",
+    "--work_dir",
+    "D:\\i4\\work"
+  ],
+  "inputs": {
+    "ffn_accel.cpp": {
+      "bytes": 7332,
+      "sha256": "bb7d5cdce5597b4c09c9a9505953aa5cc171ffd71f66265eb78cd1f6c063a781"
+    },
+    "ffn_accel.hpp": {
+      "bytes": 850,
+      "sha256": "b958fb3cf1ee318ab4fc11295835022c4565df4fc4fd13fe4bc24a5250e58eec"
+    },
+    "host_bridge.cpp": {
+      "bytes": 503,
+      "sha256": "a8cfe5dc62eb66fa3e3102e4d12eb75a265abbea20e04e4d5b104cecfc480740"
+    },
+    "testbench.cpp": {
+      "bytes": 2077,
+      "sha256": "222cc57a5d93f37bc5a4997529213317dcf15fa47c30e6bfe9940bbe12bf6e8b"
+    },
+    "testbench_small.cpp": {
+      "bytes": 1568,
+      "sha256": "35294d8a32d7bbfb964a8524cc62758bea598cf9dba75f5d94f686c06485d948"
+    },
+    "test_support.hpp": {
+      "bytes": 5811,
+      "sha256": "e04e6932815d2a9875c166b82a19e79dde05fe59e24d9ec26f2fc3d966cceab3"
+    },
+    "build/full.cfg": {
+      "bytes": 535,
+      "sha256": "f7606985606f14ee185e5d69e8b361a28900ced58c0cbbe8bc3ac9f6591b85e0"
+    },
+    "build/small.cfg": {
+      "bytes": 547,
+      "sha256": "a23240833b233cefee99e3b6492dec03d46356a911ce14ddc010def0addbf863"
+    }
+  },
+  "exit_code": null,
+  "scope": "HLS tool execution only; no board programming"
+}

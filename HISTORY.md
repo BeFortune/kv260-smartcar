@@ -7,8 +7,8 @@
 | 01 | 2026-10-14 | 离线 PS 迁移基线、FFN 接口与主机验证 | 已在仓库 | `pynq_ffn/`（commit `63605e8e`） |
 | 02 | 2026-10-15 | retry04 串行核：HLS、Vivado 系统实现、KV260 板端 bring-up | 已在仓库 | `pynq_ffn/artifacts/{hls,vivado,board}_20261015/`（commit `63605e8e`） |
 | 03 | 2026-10-17 | 首轮四路输出通道候选（r01 → r02 主机修正） | 已归档 | `pynq_ffn/artifacts/ffn_opt_20261017/`、`pynq_ffn/tools/validate_cpp_parallel.py` |
-| 04 | 2026-10-18 | r03 16 通道候选：系统构建、100 MHz 板测、加速目标失败 | 本次归档 | `pynq_ffn/artifacts/ffn_opt_20261018/`、`pynq_ffn/hls/ffn_accel.cpp/.hpp` |
-| 05 | 2026-10-18 | 第二轮：ORT 空转诊断 + r04 token 交错候选 | 尚未推送 | 本地 `pynq_ffn/docs/04_验证记录.md` 第 21 节 |
+| 04 | 2026-10-18 | r03 16 通道候选：系统构建、100 MHz 板测、加速目标失败 | 已归档 | `pynq_ffn/artifacts/ffn_opt_20261018/`、`pynq_ffn/hls/ffn_accel.cpp/.hpp` |
+| 05 | 2026-10-18 | 第二轮：ORT 空转诊断 + r04 token 交错候选 | 本次归档 | `pynq_ffn/artifacts/opt_round2_20261018/`、`pynq_ffn/hls/candidates/interleaved_r04/` |
 
 ## 03（2026-10-17 四路输出候选）边界
 
@@ -27,3 +27,12 @@
 - **失败**：100 MHz 下 4 线程 split-PL 中位 372.2187 ms，仍比完整 golden 64.7386 ms 慢约 5.75 倍；1 线程 411.313 vs 189.438 ms。**PL 加速目标失败，未达到 15 Hz。**
 - 未执行：完整 659/660-token RTL cosim、长时稳定性/功耗/温度、实时相机/串口/电机/实车。
 - 归档说明：Windows 主机 `.exe/.dll` 与 `__pycache__` 未提交；原始日志、报告、ZIP、`.bit/.hwh/.xsa` 与模型/权重测试夹具保留，便于按 SHA 复核。证据入口 `pynq_ffn/artifacts/ffn_opt_20261018/README.md`。
+
+## 05（2026-10-18 第二轮：ORT 空转诊断 + r04 候选）边界
+
+- ORT 控制实验（纯 CPU，117 帧、warmup 3、正反序）：split-4 允许空转 P50 `404.512/411.005 ms`，关闭空转 `75.181/77.320 ms`，线程数同为 31；golden 4 线程 `64.793/64.624 ms`。四输出过 `1e-3` 与整数门槛，但 split-1 与 golden-4 非逐位。
+- 生产 Runtime 新增可选 `Runtime(..., spinning: bool | None = None)`：`None` 保持旧默认，`False` 关闭两类 `allow_spinning`。`Runtime.run`、模型/ABI/manifest/精度/预处理/调度未变；SHA `49ace8fbf61a29e2e54efc174b45477cd08fc5fe469d13547df17326b9745576`。KV260 复验 golden `None` vs split `False` 四输出 0 差、整数 0 分歧，P50 `65.2979/79.6322 ms`；仍慢于 golden。
+- 测试：97 项 = 92 通过、5 显式 skip；原 48 项独立通过，新 policy 21 项通过。
+- r04 v1（4 context/16 lane）主机 27 项、HLS C 27 项通过，但 csynth 关键模块 slack **-3.70 ns**，失败不做 RTL。r04 v2（8 context、fadd6/fmul3）主机 30 项、两套 173 帧逐位零差、HLS C 30 项、小范围 RTL 10 事务/30 token 通过，FC1/FC2 II=1/1；csynth 静态估计 3,620,660 cycles/660 token ≈ 36.2066 ms@100 MHz；OOC WNS **+2.435662 ns**、WHS +0.034 ns、未路由 0。
+- **未执行**：r04 v2 系统 bit/hwh、Overlay 下载/上板、完整 659/660-token RTL、长时稳定性/功耗/温度、实时链路/实车。OOC 不是系统 Overlay，36.21 ms 不是板测成绩。
+- 归档说明：Windows 主机 `.exe/.dll` 与 `__pycache__` 未提交；ORT 证据、HLS/RTL/OOC 报告与候选源码保留。证据入口 `pynq_ffn/artifacts/opt_round2_20261018/README.md`。

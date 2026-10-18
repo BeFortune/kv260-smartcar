@@ -1,0 +1,159 @@
+....................FFFF.F.............................................. [ 84%]
+.............                                                            [100%]
+================================== FAILURES ===================================
+________________ test_real_adapter_matches_production[golden1] ________________
+
+condition = 'golden1'
+
+    @pytest.mark.skipif(not BUNDLE.is_dir() or not FIRST_INPUT.is_file(), reason="Reviewed local bundle/input unavailable")
+    @pytest.mark.parametrize("condition", ["golden1", "split1", "split4_off", "mixed4_1_off"])
+    def test_real_adapter_matches_production(condition):
+        x = np.load(FIRST_INPUT, allow_pickle=False)
+        spec = study.policy(condition)
+        original_factory = study.ort.InferenceSession
+        original_init = Runtime.__init__
+        baseline = Runtime(BUNDLE, mode=spec["mode"], threads=1)
+        expected = baseline.run(x)
+        baseline.sessions.clear()
+>       adapter = study.PolicyRuntime(BUNDLE, spec)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+pynq_ffn\tests\test_ort_thread_study.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <tools.ort_thread_study.PolicyRuntime object at 0x00000214E98C2300>
+bundle = WindowsPath('C:/Users/BeFortuneEX/Source/Repos/FPGA/pynq_ffn/artifacts/bundle_20261014')
+spec = {'name': 'golden1', 'mode': 'golden', 'heavy_threads': 1, 'small_threads': 1, ...}
+profile_dir = None
+
+    def __init__(self, bundle, spec, profile_dir=None):
+        runtime_file = Path(production.__file__).resolve()
+        if sha256(runtime_file) != FROZEN_RUNTIME_SHA256:
+>           raise ValueError("Production Runtime changed since experiment freeze")
+E           ValueError: Production Runtime changed since experiment freeze
+
+pynq_ffn\tools\ort_thread_study.py:114: ValueError
+________________ test_real_adapter_matches_production[split1] _________________
+
+condition = 'split1'
+
+    @pytest.mark.skipif(not BUNDLE.is_dir() or not FIRST_INPUT.is_file(), reason="Reviewed local bundle/input unavailable")
+    @pytest.mark.parametrize("condition", ["golden1", "split1", "split4_off", "mixed4_1_off"])
+    def test_real_adapter_matches_production(condition):
+        x = np.load(FIRST_INPUT, allow_pickle=False)
+        spec = study.policy(condition)
+        original_factory = study.ort.InferenceSession
+        original_init = Runtime.__init__
+        baseline = Runtime(BUNDLE, mode=spec["mode"], threads=1)
+        expected = baseline.run(x)
+        baseline.sessions.clear()
+>       adapter = study.PolicyRuntime(BUNDLE, spec)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+pynq_ffn\tests\test_ort_thread_study.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <tools.ort_thread_study.PolicyRuntime object at 0x00000214E982E180>
+bundle = WindowsPath('C:/Users/BeFortuneEX/Source/Repos/FPGA/pynq_ffn/artifacts/bundle_20261014')
+spec = {'name': 'split1', 'mode': 'split-ort', 'heavy_threads': 1, 'small_threads': 1, ...}
+profile_dir = None
+
+    def __init__(self, bundle, spec, profile_dir=None):
+        runtime_file = Path(production.__file__).resolve()
+        if sha256(runtime_file) != FROZEN_RUNTIME_SHA256:
+>           raise ValueError("Production Runtime changed since experiment freeze")
+E           ValueError: Production Runtime changed since experiment freeze
+
+pynq_ffn\tools\ort_thread_study.py:114: ValueError
+______________ test_real_adapter_matches_production[split4_off] _______________
+
+condition = 'split4_off'
+
+    @pytest.mark.skipif(not BUNDLE.is_dir() or not FIRST_INPUT.is_file(), reason="Reviewed local bundle/input unavailable")
+    @pytest.mark.parametrize("condition", ["golden1", "split1", "split4_off", "mixed4_1_off"])
+    def test_real_adapter_matches_production(condition):
+        x = np.load(FIRST_INPUT, allow_pickle=False)
+        spec = study.policy(condition)
+        original_factory = study.ort.InferenceSession
+        original_init = Runtime.__init__
+        baseline = Runtime(BUNDLE, mode=spec["mode"], threads=1)
+        expected = baseline.run(x)
+        baseline.sessions.clear()
+>       adapter = study.PolicyRuntime(BUNDLE, spec)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+pynq_ffn\tests\test_ort_thread_study.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <tools.ort_thread_study.PolicyRuntime object at 0x00000214C6627C50>
+bundle = WindowsPath('C:/Users/BeFortuneEX/Source/Repos/FPGA/pynq_ffn/artifacts/bundle_20261014')
+spec = {'name': 'split4_off', 'mode': 'split-ort', 'heavy_threads': 4, 'small_threads': 4, ...}
+profile_dir = None
+
+    def __init__(self, bundle, spec, profile_dir=None):
+        runtime_file = Path(production.__file__).resolve()
+        if sha256(runtime_file) != FROZEN_RUNTIME_SHA256:
+>           raise ValueError("Production Runtime changed since experiment freeze")
+E           ValueError: Production Runtime changed since experiment freeze
+
+pynq_ffn\tools\ort_thread_study.py:114: ValueError
+_____________ test_real_adapter_matches_production[mixed4_1_off] ______________
+
+condition = 'mixed4_1_off'
+
+    @pytest.mark.skipif(not BUNDLE.is_dir() or not FIRST_INPUT.is_file(), reason="Reviewed local bundle/input unavailable")
+    @pytest.mark.parametrize("condition", ["golden1", "split1", "split4_off", "mixed4_1_off"])
+    def test_real_adapter_matches_production(condition):
+        x = np.load(FIRST_INPUT, allow_pickle=False)
+        spec = study.policy(condition)
+        original_factory = study.ort.InferenceSession
+        original_init = Runtime.__init__
+        baseline = Runtime(BUNDLE, mode=spec["mode"], threads=1)
+        expected = baseline.run(x)
+        baseline.sessions.clear()
+>       adapter = study.PolicyRuntime(BUNDLE, spec)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+pynq_ffn\tests\test_ort_thread_study.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <tools.ort_thread_study.PolicyRuntime object at 0x00000214E98F2120>
+bundle = WindowsPath('C:/Users/BeFortuneEX/Source/Repos/FPGA/pynq_ffn/artifacts/bundle_20261014')
+spec = {'name': 'mixed4_1_off', 'mode': 'split-ort', 'heavy_threads': 4, 'small_threads': 1, ...}
+profile_dir = None
+
+    def __init__(self, bundle, spec, profile_dir=None):
+        runtime_file = Path(production.__file__).resolve()
+        if sha256(runtime_file) != FROZEN_RUNTIME_SHA256:
+>           raise ValueError("Production Runtime changed since experiment freeze")
+E           ValueError: Production Runtime changed since experiment freeze
+
+pynq_ffn\tools\ort_thread_study.py:114: ValueError
+______________ test_cli_subprocess_reverse_profile_and_immutable ______________
+
+tmp_path = WindowsPath('C:/Users/BeFortuneEX/AppData/Local/Temp/pytest-of-BeFortuneEX/pytest-7/test_cli_subprocess_reverse_pr0')
+
+    @pytest.mark.skipif(not BUNDLE.is_dir() or not FIRST_INPUT.is_file(), reason="Reviewed local bundle/input unavailable")
+    def test_cli_subprocess_reverse_profile_and_immutable(tmp_path):
+        output = tmp_path / "trial"
+        command = [sys.executable, str(ROOT / "tools/ort_thread_study.py"), "--mode", "one", "--bundle", str(BUNDLE),
+                   "--inputs", str(FIRST_INPUT), "--frames", "1", "--warmup", "1", "--rounds", "2",
+                   "--condition", "split4_off", "--profile-condition", "split4_off", "--output", str(output)]
+        result = subprocess.run(command, capture_output=True, text=True)
+>       assert result.returncode == 0, result.stderr
+E       AssertionError: Traceback (most recent call last):
+E           File "C:\Users\BeFortuneEX\Source\Repos\FPGA\pynq_ffn\tools\ort_thread_study.py", line 403, in study
+E             raise ValueError("Production Runtime changed since freeze")
+E         ValueError: Production Runtime changed since freeze
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe', 'C:\\Users\...   raise ValueError("Production Runtime changed since freeze")\nValueError: Production Runtime changed since freeze\n').returncode
+
+pynq_ffn\tests\test_ort_thread_study.py:140: AssertionError
+=========================== short test summary info ===========================
+FAILED pynq_ffn/tests/test_ort_thread_study.py::test_real_adapter_matches_production[golden1]
+FAILED pynq_ffn/tests/test_ort_thread_study.py::test_real_adapter_matches_production[split1]
+FAILED pynq_ffn/tests/test_ort_thread_study.py::test_real_adapter_matches_production[split4_off]
+FAILED pynq_ffn/tests/test_ort_thread_study.py::test_real_adapter_matches_production[mixed4_1_off]
+FAILED pynq_ffn/tests/test_ort_thread_study.py::test_cli_subprocess_reverse_profile_and_immutable
+5 failed, 80 passed in 4.04s

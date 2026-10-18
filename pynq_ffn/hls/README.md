@@ -1,27 +1,31 @@
 # FFN HLS correctness/reference IP
 
-## 2026-10-15 retry04 build update
+**最新 2026-10-18 第二轮（候选，不替换 r03）：** 本目录 `ffn_accel.cpp/.hpp` 仍是正式 r03，不替换。独立候选在 `candidates/interleaved_r04/`：v1（4 context/16 lane、真实 RAW distance 4）主机 27 项、HLS csim 27 通过，但 csynth 关键模块 slack **-3.70 ns**，失败且不做 RTL；v2（8 context、fadd6/fmul3、真实 RAW distance 8）主机 30 项、两套 19 组合成/173 帧回归、HLS C 30 项、小范围 RTL 10 事务/30 token 均通过，csynth FC1/FC2 step II=1/1，静态估计 3,620,660 cycles/660 token（100 MHz 约 36.2066 ms），同源 OOC 实现 WNS **+2.435662 ns**、WHS +0.034 ns、未路由 0、post-route CP **7.564 ns**。**v2 仍是 OOC IP，不是 PS+PL 系统 bit/hwh，也未上板；完整 659/660-token RTL 未执行。** 下方构建命令仍针对本目录 r03；候选用各自目录的 `make_config.py`/源码独立构建，别移动或覆盖正式文件。详见 `../docs/04_验证记录.md` 第 21 节。
 
-The K26 license/device gate now passes. Full HLS C simulation and C synthesis,
-the emitted register ABI and both 64-bit AXI master address channels, HLS backend
-implementation/IP packaging, and the KV260 Vivado system implementation have
-been verified with real tool logs. A matching `ffn_overlay_wrapper.bit` / `.hwh`
-pair is available in
-[`artifacts/vivado_20261015/retry04/overlay/`](../artifacts/vivado_20261015/retry04/overlay/).
+**2026-10-18 r03 状态（中文）：** 当前源码为 r03：`ffn_accel.cpp` SHA-256 `829c9ec63604e327ad4ea13855b405113ea74fea6a62721d512ded6341b0b9b6`，`ffn_accel.hpp` `715f0ca11cc5e9920569654f7296c8443a0186f988557bd27ec1af3f476c7c35`；16 个输出通道分组并行，FC1/FC2 实际/目标 II=4/4，GELU 单遍 II=1，保留通道内 FP32 累加顺序与 exact-erf。工具机上已完成：完整 C 仿真 19 项 PASS；缩小 RTL cosim 12 事务/30 有效 token PASS（**未覆盖 659/660-token**）；r03b HLS OOC WNS +2.609004 ns、WHS +0.032047 ns。系统实现与板端数值见 `../docs/04_验证记录.md` 第 19 节；100 MHz 离线复测（PL0 DIV15）见第 20 节：117 帧数值通过，但 split-PL 中位 372.22 ms，仍比完整 golden 64.74 ms 慢约 5.75 倍，**加速目标失败**。**下方 2026-10-17 四路候选（II=1）以及“本机无工具/许可阻塞”段落均为历史记录，不再代表当前源码或当前构建状态。**
+
+**历史（2026-10-17 四路候选，已被 2026-10-18 r03 取代）：** 当时的 `ffn_accel.cpp` 把 FC1/FC2 输出通道按 4 路分组，并对每个归约循环请求 `PIPELINE II=1`，同时保留各通道原递增索引的 FP32 累加顺序。主机回归通过；**当时主机没有 Vivado/Vitis/HLS，因此该候选未跑 HLS C 仿真、综合、RTL 协同仿真、打包、Vivado 实现或板测，实际 II、资源、时序与加速未知。** 可移植 staged 源/配置与哈希在 [`artifacts/ffn_opt_20261017/staged_hls/manifest.json`](../artifacts/ffn_opt_20261017/staged_hls/manifest.json)；该目录只是输入暂存，不是生成的 IP 或 overlay。下方 retry04 bit/hwh 对应更旧的串行核，不能用来声称该候选已构建或已验证。
+
+## 2026-10-18 r04 token-interleaved candidate (independent, not main)
+
+独立候选目录 `candidates/interleaved_r04/`，不改本目录正式 r03；两个版本各自保留 `make_config.py`、host/testbench 和 `build/`。
+
+- **v1**：4 个独立 context、16 输出 lane、真实 RAW 依赖 distance 4；主机两套基线各 19 组合成和 173 帧回归等价。HLS 完整 C 仿真 27 项通过，csynth 估计 3,386,100 cycles，但关键反馈路径 slack **-3.70 ns**（目标 10 ns、uncertainty 2.7 ns），**失败**，不进入 RTL/板测。证据 `../artifacts/opt_round2_20261018/hls/source_snapshot_v1/`、`remote_partial01/v1/`。
+- **v2**：唯一窄修正为 8 个独立 context、`ctx=step&7`、输入索引 `step>>3`，真实 RAW distance 8；`BIND_OP` 请求 fadd latency 6、fmul latency 3，仍 10 ns，不降频、不量化、不用 false dependence。每 token 仍按原 i/j 顺序做 FP32 乘加，bias 最后加，GELU 仍 exact-erf。CPP SHA `553b9c9b36fee41d791908f1fc3b8314ea4631db403743f5e80665d18fad1350`，HPP `fcdced1362b460a6cea73fc5869564e6797c041469a50b9c56deba1253cd7478`，冻结 ZIP `fc40b31a3a73fa838ac6d9be338be5a51f4881313353d50e6806b90ebb8c0ab5`。主机 30 项通过；两套基线各 19 组合成/173 帧逐位零差、整数零差；保护区页尾读写检查通过。HLS C 30 项通过，FC1/FC2 step II=1/1，生成 16 fadd/16 fmul RTL 实例。
+- **v2 数字口径必须分开**：csynth **估计** 3,620,660 cycles/660 token，按目标 100 MHz 约 36.2066 ms；r03 静态 11,773,385 cycles≈117.73385 ms；比值 3.2517 只是静态周期比。csynth 估计资源 DSP 333、BRAM_18K 142、FF 64719、LUT 58866。小范围 RTL 10 事务/30 有效 token 通过，929,038 模拟 cycles、约 2390 s 墙钟，**不是吞吐，也未覆盖 659/660-token**。同源 OOC 实现（`D:/io8`）实际 exit 0、1488 s、WNS +2.435662 ns、WHS +0.034 ns、未路由 0、post-route CP 7.564 ns；摘要资源 LUT 51146、FF 46657、DSP 333、BRAM 131（最终 utilization 单位待复核，暂不写 RAMB 数量）。**这些都不是板上延迟/吞吐，也不是 PS+PL 系统验收。**
+- **边界**：没有新系统 bit/hwh，没有下载 Overlay、写时钟或启动新核；完整 659/660-token RTL 未执行。继续需单独的系统集成与上板授权。
+
+## 2026-10-15 retry04 build update (historical kernel)
+
+The K26 license/device gate passed in the **historical retry04 build on 2026-10-15**. Full HLS C simulation and C synthesis, the emitted register ABI and both 64-bit AXI master address channels, HLS backend implementation/IP packaging, and the KV260 Vivado system implementation have been verified with real tool logs. A matching `ffn_overlay_wrapper.bit` / `.hwh` pair is available in [`artifacts/vivado_20261015/retry04/overlay/`](../artifacts/vivado_20261015/retry04/overlay/).
 System routed WNS is **+2.338 ns**, TNS **0**, and WHS **+0.010 ns**.
 
-**RTL co-simulation is deliberately limited to one 1-token smoke transaction.**
-It completed RTL and C postchecking with exit 0; the preceding 30-token attempt
-was actively stopped with exit 1 and is not a pass. Full 4/659/660-token, weight
-reload and invalid-count RTL verification remains unperformed. Full C simulation
-coverage does not replace those RTL checks. No overlay download or board test
-has occurred, and the serial FP32 design has no demonstrated board speedup.
+**RTL co-simulation for the historical retry04 kernel is deliberately limited to one 1-token smoke transaction.** It completed RTL and C postchecking with exit 0; the preceding 30-token attempt was actively stopped with exit 1 and is not a pass. Full 4/659/660-token, weight reload and invalid-count RTL verification for retry04 remains unperformed. Full C simulation coverage does not replace those RTL checks. The board bring-up in `docs/04_验证记录.md` §17 later documents loading and testing that retry04 overlay; it does not validate the 2026-10-17 source candidate or r03. r03 board evidence is in §19.
 
 See the [delivery notes and five-step board checklist](../artifacts/vivado_20261015/retry04/overlay/README.md)
 and [`docs/04_验证记录.md`](../docs/04_验证记录.md), sections 15–16, for exact reached
-stages, exit codes, failures and scope. Statements describing unverified HLS or
-blocked builds in the original text below refer to the 2026-10-14 attempt; they
-remain historical evidence, not the current build status.
+stages, exit codes, failures and scope. The build/acceptance history below records **retry04 from 2026-10-15 only**; it is neither a successful-build claim for the 2026-10-17 four-lane candidate nor for the current r03. See the Chinese status block above and `../docs/04_验证记录.md` §19 for r03.
+
 
 
 Independent float32 reference kernel for KV260/PYNQ migration, not a final
@@ -47,13 +51,17 @@ Real HLS compilation remains unverified; see the local tool evidence below.
 "Exact" means the mathematical erf formulation, not bit-identical PyTorch,
 BLAS, double arithmetic or perfectly rounded transcendental hardware.
 
-Each valid call reloads all weights/biases once into fixed local storage
-(263,680 bytes / 257.5 KiB); no per-token DDR weight reload. These arrays are
-static to avoid a large host stack frame; the host entry is not thread-safe or
-reentrant. Scratch per token is 384 floats. This design intentionally uses
-serial floating-point reductions. Copy-loop PIPELINE hints specify no II;
-there is no guaranteed II=1, throughput, resource fit or Fmax. Real synthesis,
-RTL co-simulation and Vivado implementation are needed to establish these.
+Each valid call still loads all weights/biases once into fixed local storage
+(263,680 bytes / 257.5 KiB); there is no per-token DDR weight reload. These arrays
+are static to avoid a large host stack frame; the host entry is not thread-safe or
+reentrant. The 2026-10-15 retry04 kernel used serial floating-point reductions.
+The 2026-10-17 historical candidate computed four output channels per group
+with cyclic-partitioned local weights and kept each channel's original ordered
+float32 reduction. That candidate's actual II/area were unknown at the time.
+The current 2026-10-18 r03 source instead groups 16 channels, reports actual
+FC1/FC2 II=4 and GELU II=1 after synthesis, and has passed HLS C simulation,
+small-scope RTL co-simulation and OOC implementation (see the Chinese status
+block above). Host `std::erf` checks are still not HLS `hls::erff` validation.
 Input/output and weight buffers must be valid, DMA-accessible and nonoverlapping.
 
 ## Interfaces and register ABI
@@ -118,7 +126,7 @@ zero and bias-only exact-erf cases, output guards, and invalid counts
 
 ## HLS tools: two distinct entry routes
 
-### Modern Vitis Unified flow (2026.1 options locally checked; build blocked)
+### Modern Vitis Unified flow (2026-10-14 local host attempt: build blocked; later completed on the tool machine — see top status)
 
 `make_config.py` reads required `FPGA_PART` and optional `CLOCK_NS` (10 ns target
 by default) and emits `build/hls_config.cfg`, not a DRAFT. It refuses overwrites
@@ -206,12 +214,13 @@ Real local-cwd commands and exit codes are archived in `build/amd_20261014/`
   source paths and flags were accepted, then identical part/license failure;
   no synthesis scheduling, RTL or csynth report was produced.
 
-Thus **neither HLS C simulation nor synthesis passed**. Part support/license
-must be resolved without assuming which causes apply beyond the explicit
-missing-license error; `get_parts` is still unverified. RTL co-simulation,
-IP export/package and implementation were not attempted. No measured resource,
-latency, II, estimated clock or achieved Fmax is available. No GUI, license
-changes, device installation, board connection or bitstream download occurred.
+Thus **on that 2026-10-14 local host, neither HLS C simulation nor synthesis
+passed**. Part support/license had to be resolved without assuming which cause
+applied beyond the explicit missing-license error. This historical local block
+does not describe the later 2026-10-17/18 tool-machine runs, where C simulation,
+synthesis, small-scope RTL co-simulation, OOC implementation and system build
+completed. No GUI, license changes, device installation, board connection or
+bitstream download occurred on that local host.
 Tcl's older tests used stubs only. No `.bit` or `.hwh` is supplied. A real Vivado
 block design, address assignment and implemented matching bitstream/HWH remain
 required elsewhere.

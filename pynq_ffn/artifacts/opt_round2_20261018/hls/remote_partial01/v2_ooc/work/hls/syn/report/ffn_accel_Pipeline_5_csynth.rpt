@@ -1,0 +1,388 @@
+
+
+================================================================
+== Vitis HLS Report for 'ffn_accel_Pipeline_5'
+================================================================
+* Date:           Sun Oct 18 13:39:29 2026
+
+* Version:        2026.1 (Build 6493734 on Jun 16 2026)
+* Project:        work
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xck26-sfvc784-2LV-c
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  1.619 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+-------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |      Pipeline     |
+    |   min   |   max   |    min   |    max   | min | max |        Type       |
+    +---------+---------+----------+----------+-----+-----+-------------------+
+    |      130|      130|  1.300 us|  1.300 us|    0|    0|  loop pipeline stp|
+    +---------+---------+----------+----------+-----+-----+-------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |      128|      128|         1|          1|        N/A|   128|       yes|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+------+--------+--------+-----+
+|       Name      | BRAM_18K|  DSP |   FF   |   LUT  | URAM|
++-----------------+---------+------+--------+--------+-----+
+|DSP              |        -|     -|       -|       -|    -|
+|Expression       |        -|     -|       0|      31|    -|
+|FIFO             |        -|     -|       -|       -|    -|
+|Instance         |        -|     -|       -|       -|    -|
+|Memory           |        -|     -|       -|       -|    -|
+|Multiplexer      |        -|     -|       0|      27|    -|
+|Register         |        -|     -|      10|       -|    -|
++-----------------+---------+------+--------+--------+-----+
+|Total            |        0|     0|      10|      58|    0|
++-----------------+---------+------+--------+--------+-----+
+|Available        |      288|  1248|  234240|  117120|   64|
++-----------------+---------+------+--------+--------+-----+
+|Utilization (%)  |        0|     0|      ~0|      ~0|    0|
++-----------------+---------+------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------------------+----------+----+---+----+------------+------------+
+    |       Variable Name      | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------------+----------+----+---+----+------------+------------+
+    |empty_68_fu_1789_p2       |         +|   0|  0|  15|           8|           1|
+    |exitcond44523_fu_1783_p2  |      icmp|   0|  0|  16|           8|           9|
+    +--------------------------+----------+----+---+----+------------+------------+
+    |Total                     |          |   0|  0|  31|          16|          10|
+    +--------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------+----+-----------+-----+-----------+
+    |           Name          | LUT| Input Size| Bits| Total Bits|
+    +-------------------------+----+-----------+-----+-----------+
+    |ap_done_int              |   9|          2|    1|          2|
+    |ap_sig_allocacmp_p_load  |   9|          2|    8|         16|
+    |empty_fu_330             |   9|          2|    8|         16|
+    +-------------------------+----+-----------+-----+-----------+
+    |Total                    |  27|          6|   17|         34|
+    +-------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------+---+----+-----+-----------+
+    |     Name     | FF| LUT| Bits| Const Bits|
+    +--------------+---+----+-----+-----------+
+    |ap_CS_fsm     |  1|   0|    1|          0|
+    |ap_done_reg   |  1|   0|    1|          0|
+    |empty_fu_330  |  8|   0|    8|          0|
+    +--------------+---+----+-----+-----------+
+    |Total         | 10|   0|   10|          0|
+    +--------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------+-----+-----+------------+----------------------+--------------+
+|      RTL Ports     | Dir | Bits|  Protocol  |     Source Object    |    C Type    |
++--------------------+-----+-----+------------+----------------------+--------------+
+|ap_clk              |   in|    1|  ap_ctrl_hs|  ffn_accel_Pipeline_5|  return value|
+|ap_rst              |   in|    1|  ap_ctrl_hs|  ffn_accel_Pipeline_5|  return value|
+|ap_start            |   in|    1|  ap_ctrl_hs|  ffn_accel_Pipeline_5|  return value|
+|ap_done             |  out|    1|  ap_ctrl_hs|  ffn_accel_Pipeline_5|  return value|
+|ap_idle             |  out|    1|  ap_ctrl_hs|  ffn_accel_Pipeline_5|  return value|
+|ap_ready            |  out|    1|  ap_ctrl_hs|  ffn_accel_Pipeline_5|  return value|
+|sum_255_out         |  out|   32|      ap_vld|           sum_255_out|       pointer|
+|sum_255_out_ap_vld  |  out|    1|      ap_vld|           sum_255_out|       pointer|
+|sum_254_out         |  out|   32|      ap_vld|           sum_254_out|       pointer|
+|sum_254_out_ap_vld  |  out|    1|      ap_vld|           sum_254_out|       pointer|
+|sum_253_out         |  out|   32|      ap_vld|           sum_253_out|       pointer|
+|sum_253_out_ap_vld  |  out|    1|      ap_vld|           sum_253_out|       pointer|
+|sum_252_out         |  out|   32|      ap_vld|           sum_252_out|       pointer|
+|sum_252_out_ap_vld  |  out|    1|      ap_vld|           sum_252_out|       pointer|
+|sum_251_out         |  out|   32|      ap_vld|           sum_251_out|       pointer|
+|sum_251_out_ap_vld  |  out|    1|      ap_vld|           sum_251_out|       pointer|
+|sum_250_out         |  out|   32|      ap_vld|           sum_250_out|       pointer|
+|sum_250_out_ap_vld  |  out|    1|      ap_vld|           sum_250_out|       pointer|
+|sum_249_out         |  out|   32|      ap_vld|           sum_249_out|       pointer|
+|sum_249_out_ap_vld  |  out|    1|      ap_vld|           sum_249_out|       pointer|
+|sum_248_out         |  out|   32|      ap_vld|           sum_248_out|       pointer|
+|sum_248_out_ap_vld  |  out|    1|      ap_vld|           sum_248_out|       pointer|
+|sum_247_out         |  out|   32|      ap_vld|           sum_247_out|       pointer|
+|sum_247_out_ap_vld  |  out|    1|      ap_vld|           sum_247_out|       pointer|
+|sum_246_out         |  out|   32|      ap_vld|           sum_246_out|       pointer|
+|sum_246_out_ap_vld  |  out|    1|      ap_vld|           sum_246_out|       pointer|
+|sum_245_out         |  out|   32|      ap_vld|           sum_245_out|       pointer|
+|sum_245_out_ap_vld  |  out|    1|      ap_vld|           sum_245_out|       pointer|
+|sum_244_out         |  out|   32|      ap_vld|           sum_244_out|       pointer|
+|sum_244_out_ap_vld  |  out|    1|      ap_vld|           sum_244_out|       pointer|
+|sum_243_out         |  out|   32|      ap_vld|           sum_243_out|       pointer|
+|sum_243_out_ap_vld  |  out|    1|      ap_vld|           sum_243_out|       pointer|
+|sum_242_out         |  out|   32|      ap_vld|           sum_242_out|       pointer|
+|sum_242_out_ap_vld  |  out|    1|      ap_vld|           sum_242_out|       pointer|
+|sum_241_out         |  out|   32|      ap_vld|           sum_241_out|       pointer|
+|sum_241_out_ap_vld  |  out|    1|      ap_vld|           sum_241_out|       pointer|
+|sum_240_out         |  out|   32|      ap_vld|           sum_240_out|       pointer|
+|sum_240_out_ap_vld  |  out|    1|      ap_vld|           sum_240_out|       pointer|
+|sum_239_out         |  out|   32|      ap_vld|           sum_239_out|       pointer|
+|sum_239_out_ap_vld  |  out|    1|      ap_vld|           sum_239_out|       pointer|
+|sum_238_out         |  out|   32|      ap_vld|           sum_238_out|       pointer|
+|sum_238_out_ap_vld  |  out|    1|      ap_vld|           sum_238_out|       pointer|
+|sum_237_out         |  out|   32|      ap_vld|           sum_237_out|       pointer|
+|sum_237_out_ap_vld  |  out|    1|      ap_vld|           sum_237_out|       pointer|
+|sum_236_out         |  out|   32|      ap_vld|           sum_236_out|       pointer|
+|sum_236_out_ap_vld  |  out|    1|      ap_vld|           sum_236_out|       pointer|
+|sum_235_out         |  out|   32|      ap_vld|           sum_235_out|       pointer|
+|sum_235_out_ap_vld  |  out|    1|      ap_vld|           sum_235_out|       pointer|
+|sum_234_out         |  out|   32|      ap_vld|           sum_234_out|       pointer|
+|sum_234_out_ap_vld  |  out|    1|      ap_vld|           sum_234_out|       pointer|
+|sum_233_out         |  out|   32|      ap_vld|           sum_233_out|       pointer|
+|sum_233_out_ap_vld  |  out|    1|      ap_vld|           sum_233_out|       pointer|
+|sum_232_out         |  out|   32|      ap_vld|           sum_232_out|       pointer|
+|sum_232_out_ap_vld  |  out|    1|      ap_vld|           sum_232_out|       pointer|
+|sum_231_out         |  out|   32|      ap_vld|           sum_231_out|       pointer|
+|sum_231_out_ap_vld  |  out|    1|      ap_vld|           sum_231_out|       pointer|
+|sum_230_out         |  out|   32|      ap_vld|           sum_230_out|       pointer|
+|sum_230_out_ap_vld  |  out|    1|      ap_vld|           sum_230_out|       pointer|
+|sum_229_out         |  out|   32|      ap_vld|           sum_229_out|       pointer|
+|sum_229_out_ap_vld  |  out|    1|      ap_vld|           sum_229_out|       pointer|
+|sum_228_out         |  out|   32|      ap_vld|           sum_228_out|       pointer|
+|sum_228_out_ap_vld  |  out|    1|      ap_vld|           sum_228_out|       pointer|
+|sum_227_out         |  out|   32|      ap_vld|           sum_227_out|       pointer|
+|sum_227_out_ap_vld  |  out|    1|      ap_vld|           sum_227_out|       pointer|
+|sum_226_out         |  out|   32|      ap_vld|           sum_226_out|       pointer|
+|sum_226_out_ap_vld  |  out|    1|      ap_vld|           sum_226_out|       pointer|
+|sum_225_out         |  out|   32|      ap_vld|           sum_225_out|       pointer|
+|sum_225_out_ap_vld  |  out|    1|      ap_vld|           sum_225_out|       pointer|
+|sum_224_out         |  out|   32|      ap_vld|           sum_224_out|       pointer|
+|sum_224_out_ap_vld  |  out|    1|      ap_vld|           sum_224_out|       pointer|
+|sum_223_out         |  out|   32|      ap_vld|           sum_223_out|       pointer|
+|sum_223_out_ap_vld  |  out|    1|      ap_vld|           sum_223_out|       pointer|
+|sum_222_out         |  out|   32|      ap_vld|           sum_222_out|       pointer|
+|sum_222_out_ap_vld  |  out|    1|      ap_vld|           sum_222_out|       pointer|
+|sum_221_out         |  out|   32|      ap_vld|           sum_221_out|       pointer|
+|sum_221_out_ap_vld  |  out|    1|      ap_vld|           sum_221_out|       pointer|
+|sum_220_out         |  out|   32|      ap_vld|           sum_220_out|       pointer|
+|sum_220_out_ap_vld  |  out|    1|      ap_vld|           sum_220_out|       pointer|
+|sum_219_out         |  out|   32|      ap_vld|           sum_219_out|       pointer|
+|sum_219_out_ap_vld  |  out|    1|      ap_vld|           sum_219_out|       pointer|
+|sum_218_out         |  out|   32|      ap_vld|           sum_218_out|       pointer|
+|sum_218_out_ap_vld  |  out|    1|      ap_vld|           sum_218_out|       pointer|
+|sum_217_out         |  out|   32|      ap_vld|           sum_217_out|       pointer|
+|sum_217_out_ap_vld  |  out|    1|      ap_vld|           sum_217_out|       pointer|
+|sum_216_out         |  out|   32|      ap_vld|           sum_216_out|       pointer|
+|sum_216_out_ap_vld  |  out|    1|      ap_vld|           sum_216_out|       pointer|
+|sum_215_out         |  out|   32|      ap_vld|           sum_215_out|       pointer|
+|sum_215_out_ap_vld  |  out|    1|      ap_vld|           sum_215_out|       pointer|
+|sum_214_out         |  out|   32|      ap_vld|           sum_214_out|       pointer|
+|sum_214_out_ap_vld  |  out|    1|      ap_vld|           sum_214_out|       pointer|
+|sum_213_out         |  out|   32|      ap_vld|           sum_213_out|       pointer|
+|sum_213_out_ap_vld  |  out|    1|      ap_vld|           sum_213_out|       pointer|
+|sum_212_out         |  out|   32|      ap_vld|           sum_212_out|       pointer|
+|sum_212_out_ap_vld  |  out|    1|      ap_vld|           sum_212_out|       pointer|
+|sum_211_out         |  out|   32|      ap_vld|           sum_211_out|       pointer|
+|sum_211_out_ap_vld  |  out|    1|      ap_vld|           sum_211_out|       pointer|
+|sum_210_out         |  out|   32|      ap_vld|           sum_210_out|       pointer|
+|sum_210_out_ap_vld  |  out|    1|      ap_vld|           sum_210_out|       pointer|
+|sum_209_out         |  out|   32|      ap_vld|           sum_209_out|       pointer|
+|sum_209_out_ap_vld  |  out|    1|      ap_vld|           sum_209_out|       pointer|
+|sum_208_out         |  out|   32|      ap_vld|           sum_208_out|       pointer|
+|sum_208_out_ap_vld  |  out|    1|      ap_vld|           sum_208_out|       pointer|
+|sum_207_out         |  out|   32|      ap_vld|           sum_207_out|       pointer|
+|sum_207_out_ap_vld  |  out|    1|      ap_vld|           sum_207_out|       pointer|
+|sum_206_out         |  out|   32|      ap_vld|           sum_206_out|       pointer|
+|sum_206_out_ap_vld  |  out|    1|      ap_vld|           sum_206_out|       pointer|
+|sum_205_out         |  out|   32|      ap_vld|           sum_205_out|       pointer|
+|sum_205_out_ap_vld  |  out|    1|      ap_vld|           sum_205_out|       pointer|
+|sum_204_out         |  out|   32|      ap_vld|           sum_204_out|       pointer|
+|sum_204_out_ap_vld  |  out|    1|      ap_vld|           sum_204_out|       pointer|
+|sum_203_out         |  out|   32|      ap_vld|           sum_203_out|       pointer|
+|sum_203_out_ap_vld  |  out|    1|      ap_vld|           sum_203_out|       pointer|
+|sum_202_out         |  out|   32|      ap_vld|           sum_202_out|       pointer|
+|sum_202_out_ap_vld  |  out|    1|      ap_vld|           sum_202_out|       pointer|
+|sum_201_out         |  out|   32|      ap_vld|           sum_201_out|       pointer|
+|sum_201_out_ap_vld  |  out|    1|      ap_vld|           sum_201_out|       pointer|
+|sum_200_out         |  out|   32|      ap_vld|           sum_200_out|       pointer|
+|sum_200_out_ap_vld  |  out|    1|      ap_vld|           sum_200_out|       pointer|
+|sum_199_out         |  out|   32|      ap_vld|           sum_199_out|       pointer|
+|sum_199_out_ap_vld  |  out|    1|      ap_vld|           sum_199_out|       pointer|
+|sum_198_out         |  out|   32|      ap_vld|           sum_198_out|       pointer|
+|sum_198_out_ap_vld  |  out|    1|      ap_vld|           sum_198_out|       pointer|
+|sum_197_out         |  out|   32|      ap_vld|           sum_197_out|       pointer|
+|sum_197_out_ap_vld  |  out|    1|      ap_vld|           sum_197_out|       pointer|
+|sum_196_out         |  out|   32|      ap_vld|           sum_196_out|       pointer|
+|sum_196_out_ap_vld  |  out|    1|      ap_vld|           sum_196_out|       pointer|
+|sum_195_out         |  out|   32|      ap_vld|           sum_195_out|       pointer|
+|sum_195_out_ap_vld  |  out|    1|      ap_vld|           sum_195_out|       pointer|
+|sum_194_out         |  out|   32|      ap_vld|           sum_194_out|       pointer|
+|sum_194_out_ap_vld  |  out|    1|      ap_vld|           sum_194_out|       pointer|
+|sum_193_out         |  out|   32|      ap_vld|           sum_193_out|       pointer|
+|sum_193_out_ap_vld  |  out|    1|      ap_vld|           sum_193_out|       pointer|
+|sum_192_out         |  out|   32|      ap_vld|           sum_192_out|       pointer|
+|sum_192_out_ap_vld  |  out|    1|      ap_vld|           sum_192_out|       pointer|
+|sum_191_out         |  out|   32|      ap_vld|           sum_191_out|       pointer|
+|sum_191_out_ap_vld  |  out|    1|      ap_vld|           sum_191_out|       pointer|
+|sum_190_out         |  out|   32|      ap_vld|           sum_190_out|       pointer|
+|sum_190_out_ap_vld  |  out|    1|      ap_vld|           sum_190_out|       pointer|
+|sum_189_out         |  out|   32|      ap_vld|           sum_189_out|       pointer|
+|sum_189_out_ap_vld  |  out|    1|      ap_vld|           sum_189_out|       pointer|
+|sum_188_out         |  out|   32|      ap_vld|           sum_188_out|       pointer|
+|sum_188_out_ap_vld  |  out|    1|      ap_vld|           sum_188_out|       pointer|
+|sum_187_out         |  out|   32|      ap_vld|           sum_187_out|       pointer|
+|sum_187_out_ap_vld  |  out|    1|      ap_vld|           sum_187_out|       pointer|
+|sum_186_out         |  out|   32|      ap_vld|           sum_186_out|       pointer|
+|sum_186_out_ap_vld  |  out|    1|      ap_vld|           sum_186_out|       pointer|
+|sum_185_out         |  out|   32|      ap_vld|           sum_185_out|       pointer|
+|sum_185_out_ap_vld  |  out|    1|      ap_vld|           sum_185_out|       pointer|
+|sum_184_out         |  out|   32|      ap_vld|           sum_184_out|       pointer|
+|sum_184_out_ap_vld  |  out|    1|      ap_vld|           sum_184_out|       pointer|
+|sum_183_out         |  out|   32|      ap_vld|           sum_183_out|       pointer|
+|sum_183_out_ap_vld  |  out|    1|      ap_vld|           sum_183_out|       pointer|
+|sum_182_out         |  out|   32|      ap_vld|           sum_182_out|       pointer|
+|sum_182_out_ap_vld  |  out|    1|      ap_vld|           sum_182_out|       pointer|
+|sum_181_out         |  out|   32|      ap_vld|           sum_181_out|       pointer|
+|sum_181_out_ap_vld  |  out|    1|      ap_vld|           sum_181_out|       pointer|
+|sum_180_out         |  out|   32|      ap_vld|           sum_180_out|       pointer|
+|sum_180_out_ap_vld  |  out|    1|      ap_vld|           sum_180_out|       pointer|
+|sum_179_out         |  out|   32|      ap_vld|           sum_179_out|       pointer|
+|sum_179_out_ap_vld  |  out|    1|      ap_vld|           sum_179_out|       pointer|
+|sum_178_out         |  out|   32|      ap_vld|           sum_178_out|       pointer|
+|sum_178_out_ap_vld  |  out|    1|      ap_vld|           sum_178_out|       pointer|
+|sum_177_out         |  out|   32|      ap_vld|           sum_177_out|       pointer|
+|sum_177_out_ap_vld  |  out|    1|      ap_vld|           sum_177_out|       pointer|
+|sum_176_out         |  out|   32|      ap_vld|           sum_176_out|       pointer|
+|sum_176_out_ap_vld  |  out|    1|      ap_vld|           sum_176_out|       pointer|
+|sum_175_out         |  out|   32|      ap_vld|           sum_175_out|       pointer|
+|sum_175_out_ap_vld  |  out|    1|      ap_vld|           sum_175_out|       pointer|
+|sum_174_out         |  out|   32|      ap_vld|           sum_174_out|       pointer|
+|sum_174_out_ap_vld  |  out|    1|      ap_vld|           sum_174_out|       pointer|
+|sum_173_out         |  out|   32|      ap_vld|           sum_173_out|       pointer|
+|sum_173_out_ap_vld  |  out|    1|      ap_vld|           sum_173_out|       pointer|
+|sum_172_out         |  out|   32|      ap_vld|           sum_172_out|       pointer|
+|sum_172_out_ap_vld  |  out|    1|      ap_vld|           sum_172_out|       pointer|
+|sum_171_out         |  out|   32|      ap_vld|           sum_171_out|       pointer|
+|sum_171_out_ap_vld  |  out|    1|      ap_vld|           sum_171_out|       pointer|
+|sum_170_out         |  out|   32|      ap_vld|           sum_170_out|       pointer|
+|sum_170_out_ap_vld  |  out|    1|      ap_vld|           sum_170_out|       pointer|
+|sum_169_out         |  out|   32|      ap_vld|           sum_169_out|       pointer|
+|sum_169_out_ap_vld  |  out|    1|      ap_vld|           sum_169_out|       pointer|
+|sum_168_out         |  out|   32|      ap_vld|           sum_168_out|       pointer|
+|sum_168_out_ap_vld  |  out|    1|      ap_vld|           sum_168_out|       pointer|
+|sum_167_out         |  out|   32|      ap_vld|           sum_167_out|       pointer|
+|sum_167_out_ap_vld  |  out|    1|      ap_vld|           sum_167_out|       pointer|
+|sum_166_out         |  out|   32|      ap_vld|           sum_166_out|       pointer|
+|sum_166_out_ap_vld  |  out|    1|      ap_vld|           sum_166_out|       pointer|
+|sum_165_out         |  out|   32|      ap_vld|           sum_165_out|       pointer|
+|sum_165_out_ap_vld  |  out|    1|      ap_vld|           sum_165_out|       pointer|
+|sum_164_out         |  out|   32|      ap_vld|           sum_164_out|       pointer|
+|sum_164_out_ap_vld  |  out|    1|      ap_vld|           sum_164_out|       pointer|
+|sum_163_out         |  out|   32|      ap_vld|           sum_163_out|       pointer|
+|sum_163_out_ap_vld  |  out|    1|      ap_vld|           sum_163_out|       pointer|
+|sum_162_out         |  out|   32|      ap_vld|           sum_162_out|       pointer|
+|sum_162_out_ap_vld  |  out|    1|      ap_vld|           sum_162_out|       pointer|
+|sum_161_out         |  out|   32|      ap_vld|           sum_161_out|       pointer|
+|sum_161_out_ap_vld  |  out|    1|      ap_vld|           sum_161_out|       pointer|
+|sum_160_out         |  out|   32|      ap_vld|           sum_160_out|       pointer|
+|sum_160_out_ap_vld  |  out|    1|      ap_vld|           sum_160_out|       pointer|
+|sum_159_out         |  out|   32|      ap_vld|           sum_159_out|       pointer|
+|sum_159_out_ap_vld  |  out|    1|      ap_vld|           sum_159_out|       pointer|
+|sum_158_out         |  out|   32|      ap_vld|           sum_158_out|       pointer|
+|sum_158_out_ap_vld  |  out|    1|      ap_vld|           sum_158_out|       pointer|
+|sum_157_out         |  out|   32|      ap_vld|           sum_157_out|       pointer|
+|sum_157_out_ap_vld  |  out|    1|      ap_vld|           sum_157_out|       pointer|
+|sum_156_out         |  out|   32|      ap_vld|           sum_156_out|       pointer|
+|sum_156_out_ap_vld  |  out|    1|      ap_vld|           sum_156_out|       pointer|
+|sum_155_out         |  out|   32|      ap_vld|           sum_155_out|       pointer|
+|sum_155_out_ap_vld  |  out|    1|      ap_vld|           sum_155_out|       pointer|
+|sum_154_out         |  out|   32|      ap_vld|           sum_154_out|       pointer|
+|sum_154_out_ap_vld  |  out|    1|      ap_vld|           sum_154_out|       pointer|
+|sum_153_out         |  out|   32|      ap_vld|           sum_153_out|       pointer|
+|sum_153_out_ap_vld  |  out|    1|      ap_vld|           sum_153_out|       pointer|
+|sum_152_out         |  out|   32|      ap_vld|           sum_152_out|       pointer|
+|sum_152_out_ap_vld  |  out|    1|      ap_vld|           sum_152_out|       pointer|
+|sum_151_out         |  out|   32|      ap_vld|           sum_151_out|       pointer|
+|sum_151_out_ap_vld  |  out|    1|      ap_vld|           sum_151_out|       pointer|
+|sum_150_out         |  out|   32|      ap_vld|           sum_150_out|       pointer|
+|sum_150_out_ap_vld  |  out|    1|      ap_vld|           sum_150_out|       pointer|
+|sum_149_out         |  out|   32|      ap_vld|           sum_149_out|       pointer|
+|sum_149_out_ap_vld  |  out|    1|      ap_vld|           sum_149_out|       pointer|
+|sum_148_out         |  out|   32|      ap_vld|           sum_148_out|       pointer|
+|sum_148_out_ap_vld  |  out|    1|      ap_vld|           sum_148_out|       pointer|
+|sum_147_out         |  out|   32|      ap_vld|           sum_147_out|       pointer|
+|sum_147_out_ap_vld  |  out|    1|      ap_vld|           sum_147_out|       pointer|
+|sum_146_out         |  out|   32|      ap_vld|           sum_146_out|       pointer|
+|sum_146_out_ap_vld  |  out|    1|      ap_vld|           sum_146_out|       pointer|
+|sum_145_out         |  out|   32|      ap_vld|           sum_145_out|       pointer|
+|sum_145_out_ap_vld  |  out|    1|      ap_vld|           sum_145_out|       pointer|
+|sum_144_out         |  out|   32|      ap_vld|           sum_144_out|       pointer|
+|sum_144_out_ap_vld  |  out|    1|      ap_vld|           sum_144_out|       pointer|
+|sum_143_out         |  out|   32|      ap_vld|           sum_143_out|       pointer|
+|sum_143_out_ap_vld  |  out|    1|      ap_vld|           sum_143_out|       pointer|
+|sum_142_out         |  out|   32|      ap_vld|           sum_142_out|       pointer|
+|sum_142_out_ap_vld  |  out|    1|      ap_vld|           sum_142_out|       pointer|
+|sum_141_out         |  out|   32|      ap_vld|           sum_141_out|       pointer|
+|sum_141_out_ap_vld  |  out|    1|      ap_vld|           sum_141_out|       pointer|
+|sum_140_out         |  out|   32|      ap_vld|           sum_140_out|       pointer|
+|sum_140_out_ap_vld  |  out|    1|      ap_vld|           sum_140_out|       pointer|
+|sum_139_out         |  out|   32|      ap_vld|           sum_139_out|       pointer|
+|sum_139_out_ap_vld  |  out|    1|      ap_vld|           sum_139_out|       pointer|
+|sum_138_out         |  out|   32|      ap_vld|           sum_138_out|       pointer|
+|sum_138_out_ap_vld  |  out|    1|      ap_vld|           sum_138_out|       pointer|
+|sum_137_out         |  out|   32|      ap_vld|           sum_137_out|       pointer|
+|sum_137_out_ap_vld  |  out|    1|      ap_vld|           sum_137_out|       pointer|
+|sum_136_out         |  out|   32|      ap_vld|           sum_136_out|       pointer|
+|sum_136_out_ap_vld  |  out|    1|      ap_vld|           sum_136_out|       pointer|
+|sum_135_out         |  out|   32|      ap_vld|           sum_135_out|       pointer|
+|sum_135_out_ap_vld  |  out|    1|      ap_vld|           sum_135_out|       pointer|
+|sum_134_out         |  out|   32|      ap_vld|           sum_134_out|       pointer|
+|sum_134_out_ap_vld  |  out|    1|      ap_vld|           sum_134_out|       pointer|
+|sum_133_out         |  out|   32|      ap_vld|           sum_133_out|       pointer|
+|sum_133_out_ap_vld  |  out|    1|      ap_vld|           sum_133_out|       pointer|
+|sum_132_out         |  out|   32|      ap_vld|           sum_132_out|       pointer|
+|sum_132_out_ap_vld  |  out|    1|      ap_vld|           sum_132_out|       pointer|
+|sum_131_out         |  out|   32|      ap_vld|           sum_131_out|       pointer|
+|sum_131_out_ap_vld  |  out|    1|      ap_vld|           sum_131_out|       pointer|
+|sum_130_out         |  out|   32|      ap_vld|           sum_130_out|       pointer|
+|sum_130_out_ap_vld  |  out|    1|      ap_vld|           sum_130_out|       pointer|
+|sum_129_out         |  out|   32|      ap_vld|           sum_129_out|       pointer|
+|sum_129_out_ap_vld  |  out|    1|      ap_vld|           sum_129_out|       pointer|
+|sum_128_out         |  out|   32|      ap_vld|           sum_128_out|       pointer|
+|sum_128_out_ap_vld  |  out|    1|      ap_vld|           sum_128_out|       pointer|
++--------------------+-----+-----+------------+----------------------+--------------+
+

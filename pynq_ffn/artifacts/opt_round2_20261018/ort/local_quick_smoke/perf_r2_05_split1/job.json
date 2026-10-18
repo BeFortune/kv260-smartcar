@@ -1,0 +1,12 @@
+{
+  "condition": "split1",
+  "bundle": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\bundle_20261014",
+  "directory": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r2_05_split1",
+  "inputs": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\inputs.npy",
+  "inputs_sha256": "62ef4f31720d414a9d1be522af7e8bf2992a6155de4b871661dc9f9ee3463d4a",
+  "manifest_sha256": "de727e32df9f1ebd0fe84bac0d33cc8e786a5962053dc746b955b175527f4b77",
+  "warmup": 3,
+  "profile": false,
+  "reference": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\reference_golden1\\outputs.npz",
+  "reference_sha256": "2ee870a739ca9f540ba4595a3193fe367091b0dab3ff2e7cdf9139b59e25ef47"
+}

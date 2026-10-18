@@ -1,0 +1,156 @@
+<ENTRY>
+{
+ "thisFile": "D:/i8\\work\\work.hlsrun_csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "10/18/26 13:05:23",
+ "timestampMillis": "1792299923822",
+ "buildStep": {
+  "cmdId": "40710da8-f306-4571-bc25-c01673f54d0b",
+  "name": "vitis-run",
+  "logFile": "D:/i8\\work\\logs\\work.steps.log",
+  "commandLine": "D:/Learning/AMDDesignTools/2026.1/Vitis/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --config D:\\i8\\build\\full.cfg --work_dir D:\\i8\\work --csim ",
+  "args": [
+   "--mode",
+   "hls",
+   "--config",
+   "D:\\i8\\build\\full.cfg",
+   "--work_dir",
+   "D:\\i8\\work",
+   "--csim"
+  ],
+  "iniFiles": [],
+  "cwd": "D:\\i8"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "10/18/26 13:05:23",
+ "timestampMillis": "1792299923822",
+ "status": {
+  "cmdId": "40710da8-f306-4571-bc25-c01673f54d0b",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "10/18/26 13:05:26",
+ "timestampMillis": "1792299926221",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "ffn_accel",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "D:/i8\\ffn_accel.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2026.1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "10/18/26 13:05:26",
+ "timestampMillis": "1792299926222",
+ "buildStep": {
+  "cmdId": "43436939-74f5-44c7-827c-c012b63985de",
+  "name": "",
+  "logFile": "D:/i8\\work\\hls\\hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "D:\\i8"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "10/18/26 13:05:26",
+ "timestampMillis": "1792299926222",
+ "status": {
+  "cmdId": "43436939-74f5-44c7-827c-c012b63985de",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "10/18/26 13:05:45",
+ "timestampMillis": "1792299945634",
+ "status": {
+  "cmdId": "43436939-74f5-44c7-827c-c012b63985de",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "10/18/26 13:05:45",
+ "timestampMillis": "1792299945702",
+ "status": {
+  "cmdId": "40710da8-f306-4571-bc25-c01673f54d0b",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/18/26 13:05:45",
+ "timestampMillis": "1792299945702",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/18/26 13:05:45",
+ "timestampMillis": "1792299945702",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

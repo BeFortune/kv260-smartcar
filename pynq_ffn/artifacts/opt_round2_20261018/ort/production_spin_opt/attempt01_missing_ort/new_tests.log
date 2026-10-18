@@ -1,0 +1,22 @@
+command: D:\Programs\Anaconda3\python.exe -m pytest -q tests/test_runtime_thread_policy.py --junitxml=C:\Users\BeFortuneEX\Source\Repos\FPGA\pynq_ffn\artifacts\opt_round2_20261018\ort\production_spin_opt\new_tests.xml
+cwd: C:\Users\BeFortuneEX\Source\Repos\FPGA\pynq_ffn
+
+=================================== ERRORS ====================================
+____________ ERROR collecting tests/test_runtime_thread_policy.py _____________
+ImportError while importing test module 'C:\Users\BeFortuneEX\Source\Repos\FPGA\pynq_ffn\tests\test_runtime_thread_policy.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+D:\Programs\Anaconda3\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+tests\test_runtime_thread_policy.py:14: in <module>
+    from ps import runtime as runtime_module
+ps\runtime.py:9: in <module>
+    import onnxruntime as ort
+E   ModuleNotFoundError: No module named 'onnxruntime'
+- generated xml file: C:\Users\BeFortuneEX\Source\Repos\FPGA\pynq_ffn\artifacts\opt_round2_20261018\ort\production_spin_opt\new_tests.xml -
+=========================== short test summary info ===========================
+ERROR tests/test_runtime_thread_policy.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.66s
+
+exit_code: 2

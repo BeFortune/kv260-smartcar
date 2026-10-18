@@ -1,0 +1,50 @@
+{
+  "status": "verified",
+  "python310_syntax": "pass",
+  "unit_tests": {
+    "passed": 27,
+    "exit_code": 0,
+    "log": "tests_final.log",
+    "junit": "tests_final.xml"
+  },
+  "smoke": {
+    "exit_code": 0,
+    "n": 1,
+    "warmup": 3,
+    "formal_runs": 12,
+    "orders": [
+      [
+        "golden4",
+        "split1",
+        "split4",
+        "split4_off",
+        "mixed4_1",
+        "mixed4_1_off"
+      ],
+      [
+        "mixed4_1_off",
+        "mixed4_1",
+        "split4_off",
+        "split4",
+        "split1",
+        "golden4"
+      ]
+    ],
+    "profile_passes": 3,
+    "log": "local_quick_smoke.log",
+    "study": "local_quick_smoke/study.json"
+  },
+  "files": {
+    "tools/ort_thread_study.py": "3d8cd5ee52ec6234b88b61502c88596b001f63d073753b70e419ac5a708447c5",
+    "tests/test_ort_thread_study.py": "522b2c0d1193dd5a11e25cc16b638655c6a3f46aa2b00c32da00608374290dc9",
+    "ps/runtime.py": "023327eadeaa935ec8392ec16095c6df2a1155368595afd37fe233b4cc6ed298",
+    "ps/preprocess.py": "6134e12a3a2f67d92c8b43f7801f21b0e9d570d0f153ce81ca75d623d8120ddb",
+    "ps/backends.py": "9dfa98b816521abd091473366a31f3bd00634a5b1ab4932f82fd93477036fe0f",
+    "ps/__init__.py": "ec1b195299054cdbd0bd19b1f1da0bc22b52a84c9b914931ff0c9fcfdc3b0379"
+  },
+  "archive": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\ort_thread_study_frozen.zip",
+  "archive_sha256": "bbaab463ea213ac0ebabbea1aea6ff8c26055b5cfa3f8f6651bd6c4504b392ca",
+  "source_frozen": true,
+  "remote_execution": "not executed by this subagent",
+  "thermal_cpu_frequency": "external coordinator evidence, not collected by script"
+}

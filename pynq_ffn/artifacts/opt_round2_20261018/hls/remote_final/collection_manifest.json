@@ -1,0 +1,1192 @@
+{
+  "files": {
+    "v1/build/full.cfg": {
+      "bytes": 535,
+      "sha256": "f7606985606f14ee185e5d69e8b361a28900ced58c0cbbe8bc3ac9f6591b85e0"
+    },
+    "v1/build/small.cfg": {
+      "bytes": 547,
+      "sha256": "a23240833b233cefee99e3b6492dec03d46356a911ce14ddc010def0addbf863"
+    },
+    "v1/ffn_accel.cpp": {
+      "bytes": 7332,
+      "sha256": "bb7d5cdce5597b4c09c9a9505953aa5cc171ffd71f66265eb78cd1f6c063a781"
+    },
+    "v1/ffn_accel.hpp": {
+      "bytes": 850,
+      "sha256": "b958fb3cf1ee318ab4fc11295835022c4565df4fc4fd13fe4bc24a5250e58eec"
+    },
+    "v1/host_bridge.cpp": {
+      "bytes": 503,
+      "sha256": "a8cfe5dc62eb66fa3e3102e4d12eb75a265abbea20e04e4d5b104cecfc480740"
+    },
+    "v1/input_manifest.json": {
+      "bytes": 2210,
+      "sha256": "6f7f75a3168533466ad9c1ae7ffa5269bb20b46b9f41557fb99ac2af57328321"
+    },
+    "v1/records_v1/csim.finished.json": {
+      "bytes": 1889,
+      "sha256": "a76b6b1c560c04547ddde3eeb3d50bc42ff5659557d2e9dc1f5b920ec225881b"
+    },
+    "v1/records_v1/csim.log": {
+      "bytes": 6002,
+      "sha256": "3e22c9bc63906d4666d240efa7d3c5ad5409950e803a013e37b8280d66d3e617"
+    },
+    "v1/records_v1/csim.started.json": {
+      "bytes": 1805,
+      "sha256": "7a8c1ebabac632cd6e9d13cacc59c9052eaf9dfac737c3d15d71edf8b137d6b1"
+    },
+    "v1/records_v1/csynth.finished.json": {
+      "bytes": 2247,
+      "sha256": "94f03313dcfc01df69b7d9eef8b1d9a0f0dc40d9ec23ec3a6c470b04daa6c70f"
+    },
+    "v1/records_v1/csynth.log": {
+      "bytes": 78677,
+      "sha256": "4846681cebd0be1cabe583bb3779d02caa4671fc9b0b6c7200766794752c6442"
+    },
+    "v1/records_v1/csynth.started.json": {
+      "bytes": 1801,
+      "sha256": "aa11b530cde18872ef8e4dc49424cf2aabbfe239926e62d35224c115a90a35a9"
+    },
+    "v1/test_support.hpp": {
+      "bytes": 5811,
+      "sha256": "e04e6932815d2a9875c166b82a19e79dde05fe59e24d9ec26f2fc3d966cceab3"
+    },
+    "v1/testbench.cpp": {
+      "bytes": 2077,
+      "sha256": "222cc57a5d93f37bc5a4997529213317dcf15fa47c30e6bfe9940bbe12bf6e8b"
+    },
+    "v1/testbench_small.cpp": {
+      "bytes": 1568,
+      "sha256": "35294d8a32d7bbfb964a8524cc62758bea598cf9dba75f5d94f686c06485d948"
+    },
+    "v1/work/hls/.autopilot/db/driver/src/xffn_accel_hw.h": {
+      "bytes": 3332,
+      "sha256": "c69e75007368c801992e0b5dcf8d6aa4b138721bebc96b38822ef606663a94ee"
+    },
+    "v1/work/hls/syn/report/csynth.rpt": {
+      "bytes": 107551,
+      "sha256": "dc8d72566b0a00f57f0bf1458c216ea89772267d8c0c9c5a40d9167ae694d3c1"
+    },
+    "v1/work/hls/syn/report/csynth.xml": {
+      "bytes": 294205,
+      "sha256": "28f1e45babd28dfa76bb3b4376d41149dcc5fabbdcb5fd1866cc7d08c5aa5a64"
+    },
+    "v1/work/hls/syn/report/csynth_design_size.rpt": {
+      "bytes": 8678,
+      "sha256": "897f19b63e0e1e26ad3962e44ad51bb091b08d569470d1edfbc77251eea0c929"
+    },
+    "v1/work/hls/syn/report/csynth_design_size.xml": {
+      "bytes": 6945,
+      "sha256": "70a55263ea057baf969e9e562e689ad4f2bfd2ad2a2acb616833793dd3628162"
+    },
+    "v1/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_108_11_VITIS_LOOP_109_12_csynth.rpt": {
+      "bytes": 61255,
+      "sha256": "14fce7aaf55b398052770b2830dfa7b5d4bacdb6fc9f0cab7740590815b3d40e"
+    },
+    "v1/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_108_11_VITIS_LOOP_109_12_csynth.xml": {
+      "bytes": 84515,
+      "sha256": "372446784ad010597d52e3311e9f21707ee125ab0567464640a625908169b8a8"
+    },
+    "v1/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_116_13_csynth.rpt": {
+      "bytes": 136963,
+      "sha256": "2ec84cf0b76023587e59cfe7a1ff4680103db334fd51a52b55244e8c2bb90318"
+    },
+    "v1/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_116_13_csynth.xml": {
+      "bytes": 113267,
+      "sha256": "2dbd49702047a61f47d5188173e5a4255c9a2c488625bc3ac5d1cc41627f15fb"
+    },
+    "v1/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_146_16_VITIS_LOOP_147_17_csynth.rpt": {
+      "bytes": 28704,
+      "sha256": "46ba2555a83f97ce92b92fcf2d7b87b54d213a6139da7042537ea28e2bc4cd5c"
+    },
+    "v1/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_146_16_VITIS_LOOP_147_17_csynth.xml": {
+      "bytes": 34661,
+      "sha256": "a53756291c8e87f26f9b352598a8ed37c958314af50eb78afac1b47d7d575e0f"
+    },
+    "v1/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_55_1_VITIS_LOOP_56_2_csynth.rpt": {
+      "bytes": 31848,
+      "sha256": "d6897bdf399d8efafc6c8f1a98f2b8d31b6ff2794ca3a3cbf9386ec15a0224e5"
+    },
+    "v1/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_55_1_VITIS_LOOP_56_2_csynth.xml": {
+      "bytes": 38013,
+      "sha256": "22e701ffd24f586e1660128f7965f65f45fb8aedbad50ca1e1a3701a571e739a"
+    },
+    "v1/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_62_4_csynth.rpt": {
+      "bytes": 36492,
+      "sha256": "f41d0fca1980eaf6bb259c51b184277e4fd5ed8edfd48af522995e9a08154bb2"
+    },
+    "v1/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_62_4_csynth.xml": {
+      "bytes": 38284,
+      "sha256": "672af761e3753d1581afbc699d816a7be29ceb6257ecf6fcc371c0762cccc577"
+    },
+    "v1/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_68_5_csynth.rpt": {
+      "bytes": 12958,
+      "sha256": "3309a8ed92da87315fae7b491f7e954b1f2f778d6a7babab7f7ae12c94bc0885"
+    },
+    "v1/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_68_5_csynth.xml": {
+      "bytes": 16162,
+      "sha256": "1985711983048ec4bd9cb0915a05147b293075d72633fc8b7659edcc599d6685"
+    },
+    "v1/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_75_7_VITIS_LOOP_76_8_csynth.rpt": {
+      "bytes": 21096,
+      "sha256": "9f8e78852cd22d344f025ab6ac59a4ca7066365263ba8b281a90e30de4319258"
+    },
+    "v1/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_75_7_VITIS_LOOP_76_8_csynth.xml": {
+      "bytes": 19834,
+      "sha256": "191a2225dd15aeb2af453733ebe67543774ef858d7e5fc728b4724d162911e1d"
+    },
+    "v1/work/hls/syn/report/ffn_accel_Pipeline_fc1_steps_csynth.rpt": {
+      "bytes": 93701,
+      "sha256": "ffcf8846fdc4e2d9ef33d75fe4f4b551c586c2d5fe80a0525a722b485a79c714"
+    },
+    "v1/work/hls/syn/report/ffn_accel_Pipeline_fc1_steps_csynth.xml": {
+      "bytes": 94775,
+      "sha256": "cbbbdc019f475a390fcb297db6b789b1b39db7ef668c4a505ce3f15b5e0c655e"
+    },
+    "v1/work/hls/syn/report/ffn_accel_Pipeline_fc2_steps_csynth.rpt": {
+      "bytes": 143133,
+      "sha256": "1bea5268b16a865c02d1778a5e8a983e34f2dfb63deb09651361c2b4c0473abe"
+    },
+    "v1/work/hls/syn/report/ffn_accel_Pipeline_fc2_steps_csynth.xml": {
+      "bytes": 138394,
+      "sha256": "ce147a428e77047b14167f480495f4c81fab1635d7bbeb6c052815a4645e8f4d"
+    },
+    "v1/work/hls/syn/report/ffn_accel_csynth.rpt": {
+      "bytes": 135229,
+      "sha256": "2f5089e35c576ccb247431a1d6280aaee21d7ab9300e674423fa6146be09e2b9"
+    },
+    "v1/work/hls/syn/report/ffn_accel_csynth.xml": {
+      "bytes": 32098,
+      "sha256": "bd4707051187f57bd0592eb457b604b27261b437c9f955322c99c3c5a67f864a"
+    },
+    "v1/work/hls/syn/verilog/ffn_accel.v": {
+      "bytes": 722413,
+      "sha256": "a5f10bf703963c09779d38b76cc4b2d94cecdb63572b8f90680f4ba43c5dba05"
+    },
+    "v1/work/hls/syn/verilog/ffn_accel_control_s_axi.v": {
+      "bytes": 19142,
+      "sha256": "7a9376ece077fd849f3c3524a741162fae437ddb4a6777500e933c18bf183c37"
+    },
+    "v1/work/logs/hls_compile.log": {
+      "bytes": 77735,
+      "sha256": "82e09610b60e398d7e8ac72d6e75a28514d089929e68978f9c86b3f8be1dd88d"
+    },
+    "v1/work/logs/hls_run_csim.log": {
+      "bytes": 5646,
+      "sha256": "4c5256b6bc5c90dcf843c9b289c92b1f7441527d6b74b2366db974e6bc551ae4"
+    },
+    "v1/work/logs/work.steps.log": {
+      "bytes": 10220,
+      "sha256": "3166bd3b4a5f580167038421b0c9209791362320cb7cbbb56e98fea36f6945a2"
+    },
+    "v1/work/logs/xcd.log": {
+      "bytes": 4768,
+      "sha256": "9249641a92558b79070df31827dad9f52c357e6397da010979f11a260850972e"
+    },
+    "v1/work/reports/hls_compile.rpt": {
+      "bytes": 107551,
+      "sha256": "dc8d72566b0a00f57f0bf1458c216ea89772267d8c0c9c5a40d9167ae694d3c1"
+    },
+    "v1/work/work.hlscompile_summary": {
+      "bytes": 5550,
+      "sha256": "ae06a04cd75ddf9a3cd50245306ed2c8da0ed494c587cd9ab728b8af891c8e58"
+    },
+    "v1/work/work.hlsrun_csim_summary": {
+      "bytes": 3187,
+      "sha256": "5b47aa8c45278ffc3f4d5862208bd575e33912b341f48f8fabecea585c7f2459"
+    },
+    "v2/build/full.cfg": {
+      "bytes": 538,
+      "sha256": "a5da7a9349c61aa1761f12b83f96f6d4cf15d53fa8327eb0439f33c9304509fe"
+    },
+    "v2/build/small.cfg": {
+      "bytes": 550,
+      "sha256": "7066c842dd523ccf025b72934af2cc108603063e83a49f8abbd43cfb216d6119"
+    },
+    "v2/ffn_accel.cpp": {
+      "bytes": 7491,
+      "sha256": "553b9c9b36fee41d791908f1fc3b8314ea4631db403743f5e80665d18fad1350"
+    },
+    "v2/ffn_accel.hpp": {
+      "bytes": 877,
+      "sha256": "fcdced1362b460a6cea73fc5869564e6797c041469a50b9c56deba1253cd7478"
+    },
+    "v2/host_bridge.cpp": {
+      "bytes": 503,
+      "sha256": "a8cfe5dc62eb66fa3e3102e4d12eb75a265abbea20e04e4d5b104cecfc480740"
+    },
+    "v2/input_manifest.json": {
+      "bytes": 2944,
+      "sha256": "f041abc76c8acde0ca0cf40df72b0809900018b4138c320f1521a068b2094a21"
+    },
+    "v2/records_v1/cosim.finished.json": {
+      "bytes": 1894,
+      "sha256": "3e9c6cb9694bc05cd21afa8c75c2883988e7e3cbf9fa66804e451c7ab670dda3"
+    },
+    "v2/records_v1/cosim.log": {
+      "bytes": 99862,
+      "sha256": "47d35472cc6cd73072bfec69415ef6d688157405f1cdc2a3fa41f16e0e5ee358"
+    },
+    "v2/records_v1/cosim.started.json": {
+      "bytes": 1810,
+      "sha256": "02db7fa5ff231014bb9c7ea7ed3577c89541a7684728bfd92484112e0db41a37"
+    },
+    "v2/records_v1/csim.finished.json": {
+      "bytes": 1889,
+      "sha256": "f31b54374b1192127bd8b996dbd589e06d303388aa0419ad57c996226358ce74"
+    },
+    "v2/records_v1/csim.log": {
+      "bytes": 6217,
+      "sha256": "b2414b92ca97bbb50b4459a679ea4343f4f9df7884035c1fef268646c41eb1b7"
+    },
+    "v2/records_v1/csim.started.json": {
+      "bytes": 1805,
+      "sha256": "b7fd20a5e6def8920510b4ec32b5105929cdc0e1d9338b9f4f0d98db5ee5d15b"
+    },
+    "v2/records_v1/csynth.finished.json": {
+      "bytes": 2246,
+      "sha256": "86962c9903b3480d39755d3fd660e6acbfcf196f62eb98081fd7e0d5bc7c0c98"
+    },
+    "v2/records_v1/csynth.log": {
+      "bytes": 108496,
+      "sha256": "ecd6ecbc0d04b14adc8c4e9a54b07c1b4fc32b9555043d86962156ca51e03c60"
+    },
+    "v2/records_v1/csynth.started.json": {
+      "bytes": 1801,
+      "sha256": "dc5597080c3f5f08b29359ebeade241394e3efb791be314a8cdd0078a1856c0f"
+    },
+    "v2/test_support.hpp": {
+      "bytes": 5811,
+      "sha256": "e04e6932815d2a9875c166b82a19e79dde05fe59e24d9ec26f2fc3d966cceab3"
+    },
+    "v2/testbench.cpp": {
+      "bytes": 2142,
+      "sha256": "d0bbaa59b24a1d37f253f4478645fd08f5aef469d50a14f92e37890a7f8769ba"
+    },
+    "v2/testbench_small.cpp": {
+      "bytes": 1495,
+      "sha256": "d3b420cbb6cdaf2ae2a037c3e468dfa6543c25ac0f4f246359c71e456f416d1d"
+    },
+    "v2/work/hls/.autopilot/db/driver/src/xffn_accel_hw.h": {
+      "bytes": 3332,
+      "sha256": "c69e75007368c801992e0b5dcf8d6aa4b138721bebc96b38822ef606663a94ee"
+    },
+    "v2/work/hls/sim/verilog/xsim.log": {
+      "bytes": 37585,
+      "sha256": "e6170154348812317800015899b2d65c037fd64be1685b24d8df3cc723a81f60"
+    },
+    "v2/work/hls/syn/report/csynth.rpt": {
+      "bytes": 130329,
+      "sha256": "b2c928ba0d9c532d8311fa9e90c2f1cb883e34fef1ffb0d22748cb8c17acea26"
+    },
+    "v2/work/hls/syn/report/csynth.xml": {
+      "bytes": 334941,
+      "sha256": "3e7b1736682ac1ec962db49201b94d81f09c216b7ab2f6ee8036f36e15982beb"
+    },
+    "v2/work/hls/syn/report/csynth_design_size.rpt": {
+      "bytes": 8678,
+      "sha256": "ab187c4dfe36bfae5b3db8cc989c70de46b7250d7025054ed7bea0926d85e1b9"
+    },
+    "v2/work/hls/syn/report/csynth_design_size.xml": {
+      "bytes": 6946,
+      "sha256": "5eb823d1abf634a2d92d311c8b778ac82c558bf91c4cd60dc15b80415d54c258"
+    },
+    "v2/work/hls/syn/report/ffn_accel_Pipeline_5_csynth.rpt": {
+      "bytes": 28488,
+      "sha256": "70e5e93ab78f9d942df5c0a36eddabca975b257e50d69b76a8447b2476c45786"
+    },
+    "v2/work/hls/syn/report/ffn_accel_Pipeline_5_csynth.xml": {
+      "bytes": 65739,
+      "sha256": "4f6e39ed95797e4440b36424a8dceb236d18ca3c472e4b7ace5211c6fe120170"
+    },
+    "v2/work/hls/syn/report/ffn_accel_Pipeline_9_csynth.rpt": {
+      "bytes": 28488,
+      "sha256": "8fafbc1071b713d371ba9993ed068d915abc3cdb4e624f83a1ce639eae0c7a1b"
+    },
+    "v2/work/hls/syn/report/ffn_accel_Pipeline_9_csynth.xml": {
+      "bytes": 65739,
+      "sha256": "3fa4e4a0569481294872230cde3aa866ce30ce1874bd2c5d5ba78abb5247168f"
+    },
+    "v2/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_108_11_VITIS_LOOP_109_12_csynth.rpt": {
+      "bytes": 111811,
+      "sha256": "9409defc45755ed29ae58d67be471970a22f4267c1e392f6cbc2cd5cd849eb81"
+    },
+    "v2/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_108_11_VITIS_LOOP_109_12_csynth.xml": {
+      "bytes": 162697,
+      "sha256": "84fd21a58491832499dcc56531d7ba8a4e62f03efb5e842a442db8f65de18a30"
+    },
+    "v2/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_116_13_csynth.rpt": {
+      "bytes": 206382,
+      "sha256": "87545925a138d7e066faa87bc37bbaf9f5945cc201a58f39693623fe82076661"
+    },
+    "v2/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_116_13_csynth.xml": {
+      "bytes": 221824,
+      "sha256": "824539ca25b8b630e482909bc334c16e1b805827d5046a477acda97e726a04e5"
+    },
+    "v2/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_146_16_VITIS_LOOP_147_17_csynth.rpt": {
+      "bytes": 37079,
+      "sha256": "4d95982adc607e52037fb2a2fbbd5f9d49f2e424c7175bdb5905cfd6ac5623d6"
+    },
+    "v2/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_146_16_VITIS_LOOP_147_17_csynth.xml": {
+      "bytes": 50939,
+      "sha256": "95cda2fdf019c419c291e13938fc713032447af0a9ca3f4c52539aad802031a9"
+    },
+    "v2/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_55_1_VITIS_LOOP_56_2_csynth.rpt": {
+      "bytes": 31848,
+      "sha256": "5779ca8010ed08c81f1f78ce5a0c9568c11660c427cd60c2ae63fb6e2e8b6818"
+    },
+    "v2/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_55_1_VITIS_LOOP_56_2_csynth.xml": {
+      "bytes": 38013,
+      "sha256": "fd103dfe704ce61d83fc813a10f4992d7493eddfa5226c93d99bc0ae70d73ee7"
+    },
+    "v2/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_62_4_csynth.rpt": {
+      "bytes": 36492,
+      "sha256": "f86ae04c65d586be328efe0b95f0eed6c9663f4971cc621890cf22295f9a2097"
+    },
+    "v2/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_62_4_csynth.xml": {
+      "bytes": 38284,
+      "sha256": "ab5cff74fdf7e84f8265ccf048913e6488db95d26279a64e179f39cf748e220c"
+    },
+    "v2/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_68_5_csynth.rpt": {
+      "bytes": 12958,
+      "sha256": "895d1cedd673725d49a419eec329920f9617be8eb646a43a2f434663b4d22898"
+    },
+    "v2/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_68_5_csynth.xml": {
+      "bytes": 16162,
+      "sha256": "9d134632b22b22e3d43639da2d206537d62b505a4e7e111c7d88643b558dfd41"
+    },
+    "v2/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_75_7_VITIS_LOOP_76_8_csynth.rpt": {
+      "bytes": 23044,
+      "sha256": "792228c923ee04ed5b1225608d4f60498fb69f3098172597a50b6095aa22d907"
+    },
+    "v2/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_75_7_VITIS_LOOP_76_8_csynth.xml": {
+      "bytes": 23645,
+      "sha256": "50901f65f64d05c0a06e10b09828ea9b21feca2a34acfeedcbbd6a5effd7d31d"
+    },
+    "v2/work/hls/syn/report/ffn_accel_Pipeline_fc1_steps_csynth.rpt": {
+      "bytes": 162717,
+      "sha256": "50a18f650bacc2af8daa81d8d35cc60437ab4960ab5f6cfd95c8a8ba7e8d65ff"
+    },
+    "v2/work/hls/syn/report/ffn_accel_Pipeline_fc1_steps_csynth.xml": {
+      "bytes": 161042,
+      "sha256": "225120cdf2848bb46ee96794bf050133c53989c4546ce47f60f8f2a5b97af77d"
+    },
+    "v2/work/hls/syn/report/ffn_accel_Pipeline_fc2_steps_csynth.rpt": {
+      "bytes": 259572,
+      "sha256": "e278dabb7948c9080430f16f079982d8cfbd064c491fee8a103d9da9e064e6a9"
+    },
+    "v2/work/hls/syn/report/ffn_accel_Pipeline_fc2_steps_csynth.xml": {
+      "bytes": 248594,
+      "sha256": "537db2ac0e443b667670736591e33000b1d8f3e9e2627881cd1d46ad77a4289a"
+    },
+    "v2/work/hls/syn/report/ffn_accel_csynth.rpt": {
+      "bytes": 198617,
+      "sha256": "09ffd264bc0550ece73b3dcb5fc9babe3a5e0b6ee312258a031b85ef59d961a9"
+    },
+    "v2/work/hls/syn/report/ffn_accel_csynth.xml": {
+      "bytes": 32100,
+      "sha256": "431f8ad6c9c01b8a5a4bf51f3d65af9d42c25107dde7105df584acc00310824c"
+    },
+    "v2/work/hls/syn/verilog/ffn_accel.v": {
+      "bytes": 1189046,
+      "sha256": "43d2137dd7055c9f4059f3ff312c3ea85819ff9cf67cbe148dfa3f864afbb469"
+    },
+    "v2/work/hls/syn/verilog/ffn_accel_control_s_axi.v": {
+      "bytes": 19142,
+      "sha256": "7a9376ece077fd849f3c3524a741162fae437ddb4a6777500e933c18bf183c37"
+    },
+    "v2/work/logs/hls_compile.log": {
+      "bytes": 107281,
+      "sha256": "2ca5e4504635fa4886812f72d18ecf033c28553482b7d116c392e0193b68b7c5"
+    },
+    "v2/work/logs/hls_run_cosim.log": {
+      "bytes": 98514,
+      "sha256": "4a46399ca6f98ef0ec11e882c37624210aa6b03dd14300850ced1e164b0fdd16"
+    },
+    "v2/work/logs/hls_run_csim.log": {
+      "bytes": 5858,
+      "sha256": "4bd7c8b0a0582d5d77f28b013bee6a5552d44414cadb7e0efbb1b14f0e0748c0"
+    },
+    "v2/work/logs/work.steps.log": {
+      "bytes": 10696,
+      "sha256": "e8665718894782017d3c8905e682dd2a4fc4d6452bbe0f2c2c0b6a58efc91d49"
+    },
+    "v2/work/logs/xcd.log": {
+      "bytes": 7176,
+      "sha256": "038e55ede11baf760d4958bbe52ee9abd23b244e8444b918cac940c9efcb3986"
+    },
+    "v2/work/reports/hls_compile.rpt": {
+      "bytes": 130329,
+      "sha256": "b2c928ba0d9c532d8311fa9e90c2f1cb883e34fef1ffb0d22748cb8c17acea26"
+    },
+    "v2/work/reports/hls_cosim.rpt": {
+      "bytes": 1258,
+      "sha256": "dca29be771258d3edc35dd9f4d87dbf5383504e4ef15dfaa68c58fc57838af50"
+    },
+    "v2/work/work.hlscompile_summary": {
+      "bytes": 5553,
+      "sha256": "1c217abc39555b25b2cbff5222ebaa3c5ee2a925299d9da303e4499e941661ff"
+    },
+    "v2/work/work.hlsrun_cosim_summary": {
+      "bytes": 4554,
+      "sha256": "7c8a21900008ebc65d05699dad022ddda788afd3d430a4fc0691dbfd9ba0c040"
+    },
+    "v2/work/work.hlsrun_csim_summary": {
+      "bytes": 3187,
+      "sha256": "ed14bbc12bc0ac6342f4184d55eae91873ae451ce7a12b48163318225591f941"
+    },
+    "v2_ooc/build/full.cfg": {
+      "bytes": 538,
+      "sha256": "a5da7a9349c61aa1761f12b83f96f6d4cf15d53fa8327eb0439f33c9304509fe"
+    },
+    "v2_ooc/build/small.cfg": {
+      "bytes": 550,
+      "sha256": "7066c842dd523ccf025b72934af2cc108603063e83a49f8abbd43cfb216d6119"
+    },
+    "v2_ooc/ffn_accel.cpp": {
+      "bytes": 7491,
+      "sha256": "553b9c9b36fee41d791908f1fc3b8314ea4631db403743f5e80665d18fad1350"
+    },
+    "v2_ooc/ffn_accel.hpp": {
+      "bytes": 877,
+      "sha256": "fcdced1362b460a6cea73fc5869564e6797c041469a50b9c56deba1253cd7478"
+    },
+    "v2_ooc/host_bridge.cpp": {
+      "bytes": 503,
+      "sha256": "a8cfe5dc62eb66fa3e3102e4d12eb75a265abbea20e04e4d5b104cecfc480740"
+    },
+    "v2_ooc/input_manifest.json": {
+      "bytes": 2944,
+      "sha256": "f041abc76c8acde0ca0cf40df72b0809900018b4138c320f1521a068b2094a21"
+    },
+    "v2_ooc/records_v1/csynth.finished.json": {
+      "bytes": 2251,
+      "sha256": "4608722566afc6fc143ad268b8559ffaffccf4189c9d2a82c116fcf639fd59eb"
+    },
+    "v2_ooc/records_v1/csynth.log": {
+      "bytes": 108518,
+      "sha256": "5697dca6fb64af112171d1a19ce0174f42ff683c126dce4eeb149b3d16f06730"
+    },
+    "v2_ooc/records_v1/csynth.started.json": {
+      "bytes": 1806,
+      "sha256": "32c79f09229edef3ac23923c8ce581d6e0a7ca81bbd56f3440ffbf5000b8c944"
+    },
+    "v2_ooc/records_v1/impl.finished.json": {
+      "bytes": 1894,
+      "sha256": "17f49e55aa659649b894a79563c2213a0f87685c91a4c148f5eb76cf02db060f"
+    },
+    "v2_ooc/records_v1/impl.log": {
+      "bytes": 156406,
+      "sha256": "dd319dfd192898dd640030eaedfc4951e5bbce76c1f261ed89320d0c7cf1b82a"
+    },
+    "v2_ooc/records_v1/impl.started.json": {
+      "bytes": 1810,
+      "sha256": "a2db3214831d051ad74e2ecb4d0d408e9ebfea4f894a2474edbd8f3e9be76891"
+    },
+    "v2_ooc/test_support.hpp": {
+      "bytes": 5811,
+      "sha256": "e04e6932815d2a9875c166b82a19e79dde05fe59e24d9ec26f2fc3d966cceab3"
+    },
+    "v2_ooc/testbench.cpp": {
+      "bytes": 2142,
+      "sha256": "d0bbaa59b24a1d37f253f4478645fd08f5aef469d50a14f92e37890a7f8769ba"
+    },
+    "v2_ooc/testbench_small.cpp": {
+      "bytes": 1495,
+      "sha256": "d3b420cbb6cdaf2ae2a037c3e468dfa6543c25ac0f4f246359c71e456f416d1d"
+    },
+    "v2_ooc/work/ffn_accel.zip": {
+      "bytes": 867640,
+      "sha256": "3e7eb615f7fc0ecf61ad5e56443eab6f4665e698045cef2565a4990e340e4185"
+    },
+    "v2_ooc/work/hls/.autopilot/db/driver/src/xffn_accel_hw.h": {
+      "bytes": 3332,
+      "sha256": "c69e75007368c801992e0b5dcf8d6aa4b138721bebc96b38822ef606663a94ee"
+    },
+    "v2_ooc/work/hls/impl/ip/component.xml": {
+      "bytes": 236043,
+      "sha256": "d9a9796c9210b5906f82e231ef65b6aaf6f546aedcf0fb56d0aa6ade04043f3b"
+    },
+    "v2_ooc/work/hls/impl/report/verilog/export_impl.rpt": {
+      "bytes": 80268,
+      "sha256": "3ca46f449d62f8986d20190e92d0c303a342ada4596b46a49a140961dfc0f88e"
+    },
+    "v2_ooc/work/hls/impl/report/verilog/export_impl.xml": {
+      "bytes": 118586,
+      "sha256": "187454d1673b38fbb93c4b261e10388b21088ceff7b292ecba4a962a640bea8e"
+    },
+    "v2_ooc/work/hls/impl/report/verilog/export_syn.rpt": {
+      "bytes": 100938,
+      "sha256": "32eac69738d8fecc36f7c9953ebca4bbed937d15c16b4cf625444553b41bd404"
+    },
+    "v2_ooc/work/hls/impl/report/verilog/export_syn.xml": {
+      "bytes": 140423,
+      "sha256": "a9b847b3e389c426c3d9ca62091cc7134f2e617bcce67d6d4a163b75efdf55a9"
+    },
+    "v2_ooc/work/hls/impl/report/verilog/ffn_accel_export.rpt": {
+      "bytes": 591,
+      "sha256": "663b2fad7193858b5fde60c76a118f54f267e9d2b6a14490a9ac502e6542e358"
+    },
+    "v2_ooc/work/hls/impl/verilog/report/ffn_accel_design_analysis_routed.rpt": {
+      "bytes": 4947,
+      "sha256": "226998cb487e8dc13beba727502d4df19bf3e0e9e2bb8ec507dadd2616915ba2"
+    },
+    "v2_ooc/work/hls/impl/verilog/report/ffn_accel_design_analysis_synth.rpt": {
+      "bytes": 7956,
+      "sha256": "fe88c69043b4f119e0bda9e59ee558833a2ac51e1788b1890777d851a4424261"
+    },
+    "v2_ooc/work/hls/impl/verilog/report/ffn_accel_failfast_routed.rpt": {
+      "bytes": 3421,
+      "sha256": "a56e997086772f19e6abf3b2c1450fe42aca1539cdada6f9b989f991f4177f51"
+    },
+    "v2_ooc/work/hls/impl/verilog/report/ffn_accel_failfast_synth.rpt": {
+      "bytes": 3421,
+      "sha256": "8db67125b83a37e94d2228a48f92aa58846ffa7f4dae59099091f9ed4b80eb04"
+    },
+    "v2_ooc/work/hls/impl/verilog/report/ffn_accel_power_routed.rpt": {
+      "bytes": 11158,
+      "sha256": "b1626ca6640d7274c18db1ad34873175379f8a6e44593dc4a3aa278bb0e67571"
+    },
+    "v2_ooc/work/hls/impl/verilog/report/ffn_accel_power_synth.rpt": {
+      "bytes": 11079,
+      "sha256": "7898180879786494b4200d4536632d0f87229e8e3f2f935f78afa32e27104d89"
+    },
+    "v2_ooc/work/hls/impl/verilog/report/ffn_accel_status_routed.rpt": {
+      "bytes": 714,
+      "sha256": "ac94235142562eca71d57700098165d88d79d65fa3176739cbf07cc56f555bfc"
+    },
+    "v2_ooc/work/hls/impl/verilog/report/ffn_accel_timing_paths_routed.rpt": {
+      "bytes": 67534,
+      "sha256": "2e5e368c36f1af8be5620dd4e3eae0207306b03b6a7cf1faf1dc8edf97024da0"
+    },
+    "v2_ooc/work/hls/impl/verilog/report/ffn_accel_timing_paths_synth.rpt": {
+      "bytes": 126121,
+      "sha256": "cfd09dff3242672a88f8f0d537caa3c62d8e76f56c9506c5d98c88601f8ef876"
+    },
+    "v2_ooc/work/hls/impl/verilog/report/ffn_accel_timing_routed.rpt": {
+      "bytes": 18175,
+      "sha256": "328e77d3a7858684803e1e88224ca8c52d3a2b533c12e32a7c3a8aec31568cb5"
+    },
+    "v2_ooc/work/hls/impl/verilog/report/ffn_accel_timing_synth.rpt": {
+      "bytes": 26285,
+      "sha256": "c5f65b5d6374945dbb550aa027e81c25ce5538f3eaa66cefa2b3c9735e0ead49"
+    },
+    "v2_ooc/work/hls/impl/verilog/report/ffn_accel_utilization_hierarchical_routed.rpt": {
+      "bytes": 142909,
+      "sha256": "3e585265622fa91b7be65bbb99ec3a71c6cc63f1c11ac1fd17053b0f88e04f3d"
+    },
+    "v2_ooc/work/hls/impl/verilog/report/ffn_accel_utilization_hierarchical_synth.rpt": {
+      "bytes": 143049,
+      "sha256": "400aff80b30c2c2bda40cc624aa5eed1f14a2a0b99ff387c4ac31bb4ea64f0fe"
+    },
+    "v2_ooc/work/hls/impl/verilog/report/ffn_accel_utilization_routed.rpt": {
+      "bytes": 12423,
+      "sha256": "6795e4631062baf0ca22f10939122d1dd23ff0c69c43026e207f91b61d844da6"
+    },
+    "v2_ooc/work/hls/impl/verilog/report/ffn_accel_utilization_synth.rpt": {
+      "bytes": 10176,
+      "sha256": "1d6a28c137d86f240ddc9cdad92de9a868e20d667962469dacab381cb06015c1"
+    },
+    "v2_ooc/work/hls/impl/verilog/report/impl.AVGFO.rpt": {
+      "bytes": 1108,
+      "sha256": "99a5c527fe97f1b16bfe8c69cb90289424e8e4de3fc79507408f7ba9a77fa372"
+    },
+    "v2_ooc/work/hls/impl/verilog/report/impl.BUFG.rpt": {
+      "bytes": 2543,
+      "sha256": "0c754b4f253804ae6bec296d3ecdbe8031f36d0e0c5304ba08be09152f7cc889"
+    },
+    "v2_ooc/work/hls/impl/verilog/report/impl.DONT_TOUCH.rpt": {
+      "bytes": 3620,
+      "sha256": "5f80c11932f2b9b30885cf518c78d99a275f44748e05409cf971215c504199c8"
+    },
+    "v2_ooc/work/hls/impl/verilog/report/synth.AVGFO.rpt": {
+      "bytes": 1108,
+      "sha256": "cb41d7847420c5fbbc9e31fdc02f4dbc08398f9c6ca3f08b4e1e442eaa624e06"
+    },
+    "v2_ooc/work/hls/impl/verilog/report/synth.DONT_TOUCH.rpt": {
+      "bytes": 3620,
+      "sha256": "1f75f22be08e2bb8938663a6be33f8df5e9f29724c999c0034d1aa928b627d67"
+    },
+    "v2_ooc/work/hls/syn/report/csynth.rpt": {
+      "bytes": 130329,
+      "sha256": "775446c525b0cd956d83b11b6bbc14a94f8538a6fb1201cc310124b1c3adbf02"
+    },
+    "v2_ooc/work/hls/syn/report/csynth.xml": {
+      "bytes": 334941,
+      "sha256": "3e7b1736682ac1ec962db49201b94d81f09c216b7ab2f6ee8036f36e15982beb"
+    },
+    "v2_ooc/work/hls/syn/report/csynth_design_size.rpt": {
+      "bytes": 8678,
+      "sha256": "ab187c4dfe36bfae5b3db8cc989c70de46b7250d7025054ed7bea0926d85e1b9"
+    },
+    "v2_ooc/work/hls/syn/report/csynth_design_size.xml": {
+      "bytes": 6945,
+      "sha256": "873aafadb5d599130aec81c96f0206062c834292eec30b93ffcfbbe45ca1ec36"
+    },
+    "v2_ooc/work/hls/syn/report/ffn_accel_Pipeline_5_csynth.rpt": {
+      "bytes": 28488,
+      "sha256": "0791737415650c592bf0f1cfe52b9f4de65212a191fb44b453752b9533a79822"
+    },
+    "v2_ooc/work/hls/syn/report/ffn_accel_Pipeline_5_csynth.xml": {
+      "bytes": 65739,
+      "sha256": "4f6e39ed95797e4440b36424a8dceb236d18ca3c472e4b7ace5211c6fe120170"
+    },
+    "v2_ooc/work/hls/syn/report/ffn_accel_Pipeline_9_csynth.rpt": {
+      "bytes": 28488,
+      "sha256": "9a60f20b4b44ac0bd421390e24399c91fc0469de5f8086f5cf7d814fcf19e577"
+    },
+    "v2_ooc/work/hls/syn/report/ffn_accel_Pipeline_9_csynth.xml": {
+      "bytes": 65739,
+      "sha256": "3fa4e4a0569481294872230cde3aa866ce30ce1874bd2c5d5ba78abb5247168f"
+    },
+    "v2_ooc/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_108_11_VITIS_LOOP_109_12_csynth.rpt": {
+      "bytes": 111811,
+      "sha256": "85c304ca2a1bdc651cce468a4e84757f05e9ecc91dc33961876b7dec13ab7b0c"
+    },
+    "v2_ooc/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_108_11_VITIS_LOOP_109_12_csynth.xml": {
+      "bytes": 162697,
+      "sha256": "84fd21a58491832499dcc56531d7ba8a4e62f03efb5e842a442db8f65de18a30"
+    },
+    "v2_ooc/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_116_13_csynth.rpt": {
+      "bytes": 206382,
+      "sha256": "8774a7ff57df3f943739038227108186e12c55d804061f9a7c52035a3f87ee74"
+    },
+    "v2_ooc/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_116_13_csynth.xml": {
+      "bytes": 221824,
+      "sha256": "824539ca25b8b630e482909bc334c16e1b805827d5046a477acda97e726a04e5"
+    },
+    "v2_ooc/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_146_16_VITIS_LOOP_147_17_csynth.rpt": {
+      "bytes": 37079,
+      "sha256": "6df48cedc0fc2a4f79b4f5b13da8b85301ee5e0ebc4fe1bde2017db405d3cbfc"
+    },
+    "v2_ooc/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_146_16_VITIS_LOOP_147_17_csynth.xml": {
+      "bytes": 50939,
+      "sha256": "95cda2fdf019c419c291e13938fc713032447af0a9ca3f4c52539aad802031a9"
+    },
+    "v2_ooc/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_55_1_VITIS_LOOP_56_2_csynth.rpt": {
+      "bytes": 31848,
+      "sha256": "6009622655b92d5d81bed600fb05e514ce25a22cc3508ba9a99c7c82ed743151"
+    },
+    "v2_ooc/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_55_1_VITIS_LOOP_56_2_csynth.xml": {
+      "bytes": 38013,
+      "sha256": "fd103dfe704ce61d83fc813a10f4992d7493eddfa5226c93d99bc0ae70d73ee7"
+    },
+    "v2_ooc/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_62_4_csynth.rpt": {
+      "bytes": 36492,
+      "sha256": "89932a8c5765eb9db2c899e43dc45f95ca22e187f0a2ff2580c699abe4f2115f"
+    },
+    "v2_ooc/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_62_4_csynth.xml": {
+      "bytes": 38284,
+      "sha256": "ab5cff74fdf7e84f8265ccf048913e6488db95d26279a64e179f39cf748e220c"
+    },
+    "v2_ooc/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_68_5_csynth.rpt": {
+      "bytes": 12958,
+      "sha256": "5f5d84a68a88517e1f04cf2994c5c6c9210cfc480c995c302d5d96e4766125bd"
+    },
+    "v2_ooc/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_68_5_csynth.xml": {
+      "bytes": 16162,
+      "sha256": "9d134632b22b22e3d43639da2d206537d62b505a4e7e111c7d88643b558dfd41"
+    },
+    "v2_ooc/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_75_7_VITIS_LOOP_76_8_csynth.rpt": {
+      "bytes": 23044,
+      "sha256": "f19d4d2584189af05d7ffb80757012be617e82e44c655fc9f429d5bcccc66956"
+    },
+    "v2_ooc/work/hls/syn/report/ffn_accel_Pipeline_VITIS_LOOP_75_7_VITIS_LOOP_76_8_csynth.xml": {
+      "bytes": 23645,
+      "sha256": "50901f65f64d05c0a06e10b09828ea9b21feca2a34acfeedcbbd6a5effd7d31d"
+    },
+    "v2_ooc/work/hls/syn/report/ffn_accel_Pipeline_fc1_steps_csynth.rpt": {
+      "bytes": 162717,
+      "sha256": "cffa6c2e7fdaa515a59be11c14df194a40fddd15979464cffefbdf312fb001bb"
+    },
+    "v2_ooc/work/hls/syn/report/ffn_accel_Pipeline_fc1_steps_csynth.xml": {
+      "bytes": 161042,
+      "sha256": "225120cdf2848bb46ee96794bf050133c53989c4546ce47f60f8f2a5b97af77d"
+    },
+    "v2_ooc/work/hls/syn/report/ffn_accel_Pipeline_fc2_steps_csynth.rpt": {
+      "bytes": 259572,
+      "sha256": "72b77b5133b2128b77b28c1d87ae8b243ffc6156ea8253034c44b994d23832f9"
+    },
+    "v2_ooc/work/hls/syn/report/ffn_accel_Pipeline_fc2_steps_csynth.xml": {
+      "bytes": 248594,
+      "sha256": "537db2ac0e443b667670736591e33000b1d8f3e9e2627881cd1d46ad77a4289a"
+    },
+    "v2_ooc/work/hls/syn/report/ffn_accel_csynth.rpt": {
+      "bytes": 198617,
+      "sha256": "aaed60db27c0529be152a5276a23d34165fe60f7e3b26a9877776f2c4e6364f0"
+    },
+    "v2_ooc/work/hls/syn/report/ffn_accel_csynth.xml": {
+      "bytes": 32100,
+      "sha256": "431f8ad6c9c01b8a5a4bf51f3d65af9d42c25107dde7105df584acc00310824c"
+    },
+    "v2_ooc/work/hls/syn/verilog/ffn_accel.v": {
+      "bytes": 1189046,
+      "sha256": "43d2137dd7055c9f4059f3ff312c3ea85819ff9cf67cbe148dfa3f864afbb469"
+    },
+    "v2_ooc/work/hls/syn/verilog/ffn_accel_control_s_axi.v": {
+      "bytes": 19142,
+      "sha256": "7a9376ece077fd849f3c3524a741162fae437ddb4a6777500e933c18bf183c37"
+    },
+    "v2_ooc/work/logs/hls_compile.log": {
+      "bytes": 107303,
+      "sha256": "bd4e25e7d4836a8cebfb02185816b54d346fdfb56cc8b0965e77ae974cfa23f9"
+    },
+    "v2_ooc/work/logs/hls_run_impl.log": {
+      "bytes": 154277,
+      "sha256": "75ffa748fc8288f3dae71eb13d498b2338b65aaa26bb0146331d007185247e55"
+    },
+    "v2_ooc/work/logs/work.steps.log": {
+      "bytes": 10232,
+      "sha256": "c2d464bf5c56ca82477d21ac36e8e6f5603507bd43723133e9777d9fb528fcb2"
+    },
+    "v2_ooc/work/logs/xcd.log": {
+      "bytes": 5137,
+      "sha256": "db05cafcda97160d9353f7dc4b5aec2fec2f85deed62958f97cc72e4bfe10d5a"
+    },
+    "v2_ooc/work/reports/hls_compile.rpt": {
+      "bytes": 130329,
+      "sha256": "775446c525b0cd956d83b11b6bbc14a94f8538a6fb1201cc310124b1c3adbf02"
+    },
+    "v2_ooc/work/reports/hls_impl_pnr.rpt": {
+      "bytes": 80268,
+      "sha256": "3ca46f449d62f8986d20190e92d0c303a342ada4596b46a49a140961dfc0f88e"
+    },
+    "v2_ooc/work/reports/hls_impl_syn.rpt": {
+      "bytes": 100938,
+      "sha256": "32eac69738d8fecc36f7c9953ebca4bbed937d15c16b4cf625444553b41bd404"
+    },
+    "v2_ooc/work/work.hlscompile_summary": {
+      "bytes": 5572,
+      "sha256": "2d37d06e16d7bdc8e25ea2553b84aa18c914870e2f566bc5ead7eb49573ba8ca"
+    },
+    "v2_ooc/work/work.hlsrun_impl_summary": {
+      "bytes": 5522,
+      "sha256": "919888adc11b690f359930cb7dfb03a2c312ba7b2448ba93b8e3ed73fceac6f5"
+    }
+  },
+  "scope": "HLS tool artifacts, source, reports and RTL only; no board result",
+  "stage_records": {
+    "v1/csim.finished.json": {
+      "stage": "csim",
+      "status": "\u5df2\u9a8c\u8bc1",
+      "started": "2026-10-18T04:16:12.747764+00:00",
+      "cwd": "D:\\i4",
+      "command": "\"C:\\WINDOWS\\system32\\cmd.exe\" /d /s /v:off /c \"\"D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\bin\\vitis-run.bat\" \"--mode\" \"hls\" \"--config\" \"D:\\i4\\build\\full.cfg\" \"--work_dir\" \"D:\\i4\\work\" \"--csim\"\"",
+      "arguments": [
+        "D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\bin\\vitis-run.bat",
+        "--mode",
+        "hls",
+        "--config",
+        "D:\\i4\\build\\full.cfg",
+        "--work_dir",
+        "D:\\i4\\work",
+        "--csim"
+      ],
+      "inputs": {
+        "ffn_accel.cpp": {
+          "bytes": 7332,
+          "sha256": "bb7d5cdce5597b4c09c9a9505953aa5cc171ffd71f66265eb78cd1f6c063a781"
+        },
+        "ffn_accel.hpp": {
+          "bytes": 850,
+          "sha256": "b958fb3cf1ee318ab4fc11295835022c4565df4fc4fd13fe4bc24a5250e58eec"
+        },
+        "host_bridge.cpp": {
+          "bytes": 503,
+          "sha256": "a8cfe5dc62eb66fa3e3102e4d12eb75a265abbea20e04e4d5b104cecfc480740"
+        },
+        "testbench.cpp": {
+          "bytes": 2077,
+          "sha256": "222cc57a5d93f37bc5a4997529213317dcf15fa47c30e6bfe9940bbe12bf6e8b"
+        },
+        "testbench_small.cpp": {
+          "bytes": 1568,
+          "sha256": "35294d8a32d7bbfb964a8524cc62758bea598cf9dba75f5d94f686c06485d948"
+        },
+        "test_support.hpp": {
+          "bytes": 5811,
+          "sha256": "e04e6932815d2a9875c166b82a19e79dde05fe59e24d9ec26f2fc3d966cceab3"
+        },
+        "build/full.cfg": {
+          "bytes": 535,
+          "sha256": "f7606985606f14ee185e5d69e8b361a28900ced58c0cbbe8bc3ac9f6591b85e0"
+        },
+        "build/small.cfg": {
+          "bytes": 547,
+          "sha256": "a23240833b233cefee99e3b6492dec03d46356a911ce14ddc010def0addbf863"
+        }
+      },
+      "exit_code": 0,
+      "scope": "HLS tool execution only; no board programming",
+      "finished": "2026-10-18T04:16:40.078157+00:00",
+      "elapsed_s": 27.327449999997043
+    },
+    "v1/csynth.finished.json": {
+      "stage": "csynth",
+      "status": "\u5df2\u9a8c\u8bc1",
+      "started": "2026-10-18T04:17:32.392467+00:00",
+      "cwd": "D:\\i4",
+      "command": "\"C:\\WINDOWS\\system32\\cmd.exe\" /d /s /v:off /c \"\"D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\bin\\v++.bat\" \"--compile\" \"--mode\" \"hls\" \"--config\" \"D:\\i4\\build\\full.cfg\" \"--work_dir\" \"D:\\i4\\work\"\"",
+      "arguments": [
+        "D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\bin\\v++.bat",
+        "--compile",
+        "--mode",
+        "hls",
+        "--config",
+        "D:\\i4\\build\\full.cfg",
+        "--work_dir",
+        "D:\\i4\\work"
+      ],
+      "inputs": {
+        "ffn_accel.cpp": {
+          "bytes": 7332,
+          "sha256": "bb7d5cdce5597b4c09c9a9505953aa5cc171ffd71f66265eb78cd1f6c063a781"
+        },
+        "ffn_accel.hpp": {
+          "bytes": 850,
+          "sha256": "b958fb3cf1ee318ab4fc11295835022c4565df4fc4fd13fe4bc24a5250e58eec"
+        },
+        "host_bridge.cpp": {
+          "bytes": 503,
+          "sha256": "a8cfe5dc62eb66fa3e3102e4d12eb75a265abbea20e04e4d5b104cecfc480740"
+        },
+        "testbench.cpp": {
+          "bytes": 2077,
+          "sha256": "222cc57a5d93f37bc5a4997529213317dcf15fa47c30e6bfe9940bbe12bf6e8b"
+        },
+        "testbench_small.cpp": {
+          "bytes": 1568,
+          "sha256": "35294d8a32d7bbfb964a8524cc62758bea598cf9dba75f5d94f686c06485d948"
+        },
+        "test_support.hpp": {
+          "bytes": 5811,
+          "sha256": "e04e6932815d2a9875c166b82a19e79dde05fe59e24d9ec26f2fc3d966cceab3"
+        },
+        "build/full.cfg": {
+          "bytes": 535,
+          "sha256": "f7606985606f14ee185e5d69e8b361a28900ced58c0cbbe8bc3ac9f6591b85e0"
+        },
+        "build/small.cfg": {
+          "bytes": 547,
+          "sha256": "a23240833b233cefee99e3b6492dec03d46356a911ce14ddc010def0addbf863"
+        }
+      },
+      "exit_code": 0,
+      "scope": "HLS tool execution only; no board programming",
+      "report_sha256": "bd4707051187f57bd0592eb457b604b27261b437c9f955322c99c3c5a67f864a",
+      "report_summary": {
+        "TargetClockPeriod": "10.00",
+        "EstimatedClockPeriod": "11.002",
+        "Best-caseLatency": "1",
+        "Worst-caseLatency": "3386100",
+        "BRAM_18K": "288",
+        "DSP": "1248",
+        "FF": "234240",
+        "LUT": "117120",
+        "URAM": "64"
+      },
+      "finished": "2026-10-18T04:18:37.327434+00:00",
+      "elapsed_s": 64.93393949999881
+    },
+    "v2/cosim.finished.json": {
+      "stage": "cosim",
+      "status": "\u5df2\u9a8c\u8bc1",
+      "started": "2026-10-18T05:14:14.858172+00:00",
+      "cwd": "D:\\i8",
+      "command": "\"C:\\WINDOWS\\system32\\cmd.exe\" /d /s /v:off /c \"\"D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\bin\\vitis-run.bat\" \"--mode\" \"hls\" \"--config\" \"D:\\i8\\build\\small.cfg\" \"--work_dir\" \"D:\\i8\\work\" \"--cosim\"\"",
+      "arguments": [
+        "D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\bin\\vitis-run.bat",
+        "--mode",
+        "hls",
+        "--config",
+        "D:\\i8\\build\\small.cfg",
+        "--work_dir",
+        "D:\\i8\\work",
+        "--cosim"
+      ],
+      "inputs": {
+        "ffn_accel.cpp": {
+          "bytes": 7491,
+          "sha256": "553b9c9b36fee41d791908f1fc3b8314ea4631db403743f5e80665d18fad1350"
+        },
+        "ffn_accel.hpp": {
+          "bytes": 877,
+          "sha256": "fcdced1362b460a6cea73fc5869564e6797c041469a50b9c56deba1253cd7478"
+        },
+        "host_bridge.cpp": {
+          "bytes": 503,
+          "sha256": "a8cfe5dc62eb66fa3e3102e4d12eb75a265abbea20e04e4d5b104cecfc480740"
+        },
+        "testbench.cpp": {
+          "bytes": 2142,
+          "sha256": "d0bbaa59b24a1d37f253f4478645fd08f5aef469d50a14f92e37890a7f8769ba"
+        },
+        "testbench_small.cpp": {
+          "bytes": 1495,
+          "sha256": "d3b420cbb6cdaf2ae2a037c3e468dfa6543c25ac0f4f246359c71e456f416d1d"
+        },
+        "test_support.hpp": {
+          "bytes": 5811,
+          "sha256": "e04e6932815d2a9875c166b82a19e79dde05fe59e24d9ec26f2fc3d966cceab3"
+        },
+        "build/full.cfg": {
+          "bytes": 538,
+          "sha256": "a5da7a9349c61aa1761f12b83f96f6d4cf15d53fa8327eb0439f33c9304509fe"
+        },
+        "build/small.cfg": {
+          "bytes": 550,
+          "sha256": "7066c842dd523ccf025b72934af2cc108603063e83a49f8abbd43cfb216d6119"
+        }
+      },
+      "exit_code": 0,
+      "scope": "HLS tool execution only; no board programming",
+      "finished": "2026-10-18T05:54:05.070116+00:00",
+      "elapsed_s": 2390.2095217000024
+    },
+    "v2/csim.finished.json": {
+      "stage": "csim",
+      "status": "\u5df2\u9a8c\u8bc1",
+      "started": "2026-10-18T05:05:20.950887+00:00",
+      "cwd": "D:\\i8",
+      "command": "\"C:\\WINDOWS\\system32\\cmd.exe\" /d /s /v:off /c \"\"D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\bin\\vitis-run.bat\" \"--mode\" \"hls\" \"--config\" \"D:\\i8\\build\\full.cfg\" \"--work_dir\" \"D:\\i8\\work\" \"--csim\"\"",
+      "arguments": [
+        "D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\bin\\vitis-run.bat",
+        "--mode",
+        "hls",
+        "--config",
+        "D:\\i8\\build\\full.cfg",
+        "--work_dir",
+        "D:\\i8\\work",
+        "--csim"
+      ],
+      "inputs": {
+        "ffn_accel.cpp": {
+          "bytes": 7491,
+          "sha256": "553b9c9b36fee41d791908f1fc3b8314ea4631db403743f5e80665d18fad1350"
+        },
+        "ffn_accel.hpp": {
+          "bytes": 877,
+          "sha256": "fcdced1362b460a6cea73fc5869564e6797c041469a50b9c56deba1253cd7478"
+        },
+        "host_bridge.cpp": {
+          "bytes": 503,
+          "sha256": "a8cfe5dc62eb66fa3e3102e4d12eb75a265abbea20e04e4d5b104cecfc480740"
+        },
+        "testbench.cpp": {
+          "bytes": 2142,
+          "sha256": "d0bbaa59b24a1d37f253f4478645fd08f5aef469d50a14f92e37890a7f8769ba"
+        },
+        "testbench_small.cpp": {
+          "bytes": 1495,
+          "sha256": "d3b420cbb6cdaf2ae2a037c3e468dfa6543c25ac0f4f246359c71e456f416d1d"
+        },
+        "test_support.hpp": {
+          "bytes": 5811,
+          "sha256": "e04e6932815d2a9875c166b82a19e79dde05fe59e24d9ec26f2fc3d966cceab3"
+        },
+        "build/full.cfg": {
+          "bytes": 538,
+          "sha256": "a5da7a9349c61aa1761f12b83f96f6d4cf15d53fa8327eb0439f33c9304509fe"
+        },
+        "build/small.cfg": {
+          "bytes": 550,
+          "sha256": "7066c842dd523ccf025b72934af2cc108603063e83a49f8abbd43cfb216d6119"
+        }
+      },
+      "exit_code": 0,
+      "scope": "HLS tool execution only; no board programming",
+      "finished": "2026-10-18T05:05:48.230336+00:00",
+      "elapsed_s": 27.277364699999453
+    },
+    "v2/csynth.finished.json": {
+      "stage": "csynth",
+      "status": "\u5df2\u9a8c\u8bc1",
+      "started": "2026-10-18T05:06:51.094229+00:00",
+      "cwd": "D:\\i8",
+      "command": "\"C:\\WINDOWS\\system32\\cmd.exe\" /d /s /v:off /c \"\"D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\bin\\v++.bat\" \"--compile\" \"--mode\" \"hls\" \"--config\" \"D:\\i8\\build\\full.cfg\" \"--work_dir\" \"D:\\i8\\work\"\"",
+      "arguments": [
+        "D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\bin\\v++.bat",
+        "--compile",
+        "--mode",
+        "hls",
+        "--config",
+        "D:\\i8\\build\\full.cfg",
+        "--work_dir",
+        "D:\\i8\\work"
+      ],
+      "inputs": {
+        "ffn_accel.cpp": {
+          "bytes": 7491,
+          "sha256": "553b9c9b36fee41d791908f1fc3b8314ea4631db403743f5e80665d18fad1350"
+        },
+        "ffn_accel.hpp": {
+          "bytes": 877,
+          "sha256": "fcdced1362b460a6cea73fc5869564e6797c041469a50b9c56deba1253cd7478"
+        },
+        "host_bridge.cpp": {
+          "bytes": 503,
+          "sha256": "a8cfe5dc62eb66fa3e3102e4d12eb75a265abbea20e04e4d5b104cecfc480740"
+        },
+        "testbench.cpp": {
+          "bytes": 2142,
+          "sha256": "d0bbaa59b24a1d37f253f4478645fd08f5aef469d50a14f92e37890a7f8769ba"
+        },
+        "testbench_small.cpp": {
+          "bytes": 1495,
+          "sha256": "d3b420cbb6cdaf2ae2a037c3e468dfa6543c25ac0f4f246359c71e456f416d1d"
+        },
+        "test_support.hpp": {
+          "bytes": 5811,
+          "sha256": "e04e6932815d2a9875c166b82a19e79dde05fe59e24d9ec26f2fc3d966cceab3"
+        },
+        "build/full.cfg": {
+          "bytes": 538,
+          "sha256": "a5da7a9349c61aa1761f12b83f96f6d4cf15d53fa8327eb0439f33c9304509fe"
+        },
+        "build/small.cfg": {
+          "bytes": 550,
+          "sha256": "7066c842dd523ccf025b72934af2cc108603063e83a49f8abbd43cfb216d6119"
+        }
+      },
+      "exit_code": 0,
+      "scope": "HLS tool execution only; no board programming",
+      "report_sha256": "431f8ad6c9c01b8a5a4bf51f3d65af9d42c25107dde7105df584acc00310824c",
+      "report_summary": {
+        "TargetClockPeriod": "10.00",
+        "EstimatedClockPeriod": "7.300",
+        "Best-caseLatency": "1",
+        "Worst-caseLatency": "3620660",
+        "BRAM_18K": "288",
+        "DSP": "1248",
+        "FF": "234240",
+        "LUT": "117120",
+        "URAM": "64"
+      },
+      "finished": "2026-10-18T05:08:06.674801+00:00",
+      "elapsed_s": 75.57868609999423
+    },
+    "v2_ooc/csynth.finished.json": {
+      "stage": "csynth",
+      "status": "\u5df2\u9a8c\u8bc1",
+      "started": "2026-10-18T05:38:23.194242+00:00",
+      "cwd": "D:\\io8",
+      "command": "\"C:\\WINDOWS\\system32\\cmd.exe\" /d /s /v:off /c \"\"D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\bin\\v++.bat\" \"--compile\" \"--mode\" \"hls\" \"--config\" \"D:\\io8\\build\\full.cfg\" \"--work_dir\" \"D:\\io8\\work\"\"",
+      "arguments": [
+        "D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\bin\\v++.bat",
+        "--compile",
+        "--mode",
+        "hls",
+        "--config",
+        "D:\\io8\\build\\full.cfg",
+        "--work_dir",
+        "D:\\io8\\work"
+      ],
+      "inputs": {
+        "ffn_accel.cpp": {
+          "bytes": 7491,
+          "sha256": "553b9c9b36fee41d791908f1fc3b8314ea4631db403743f5e80665d18fad1350"
+        },
+        "ffn_accel.hpp": {
+          "bytes": 877,
+          "sha256": "fcdced1362b460a6cea73fc5869564e6797c041469a50b9c56deba1253cd7478"
+        },
+        "host_bridge.cpp": {
+          "bytes": 503,
+          "sha256": "a8cfe5dc62eb66fa3e3102e4d12eb75a265abbea20e04e4d5b104cecfc480740"
+        },
+        "testbench.cpp": {
+          "bytes": 2142,
+          "sha256": "d0bbaa59b24a1d37f253f4478645fd08f5aef469d50a14f92e37890a7f8769ba"
+        },
+        "testbench_small.cpp": {
+          "bytes": 1495,
+          "sha256": "d3b420cbb6cdaf2ae2a037c3e468dfa6543c25ac0f4f246359c71e456f416d1d"
+        },
+        "test_support.hpp": {
+          "bytes": 5811,
+          "sha256": "e04e6932815d2a9875c166b82a19e79dde05fe59e24d9ec26f2fc3d966cceab3"
+        },
+        "build/full.cfg": {
+          "bytes": 538,
+          "sha256": "a5da7a9349c61aa1761f12b83f96f6d4cf15d53fa8327eb0439f33c9304509fe"
+        },
+        "build/small.cfg": {
+          "bytes": 550,
+          "sha256": "7066c842dd523ccf025b72934af2cc108603063e83a49f8abbd43cfb216d6119"
+        }
+      },
+      "exit_code": 0,
+      "scope": "HLS tool execution only; no board programming",
+      "report_sha256": "431f8ad6c9c01b8a5a4bf51f3d65af9d42c25107dde7105df584acc00310824c",
+      "report_summary": {
+        "TargetClockPeriod": "10.00",
+        "EstimatedClockPeriod": "7.300",
+        "Best-caseLatency": "1",
+        "Worst-caseLatency": "3620660",
+        "BRAM_18K": "288",
+        "DSP": "1248",
+        "FF": "234240",
+        "LUT": "117120",
+        "URAM": "64"
+      },
+      "finished": "2026-10-18T05:39:40.814003+00:00",
+      "elapsed_s": 77.61644929999602
+    },
+    "v2_ooc/impl.finished.json": {
+      "stage": "impl",
+      "status": "\u5df2\u9a8c\u8bc1",
+      "started": "2026-10-18T05:44:02.051318+00:00",
+      "cwd": "D:\\io8",
+      "command": "\"C:\\WINDOWS\\system32\\cmd.exe\" /d /s /v:off /c \"\"D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\bin\\vitis-run.bat\" \"--mode\" \"hls\" \"--config\" \"D:\\io8\\build\\full.cfg\" \"--work_dir\" \"D:\\io8\\work\" \"--impl\"\"",
+      "arguments": [
+        "D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\bin\\vitis-run.bat",
+        "--mode",
+        "hls",
+        "--config",
+        "D:\\io8\\build\\full.cfg",
+        "--work_dir",
+        "D:\\io8\\work",
+        "--impl"
+      ],
+      "inputs": {
+        "ffn_accel.cpp": {
+          "bytes": 7491,
+          "sha256": "553b9c9b36fee41d791908f1fc3b8314ea4631db403743f5e80665d18fad1350"
+        },
+        "ffn_accel.hpp": {
+          "bytes": 877,
+          "sha256": "fcdced1362b460a6cea73fc5869564e6797c041469a50b9c56deba1253cd7478"
+        },
+        "host_bridge.cpp": {
+          "bytes": 503,
+          "sha256": "a8cfe5dc62eb66fa3e3102e4d12eb75a265abbea20e04e4d5b104cecfc480740"
+        },
+        "testbench.cpp": {
+          "bytes": 2142,
+          "sha256": "d0bbaa59b24a1d37f253f4478645fd08f5aef469d50a14f92e37890a7f8769ba"
+        },
+        "testbench_small.cpp": {
+          "bytes": 1495,
+          "sha256": "d3b420cbb6cdaf2ae2a037c3e468dfa6543c25ac0f4f246359c71e456f416d1d"
+        },
+        "test_support.hpp": {
+          "bytes": 5811,
+          "sha256": "e04e6932815d2a9875c166b82a19e79dde05fe59e24d9ec26f2fc3d966cceab3"
+        },
+        "build/full.cfg": {
+          "bytes": 538,
+          "sha256": "a5da7a9349c61aa1761f12b83f96f6d4cf15d53fa8327eb0439f33c9304509fe"
+        },
+        "build/small.cfg": {
+          "bytes": 550,
+          "sha256": "7066c842dd523ccf025b72934af2cc108603063e83a49f8abbd43cfb216d6119"
+        }
+      },
+      "exit_code": 0,
+      "scope": "HLS tool execution only; no board programming",
+      "finished": "2026-10-18T06:08:50.330756+00:00",
+      "elapsed_s": 1488.2766058000125
+    }
+  }
+}

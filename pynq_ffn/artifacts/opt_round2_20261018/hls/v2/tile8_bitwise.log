@@ -1,0 +1,1 @@
+PASS 13 sequential tile-eight calls against each of serial and r03; zero bit mismatches

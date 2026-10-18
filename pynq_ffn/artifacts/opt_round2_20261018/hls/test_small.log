@@ -1,0 +1,13 @@
+PASS small-rtl/boundary tokens=1 max_abs=7.502e-07 tail_abs=7.502e-07
+PASS small-rtl/boundary tokens=3 max_abs=8.51708e-07 tail_abs=8.51708e-07
+PASS small-rtl/boundary tokens=4 max_abs=1.30744e-06 tail_abs=1.30744e-06
+PASS small-rtl/boundary tokens=5 max_abs=1.30744e-06 tail_abs=1.22053e-06
+PASS small-rtl/reload-B tokens=4 max_abs=1.45341e-06 tail_abs=7.8583e-07
+PASS small-rtl/reload-C tokens=4 max_abs=1.16687e-06 tail_abs=7.02562e-07
+PASS small-rtl/zero tokens=4 max_abs=0 tail_abs=0
+PASS small-rtl/bias-exact-erf tokens=4 max_abs=6.26898e-07 tail_abs=6.26898e-07
+PASS small-rtl/revisit-A tokens=1 max_abs=7.502e-07 tail_abs=7.502e-07
+PASS invalid tokens=0 no buffer accesses
+PASS invalid tokens=661 no buffer accesses
+PASS invalid tokens=4294967295 no buffer accesses
+All SMALL FFN tests passed: 12 transactions / 30 valid tokens; not full RTL.

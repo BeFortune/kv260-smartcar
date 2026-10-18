@@ -1,0 +1,20 @@
+{
+  "runtime_sha256": "49ace8fbf61a29e2e54efc174b45477cd08fc5fe469d13547df17326b9745576",
+  "production_smoke_exit": 0,
+  "comparison": {
+    "max_abs_error": {
+      "speed_norm": 0.0,
+      "speed_raw": 0.0,
+      "region_logits": 0.0,
+      "region_probs": 0.0
+    },
+    "atol": 0.001,
+    "rtol": 0,
+    "speed_integer_mismatches": 0,
+    "pass": true
+  },
+  "test_log": ".....................ssss.s............................................. [ 74%]\n.........................                                                [100%]\n92 passed, 5 skipped in 2.55s\n",
+  "archive_sha256": "e07319c0fbe792dfa4b37ba86dc8b44e5e04e427485df9275b71992a641d7c42",
+  "frozen_experiment_script_sha256": "3d8cd5ee52ec6234b88b61502c88596b001f63d073753b70e419ac5a708447c5",
+  "old_archive_sha256": "bbaab463ea213ac0ebabbea1aea6ff8c26055b5cfa3f8f6651bd6c4504b392ca"
+}

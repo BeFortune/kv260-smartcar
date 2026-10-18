@@ -1,0 +1,11 @@
+--- before/ps/runtime.py
++++ after/ps/runtime.py
+@@ -15,7 +15,7 @@
+ 
+ 
+ class Runtime:
+-    def __init__(self, bundle, mode="split-ort", threads=1, backend=None, *, spinning=None):
++    def __init__(self, bundle, mode="split-ort", threads=1, backend=None, *, spinning: bool | None = None):
+         if mode not in ("golden", "split-ort", "split-numpy") or threads not in (1, 2, 3, 4):
+             raise ValueError("Invalid runtime mode or thread count")
+         if spinning is not None and type(spinning) is not bool:

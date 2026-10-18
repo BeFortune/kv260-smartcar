@@ -1,0 +1,134 @@
+{
+  "status": "\u5df2\u9a8c\u8bc1",
+  "actual_command": [
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\tools\\ort_thread_study.py",
+    "--worker",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\reference_golden4_off\\job.json"
+  ],
+  "pid": 36524,
+  "hardware_execution": false,
+  "versions": {
+    "python": "3.12.7",
+    "numpy": "1.26.4",
+    "onnxruntime": "1.20.1",
+    "opencv": "4.10.0",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "machine": "AMD64",
+    "logical_cpus": 16,
+    "affinity": null,
+    "thread_environment": {
+      "OMP_NUM_THREADS": "16",
+      "OPENBLAS_NUM_THREADS": null,
+      "MKL_NUM_THREADS": null,
+      "ORT_NUM_THREADS": null
+    }
+  },
+  "policy": {
+    "name": "golden4_off",
+    "mode": "golden",
+    "heavy_threads": 4,
+    "small_threads": 4,
+    "allow_spinning": false,
+    "inter_op_threads": 1,
+    "execution_mode": "ORT_SEQUENTIAL",
+    "graph_optimization": "ORT_ENABLE_EXTENDED",
+    "provider": "CPUExecutionProvider"
+  },
+  "runtime_sha256": "023327eadeaa935ec8392ec16095c6df2a1155368595afd37fe233b4cc6ed298",
+  "profiling": false,
+  "start_utc": "2026-10-18T04:14:17Z",
+  "exit_code": 0,
+  "input_load_ms": 0.9084999992410303,
+  "input_sha256": "62ef4f31720d414a9d1be522af7e8bf2992a6155de4b871661dc9f9ee3463d4a",
+  "manifest_sha256": "de727e32df9f1ebd0fe84bac0d33cc8e786a5962053dc746b955b175527f4b77",
+  "snapshot_before_init": {
+    "process_cpu_s": 0.578125,
+    "task_threads": null,
+    "process_ctx": null,
+    "task_ctx": null
+  },
+  "initialization_ms": 225.33569999995962,
+  "session_policies": [
+    {
+      "name": "golden",
+      "intra_op_threads": 4,
+      "inter_op_threads": 1,
+      "allow_spinning": false
+    }
+  ],
+  "experimental_initialization_ms": {
+    "production_validation_and_release": 97.9990000005273,
+    "policy_rebuild": 126.24390000019048
+  },
+  "n": 1,
+  "warmup": 3,
+  "snapshot_before_measurement": {
+    "process_cpu_s": 0.828125,
+    "task_threads": null,
+    "process_ctx": null,
+    "task_ctx": null
+  },
+  "snapshot_after_measurement": {
+    "process_cpu_s": 0.859375,
+    "task_threads": null,
+    "process_ctx": null,
+    "task_ctx": null
+  },
+  "process_context_switch_delta": null,
+  "measurement_loop_wall_s": 0.004955899999913527,
+  "measurement_loop_cpu_s": 0.03125,
+  "measurement_loop_cpu_wall_ratio": 6.305615529075499,
+  "run_total_ms": {
+    "n": 1,
+    "mean": 4.922900000565278,
+    "p50": 4.922900000565278,
+    "p95": 4.922900000565278,
+    "p99": 4.922900000565278,
+    "max": 4.922900000565278,
+    "min": 4.922900000565278
+  },
+  "process_cpu_ms": {
+    "n": 1,
+    "mean": 31.25,
+    "p50": 31.25,
+    "p95": 31.25,
+    "p99": 31.25,
+    "max": 31.25,
+    "min": 31.25
+  },
+  "perstage_ms": {
+    "golden": {
+      "n": 1,
+      "mean": 4.775600000357372,
+      "p50": 4.775600000357372,
+      "p95": 4.775600000357372,
+      "p99": 4.775600000357372,
+      "max": 4.775600000357372,
+      "min": 4.775600000357372
+    },
+    "total": {
+      "n": 1,
+      "mean": 4.778999999871303,
+      "p50": 4.778999999871303,
+      "p95": 4.778999999871303,
+      "p99": 4.778999999871303,
+      "max": 4.778999999871303,
+      "min": 4.778999999871303
+    }
+  },
+  "timing_scope": "run_total wraps original Runtime.run incl input/output validation and FFN cut copies; excludes init/decode/preprocess/comparison/profile parsing. Perstage timers use original Runtime; stages do not sum to run_total. Loop counters include Python sample/output collection.",
+  "samples": [
+    {
+      "index": 0,
+      "run_total_ms": 4.922900000565278,
+      "process_cpu_ms": 31.25,
+      "cpu_wall_ratio": 6.347884376365898,
+      "stages_ms": {
+        "golden": 4.775600000357372,
+        "total": 4.778999999871303
+      }
+    }
+  ],
+  "output_sha256": "9f0b41a957c293b566089e3c66d6ba73b9e8bc491e9abee73beededd018891ae",
+  "end_utc": "2026-10-18T04:14:17Z"
+}

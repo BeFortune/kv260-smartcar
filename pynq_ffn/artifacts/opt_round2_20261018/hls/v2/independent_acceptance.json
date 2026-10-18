@@ -1,0 +1,203 @@
+{
+  "artifact": "interleaved_r04_v2 independent acceptance",
+  "date": "2026-10-18",
+  "reviewer_scope": "read-only audit of collected remote HLS/RTL evidence; no source edit, no device, no remote command, no mimosa security scan",
+  "status": "已验证（有限定条件）",
+  "root": "C:/Users/BeFortuneEX/Source/Repos/FPGA/pynq_ffn/artifacts/opt_round2_20261018/hls/remote_final",
+  "source_freeze": {
+    "status": "已验证",
+    "files": {
+      "ffn_accel.cpp": "553b9c9b36fee41d791908f1fc3b8314ea4631db403743f5e80665d18fad1350",
+      "ffn_accel.hpp": "fcdced1362b460a6cea73fc5869564e6797c041469a50b9c56deba1253cd7478",
+      "host_bridge.cpp": "a8cfe5dc62eb66fa3e3102e4d12eb75a265abbea20e04e4d5b104cecfc480740",
+      "test_support.hpp": "e04e6932815d2a9875c166b82a19e79dde05fe59e24d9ec26f2fc3d966cceab3",
+      "testbench.cpp": "d0bbaa59b24a1d37f253f4478645fd08f5aef469d50a14f92e37890a7f8769ba",
+      "testbench_small.cpp": "d3b420cbb6cdaf2ae2a037c3e468dfa6543c25ac0f4f246359c71e456f416d1d"
+    },
+    "comparison": "remote_final/v2, remote_final/v2_ooc and source_snapshot_v2 byte-identical for all six files",
+    "evidence": "sha256sum run 2026-10-18 on the three trees"
+  },
+  "hls_csim_full": {
+    "status": "已验证",
+    "exit_code": 0,
+    "transactions": 30,
+    "covers_659_660": true,
+    "errors": 0,
+    "message": "All full FFN reference tests passed (30 transactions)",
+    "evidence": [
+      "remote_final/v2/records_v1/csim.finished.json",
+      "remote_final/v2/work/logs/hls_run_csim.log:74-75",
+      "remote_final/v2/testbench.cpp:13-45"
+    ]
+  },
+  "hls_csynth_full": {
+    "status": "已验证",
+    "exit_code": 0,
+    "target_clock_ns": 10,
+    "estimated_clock_ns": 7.3,
+    "max_latency_cycles": 3620660,
+    "fc1_steps": {"achieved_ii": 1, "target_ii": 1, "module_slack_ns": 1.55, "estimated_clock_ns": 5.751},
+    "fc2_steps": {"achieved_ii": 1, "target_ii": 1, "module_slack_ns": 1.62, "estimated_clock_ns": 5.68},
+    "slack_note": "No artifact named step1 exists; the claimed positive module slack matches ffn_accel_Pipeline_fc1_steps (+1.55 ns). All listed module slack values are HLS estimates, not routed sign-off.",
+    "evidence": [
+      "remote_final/v2/records_v1/csynth.finished.json",
+      "remote_final/v2/work/hls/syn/report/csynth.rpt:36",
+      "remote_final/v2/work/hls/syn/report/csynth.rpt:43"
+    ]
+  },
+  "rtl_cosim_small": {
+    "status": "已验证",
+    "exit_code": 0,
+    "report_status": "Pass",
+    "transactions": 10,
+    "valid_tokens": 30,
+    "valid_call_counts": [1, 3, 7, 8, 9, 1, 1],
+    "invalid_call_counts": [0, 661, 4294967295],
+    "covers_659_660": false,
+    "boundary_7_8_9": true,
+    "message": "All SMALL FFN tests passed: 10 transactions / 30 valid tokens; not full RTL.",
+    "evidence": [
+      "remote_final/v2/records_v1/cosim.finished.json",
+      "remote_final/v2/work/logs/hls_run_cosim.log:1054-1065",
+      "remote_final/v2/work/reports/hls_cosim.rpt",
+      "remote_final/v2/testbench_small.cpp:3-4",
+      "remote_final/v2/testbench_small.cpp:11-31"
+    ]
+  },
+  "generated_rtl": {
+    "status": "已验证",
+    "top_rtl_sha256": "43d2137dd7055c9f4059f3ff312c3ea85819ff9cf67cbe148dfa3f864afbb469",
+    "v2_v2ooc_packaged_identical": true,
+    "fadd_instances": 16,
+    "fmul_instances": 16,
+    "extra_note": "One separate faddfsub plus GELU fdiv/fexp IP modules exist; they are not counted in the 16+16 FC operators",
+    "sum_dependence": {
+      "fc1_source": "remote_final/v2/ffn_accel.cpp:91-95",
+      "fc2_source": "remote_final/v2/ffn_accel.cpp:131-134",
+      "ctx_index": "step & 7",
+      "reduction_index": "step >> 3",
+      "pragma": "DEPENDENCE variable=sum type=inter direction=RAW distance=8 true",
+      "false_pragmas": 0,
+      "order": "each ctx sums ascending i/j in one FP32 add chain; no tree or reordering; tail slots still execute eight-step schedule",
+      "achieved_ii": 1
+    }
+  },
+  "ooc_implementation": {
+    "status": "已验证",
+    "scope": "standalone HLS IP OOC place-and-route only; not PS+PL system implementation, overlay or board run",
+    "exit_code": 0,
+    "stage_records_complete": true,
+    "WNS_ns": 2.435662,
+    "WHS_ns": 0.034,
+    "TPWS_ns": 0.0,
+    "routing_errors": 0,
+    "unrouted_nets": 0,
+    "timing_met": true,
+    "post_synthesis_period_ns": 5.281,
+    "post_route_period_ns": 7.564,
+    "v2_v2ooc_csynth_xml_identical": true,
+    "v2_v2ooc_csynth_rpt_only_timestamp_diff": true,
+    "caveat": "Standalone IP lacks full external I/O delays: TIMING-18 427, 127 input and 280 output ports without delay; internal OOC pass is not system interface sign-off",
+    "evidence": [
+      "remote_final/v2_ooc/records_v1/impl.started.json",
+      "remote_final/v2_ooc/records_v1/impl.finished.json",
+      "remote_final/v2_ooc/work/logs/hls_run_impl.log:1842",
+      "remote_final/v2_ooc/work/hls/impl/report/verilog/ffn_accel_timing_routed.rpt:149",
+      "remote_final/v2_ooc/work/hls/impl/report/verilog/ffn_accel_timing_routed.rpt:169",
+      "remote_final/v2_ooc/work/hls/impl/report/verilog/ffn_accel_export.rpt:20-24",
+      "remote_final/v2_ooc/work/hls/impl/report/verilog/ffn_accel_status_routed.rpt:11"
+    ]
+  },
+  "routed_resources": {
+    "status": "已验证，BRAM 口径需更正",
+    "LUT": 51146,
+    "FF": 46657,
+    "DSP": 333,
+    "URAM": 0,
+    "SRL": 1183,
+    "BRAM_18K_equivalent": 131,
+    "BRAM_tiles": 65.5,
+    "RAMB36": 64,
+    "RAMB18": 3,
+    "calibration": "131 is the 18K-equivalent count reported by the HLS export (64 RAMB36 x 2 + 3 RAMB18). The Vivado utilization report says 65.5 Block RAM Tiles (45.49% of 144). Comparing 131 against 144 tiles would double-count.",
+    "consistency": "LUT/FF/DSP/URAM in export summary and utilization report match exactly; csynth estimate was BRAM 142, FF 64719, LUT 58866",
+    "evidence": [
+      "remote_final/v2_ooc/work/hls/impl/report/verilog/ffn_accel_export.rpt:9-18",
+      "remote_final/v2_ooc/work/hls/impl/report/verilog/ffn_accel_utilization_routed.rpt:36",
+      "remote_final/v2_ooc/work/hls/impl/report/verilog/ffn_accel_utilization_routed.rpt:41",
+      "remote_final/v2_ooc/work/hls/impl/report/verilog/ffn_accel_utilization_routed.rpt:109-113",
+      "remote_final/v2_ooc/work/hls/impl/report/verilog/ffn_accel_utilization_routed.rpt:125",
+      "remote_final/v2/work/hls/syn/report/csynth.rpt:20"
+    ]
+  },
+  "ip_archive_and_abi": {
+    "status": "已验证；端口数表述不成立",
+    "path": "remote_final/v2_ooc/work/ffn_accel.zip",
+    "bytes": 867640,
+    "sha256": "3e7eb615f7fc0ecf61ad5e56443eab6f4665e698045cef2565a4990e340e4185",
+    "sha256_matches_collection_manifest": true,
+    "identity": {"vendor": "xilinx.com", "library": "hls", "name": "ffn_accel", "version": "1.0"},
+    "packaged_component_equals_impl_component": true,
+    "packaged_top_rtl_equals_synth_rtl": true,
+    "packaged_driver_header_equals_work_header": true,
+    "axi_master_ports": 2,
+    "axi_master_detail": "m_axi_gmem0 (x,y; 64-bit address, 32-bit data) and m_axi_gmem1 (w1,b1,w2,b2; 64-bit address, 32-bit data); plus s_axi_control (7-bit address, 32-bit data)",
+    "port_claim_note": "No 4-port AXI interface exists in this IP. If '4端口64' meant four AXI ports, that claim is false; if it meant 64-bit addressing, only the two m_axi ports and the six pointer registers qualify.",
+    "abi_offsets": {
+      "ap_ctrl": "0x00",
+      "x": "0x10 (64-bit)",
+      "y": "0x1c (64-bit)",
+      "w1": "0x28 (64-bit)",
+      "b1": "0x34 (64-bit)",
+      "w2": "0x40 (64-bit)",
+      "b2": "0x4c (64-bit)",
+      "num_tokens": "0x58 (32-bit)"
+    },
+    "evidence": [
+      "remote_final/v2_ooc/work/hls/impl/ip/component.xml:3-6",
+      "remote_final/v2_ooc/work/hls/impl/ip/component.xml:243",
+      "remote_final/v2_ooc/work/hls/impl/ip/component.xml:655",
+      "remote_final/v2_ooc/work/hls/impl/ip/component.xml:3729-3826",
+      "remote_final/v2/work/hls/.autopilot/db/driver/src/xffn_accel_hw.h:63-80",
+      "remote_final/collection_manifest.json:499-501"
+    ]
+  },
+  "issues": [
+    {
+      "severity": "medium",
+      "claim": "routed BRAM 131",
+      "finding": "131 is 18K-equivalent, not tiles; actual tiles are 65.5 (64 RAMB36 + 3 RAMB18, 45.49% of 144)."
+    },
+    {
+      "severity": "medium",
+      "claim": "4-port 64(-bit) interface",
+      "finding": "The packaged IP exposes 2 m_axi master ports plus 1 s_axi_control; both m_axi are 64-bit address / 32-bit data. No 4-port interface is present."
+    },
+    {
+      "severity": "low",
+      "claim": "csynth.finished.json report_summary resources",
+      "finding": "BRAM_18K 288, DSP 1248, FF 234240, LUT 117120, URAM 64 equal device Available values, not usage (records_v1/csynth.finished.json:59-63). Correct usage is in csynth.rpt:20: BRAM 142, DSP 333, FF 64719, LUT 58866. The narrative remote_summary.json used the correct values."
+    },
+    {
+      "severity": "low",
+      "claim": "step1 module slack",
+      "finding": "No artifact is named step1. The nearest match is ffn_accel_Pipeline_fc1_steps, slack +1.55 ns (csynth.rpt:36); fc2_steps is +1.62 ns (csynth.rpt:43). Both are HLS estimates."
+    }
+  ],
+  "not_executed_or_not_supported": [
+    "full 659/660-token RTL co-simulation",
+    "KV260 full-system implementation, timing closure and bitstream",
+    "overlay programming and board clock/frequency measurement",
+    "end-to-end performance, throughput and any 3.25x gain claim",
+    "PS+PL system ABI/HWH verification (no bit/hwh/xsa in this artifact tree)"
+  ],
+  "warnings_noted": {
+    "impl_log_errors": 0,
+    "impl_log_critical_warnings_effective": 0,
+    "impl_log_warnings": 122,
+    "csynth_errors": 0,
+    "cosim_errors": 0,
+    "failfast_dont_touch_cells": 6,
+    "failfast_status_note": "only DONT_TOUCH is marked REVIEW; all placement/congestion criteria OK"
+  }
+}

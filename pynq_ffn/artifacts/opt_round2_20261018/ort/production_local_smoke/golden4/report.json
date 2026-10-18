@@ -1,0 +1,73 @@
+{
+  "status": "\u5df2\u9a8c\u8bc1",
+  "exit_code": 0,
+  "mode": "golden",
+  "threads": 4,
+  "spinning": null,
+  "hardware_execution": false,
+  "versions": {
+    "python": "3.12.7",
+    "numpy": "1.26.4",
+    "onnxruntime": "1.20.1",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "logical_cpus": 16,
+    "runtime_sha256": "4a90f2acb0c7fde4c598945698eb58d8f8d638cfa1a1e806eccbc04f4f759dc4",
+    "affinity": null
+  },
+  "start_utc": "2026-10-18T05:00:11Z",
+  "actual_command": [
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\tools\\runtime_spin_validate.py",
+    "--worker",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\production_local_smoke\\golden4\\job.json"
+  ],
+  "end_utc": "2026-10-18T05:00:12Z",
+  "n": 1,
+  "warmup": 1,
+  "wall_s": 0.006504699998913566,
+  "process_cpu_s": 0.0625,
+  "process_cpu_wall_ratio": 9.608436977945015,
+  "run_total_ms": {
+    "n": 1,
+    "mean": 6.481200000052922,
+    "p50": 6.481200000052922,
+    "p95": 6.481200000052922,
+    "p99": 6.481200000052922,
+    "max": 6.481200000052922
+  },
+  "perstage_ms": {
+    "golden": {
+      "n": 1,
+      "mean": 6.329100000584731,
+      "p50": 6.329100000584731,
+      "p95": 6.329100000584731,
+      "p99": 6.329100000584731,
+      "max": 6.329100000584731
+    },
+    "total": {
+      "n": 1,
+      "mean": 6.334800000331597,
+      "p50": 6.334800000331597,
+      "p95": 6.334800000331597,
+      "p99": 6.334800000331597,
+      "max": 6.334800000331597
+    }
+  },
+  "samples": [
+    {
+      "index": 0,
+      "run_total_ms": 6.481200000052922,
+      "stages_ms": {
+        "golden": 6.329100000584731,
+        "total": 6.334800000331597
+      }
+    }
+  ],
+  "outputs_sha256": "9f0b41a957c293b566089e3c66d6ba73b9e8bc491e9abee73beededd018891ae",
+  "session_config": {
+    "threads": 4,
+    "spinning": null,
+    "inter_op_threads": 1,
+    "execution_mode": "ORT_SEQUENTIAL",
+    "graph_optimization": "ORT_ENABLE_EXTENDED"
+  }
+}

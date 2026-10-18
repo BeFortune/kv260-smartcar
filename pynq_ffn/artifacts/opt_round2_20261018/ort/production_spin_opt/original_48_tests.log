@@ -1,0 +1,6 @@
+command: C:\Users\BeFortuneEX\.zcode\tmp\ffn_opt_20261017\venv\Scripts\python.exe -m pytest -q tests --ignore=tests/test_runtime_thread_policy.py --ignore=tests/test_ort_thread_study.py --junitxml=C:\Users\BeFortuneEX\Source\Repos\FPGA\pynq_ffn\artifacts\opt_round2_20261018\ort\production_spin_opt\original_48_tests.xml
+cwd: C:\Users\BeFortuneEX\Source\Repos\FPGA\pynq_ffn
+................................................                         [100%]
+48 passed in 2.06s
+
+exit_code: 0

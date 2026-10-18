@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="85" time="3.997" timestamp="2026-10-18T12:58:33.542345+08:00" hostname="ENERTCOUNT-EX"><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_policy_coverage[golden1]" time="0.001" /><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_policy_coverage[golden2]" time="0.002" /><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_policy_coverage[golden4]" time="0.001" /><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_policy_coverage[golden_default]" time="0.001" /><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_policy_coverage[split1]" time="0.001" /><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_policy_coverage[split2]" time="0.000" /><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_policy_coverage[split4]" time="0.001" /><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_policy_coverage[split_default]" time="0.001" /><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_policy_coverage[split4_off]" time="0.001" /><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_policy_coverage[mixed4_1]" time="0.001" /><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_policy_coverage[mixed4_1_off]" time="0.001" /><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_policy_coverage[mixed2_1]" time="0.001" /><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_policy_coverage[mixed2_1_off]" time="0.001" /><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_policy_coverage[golden4_off]" time="0.001" /><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_policy_coverage[golden2_off]" time="0.001" /><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_six_condition_first_pass" time="0.001" /><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_options_and_mixed_assignment" time="0.001" /><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_comparison_gates" time="0.001" /><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_distribution_and_context" time="0.001" /><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_profile_parser" time="0.017" /><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_real_adapter_matches_production[golden1]" time="0.108"><failure message="ValueError: Production Runtime changed since experiment freeze">condition = 'golden1'
+
+    @pytest.mark.skipif(not BUNDLE.is_dir() or not FIRST_INPUT.is_file(), reason="Reviewed local bundle/input unavailable")
+    @pytest.mark.parametrize("condition", ["golden1", "split1", "split4_off", "mixed4_1_off"])
+    def test_real_adapter_matches_production(condition):
+        x = np.load(FIRST_INPUT, allow_pickle=False)
+        spec = study.policy(condition)
+        original_factory = study.ort.InferenceSession
+        original_init = Runtime.__init__
+        baseline = Runtime(BUNDLE, mode=spec["mode"], threads=1)
+        expected = baseline.run(x)
+        baseline.sessions.clear()
+&gt;       adapter = study.PolicyRuntime(BUNDLE, spec)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+pynq_ffn\tests\test_ort_thread_study.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;tools.ort_thread_study.PolicyRuntime object at 0x00000214E98C2300&gt;
+bundle = WindowsPath('C:/Users/BeFortuneEX/Source/Repos/FPGA/pynq_ffn/artifacts/bundle_20261014')
+spec = {'name': 'golden1', 'mode': 'golden', 'heavy_threads': 1, 'small_threads': 1, ...}
+profile_dir = None
+
+    def __init__(self, bundle, spec, profile_dir=None):
+        runtime_file = Path(production.__file__).resolve()
+        if sha256(runtime_file) != FROZEN_RUNTIME_SHA256:
+&gt;           raise ValueError("Production Runtime changed since experiment freeze")
+E           ValueError: Production Runtime changed since experiment freeze
+
+pynq_ffn\tools\ort_thread_study.py:114: ValueError</failure></testcase><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_real_adapter_matches_production[split1]" time="0.083"><failure message="ValueError: Production Runtime changed since experiment freeze">condition = 'split1'
+
+    @pytest.mark.skipif(not BUNDLE.is_dir() or not FIRST_INPUT.is_file(), reason="Reviewed local bundle/input unavailable")
+    @pytest.mark.parametrize("condition", ["golden1", "split1", "split4_off", "mixed4_1_off"])
+    def test_real_adapter_matches_production(condition):
+        x = np.load(FIRST_INPUT, allow_pickle=False)
+        spec = study.policy(condition)
+        original_factory = study.ort.InferenceSession
+        original_init = Runtime.__init__
+        baseline = Runtime(BUNDLE, mode=spec["mode"], threads=1)
+        expected = baseline.run(x)
+        baseline.sessions.clear()
+&gt;       adapter = study.PolicyRuntime(BUNDLE, spec)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+pynq_ffn\tests\test_ort_thread_study.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;tools.ort_thread_study.PolicyRuntime object at 0x00000214E982E180&gt;
+bundle = WindowsPath('C:/Users/BeFortuneEX/Source/Repos/FPGA/pynq_ffn/artifacts/bundle_20261014')
+spec = {'name': 'split1', 'mode': 'split-ort', 'heavy_threads': 1, 'small_threads': 1, ...}
+profile_dir = None
+
+    def __init__(self, bundle, spec, profile_dir=None):
+        runtime_file = Path(production.__file__).resolve()
+        if sha256(runtime_file) != FROZEN_RUNTIME_SHA256:
+&gt;           raise ValueError("Production Runtime changed since experiment freeze")
+E           ValueError: Production Runtime changed since experiment freeze
+
+pynq_ffn\tools\ort_thread_study.py:114: ValueError</failure></testcase><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_real_adapter_matches_production[split4_off]" time="0.087"><failure message="ValueError: Production Runtime changed since experiment freeze">condition = 'split4_off'
+
+    @pytest.mark.skipif(not BUNDLE.is_dir() or not FIRST_INPUT.is_file(), reason="Reviewed local bundle/input unavailable")
+    @pytest.mark.parametrize("condition", ["golden1", "split1", "split4_off", "mixed4_1_off"])
+    def test_real_adapter_matches_production(condition):
+        x = np.load(FIRST_INPUT, allow_pickle=False)
+        spec = study.policy(condition)
+        original_factory = study.ort.InferenceSession
+        original_init = Runtime.__init__
+        baseline = Runtime(BUNDLE, mode=spec["mode"], threads=1)
+        expected = baseline.run(x)
+        baseline.sessions.clear()
+&gt;       adapter = study.PolicyRuntime(BUNDLE, spec)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+pynq_ffn\tests\test_ort_thread_study.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;tools.ort_thread_study.PolicyRuntime object at 0x00000214C6627C50&gt;
+bundle = WindowsPath('C:/Users/BeFortuneEX/Source/Repos/FPGA/pynq_ffn/artifacts/bundle_20261014')
+spec = {'name': 'split4_off', 'mode': 'split-ort', 'heavy_threads': 4, 'small_threads': 4, ...}
+profile_dir = None
+
+    def __init__(self, bundle, spec, profile_dir=None):
+        runtime_file = Path(production.__file__).resolve()
+        if sha256(runtime_file) != FROZEN_RUNTIME_SHA256:
+&gt;           raise ValueError("Production Runtime changed since experiment freeze")
+E           ValueError: Production Runtime changed since experiment freeze
+
+pynq_ffn\tools\ort_thread_study.py:114: ValueError</failure></testcase><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_real_adapter_matches_production[mixed4_1_off]" time="0.082"><failure message="ValueError: Production Runtime changed since experiment freeze">condition = 'mixed4_1_off'
+
+    @pytest.mark.skipif(not BUNDLE.is_dir() or not FIRST_INPUT.is_file(), reason="Reviewed local bundle/input unavailable")
+    @pytest.mark.parametrize("condition", ["golden1", "split1", "split4_off", "mixed4_1_off"])
+    def test_real_adapter_matches_production(condition):
+        x = np.load(FIRST_INPUT, allow_pickle=False)
+        spec = study.policy(condition)
+        original_factory = study.ort.InferenceSession
+        original_init = Runtime.__init__
+        baseline = Runtime(BUNDLE, mode=spec["mode"], threads=1)
+        expected = baseline.run(x)
+        baseline.sessions.clear()
+&gt;       adapter = study.PolicyRuntime(BUNDLE, spec)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+pynq_ffn\tests\test_ort_thread_study.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;tools.ort_thread_study.PolicyRuntime object at 0x00000214E98F2120&gt;
+bundle = WindowsPath('C:/Users/BeFortuneEX/Source/Repos/FPGA/pynq_ffn/artifacts/bundle_20261014')
+spec = {'name': 'mixed4_1_off', 'mode': 'split-ort', 'heavy_threads': 4, 'small_threads': 1, ...}
+profile_dir = None
+
+    def __init__(self, bundle, spec, profile_dir=None):
+        runtime_file = Path(production.__file__).resolve()
+        if sha256(runtime_file) != FROZEN_RUNTIME_SHA256:
+&gt;           raise ValueError("Production Runtime changed since experiment freeze")
+E           ValueError: Production Runtime changed since experiment freeze
+
+pynq_ffn\tools\ort_thread_study.py:114: ValueError</failure></testcase><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_runtime_freeze_gate" time="0.003" /><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_cli_subprocess_reverse_profile_and_immutable" time="0.767"><failure message="AssertionError: Traceback (most recent call last):&#10;    File &quot;C:\Users\BeFortuneEX\Source\Repos\FPGA\pynq_ffn\tools\ort_thread_study.py&quot;, line 403, in study&#10;      raise ValueError(&quot;Production Runtime changed since freeze&quot;)&#10;  ValueError: Production Runtime changed since freeze&#10;  &#10;assert 1 == 0&#10; +  where 1 = CompletedProcess(args=['C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe', 'C:\\Users\...   raise ValueError(&quot;Production Runtime changed since freeze&quot;)\nValueError: Production Runtime changed since freeze\n').returncode">tmp_path = WindowsPath('C:/Users/BeFortuneEX/AppData/Local/Temp/pytest-of-BeFortuneEX/pytest-7/test_cli_subprocess_reverse_pr0')
+
+    @pytest.mark.skipif(not BUNDLE.is_dir() or not FIRST_INPUT.is_file(), reason="Reviewed local bundle/input unavailable")
+    def test_cli_subprocess_reverse_profile_and_immutable(tmp_path):
+        output = tmp_path / "trial"
+        command = [sys.executable, str(ROOT / "tools/ort_thread_study.py"), "--mode", "one", "--bundle", str(BUNDLE),
+                   "--inputs", str(FIRST_INPUT), "--frames", "1", "--warmup", "1", "--rounds", "2",
+                   "--condition", "split4_off", "--profile-condition", "split4_off", "--output", str(output)]
+        result = subprocess.run(command, capture_output=True, text=True)
+&gt;       assert result.returncode == 0, result.stderr
+E       AssertionError: Traceback (most recent call last):
+E           File "C:\Users\BeFortuneEX\Source\Repos\FPGA\pynq_ffn\tools\ort_thread_study.py", line 403, in study
+E             raise ValueError("Production Runtime changed since freeze")
+E         ValueError: Production Runtime changed since freeze
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe', 'C:\\Users\...   raise ValueError("Production Runtime changed since freeze")\nValueError: Production Runtime changed since freeze\n').returncode
+
+pynq_ffn\tests\test_ort_thread_study.py:140: AssertionError</failure></testcase><testcase classname="pynq_ffn.tests.test_ort_thread_study" name="test_failed_worker_writes_nonzero_report" time="0.068" /><testcase classname="pynq_ffn.tests.test_payload_validation" name="test_payload_paths_cannot_escape_recording[../secret.jpeg]" time="0.001" /><testcase classname="pynq_ffn.tests.test_payload_validation" name="test_payload_paths_cannot_escape_recording[..\\..\\x.jpeg]" time="0.001" /><testcase classname="pynq_ffn.tests.test_payload_validation" name="test_payload_paths_cannot_escape_recording[a/../../b.jpeg]" time="0.001" /><testcase classname="pynq_ffn.tests.test_payload_validation" name="test_payload_paths_cannot_escape_recording[/etc/passwd]" time="0.001" /><testcase classname="pynq_ffn.tests.test_payload_validation" name="test_payload_paths_cannot_escape_recording[C:/x.jpeg]" time="0.001" /><testcase classname="pynq_ffn.tests.test_payload_validation" name="test_payload_paths_cannot_escape_recording[]" time="0.001" /><testcase classname="pynq_ffn.tests.test_payload_validation" name="test_payload_paths_cannot_escape_recording[//server/x]" time="0.001" /><testcase classname="pynq_ffn.tests.test_payload_validation" name="test_payload_csv_camera_order" time="0.001" /><testcase classname="pynq_ffn.tests.test_payload_validation" name="test_payload_integrity_rejected_before_inference[count-counts]" time="0.027" /><testcase classname="pynq_ffn.tests.test_payload_validation" name="test_payload_integrity_rejected_before_inference[manifest-manifest names]" time="0.010" /><testcase classname="pynq_ffn.tests.test_payload_validation" name="test_payload_integrity_rejected_before_inference[model-differs]" time="0.010" /><testcase classname="pynq_ffn.tests.test_payload_validation" name="test_payload_integrity_rejected_before_inference[duplicate-Duplicate]" time="0.010" /><testcase classname="pynq_ffn.tests.test_payload_validation" name="test_missing_payload_manifest_and_model_fail_closed" time="0.011" /><testcase classname="pynq_ffn.tests.test_preprocess" name="test_camera_order_crop_and_dtype" time="0.024" /><testcase classname="pynq_ffn.tests.test_preprocess" name="test_colored_pixels_reference_and_rejections" time="0.008" /><testcase classname="pynq_ffn.tests.test_preprocess" name="test_records_and_preview" time="0.022" /><testcase classname="pynq_ffn.tests.test_pynq_backend" name="test_metadata_checks_offsets_widths_and_split_pointer_names" time="0.001" /><testcase classname="pynq_ffn.tests.test_pynq_backend" name="test_64bit_addresses_cache_sync_buffer_reuse_and_cleanup" time="0.003" /><testcase classname="pynq_ffn.tests.test_pynq_backend" name="test_invalid_shape_does_not_allocate_or_start[shape0]" time="0.001" /><testcase classname="pynq_ffn.tests.test_pynq_backend" name="test_invalid_shape_does_not_allocate_or_start[shape1]" time="0.001" /><testcase classname="pynq_ffn.tests.test_pynq_backend" name="test_invalid_shape_does_not_allocate_or_start[shape2]" time="0.001" /><testcase classname="pynq_ffn.tests.test_pynq_backend" name="test_wrong_dtype_nan_unknown_layer_and_weights_are_rejected" time="0.001" /><testcase classname="pynq_ffn.tests.test_pynq_backend" name="test_changed_weights_and_busy_device_refused" time="0.002" /><testcase classname="pynq_ffn.tests.test_pynq_backend" name="test_timeout_quarantines_buffers_and_never_frees_inflight_memory" time="0.007" /><testcase classname="pynq_ffn.tests.test_pynq_backend" name="test_ambiguous_start_failure_keeps_buffers_alive" time="0.001" /><testcase classname="pynq_ffn.tests.test_pynq_backend" name="test_nonfinite_completed_output_fails_but_can_release_memory" time="0.001" /><testcase classname="pynq_ffn.tests.test_pynq_backend" name="test_literal_abi_and_control_field_contract" time="0.001" /><testcase classname="pynq_ffn.tests.test_pynq_backend" name="test_cache_sync_order_precedes_start_and_follows_done" time="0.001" /><testcase classname="pynq_ffn.tests.test_pynq_backend" name="test_successful_token_edges_and_noncontiguous_input[1]" time="0.002" /><testcase classname="pynq_ffn.tests.test_pynq_backend" name="test_successful_token_edges_and_noncontiguous_input[660]" time="0.003" /><testcase classname="pynq_ffn.tests.test_pynq_backend" name="test_quarantine_keeps_backend_and_buffers_alive_after_gc" time="0.023" /><testcase classname="pynq_ffn.tests.test_pynq_backend" name="test_poll_error_or_interrupt_quarantines[OSError]" time="0.001" /><testcase classname="pynq_ffn.tests.test_pynq_backend" name="test_poll_error_or_interrupt_quarantines[KeyboardInterrupt]" time="0.001" /><testcase classname="pynq_ffn.tests.test_pynq_backend" name="test_delayed_done_and_stale_done_are_handled" time="0.002" /><testcase classname="pynq_ffn.tests.test_pynq_backend" name="test_invalid_device_address_is_rejected_before_start[-1]" time="0.001" /><testcase classname="pynq_ffn.tests.test_pynq_backend" name="test_invalid_device_address_is_rejected_before_start[18446744073709551616]" time="0.001" /><testcase classname="pynq_ffn.tests.test_runtime_thread_policy" name="test_spinning_config_is_optional_and_applied_to_every_session[None-None]" time="0.173" /><testcase classname="pynq_ffn.tests.test_runtime_thread_policy" name="test_spinning_config_is_optional_and_applied_to_every_session[False-0]" time="0.066" /><testcase classname="pynq_ffn.tests.test_runtime_thread_policy" name="test_spinning_config_is_optional_and_applied_to_every_session[True-1]" time="0.087" /><testcase classname="pynq_ffn.tests.test_runtime_thread_policy" name="test_golden_default_and_explicit_spin_values" time="0.141" /><testcase classname="pynq_ffn.tests.test_runtime_thread_policy" name="test_spinning_rejects_non_bool_values[0_0]" time="0.004" /><testcase classname="pynq_ffn.tests.test_runtime_thread_policy" name="test_spinning_rejects_non_bool_values[1_0]" time="0.004" /><testcase classname="pynq_ffn.tests.test_runtime_thread_policy" name="test_spinning_rejects_non_bool_values[0_1]" time="0.005" /><testcase classname="pynq_ffn.tests.test_runtime_thread_policy" name="test_spinning_rejects_non_bool_values[1_1]" time="0.004" /><testcase classname="pynq_ffn.tests.test_runtime_thread_policy" name="test_spinning_rejects_non_bool_values[value4]" time="0.006" /><testcase classname="pynq_ffn.tests.test_runtime_thread_policy" name="test_signature_keeps_old_positional_contract" time="0.001" /><testcase classname="pynq_ffn.tests.test_split" name="test_preparation_refuses_output_and_unreviewed_model" time="0.094" /><testcase classname="pynq_ffn.tests.test_split" name="test_schedule_and_weights" time="0.004" /><testcase classname="pynq_ffn.tests.test_split" name="test_real_model_modes[False]" time="0.290" /><testcase classname="pynq_ffn.tests.test_split" name="test_real_model_modes[True]" time="0.304" /><testcase classname="pynq_ffn.tests.test_split" name="test_injected_backend_and_bad_contract" time="0.195" /><testcase classname="pynq_ffn.tests.test_split" name="test_numpy_shape_and_dtype" time="0.002" /><testcase classname="pynq_ffn.tests.test_split" name="test_numpy_exact_erf_activation" time="0.001" /><testcase classname="pynq_ffn.tests.test_split" name="test_replay_contract_and_existing_output" time="0.168" /><testcase classname="pynq_ffn.tests.test_split" name="test_manifest_hash_failure" time="0.047" /><testcase classname="pynq_ffn.tests.test_validation_gates" name="test_intermediate_error_cannot_be_hidden_by_matching_final_outputs" time="0.001" /><testcase classname="pynq_ffn.tests.test_validation_gates" name="test_small_float_error_crossing_integer_boundary_is_failure" time="0.002" /><testcase classname="pynq_ffn.tests.test_validation_gates" name="test_single_layer_nan_cannot_report_pass" time="0.001" /></testsuite></testsuites>

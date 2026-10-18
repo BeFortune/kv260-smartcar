@@ -1,0 +1,2 @@
+usage: make_config.py [-h] [--testbench {full,small}] [--output OUTPUT]
+make_config.py: error: Output must be inside the candidate directory

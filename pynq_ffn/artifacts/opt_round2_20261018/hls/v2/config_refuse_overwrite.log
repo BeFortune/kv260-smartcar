@@ -1,0 +1,2 @@
+usage: make_config.py [-h] [--testbench {full,small}] [--output OUTPUT]
+make_config.py: error: Refusing to overwrite: C:\Users\BeFortuneEX\Source\Repos\FPGA\pynq_ffn\hls\candidates\interleaved_r04\v2\build\full.cfg

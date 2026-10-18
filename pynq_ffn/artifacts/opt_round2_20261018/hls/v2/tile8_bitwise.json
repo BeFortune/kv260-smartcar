@@ -1,0 +1,292 @@
+{
+  "status": "pass",
+  "hardware_execution": false,
+  "cases": [
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 896,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "serial",
+      "tokens": 7,
+      "sequence_index": 0,
+      "weights": "A"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 896,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "r03",
+      "tokens": 7,
+      "sequence_index": 0,
+      "weights": "A"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 1024,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "serial",
+      "tokens": 8,
+      "sequence_index": 1,
+      "weights": "B"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 1024,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "r03",
+      "tokens": 8,
+      "sequence_index": 1,
+      "weights": "B"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 1152,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "serial",
+      "tokens": 9,
+      "sequence_index": 2,
+      "weights": "A"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 1152,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "r03",
+      "tokens": 9,
+      "sequence_index": 2,
+      "weights": "A"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 1920,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "serial",
+      "tokens": 15,
+      "sequence_index": 3,
+      "weights": "B"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 1920,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "r03",
+      "tokens": 15,
+      "sequence_index": 3,
+      "weights": "B"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 2048,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "serial",
+      "tokens": 16,
+      "sequence_index": 4,
+      "weights": "A"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 2048,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "r03",
+      "tokens": 16,
+      "sequence_index": 4,
+      "weights": "A"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 2176,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "serial",
+      "tokens": 17,
+      "sequence_index": 5,
+      "weights": "B"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 2176,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "r03",
+      "tokens": 17,
+      "sequence_index": 5,
+      "weights": "B"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 84352,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "serial",
+      "tokens": 659,
+      "sequence_index": 6,
+      "weights": "A"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 84352,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "r03",
+      "tokens": 659,
+      "sequence_index": 6,
+      "weights": "A"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 84480,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "serial",
+      "tokens": 660,
+      "sequence_index": 7,
+      "weights": "B"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 84480,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "r03",
+      "tokens": 660,
+      "sequence_index": 7,
+      "weights": "B"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 1152,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "serial",
+      "tokens": 9,
+      "sequence_index": 8,
+      "weights": "A"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 1152,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "r03",
+      "tokens": 9,
+      "sequence_index": 8,
+      "weights": "A"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 896,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "serial",
+      "tokens": 7,
+      "sequence_index": 9,
+      "weights": "B"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 896,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "r03",
+      "tokens": 7,
+      "sequence_index": 9,
+      "weights": "B"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 128,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "serial",
+      "tokens": 1,
+      "sequence_index": 10,
+      "weights": "A"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 128,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "r03",
+      "tokens": 1,
+      "sequence_index": 10,
+      "weights": "A"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 2176,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "serial",
+      "tokens": 17,
+      "sequence_index": 11,
+      "weights": "B"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 2176,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "r03",
+      "tokens": 17,
+      "sequence_index": 11,
+      "weights": "B"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 1024,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "serial",
+      "tokens": 8,
+      "sequence_index": 12,
+      "weights": "A"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 1024,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "baseline": "r03",
+      "tokens": 8,
+      "sequence_index": 12,
+      "weights": "A"
+    }
+  ]
+}

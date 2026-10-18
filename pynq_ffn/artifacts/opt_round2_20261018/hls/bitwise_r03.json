@@ -1,0 +1,205 @@
+{
+  "status": "pass",
+  "hardware_execution": false,
+  "scope": "Host std::erf only; no HLS/RTL/PL or PL performance claim",
+  "command": [
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\tools\\validate_cpp_parallel.py",
+    "--baseline-library",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\candidate_r03_host\\ffn_host.dll",
+    "--candidate-library",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\host\\ffn_host.dll",
+    "--output",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\bitwise_r03.json"
+  ],
+  "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+  "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+  "executable": "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "numpy": "1.26.4",
+  "libraries": {
+    "baseline": {
+      "path": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\candidate_r03_host\\ffn_host.dll",
+      "sha256": "5cdddc8f0f6289a8bc2cacd9f25a30e312bc8e8e26bfd0065f74487045d9cfdc"
+    },
+    "candidate": {
+      "path": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\host\\ffn_host.dll",
+      "sha256": "5457de5ae8aef6535cb286b899e8f2f7c5c3bc59ce593ed58724bda78cea4503"
+    }
+  },
+  "synthetic": [
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 128,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "name": "boundary_1",
+      "tokens": 1
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 256,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "name": "boundary_2",
+      "tokens": 2
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 384,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "name": "boundary_3",
+      "tokens": 3
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 512,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "name": "boundary_4",
+      "tokens": 4
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 640,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "name": "boundary_5",
+      "tokens": 5
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 896,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "name": "boundary_7",
+      "tokens": 7
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 1024,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "name": "boundary_8",
+      "tokens": 8
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 1152,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "name": "boundary_9",
+      "tokens": 9
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 84352,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "name": "boundary_659",
+      "tokens": 659
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 84480,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "name": "boundary_660",
+      "tokens": 660
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 84480,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "name": "reload_B",
+      "tokens": 660
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 512,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "name": "reload_C",
+      "tokens": 4
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 512,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "name": "reload_D",
+      "tokens": 4
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 128,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "name": "revisit_A",
+      "tokens": 1
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 512,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "name": "zero",
+      "tokens": 4
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 512,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "name": "bias_exact_erf",
+      "tokens": 4
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 512,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "name": "cancellation_fc1",
+      "tokens": 4
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 512,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "name": "cancellation_fc2",
+      "tokens": 4
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 1152,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "name": "large_dynamic_range_no_overflow",
+      "tokens": 9
+    }
+  ],
+  "payload": {
+    "status": "not_executed"
+  }
+}

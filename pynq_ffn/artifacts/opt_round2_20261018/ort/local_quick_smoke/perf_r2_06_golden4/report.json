@@ -1,0 +1,148 @@
+{
+  "status": "\u5df2\u9a8c\u8bc1",
+  "actual_command": [
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\tools\\ort_thread_study.py",
+    "--worker",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r2_06_golden4\\job.json"
+  ],
+  "pid": 59536,
+  "hardware_execution": false,
+  "versions": {
+    "python": "3.12.7",
+    "numpy": "1.26.4",
+    "onnxruntime": "1.20.1",
+    "opencv": "4.10.0",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "machine": "AMD64",
+    "logical_cpus": 16,
+    "affinity": null,
+    "thread_environment": {
+      "OMP_NUM_THREADS": "16",
+      "OPENBLAS_NUM_THREADS": null,
+      "MKL_NUM_THREADS": null,
+      "ORT_NUM_THREADS": null
+    }
+  },
+  "policy": {
+    "name": "golden4",
+    "mode": "golden",
+    "heavy_threads": 4,
+    "small_threads": 4,
+    "allow_spinning": true,
+    "inter_op_threads": 1,
+    "execution_mode": "ORT_SEQUENTIAL",
+    "graph_optimization": "ORT_ENABLE_EXTENDED",
+    "provider": "CPUExecutionProvider"
+  },
+  "runtime_sha256": "023327eadeaa935ec8392ec16095c6df2a1155368595afd37fe233b4cc6ed298",
+  "profiling": false,
+  "start_utc": "2026-10-18T04:14:32Z",
+  "exit_code": 0,
+  "input_load_ms": 0.9907000003295252,
+  "input_sha256": "62ef4f31720d414a9d1be522af7e8bf2992a6155de4b871661dc9f9ee3463d4a",
+  "manifest_sha256": "de727e32df9f1ebd0fe84bac0d33cc8e786a5962053dc746b955b175527f4b77",
+  "snapshot_before_init": {
+    "process_cpu_s": 0.625,
+    "task_threads": null,
+    "process_ctx": null,
+    "task_ctx": null
+  },
+  "initialization_ms": 296.6433000001416,
+  "session_policies": [
+    {
+      "name": "golden",
+      "intra_op_threads": 4,
+      "inter_op_threads": 1,
+      "allow_spinning": true
+    }
+  ],
+  "experimental_initialization_ms": {
+    "production_validation_and_release": 123.42790000002424,
+    "policy_rebuild": 171.29779999959283
+  },
+  "n": 1,
+  "warmup": 3,
+  "snapshot_before_measurement": {
+    "process_cpu_s": 1.0625,
+    "task_threads": null,
+    "process_ctx": null,
+    "task_ctx": null
+  },
+  "snapshot_after_measurement": {
+    "process_cpu_s": 1.0625,
+    "task_threads": null,
+    "process_ctx": null,
+    "task_ctx": null
+  },
+  "process_context_switch_delta": null,
+  "measurement_loop_wall_s": 0.007042199999887089,
+  "measurement_loop_cpu_s": 0.0,
+  "measurement_loop_cpu_wall_ratio": 0.0,
+  "run_total_ms": {
+    "n": 1,
+    "mean": 7.01030000072933,
+    "p50": 7.01030000072933,
+    "p95": 7.01030000072933,
+    "p99": 7.01030000072933,
+    "max": 7.01030000072933,
+    "min": 7.01030000072933
+  },
+  "process_cpu_ms": {
+    "n": 1,
+    "mean": 0.0,
+    "p50": 0.0,
+    "p95": 0.0,
+    "p99": 0.0,
+    "max": 0.0,
+    "min": 0.0
+  },
+  "perstage_ms": {
+    "golden": {
+      "n": 1,
+      "mean": 6.842800000413263,
+      "p50": 6.842800000413263,
+      "p95": 6.842800000413263,
+      "p99": 6.842800000413263,
+      "max": 6.842800000413263,
+      "min": 6.842800000413263
+    },
+    "total": {
+      "n": 1,
+      "mean": 6.847300000117684,
+      "p50": 6.847300000117684,
+      "p95": 6.847300000117684,
+      "p99": 6.847300000117684,
+      "max": 6.847300000117684,
+      "min": 6.847300000117684
+    }
+  },
+  "timing_scope": "run_total wraps original Runtime.run incl input/output validation and FFN cut copies; excludes init/decode/preprocess/comparison/profile parsing. Perstage timers use original Runtime; stages do not sum to run_total. Loop counters include Python sample/output collection.",
+  "samples": [
+    {
+      "index": 0,
+      "run_total_ms": 7.01030000072933,
+      "process_cpu_ms": 0.0,
+      "cpu_wall_ratio": 0.0,
+      "stages_ms": {
+        "golden": 6.842800000413263,
+        "total": 6.847300000117684
+      }
+    }
+  ],
+  "output_sha256": "9f0b41a957c293b566089e3c66d6ba73b9e8bc491e9abee73beededd018891ae",
+  "comparison": {
+    "max_abs_error": {
+      "speed_norm": 0.0,
+      "speed_raw": 0.0,
+      "region_logits": 0.0,
+      "region_probs": 0.0
+    },
+    "speed_integer_mismatches": 0,
+    "atol": 0.001,
+    "rtol": 0,
+    "pass": true
+  },
+  "reference": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\reference_golden4\\outputs.npz",
+  "reference_sha256": "9f0b41a957c293b566089e3c66d6ba73b9e8bc491e9abee73beededd018891ae",
+  "end_utc": "2026-10-18T04:14:33Z"
+}

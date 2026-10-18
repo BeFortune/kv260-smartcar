@@ -1,0 +1,550 @@
+{
+  "status": "\u5df2\u9a8c\u8bc1",
+  "scope": "Local host only; HLS/RTL/PL not executed by this agent",
+  "date": "2026-10-18",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "source_snapshot": "source_snapshot_v1",
+  "zip_sha256": "e4c20cf9ed6c7c627767763651ecb83a3f80ffe360ed830b50a9e31e03f1c69a",
+  "host_full_tb": {
+    "status": "\u5df2\u9a8c\u8bc1",
+    "logical_cases": 27,
+    "kernel_invocations_including_null_invalid_subchecks": 33,
+    "max_abs_double_reference": 2.22897e-06
+  },
+  "host_small_tb": {
+    "status": "\u5df2\u9a8c\u8bc1",
+    "logical_cases": 12,
+    "valid_tokens": 30,
+    "kernel_invocations_including_null_invalid_subchecks": 18,
+    "full_rtl_coverage": false
+  },
+  "comparisons": {
+    "bitwise_serial": {
+      "status": "\u5df2\u9a8c\u8bc1",
+      "synthetic_cases": 19,
+      "synthetic_bit_mismatches": 0,
+      "frames": 0,
+      "layer_bit_mismatches": 0,
+      "frame_failures": 0,
+      "speed_integer_mismatches": 0,
+      "libraries": {
+        "baseline": {
+          "path": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\baseline_host\\ffn_host.dll",
+          "sha256": "9279c4d866c1d0cab487730ab4972787c536af51a346158d545dd3128bf8558a"
+        },
+        "candidate": {
+          "path": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\host\\ffn_host.dll",
+          "sha256": "5457de5ae8aef6535cb286b899e8f2f7c5c3bc59ce593ed58724bda78cea4503"
+        }
+      }
+    },
+    "bitwise_r03": {
+      "status": "\u5df2\u9a8c\u8bc1",
+      "synthetic_cases": 19,
+      "synthetic_bit_mismatches": 0,
+      "frames": 0,
+      "layer_bit_mismatches": 0,
+      "frame_failures": 0,
+      "speed_integer_mismatches": 0,
+      "libraries": {
+        "baseline": {
+          "path": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\candidate_r03_host\\ffn_host.dll",
+          "sha256": "5cdddc8f0f6289a8bc2cacd9f25a30e312bc8e8e26bfd0065f74487045d9cfdc"
+        },
+        "candidate": {
+          "path": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\host\\ffn_host.dll",
+          "sha256": "5457de5ae8aef6535cb286b899e8f2f7c5c3bc59ce593ed58724bda78cea4503"
+        }
+      }
+    },
+    "payload_173": {
+      "status": "\u5df2\u9a8c\u8bc1",
+      "synthetic_cases": 19,
+      "synthetic_bit_mismatches": 0,
+      "frames": 173,
+      "layer_bit_mismatches": 0,
+      "frame_failures": 0,
+      "speed_integer_mismatches": 0,
+      "libraries": {
+        "baseline": {
+          "path": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\candidate_r03_host\\ffn_host.dll",
+          "sha256": "5cdddc8f0f6289a8bc2cacd9f25a30e312bc8e8e26bfd0065f74487045d9cfdc"
+        },
+        "candidate": {
+          "path": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\host\\ffn_host.dll",
+          "sha256": "5457de5ae8aef6535cb286b899e8f2f7c5c3bc59ce593ed58724bda78cea4503"
+        }
+      },
+      "max_final_errors": {
+        "speed_norm": 8.940696716308594e-08,
+        "speed_raw": 6.103515625e-05,
+        "region_logits": 8.149072527885437e-08,
+        "region_probs": 1.4901161193847656e-08
+      }
+    },
+    "payload_serial_173": {
+      "status": "\u5df2\u9a8c\u8bc1",
+      "synthetic_cases": 19,
+      "synthetic_bit_mismatches": 0,
+      "frames": 173,
+      "layer_bit_mismatches": 0,
+      "frame_failures": 0,
+      "speed_integer_mismatches": 0,
+      "libraries": {
+        "baseline": {
+          "path": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\baseline_host\\ffn_host.dll",
+          "sha256": "9279c4d866c1d0cab487730ab4972787c536af51a346158d545dd3128bf8558a"
+        },
+        "candidate": {
+          "path": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\host\\ffn_host.dll",
+          "sha256": "5457de5ae8aef6535cb286b899e8f2f7c5c3bc59ce593ed58724bda78cea4503"
+        }
+      },
+      "max_final_errors": {
+        "speed_norm": 8.940696716308594e-08,
+        "speed_raw": 6.103515625e-05,
+        "region_logits": 8.149072527885437e-08,
+        "region_probs": 1.4901161193847656e-08
+      }
+    }
+  },
+  "memory_guard_test": {
+    "status": "pass",
+    "hardware_execution": false,
+    "valid": [
+      {
+        "pass": true,
+        "finite": true,
+        "elements": 128,
+        "bit_mismatches": 0,
+        "max_abs_error": 0.0,
+        "tokens": 1,
+        "trailing_pages": "PAGE_NOACCESS",
+        "status": "pass"
+      },
+      {
+        "pass": true,
+        "finite": true,
+        "elements": 256,
+        "bit_mismatches": 0,
+        "max_abs_error": 0.0,
+        "tokens": 2,
+        "trailing_pages": "PAGE_NOACCESS",
+        "status": "pass"
+      },
+      {
+        "pass": true,
+        "finite": true,
+        "elements": 384,
+        "bit_mismatches": 0,
+        "max_abs_error": 0.0,
+        "tokens": 3,
+        "trailing_pages": "PAGE_NOACCESS",
+        "status": "pass"
+      },
+      {
+        "pass": true,
+        "finite": true,
+        "elements": 512,
+        "bit_mismatches": 0,
+        "max_abs_error": 0.0,
+        "tokens": 4,
+        "trailing_pages": "PAGE_NOACCESS",
+        "status": "pass"
+      },
+      {
+        "pass": true,
+        "finite": true,
+        "elements": 640,
+        "bit_mismatches": 0,
+        "max_abs_error": 0.0,
+        "tokens": 5,
+        "trailing_pages": "PAGE_NOACCESS",
+        "status": "pass"
+      },
+      {
+        "pass": true,
+        "finite": true,
+        "elements": 896,
+        "bit_mismatches": 0,
+        "max_abs_error": 0.0,
+        "tokens": 7,
+        "trailing_pages": "PAGE_NOACCESS",
+        "status": "pass"
+      },
+      {
+        "pass": true,
+        "finite": true,
+        "elements": 1024,
+        "bit_mismatches": 0,
+        "max_abs_error": 0.0,
+        "tokens": 8,
+        "trailing_pages": "PAGE_NOACCESS",
+        "status": "pass"
+      },
+      {
+        "pass": true,
+        "finite": true,
+        "elements": 1152,
+        "bit_mismatches": 0,
+        "max_abs_error": 0.0,
+        "tokens": 9,
+        "trailing_pages": "PAGE_NOACCESS",
+        "status": "pass"
+      },
+      {
+        "pass": true,
+        "finite": true,
+        "elements": 84352,
+        "bit_mismatches": 0,
+        "max_abs_error": 0.0,
+        "tokens": 659,
+        "trailing_pages": "PAGE_NOACCESS",
+        "status": "pass"
+      },
+      {
+        "pass": true,
+        "finite": true,
+        "elements": 84480,
+        "bit_mismatches": 0,
+        "max_abs_error": 0.0,
+        "tokens": 660,
+        "trailing_pages": "PAGE_NOACCESS",
+        "status": "pass"
+      }
+    ],
+    "invalid_noaccess_and_null": [
+      0,
+      661,
+      4294967295
+    ]
+  },
+  "hls_csim": "\u672a\u6267\u884c",
+  "hls_synthesis": "\u672a\u6267\u884c",
+  "rtl_cosim_full": "\u672a\u6267\u884c",
+  "rtl_cosim_small": "\u672a\u6267\u884c",
+  "implementation": "\u672a\u6267\u884c",
+  "pl_execution": "\u672a\u6267\u884c",
+  "hardware_speedup": "\u672a\u6267\u884c",
+  "narrow_followup_candidate_used": false,
+  "commands": {
+    "bitwise_r03.command": {
+      "command": [
+        "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\tools\\validate_cpp_parallel.py",
+        "--baseline-library",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\candidate_r03_host\\ffn_host.dll",
+        "--candidate-library",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\host\\ffn_host.dll",
+        "--output",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\bitwise_r03.json"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "started": "2026-10-18T04:09:18.149818+00:00",
+      "ended": "2026-10-18T04:09:19.014713+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "bitwise_serial.command": {
+      "command": [
+        "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\tools\\validate_cpp_parallel.py",
+        "--baseline-library",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\baseline_host\\ffn_host.dll",
+        "--candidate-library",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\host\\ffn_host.dll",
+        "--output",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\bitwise_serial.json"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "started": "2026-10-18T04:09:17.273519+00:00",
+      "ended": "2026-10-18T04:09:18.148819+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "compiler.command": {
+      "command": [
+        "D:\\Programs\\TDM-GCC-64\\bin\\g++.exe",
+        "--version"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "started": "2026-10-18T04:09:08.486734+00:00",
+      "ended": "2026-10-18T04:09:08.519877+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "compile_dll.command": {
+      "command": [
+        "D:\\Programs\\TDM-GCC-64\\bin\\g++.exe",
+        "-std=c++11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Wno-unknown-pragmas",
+        "-Wno-unused-label",
+        "-ffp-contract=off",
+        "-shared",
+        "-static-libgcc",
+        "-static-libstdc++",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\hls\\candidates\\interleaved_r04\\ffn_accel.cpp",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\hls\\candidates\\interleaved_r04\\host_bridge.cpp",
+        "-o",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\host\\ffn_host.dll"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "started": "2026-10-18T04:09:16.768482+00:00",
+      "ended": "2026-10-18T04:09:17.271997+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "compile_full.command": {
+      "command": [
+        "D:\\Programs\\TDM-GCC-64\\bin\\g++.exe",
+        "-std=c++11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Wno-unknown-pragmas",
+        "-Wno-unused-label",
+        "-ffp-contract=off",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\hls\\candidates\\interleaved_r04\\ffn_accel.cpp",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\hls\\candidates\\interleaved_r04\\testbench.cpp",
+        "-o",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\host\\full.exe"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "started": "2026-10-18T04:09:08.862472+00:00",
+      "ended": "2026-10-18T04:09:13.297678+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "compile_small.command": {
+      "command": [
+        "D:\\Programs\\TDM-GCC-64\\bin\\g++.exe",
+        "-std=c++11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Wno-unknown-pragmas",
+        "-Wno-unused-label",
+        "-ffp-contract=off",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\hls\\candidates\\interleaved_r04\\ffn_accel.cpp",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\hls\\candidates\\interleaved_r04\\testbench_small.cpp",
+        "-o",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\host\\small.exe"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "started": "2026-10-18T04:09:14.518444+00:00",
+      "ended": "2026-10-18T04:09:16.165603+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "config_full.command": {
+      "command": [
+        "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\hls\\candidates\\interleaved_r04\\make_config.py",
+        "--testbench",
+        "full"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "started": "2026-10-18T04:09:14.403308+00:00",
+      "ended": "2026-10-18T04:09:14.516874+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "config_refuse_escape.command": {
+      "command": [
+        "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\hls\\candidates\\interleaved_r04\\make_config.py",
+        "--output",
+        "../escape.cfg"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "started": "2026-10-18T04:13:38.620342+00:00",
+      "ended": "2026-10-18T04:13:38.745156+00:00",
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "config_refuse_overwrite.command": {
+      "command": [
+        "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\hls\\candidates\\interleaved_r04\\make_config.py"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "started": "2026-10-18T04:13:38.493865+00:00",
+      "ended": "2026-10-18T04:13:38.619341+00:00",
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "config_small.command": {
+      "command": [
+        "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\hls\\candidates\\interleaved_r04\\make_config.py",
+        "--testbench",
+        "small"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "started": "2026-10-18T04:09:16.651480+00:00",
+      "ended": "2026-10-18T04:09:16.766482+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "memory_guards.command": {
+      "command": [
+        "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\check_memory_guards.py"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "started": "2026-10-18T04:13:37.753902+00:00",
+      "ended": "2026-10-18T04:13:38.258577+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "payload_173.command": {
+      "command": [
+        "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\tools\\validate_cpp_parallel.py",
+        "--baseline-library",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\candidate_r03_host\\ffn_host.dll",
+        "--candidate-library",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\host\\ffn_host.dll",
+        "--bundle",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\bundle_20261014",
+        "--zip",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\kv260_v1\\v1_payload.zip",
+        "--output",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\payload_173.json"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "started": "2026-10-18T04:09:19.015712+00:00",
+      "ended": "2026-10-18T04:10:05.537148+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "payload_serial_173.command": {
+      "command": [
+        "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\tools\\validate_cpp_parallel.py",
+        "--baseline-library",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\baseline_host\\ffn_host.dll",
+        "--candidate-library",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\host\\ffn_host.dll",
+        "--bundle",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\bundle_20261014",
+        "--zip",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\kv260_v1\\v1_payload.zip",
+        "--output",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\payload_serial_173.json"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "started": "2026-10-18T04:15:01.965522+00:00",
+      "ended": "2026-10-18T04:15:52.330646+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "python_syntax.command": {
+      "command": [
+        "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+        "-c",
+        "from pathlib import Path; compile(Path(r'C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\hls\\candidates\\interleaved_r04\\make_config.py').read_text(), 'make_config.py', 'exec')"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "started": "2026-10-18T04:09:08.755263+00:00",
+      "ended": "2026-10-18T04:09:08.861408+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "test_full.command": {
+      "command": [
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\host\\full.exe"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "started": "2026-10-18T04:09:13.299677+00:00",
+      "ended": "2026-10-18T04:09:14.401301+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "test_small.command": {
+      "command": [
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\host\\small.exe"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "started": "2026-10-18T04:09:16.167605+00:00",
+      "ended": "2026-10-18T04:09:16.649479+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "validator_refuse_overwrite.command": {
+      "command": [
+        "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\tools\\validate_cpp_parallel.py",
+        "--baseline-library",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\baseline_host\\ffn_host.dll",
+        "--candidate-library",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\host\\ffn_host.dll",
+        "--output",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\bitwise_serial.json"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "started": "2026-10-18T04:13:38.747161+00:00",
+      "ended": "2026-10-18T04:13:39.136058+00:00",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "verify_inputs.command": {
+      "command": [
+        "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\verify_inputs.py"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "started": "2026-10-18T04:17:07.262589+00:00",
+      "ended": "2026-10-18T04:17:07.401932+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26300-SP0"
+    }
+  },
+  "hashes": {
+    "ffn_host.dll": "5457de5ae8aef6535cb286b899e8f2f7c5c3bc59ce593ed58724bda78cea4503",
+    "full.exe": "ee68eadcef2e1063af2183442707c85ebc2bf4600080c217114610c5053005fa",
+    "small.exe": "4814b63bbfcb02ca172a869b57302b2338f368aa7e23bcf16cca6e54346ad5b2"
+  }
+}

@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "C:\Users\BeFortuneEX\Source\Repos\FPGA\pynq_ffn\artifacts\opt_round2_20261018\ort\analyze_remote.py", line 279, in main
+    report = analyze(args.study_dir, args.expected_frames, not args.allow_partial_matrix)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BeFortuneEX\Source\Repos\FPGA\pynq_ffn\artifacts\opt_round2_20261018\ort\analyze_remote.py", line 195, in analyze
+    require(report["runtime_sha256"] == manifest["source_hashes"]["ps/runtime.py"], "Runtime digest differs")
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'ps/runtime.py'
+{"status": "失败", "exit_code": 1, "output": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\analysis_smoke01\\analysis.json"}

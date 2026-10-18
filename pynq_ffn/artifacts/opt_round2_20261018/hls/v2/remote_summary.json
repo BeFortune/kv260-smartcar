@@ -1,0 +1,322 @@
+{
+  "status": "已验证",
+  "date": "2026-10-18",
+  "scope": "Read-only review of collected remote HLS/RTL evidence; no new tests or hardware actions",
+  "source_sha256": "553b9c9b36fee41d791908f1fc3b8314ea4631db403743f5e80665d18fad1350",
+  "source_matches_frozen_v2": true,
+  "collection_integrity": {
+    "status": "已验证",
+    "files_rehashed": 191,
+    "manifest": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\remote_final\\collection_manifest.json",
+    "previous_partial_files_rehashed": 172
+  },
+  "tools": {
+    "version": "2026.1",
+    "hls_build": "6493734",
+    "part": "xck26-sfvc784-2LV-c",
+    "clock_ns": 10,
+    "clock_uncertainty_ns": 2.7
+  },
+  "csim": {
+    "status": "已验证",
+    "exit_code": 0,
+    "full_tb_cases": 30,
+    "covers_659_660": true
+  },
+  "csynth": {
+    "status": "已验证",
+    "exit_code": 0,
+    "latency_cycles_max": 3620660,
+    "interval_cycles_max": 3620661,
+    "estimated_top_clock_ns": 7.3,
+    "latency_at_target_100mhz_ms": 36.2066,
+    "latency_scope": "HLS max estimate using 83 token tiles, not board measurement or measured throughput",
+    "resources": {
+      "DSP": 333,
+      "BRAM_18K": 142,
+      "FF": 64719,
+      "LUT": 58866
+    },
+    "loops": {
+      "fc1_steps": {
+        "target_clock_ns": 10.0,
+        "estimated_clock_ns": 5.751,
+        "uncertainty_ns": 2.7,
+        "slack_ns_rounded": 1.55,
+        "loop_latency_cycles": 1034,
+        "iteration_latency_cycles": 12,
+        "achieved_ii": 1,
+        "target_ii": 1,
+        "trip_count": 1024,
+        "pipeline_module_latency_cycles": 1036
+      },
+      "fc2_steps": {
+        "target_clock_ns": 10.0,
+        "estimated_clock_ns": 5.68,
+        "uncertainty_ns": 2.7,
+        "slack_ns_rounded": 1.62,
+        "loop_latency_cycles": 2058,
+        "iteration_latency_cycles": 12,
+        "achieved_ii": 1,
+        "target_ii": 1,
+        "trip_count": 2048,
+        "pipeline_module_latency_cycles": 2060
+      }
+    },
+    "timing_scope": "HLS estimates only; positive FC loop slack is not routed timing sign-off"
+  },
+  "operators": {
+    "status": "已验证",
+    "scope": "16 scalar fadd and 16 fmul top-level instances shared across FC stages; nested GELU excluded",
+    "rtl_sha256": "43d2137dd7055c9f4059f3ff312c3ea85819ff9cf67cbe148dfa3f864afbb469",
+    "latency_interpretation": "Source BIND_OP arithmetic latency request is fadd6/fmul3; generated RTL wrapper NUM_STAGE is 7/4. These are distinct tool fields; do not call NUM_STAGE the requested arithmetic latency or add it again to loop latency. One-stage difference is visible, but exact internal adapter-stage attribution is not proven by the collected top RTL alone.",
+    "allocated": {
+      "fadd": {
+        "bind_op_requested_latency": 6,
+        "rtl_num_stage": 7,
+        "count": 16,
+        "instances": [
+          "fadd_32ns_32ns_32_7_full_dsp_1_U1758",
+          "fadd_32ns_32ns_32_7_full_dsp_1_U1759",
+          "fadd_32ns_32ns_32_7_full_dsp_1_U1760",
+          "fadd_32ns_32ns_32_7_full_dsp_1_U1761",
+          "fadd_32ns_32ns_32_7_full_dsp_1_U1762",
+          "fadd_32ns_32ns_32_7_full_dsp_1_U1763",
+          "fadd_32ns_32ns_32_7_full_dsp_1_U1764",
+          "fadd_32ns_32ns_32_7_full_dsp_1_U1765",
+          "fadd_32ns_32ns_32_7_full_dsp_1_U1766",
+          "fadd_32ns_32ns_32_7_full_dsp_1_U1767",
+          "fadd_32ns_32ns_32_7_full_dsp_1_U1768",
+          "fadd_32ns_32ns_32_7_full_dsp_1_U1769",
+          "fadd_32ns_32ns_32_7_full_dsp_1_U1770",
+          "fadd_32ns_32ns_32_7_full_dsp_1_U1771",
+          "fadd_32ns_32ns_32_7_full_dsp_1_U1772",
+          "fadd_32ns_32ns_32_7_full_dsp_1_U1773"
+        ]
+      },
+      "fmul": {
+        "bind_op_requested_latency": 3,
+        "rtl_num_stage": 4,
+        "count": 16,
+        "instances": [
+          "fmul_32ns_32ns_32_4_max_dsp_1_U1774",
+          "fmul_32ns_32ns_32_4_max_dsp_1_U1775",
+          "fmul_32ns_32ns_32_4_max_dsp_1_U1776",
+          "fmul_32ns_32ns_32_4_max_dsp_1_U1777",
+          "fmul_32ns_32ns_32_4_max_dsp_1_U1778",
+          "fmul_32ns_32ns_32_4_max_dsp_1_U1779",
+          "fmul_32ns_32ns_32_4_max_dsp_1_U1780",
+          "fmul_32ns_32ns_32_4_max_dsp_1_U1781",
+          "fmul_32ns_32ns_32_4_max_dsp_1_U1782",
+          "fmul_32ns_32ns_32_4_max_dsp_1_U1783",
+          "fmul_32ns_32ns_32_4_max_dsp_1_U1784",
+          "fmul_32ns_32ns_32_4_max_dsp_1_U1785",
+          "fmul_32ns_32ns_32_4_max_dsp_1_U1786",
+          "fmul_32ns_32ns_32_4_max_dsp_1_U1787",
+          "fmul_32ns_32ns_32_4_max_dsp_1_U1788",
+          "fmul_32ns_32ns_32_4_max_dsp_1_U1789"
+        ]
+      }
+    }
+  },
+  "dependency_review": {
+    "status": "已验证",
+    "false_dependence_pragmas": 0,
+    "true_raw_distance8_pragmas": 2,
+    "tool_raw_distance8_log_entries": 512,
+    "proof": "Each lane writes only sum[step&7][lane]; equal context occurs first at step+8, whose reduction index (step>>3) increases by one. Tail tiles keep all eight slots; only external reads/writes are masked. Thus no same-token partial sums or reordered reduction.",
+    "tail_mask": "base+ctx<num_tokens checked before external X read and Y write; invalid counts return before all buffer accesses"
+  },
+  "abi": {
+    "status": "已验证",
+    "control": "ap_ctrl_hs",
+    "control_offset": "0x00",
+    "control_bits": {
+      "ap_start": 0,
+      "ap_done": 1,
+      "ap_idle": 2,
+      "ap_ready": 3,
+      "auto_restart": 7
+    },
+    "m_axi_address_bits": {
+      "gmem0": 64,
+      "gmem1": 64
+    },
+    "pointer_and_count_registers": {
+      "x": {
+        "low_offset": "0x10",
+        "width_bits": 64,
+        "high_offset": "0x14"
+      },
+      "y": {
+        "low_offset": "0x1c",
+        "width_bits": 64,
+        "high_offset": "0x20"
+      },
+      "w1": {
+        "low_offset": "0x28",
+        "width_bits": 64,
+        "high_offset": "0x2c"
+      },
+      "b1": {
+        "low_offset": "0x34",
+        "width_bits": 64,
+        "high_offset": "0x38"
+      },
+      "w2": {
+        "low_offset": "0x40",
+        "width_bits": 64,
+        "high_offset": "0x44"
+      },
+      "b2": {
+        "low_offset": "0x4c",
+        "width_bits": 64,
+        "high_offset": "0x50"
+      },
+      "num_tokens": {
+        "low_offset": "0x58",
+        "width_bits": 32
+      }
+    },
+    "evidence": [
+      "work/reports/hls_compile.rpt",
+      "work/hls/.autopilot/db/driver/src/xffn_accel_hw.h",
+      "work/hls/syn/verilog/ffn_accel.v"
+    ],
+    "board_hwh_verified": "未执行"
+  },
+  "rtl_cosim_small": {
+    "status": "已验证",
+    "exit_code": 0,
+    "wall_elapsed_s": 2390.2095217000024,
+    "tool": "xsim",
+    "rtl": "Verilog",
+    "report_status": "Pass",
+    "transactions": 10,
+    "valid_tokens": 30,
+    "valid_call_counts": [
+      1,
+      3,
+      7,
+      8,
+      9,
+      1,
+      1
+    ],
+    "invalid_call_counts": [
+      0,
+      661,
+      4294967295
+    ],
+    "total_execution_cycles": 929038,
+    "latency_cycles": {
+      "min": 3,
+      "avg": 92880,
+      "max": 169903
+    },
+    "interval_cycles": {
+      "min": 29,
+      "avg": 103226,
+      "max": 169929
+    },
+    "covers_659_660": false,
+    "scope": "Small TB C precheck + RTL + C postcheck passed; not full RTL"
+  },
+  "rtl_cosim_full": {
+    "status": "未执行",
+    "missing_coverage": [
+      "659-token RTL",
+      "660-token RTL",
+      "full-TB multiweight/tail sequence RTL"
+    ]
+  },
+  "ooc_implementation": {
+    "status": "已验证",
+    "scope": "Standalone HLS OOC IP place-and-route; not KV260 full-system implementation or hardware execution",
+    "remote_cwd": "D:\\io8",
+    "exit_code": 0,
+    "wall_elapsed_s": 1488.2766058000125,
+    "target_clock_ns": 10,
+    "constrained_clock_mhz": 100,
+    "board_actual_clock_measured": false,
+    "timing": {
+      "WNS_ns_precise_from_final_log": 2.435662,
+      "WHS_ns_precise_from_final_log": 0.034,
+      "TPWS_ns": 0.0,
+      "TNS_ns_report": 0.0,
+      "THS_ns_report": 0.0,
+      "unrouted_nets": 0,
+      "routing_errors": 0,
+      "timing_constraints_met": true,
+      "export_post_synthesis_period_ns": 5.281,
+      "export_post_route_period_ns": 7.564,
+      "interpretation": "100 MHz is the constrained target, not a new measured board clock. Export period and positive OOC slack do not establish integrated-system timing or end-to-end performance."
+    },
+    "routed_resources": {
+      "LUT": 51146,
+      "FF": 46657,
+      "DSP": 333,
+      "BRAM_18K_equivalent": 131,
+      "BRAM_tiles": 65.5,
+      "RAMB36": 64,
+      "RAMB18": 3,
+      "URAM": 0,
+      "SRL": 1183
+    },
+    "constraints_caveat": {
+      "missing_input_delay_ports": 127,
+      "missing_output_delay_ports": 280,
+      "TIMING_18_violations": 427,
+      "unconstrained_internal_endpoints": 0,
+      "note": "Standalone IP external I/O delays are not fully constrained; OOC internal timing pass is not full-system interface sign-off."
+    },
+    "evidence": {
+      "records_v1/impl.finished.json": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\remote_final\\v2_ooc\\records_v1\\impl.finished.json",
+      "records_v1/impl.log": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\remote_final\\v2_ooc\\records_v1\\impl.log",
+      "work/hls/impl/report/verilog/export_impl.rpt": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\remote_final\\v2_ooc\\work\\hls\\impl\\report\\verilog\\export_impl.rpt",
+      "work/hls/impl/verilog/report/ffn_accel_timing_routed.rpt": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\remote_final\\v2_ooc\\work\\hls\\impl\\verilog\\report\\ffn_accel_timing_routed.rpt",
+      "work/hls/impl/verilog/report/ffn_accel_utilization_routed.rpt": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\remote_final\\v2_ooc\\work\\hls\\impl\\verilog\\report\\ffn_accel_utilization_routed.rpt",
+      "work/hls/impl/verilog/report/ffn_accel_status_routed.rpt": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\remote_final\\v2_ooc\\work\\hls\\impl\\verilog\\report\\ffn_accel_status_routed.rpt"
+    }
+  },
+  "board_validation": {
+    "status": "未执行",
+    "note": "No new system build, overlay programming, board clock measurement or acceleration/performance test"
+  },
+  "files_modified": [
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\v2\\remote_summary.json"
+  ],
+  "review_command_note": "Initial read-only extraction command returned SyntaxError exit1 due to shell quoting before body executed; corrected heredoc extraction returned exit0. No source, TB, ZIP or test output changed.",
+  "ip_archive": {
+    "status": "已验证",
+    "path": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\remote_final\\v2_ooc\\work\\ffn_accel.zip",
+    "bytes": 867640,
+    "sha256": "3e7eb615f7fc0ecf61ad5e56443eab6f4665e698045cef2565a4990e340e4185",
+    "archive_entries": 85,
+    "packaged_top_rtl_path": "hdl/verilog/ffn_accel.v",
+    "scope": "Generated IP-catalog archive, not system bitstream or board overlay; archive read only, not modified"
+  },
+  "source_to_rtl_consistency": {
+    "status": "已验证",
+    "input_hashes_equal_frozen_cosim_ooc": {
+      "ffn_accel.cpp": "553b9c9b36fee41d791908f1fc3b8314ea4631db403743f5e80665d18fad1350",
+      "ffn_accel.hpp": "fcdced1362b460a6cea73fc5869564e6797c041469a50b9c56deba1253cd7478",
+      "test_support.hpp": "e04e6932815d2a9875c166b82a19e79dde05fe59e24d9ec26f2fc3d966cceab3",
+      "testbench.cpp": "d0bbaa59b24a1d37f253f4478645fd08f5aef469d50a14f92e37890a7f8769ba",
+      "testbench_small.cpp": "d3b420cbb6cdaf2ae2a037c3e468dfa6543c25ac0f4f246359c71e456f416d1d",
+      "build/full.cfg": "a5da7a9349c61aa1761f12b83f96f6d4cf15d53fa8327eb0439f33c9304509fe",
+      "build/small.cfg": "7066c842dd523ccf025b72934af2cc108603063e83a49f8abbd43cfb216d6119"
+    },
+    "source_sha256": "553b9c9b36fee41d791908f1fc3b8314ea4631db403743f5e80665d18fad1350",
+    "top_rtl_sha256": "43d2137dd7055c9f4059f3ff312c3ea85819ff9cf67cbe148dfa3f864afbb469",
+    "cosim_ooc_packaged_top_rtl_byte_identical": true,
+    "normalized_module_body_identical": true,
+    "module_attribute_difference_observed": false,
+    "comparison_scope": "Exact bytes of collected top ffn_accel.v from D:/i8, D:/io8 and IP archive. No general formal-equivalence claim for the complete netlist/hierarchy.",
+    "metadata_caveat": "CORE_GENERATION_INFO contains HLS_SYN_LAT=484771, HLS_SYN_DSP=0 and HLS_SYN_LUT=58860 in all three identical top RTL copies. These stale/limited metadata fields are not used for latency/resources; use actual csynth and routed reports."
+  },
+  "full_system_implementation": {
+    "status": "未执行"
+  },
+  "supplement_scope": "Only this JSON updated; candidate source/TB/input ZIP, final collected archives and snapshots remain unchanged. No tests executed."
+}

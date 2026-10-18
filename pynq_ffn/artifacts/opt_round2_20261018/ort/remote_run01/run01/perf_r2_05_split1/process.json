@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/usr/local/share/pynq-venv/bin/python3",
+    "/home/ubuntu/opt_round2_20261018/ort/code/tools/ort_thread_study.py",
+    "--worker",
+    "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r2_05_split1/job.json"
+  ],
+  "exit_code": 0,
+  "wall_s": 25.892279246996623
+}

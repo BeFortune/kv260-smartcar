@@ -1,0 +1,84 @@
+{
+  "candidate": "interleaved_r04",
+  "state": "frozen_local_input_only",
+  "files": {
+    "ffn_accel.cpp": {
+      "sha256": "bb7d5cdce5597b4c09c9a9505953aa5cc171ffd71f66265eb78cd1f6c063a781",
+      "bytes": 7332
+    },
+    "ffn_accel.hpp": {
+      "sha256": "b958fb3cf1ee318ab4fc11295835022c4565df4fc4fd13fe4bc24a5250e58eec",
+      "bytes": 850
+    },
+    "host_bridge.cpp": {
+      "sha256": "a8cfe5dc62eb66fa3e3102e4d12eb75a265abbea20e04e4d5b104cecfc480740",
+      "bytes": 503
+    },
+    "test_support.hpp": {
+      "sha256": "e04e6932815d2a9875c166b82a19e79dde05fe59e24d9ec26f2fc3d966cceab3",
+      "bytes": 5811
+    },
+    "testbench.cpp": {
+      "sha256": "222cc57a5d93f37bc5a4997529213317dcf15fa47c30e6bfe9940bbe12bf6e8b",
+      "bytes": 2077
+    },
+    "testbench_small.cpp": {
+      "sha256": "35294d8a32d7bbfb964a8524cc62758bea598cf9dba75f5d94f686c06485d948",
+      "bytes": 1568
+    },
+    "make_config.py": {
+      "sha256": "2820a4872c0eca86cf983a547647ac0ce1bd5fae6b781939b1a401c07bbd8ac3",
+      "bytes": 2107
+    },
+    "build/full.cfg": {
+      "sha256": "f7606985606f14ee185e5d69e8b361a28900ced58c0cbbe8bc3ac9f6591b85e0",
+      "bytes": 535
+    },
+    "build/small.cfg": {
+      "sha256": "a23240833b233cefee99e3b6492dec03d46356a911ce14ddc010def0addbf863",
+      "bytes": 547
+    }
+  },
+  "part": "xck26-sfvc784-2LV-c",
+  "clock_ns": 10,
+  "token_tile": 4,
+  "output_lanes": 16,
+  "fc1_step_count": 512,
+  "fc2_step_count": 1024,
+  "target_step_ii": 1,
+  "fp_contract": "off",
+  "fadd": {
+    "impl": "fulldsp",
+    "latency": 4
+  },
+  "fmul": {
+    "impl": "maxdsp",
+    "latency": 3
+  },
+  "dependence": "true RAW distance=4, ctx=step&3",
+  "tool_reference": "https://docs.amd.com/r/en-US/ug1399-vitis-hls/Bind_op",
+  "small_rtl_scope": {
+    "valid_tokens": 30,
+    "transactions": 12,
+    "valid_call_counts": [
+      1,
+      3,
+      4,
+      5,
+      4,
+      4,
+      4,
+      4,
+      1
+    ],
+    "invalid_call_counts": [
+      0,
+      661,
+      4294967295
+    ],
+    "covers_659_660": false
+  },
+  "full_tb_transactions": 27,
+  "hls_executed_here": false,
+  "hardware_executed_here": false
+}

@@ -1,0 +1,12 @@
+{
+  "condition": "split4",
+  "bundle": "/home/ubuntu/ffn_migrate/bundle",
+  "directory": "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r2_04_split4",
+  "inputs": "/home/ubuntu/opt_round2_20261018/ort/run01/inputs.npy",
+  "inputs_sha256": "bcb2d67ef4f27b76186acbe66632eab282e56e340f5a0cf38bf010ed231cc6aa",
+  "manifest_sha256": "de727e32df9f1ebd0fe84bac0d33cc8e786a5962053dc746b955b175527f4b77",
+  "warmup": 3,
+  "profile": false,
+  "reference": "/home/ubuntu/opt_round2_20261018/ort/run01/reference_golden4/outputs.npz",
+  "reference_sha256": "ab605863a51104ecb4b003ca9241302d174ffd658e56f7d403c23a894c0a4d5f"
+}

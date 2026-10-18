@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="19" time="2.805" timestamp="2026-10-18T12:55:17.169139+08:00" hostname="ENERTCOUNT-EX"><testcase classname="pynq_ffn.tests.test_runtime_thread_policy" name="test_spinning_config_is_optional_and_applied_to_every_session[None-None]" time="0.168"><failure message="AssertionError: Regex pattern did not match.&#10;  Expected regex: 'not found'&#10;  Actual message: 'SessionOptions does not have configuration with key: session.intra_op.allow_spinning'">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x0000018F81C9A7E0&gt;
+spinning = None, expected = None
+
+    @pytest.mark.skipif(not BUNDLE.is_dir(), reason="Reviewed bundle unavailable")
+    @pytest.mark.parametrize("spinning,expected", [(None, None), (False, "0"), (True, "1")])
+    def test_spinning_config_is_optional_and_applied_to_every_session(monkeypatch, spinning, expected):
+        captured = []
+        original = runtime_module.ort.InferenceSession
+        def record(path, sess_options=None, providers=None):
+            captured.append((Path(path).name, sess_options))
+            return original(path, sess_options=sess_options, providers=providers)
+        monkeypatch.setattr(runtime_module.ort, "InferenceSession", record)
+        runtime = Runtime(BUNDLE, mode="split-ort", threads=4, spinning=spinning)
+        assert len(captured) == 9
+        assert len(runtime.sessions) == 9
+        for _, options in captured:
+            assert options.intra_op_num_threads == 4
+            assert options.inter_op_num_threads == 1
+            if expected is None:
+&gt;               with pytest.raises(RuntimeError, match="not found"):
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               AssertionError: Regex pattern did not match.
+E                 Expected regex: 'not found'
+E                 Actual message: 'SessionOptions does not have configuration with key: session.intra_op.allow_spinning'
+
+pynq_ffn\tests\test_runtime_thread_policy.py:32: AssertionError</failure></testcase><testcase classname="pynq_ffn.tests.test_runtime_thread_policy" name="test_spinning_config_is_optional_and_applied_to_every_session[False-0]" time="0.073" /><testcase classname="pynq_ffn.tests.test_runtime_thread_policy" name="test_spinning_config_is_optional_and_applied_to_every_session[True-1]" time="0.094" /><testcase classname="pynq_ffn.tests.test_runtime_thread_policy" name="test_golden_default_and_explicit_spin_values" time="0.075"><failure message="AssertionError: Regex pattern did not match.&#10;  Expected regex: 'not found'&#10;  Actual message: 'SessionOptions does not have configuration with key: session.intra_op.allow_spinning'">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x0000018FA2057800&gt;
+
+    @pytest.mark.skipif(not BUNDLE.is_dir(), reason="Reviewed bundle unavailable")
+    def test_golden_default_and_explicit_spin_values(monkeypatch):
+        captured = []
+        original = runtime_module.ort.InferenceSession
+        def record(path, sess_options=None, providers=None):
+            captured.append((Path(path).name, sess_options))
+            return original(path, sess_options=sess_options, providers=providers)
+        monkeypatch.setattr(runtime_module.ort, "InferenceSession", record)
+        Runtime(BUNDLE, mode="golden")
+        assert len(captured) == 1 and captured[-1][0] == "model.onnx"
+        for key in ("session.intra_op.allow_spinning", "session.inter_op.allow_spinning"):
+&gt;           with pytest.raises(RuntimeError, match="not found"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           AssertionError: Regex pattern did not match.
+E             Expected regex: 'not found'
+E             Actual message: 'SessionOptions does not have configuration with key: session.intra_op.allow_spinning'
+
+pynq_ffn\tests\test_runtime_thread_policy.py:53: AssertionError</failure></testcase><testcase classname="pynq_ffn.tests.test_runtime_thread_policy" name="test_spinning_rejects_non_bool_values[0_0]" time="0.012" /><testcase classname="pynq_ffn.tests.test_runtime_thread_policy" name="test_spinning_rejects_non_bool_values[1_0]" time="0.005" /><testcase classname="pynq_ffn.tests.test_runtime_thread_policy" name="test_spinning_rejects_non_bool_values[0_1]" time="0.005" /><testcase classname="pynq_ffn.tests.test_runtime_thread_policy" name="test_spinning_rejects_non_bool_values[1_1]" time="0.006" /><testcase classname="pynq_ffn.tests.test_runtime_thread_policy" name="test_spinning_rejects_non_bool_values[value4]" time="0.006" /><testcase classname="pynq_ffn.tests.test_runtime_thread_policy" name="test_signature_keeps_old_positional_contract" time="0.001" /><testcase classname="pynq_ffn.tests.test_split" name="test_preparation_refuses_output_and_unreviewed_model" time="0.102" /><testcase classname="pynq_ffn.tests.test_split" name="test_schedule_and_weights" time="0.002" /><testcase classname="pynq_ffn.tests.test_split" name="test_real_model_modes[False]" time="0.467" /><testcase classname="pynq_ffn.tests.test_split" name="test_real_model_modes[True]" time="0.314" /><testcase classname="pynq_ffn.tests.test_split" name="test_injected_backend_and_bad_contract" time="0.220" /><testcase classname="pynq_ffn.tests.test_split" name="test_numpy_shape_and_dtype" time="0.001" /><testcase classname="pynq_ffn.tests.test_split" name="test_numpy_exact_erf_activation" time="0.002" /><testcase classname="pynq_ffn.tests.test_split" name="test_replay_contract_and_existing_output" time="0.231" /><testcase classname="pynq_ffn.tests.test_split" name="test_manifest_hash_failure" time="0.048" /></testsuite></testsuites>

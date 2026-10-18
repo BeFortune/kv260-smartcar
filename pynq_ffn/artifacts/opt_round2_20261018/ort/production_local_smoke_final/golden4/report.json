@@ -1,0 +1,73 @@
+{
+  "status": "\u5df2\u9a8c\u8bc1",
+  "exit_code": 0,
+  "mode": "golden",
+  "threads": 4,
+  "spinning": null,
+  "hardware_execution": false,
+  "versions": {
+    "python": "3.12.7",
+    "numpy": "1.26.4",
+    "onnxruntime": "1.20.1",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "logical_cpus": 16,
+    "runtime_sha256": "49ace8fbf61a29e2e54efc174b45477cd08fc5fe469d13547df17326b9745576",
+    "affinity": null
+  },
+  "start_utc": "2026-10-18T05:05:58Z",
+  "actual_command": [
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\tools\\runtime_spin_validate.py",
+    "--worker",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\production_local_smoke_final\\golden4\\job.json"
+  ],
+  "end_utc": "2026-10-18T05:05:58Z",
+  "n": 1,
+  "warmup": 3,
+  "wall_s": 0.0053846000009798445,
+  "process_cpu_s": 0.0,
+  "process_cpu_wall_ratio": 0.0,
+  "run_total_ms": {
+    "n": 1,
+    "mean": 5.3560000014840625,
+    "p50": 5.3560000014840625,
+    "p95": 5.3560000014840625,
+    "p99": 5.3560000014840625,
+    "max": 5.3560000014840625
+  },
+  "perstage_ms": {
+    "golden": {
+      "n": 1,
+      "mean": 5.228600000918959,
+      "p50": 5.228600000918959,
+      "p95": 5.228600000918959,
+      "p99": 5.228600000918959,
+      "max": 5.228600000918959
+    },
+    "total": {
+      "n": 1,
+      "mean": 5.2329000009194715,
+      "p50": 5.2329000009194715,
+      "p95": 5.2329000009194715,
+      "p99": 5.2329000009194715,
+      "max": 5.2329000009194715
+    }
+  },
+  "samples": [
+    {
+      "index": 0,
+      "run_total_ms": 5.3560000014840625,
+      "stages_ms": {
+        "golden": 5.228600000918959,
+        "total": 5.2329000009194715
+      }
+    }
+  ],
+  "outputs_sha256": "9f0b41a957c293b566089e3c66d6ba73b9e8bc491e9abee73beededd018891ae",
+  "session_config": {
+    "threads": 4,
+    "spinning": null,
+    "inter_op_threads": 1,
+    "execution_mode": "ORT_SEQUENTIAL",
+    "graph_optimization": "ORT_ENABLE_EXTENDED"
+  }
+}

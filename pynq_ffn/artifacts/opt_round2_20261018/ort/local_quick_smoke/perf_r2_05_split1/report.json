@@ -1,0 +1,276 @@
+{
+  "status": "\u5df2\u9a8c\u8bc1",
+  "actual_command": [
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\tools\\ort_thread_study.py",
+    "--worker",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r2_05_split1\\job.json"
+  ],
+  "pid": 43436,
+  "hardware_execution": false,
+  "versions": {
+    "python": "3.12.7",
+    "numpy": "1.26.4",
+    "onnxruntime": "1.20.1",
+    "opencv": "4.10.0",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "machine": "AMD64",
+    "logical_cpus": 16,
+    "affinity": null,
+    "thread_environment": {
+      "OMP_NUM_THREADS": "16",
+      "OPENBLAS_NUM_THREADS": null,
+      "MKL_NUM_THREADS": null,
+      "ORT_NUM_THREADS": null
+    }
+  },
+  "policy": {
+    "name": "split1",
+    "mode": "split-ort",
+    "heavy_threads": 1,
+    "small_threads": 1,
+    "allow_spinning": true,
+    "inter_op_threads": 1,
+    "execution_mode": "ORT_SEQUENTIAL",
+    "graph_optimization": "ORT_ENABLE_EXTENDED",
+    "provider": "CPUExecutionProvider"
+  },
+  "runtime_sha256": "023327eadeaa935ec8392ec16095c6df2a1155368595afd37fe233b4cc6ed298",
+  "profiling": false,
+  "start_utc": "2026-10-18T04:14:31Z",
+  "exit_code": 0,
+  "input_load_ms": 0.7535999993706355,
+  "input_sha256": "62ef4f31720d414a9d1be522af7e8bf2992a6155de4b871661dc9f9ee3463d4a",
+  "manifest_sha256": "de727e32df9f1ebd0fe84bac0d33cc8e786a5962053dc746b955b175527f4b77",
+  "snapshot_before_init": {
+    "process_cpu_s": 0.59375,
+    "task_threads": null,
+    "process_ctx": null,
+    "task_ctx": null
+  },
+  "initialization_ms": 150.97229999992123,
+  "session_policies": [
+    {
+      "name": "stage_0",
+      "intra_op_threads": 1,
+      "inter_op_threads": 1,
+      "allow_spinning": true
+    },
+    {
+      "name": "camera_0",
+      "intra_op_threads": 1,
+      "inter_op_threads": 1,
+      "allow_spinning": true
+    },
+    {
+      "name": "stage_1",
+      "intra_op_threads": 1,
+      "inter_op_threads": 1,
+      "allow_spinning": true
+    },
+    {
+      "name": "camera_1",
+      "intra_op_threads": 1,
+      "inter_op_threads": 1,
+      "allow_spinning": true
+    },
+    {
+      "name": "stage_2",
+      "intra_op_threads": 1,
+      "inter_op_threads": 1,
+      "allow_spinning": true
+    },
+    {
+      "name": "cross_0",
+      "intra_op_threads": 1,
+      "inter_op_threads": 1,
+      "allow_spinning": true
+    },
+    {
+      "name": "stage_3",
+      "intra_op_threads": 1,
+      "inter_op_threads": 1,
+      "allow_spinning": true
+    },
+    {
+      "name": "cross_1",
+      "intra_op_threads": 1,
+      "inter_op_threads": 1,
+      "allow_spinning": true
+    },
+    {
+      "name": "stage_4",
+      "intra_op_threads": 1,
+      "inter_op_threads": 1,
+      "allow_spinning": true
+    }
+  ],
+  "experimental_initialization_ms": {
+    "production_validation_and_release": 99.71330000007583,
+    "policy_rebuild": 49.645500000224274
+  },
+  "n": 1,
+  "warmup": 3,
+  "snapshot_before_measurement": {
+    "process_cpu_s": 0.78125,
+    "task_threads": null,
+    "process_ctx": null,
+    "task_ctx": null
+  },
+  "snapshot_after_measurement": {
+    "process_cpu_s": 0.796875,
+    "task_threads": null,
+    "process_ctx": null,
+    "task_ctx": null
+  },
+  "process_context_switch_delta": null,
+  "measurement_loop_wall_s": 0.013112000000546686,
+  "measurement_loop_cpu_s": 0.015625,
+  "measurement_loop_cpu_wall_ratio": 1.1916564978148672,
+  "run_total_ms": {
+    "n": 1,
+    "mean": 13.084799999887764,
+    "p50": 13.084799999887764,
+    "p95": 13.084799999887764,
+    "p99": 13.084799999887764,
+    "max": 13.084799999887764,
+    "min": 13.084799999887764
+  },
+  "process_cpu_ms": {
+    "n": 1,
+    "mean": 15.625,
+    "p50": 15.625,
+    "p95": 15.625,
+    "p99": 15.625,
+    "max": 15.625,
+    "min": 15.625
+  },
+  "perstage_ms": {
+    "stage_0": {
+      "n": 1,
+      "mean": 4.391400000713475,
+      "p50": 4.391400000713475,
+      "p95": 4.391400000713475,
+      "p99": 4.391400000713475,
+      "max": 4.391400000713475,
+      "min": 4.391400000713475
+    },
+    "camera_0": {
+      "n": 1,
+      "mean": 1.3392999999268795,
+      "p50": 1.3392999999268795,
+      "p95": 1.3392999999268795,
+      "p99": 1.3392999999268795,
+      "max": 1.3392999999268795,
+      "min": 1.3392999999268795
+    },
+    "stage_1": {
+      "n": 1,
+      "mean": 3.397200000108569,
+      "p50": 3.397200000108569,
+      "p95": 3.397200000108569,
+      "p99": 3.397200000108569,
+      "max": 3.397200000108569,
+      "min": 3.397200000108569
+    },
+    "camera_1": {
+      "n": 1,
+      "mean": 1.0972000000037951,
+      "p50": 1.0972000000037951,
+      "p95": 1.0972000000037951,
+      "p99": 1.0972000000037951,
+      "max": 1.0972000000037951,
+      "min": 1.0972000000037951
+    },
+    "stage_2": {
+      "n": 1,
+      "mean": 0.9488999994573533,
+      "p50": 0.9488999994573533,
+      "p95": 0.9488999994573533,
+      "p99": 0.9488999994573533,
+      "max": 0.9488999994573533,
+      "min": 0.9488999994573533
+    },
+    "cross_0": {
+      "n": 1,
+      "mean": 0.052999999752501026,
+      "p50": 0.052999999752501026,
+      "p95": 0.052999999752501026,
+      "p99": 0.052999999752501026,
+      "max": 0.052999999752501026,
+      "min": 0.052999999752501026
+    },
+    "stage_3": {
+      "n": 1,
+      "mean": 1.2266999992789351,
+      "p50": 1.2266999992789351,
+      "p95": 1.2266999992789351,
+      "p99": 1.2266999992789351,
+      "max": 1.2266999992789351,
+      "min": 1.2266999992789351
+    },
+    "cross_1": {
+      "n": 1,
+      "mean": 0.07079999977577245,
+      "p50": 0.07079999977577245,
+      "p95": 0.07079999977577245,
+      "p99": 0.07079999977577245,
+      "max": 0.07079999977577245,
+      "min": 0.07079999977577245
+    },
+    "stage_4": {
+      "n": 1,
+      "mean": 0.10539999948377954,
+      "p50": 0.10539999948377954,
+      "p95": 0.10539999948377954,
+      "p99": 0.10539999948377954,
+      "max": 0.10539999948377954,
+      "min": 0.10539999948377954
+    },
+    "total": {
+      "n": 1,
+      "mean": 12.95029999982944,
+      "p50": 12.95029999982944,
+      "p95": 12.95029999982944,
+      "p99": 12.95029999982944,
+      "max": 12.95029999982944,
+      "min": 12.95029999982944
+    }
+  },
+  "timing_scope": "run_total wraps original Runtime.run incl input/output validation and FFN cut copies; excludes init/decode/preprocess/comparison/profile parsing. Perstage timers use original Runtime; stages do not sum to run_total. Loop counters include Python sample/output collection.",
+  "samples": [
+    {
+      "index": 0,
+      "run_total_ms": 13.084799999887764,
+      "process_cpu_ms": 15.625,
+      "cpu_wall_ratio": 1.1941336512697194,
+      "stages_ms": {
+        "stage_0": 4.391400000713475,
+        "camera_0": 1.3392999999268795,
+        "stage_1": 3.397200000108569,
+        "camera_1": 1.0972000000037951,
+        "stage_2": 0.9488999994573533,
+        "cross_0": 0.052999999752501026,
+        "stage_3": 1.2266999992789351,
+        "cross_1": 0.07079999977577245,
+        "stage_4": 0.10539999948377954,
+        "total": 12.95029999982944
+      }
+    }
+  ],
+  "output_sha256": "2ee870a739ca9f540ba4595a3193fe367091b0dab3ff2e7cdf9139b59e25ef47",
+  "comparison": {
+    "max_abs_error": {
+      "speed_norm": 0.0,
+      "speed_raw": 0.0,
+      "region_logits": 0.0,
+      "region_probs": 0.0
+    },
+    "speed_integer_mismatches": 0,
+    "atol": 0.001,
+    "rtol": 0,
+    "pass": true
+  },
+  "reference": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\reference_golden1\\outputs.npz",
+  "reference_sha256": "2ee870a739ca9f540ba4595a3193fe367091b0dab3ff2e7cdf9139b59e25ef47",
+  "end_utc": "2026-10-18T04:14:31Z"
+}

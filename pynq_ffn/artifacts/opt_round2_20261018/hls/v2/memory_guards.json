@@ -1,0 +1,141 @@
+{
+  "status": "pass",
+  "hardware_execution": false,
+  "valid": [
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 128,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "tokens": 1,
+      "trailing_pages": "PAGE_NOACCESS",
+      "status": "pass"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 256,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "tokens": 2,
+      "trailing_pages": "PAGE_NOACCESS",
+      "status": "pass"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 384,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "tokens": 3,
+      "trailing_pages": "PAGE_NOACCESS",
+      "status": "pass"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 512,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "tokens": 4,
+      "trailing_pages": "PAGE_NOACCESS",
+      "status": "pass"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 640,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "tokens": 5,
+      "trailing_pages": "PAGE_NOACCESS",
+      "status": "pass"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 896,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "tokens": 7,
+      "trailing_pages": "PAGE_NOACCESS",
+      "status": "pass"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 1024,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "tokens": 8,
+      "trailing_pages": "PAGE_NOACCESS",
+      "status": "pass"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 1152,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "tokens": 9,
+      "trailing_pages": "PAGE_NOACCESS",
+      "status": "pass"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 1920,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "tokens": 15,
+      "trailing_pages": "PAGE_NOACCESS",
+      "status": "pass"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 2048,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "tokens": 16,
+      "trailing_pages": "PAGE_NOACCESS",
+      "status": "pass"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 2176,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "tokens": 17,
+      "trailing_pages": "PAGE_NOACCESS",
+      "status": "pass"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 84352,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "tokens": 659,
+      "trailing_pages": "PAGE_NOACCESS",
+      "status": "pass"
+    },
+    {
+      "pass": true,
+      "finite": true,
+      "elements": 84480,
+      "bit_mismatches": 0,
+      "max_abs_error": 0.0,
+      "tokens": 660,
+      "trailing_pages": "PAGE_NOACCESS",
+      "status": "pass"
+    }
+  ],
+  "invalid_noaccess_and_null": [
+    0,
+    661,
+    4294967295
+  ]
+}

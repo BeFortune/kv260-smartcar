@@ -1,0 +1,5 @@
+command: C:\Users\BeFortuneEX\.zcode\tmp\ffn_opt_20261017\venv\Scripts\python.exe -c "import ast; from pathlib import Path; [ast.parse(Path(p).read_text(encoding='utf8'), filename=p) for p in ('ps/runtime.py', 'tests/test_runtime_thread_policy.py')]; print('AST syntax checks passed')"
+cwd: C:\Users\BeFortuneEX\Source\Repos\FPGA\pynq_ffn
+AST syntax checks passed
+
+exit_code: 0

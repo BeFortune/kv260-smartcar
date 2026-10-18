@@ -1,0 +1,12 @@
+{
+  "command": [
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\host\\full.exe"
+  ],
+  "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+  "started": "2026-10-18T04:09:13.299677+00:00",
+  "ended": "2026-10-18T04:09:14.401301+00:00",
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0"
+}

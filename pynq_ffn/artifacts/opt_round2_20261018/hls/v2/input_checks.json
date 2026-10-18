@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "production_sources_unchanged": {
+    "ffn_accel.cpp": "829c9ec63604e327ad4ea13855b405113ea74fea6a62721d512ded6341b0b9b6",
+    "ffn_accel.hpp": "715f0ca11cc5e9920569654f7296c8443a0186f988557bd27ec1af3f476c7c35",
+    "testbench.cpp": "d6a717629d812901e22bd2ebe5d2e4b051cf49f99abe139d17a534f9336b97b1",
+    "make_config.py": "0db11be414eff86c39d1c4c25c765d4621e0ac414f04ad05c04be3fb2bc14055",
+    "host_bridge.cpp": "a8cfe5dc62eb66fa3e3102e4d12eb75a265abbea20e04e4d5b104cecfc480740",
+    "README.md": "6e2b79d5b08e9b51c306c4d79a19811edad7f6e0c5c8114d25fde575dad50fa3"
+  },
+  "frozen_sources_match_candidate": true,
+  "source_interface_directives_equal": true,
+  "relative_configs_resolve": true,
+  "hardware_execution": false
+}

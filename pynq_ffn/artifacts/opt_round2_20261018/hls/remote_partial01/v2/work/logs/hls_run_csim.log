@@ -1,0 +1,78 @@
+  **** HLS Build v2026.1 6493734
+INFO: [HLS 200-2005] Using work_dir D:/i8/work 
+INFO: [HLS 200-2176] Writing Vitis IDE component file D:/i8/work/vitis-comp.json
+INFO: [HLS 200-10] Creating and opening component 'D:/i8/work'.
+INFO: [HLS 200-2174] Applying component config ini file build/full.cfg
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../ffn_accel.cpp' from build/full.cfg(9)
+INFO: [HLS 200-10] Adding design file 'D:/i8/ffn_accel.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file_cflags=../ffn_accel.cpp,-std=c++11 -DFFN_USE_HLS_MATH -ffp-contract=off' from build/full.cfg(10)
+INFO: [HLS 200-1465] Applying config ini 'syn.file_csimflags=../ffn_accel.cpp,-std=c++11 -DFFN_USE_HLS_MATH -ffp-contract=off' from build/full.cfg(11)
+INFO: [HLS 200-1465] Applying config ini 'tb.file=../testbench.cpp' from build/full.cfg(12)
+INFO: [HLS 200-10] Adding test bench file 'D:/i8/testbench.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.file_cflags=../testbench.cpp,-std=c++11 -DFFN_USE_HLS_MATH -ffp-contract=off' from build/full.cfg(13)
+INFO: [HLS 200-1465] Applying config ini 'syn.top=ffn_accel' from build/full.cfg(7)
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from build/full.cfg(6)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.amd.com/access/sources/dita/topic?Doc_Version=2026.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+WARNING: [HLS 200-2149] The 'flow_target' option is deprecated and will be removed in a future release. For 'vivado' value you may simply remove the option for equivalent behavior.
+INFO: [HLS 200-1465] Applying config ini 'part=xck26-sfvc784-2LV-c' from build/full.cfg(2)
+INFO: [HLS 200-1611] Setting target device to 'xck26-sfvc784-2LV-c'
+INFO: [HLS 200-1465] Applying config ini 'clock=10' from build/full.cfg(5)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1465] Applying config ini 'package.output.format=ip_catalog' from build/full.cfg(14)
+INFO: [HLS 200-1465] Applying config ini 'syn.interface.m_axi_addr64=true' from build/full.cfg(8)
+INFO: [HLS 200-2176] Writing Vitis IDE component file D:/i8/work/vitis-comp.json
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [HLS 200-2191] C-Simulation will use clang-16 as the compiler
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../testbench.cpp in debug mode
+   Compiling ../../../../ffn_accel.cpp in debug mode
+   Generating csim.exe
+In file included from ../../../../ffn_accel.cpp:4:
+In file included from D:/Learning/AMDDesignTools/2026.1/Vitis/include\hls_math.h:27:
+In file included from D:/Learning/AMDDesignTools/2026.1/Vitis/include/hls_half.h:26:
+In file included from D:/Learning/AMDDesignTools/2026.1/Vitis/include/etc/hls_half_fpo.h:19:
+In file included from D:/Learning/AMDDesignTools/2026.1/Vitis/include\hls_fpo.h:140:
+In file included from D:/Learning/AMDDesignTools/2026.1/Vitis/include/floating_point_v7_1_bitacc_cmodel.h:150:
+D:/Learning/AMDDesignTools/2026.1/Vitis/include\gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro redefined [-Wmacro-redefined]
+#define __GMP_LIBGMP_DLL  0
+        ^
+D:/Learning/AMDDesignTools/2026.1/Vitis/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
+#define __GMP_LIBGMP_DLL 1
+        ^
+1 warning generated.
+PASS small/boundary tokens=1 max_abs=7.43869e-07 tail_abs=7.43869e-07
+PASS small/boundary tokens=2 max_abs=1.47476e-06 tail_abs=1.47476e-06
+PASS small/boundary tokens=3 max_abs=1.47476e-06 tail_abs=8.18542e-07
+PASS small/boundary tokens=4 max_abs=1.47476e-06 tail_abs=9.82648e-07
+PASS small/boundary tokens=5 max_abs=1.47476e-06 tail_abs=1.05736e-06
+PASS small/boundary tokens=7 max_abs=1.8403e-06 tail_abs=1.8403e-06
+PASS small/boundary tokens=8 max_abs=1.8403e-06 tail_abs=6.85493e-07
+PASS small/boundary tokens=9 max_abs=1.8403e-06 tail_abs=1.13496e-06
+PASS small/boundary tokens=15 max_abs=1.8403e-06 tail_abs=9.39345e-07
+PASS small/boundary tokens=16 max_abs=1.8403e-06 tail_abs=7.23396e-07
+PASS small/boundary tokens=17 max_abs=1.8403e-06 tail_abs=6.53491e-07
+PASS near-maximum tokens=659 max_abs=2.22897e-06 tail_abs=1.49152e-06
+PASS camera-A tokens=660 max_abs=2.22897e-06 tail_abs=8.08659e-07
+PASS camera-B/reload tokens=660 max_abs=1.89373e-06 tail_abs=5.82697e-07
+PASS cross-A/reload tokens=4 max_abs=1.46859e-06 tail_abs=1.46859e-06
+PASS cross-B/reload tokens=4 max_abs=1.39514e-06 tail_abs=7.48595e-07
+PASS camera-A/revisit tokens=1 max_abs=7.43869e-07 tail_abs=7.43869e-07
+PASS zero tokens=4 max_abs=0 tail_abs=0
+PASS bias/exact-erf tokens=4 max_abs=6.26898e-07 tail_abs=6.26898e-07
+PASS repeated-tail/reload tokens=9 max_abs=7.71883e-07 tail_abs=5.50219e-07
+PASS repeated-tail/reload tokens=7 max_abs=8.66854e-07 tail_abs=7.35811e-07
+PASS repeated-tail/reload tokens=1 max_abs=4.89634e-07 tail_abs=4.89634e-07
+PASS repeated-tail/reload tokens=15 max_abs=8.8354e-07 tail_abs=4.6432e-07
+PASS repeated-tail/reload tokens=17 max_abs=9.4605e-07 tail_abs=5.74056e-07
+PASS repeated-tail/reload tokens=2 max_abs=4.34875e-07 tail_abs=4.22597e-07
+PASS repeated-tail/reload tokens=659 max_abs=7.77851e-07 tail_abs=7.77851e-07
+PASS repeated-tail/reload tokens=9 max_abs=7.71883e-07 tail_abs=5.50219e-07
+PASS invalid tokens=0 output untouched
+PASS invalid tokens=661 output untouched
+PASS invalid tokens=4294967295 output untouched
+All full FFN reference tests passed (30 transactions).
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 1 seconds. Total elapsed time: 20.982 seconds; peak allocated memory: 169.793 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 24s

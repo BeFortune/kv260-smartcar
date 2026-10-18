@@ -1,0 +1,23 @@
+[
+  {
+    "case": "real archived six-condition smoke plus raw profiles",
+    "status": "pass",
+    "formal_runs": 12,
+    "profiles": 3
+  },
+  {
+    "case": "reject wrong formal frame count",
+    "status": "pass",
+    "observed_error": "Unexpected formal frame count: C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\local_quick_smoke\\perf_r1_01_golden4"
+  },
+  {
+    "case": "reject inconsistent session policy",
+    "status": "pass",
+    "observed_error": "Session policy differs from condition"
+  },
+  {
+    "case": "reject report/raw timing mismatch",
+    "status": "pass",
+    "observed_error": "Reported total disagrees with raw samples"
+  }
+]

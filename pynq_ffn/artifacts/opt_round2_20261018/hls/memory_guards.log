@@ -1,0 +1,13 @@
+PASS minimum-sized guarded buffers tokens= 1
+PASS minimum-sized guarded buffers tokens= 2
+PASS minimum-sized guarded buffers tokens= 3
+PASS minimum-sized guarded buffers tokens= 4
+PASS minimum-sized guarded buffers tokens= 5
+PASS minimum-sized guarded buffers tokens= 7
+PASS minimum-sized guarded buffers tokens= 8
+PASS minimum-sized guarded buffers tokens= 9
+PASS minimum-sized guarded buffers tokens= 659
+PASS minimum-sized guarded buffers tokens= 660
+PASS invalid no-access/null buffers tokens= 0
+PASS invalid no-access/null buffers tokens= 661
+PASS invalid no-access/null buffers tokens= 4294967295

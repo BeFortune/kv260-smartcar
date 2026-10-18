@@ -1,0 +1,226 @@
+<ENTRY>
+{
+ "thisFile": "D:/i8\\work\\work.hlsrun_cosim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "10/18/26 13:14:17",
+ "timestampMillis": "1792300457724",
+ "buildStep": {
+  "cmdId": "c292078f-5753-4a9e-be57-6103f724512b",
+  "name": "vitis-run",
+  "logFile": "D:/i8\\work\\logs\\work.steps.log",
+  "commandLine": "D:/Learning/AMDDesignTools/2026.1/Vitis/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --config D:\\i8\\build\\small.cfg --work_dir D:\\i8\\work --cosim ",
+  "args": [
+   "--mode",
+   "hls",
+   "--config",
+   "D:\\i8\\build\\small.cfg",
+   "--work_dir",
+   "D:\\i8\\work",
+   "--cosim"
+  ],
+  "iniFiles": [],
+  "cwd": "D:\\i8"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "10/18/26 13:14:17",
+ "timestampMillis": "1792300457724",
+ "status": {
+  "cmdId": "c292078f-5753-4a9e-be57-6103f724512b",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "10/18/26 13:14:20",
+ "timestampMillis": "1792300460190",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_RTL_COSIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "ffn_accel",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "D:/i8\\ffn_accel.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2026.1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "10/18/26 13:14:20",
+ "timestampMillis": "1792300460191",
+ "buildStep": {
+  "cmdId": "445520a2-cecc-497a-bd54-67f4c976d0d8",
+  "name": "",
+  "logFile": "D:/i8\\work\\hls\\hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "D:\\i8"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "10/18/26 13:14:20",
+ "timestampMillis": "1792300460191",
+ "status": {
+  "cmdId": "445520a2-cecc-497a-bd54-67f4c976d0d8",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/18/26 13:14:20",
+ "timestampMillis": "1792300460191",
+ "report": {
+  "path": "D:/i8\\work\\hls\\sim\\report\\ffn_accel_cosim.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_COSIMULATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/18/26 13:14:20",
+ "timestampMillis": "1792300460191",
+ "report": {
+  "path": "D:/i8\\work\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_DATAFLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/18/26 13:14:20",
+ "timestampMillis": "1792300460191",
+ "report": {
+  "path": "D:/i8\\work\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_FUNCTION_CALL_GRAPH_COSIM",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/18/26 13:14:20",
+ "timestampMillis": "1792300460191",
+ "report": {
+  "path": "D:/i8\\work\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_TIMELINE_TRACE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/18/26 13:14:20",
+ "timestampMillis": "1792300460192",
+ "report": {
+  "path": "D:/i8\\work\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_WAVE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "10/18/26 13:54:02",
+ "timestampMillis": "1792302842302",
+ "status": {
+  "cmdId": "445520a2-cecc-497a-bd54-67f4c976d0d8",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "10/18/26 13:54:02",
+ "timestampMillis": "1792302842401",
+ "status": {
+  "cmdId": "c292078f-5753-4a9e-be57-6103f724512b",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/18/26 13:54:02",
+ "timestampMillis": "1792302842403",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/18/26 13:54:02",
+ "timestampMillis": "1792302842403",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

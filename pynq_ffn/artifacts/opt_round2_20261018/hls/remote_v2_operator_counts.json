@@ -1,0 +1,46 @@
+{
+  "rtl_sha256": "43d2137dd7055c9f4059f3ff312c3ea85819ff9cf67cbe148dfa3f864afbb469",
+  "scope": "top-level allocated scalar operator instances shared across FC stages; excluding nested GELU operators",
+  "fadd": {
+    "count": 16,
+    "instances": [
+      "fadd_32ns_32ns_32_7_full_dsp_1_U1758",
+      "fadd_32ns_32ns_32_7_full_dsp_1_U1759",
+      "fadd_32ns_32ns_32_7_full_dsp_1_U1760",
+      "fadd_32ns_32ns_32_7_full_dsp_1_U1761",
+      "fadd_32ns_32ns_32_7_full_dsp_1_U1762",
+      "fadd_32ns_32ns_32_7_full_dsp_1_U1763",
+      "fadd_32ns_32ns_32_7_full_dsp_1_U1764",
+      "fadd_32ns_32ns_32_7_full_dsp_1_U1765",
+      "fadd_32ns_32ns_32_7_full_dsp_1_U1766",
+      "fadd_32ns_32ns_32_7_full_dsp_1_U1767",
+      "fadd_32ns_32ns_32_7_full_dsp_1_U1768",
+      "fadd_32ns_32ns_32_7_full_dsp_1_U1769",
+      "fadd_32ns_32ns_32_7_full_dsp_1_U1770",
+      "fadd_32ns_32ns_32_7_full_dsp_1_U1771",
+      "fadd_32ns_32ns_32_7_full_dsp_1_U1772",
+      "fadd_32ns_32ns_32_7_full_dsp_1_U1773"
+    ]
+  },
+  "fmul": {
+    "count": 16,
+    "instances": [
+      "fmul_32ns_32ns_32_4_max_dsp_1_U1774",
+      "fmul_32ns_32ns_32_4_max_dsp_1_U1775",
+      "fmul_32ns_32ns_32_4_max_dsp_1_U1776",
+      "fmul_32ns_32ns_32_4_max_dsp_1_U1777",
+      "fmul_32ns_32ns_32_4_max_dsp_1_U1778",
+      "fmul_32ns_32ns_32_4_max_dsp_1_U1779",
+      "fmul_32ns_32ns_32_4_max_dsp_1_U1780",
+      "fmul_32ns_32ns_32_4_max_dsp_1_U1781",
+      "fmul_32ns_32ns_32_4_max_dsp_1_U1782",
+      "fmul_32ns_32ns_32_4_max_dsp_1_U1783",
+      "fmul_32ns_32ns_32_4_max_dsp_1_U1784",
+      "fmul_32ns_32ns_32_4_max_dsp_1_U1785",
+      "fmul_32ns_32ns_32_4_max_dsp_1_U1786",
+      "fmul_32ns_32ns_32_4_max_dsp_1_U1787",
+      "fmul_32ns_32ns_32_4_max_dsp_1_U1788",
+      "fmul_32ns_32ns_32_4_max_dsp_1_U1789"
+    ]
+  }
+}

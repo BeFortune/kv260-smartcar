@@ -1,0 +1,7 @@
+command: C:\Users\BeFortuneEX\.zcode\tmp\ffn_opt_20261017\venv\Scripts\python.exe -m pytest -q tests --junitxml=C:\Users\BeFortuneEX\Source\Repos\FPGA\pynq_ffn\artifacts\opt_round2_20261018\ort\production_spin_opt\all_tests.xml
+cwd: C:\Users\BeFortuneEX\Source\Repos\FPGA\pynq_ffn
+.....................ssss.s............................................. [ 74%]
+.........................                                                [100%]
+92 passed, 5 skipped in 2.42s
+
+exit_code: 0

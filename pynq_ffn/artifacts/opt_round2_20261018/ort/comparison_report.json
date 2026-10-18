@@ -1,0 +1,108 @@
+{
+  "status": "已验证",
+  "remote_analysis": "remote_analysis01/analysis.json",
+  "remote_source_study_sha256": "1ad1e6e6ab1a3be33f6f12f15140d3c83548ad8b18b22087c190d0a1e2db22b1",
+  "conclusion": "117帧正反序证实关闭忙等显著减少多session CPU争用；并非减少总线程。profile仅辅助，不用profile耗时报正式收益。",
+  "split4_p50_on_ms": [
+    404.511755972635,
+    411.0050449962728
+  ],
+  "split4_p50_off_ms": [
+    75.18127199728042,
+    77.31985300779343
+  ],
+  "p50_ratio": [
+    5.380485661206526,
+    5.3156470040734
+  ],
+  "thread_count_on_off": [
+    31,
+    31
+  ],
+  "golden4_p50_ms": [
+    64.79315098840743,
+    64.62448998354375
+  ],
+  "numerical": "所有正式raw outputs与参考重新比较四输出atol1e-3、整数速度零分歧",
+  "profile_evidence": "ON/OFF均9个独立pool，每pool3worker，总27不同worker；九session观察算子inventory/count/shape均相同。DistributionEnqueue/Wait长尾显著缩小，不把字段直接等同spin周期。",
+  "limits": [
+    "inputs.npy未归档，只复核reports/jobs一致的输入SHA",
+    "不宣称唯一根因或完整图拓扑相同；未证明split-PL收益、15Hz或实车能力"
+  ],
+  "production_change": {
+    "api": "Runtime(..., *, spinning=None)",
+    "default": "None不写keys，golden默认完全不变",
+    "false": "intra_op/inter_op allow_spinning两项0",
+    "true": "两项1",
+    "mapping": "未实现"
+  },
+  "old_runtime_sha256": "023327eadeaa935ec8392ec16095c6df2a1155368595afd37fe233b4cc6ed298",
+  "new_runtime_sha256": "49ace8fbf61a29e2e54efc174b45477cd08fc5fe469d13547df17326b9745576",
+  "runtime_version_roles": {
+    "pre_spin_baseline": "023327eadeaa935ec8392ec16095c6df2a1155368595afd37fe233b4cc6ed298：加入spinning参数之前的原始基线，绑定旧冻结实验及其报告",
+    "verification_before": "4a90f2acb0c7fde4c598945698eb58d8f8d638cfa1a1e806eccbc04f4f759dc4：已加入spinning功能但尚未加参数类型注解的临时版本，不是pre-spin基线，也不是最终生产验收版本",
+    "authoritative_final": "49ace8fbf61a29e2e54efc174b45477cd08fc5fe469d13547df17326b9745576：最终冻结生产版本，以同hash最终测试及KV260生产117帧复验为准"
+  },
+  "test_results": {
+    "production_suite": "92 passed, 5 skipped in 2.55s; samehash最终日志all_tests_production_frozen.log。生产树显式跳过5个旧版本集成用例（4个adapter与1个CLI；无条件skip，并非动态SHA检查自动触发），不计通过；动态runtime hash拒绝的负测仍通过",
+    "frozen_27": "原冻结ZIP独立旧源码根27 passed in 7.27s；原ZIP未改；证据frozen27_recheck2.log",
+    "production_smoke": "exit0; 1 frame warmup3; four outputs/int exact; 当前49ace同hash证据production_hash49_smoke/validation.json及production_retest_samehash.json"
+  },
+  "logs": [
+    "all_tests_final.log",
+    "all_tests_after_opt.log",
+    "frozen27_recheck2.log",
+    "production_local_smoke_final/validation.json"
+  ],
+  "artifact_hashes": {
+    "tools/runtime_spin_validate.py": "5dc364342230ab2520d3ed038aa5fc3ca01daaa7288eb02b70c4d14f376de593",
+    "tests/test_runtime_thread_policy.py": "d9ac676e27b1efdc72da51e9e9a32987fcf23fba29137d2ef345eba2c5e8c75f",
+    "ps/runtime.py": "49ace8fbf61a29e2e54efc174b45477cd08fc5fe469d13547df17326b9745576",
+    "ps/preprocess.py": "6134e12a3a2f67d92c8b43f7801f21b0e9d570d0f153ce81ca75d623d8120ddb",
+    "ps/backends.py": "9dfa98b816521abd091473366a31f3bd00634a5b1ab4932f82fd93477036fe0f",
+    "ps/__init__.py": "ec1b195299054cdbd0bd19b1f1da0bc22b52a84c9b914931ff0c9fcfdc3b0379"
+  },
+  "archive": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\runtime_spin_optin_frozen.zip",
+  "archive_sha256": "e07319c0fbe792dfa4b37ba86dc8b44e5e04e427485df9275b71992a641d7c42",
+  "remote_production_validation": {
+    "status": "已验证",
+    "exit_code": 0,
+    "scope": "KV260纯CPU；直接生产Runtime，golden4默认spinning=None与split4显式spinning=False各独立子进程；117帧，warmup3；无PYNQ/PL/相机/串口/车辆操作",
+    "runtime_sha256": "49ace8fbf61a29e2e54efc174b45477cd08fc5fe469d13547df17326b9745576",
+    "bundle_manifest_sha256": "de727e32df9f1ebd0fe84bac0d33cc8e786a5962053dc746b955b175527f4b77",
+    "start_utc": "2026-10-18T05:17:54Z",
+    "end_utc": "2026-10-18T05:18:21Z",
+    "versions": {"python": "3.10.12", "numpy": "1.26.4", "onnxruntime": "1.20.1", "logical_cpus": 4},
+    "offline_recheck": {
+      "status": "已验证",
+      "checks": ["validation与两个worker/process退出码均为0", "两worker均117帧、warmup3、runtime49ace一致", "输出npz SHA256与各自report一致", "从117条raw samples重新计算mean/P50/P95/P99与报告一致", "重新载入两份outputs.npz比较四输出与截断整数速度"],
+      "max_abs_error": {"speed_norm": 0.0, "speed_raw": 0.0, "region_logits": 0.0, "region_probs": 0.0},
+      "speed_integer_mismatches": 0,
+      "both_outputs_sha256": "ab605863a51104ecb4b003ca9241302d174ffd658e56f7d403c23a894c0a4d5f"
+    },
+    "golden4": {
+      "n": 117, "warmup": 3, "threads": 4, "spinning": null,
+      "run_total_ms": {"mean": 68.17776842578115, "p50": 65.29785902239382, "p95": 77.17538139550014, "p99": 132.93488668510705, "max": 146.39047399396077},
+      "process_cpu_wall_ratio": 3.9299333862359775
+    },
+    "split4_spinning_off": {
+      "n": 117, "warmup": 3, "threads": 4, "spinning": false,
+      "run_total_ms": {"mean": 81.09824829904012, "p50": 79.63220198871568, "p95": 94.67213237658139, "p99": 115.27068966068329, "max": 116.4558749878779},
+      "process_cpu_wall_ratio": 2.6061358360990536
+    },
+    "interpretation": "生产opt-in数值与部署版本已通过板上纯CPU复验，性能与旧实验spin-off的75.18/77.32ms处于接近量级；本轮候选P50为golden的1.2195倍、均值1.1895倍，仍未超过golden整图。不同轮次不可冒充严格同轮收益，本次没有生产spin-on配对。",
+    "limitations": ["run_total包含原Runtime.run与FFN诊断复制，排除解码预处理/初始化；不能作整机15Hz或实车结论", "未复验split-PL；未改变原冻结实验与旧报告"],
+    "evidence": {
+      "validation": "remote_production_run01/production_run01/validation.json",
+      "validation_sha256": "512d88d6f1a9599463ce3c00450edd9f70c8d38fd51d45040364e92e411d5952",
+      "golden_report": "remote_production_run01/production_run01/golden4/report.json",
+      "golden_report_sha256": "157326df2317461e524389ae3bd47af2dc938a4c89e22a1fcf44f2ad456d398c",
+      "split_report": "remote_production_run01/production_run01/split4_spinning_off/report.json",
+      "split_report_sha256": "e3183cabc0ca905d8b0e5436c89f56b024fbb596ae0ef48f08e158cc2034f145",
+      "outputs": ["remote_production_run01/production_run01/golden4/outputs.npz", "remote_production_run01/production_run01/split4_spinning_off/outputs.npz"],
+      "samehash_production_tests": "all_tests_production_frozen.log",
+      "samehash_proof": "production_retest_samehash.json",
+      "frozen27_tests": "frozen27_recheck2.log"
+    }
+  }
+}

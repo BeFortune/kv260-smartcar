@@ -1,0 +1,45 @@
+{
+  "status": "\u5df2\u9a8c\u8bc1",
+  "exit_code": 0,
+  "hardware_execution": false,
+  "actual_command": [
+    "C:/Users/BeFortuneEX/Source/Repos/FPGA/pynq_ffn/tools/runtime_spin_validate.py",
+    "--bundle",
+    "C:/Users/BeFortuneEX/Source/Repos/FPGA/pynq_ffn/artifacts/bundle_20261014",
+    "--inputs",
+    "C:/Users/BeFortuneEX/Source/Repos/FPGA/kv260_v1/artifacts/results/single_100/first_input.npy",
+    "--frames",
+    "1",
+    "--warmup",
+    "3",
+    "--output",
+    "C:/Users/BeFortuneEX/Source/Repos/FPGA/pynq_ffn/artifacts/opt_round2_20261018/ort/production_hash49_smoke"
+  ],
+  "versions": {
+    "python": "3.12.7",
+    "numpy": "1.26.4",
+    "onnxruntime": "1.20.1",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "logical_cpus": 16,
+    "runtime_sha256": "49ace8fbf61a29e2e54efc174b45477cd08fc5fe469d13547df17326b9745576",
+    "affinity": null
+  },
+  "bundle_manifest_sha256": "de727e32df9f1ebd0fe84bac0d33cc8e786a5962053dc746b955b175527f4b77",
+  "start_utc": "2026-10-18T05:07:27Z",
+  "candidate": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\production_hash49_smoke\\split4_spinning_off\\report.json",
+  "golden_reference": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\production_hash49_smoke\\golden4\\report.json",
+  "comparison": {
+    "max_abs_error": {
+      "speed_norm": 0.0,
+      "speed_raw": 0.0,
+      "region_logits": 0.0,
+      "region_probs": 0.0
+    },
+    "atol": 0.001,
+    "rtol": 0,
+    "speed_integer_mismatches": 0,
+    "pass": true
+  },
+  "comparison_caveat": "Golden full graph vs split ORT output, same board/input/thread count/ORT settings. The candidate differs only in optional spinning config from the prior split4_off experiment; timing includes Runtime.run FFN diagnostic copies and excludes preprocessing/initialization.",
+  "end_utc": "2026-10-18T05:07:29Z"
+}

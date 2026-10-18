@@ -1,0 +1,83 @@
+{
+  "schema": "pynq_ffn.independent_review.v1",
+  "reviewed_utc": "2026-10-18",
+  "scope": "只读抽查本轮 ORT 证据；未改生产代码、文档、模型、设备或远程状态。",
+  "inputs_reviewed": [
+    "artifacts/opt_round2_20261018/ort/remote_run01/run01/study.json",
+    "artifacts/opt_round2_20261018/ort/remote_analysis01/analysis.json",
+    "artifacts/opt_round2_20261018/ort/comparison_report.json",
+    "artifacts/opt_round2_20261018/ort/remote_production_run01/production_run01/validation.json",
+    "artifacts/opt_round2_20261018/ort/remote_production_run01/production_run01/golden4/report.json",
+    "artifacts/opt_round2_20261018/ort/remote_production_run01/production_run01/split4_spinning_off/report.json",
+    "artifacts/opt_round2_20261018/ort/remote_run01/run01/perf_*/outputs.npz",
+    "artifacts/opt_round2_20261018/ort/remote_production_run01/manifest.json",
+    "artifacts/opt_round2_20261018/ort/runtime_spin_optin_frozen.zip"
+  ],
+  "verdicts": {
+    "six_conditions_two_orders_117_warm3_numerical": {
+      "status": "支持（按各自参考 + atol 1e-3 + 整数速度口径）",
+      "evidence": "12 个正式 run（6 条件 x 正反序）均为 n=117、warmup=3；四输出与各自参考通过，整数速度分歧 0。10 个 run 对 golden4 逐位一致；split1 对 golden1 逐位一致，对 golden4 仅 speed_raw 最大差 1.220703125e-4，region_logits 8.20e-8，整数速度仍 0 分歧。",
+      "caveat": "若把“六条件输出一致”理解为六者彼此逐位相同则不成立；split1 与 golden4 有上述浮点差，但在声明 atol 内且整数一致。"
+    },
+    "spin_only_two_keys_other_options_and_threads_unchanged": {
+      "status": "支持",
+      "evidence": "split4 与 split4_off、mixed4_1 与 mixed4_1_off 的 policy/session_policies 对比：仅 allow_spinning 不同；intra_op 分别为 4/4 或 4,4,4,4,1,1,1,1,1，inter_op=1，ORT_SEQUENTIAL，ORT_ENABLE_EXTENDED，CPUExecutionProvider 全部相同。研究中两条件都显式写入 intra/inter 两个 allow_spinning key（1 或 0）；生产 Runtime 的 False 只写这两项。",
+      "caveat": "实验 adapter 在 ON/OFF 都显式写 key；生产 None 不写 key，二者语义需分开表述。"
+    },
+    "31_threads_cpu_wall_and_involuntary_ctx_drop": {
+      "status": "支持",
+      "evidence": "split4 开/关忙等实测 task_threads 前后均为 31。正序 p50 404.512->75.181 ms，反序 411.005->77.320 ms；CPU/wall 3.9263/3.9259->2.6972/2.6692；非自愿切换 27481/27261->880/738；自愿切换 2963/2973->14627/14606。总上下文切换也从约 30.4k/30.2k 降到 15.5k/15.3k。",
+      "caveat": "CPU/wall 下降是线程改为睡眠后的预期结果，是机制旁证；墙钟 5.3 倍下降才是主证据。"
+    },
+    "spin_as_main_removable_overhead_but_not_unique_root_cause": {
+      "status": "支持“主要可消除开销”（限定于本机 4 核、多 session split-ort 的 ON 病态配置）；不支持“唯一根因”",
+      "evidence": "仅切换两项 spin 配置、线程数与会话数不变，正反序均复现 5.24-5.38 倍墙钟改善；mixed4_1 也复现 2.45-2.71 倍（16 线程）。因果干预清晰，顺序效应不能解释（r1 先 ON 后 OFF、r2 先 OFF 后 ON，结论一致）。",
+      "caveat": "无温度/频率控制，不能完全排除热/频率；未隔离 session 数量因素；ON 是病态争用，OFF 后仍 75-80 ms，慢于 golden4 的 64.6-64.8 ms，所以 spin 是 ON 病态的主要可消除开销，不是 split 路径全部开销的唯一根因。"
+    },
+    "graph_fusion": {
+      "status": "未验证，证据不足",
+      "evidence": "所有条件均为 ORT_ENABLE_EXTENDED，没有 fusion 开/关或其它优化级别对照。profile 中 9 个 session 的算子 inventory/count/shape 在 ON/OFF 相同，只证明观察到的执行算子集合一致。",
+      "caveat": "analysis 明确写明该相等不证明完整优化图拓扑一致；因此不能声称 fusion 带来收益，也不能声称 fusion 不是原因。"
+    },
+    "pl_benefit": {
+      "status": "未验证，无证据",
+      "evidence": "study/validation 均 hardware_execution=false，只有 CPUExecutionProvider；本轮没有 overlay、PL 计算或 split-PL 数据。",
+      "caveat": "不能把 ORT CPU 结果外推为 PL 收益。"
+    },
+    "15hz": {
+      "status": "不支持",
+      "evidence": "run-only 平均速率：golden4 14.51/14.64 Hz，split4_off 12.79/12.58 Hz，mixed4_1_off 10.99/10.53 Hz；p99 约 114-133 ms。run_total 排除解码/预处理/初始化，也未含相机、串口和实时调度。",
+      "caveat": "即使 golden 的 p50 约 64.6-65.3 ms（约 15.3-15.5 Hz），平均与长尾已低于 15 Hz，且不是整机端到端，不能宣称 15 Hz。"
+    },
+    "production_none_default_unchanged": {
+      "status": "支持",
+      "evidence": "归档旧 runtime 023327 -> 新 49ace 的 diff 仅为：新增 keyword-only spinning=None、bool 类型校验、spinning 非 None 时写两项 config；run/schedule/preprocess/backends 未改（preprocess 6134、backends 9dfa、__init__ ec1b 前后一致）。测试覆盖 golden/split-ort/split-numpy：omitted/None 时 options.entries 为空，True/False 只写两项，旧位置参数签名保留。生产 golden 默认 None：n=117、warmup=3、输出 sha ab6058（与参考一致），mean 68.178 ms、p50 65.298 ms。",
+      "caveat": "生产只跑了 golden 默认 None 与 split 显式 False，没有跑生产 split 的 spinning=None；另外 pynq_ffn 仓库中 ps/ 为 untracked，严格 VCS baseline 不存在，基线依据是归档的 023327 源码哈希。"
+    },
+    "runtime_49ace_and_new_zip_consistency": {
+      "status": "支持",
+      "evidence": "工作区 ps/runtime.py、zip 内 ps/runtime.py、production_code/ps/runtime.py、validation.json runtime_sha256 均为 49ace8fb...；zip SHA e07319c0... 与 deployment_freeze、production_deployed_files、comparison_report、production_retest_samehash 一致。zip 内六个文件哈希与工作区/production_manifest 逐项一致。生产套件 92 passed、5 skipped；独立冻结 27 passed。",
+      "caveat": "5 个 skipped 是旧冻结 adapter/CLI 哈希门，未计为通过；frozen27 另证。"
+    },
+    "default_split_not_auto_accelerated": {
+      "status": "支持（代码语义），本轮生产未实测",
+      "evidence": "默认构造 mode=split-ort、threads=1、spinning=None；None 不写 key，ORT 默认 allow_spinning=1，因此默认 split 仍是忙等 ON，只有显式 spinning=False 才关闭。研究中 split1（spin ON）193.8 ms/5.15 Hz，split4（spin ON）404-411 ms；没有自动获得 75-80 ms 的 OFF 结果。",
+      "caveat": "实验工具 ALL 中有 split_default 条件但 QUICK 本轮未跑；生产也没有 default split-ort 的计时。"
+    }
+  },
+  "evidence_gaps": [
+    "inputs.npy 未归档，仅能核对各 job/report 的输入 SHA 相等（bcb2d67e...），不能从录像独立重建输入。",
+    "无温度/频率遥测；deployment_freeze 注明热/频证据来自外部协调者，不在本 artifact 内，故不能完全排除热/频漂移。",
+    "未测 graph fusion 变体；所有条件 ORT_ENABLE_EXTENDED，算子 inventory 相等不等于完整优化图拓扑相同。",
+    "无 PL/overlay/硬件执行；只有 CPUExecutionProvider，无任何 PL 收益证据。",
+    "无整机 15 Hz 证据；run-only 排除预处理/解码/初始化/相机/串口/实时调度，且平均速率低于 15 Hz。",
+    "spin 增益来自实验 adapter + 冻结 runtime 023327；生产 49ace 只有 golden 默认 None 与 split 显式 False，缺生产同轮 ON/OFF 配对。生产 split-off 79.6 ms 与实验 75.2-77.3 ms 属跨轮比较。",
+    "生产 split 运行未记录实际线程数/上下文切换，只有 config threads=4 与 process_cpu_wall_ratio=2.606；不能直接证明生产 split 也是 31 线程。",
+    "生产未测 default split（spinning=None）；默认 split 不变是代码/测试语义结论，不是本轮实测。",
+    "生产套件 5 skipped 为旧冻结 adapter/CLI 哈希门，未计通过；frozen27 另证。",
+    "pynq_ffn 仓库 ps/tests/tools 为 untracked，无 git 提交基线；来源依赖归档哈希。",
+    "只有一块 KV260、117 帧、两轮顺序；没有多分钟持续输出率/P99 稳定性。",
+    "profile 包含 warmup（analysis 标注 includes_warmup=true），仅作诊断，不能当正式耗时。"
+  ],
+  "summary_zh": "结论：本轮 ORT 证据总体可信，但只能支持“多 session split-ort 中忙等争用是可消除的主要开销”，不能支持唯一根因、graph fusion 收益/归因、PL 收益或整机 15Hz。12 个正式 run（6 条件×正反序）均 117 帧、warmup3；各自与参考的四输出一致，整数速度 0 分歧（split1 对 golden1 精确，对 golden4 仅 speed_raw 差 1.22e-4，在 atol 1e-3 内）。split4 开/关忙等均 31 线程，p50 404.5/411.0→75.2/77.3 ms（5.38/5.32 倍），CPU/wall 3.93/3.93→2.70/2.67，非自愿切换 27481/27261→880/738；会话线程、执行模式、图优化级别、provider 均未变，仅两项 allow_spinning 改变，正反序复现。mixed4_1 同样复现（2.71/2.45 倍，16 线程）。因此“忙等为主”成立，但限定于该 4 核多 session 配置；ON 是病态争用，OFF 后仍 75-80 ms，慢于 golden4 的 64.6-64.8 ms，split 本身仍无净收益。生产 Runtime 默认 spinning=None 不写任何 key，golden 输出哈希与参考一致；49ace 与 zip/部署 manifest 逐文件哈希一致；显式 False 才关闭忙等，默认 split 不会自动获得加速。缺口：inputs.npy 未归档、无温度/频率控制、未测 graph fusion 变体、无 PL/overlay、无生产同轮 ON/OFF 配对、生产 split 未记录线程/上下文切换、run-only 未含预处理/实时链路，故 15Hz 不成立。"
+}

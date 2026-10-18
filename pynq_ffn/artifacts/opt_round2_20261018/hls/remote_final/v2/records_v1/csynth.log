@@ -1,0 +1,947 @@
+
+****** v++ v2026.1 (64-bit)
+  **** SW Build 6511674 on 2026-06-16-13:14:00
+  **** Start of session at: Sun Oct 18 13:06:51 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+  **** HLS Build v2026.1 6493734
+INFO: [HLS 200-2005] Using work_dir D:/i8/work 
+INFO: [HLS 200-2176] Writing Vitis IDE component file D:/i8/work/vitis-comp.json
+INFO: [HLS 200-10] Creating and opening component 'D:/i8/work'.
+INFO: [HLS 200-2174] Applying component config ini file build/full.cfg
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../ffn_accel.cpp' from build/full.cfg(9)
+INFO: [HLS 200-10] Adding design file 'D:/i8/ffn_accel.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file_cflags=../ffn_accel.cpp,-std=c++11 -DFFN_USE_HLS_MATH -ffp-contract=off' from build/full.cfg(10)
+INFO: [HLS 200-1465] Applying config ini 'syn.file_csimflags=../ffn_accel.cpp,-std=c++11 -DFFN_USE_HLS_MATH -ffp-contract=off' from build/full.cfg(11)
+INFO: [HLS 200-1465] Applying config ini 'tb.file=../testbench.cpp' from build/full.cfg(12)
+INFO: [HLS 200-10] Adding test bench file 'D:/i8/testbench.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.file_cflags=../testbench.cpp,-std=c++11 -DFFN_USE_HLS_MATH -ffp-contract=off' from build/full.cfg(13)
+INFO: [HLS 200-1465] Applying config ini 'syn.top=ffn_accel' from build/full.cfg(7)
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from build/full.cfg(6)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.amd.com/access/sources/dita/topic?Doc_Version=2026.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+WARNING: [HLS 200-2149] The 'flow_target' option is deprecated and will be removed in a future release. For 'vivado' value you may simply remove the option for equivalent behavior.
+INFO: [HLS 200-1465] Applying config ini 'part=xck26-sfvc784-2LV-c' from build/full.cfg(2)
+INFO: [HLS 200-1611] Setting target device to 'xck26-sfvc784-2LV-c'
+INFO: [HLS 200-1465] Applying config ini 'clock=10' from build/full.cfg(5)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1465] Applying config ini 'package.output.format=ip_catalog' from build/full.cfg(14)
+INFO: [HLS 200-1465] Applying config ini 'syn.interface.m_axi_addr64=true' from build/full.cfg(8)
+INFO: [HLS 200-2176] Writing Vitis IDE component file D:/i8/work/vitis-comp.json
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 4.051 seconds; current allocated memory: 167.922 MB.
+INFO: [HLS 200-2191] C-Synthesis will use clang-16 as the compiler
+INFO: [HLS 200-10] Analyzing design file 'ffn_accel.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 17.479 seconds; current allocated memory: 174.875 MB.
+INFO: [HLS 200-1995] There were 4,973 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (D:/i8/work/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-131] Inlining function 'exp_reduce_::exp(float)' into 'float erf_approx::generic_erf<float>(float)' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_erf.h:545:39)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_97_10' is marked as complete unroll implied by the pipeline pragma (ffn_accel.cpp:97:35)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_135_15' is marked as complete unroll implied by the pipeline pragma (ffn_accel.cpp:135:36)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_97_10' (ffn_accel.cpp:97:35) in function 'ffn_accel' completely with a factor of 16 (ffn_accel.cpp:22:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_135_15' (ffn_accel.cpp:135:36) in function 'ffn_accel' completely with a factor of 16 (ffn_accel.cpp:22:0)
+INFO: [HLS 200-1995] There were 1,233 instructions in the design after the 'Unroll/Inline' phase of compilation. See the Design Size Report for more details (D:/i8/work/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 1,118 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (D:/i8/work/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::fp_struct(float)' into 'int generic_fpclassify<float>(float)' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_fpclassify.h:37:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::data() const (.16.28.38.47.58)' into 'fp_struct<float>::to_float() const (.25.35.44.55)' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h:322:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::to_float() const (.25.35.44.55)' into 'fp_struct<float>::to_ieee() const' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h:346:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::fp_struct(float)' into 'float generic_copysign<float>(float, float)' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_copysign.h:10:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::to_ieee() const' into 'float generic_copysign<float>(float, float)' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_copysign.h:10:0)
+INFO: [HLS 214-178] Inlining function 'float generic_copysign<float>(float, float)' into 'float generic_fabs<float>(float)' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_fabs.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::fp_struct(float)' into 'float erf_approx::generic_erf<float>(float)' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_erf.h:430:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::data() const (.16.28.38.47.58)' into 'float erf_approx::generic_erf<float>(float)' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_erf.h:430:0)
+INFO: [HLS 214-178] Inlining function 'int generic_fpclassify<float>(float)' into 'float erf_approx::generic_erf<float>(float)' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_erf.h:430:0)
+INFO: [HLS 214-178] Inlining function 'float generic_fabs<float>(float)' into 'float erf_approx::generic_erf<float>(float)' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_erf.h:430:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::fp_struct(ap_uint<32>)' into 'float erf_approx::generic_erf<float>(float)' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_erf.h:430:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::to_ieee() const' into 'float erf_approx::generic_erf<float>(float)' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_erf.h:430:0)
+INFO: [HLS 214-178] Inlining function 'hls::erf(float)' into 'hls::erff(float)' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib\hlsmath\src\c++\erffloat.cpp:10:0)
+INFO: [HLS 214-178] Inlining function 'hls::erff(float)' into '(anonymous namespace)::gelu(float)' (ffn_accel.cpp:10:0)
+INFO: [HLS 214-178] Inlining function '(anonymous namespace)::gelu(float)' into 'ffn_accel(float const*, float*, float const*, float const*, float const*, float const*, unsigned int)' (ffn_accel.cpp:22:0)
+INFO: [HLS 200-1995] There were 1,055 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (D:/i8/work/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 889 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (D:/i8/work/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ9ffn_accelPKfPfS0_S0_S0_S0_jE8local_w2': Cyclic partitioning with factor 16 on dimension 2. (ffn_accel.cpp:44:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ9ffn_accelPKfPfS0_S0_S0_S0_jE8local_w1': Cyclic partitioning with factor 16 on dimension 2. (ffn_accel.cpp:43:0)
+INFO: [HLS 214-248] Applying array_partition to 'token': Complete partitioning on dimension 1. (ffn_accel.cpp:49:11)
+INFO: [HLS 214-248] Applying array_partition to 'hidden': Complete partitioning on dimension 1. Cyclic partitioning with factor 16 on dimension 2. (ffn_accel.cpp:50:11)
+INFO: [HLS 214-248] Applying array_partition to 'sum': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (ffn_accel.cpp:85:19)
+INFO: [HLS 214-248] Applying array_partition to 'sum178': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (ffn_accel.cpp:125:19)
+INFO: [HLS 200-1995] There were 7,636 instructions in the design after the 'Array/Struct' phase of compilation. See the Design Size Report for more details (D:/i8/work/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 6,536 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (D:/i8/work/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 6,536 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (D:/i8/work/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 6,536 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (D:/i8/work/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 7,830 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (D:/i8/work/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 7,319 instructions in the design after the 'Performance' phase of compilation. See the Design Size Report for more details (D:/i8/work/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-376] Pipelining loop< unknown> at  due to pipeline_loops threshold
+INFO: [HLS 214-364] Automatically inlining function 'float erf_approx::generic_erf<float>(float)' to improve effectiveness of pipeline pragma in function 'ffn_accel(float const*, float*, float const*, float const*, float const*, float const*, unsigned int)' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib\hlsmath\src\c++\erffloat.cpp:7:9)
+INFO: [HLS 214-437] Disabling loop flattening for loop 'VITIS_LOOP_61_3'. (ffn_accel.cpp:61:22)
+INFO: [HLS 200-1995] There were 7,061 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (D:/i8/work/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 7,060 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (D:/i8/work/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 7,060 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (D:/i8/work/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-115] Multiple burst reads of length 32768 and bit width 32 in loop 'VITIS_LOOP_55_1'(ffn_accel.cpp:55:22) has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (ffn_accel.cpp:55:22)
+INFO: [HLS 214-115] Multiple burst reads of length 128 and bit width 32 in loop 'VITIS_LOOP_68_5'(ffn_accel.cpp:68:22) has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (ffn_accel.cpp:68:22)
+INFO: [HLS 214-115] Multiple burst reads of variable length and bit width 32 in loop 'VITIS_LOOP_76_8'(ffn_accel.cpp:76:30) has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (ffn_accel.cpp:76:30)
+INFO: [HLS 214-115] Multiple burst writes of variable length and bit width 32 in loop 'VITIS_LOOP_147_17'(ffn_accel.cpp:147:36) has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (ffn_accel.cpp:147:36)
+INFO: [HLS 200-1995] There were 7,020 instructions in the design after the 'HW Transforms' phase of compilation. See the Design Size Report for more details (D:/i8/work/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 5,906 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (D:/i8/work/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 10.845 seconds; current allocated memory: 178.371 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.001 seconds; current allocated memory: 178.371 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.794 seconds; current allocated memory: 203.797 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.401 seconds; current allocated memory: 209.133 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_fabs.h:12:18) in function 'ffn_accel'... converting 4 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 2.664 seconds; current allocated memory: 243.633 MB.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_55_1'(ffn_accel.cpp:55:22) and 'VITIS_LOOP_56_2'(ffn_accel.cpp:56:26) in function 'ffn_accel' into perfectly nested loops.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_75_7'(ffn_accel.cpp:75:26) and 'VITIS_LOOP_76_8'(ffn_accel.cpp:76:30) in function 'ffn_accel' into perfectly nested loops.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_108_11'(ffn_accel.cpp:108:32) and 'VITIS_LOOP_109_12'(ffn_accel.cpp:109:36) in function 'ffn_accel' into perfectly nested loops.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_146_16'(ffn_accel.cpp:146:32) and 'VITIS_LOOP_147_17'(ffn_accel.cpp:147:36) in function 'ffn_accel' into perfectly nested loops.
+INFO: [HLS 200-2259] Flattening a loop nest with inner loop 'VITIS_LOOP_56_2' (ffn_accel.cpp:56:26) and outer loop 'VITIS_LOOP_55_1' (ffn_accel.cpp:55:22) in function 'ffn_accel' successfully.
+INFO: [HLS 200-2259] Flattening a loop nest with inner loop 'VITIS_LOOP_76_8' (ffn_accel.cpp:76:30) and outer loop 'VITIS_LOOP_75_7' (ffn_accel.cpp:75:26) in function 'ffn_accel' successfully.
+INFO: [HLS 200-2259] Flattening a loop nest with inner loop 'VITIS_LOOP_109_12' (ffn_accel.cpp:109:36) and outer loop 'VITIS_LOOP_108_11' (ffn_accel.cpp:108:32) in function 'ffn_accel' successfully.
+INFO: [HLS 200-2259] Flattening a loop nest with inner loop 'VITIS_LOOP_147_17' (ffn_accel.cpp:147:36) and outer loop 'VITIS_LOOP_146_16' (ffn_accel.cpp:146:32) in function 'ffn_accel' successfully.
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.127' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.126' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.125' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.124' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.123' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.122' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.121' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.120' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.119' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.118' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.117' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.116' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.115' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.114' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.113' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.112' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.111' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.110' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.109' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.108' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.107' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.106' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.105' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.104' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.103' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.102' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.101' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.100' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.99' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.98' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.97' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.96' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.95' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.94' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.93' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.92' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.91' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.90' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.89' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.88' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.87' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.86' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.85' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.84' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.83' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.82' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.81' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.80' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.79' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.78' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.77' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.76' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.75' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.74' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.73' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.72' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.71' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.70' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.69' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.68' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.67' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.66' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.65' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.64' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.63' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.62' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.61' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.60' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.59' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.58' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.57' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.56' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.55' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.54' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.53' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.52' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.51' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.50' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.49' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.48' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.47' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.46' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.45' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.44' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.43' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.42' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.41' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.40' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.39' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.38' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.37' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.36' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.35' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.34' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.33' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.32' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.31' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.30' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.29' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.28' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.27' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.26' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.25' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.24' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.23' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.22' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.21' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.20' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.19' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.18' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.17' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.16' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.15' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.14' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.13' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.12' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.11' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.10' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.9' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.8' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.7' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.6' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.5' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.4' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.3' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.2' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.1' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.383' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.382' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.381' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.380' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.379' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.378' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.377' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.376' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.375' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.374' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.373' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.372' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.371' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.370' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.369' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.368' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.367' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.366' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.365' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.364' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.363' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.362' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.361' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.360' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.359' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.358' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.357' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.356' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.355' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.354' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.353' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.352' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.351' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.350' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.349' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.348' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.347' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.346' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.345' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.344' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.343' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.342' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.341' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.340' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.339' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.338' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.337' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.336' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.335' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.334' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.333' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.332' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.331' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.330' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.329' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.328' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.327' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.326' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.325' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.324' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.323' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.322' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.321' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.320' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.319' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.318' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.317' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.316' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.315' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.314' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.313' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.312' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.311' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.310' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.309' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.308' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.307' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.306' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.305' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.304' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.303' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.302' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.301' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.300' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.299' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.298' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.297' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.296' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.295' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.294' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.293' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.292' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.291' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.290' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.289' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.288' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.287' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.286' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.285' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.284' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.283' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.282' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.281' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.280' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.279' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.278' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.277' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.276' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.275' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.274' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.273' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.272' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.271' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.270' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.269' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.268' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.267' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.266' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.265' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.264' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.263' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.262' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.261' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.260' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.259' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.258' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.257' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.256' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.127' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.126' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.125' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.124' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.123' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.122' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.121' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.120' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.119' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.118' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.117' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.116' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.115' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.114' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.113' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.112' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.111' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.110' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.109' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.108' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.107' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.106' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.105' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.104' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.103' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.102' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.101' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.100' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.99' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.98' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.97' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.96' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.95' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.94' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.93' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.92' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.91' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.90' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.89' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.88' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.87' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.86' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.85' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.84' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.83' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.82' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.81' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.80' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.79' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.78' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.77' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.76' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.75' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.74' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.73' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.72' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.71' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.70' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.69' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.68' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.67' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.66' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.65' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.64' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.63' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.62' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.61' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.60' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.59' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.58' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.57' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.56' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.55' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.54' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.53' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.52' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.51' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.50' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.49' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.48' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.47' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.46' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.45' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.44' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.43' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.42' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.41' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.40' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.39' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.38' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.37' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.36' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.35' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.34' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.33' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.32' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.31' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.30' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.29' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.28' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.27' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.26' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.25' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.24' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.23' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.22' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.21' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.20' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.19' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.18' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.17' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.16' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.15' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.14' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.13' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.12' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.11' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.10' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.9' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.8' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.7' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.6' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.5' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.4' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.3' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.2' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.1' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum' (ffn_accel.cpp:85) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.383' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.382' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.381' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.380' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.379' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.378' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.377' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.376' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.375' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.374' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.373' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.372' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.371' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.370' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.369' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.368' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.367' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.366' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.365' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.364' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.363' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.362' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.361' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.360' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.359' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.358' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.357' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.356' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.355' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.354' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.353' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.352' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.351' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.350' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.349' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.348' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.347' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.346' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.345' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.344' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.343' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.342' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.341' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.340' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.339' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.338' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.337' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.336' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.335' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.334' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.333' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.332' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.331' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.330' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.329' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.328' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.327' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.326' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.325' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.324' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.323' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.322' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.321' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.320' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.319' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.318' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.317' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.316' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.315' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.314' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.313' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.312' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.311' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.310' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.309' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.308' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.307' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.306' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.305' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.304' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.303' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.302' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.301' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.300' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.299' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.298' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.297' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.296' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.295' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.294' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.293' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.292' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.291' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.290' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.289' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.288' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.287' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.286' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.285' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.284' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.283' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.282' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.281' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.280' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.279' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.278' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.277' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.276' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.275' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.274' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.273' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.272' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.271' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.270' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.269' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.268' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.267' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.266' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.265' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.264' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.263' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.262' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.261' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.260' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.259' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.258' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.257' (ffn_accel.cpp:125) (distance = 8).
+INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'sum.256' (ffn_accel.cpp:125) (distance = 8).
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 14.917 seconds; current allocated memory: 353.691 MB.
+INFO: [HLS 200-2255] Checking Wire Delay Status: Wire Delay Mode is ON
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'ffn_accel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ffn_accel_Pipeline_VITIS_LOOP_55_1_VITIS_LOOP_56_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_55_1_VITIS_LOOP_56_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_55_1_VITIS_LOOP_56_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.524 seconds; current allocated memory: 360.848 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 361.859 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ffn_accel_Pipeline_VITIS_LOOP_62_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_62_4'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 11, loop 'VITIS_LOOP_62_4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.037 seconds; current allocated memory: 362.250 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.018 seconds; current allocated memory: 362.324 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ffn_accel_Pipeline_VITIS_LOOP_68_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_68_5'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_68_5'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.023 seconds; current allocated memory: 362.551 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 362.551 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ffn_accel_Pipeline_VITIS_LOOP_75_7_VITIS_LOOP_76_8' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_75_7_VITIS_LOOP_76_8'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 11, loop 'VITIS_LOOP_75_7_VITIS_LOOP_76_8'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.699 seconds; current allocated memory: 363.141 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.019 seconds; current allocated memory: 363.148 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ffn_accel_Pipeline_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.188 seconds; current allocated memory: 368.973 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.193 seconds; current allocated memory: 368.980 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ffn_accel_Pipeline_fc1_steps' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'fc1_steps'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 12, loop 'fc1_steps'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.345 seconds; current allocated memory: 375.840 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.24 seconds; current allocated memory: 375.910 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ffn_accel_Pipeline_VITIS_LOOP_108_11_VITIS_LOOP_109_12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_108_11_VITIS_LOOP_109_12'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 6, loop 'VITIS_LOOP_108_11_VITIS_LOOP_109_12'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.328 seconds; current allocated memory: 382.441 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.082 seconds; current allocated memory: 382.652 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ffn_accel_Pipeline_VITIS_LOOP_116_13' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_116_13'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 88, loop 'VITIS_LOOP_116_13'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.965 seconds; current allocated memory: 390.996 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.138 seconds; current allocated memory: 391.031 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ffn_accel_Pipeline_9' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.296 seconds; current allocated memory: 394.305 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.196 seconds; current allocated memory: 394.633 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ffn_accel_Pipeline_fc2_steps' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'fc2_steps'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 12, loop 'fc2_steps'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.494 seconds; current allocated memory: 403.434 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.351 seconds; current allocated memory: 404.754 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ffn_accel_Pipeline_VITIS_LOOP_146_16_VITIS_LOOP_147_17' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_146_16_VITIS_LOOP_147_17'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 12, loop 'VITIS_LOOP_146_16_VITIS_LOOP_147_17'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.235 seconds; current allocated memory: 406.273 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.033 seconds; current allocated memory: 406.547 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ffn_accel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.364 seconds; current allocated memory: 414.141 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.219 seconds; current allocated memory: 415.590 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ffn_accel_Pipeline_VITIS_LOOP_55_1_VITIS_LOOP_56_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'ffn_accel_Pipeline_VITIS_LOOP_55_1_VITIS_LOOP_56_2' pipeline 'VITIS_LOOP_55_1_VITIS_LOOP_56_2' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'ffn_accel_Pipeline_VITIS_LOOP_55_1_VITIS_LOOP_56_2/m_axi_gmem1_0_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ffn_accel_Pipeline_VITIS_LOOP_55_1_VITIS_LOOP_56_2/m_axi_gmem1_0_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ffn_accel_Pipeline_VITIS_LOOP_55_1_VITIS_LOOP_56_2/m_axi_gmem1_0_ARID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ffn_accel_Pipeline_VITIS_LOOP_55_1_VITIS_LOOP_56_2/m_axi_gmem1_0_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ffn_accel_Pipeline_VITIS_LOOP_55_1_VITIS_LOOP_56_2/m_axi_gmem1_0_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ffn_accel_Pipeline_VITIS_LOOP_55_1_VITIS_LOOP_56_2/m_axi_gmem1_0_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ffn_accel_Pipeline_VITIS_LOOP_55_1_VITIS_LOOP_56_2/m_axi_gmem1_0_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ffn_accel_Pipeline_VITIS_LOOP_55_1_VITIS_LOOP_56_2/m_axi_gmem1_0_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ffn_accel_Pipeline_VITIS_LOOP_55_1_VITIS_LOOP_56_2/m_axi_gmem1_0_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ffn_accel_Pipeline_VITIS_LOOP_55_1_VITIS_LOOP_56_2/m_axi_gmem1_0_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ffn_accel_Pipeline_VITIS_LOOP_55_1_VITIS_LOOP_56_2/m_axi_gmem1_0_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ffn_accel_Pipeline_VITIS_LOOP_55_1_VITIS_LOOP_56_2/m_axi_gmem1_0_ARUSER' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ffn_accel_Pipeline_VITIS_LOOP_55_1_VITIS_LOOP_56_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.182 seconds; current allocated memory: 417.988 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ffn_accel_Pipeline_VITIS_LOOP_62_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'ffn_accel_Pipeline_VITIS_LOOP_62_4' pipeline 'VITIS_LOOP_62_4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ffn_accel_Pipeline_VITIS_LOOP_62_4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.177 seconds; current allocated memory: 420.840 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ffn_accel_Pipeline_VITIS_LOOP_68_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'ffn_accel_Pipeline_VITIS_LOOP_68_5' pipeline 'VITIS_LOOP_68_5' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'ffn_accel_Pipeline_VITIS_LOOP_68_5/m_axi_gmem1_0_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ffn_accel_Pipeline_VITIS_LOOP_68_5/m_axi_gmem1_0_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ffn_accel_Pipeline_VITIS_LOOP_68_5/m_axi_gmem1_0_ARID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ffn_accel_Pipeline_VITIS_LOOP_68_5/m_axi_gmem1_0_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ffn_accel_Pipeline_VITIS_LOOP_68_5/m_axi_gmem1_0_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ffn_accel_Pipeline_VITIS_LOOP_68_5/m_axi_gmem1_0_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ffn_accel_Pipeline_VITIS_LOOP_68_5/m_axi_gmem1_0_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ffn_accel_Pipeline_VITIS_LOOP_68_5/m_axi_gmem1_0_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ffn_accel_Pipeline_VITIS_LOOP_68_5/m_axi_gmem1_0_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ffn_accel_Pipeline_VITIS_LOOP_68_5/m_axi_gmem1_0_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ffn_accel_Pipeline_VITIS_LOOP_68_5/m_axi_gmem1_0_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ffn_accel_Pipeline_VITIS_LOOP_68_5/m_axi_gmem1_0_ARUSER' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ffn_accel_Pipeline_VITIS_LOOP_68_5'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.082 seconds; current allocated memory: 422.703 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ffn_accel_Pipeline_VITIS_LOOP_75_7_VITIS_LOOP_76_8' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'ffn_accel_Pipeline_VITIS_LOOP_75_7_VITIS_LOOP_76_8' pipeline 'VITIS_LOOP_75_7_VITIS_LOOP_76_8' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ffn_accel_Pipeline_VITIS_LOOP_75_7_VITIS_LOOP_76_8'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.059 seconds; current allocated memory: 423.988 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ffn_accel_Pipeline_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ffn_accel_Pipeline_5'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.122 seconds; current allocated memory: 427.074 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ffn_accel_Pipeline_fc1_steps' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'ffn_accel_Pipeline_fc1_steps' pipeline 'fc1_steps' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_7_full_dsp_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 17 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ffn_accel_Pipeline_fc1_steps'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.733 seconds; current allocated memory: 445.242 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ffn_accel_Pipeline_VITIS_LOOP_108_11_VITIS_LOOP_109_12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'ffn_accel_Pipeline_VITIS_LOOP_108_11_VITIS_LOOP_109_12' pipeline 'VITIS_LOOP_108_11_VITIS_LOOP_109_12' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'faddfsub_32ns_32ns_32_4_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_33_4_32_1_1': 8 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ffn_accel_Pipeline_VITIS_LOOP_108_11_VITIS_LOOP_109_12'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 0.56 seconds; current allocated memory: 467.434 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ffn_accel_Pipeline_VITIS_LOOP_116_13' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'ffn_accel_Pipeline_VITIS_LOOP_116_13' pipeline 'VITIS_LOOP_116_13' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'ffn_accel_Pipeline_VITIS_LOOP_116_13' is 58791 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_full_dsp_1': 40 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'faddfsub_32ns_32ns_32_4_full_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fdiv_32ns_32ns_32_9_no_dsp_1': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fexp_32ns_32ns_32_8_full_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 51 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_33_4_32_1_1': 8 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ffn_accel_Pipeline_VITIS_LOOP_116_13'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.145 seconds; current allocated memory: 515.512 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ffn_accel_Pipeline_9' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ffn_accel_Pipeline_9'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.023 seconds; current allocated memory: 538.352 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ffn_accel_Pipeline_fc2_steps' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'ffn_accel_Pipeline_fc2_steps' pipeline 'fc2_steps' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_7_full_dsp_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 17 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_33_4_32_1_1': 8 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ffn_accel_Pipeline_fc2_steps'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.58 seconds; current allocated memory: 551.371 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ffn_accel_Pipeline_VITIS_LOOP_146_16_VITIS_LOOP_147_17' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'ffn_accel_Pipeline_VITIS_LOOP_146_16_VITIS_LOOP_147_17' pipeline 'VITIS_LOOP_146_16_VITIS_LOOP_147_17' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'faddfsub_32ns_32ns_32_4_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_33_4_32_1_1': 8 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ffn_accel_Pipeline_VITIS_LOOP_146_16_VITIS_LOOP_147_17'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.621 seconds; current allocated memory: 580.559 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ffn_accel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ffn_accel/gmem0' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ffn_accel/gmem1' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ffn_accel/x' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ffn_accel/y' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ffn_accel/w1' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ffn_accel/b1' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ffn_accel/w2' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ffn_accel/b2' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ffn_accel/num_tokens' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'ffn_accel' to 's_axilite & ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'ffn_accel_float_const_float_float_const_float_const_float_const_float_19_RAM_AUTO_1R1W' to 'ffn_accel_float_const_float_float_const_float_const_float_const_float_19_RAM_bkb' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'ffn_accel_float_const_float_float_const_float_const_float_const_float_18_RAM_AUTO_1R1W' to 'ffn_accel_float_const_float_float_const_float_const_float_const_float_18_RAM_cud' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'ffn_accel_float_const_float_float_const_float_const_float_const_float_17_RAM_AUTO_1R1W' to 'ffn_accel_float_const_float_float_const_float_const_float_const_float_17_RAM_dEe' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'ffn_accel_float_const_float_float_const_float_const_float_const_float_16_RAM_AUTO_1R1W' to 'ffn_accel_float_const_float_float_const_float_const_float_const_float_16_RAM_eOg' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'ffn_accel_float_const_float_float_const_float_const_float_const_float_15_RAM_AUTO_1R1W' to 'ffn_accel_float_const_float_float_const_float_const_float_const_float_15_RAM_fYi' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'ffn_accel_float_const_float_float_const_float_const_float_const_float_14_RAM_AUTO_1R1W' to 'ffn_accel_float_const_float_float_const_float_const_float_const_float_14_RAM_g8j' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'ffn_accel_float_const_float_float_const_float_const_float_const_float_13_RAM_AUTO_1R1W' to 'ffn_accel_float_const_float_float_const_float_const_float_const_float_13_RAM_hbi' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'ffn_accel_float_const_float_float_const_float_const_float_const_float_12_RAM_AUTO_1R1W' to 'ffn_accel_float_const_float_float_const_float_const_float_const_float_12_RAM_ibs' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'ffn_accel_float_const_float_float_const_float_const_float_const_float_11_RAM_AUTO_1R1W' to 'ffn_accel_float_const_float_float_const_float_const_float_const_float_11_RAM_jbC' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'ffn_accel_float_const_float_float_const_float_const_float_const_float_10_RAM_AUTO_1R1W' to 'ffn_accel_float_const_float_float_const_float_const_float_const_float_10_RAM_kbM' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'ffn_accel_float_const_float_float_const_float_const_float_const_float_9_RAM_AUTO_1R1W' to 'ffn_accel_float_const_float_float_const_float_const_float_const_float_9_RAM_AlbW' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'ffn_accel_float_const_float_float_const_float_const_float_const_float_8_RAM_AUTO_1R1W' to 'ffn_accel_float_const_float_float_const_float_const_float_const_float_8_RAM_Amb6' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'ffn_accel_float_const_float_float_const_float_const_float_const_float_7_RAM_AUTO_1R1W' to 'ffn_accel_float_const_float_float_const_float_const_float_const_float_7_RAM_Ancg' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'ffn_accel_float_const_float_float_const_float_const_float_const_float_6_RAM_AUTO_1R1W' to 'ffn_accel_float_const_float_float_const_float_const_float_const_float_6_RAM_Aocq' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'ffn_accel_float_const_float_float_const_float_const_float_const_float_5_RAM_AUTO_1R1W' to 'ffn_accel_float_const_float_float_const_float_const_float_const_float_5_RAM_ApcA' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'ffn_accel_float_const_float_float_const_float_const_float_const_float_4_RAM_AUTO_1R1W' to 'ffn_accel_float_const_float_float_const_float_const_float_const_float_4_RAM_AqcK' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'ffn_accel_float_const_float_float_const_float_const_float_const_float_3_RAM_AUTO_1R1W' to 'ffn_accel_float_const_float_float_const_float_const_float_const_float_3_RAM_ArcU' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'ffn_accel_float_const_float_float_const_float_const_float_const_float_2_RAM_AUTO_1R1W' to 'ffn_accel_float_const_float_float_const_float_const_float_const_float_2_RAM_Asc4' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'ffn_accel_float_const_float_float_const_float_const_float_const_float_1_RAM_AUTO_1R1W' to 'ffn_accel_float_const_float_float_const_float_const_float_const_float_1_RAM_Atde' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'ffn_mulmulmulmulmulaccel_float_const_float_float_const_float_const_float_const_float_RAM_AUTO_1R1W' to 'ffn_mulmulmulmulmulaccel_float_const_float_float_const_float_const_float_consudo' due to the length limit 80
+INFO: [RTGEN 206-100] Bundling port 'x', 'y', 'w1', 'b1', 'w2', 'b2', 'num_tokens' and 'return' to AXI-Lite port control.
+INFO: [RTGEN 206-104] Estimated max fanout for 'ffn_accel' is 5059 from HDL expression: (1'b1 == ap_CS_fsm_state42)
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_7_full_dsp_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'faddfsub_32ns_32ns_32_4_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 16 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ffn_accel'.
+INFO: [RTMG 210-278] Implementing memory 'ffn_accel_ffn_accel_float_const_float_float_const_float_const_float_const_float_19_RAM_bkb' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'ffn_accel_local_b1_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'ffn_accel_local_b2_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'ffn_accel_token_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'ffn_accel_hidden_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 2.486 seconds; current allocated memory: 608.961 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.008 seconds; current allocated memory: 637.586 MB.
+INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO: [HLS 200-2225] Wrote inferred directives to file D:/i8/work/hls/syn/inferred_directives.ini
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.141 seconds; current allocated memory: 655.539 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for ffn_accel.
+INFO: [VLOG 209-307] Generating Verilog RTL for ffn_accel.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 136.99 MHz
+INFO: [HLS 200-112] Total CPU user time: 18 seconds. Total CPU system time: 4 seconds. Total elapsed time: 69.21 seconds; peak allocated memory: 655.570 MB.
+INFO: [v++ 60-791] Total elapsed time: 0h 1m 12s

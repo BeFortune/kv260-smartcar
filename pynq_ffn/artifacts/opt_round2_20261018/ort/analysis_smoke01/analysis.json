@@ -1,0 +1,15 @@
+{
+  "status": "失败",
+  "first_error": "'ps/runtime.py'",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\analyze_remote.py\", line 279, in main\n    report = analyze(args.study_dir, args.expected_frames, not args.allow_partial_matrix)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\analyze_remote.py\", line 195, in analyze\n    require(report[\"runtime_sha256\"] == manifest[\"source_hashes\"][\"ps/runtime.py\"], \"Runtime digest differs\")\n                                        ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\nKeyError: 'ps/runtime.py'\n",
+  "actual_command": [
+    "C:/Users/BeFortuneEX/Source/Repos/FPGA/pynq_ffn/artifacts/opt_round2_20261018/ort/analyze_remote.py",
+    "--study-dir",
+    "C:/Users/BeFortuneEX/Source/Repos/FPGA/pynq_ffn/artifacts/opt_round2_20261018/ort/local_quick_smoke",
+    "--expected-frames",
+    "1",
+    "--output",
+    "C:/Users/BeFortuneEX/Source/Repos/FPGA/pynq_ffn/artifacts/opt_round2_20261018/ort/analysis_smoke01"
+  ],
+  "exit_code": 1
+}

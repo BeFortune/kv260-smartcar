@@ -1,0 +1,12 @@
+{
+  "bundle": "/home/ubuntu/ffn_migrate/bundle",
+  "inputs": "/home/ubuntu/opt_round2_20261018/ort/production_run01/inputs.npy",
+  "inputs_sha256": "bcb2d67ef4f27b76186acbe66632eab282e56e340f5a0cf38bf010ed231cc6aa",
+  "runtime_sha256": "49ace8fbf61a29e2e54efc174b45477cd08fc5fe469d13547df17326b9745576",
+  "manifest_sha256": "de727e32df9f1ebd0fe84bac0d33cc8e786a5962053dc746b955b175527f4b77",
+  "frames": 117,
+  "warmup": 3,
+  "mode": "split-ort",
+  "spinning": false,
+  "directory": "/home/ubuntu/opt_round2_20261018/ort/production_run01/split4_spinning_off"
+}

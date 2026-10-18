@@ -1,0 +1,96 @@
+"""CPU-only session policy checks; no real model or PYNQ import required."""
+import hashlib
+import inspect
+import json
+from pathlib import Path
+import sys
+from types import SimpleNamespace
+
+import numpy as np
+import pytest
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from ps import runtime as runtime_module
+from ps.runtime import Runtime
+
+
+@pytest.fixture
+def mock_bundle(tmp_path, monkeypatch):
+    # A synthetic, hash-checked bundle exercises session creation, not inference.
+    model = b"mock model; never passed to ORT"
+    model_sha = hashlib.sha256(model).hexdigest()
+    monkeypatch.setattr(runtime_module, "MODEL_SHA256", model_sha)
+    schedule = [
+        {"name": "stage_0", "file": "stage_0.onnx", "kind": "non_ffn", "inputs": ["images"], "outputs": ["hidden"]},
+        {"name": "camera_0", "file": "camera_0.onnx", "kind": "ffn", "inputs": ["hidden"], "outputs": ["result"]},
+    ]
+    abi = {"schema": "pynq_ffn.abi.v1", "outputs": list(runtime_module.OUTPUT_NAMES), "layer_specs": [], "schedule": schedule}
+    (tmp_path / "ABI.json").write_text(json.dumps(abi), encoding="utf8")
+    np.savez(tmp_path / "weights.npz")
+    for name in ("model.onnx", *(f"stage_{i}.onnx" for i in range(5)), "camera_0.onnx", "camera_1.onnx", "cross_0.onnx", "cross_1.onnx"):
+        (tmp_path / name).write_bytes(model)
+    files = {path.name: {"bytes": path.stat().st_size, "sha256": hashlib.sha256(path.read_bytes()).hexdigest()} for path in tmp_path.iterdir()}
+    (tmp_path / "manifest.json").write_text(json.dumps({"schema": "pynq_ffn.bundle.v1", "source_sha256": model_sha, "files": files}), encoding="utf8")
+    return tmp_path, {stage["file"]: stage for stage in schedule}
+
+
+@pytest.mark.parametrize("mode", ["golden", "split-ort", "split-numpy"])
+@pytest.mark.parametrize("policy,expected", [("omitted", {}), (None, {}), (False, {"session.intra_op.allow_spinning": "0", "session.inter_op.allow_spinning": "0"}), (True, {"session.intra_op.allow_spinning": "1", "session.inter_op.allow_spinning": "1"})])
+def test_spinning_only_changes_requested_session_config(mock_bundle, monkeypatch, mode, policy, expected):
+    bundle, stages = mock_bundle
+    captured = []
+    options_created = []
+
+    class Options:
+        def __init__(self):
+            self.entries = []
+            options_created.append(self)
+
+        def add_session_config_entry(self, key, value):
+            self.entries.append((key, value))
+
+    def session(path, sess_options, providers):
+        name = Path(path).name
+        captured.append((name, sess_options, providers))
+        spec = stages.get(name, {"inputs": [], "outputs": []})
+        return SimpleNamespace(
+            get_inputs=lambda: [SimpleNamespace(name=n) for n in spec["inputs"]],
+            get_outputs=lambda: [SimpleNamespace(name=n) for n in spec["outputs"]],
+        )
+
+    monkeypatch.setattr(runtime_module.ort, "SessionOptions", Options)
+    monkeypatch.setattr(runtime_module.ort, "InferenceSession", session)
+    kwargs = {} if policy == "omitted" else {"spinning": policy}
+    runtime = Runtime(bundle, mode=mode, threads=4, **kwargs)
+    names = {"golden": ["model.onnx"], "split-ort": ["stage_0.onnx", "camera_0.onnx"], "split-numpy": ["stage_0.onnx"]}[mode]
+    assert [name for name, _, _ in captured] == names
+    assert len(runtime.sessions) == len(names)
+    assert len(options_created) == 1
+    for _, options, providers in captured:
+        assert options is options_created[0]
+        assert options.entries == list(expected.items())
+        assert options.intra_op_num_threads == 4
+        assert options.inter_op_num_threads == 1
+        assert options.execution_mode == runtime_module.ort.ExecutionMode.ORT_SEQUENTIAL
+        assert options.graph_optimization_level == runtime_module.ort.GraphOptimizationLevel.ORT_ENABLE_EXTENDED
+        assert options.log_severity_level == 3
+        assert providers == ["CPUExecutionProvider"]
+
+
+@pytest.mark.parametrize("value", [0, 1, "0", "1", 0.0, 1.0, np.bool_(False), object()])
+def test_spinning_rejects_non_bool_before_bundle_access(value, tmp_path):
+    with pytest.raises(ValueError, match="spinning must be None or bool"):
+        Runtime(tmp_path / "missing", spinning=value)
+
+
+def test_signature_keeps_old_positional_contract():
+    signature = inspect.signature(Runtime)
+    assert list(signature.parameters) == ["bundle", "mode", "threads", "backend", "spinning"]
+    assert signature.parameters["mode"].default == "split-ort"
+    assert signature.parameters["threads"].default == 1
+    assert signature.parameters["backend"].default is None
+    assert signature.parameters["spinning"].kind is inspect.Parameter.KEYWORD_ONLY
+    assert signature.parameters["spinning"].default is None
+    with pytest.raises(TypeError):
+        Runtime("unused", "split-ort", 1, None, False)

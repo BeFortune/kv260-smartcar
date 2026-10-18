@@ -1,0 +1,585 @@
+{
+  "status": "\u5df2\u9a8c\u8bc1",
+  "exit_code": 0,
+  "actual_command": [
+    "/home/ubuntu/opt_round2_20261018/ort/code/tools/ort_thread_study.py",
+    "--mode",
+    "quick",
+    "--bundle",
+    "/home/ubuntu/ffn_migrate/bundle",
+    "--recording",
+    "/home/ubuntu/ffn_migrate/data/1778852165",
+    "--frames",
+    "117",
+    "--warmup",
+    "3",
+    "--rounds",
+    "2",
+    "--profile-condition",
+    "split4",
+    "--profile-condition",
+    "split4_off",
+    "--profile-condition",
+    "mixed4_1_off",
+    "--output",
+    "/home/ubuntu/opt_round2_20261018/ort/run01"
+  ],
+  "hardware_execution": false,
+  "versions": {
+    "python": "3.10.12",
+    "numpy": "1.26.4",
+    "onnxruntime": "1.20.1",
+    "opencv": "4.11.0",
+    "platform": "Linux-5.15.0-1027-xilinx-zynqmp-aarch64-with-glibc2.35",
+    "machine": "aarch64",
+    "logical_cpus": 4,
+    "affinity": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "thread_environment": {
+      "OMP_NUM_THREADS": null,
+      "OPENBLAS_NUM_THREADS": null,
+      "MKL_NUM_THREADS": null,
+      "ORT_NUM_THREADS": null
+    }
+  },
+  "source_hashes": {
+    "tools/ort_thread_study.py": "3d8cd5ee52ec6234b88b61502c88596b001f63d073753b70e419ac5a708447c5",
+    "ps/runtime.py": "023327eadeaa935ec8392ec16095c6df2a1155368595afd37fe233b4cc6ed298",
+    "ps/preprocess.py": "6134e12a3a2f67d92c8b43f7801f21b0e9d570d0f153ce81ca75d623d8120ddb",
+    "ps/backends.py": "9dfa98b816521abd091473366a31f3bd00634a5b1ab4932f82fd93477036fe0f"
+  },
+  "date_utc": "2026-10-18T04:20:10Z",
+  "runs": [
+    "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r1_01_golden4",
+    "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r1_02_split1",
+    "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r1_03_split4",
+    "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r1_04_split4_off",
+    "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r1_05_mixed4_1",
+    "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r1_06_mixed4_1_off",
+    "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r2_01_mixed4_1_off",
+    "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r2_02_mixed4_1",
+    "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r2_03_split4_off",
+    "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r2_04_split4",
+    "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r2_05_split1",
+    "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r2_06_golden4"
+  ],
+  "bundle_manifest": {
+    "schema": "pynq_ffn.bundle.v1",
+    "source_sha256": "ad58d1fc9168da94b9ce076ba8cc9754c371ead87974da8bc9cc601ad1650d5b",
+    "source": "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\kv260_v1\\v1_payload.zip",
+    "source_member": "model/model_current.onnx",
+    "files": {
+      "ABI.json": {
+        "sha256": "2be276fe46733e5f746fcabae7e249595088d19bd7060e9bda56b246f0f37be9",
+        "bytes": 9232
+      },
+      "camera_0.onnx": {
+        "sha256": "0ebf5a5309df686d4a6b21ea057ca36edb42a1de233b31f09be6bcab6a773a90",
+        "bytes": 266136
+      },
+      "camera_1.onnx": {
+        "sha256": "67cf178351805292ace31a63b9936889fd563b5a61896d7d838a4b1344315018",
+        "bytes": 266136
+      },
+      "cross_0.onnx": {
+        "sha256": "0b5ad044410fbc32279365addfc7edee92fb20afc0841fea2a520b90b5700665",
+        "bytes": 266010
+      },
+      "cross_1.onnx": {
+        "sha256": "fa7d65aa5682dbebd4192f73edf30b7ed4d87eac2ccce995c8df631d3ca14828",
+        "bytes": 266010
+      },
+      "model.onnx": {
+        "sha256": "ad58d1fc9168da94b9ce076ba8cc9754c371ead87974da8bc9cc601ad1650d5b",
+        "bytes": 2779255
+      },
+      "stage_0.onnx": {
+        "sha256": "e67e0a2ac4b4de22fa59c12f7efc762afc39009a66f05998e36b69e641c69019",
+        "bytes": 491415
+      },
+      "stage_1.onnx": {
+        "sha256": "1cc7316857e71b8e6769789a6dde9244617049de6dea04e137283fd64204aeab",
+        "bytes": 282353
+      },
+      "stage_2.onnx": {
+        "sha256": "78289a0ebe76b46026ceadc3749b63c5765c6b5d6618b48ce1fe17ba98c3a448",
+        "bytes": 284109
+      },
+      "stage_3.onnx": {
+        "sha256": "90c8f648b6d6b7e1a55f40932365a6f83f9c3992b3f970832f2f62cefe7ad999",
+        "bytes": 280919
+      },
+      "stage_4.onnx": {
+        "sha256": "933b70cce1ac6dd5731581e19c4b6cf619741c04cc4c0e13dd5ca8571a9bc2dd",
+        "bytes": 378985
+      },
+      "weights.npz": {
+        "sha256": "7401693d33963989cc8e73501c8a359652810f89bf0f3e2d5862201abef86fca",
+        "bytes": 1058790
+      }
+    }
+  },
+  "manifest_sha256": "de727e32df9f1ebd0fe84bac0d33cc8e786a5962053dc746b955b175527f4b77",
+  "orders": [
+    [
+      "golden4",
+      "split1",
+      "split4",
+      "split4_off",
+      "mixed4_1",
+      "mixed4_1_off"
+    ],
+    [
+      "mixed4_1_off",
+      "mixed4_1",
+      "split4_off",
+      "split4",
+      "split1",
+      "golden4"
+    ]
+  ],
+  "reference_crosschecks": {
+    "golden4": {
+      "max_abs_error": {
+        "speed_norm": 0.0,
+        "speed_raw": 0.0,
+        "region_logits": 0.0,
+        "region_probs": 0.0
+      },
+      "speed_integer_mismatches": 0,
+      "atol": 0.001,
+      "rtol": 0,
+      "pass": true
+    },
+    "golden1": {
+      "max_abs_error": {
+        "speed_norm": 1.1920928955078125e-07,
+        "speed_raw": 0.0001220703125,
+        "region_logits": 8.195638656616211e-08,
+        "region_probs": 1.4901161193847656e-08
+      },
+      "speed_integer_mismatches": 0,
+      "atol": 0.001,
+      "rtol": 0,
+      "pass": true
+    },
+    "golden4_off": {
+      "max_abs_error": {
+        "speed_norm": 0.0,
+        "speed_raw": 0.0,
+        "region_logits": 0.0,
+        "region_probs": 0.0
+      },
+      "speed_integer_mismatches": 0,
+      "atol": 0.001,
+      "rtol": 0,
+      "pass": true
+    }
+  },
+  "analysis": {
+    "rows": [
+      {
+        "run": "perf_r1_01_golden4",
+        "policy": "golden4",
+        "status": "\u5df2\u9a8c\u8bc1",
+        "run_total_ms": {
+          "n": 117,
+          "mean": 68.91771360513413,
+          "p50": 64.79315098840743,
+          "p95": 94.92251242045305,
+          "p99": 149.40812743967402,
+          "max": 171.2996459682472,
+          "min": 64.33232198469341
+        },
+        "cpu_wall_ratio": 3.9027705512939783,
+        "threads": 7,
+        "context_switches": {
+          "voluntary": 0,
+          "involuntary": 1284
+        },
+        "comparison": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "speed_integer_mismatches": 0,
+          "atol": 0.001,
+          "rtol": 0,
+          "pass": true
+        },
+        "evidence": "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r1_01_golden4/report.json"
+      },
+      {
+        "run": "perf_r1_02_split1",
+        "policy": "split1",
+        "status": "\u5df2\u9a8c\u8bc1",
+        "run_total_ms": {
+          "n": 117,
+          "mean": 194.2278174444651,
+          "p50": 193.7730879872106,
+          "p95": 197.1714774146676,
+          "p99": 203.64462060621008,
+          "max": 204.71369998995215,
+          "min": 193.1757690035738
+        },
+        "cpu_wall_ratio": 0.9993650159544265,
+        "threads": 4,
+        "context_switches": {
+          "voluntary": 0,
+          "involuntary": 342
+        },
+        "comparison": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "speed_integer_mismatches": 0,
+          "atol": 0.001,
+          "rtol": 0,
+          "pass": true
+        },
+        "evidence": "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r1_02_split1/report.json"
+      },
+      {
+        "run": "perf_r1_03_split4",
+        "policy": "split4",
+        "status": "\u5df2\u9a8c\u8bc1",
+        "run_total_ms": {
+          "n": 117,
+          "mean": 409.7871987963032,
+          "p50": 404.511755972635,
+          "p95": 507.63376824324945,
+          "p99": 533.8468809705228,
+          "max": 536.6741480538622,
+          "min": 269.86101298825815
+        },
+        "cpu_wall_ratio": 3.926297771678605,
+        "threads": 31,
+        "context_switches": {
+          "voluntary": 2963,
+          "involuntary": 27481
+        },
+        "comparison": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "speed_integer_mismatches": 0,
+          "atol": 0.001,
+          "rtol": 0,
+          "pass": true
+        },
+        "evidence": "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r1_03_split4/report.json"
+      },
+      {
+        "run": "perf_r1_04_split4_off",
+        "policy": "split4_off",
+        "status": "\u5df2\u9a8c\u8bc1",
+        "run_total_ms": {
+          "n": 117,
+          "mean": 78.16008707502475,
+          "p50": 75.18127199728042,
+          "p95": 86.39103459427133,
+          "p99": 121.27417398151013,
+          "max": 124.99375501647592,
+          "min": 71.00749999517575
+        },
+        "cpu_wall_ratio": 2.697175244212429,
+        "threads": 31,
+        "context_switches": {
+          "voluntary": 14627,
+          "involuntary": 880
+        },
+        "comparison": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "speed_integer_mismatches": 0,
+          "atol": 0.001,
+          "rtol": 0,
+          "pass": true
+        },
+        "evidence": "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r1_04_split4_off/report.json"
+      },
+      {
+        "run": "perf_r1_05_mixed4_1",
+        "policy": "mixed4_1",
+        "status": "\u5df2\u9a8c\u8bc1",
+        "run_total_ms": {
+          "n": 117,
+          "mean": 235.56273901122663,
+          "p50": 237.70168499322608,
+          "p95": 284.5453295973129,
+          "p99": 316.6236801678315,
+          "max": 353.9031129912473,
+          "min": 139.05584398889914
+        },
+        "cpu_wall_ratio": 3.9142207138175804,
+        "threads": 16,
+        "context_switches": {
+          "voluntary": 1388,
+          "involuntary": 9831
+        },
+        "comparison": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "speed_integer_mismatches": 0,
+          "atol": 0.001,
+          "rtol": 0,
+          "pass": true
+        },
+        "evidence": "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r1_05_mixed4_1/report.json"
+      },
+      {
+        "run": "perf_r1_06_mixed4_1_off",
+        "policy": "mixed4_1_off",
+        "status": "\u5df2\u9a8c\u8bc1",
+        "run_total_ms": {
+          "n": 117,
+          "mean": 90.96387662660156,
+          "p50": 87.64858997892588,
+          "p95": 100.66102615091943,
+          "p99": 125.60134704224765,
+          "max": 126.07948802178726,
+          "min": 86.30361303221434
+        },
+        "cpu_wall_ratio": 2.280555926568217,
+        "threads": 16,
+        "context_switches": {
+          "voluntary": 8771,
+          "involuntary": 685
+        },
+        "comparison": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "speed_integer_mismatches": 0,
+          "atol": 0.001,
+          "rtol": 0,
+          "pass": true
+        },
+        "evidence": "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r1_06_mixed4_1_off/report.json"
+      },
+      {
+        "run": "perf_r2_01_mixed4_1_off",
+        "policy": "mixed4_1_off",
+        "status": "\u5df2\u9a8c\u8bc1",
+        "run_total_ms": {
+          "n": 117,
+          "mean": 94.94303405816213,
+          "p50": 95.03329801373184,
+          "p95": 115.03385320538654,
+          "p99": 125.13014468364418,
+          "max": 129.7890900168568,
+          "min": 86.68860205216333
+        },
+        "cpu_wall_ratio": 2.1890691791975594,
+        "threads": 16,
+        "context_switches": {
+          "voluntary": 8757,
+          "involuntary": 675
+        },
+        "comparison": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "speed_integer_mismatches": 0,
+          "atol": 0.001,
+          "rtol": 0,
+          "pass": true
+        },
+        "evidence": "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r2_01_mixed4_1_off/report.json"
+      },
+      {
+        "run": "perf_r2_02_mixed4_1",
+        "policy": "mixed4_1",
+        "status": "\u5df2\u9a8c\u8bc1",
+        "run_total_ms": {
+          "n": 117,
+          "mean": 235.43761260001563,
+          "p50": 232.87262895610183,
+          "p95": 287.97021340578794,
+          "p99": 310.8113301265985,
+          "max": 324.2338430136442,
+          "min": 158.9317779871635
+        },
+        "cpu_wall_ratio": 3.9039284913577146,
+        "threads": 16,
+        "context_switches": {
+          "voluntary": 1392,
+          "involuntary": 10040
+        },
+        "comparison": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "speed_integer_mismatches": 0,
+          "atol": 0.001,
+          "rtol": 0,
+          "pass": true
+        },
+        "evidence": "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r2_02_mixed4_1/report.json"
+      },
+      {
+        "run": "perf_r2_03_split4_off",
+        "policy": "split4_off",
+        "status": "\u5df2\u9a8c\u8bc1",
+        "run_total_ms": {
+          "n": 117,
+          "mean": 79.510416660426,
+          "p50": 77.31985300779343,
+          "p95": 91.5430185967125,
+          "p99": 114.32567764306441,
+          "max": 118.43693297123536,
+          "min": 71.49231998482719
+        },
+        "cpu_wall_ratio": 2.6692157978754443,
+        "threads": 31,
+        "context_switches": {
+          "voluntary": 14606,
+          "involuntary": 738
+        },
+        "comparison": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "speed_integer_mismatches": 0,
+          "atol": 0.001,
+          "rtol": 0,
+          "pass": true
+        },
+        "evidence": "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r2_03_split4_off/report.json"
+      },
+      {
+        "run": "perf_r2_04_split4",
+        "policy": "split4",
+        "status": "\u5df2\u9a8c\u8bc1",
+        "run_total_ms": {
+          "n": 117,
+          "mean": 410.50233335421285,
+          "p50": 411.0050449962728,
+          "p95": 481.2608511769212,
+          "p99": 524.3424804275855,
+          "max": 536.0966679872945,
+          "min": 315.9454790293239
+        },
+        "cpu_wall_ratio": 3.925942948252546,
+        "threads": 31,
+        "context_switches": {
+          "voluntary": 2973,
+          "involuntary": 27261
+        },
+        "comparison": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "speed_integer_mismatches": 0,
+          "atol": 0.001,
+          "rtol": 0,
+          "pass": true
+        },
+        "evidence": "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r2_04_split4/report.json"
+      },
+      {
+        "run": "perf_r2_05_split1",
+        "policy": "split1",
+        "status": "\u5df2\u9a8c\u8bc1",
+        "run_total_ms": {
+          "n": 117,
+          "mean": 194.2908550019607,
+          "p50": 193.80559702403843,
+          "p95": 198.69850899558514,
+          "p99": 202.58058866718784,
+          "max": 203.14243901520967,
+          "min": 193.27769801020622
+        },
+        "cpu_wall_ratio": 0.999331846478115,
+        "threads": 4,
+        "context_switches": {
+          "voluntary": 0,
+          "involuntary": 386
+        },
+        "comparison": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "speed_integer_mismatches": 0,
+          "atol": 0.001,
+          "rtol": 0,
+          "pass": true
+        },
+        "evidence": "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r2_05_split1/report.json"
+      },
+      {
+        "run": "perf_r2_06_golden4",
+        "policy": "golden4",
+        "status": "\u5df2\u9a8c\u8bc1",
+        "run_total_ms": {
+          "n": 117,
+          "mean": 68.33014247837501,
+          "p50": 64.62448998354375,
+          "p95": 91.63618823513383,
+          "p99": 134.04489521170038,
+          "max": 155.30353400390595,
+          "min": 64.23405196983367
+        },
+        "cpu_wall_ratio": 3.9094359934119676,
+        "threads": 7,
+        "context_switches": {
+          "voluntary": 0,
+          "involuntary": 1104
+        },
+        "comparison": {
+          "max_abs_error": {
+            "speed_norm": 0.0,
+            "speed_raw": 0.0,
+            "region_logits": 0.0,
+            "region_probs": 0.0
+          },
+          "speed_integer_mismatches": 0,
+          "atol": 0.001,
+          "rtol": 0,
+          "pass": true
+        },
+        "evidence": "/home/ubuntu/opt_round2_20261018/ort/run01/perf_r2_06_golden4/report.json"
+      }
+    ],
+    "limitation": "CPU-only thread/spin intervention. No causal attribution to graph fusion; profiling is separate. Compare both orders and numerical gates before adopting any policy."
+  },
+  "end_utc": "2026-10-18T04:27:55Z"
+}

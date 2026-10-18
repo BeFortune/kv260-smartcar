@@ -1,0 +1,73 @@
+{
+  "status": "\u5df2\u9a8c\u8bc1",
+  "exit_code": 0,
+  "mode": "golden",
+  "threads": 4,
+  "spinning": null,
+  "hardware_execution": false,
+  "versions": {
+    "python": "3.12.7",
+    "numpy": "1.26.4",
+    "onnxruntime": "1.20.1",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "logical_cpus": 16,
+    "runtime_sha256": "49ace8fbf61a29e2e54efc174b45477cd08fc5fe469d13547df17326b9745576",
+    "affinity": null
+  },
+  "start_utc": "2026-10-18T05:07:27Z",
+  "actual_command": [
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\tools\\runtime_spin_validate.py",
+    "--worker",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\ort\\production_hash49_smoke\\golden4\\job.json"
+  ],
+  "end_utc": "2026-10-18T05:07:28Z",
+  "n": 1,
+  "warmup": 3,
+  "wall_s": 0.006215399998836801,
+  "process_cpu_s": 0.015625,
+  "process_cpu_wall_ratio": 2.513917045230264,
+  "run_total_ms": {
+    "n": 1,
+    "mean": 6.185899999763933,
+    "p50": 6.185899999763933,
+    "p95": 6.185899999763933,
+    "p99": 6.185899999763933,
+    "max": 6.185899999763933
+  },
+  "perstage_ms": {
+    "golden": {
+      "n": 1,
+      "mean": 6.047799999578274,
+      "p50": 6.047799999578274,
+      "p95": 6.047799999578274,
+      "p99": 6.047799999578274,
+      "max": 6.047799999578274
+    },
+    "total": {
+      "n": 1,
+      "mean": 6.0517999991134275,
+      "p50": 6.0517999991134275,
+      "p95": 6.0517999991134275,
+      "p99": 6.0517999991134275,
+      "max": 6.0517999991134275
+    }
+  },
+  "samples": [
+    {
+      "index": 0,
+      "run_total_ms": 6.185899999763933,
+      "stages_ms": {
+        "golden": 6.047799999578274,
+        "total": 6.0517999991134275
+      }
+    }
+  ],
+  "outputs_sha256": "9f0b41a957c293b566089e3c66d6ba73b9e8bc491e9abee73beededd018891ae",
+  "session_config": {
+    "threads": 4,
+    "spinning": null,
+    "inter_op_threads": 1,
+    "execution_mode": "ORT_SEQUENTIAL",
+    "graph_optimization": "ORT_ENABLE_EXTENDED"
+  }
+}
