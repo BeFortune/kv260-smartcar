@@ -1,0 +1,19 @@
+{
+  "stage": "prepare",
+  "cwd": "D:\\g4",
+  "start": "2026-10-18T10:15:56.281611+00:00",
+  "end": "2026-10-18T10:15:56.372489+00:00",
+  "status": "已验证",
+  "exit_code": 0,
+  "input_sha256": "5d3b686e7bb0dc3102647a80049e6a13320b81589c3e1b5fbeb4755ec113c9e4",
+  "log": "D:\\g4\\records\\prepare.console.log",
+  "command": [
+    "C:\\Python314\\python.exe",
+    "D:\\g4s\\scripts\\run_system.py",
+    "prepare"
+  ],
+  "outputs": {
+    "ip_check.json": "66ee6c950cfaad372d7b8de0e1cf444a9dab2fa8d31fc78255fe8ce2ddf75419",
+    "manifest.json": "44bd924ca4523969bfc14325a5bc48d12efdf427e45bd5b1debe4daa8f1dfcb2"
+  }
+}

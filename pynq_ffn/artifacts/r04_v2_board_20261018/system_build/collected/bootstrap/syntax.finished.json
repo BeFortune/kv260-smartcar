@@ -1,0 +1,13 @@
+{
+  "stage": "syntax",
+  "command": [
+    "C:\\Python314\\python.exe",
+    "-m",
+    "compileall",
+    "-q",
+    "D:\\g4s\\scripts"
+  ],
+  "exit_code": 0,
+  "log": "D:\\g4s\\syntax.log",
+  "finished_unix": 1792318555.843987
+}

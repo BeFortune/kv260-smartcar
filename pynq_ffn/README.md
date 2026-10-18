@@ -1,8 +1,10 @@
 # PYNQ FFN 迁移包
 
+**最新 2026-10-18 r04 v2 已上板（数值通过，加速仍失败）：** r04 v2 独立 PS+PL 系统五阶段 exit 0，WNS +1.747 ns、WHS +0.010 ns、97862 nets 全路由 0 error、1692 项 PS CONFIG 与 r03 无差；bit/HWH/XSA `8f438a…/7254ea…/895134…` 同源。KV260 实际下载一次（`Bitstream.download(Overlay(download=False), parser)`，不写 clock），独立只读 `program_verified01` 通过且无第二次下载；真实 PL0 **99.999 MHz**。1-token 冒烟 + 36 层 case + 117 帧三模式独立进程 exit 0，四输出最大 `speed_raw` 0.0001220703125、整数 0、累计切点 1.78814e-7，517 次 START 正常完成。4 线程 `run_total` P50：golden 65.21 / split-ORT 74.87 / split-PL **170.03 ms**，比 golden 慢 **2.607 倍**、比 split-ORT 慢 2.271 倍，**PL 加速目标失败**；`offline_e2e` P50 196.49 ms，持续带校验/NPZ/fsync 3.860 Hz 不是真实控制新鲜率。正式 `hls/ffn_accel.cpp/.hpp` 仍是 r03，新核当前在板上 idle，旧 bit 保留、未回退；完整 659/660-token RTL 未执行。详见 `docs/04_验证记录.md` 第 22 节与 `artifacts/r04_v2_board_20261018/`。
+
 **2026-10-18 r03 板测：** r03 候选（16 个输出通道分组并行，FC1/FC2 实际 II=4，GELU II=1）已完成 HLS、PS+PL 系统实现与 KV260 板测。获用户单独授权后仅改 PL0 DIV10→15，板上实测从 149.9985 MHz 回到 **99.999 MHz**，复用原已加载 Overlay 重跑：36 层/117 帧数值与整数轮速全一致，**100 MHz 离线验收已验证**；但 split-PL 中位 **372.22 ms** 仍比完整 golden **64.74 ms** 慢约 **5.75 倍**，**PL 加速目标失败**，不能称达到 15 Hz。长时稳定、完整 659/660-token RTL、实时相机/串口/电机/实车仍未执行。2026-10-17 四路候选和 2026-10-15 retry04 均为历史。详见 `docs/04_验证记录.md` 第 20 节（第 19 节保留 150 MHz 首轮历史）与 `artifacts/ffn_opt_20261018/board_run02_100mhz/`。
 
-**最新 2026-10-18 第二轮（CPU 诊断已实机验证，PL 候选未上板）：** 生产 `ps/runtime.py` 增加可选 `spinning`，`None` 保持原默认、`False` 关闭 ORT 两类忙等；最终 SHA `49ace8…5576`。KV260 纯 CPU 117 帧复验 split-4 `False` 四输出零差，P50 79.63 ms，仍慢于 golden 65.30 ms；**不称 15 Hz 或 PL 收益**。独立控制实验确认多 session 线程池忙等是 split-ORT 主要可消除开销（P50 约 404.5/411.0→75.2/77.3 ms，线程数同为 31）。r04 独立候选在 `hls/candidates/interleaved_r04/v2`：主机/HLS csim/csynth/小范围 RTL/OOC 通过，csynth 静态估计 36.21 ms/660 token，OOC WNS +2.435662 ns、WHS +0.034 ns（外部 I/O delay 不完整，非全系统时序签核）；**无新 PS+PL 系统 bit/hwh/XSA、未上板、正式 r03 源码未替换**。详见 `docs/04_验证记录.md` 第 21 节。
+**上一轮 2026-10-18 第二轮（CPU 诊断已实机验证；当时 PL 候选未上板）：** 生产 `ps/runtime.py` 增加可选 `spinning`，`None` 保持原默认、`False` 关闭 ORT 两类忙等；最终 SHA `49ace8…5576`。KV260 纯 CPU 117 帧复验 split-4 `False` 四输出零差，P50 79.63 ms，仍慢于 golden 65.30 ms；**不称 15 Hz 或 PL 收益**。独立控制实验确认多 session 线程池忙等是 split-ORT 主要可消除开销（P50 约 404.5/411.0→75.2/77.3 ms，线程数同为 31）。r04 独立候选在 `hls/candidates/interleaved_r04/v2`：主机/HLS csim/csynth/小范围 RTL/OOC 通过，csynth 静态估计 36.21 ms/660 token，OOC WNS +2.435662 ns、WHS +0.034 ns（外部 I/O delay 不完整，非全系统时序签核）；该条保留系统/板测前的历史状态，最新上板结果见本节顶部与第 22 节。详见 `docs/04_验证记录.md` 第 21 节。
 
 面向现有资料中的 **KV260/K26**：原模型拆成五段 CPU ONNX 子图，四个 `128→256→128`、erf-GELU FFN 通过统一后端接口替换。Attention、LayerNorm、残差、预处理和输出头留在 PS。原工程保持不变。
 
@@ -106,14 +108,15 @@ hls/
   build_hls.tcl     传统HLS入口，须给真实FPGA_PART
   make_config.py    现代2026.1 cfg生成，已核实64位地址键；脚本/配置已验，许可阻塞为历史，当前构建见验证记录第19–21节
   host_bridge.cpp  主机验证专用；不要加入HLS综合
-  candidates/interleaved_r04/ 独立 r04 token 交错候选；v1 时序失败、v2 8 context 通过主机/HLS/OOC，但不替换本目录 r03，也不等于系统/板测
+  candidates/interleaved_r04/ 独立 r04 token 交错候选；v1 时序失败，v2 已通过主机/HLS/OOC、系统集成与 KV260 上板数值（见第 22 节），但正式源仍是本目录 r03，完整 659/660-token RTL 未执行
 ```
 
 `hls/build/*.exe/*.dll` 是 Windows 主机测试产物，不是 FPGA bitstream，也不能复制到 ARM 当板端程序执行。普通运行时不加载这些文件。
 
 ## 当前关键限制（按日期；旧条目标为历史）
 
-- **2026-10-18 第二轮（最新；CPU 已实机验证，PL 候选未上板）**：生产 Runtime 新增 `spinning` 可选参数；`None` 不写配置、保持旧默认，`False` 关闭两类 ORT 空转，`True` 显式开启，只接受 `None`/布尔。KV260 纯 CPU 117 帧复验 golden `None` vs split `False` 四输出零差、整数零分歧，P50 65.2979/79.6322 ms；未超过 golden，不称 15 Hz 或 PL 收益。r04 v2 候选主机/HLS/csynth/小范围 RTL/OOC 通过，静态估计 36.21 ms/660 token、OOC WNS +2.435662 ns/WHS +0.034 ns（routed 资源 LUT 51146/FF 46657/DSP 333/BRAM 18K等效131=65.5个36K tiles；外部 I/O delay 不完整，非系统时序签核），但**无新系统 bit/hwh/XSA、未上板、未替换 r03**；OOC 不是系统 Overlay，也不能把静态估计当板速。
+- **2026-10-18 r04 v2 已上板（最新；数值通过 / 加速失败）**：独立 PS+PL 系统五阶段 exit 0，WNS +1.747 ns、WHS +0.010 ns、97862 nets 全路由 0 error、1692 项 PS CONFIG 与 r03 无差；bit/HWH/XSA `8f438a…/7254ea…/895134…` 同源。KV260 一次实际下载（绕开 `Overlay.download()` 时钟 setter，未写 clock），独立只读 `program_verified01` 通过且无第二次下载；真实 PL0 99.999 MHz，5 PLL/四路 PL/ACPU raw 不变。1-token + 36 层 + 117 帧三模式 exit 0，`speed_raw` 最大 0.0001220703125、整数 0、累计切点 1.78814e-7，517 次 START 正常完成。4 线程 `run_total` P50 为 golden 65.21 / split-ORT 74.87 / split-PL **170.03 ms**，PS+PL 慢 golden 2.607 倍，**加速目标失败**；持续 3.860 Hz 含校验/NPZ/fsync，不是真实控制新鲜率。正式源仍 r03，新核当前板上 idle，旧 bit 保留、未回退；完整 659/660-token RTL 未执行。
+- **2026-10-18 第二轮（历史；当时 CPU 已实机验证，PL 候选未上板）**：生产 Runtime 新增 `spinning` 可选参数；`None` 不写配置、保持旧默认，`False` 关闭两类 ORT 空转，`True` 显式开启，只接受 `None`/布尔。KV260 纯 CPU 117 帧复验 golden `None` vs split `False` 四输出零差、整数零分歧，P50 65.2979/79.6322 ms；未超过 golden，不称 15 Hz 或 PL 收益。r04 v2 候选主机/HLS/csynth/小范围 RTL/OOC 通过，静态估计 36.21 ms/660 token、OOC WNS +2.435662 ns/WHS +0.034 ns（routed 资源 LUT 51146/FF 46657/DSP 333/BRAM 18K等效131=65.5个36K tiles；外部 I/O delay 不完整，非系统时序签核）。该条保留系统/板测前状态；最新结果见上一条与第 22 节。
 - **2026-10-18 100 MHz 离线验收（r03 板测，已验证数值 / 加速失败）**：仅在授权下写 PL0 divisor0=15，raw `0x1010a00→0x1010f00`，`149.9985→99.999 MHz`；5 个 PLL 与其余 3 路 PL 原始值不变，CPU 时钟结束只读仍相同。复用原已加载 Overlay（0 次新下载），构造前校验 state/timestamp/bit-hwh SHA。36 层最大误差 7.45058e-8；117 帧四输出最大 `speed_raw` 0.0001220703125、累积层最大 1.78814e-7、整数轮速全一致；1464 次 kernel start，exit 0/normal close，无 timeout。100 MHz 正式计时 n=117、warmup 3：4 线程 golden 中位 64.7386 ms、split-ort 318.3409 ms、split-PL 372.2187 ms，后者慢约 5.75 倍；1 线程分别为 189.438/193.083/411.313 ms。这是 117 帧离线录像测量，不是长稳、实时或完整 RTL；不能称加速或 15 Hz。
 - **2026-10-18 时钟修正前的 150 MHz 首轮（历史）**：当时板上实读 `Clocks.fclk0_mhz=149.9985`，与 10 ns/100 MHz 签核不一致；该轮 split-PL 中位 301.1576 ms、慢约 4.59 倍，只作历史，不用于正式验收。详见 `docs/04_验证记录.md` 第 19 节。
 - **历史 2026-10-15 旧核板端 bring-up 已完成**——retry04 overlay 在真实 KV260（PYNQ 3.0.1）加载成功，四层真权重数值及 117 帧录像回归通过。**仅证明当时 retry04 串行核**，不包含 2026-10-17 四路源码候选或 2026-10-18 r03；其 bit/hwh 与当前候选不匹配，不可用于候选验收。历史数据和边界见 `docs/04_验证记录.md` 第 17 节及 `artifacts/board_20261015/`。

@@ -1,0 +1,32 @@
+{
+  "status": "已验证",
+  "date_utc": "2026-10-18T10:14:04.368342+00:00",
+  "scope": "Non-privileged preflight only; no PYNQ import/MMIO/clock/overlay/kernel/camera/serial",
+  "hostname": "kria",
+  "platform": "Linux-5.15.0-1027-xilinx-zynqmp-aarch64-with-glibc2.35",
+  "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+  "executable": "/usr/local/share/pynq-venv/bin/python3",
+  "packages": {
+    "pynq": "3.0.1",
+    "numpy": "1.26.4",
+    "onnxruntime": "1.20.1",
+    "opencv-python": "4.11.0.86",
+    "opencv-python-headless": null
+  },
+  "bundle_manifest_exists": true,
+  "bundle_manifest_sha256": "de727e32df9f1ebd0fe84bac0d33cc8e786a5962053dc746b955b175527f4b77",
+  "recording_exists": true,
+  "disk_free_bytes": 106698985472,
+  "memory": [
+    "MemAvailable:    3266804 kB",
+    "CmaTotal:         262144 kB",
+    "CmaFree:           21312 kB"
+  ],
+  "relevant_processes": [],
+  "sysfs": {
+    "/sys/class/fpga_manager/fpga0/state": "operating",
+    "/sys/class/fpga_manager/fpga0/name": "Xilinx ZynqMP FPGA Manager",
+    "/sys/class/thermal/thermal_zone0/temp": "FileNotFoundError"
+  },
+  "self_sha256": "3a273ab6e332ff75caccf36529919cff66c8b15004147b722c5af351813dae15"
+}

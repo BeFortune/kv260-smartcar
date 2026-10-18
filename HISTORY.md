@@ -8,7 +8,8 @@
 | 02 | 2026-10-15 | retry04 串行核：HLS、Vivado 系统实现、KV260 板端 bring-up | 已在仓库 | `pynq_ffn/artifacts/{hls,vivado,board}_20261015/`（commit `63605e8e`） |
 | 03 | 2026-10-17 | 首轮四路输出通道候选（r01 → r02 主机修正） | 已归档 | `pynq_ffn/artifacts/ffn_opt_20261017/`、`pynq_ffn/tools/validate_cpp_parallel.py` |
 | 04 | 2026-10-18 | r03 16 通道候选：系统构建、100 MHz 板测、加速目标失败 | 已归档 | `pynq_ffn/artifacts/ffn_opt_20261018/`、`pynq_ffn/hls/ffn_accel.cpp/.hpp` |
-| 05 | 2026-10-18 | 第二轮：ORT 空转诊断 + r04 token 交错候选 | 本次归档 | `pynq_ffn/artifacts/opt_round2_20261018/`、`pynq_ffn/hls/candidates/interleaved_r04/` |
+| 05 | 2026-10-18 | 第二轮：ORT 空转诊断 + r04 token 交错候选 | 已归档 | `pynq_ffn/artifacts/opt_round2_20261018/`、`pynq_ffn/hls/candidates/interleaved_r04/` |
+| 06 | 2026-10-18 | r04 v2 系统集成与 KV260 上板：数值通过、加速目标仍失败 | 本次归档 | `pynq_ffn/artifacts/r04_v2_board_20261018/` |
 
 ## 03（2026-10-17 四路输出候选）边界
 
@@ -37,3 +38,13 @@
 - **未执行**：r04 v2 系统 bit/hwh、Overlay 下载/上板、完整 659/660-token RTL、长时稳定性/功耗/温度、实时链路/实车。OOC 不是系统 Overlay，36.21 ms 不是板测成绩。
 - 勘误：csynth XML 的 `AreaEstimates/AvailableResources` 是器件容量，不是核用量；v2 核用量以 csynth.rpt 为准（BRAM_18K 142、DSP 333、FF 64,719、LUT 58,866；XML Resources LUT 58,860，差 6 未解释）。OOC routed 资源 LUT 51,146、FF 46,657、DSP 333、BRAM 131 个 18K 等效块（65.5 个 36K tiles）；127 输入/280 输出缺外部 I/O delay 约束（TIMING-18 427 条），不是系统接口时序签核。详见 `pynq_ffn/artifacts/opt_round2_20261018/closure_notes.md`。
 - 归档说明：Windows 主机 `.exe/.dll` 与 `__pycache__` 未提交；ORT 证据、HLS/RTL/OOC 报告与候选源码保留。证据入口 `pynq_ffn/artifacts/opt_round2_20261018/README.md`。
+
+## 06（2026-10-18 r04 v2 系统集成与 KV260 上板）边界
+
+- 系统集成：独立 PS+PL 五阶段 exit 0；WNS **+1.747 ns**、WHS **+0.010 ns**、TNS/THS 0；**97,862 nets 全路由、0 error**；同次 bit/HWH/XSA 已核对。
+- 上板：实际 99.999 MHz；下载一次后独立只读复核无第二次下载；1-token 冒烟、36 层 case、117 帧三模式全部 exit 0；**517 次 START**，结束时 CTRL=4，无 timeout。
+- 数值：单层最大误差 **1.04308128e-7**；四输出最大 `speed_raw` **0.0001220703125**，整数轮速 0 分歧。
+- 性能（117 帧、warmup 3、4 线程）：golden **65.210875 ms**、split-ORT **74.866631 ms**、split-PL **170.030144 ms**；PL 比 golden 慢 **2.607 倍**、比 split-ORT 慢 **2.271 倍**。**加速目标失败，未达到 15 Hz。**
+- 口径：跨轮不能做纯内核 A/B（r03 372.22 ms 与本轮 170.03 ms 之间还有 ORT/流程变化）；csynth 36.2 ms 不能当作板上 camera wait 40.93 ms 的解释；PL wait 含软件轮询边界。
+- 未执行：完整 659/660-token RTL、长时稳定性/功耗/温度、实时三摄/串口/电机/实车。
+- 归档说明：`board_evidence01.zip`（385 份证据 + manifest，SHA `f0ef8ff4…48e9`）因单文件超过 GitHub API 推送上限未提交；其 386 个成员已逐文件解包在 `collected_board01/`，可按 manifest 逐文件复核。Windows 主机 `.exe/.dll`、`.pyc`、`__pycache__` 未提交。

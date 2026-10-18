@@ -1,8 +1,10 @@
 # 独立交付包说明
 
+**最新 2026-10-18 r04 v2 系统与 KV260 上板（证据不在本 ZIP）：** r04 v2 独立 PS+PL 系统五阶段 exit 0，WNS +1.747 ns、WHS +0.010 ns、97862 nets 全路由 0 error、1692 项 PS CONFIG 与 r03 无差；bit/HWH/XSA `8f438a…/7254ea…/895134…` 同源。KV260 实际下载一次（`Bitstream.download(Overlay(download=False), parser)`，不写 clock），独立只读 `program_verified01` 通过且无第二次下载；真实 PL0 99.999 MHz。1-token + 36 层 + 117 帧三模式 exit 0，`speed_raw` 最大 0.0001220703125、整数 0、累计切点 1.78814e-7，517 次 START 正常完成；4 线程 `run_total` P50 为 golden 65.21 / split-ORT 74.87 / split-PL **170.03 ms**，PS+PL 慢 golden **2.607 倍**，**加速目标失败**。正式 `hls/ffn_accel.cpp/.hpp` 仍是 r03，新核当前板上 idle，旧 bit 保留、未回退；完整 659/660-token RTL 未执行。**本次系统工件、板上证据与 `board_evidence01.zip`（385 文件）均在 `artifacts/r04_v2_board_20261018/`，没有重新打包进已有交付 ZIP；不能声称本 ZIP 已包含这些新物，是否纳入提交包以新的 `DELIVERY_MANIFEST.json` 为准。** 详见 `docs/04_验证记录.md` 第 22 节。
+
 **2026-10-18 r03 板测：** r03 候选已完成 HLS、PS+PL 系统实现与 KV260 板测。获用户单独授权后仅改 PL0 DIV10→15，板上实测 `149.9985→99.999 MHz`，复用原已加载 Overlay 重跑：36 层/117 帧数值、整数轮速与首轮一致，**100 MHz 离线验收已验证**；但 split-PL 中位 372.22 ms 仍比完整 golden 64.74 ms 慢约 5.75 倍，**加速目标失败**。长时稳定、完整 RTL、实时链路未执行。r03 证据见 `docs/04_验证记录.md` 第 20 节与 `artifacts/ffn_opt_20261018/board_run02_100mhz/`；本 ZIP 是否包含这些新工件仍以 `DELIVERY_MANIFEST.json` 为准，不能据本节推断包内已有 bit/hwh。下方“不是已上板运行的 overlay”“未完成”等表述是 2026-10-14–17 的历史交付快照，不再代表当前硬件状态。
 
-**最新 2026-10-18 第二轮（CPU 诊断已实机验证，PL 候选未进正式交付）：** 生产 Runtime 新增可选 `spinning`（`None` 保持旧默认、`False` 关闭 ORT 两类忙等），最终 SHA `49ace8…5576`；KV260 纯 CPU 117 帧复验四输出零差，但 split-4 P50 79.63 ms 仍慢于 golden 65.30 ms，不称 15 Hz 或 PL 收益。r04 v2 独立候选通过主机、HLS csim/csynth、小范围 RTL 和同源 OOC 实现，静态估计 36.21 ms/660 token、OOC WNS +2.435662 ns/WHS +0.034 ns，但**没有新 PS+PL 系统 bit/hwh/XSA、未上板、未替换 r03**。本 ZIP 是否包含这些新文件仍以 `DELIVERY_MANIFEST.json` 为准；OOC IP 不是 PYNQ overlay。详见 `docs/04_验证记录.md` 第 21 节。
+**上一轮 2026-10-18 第二轮（CPU 诊断已实机验证；当时 PL 候选未进正式交付）：** 生产 Runtime 新增可选 `spinning`（`None` 保持旧默认、`False` 关闭 ORT 两类忙等），最终 SHA `49ace8…5576`；KV260 纯 CPU 117 帧复验四输出零差，但 split-4 P50 79.63 ms 仍慢于 golden 65.30 ms，不称 15 Hz 或 PL 收益。r04 v2 独立候选通过主机、HLS csim/csynth、小范围 RTL 和同源 OOC 实现，静态估计 36.21 ms/660 token、OOC WNS +2.435662 ns/WHS +0.034 ns；该条保留系统/板测前状态，最新上板结果见顶部。本 ZIP 是否包含这些新文件仍以 `DELIVERY_MANIFEST.json` 为准；OOC IP 不是 PYNQ overlay。详见 `docs/04_验证记录.md` 第 21 节。
 
 本包最初（2026-10-14）是 `pynq_ffn` 的离线 PS 迁移、FFN 接口/HLS 参考实现和操作文档交付，**当时不是已上板运行的 FPGA overlay**。
 
@@ -50,13 +52,21 @@ ZIP 内额外提供 `DELIVERY_MANIFEST.json`，逐文件记录大小与 SHA-256�
 - **未执行**：659/660-token 完整 RTL cosim、长时稳定性/功耗/温度、实时相机/串口/电机/实车任务。
 - **证据**：`artifacts/ffn_opt_20261018/board_run02_100mhz/`（`validation_run02_100mhz/report.json`、`events.jsonl`、`board_run02_100mhz_summary.json`）与 `docs/04_验证记录.md` 第 20 节；第 19 节保留 150 MHz 首轮历史。
 
-### 第二轮（2026-10-18；CPU 已实机验证，PL 候选未上板）
+### 第二轮（2026-10-18；CPU 已实机验证，PL 候选未上板——系统/板测前历史）
 
 - **已验证（CPU）**：`tools/ort_thread_study.py` 六条件正反序各 117 帧、warmup 3、独立进程；split-4 空转 ON P50 `404.512/411.005 ms`，OFF `75.181/77.320 ms`，线程数同为 31；mixed 4+1 ON `237.702/232.873 ms`，OFF `87.649/95.033 ms`（16 线程）；golden 4 `64.793/64.624 ms`。输出过 `1e-3`/整数门槛，但 split-1 与 golden-4 非逐位，不能写所有策略彼此逐位一致。
 - **已验证（生产接口）**：`Runtime(..., *, spinning: bool | None = None)`；`None` 不写配置，`False` 写两项 `allow_spinning=0`，`True` 写 1；`Runtime.run`、模型/manifest/精度/预处理/调度未变。Runtime SHA `49ace8fbf61a29e2e54efc174b45477cd08fc5fe469d13547df17326b9745576`。KV260 纯 CPU 复验 golden `None` vs split `False` 四输出 0 差、整数 0 分歧，P50 `65.2979/79.6322 ms`；不称超过 golden。
 - **已验证（测试）**：`final_software_tests.xml` 97 项 = 92 通过、5 跳过；5 项是当前树对旧冻结 adapter/CLI 的显式 skip，不是动态哈希自动跳过。旧冻结 ZIP 在旧源码根 27 项通过；原 48 项独立通过，新 Runtime policy 21 项通过。
-- **已验证（r04 v2 候选，主机/HLS/OOC）**：独立路径 `hls/candidates/interleaved_r04/v2/`；v1 4 context/slack -3.70 ns 失败；v2 8 context/fadd6/fmul3/真实 RAW distance 8，主机 30 项、两套 19 组合成/173 帧逐位零差、HLS C 30 项、小范围 RTL 10 事务/30 token 通过；csynth 静态估计 36.2066 ms/660 token，OOC WNS +2.435662 ns、WHS +0.034 ns、TNS/THS 0、未路由 0、post-route CP 7.564 ns；routed 资源 LUT 51146/FF 46657/DSP 333、BRAM 18K 等效 131（64 RAMB36+3 RAMB18=65.5 个 36K tiles）。OOC 外部 I/O delay 不完整（127 输入/280 输出缺约束，TIMING-18 427），**不是全系统接口时序签核**；也**不是系统 bit/hwh/XSA，未上板，完整 659/660-token RTL 未执行。**
-- **未进本 ZIP**：正式 `hls/ffn_accel.cpp/.hpp` 仍是 r03；新候选与 OOC 工件在 `hls/candidates/` 和 `artifacts/opt_round2_20261018/`，是否打包以 manifest 为准。继续上板需单独授权。
+- **已验证（r04 v2 候选，主机/HLS/OOC）**：独立路径 `hls/candidates/interleaved_r04/v2/`；v1 4 context/slack -3.70 ns 失败；v2 8 context/fadd6/fmul3/真实 RAW distance 8，主机 30 项、两套 19 组合成/173 帧逐位零差、HLS C 30 项、小范围 RTL 10 事务/30 token 通过；csynth 静态估计 36.2066 ms/660 token，OOC WNS +2.435662 ns、WHS +0.034 ns、TNS/THS 0、未路由 0、post-route CP 7.564 ns；routed 资源 LUT 51146/FF 46657/DSP 333、BRAM 18K 等效 131（64 RAMB36+3 RAMB18=65.5 个 36K tiles）。OOC 外部 I/O delay 不完整（127 输入/280 输出缺约束，TIMING-18 427），**不是全系统接口时序签核**；**该条保留系统/板测前状态，最新上板见下节。**
+- **未进本 ZIP**：正式 `hls/ffn_accel.cpp/.hpp` 仍是 r03；新候选与 OOC 工件在 `hls/candidates/` 和 `artifacts/opt_round2_20261018/`，是否打包以 manifest 为准。
+
+### r04 v2 系统与 KV260 上板（2026-10-18；已验证数值 / 加速失败；未同步进已有交付 ZIP）
+
+- **已验证（系统）**：独立 PS+PL 系统五阶段 exit 0；WNS +1.747 ns、WHS +0.010 ns、TNS/THS 0；97862 nets 全路由、0 error；1692 项 PS CONFIG 与 r03 无差；bit/HWH/XSA `8f438a…/7254ea…/895134…` 同源。
+- **已验证（上板）**：一次实际下载（绕开 `Overlay.download()` 时钟 setter，未写 clock）；`program_verified01` 独立只读复核通过且无第二次下载，真实 PL0 99.999 MHz；1-token + 36 层 + 117 帧三模式 exit 0，四输出/整数/累计切点通过，517 次 START 正常完成，cleanup 先 CTRL=4 再 close，无 timeout。
+- **失败（性能）**：4 线程 `run_total` P50 golden 65.21 / split-ORT 74.87 / split-PL **170.03 ms**；PS+PL 比 golden 慢 **2.607 倍**、比 split-ORT 慢 **2.271 倍**。`offline_e2e` P50 196.49 ms；持续 3.860 Hz 含校验/NPZ/fsync，不是真实控制新鲜率。
+- **未同步进本 ZIP**：本次系统工件、板上证据与 `board_evidence01.zip`（385 文件，SHA `f0ef8ff4…348e9`）均在 `artifacts/r04_v2_board_20261018/`，**没有重新打包进已有交付 ZIP**；不能声称本 ZIP 已含新 bit/hwh/XSA 或板测结果，是否纳入提交包以新的 `DELIVERY_MANIFEST.json` 为准。
+- **当前状态**：正式 `hls/ffn_accel.cpp/.hpp` 仍是 r03；新核当前板上 idle，旧 bit 保留、未执行回退；完整 659/660-token RTL、长时稳定、实时链路均未执行。详见 `docs/04_验证记录.md` 第 22 节。
 
 本 ZIP 描述的"未完成"清单已于当日之后大幅推进，请以 `docs/04_验证记录.md` 第 15–17 节与 `artifacts/` 新增目录为准：
 

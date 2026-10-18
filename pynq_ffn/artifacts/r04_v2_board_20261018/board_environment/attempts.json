@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-18",
+  "scope": "Non-privileged preflight and read-only privileged inspection; no overlay programming or kernel start",
+  "terminal_startup": {
+    "old_windows_session": "c9e7b065-6649-46a0-b556-8497de4f9310",
+    "first_build_job": "job_mvdo3tvr_bb4d80c3fc89",
+    "status": "失败",
+    "exit_code": -1,
+    "first_error": "Background job startup timed out — start marker never arrived",
+    "evidence": "Agent checked bootstrap markers/log absent before using a fresh same-host session; no Vivado launch in first attempt",
+    "resolution": "New same 4090内网 session e6dc9fb9-c6e3-4ed1-8475-c8a9a8eec6e0; python version exit0; job_mvdo6uam_196077ac38b8 reached real prepare/BD/synthesis",
+    "old_session_or_host_restarted": false
+  },
+  "inspection_attempts": [
+    {
+      "status": "失败",
+      "exit_code": 1,
+      "environment": "sudo python -I -B without XILINX_XRT",
+      "first_error": "RuntimeError: No Devices Found",
+      "cause_evidence": "Installed pynq/_3rdparty/xrt.py only sets XRT_SUPPORTED when XILINX_XRT exists; /usr/lib/libxrt_core.so exists",
+      "hardware_programmed": false
+    },
+    {
+      "status": "失败",
+      "exit_code": 1,
+      "environment": "sudo env -u XCL_EMULATION_MODE XILINX_XRT=/usr python -I -B, no venv PATH",
+      "first_error": "FileNotFoundError: /tmp/tmpfb7kdkpu/t.xclbin",
+      "cause_evidence": "Device discovery succeeded; metadata/xclbin generation could not produce output with this PATH. Same operation passed after restoring historical explicit venv/bin PATH",
+      "hardware_programmed": false
+    },
+    {
+      "status": "已验证",
+      "exit_code": 0,
+      "environment": {
+        "XILINX_XRT": "/usr",
+        "PATH": "/usr/local/share/pynq-venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "PYTHONUNBUFFERED": "1",
+        "XCL_EMULATION_MODE": "unset",
+        "python": "/usr/local/share/pynq-venv/bin/python3 -I -B"
+      },
+      "output": "current_pl01.json",
+      "ctrl": 4,
+      "actual_fclk0_mhz": 99.999,
+      "cpu_mhz": 1333.32,
+      "hardware_programmed": false,
+      "kernel_starts": 0
+    }
+  ],
+  "offline_audit_correction": {
+    "first_exit_code": 1,
+    "first_error": "AssertionError: overly broad .write call predicate included the evidence stream.write",
+    "corrected_exit_code": 0,
+    "finding": "Syntax valid; no download, clock setter, allocate or MMIO write calls; regular evidence-file writes are intended"
+  },
+  "security_hook_note": "SHA1 comparison exists only because PYNQ persisted runtime bookkeeping uses SHA1. Pinned SHA256 bit/HWH checks are the integrity gate; replacing the persisted SHA1 comparison with SHA256 would break protocol compatibility, not strengthen the already SHA256-pinned gate. No change to installed PYNQ or its state schema."
+}

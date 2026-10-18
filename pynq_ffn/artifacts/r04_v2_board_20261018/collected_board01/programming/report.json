@@ -1,0 +1,204 @@
+{
+  "schema": "ffn_board.validation.v1",
+  "date_utc": "2026-10-18T10:57:45.653116+00:00",
+  "status": "已验证",
+  "phases": {
+    "static": {
+      "status": "未执行"
+    },
+    "authorization": {
+      "status": "未执行"
+    },
+    "inputs": {
+      "status": "未执行"
+    },
+    "hardware": {
+      "status": "未执行"
+    },
+    "references": {
+      "status": "未执行"
+    },
+    "layers": {
+      "status": "未执行"
+    },
+    "regression": {
+      "status": "未执行"
+    },
+    "performance": {
+      "status": "未执行"
+    }
+  },
+  "dependencies": {
+    "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+    "executable": "/usr/local/share/pynq-venv/bin/python3",
+    "platform": "Linux-5.15.0-1027-xilinx-zynqmp-aarch64-with-glibc2.35",
+    "machine": "aarch64",
+    "packages": {
+      "numpy": "1.26.4",
+      "onnxruntime": "1.20.1",
+      "pynq": "3.0.1",
+      "opencv-python": "4.11.0.86",
+      "opencv-python-headless": null
+    },
+    "memory": {
+      "MemAvailable": "3274552 kB",
+      "CmaTotal": "262144 kB",
+      "CmaFree": "28636 kB"
+    }
+  },
+  "arguments": {
+    "root": "/home/ubuntu/r04_v2_board_20261018/run_inputs/deploy",
+    "deployment_manifest": "/home/ubuntu/r04_v2_board_20261018/deployment_manifest.json",
+    "manifest_sha256": "091ef56ae0a60ba3451b2027c1b30ff73dc784a8ab8e7f8833a076c1890ba2c1",
+    "bit": "overlay/r04_v2_20261018.bit",
+    "bit_sha256": "8f438a07fa7cfa2f2db9e276f904388df7a06476cc090d55758ceb231dd34ab7",
+    "hwh_sha256": "7254ea3c456098518917e89b836414592b34ffe3e7a24aec2d7ba772713cec85",
+    "system_acceptance": "/home/ubuntu/r04_v2_board_20261018/run_inputs/system_acceptance/system_acceptance.json",
+    "acceptance_sha256": "fd3a55f428d7e64ccf63e3aa79c9b76f4125bb01fc5f077e24660e6a4579bed9",
+    "old_inspection": "/home/ubuntu/r04_v2_board_20261018/board_environment/current_pl01.json",
+    "old_inspection_sha256": "7eecbcfa3f1f4227ee3fd0a09ea49bee1acfbbe5d1e8bd97d5954c3f0b2a7033",
+    "program_script": "/home/ubuntu/r04_v2_board_20261018/run_inputs/board_environment/program_overlay.py",
+    "validation_script": "/home/ubuntu/r04_v2_board_20261018/run_inputs/board_validation/board_validate.py",
+    "recording": "/home/ubuntu/ffn_migrate/data/1778852165",
+    "output_dirs": {
+      "static": "/home/ubuntu/r04_v2_board_20261018/static01",
+      "program": "/home/ubuntu/r04_v2_board_20261018/program01",
+      "validate": "/home/ubuntu/r04_v2_board_20261018/board_run01"
+    },
+    "launch_files": {
+      "/home/ubuntu/r04_v2_board_20261018/run_inputs/board_environment/program_overlay.py": "361b94c05695c92b079ea2bd2106c3a7721d9e985b8b9faaee5b6eb4376f077d",
+      "/home/ubuntu/r04_v2_board_20261018/run_inputs/board_validation/board_validate.py": "d3b98a0a0d1dc7ff1d99b667400a48787991a9c6ad83dfa9d896cbc9b37f408f",
+      "/home/ubuntu/r04_v2_board_20261018/run_inputs/board_validation/safety_gates.py": "481504abe7932e8653b622b9ed139a13e0eb4f094927ac987df5740143b5d6d6",
+      "/home/ubuntu/r04_v2_board_20261018/board_environment/current_pl01.json": "7eecbcfa3f1f4227ee3fd0a09ea49bee1acfbbe5d1e8bd97d5954c3f0b2a7033"
+    },
+    "ip_name": "ffn_accel_0",
+    "expected_clock_mhz": 100.0,
+    "clock_tolerance_percent": 0.5
+  },
+  "validator_script_sha256": "481504abe7932e8653b622b9ed139a13e0eb4f094927ac987df5740143b5d6d6",
+  "hardware_execution": false,
+  "hardware_programmed": true,
+  "compute_executed": false,
+  "not_executed": [
+    "camera",
+    "serial",
+    "vehicle",
+    "live_frame_freshness",
+    "overlay_reset_or_timeout_recovery",
+    "task_accuracy"
+  ],
+  "scope": "Read-only verification of already programmed image after known cache ResourceWarning; no additional download/start",
+  "reused_overlay_identity": {
+    "global_state_path": "/usr/local/share/pynq-venv/lib/python3.10/site-packages/pynq/pl_server/global_pl_state.json",
+    "global_state_raw": "{\"bitfile_name\": \"/home/ubuntu/r04_v2_board_20261018/run_inputs/deploy/overlay/r04_v2_20261018.bit\", \"active_name\": \"KV260\", \"timestamp\": \"2026/10/18 10:55:5 +236754\", \"bitfile_hash\": \"b8217fe63bb4ae1d7f6694bf3b78cbd9aa2bbb73\", \"shutdown_ips\": {}, \"psddr\": {\"raw_type\": 1, \"used\": 1, \"base_address\": 0, \"size\": 268435456, \"type\": \"DDR4\", \"streaming\": false, \"idx\": 0, \"tag\": \"PSDDR\"}}",
+    "global_state_file_sha256": "005ec037eed4c8a0f18b1215d252d18016212295b16d38251193a2b62184dac2",
+    "global_state": {
+      "bitfile_name": "/home/ubuntu/r04_v2_board_20261018/run_inputs/deploy/overlay/r04_v2_20261018.bit",
+      "active_name": "KV260",
+      "timestamp": "2026/10/18 10:55:5 +236754",
+      "bitfile_hash": "b8217fe63bb4ae1d7f6694bf3b78cbd9aa2bbb73",
+      "shutdown_ips": {},
+      "psddr": {
+        "raw_type": 1,
+        "used": 1,
+        "base_address": 0,
+        "size": 268435456,
+        "type": "DDR4",
+        "streaming": false,
+        "idx": 0,
+        "tag": "PSDDR"
+      }
+    },
+    "authority": "runtime bookkeeping and host files only; NOT FPGA configuration readback",
+    "pl_bitfile_name": "/home/ubuntu/r04_v2_board_20261018/run_inputs/deploy/overlay/r04_v2_20261018.bit",
+    "pl_timestamp": "2026/10/18 10:55:5 +236754",
+    "identity": {
+      "runtime_bitfile_name": "/home/ubuntu/r04_v2_board_20261018/run_inputs/deploy/overlay/r04_v2_20261018.bit",
+      "resolved_path": "/home/ubuntu/r04_v2_board_20261018/run_inputs/deploy/overlay/r04_v2_20261018.bit",
+      "file_sha256": "8f438a07fa7cfa2f2db9e276f904388df7a06476cc090d55758ceb231dd34ab7",
+      "authority": "runtime-reported host file SHA256 only; NOT FPGA configuration readback/equivalence"
+    },
+    "loaded_hwh_sha256": "7254ea3c456098518917e89b836414592b34ffe3e7a24aec2d7ba772713cec85",
+    "loaded_file_sha1": "b8217fe63bb4ae1d7f6694bf3b78cbd9aa2bbb73",
+    "verification": "host file SHA256 agrees with externally pinned deployment manifest; no PL readback"
+  },
+  "overlay_programmed": false,
+  "reused_programmed_overlay": true,
+  "overlay_loads": 0,
+  "clock_checks": [
+    {
+      "checkpoint": "independent_post_program",
+      "date_utc": "2026-10-18T10:57:51.420306+00:00",
+      "actual_clock_mhz": 99.999,
+      "actual_clock_raw": "99.999",
+      "getter_error": null,
+      "expected_clock_mhz": 100.0,
+      "clock_tolerance_percent": 0.5,
+      "initial_validated_clock_mhz": 99.999,
+      "raw_state": {
+        "ctrl": "0x4",
+        "actual_fclk0_getter_repr": "99.999"
+      },
+      "hardware_programmed": false,
+      "reused_programmed_overlay": true,
+      "compute_executed": false,
+      "kernel_starts_observed": 0,
+      "source": "actual pynq.Clocks.fclk0_mhz getter; no automatic clock writes",
+      "status": "已验证"
+    }
+  ],
+  "kernel_starts_observed": 0,
+  "programmed_by_this_verifier": false,
+  "kernel_starts": 0,
+  "new_bit_sha256": "8f438a07fa7cfa2f2db9e276f904388df7a06476cc090d55758ceb231dd34ab7",
+  "new_hwh_sha256": "7254ea3c456098518917e89b836414592b34ffe3e7a24aec2d7ba772713cec85",
+  "before_snapshot": {
+    "ctrl": 4,
+    "pl_raw": [
+      16846592,
+      16846592,
+      16846592,
+      16846592
+    ],
+    "pll_raw": {
+      "IOPLL_CTRL": 88576,
+      "RPLL_CTRL": 82176,
+      "APLL_CTRL": 86016,
+      "DPLL_CTRL": 81920,
+      "VPLL_CTRL": 77321
+    },
+    "cpu_raw": {
+      "ACPU_CTRL": 50331904
+    },
+    "cpu_mhz": 1333.32,
+    "fclk0_mhz": 99.999
+  },
+  "after_snapshot": {
+    "ctrl": 4,
+    "pl_raw": [
+      16846592,
+      16846592,
+      16846592,
+      16846592
+    ],
+    "pll_raw": {
+      "IOPLL_CTRL": 88576,
+      "RPLL_CTRL": 82176,
+      "APLL_CTRL": 86016,
+      "DPLL_CTRL": 81920,
+      "VPLL_CTRL": 77321
+    },
+    "fclk0_mhz": 99.999,
+    "source_mhz": 1499.985,
+    "cpu_raw": {
+      "ACPU_CTRL": 50331904
+    },
+    "cpu_mhz": 1333.32
+  },
+  "original_program_record_sha256": "96616b8d28dc3541ac3a5ef51fc374e3692fa58109ef22be1529d5cf860e0e26",
+  "original_program_status": "失败",
+  "original_warning": "unclosed file <_io.BufferedWriter name='/usr/local/share/pynq-venv/lib/python3.10/site-packages/pynq/pl_server/_current_metadata.pkl'>",
+  "warning_source": "Installed gen_cache pickle.dump(parser, open(...)) has no explicit close; source captured separately",
+  "rollback_executed": false,
+  "finished_utc": "2026-10-18T10:57:51.440999+00:00"
+}

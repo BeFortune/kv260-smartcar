@@ -1,0 +1,14 @@
+{
+  "stage": "build",
+  "command": [
+    "C:\\Python314\\python.exe",
+    "-u",
+    "D:\\g4s\\scripts\\run_system.py",
+    "all",
+    "--root",
+    "D:\\g4"
+  ],
+  "exit_code": 0,
+  "log": "D:\\g4s\\build.log",
+  "finished_unix": 1792320443.3313663
+}

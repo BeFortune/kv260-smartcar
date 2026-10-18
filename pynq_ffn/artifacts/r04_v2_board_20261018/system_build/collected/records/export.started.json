@@ -1,0 +1,11 @@
+{
+  "stage": "export",
+  "cwd": "D:\\g4",
+  "start": "2026-10-18T10:41:54.537768+00:00",
+  "end": null,
+  "status": "未执行",
+  "exit_code": null,
+  "input_sha256": "5d3b686e7bb0dc3102647a80049e6a13320b81589c3e1b5fbeb4755ec113c9e4",
+  "log": "D:\\g4\\records\\export.console.log",
+  "command": "\"C:\\WINDOWS\\system32\\cmd.exe\" /d /s /v:off /c \"\"D:\\Learning\\AMDDesignTools\\2026.1\\Vivado\\bin\\vivado.bat\" \"-mode\" \"batch\" \"-notrace\" \"-source\" \"D:\\g4\\stage_entry.tcl\" \"-log\" \"D:\\g4\\records\\export.vivado.log\" \"-journal\" \"D:\\g4\\records\\export.vivado.jou\" \"-tclargs\" \"D:\\g4\\finalize_bit_xsa.tcl\"\""
+}

@@ -1,0 +1,10 @@
+{
+  "status": "已验证",
+  "payload": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\r04_v2_board_20261018\\board_environment\\system_payload_v1.zip",
+  "payload_sha256": "707947dea1e6584e81562dcbebe29e9bd0509522b6341242523369f52bbe0bd2",
+  "acceptance_sha256": "fd3a55f428d7e64ccf63e3aa79c9b76f4125bb01fc5f077e24660e6a4579bed9",
+  "bit_sha256": "8f438a07fa7cfa2f2db9e276f904388df7a06476cc090d55758ceb231dd34ab7",
+  "hwh_sha256": "7254ea3c456098518917e89b836414592b34ffe3e7a24aec2d7ba772713cec85",
+  "system_delivery_files_rehashed": 109,
+  "board_programmed": false
+}

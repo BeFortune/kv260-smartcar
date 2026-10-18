@@ -1,0 +1,23 @@
+{
+  "status": "已验证",
+  "files": {
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\remote_final\\v2_ooc\\ffn_accel.cpp": {
+      "sha256": "553b9c9b36fee41d791908f1fc3b8314ea4631db403743f5e80665d18fad1350",
+      "bytes": 7491
+    },
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\remote_final\\v2_ooc\\ffn_accel.hpp": {
+      "sha256": "fcdced1362b460a6cea73fc5869564e6797c041469a50b9c56deba1253cd7478",
+      "bytes": 877
+    },
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\remote_final\\v2_ooc\\input_manifest.json": {
+      "sha256": "f041abc76c8acde0ca0cf40df72b0809900018b4138c320f1521a068b2094a21",
+      "bytes": 2944
+    },
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\remote_final\\v2_ooc\\work\\ffn_accel.zip": {
+      "sha256": "3e7eb615f7fc0ecf61ad5e56443eab6f4665e698045cef2565a4990e340e4185",
+      "bytes": 867640
+    }
+  },
+  "ip_contains_cpp": false,
+  "provenance_scope": "frozen HLS artifact supplied by coordinator; system builder does not rerun HLS"
+}

@@ -1,0 +1,150 @@
+r04v2 board validation — templates only, NOT executed on KV260
+
+Scope and prerequisites
+- Files created only below pynq_ffn/artifacts/r04_v2_board_20261018/board_validation/.
+- No board/tool-server connection, PYNQ hardware import, programming, MMIO, camera,
+  serial, vehicle action, firmware change or maintenance performed by this task.
+- Main coordinator must review real Vivado implementation/timing/DRC reports and
+  approve the exact new bit/HWH BEFORE independently programming the Overlay.
+- This harness NEVER downloads an Overlay and NEVER writes PL/PLL clocks. It only
+  reuses an already-programmed matching bitstream via Overlay(download=False).
+- Host-file SHA + runtime bookkeeping are NOT FPGA configuration readback.
+- Privileged AArch64 Linux is required for authorized workers. Board must be
+  exclusively owned, no other kernel user/ROS/camera/serial jobs. Working sudo
+  credentials are supplied interactively by the user, never by this script.
+- Existing board Python must include NumPy/ORT/OpenCV/PYNQ. Prior successful board
+  command explicitly set XILINX_XRT=/usr and venv PATH; no LD_LIBRARY_PATH or profile
+  source was used. Verify the actual XRT/venv files first, do not infer reinstall.
+- Harness passes the inherited explicit environment to all child processes and
+  records XILINX_XRT, PATH, LD_LIBRARY_PATH, PYTHONUNBUFFERED. No source/profile.
+- Templates use -B, NOT -I (which hides the sibling safety_gates import directory).
+
+Deployment inputs (not created here)
+1) NEW source-only deployment ROOT with ps/ (all Python source, no bytecode/native
+   imports), bundle/ (unchanged original model and real four FFN weights), overlay/
+   (same-stem new bit/HWH). Runtime SHA must remain
+   49ace8fbf61a29e2e54efc174b45477cd08fc5fe469d13547df17326b9745576.
+2) EXTERNAL deployment-manifest JSON, old ffn_board.deployment.v1 schema, all ps
+   sources/bundle files/bit/HWH hash+size covered; pin manifest SHA externally.
+3) System-acceptance confirmation, separately reviewed and pinned SHA. Exact JSON
+   shape below; all placeholders MUST be replaced with verified facts:
+   {
+     "schema": "r04v2.system_acceptance.v1",
+     "status": "已验证",
+     "bit_sha256": "<new_bit_sha256>",
+     "hwh_sha256": "<new_hwh_sha256>",
+     "evidence_files": {"reports/<real_report_filename>": "<report_sha256>"}
+   }
+   evidence_files paths are POSIX relative to the confirmation directory. Absolute
+   paths, ../ and symlink escape are rejected. The confirmation means the main
+   coordinator reviewed system success; the harness hashes original reports but
+   does not parse Vivado logs or claim hash existence proves timing success.
+4) Recorded dataset with EXACTLY117 frames; no truncation. Same CSV and every image
+   hashed and compared across independent workers. Previous historical dataset
+   was /home/ubuntu/ffn_migrate/data/1778852165; current path must be verified.
+5) Copy both board_validate.py and safety_gates.py together, pin their SHA from
+   provenance.json offline_artifact_manifest.json. Test file is local-only and
+   references prior local fake fixtures; it is not needed on board.
+
+Static-only template
+Machine: KV260 Linux Bash (or local Python if full deployment copied locally).
+Precondition: Fill ALL <...> placeholders. This is NOT copy/paste-ready as-is.
+No sudo/--allow-pl; no project or PYNQ import and no hardware access.
+
+<verified_python> -B '<script_dir>/board_validate.py' \
+  --root '<new_deployment_root>' \
+  --deployment-manifest '<external_deployment_manifest.json>' \
+  --manifest-sha256 '<manifest_sha256>' \
+  --bit '<root_relative_bit_path>' \
+  --bit-sha256 '<new_bit_sha256>' --hwh-sha256 '<new_hwh_sha256>' \
+  --system-acceptance '<system_acceptance.json>' \
+  --acceptance-sha256 '<acceptance_sha256>' \
+  --output-dir '<new_static_evidence_directory>'
+
+Expected: exit0/report.status=已验证, scope static ONLY; no hardware execution.
+Stop: any nonzero exit, first mismatch, no overwrite/retry into same directory.
+
+Authorized recorded board validation template
+Machine: KV260 Linux Bash; credentials/XRT/venv/exclusive access checked by main
+coordinator; matching new Overlay independently loaded only AFTER system gate.
+No source profile. No camera/serial/motor. DO NOT wrap with timeout, terminal kill,
+service supervisor auto-restart, process context manager or session auto-cleanup.
+Fill ALL placeholders first; this remains an unexecuted TEMPLATE.
+
+sudo -n env XILINX_XRT=/usr \
+  PATH=/usr/local/share/pynq-venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
+  PYTHONUNBUFFERED=1 \
+  /usr/local/share/pynq-venv/bin/python3 -B '<script_dir>/board_validate.py' \
+  --root '<new_deployment_root>' \
+  --deployment-manifest '<external_deployment_manifest.json>' \
+  --manifest-sha256 '<manifest_sha256>' \
+  --bit '<root_relative_bit_path>' \
+  --bit-sha256 '<new_bit_sha256>' --hwh-sha256 '<new_hwh_sha256>' \
+  --system-acceptance '<system_acceptance.json>' \
+  --acceptance-sha256 '<acceptance_sha256>' \
+  --output-dir '<new_board_evidence_directory>' \
+  --recording '<verified_117_frame_recording>' \
+  --timeout-s 60 --allow-pl --reuse-programmed-overlay
+
+Expected conditions (NOT results)
+- golden4: threads4/spinning=None, own process/session, warmup3 +117 timed frames.
+- split_ort4: threads4/spinning=False, fresh process after golden exits; same inputs.
+- split_pl4: threads4/spinning=False, fresh process, actual PL compute. Runtime.run
+  unmodified. Float32/ORT_SEQUENTIAL/inter_op1/ORT_ENABLE_EXTENDED/OpenCV1 unchanged.
+- Reference CPU full graph and CPU split outputs <=1e-3 rtol0, integer speed equal.
+- Before backend construction/allocation/first START: reuse identity/HWH checks,
+  PL0 fclk getter100±0.5MHz + PL0..3/5PLL/ACPU raw registers+CPU getter captured.
+- First START is camera_0 with1 real token; layer atol1e-4 rtol0 then four layers on
+  real record cuts0/58/116 in rotated order: camera1/4/659/660, cross1/4 only.
+- 37 layer START writes including smoke, then warmup3*4 +117*4 =480: total517.
+  These are observed software writes to AP_START, not an independent cycle counter.
+- All117 PL frame outputs compared to golden <=1e-3 rtol0/integer speed equal;
+  cumulative FFN cuts compared to split ORT <=1e-3. No fake tiling of cross660.
+- Clock raw snapshots repeated after layers/before formal and end; all PL/PLL/ACPU
+  raw values unchanged. Clocks are register-derived, not external oscilloscope
+  measurement or continuous monitoring; HWH/cache clock declarations metadata only.
+- Each mode records raw run_total/stages/PS remaining/decode+preprocess/e2e samples,
+  P50/P95/P99/max,117 samples,116 completion intervals, duration/sustained output
+  rate; PL additionally prepare/wait/readback/kernel_total components per layer.
+- Wall throughput and intervals include numerical comparison/NPZ/evidence fsync.
+  run_total/e2e samples exclude that evidence I/O; no live freshness claim, no
+  median-of-components addition as a synthetic end-to-end latency.
+- Normal final idle is required BEFORE backend.close(reverse freebuffer); then ORT
+  sessions clear. One-thread comparison not implemented (optional, not required).
+
+Actual stopping rules
+- System confirmation/hash/model/runtime/ABI/reference/dataset/permission mismatch:
+  fail, no next worker. Nothing auto-fixes or auto-downloads.
+- Actual PL0!=100±0.5MHz: fail BEFORE backend/allocation/START. No DIV15 fallback,
+  no new PLL permission inferred from the old retest. Main coordinator decides.
+- Endcheck/raw clock drift/numerical mismatch: fail; cleanup only if known-complete
+  and idle. A completed run does not establish continuous clock stability.
+- Timeout/ambiguous AP_START write/poll error/SIGINT while inflight/poison/busy or
+  unreadable cleanup state: failed_quarantined. All possible AXI buffers and owner
+  process retained; no close/free/return/process exit/reset/reload. Even a later
+  idle read cannot clear a poisoned backend. SIGTERM/SIGHUP ignored, quarantine
+  SIGINT ignored. Parent waits indefinitely; it never terminate/kill/timeout.
+- Quarantine is an intentional NON-EXIT state. Preserve terminal/process. Main
+  coordinator must separately authorize and verify a hardware-safe recovery before
+  any eventual termination. Never treat killing a process as cancelling an AXI
+  master. Evidence disk full cannot make quarantine exit.
+- SIGKILL, host shutdown, kernel OOM and physical power loss cannot be prevented by
+  Python. Do not use supervisors/terminal tools whose stop semantics are unknown.
+
+Known loader trap (historical source evidence, not current-board observation)
+- ffn_opt_20261018/session_evidence/clock_source02_result.json captures getter:
+  src_mhz/(DIV0*DIV1); set_pl_clk with both divisors ignores requested clk_mhz.
+- clock_mismatch.md:12-17/41/53: HWH DIV10/1 on IOPLL0x15a00~1499.985MHz yielded
+  PL0_REF_CTRL0x01010a00 =>149.9985MHz. HWH100MHz/clk_summary are not actual evidence.
+- Old retest specifically reused download=False to avoid loader restoring DIV10.
+  New harness has no download path and does NOT carry old allow-pl0-divisor0-15.
+- Main coordinator owns any separate loader. This harness cannot guarantee clock
+  behavior during programming; it guarantees no kernel start if its pre-start
+  actual-frequency check fails. Download may have other hardware side effects.
+
+Validation evidence
+- offline_tests_01.xml contains an initial fixture failure (missing fake starts
+  attribute),30 passed/1 failed; retained honestly, corrected fixture only.
+- Latest final offline test log/XML/record and all artifact SHAs are listed in
+  offline_artifact_manifest.json, generated after the final test run.
+- Fake MMIO tests and CPU NumPy/ORT smoke are NOT board/PL performance validation.

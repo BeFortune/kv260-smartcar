@@ -1,0 +1,5 @@
+prepare: 已验证 (offline system build only)
+bd: 已验证 (offline system build only)
+synth: 已验证 (offline system build only)
+impl: 已验证 (offline system build only)
+export: 已验证 (offline system build only)

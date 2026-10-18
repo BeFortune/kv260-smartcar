@@ -1,0 +1,1 @@
+{"status": "失败", "output": "/home/ubuntu/r04_v2_board_20261018/program01", "first_error": "RuntimeError: Programming emitted warnings; do not start a kernel"}

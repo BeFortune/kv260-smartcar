@@ -1,0 +1,15 @@
+{
+  "stage": "prepare",
+  "cwd": "D:\\g4",
+  "start": "2026-10-18T10:15:56.281611+00:00",
+  "end": null,
+  "status": "未执行",
+  "exit_code": null,
+  "input_sha256": "5d3b686e7bb0dc3102647a80049e6a13320b81589c3e1b5fbeb4755ec113c9e4",
+  "log": "D:\\g4\\records\\prepare.console.log",
+  "command": [
+    "C:\\Python314\\python.exe",
+    "D:\\g4s\\scripts\\run_system.py",
+    "prepare"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "safety_gates_origin": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\board_run02_100mhz\\retest100\\deploy\\board_validate.py",
+  "origin_sha256": "c45449e6923ee827b9e6fe499028812ae855333dcd08623eb651e5d65357da8b",
+  "copy_method": "AST-selected exact function/class definitions and imports/constants; excluded clock-write functions and old main; no edits to old evidence",
+  "source_runtime_sha256": "49ace8fbf61a29e2e54efc174b45477cd08fc5fe469d13547df17326b9745576",
+  "clock_source_evidence": [
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\session_evidence\\clock_source02_result.json",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\retest100_session_evidence\\clock_fields_result.json"
+  ],
+  "xrt_success_command_evidence": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\retest100_session_evidence\\clock_retest_start_args.json",
+  "hardware_execution": false
+}

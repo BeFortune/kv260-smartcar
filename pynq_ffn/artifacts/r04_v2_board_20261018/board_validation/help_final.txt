@@ -1,0 +1,33 @@
+usage: board_validate.py [-h] --root ROOT --deployment-manifest
+                         DEPLOYMENT_MANIFEST --manifest-sha256 MANIFEST_SHA256
+                         --bit-sha256 BIT_SHA256 --hwh-sha256 HWH_SHA256
+                         --system-acceptance SYSTEM_ACCEPTANCE
+                         --acceptance-sha256 ACCEPTANCE_SHA256 --output-dir
+                         OUTPUT_DIR [--bit BIT] [--recording RECORDING]
+                         [--allow-pl] [--reuse-programmed-overlay]
+                         [--ip-name IP_NAME] [--timeout-s TIMEOUT_S]
+
+Recorded-input r04v2 acceptance. Default static-only; NEVER programs or resets
+PL. Only an explicitly authorized AArch64/root worker imports PYNQ. PL must
+already be programmed after system acceptance. A quarantined worker NEVER
+exits or frees DMA buffers; parent NEVER kills workers. No
+camera/serial/vehicle/clock writes.
+
+options:
+  -h, --help            show this help message and exit
+  --root ROOT
+  --deployment-manifest DEPLOYMENT_MANIFEST
+  --manifest-sha256 MANIFEST_SHA256
+  --bit-sha256 BIT_SHA256
+  --hwh-sha256 HWH_SHA256
+  --system-acceptance SYSTEM_ACCEPTANCE
+  --acceptance-sha256 ACCEPTANCE_SHA256
+  --output-dir OUTPUT_DIR
+  --bit BIT
+  --recording RECORDING
+                        Read-only CSV or directory containing EXACTLY117
+                        frames
+  --allow-pl
+  --reuse-programmed-overlay
+  --ip-name IP_NAME
+  --timeout-s TIMEOUT_S

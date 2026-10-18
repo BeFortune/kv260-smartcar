@@ -1,0 +1,80 @@
+{
+  "status": "已验证",
+  "date_utc": "2026-10-18T10:21:13.824890+00:00",
+  "scope": "Read-only current PL identity/clock inspection; no download/MMIO writes/kernel starts",
+  "self_sha256": "1a02385cca23e19c042146dfb4f50f58a7281138f4dd57f23321695a6ee882e3",
+  "loader_sources": {
+    "pynq/overlay.py": "949bbd3a1d296b487702f4c49013de24c3d6eb44da9fb2ebe1ada70d054237d7",
+    "pynq/bitstream.py": "b7e37302fefca9f2d09ebf487aa14abac8e603e12c544e8888d9ebaca9bf2914",
+    "pynq/pl_server/embedded_device.py": "cfd41079517552329914c125ecfec97293e0d3160db008ed18de9afa7834dee1",
+    "pynq/pl_server/device.py": "cbfac4c5d0e78b1c2aa726ac18dcd5bf52d3d693159e8f948a0977b4af30ed74",
+    "pynq/pl_server/xrt_device.py": "b79765ec53d92ac97657e95a7c990e8d1bdacb133161b278e1a8c3e4159fcd5e"
+  },
+  "runtime_state_path": "/usr/local/share/pynq-venv/lib/python3.10/site-packages/pynq/pl_server/global_pl_state.json",
+  "runtime_state_sha256": "d4c5cc8ad7d856c763a0a1d58edbe8c5e9b41572e6310850094f9254ccb9445a",
+  "runtime_state": {
+    "bitfile_name": "/home/ubuntu/ffn_opt_20261018/deploy/overlay/ffn_overlay_wrapper.bit",
+    "active_name": "KV260",
+    "timestamp": "2026/10/17 16:50:20 +282253",
+    "bitfile_hash": "d31a200958737e15c785e6e47c21ac36b84f7d14",
+    "shutdown_ips": {},
+    "psddr": {
+      "raw_type": 1,
+      "used": 1,
+      "base_address": 0,
+      "size": 268435456,
+      "type": "DDR4",
+      "streaming": false,
+      "idx": 0,
+      "tag": "PSDDR"
+    }
+  },
+  "bit_sha256": "c67dd63ccd579ab105840a30c4ca1a61715a26b7631cc323473328a821319eb1",
+  "hwh_sha256": "f4040b704f14ab02ab25b5266226442541be1fc30cc6e786512d9a00ea675649",
+  "snapshot": {
+    "ctrl": 4,
+    "pl_raw": [
+      16846592,
+      16846592,
+      16846592,
+      16846592
+    ],
+    "pll_raw": {
+      "IOPLL_CTRL": 88576,
+      "RPLL_CTRL": 82176,
+      "APLL_CTRL": 86016,
+      "DPLL_CTRL": 81920,
+      "VPLL_CTRL": 77321
+    },
+    "cpu_raw": {
+      "ACPU_CTRL": 50331904
+    },
+    "cpu_mhz": 1333.32,
+    "fclk0_mhz": 99.999
+  },
+  "clock_dict_metadata_only": {
+    "0": {
+      "enable": 1,
+      "divisor0": 10,
+      "divisor1": 1
+    },
+    "1": {
+      "enable": 0,
+      "divisor0": 10,
+      "divisor1": 1
+    },
+    "2": {
+      "enable": 0,
+      "divisor0": 4,
+      "divisor1": 1
+    },
+    "3": {
+      "enable": 0,
+      "divisor0": 4,
+      "divisor1": 1
+    }
+  },
+  "ip_name": "ffn_accel_0",
+  "ip_phys_addr": 2684354560,
+  "authority": "Runtime state and pinned host bit/hwh files; not FPGA configuration readback"
+}

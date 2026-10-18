@@ -1,0 +1,47 @@
+{
+  "status": "已验证",
+  "scope": "local Windows syntax/help/fake MMIO tests and real-bundle CPU ORT/NumPy smoke ONLY",
+  "hardware_execution": false,
+  "hardware_programmed": false,
+  "pynq_hardware_import": false,
+  "date_utc": "2026-10-18T10:22:49Z",
+  "command": [
+    "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\r04_v2_board_20261018\\board_validation\\test_board_validate.py",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\tests\\test_pynq_backend.py",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\tests\\test_runtime_thread_policy.py",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\tests\\test_validation_gates.py",
+    "--junitxml=C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\r04_v2_board_20261018\\board_validation\\offline_tests_final.xml"
+  ],
+  "exit_code": 0,
+  "duration_s": 6.600625276565552,
+  "tests": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "87",
+    "time": "5.261",
+    "timestamp": "2026-10-18T18:22:43.475148+08:00",
+    "hostname": "ENERTCOUNT-EX"
+  },
+  "earlier_failure": "offline_tests_01.xml:30 passed/1 failed missing starts fixture; corrected fixture; no failure hidden",
+  "script_sha256": "d3b98a0a0d1dc7ff1d99b667400a48787991a9c6ad83dfa9d896cbc9b37f408f",
+  "gates_sha256": "481504abe7932e8653b622b9ed139a13e0eb4f094927ac987df5740143b5d6d6",
+  "runtime_sha256": "49ace8fbf61a29e2e54efc174b45477cd08fc5fe469d13547df17326b9745576",
+  "not_executed": [
+    "KV260 connections",
+    "PYNQ hardware import",
+    "Overlay programming",
+    "PL computation",
+    "actual 117-frame performance",
+    "camera/serial/vehicle",
+    "firmware/maintenance"
+  ]
+}

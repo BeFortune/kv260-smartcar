@@ -1,0 +1,696 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
+| Date              : Sun Oct 18 18:41:32 2026
+| Host              : JasonWenDsek running 64-bit major release  (build 9200)
+| Command           : report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -return_string
+| Design            : ffn_overlay_wrapper
+| Device            : xck26-sfvc784
+| Speed File        : -2LV  PRODUCTION 1.31 12-08-2025
+| Design State      : Routed
+| Temperature Grade : C
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+  Inter-SLR Compensation                     :  Conservative
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+No report available as report_methodology has not been run prior. Run report_methodology on the current design for the summary of methodology violations.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (0)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (0)
+5. checking no_input_delay (0)
+6. checking no_output_delay (0)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (0)
+------------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (0)
+------------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (0)
+------------------------------
+ There are 0 input ports with no input delay specified.
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (0)
+-------------------------------
+ There are 0 ports with no output delay specified.
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      1.747        0.000                      0               154314        0.010        0.000                      0               154314        3.500        0.000                       0                 64389  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock     Waveform(ns)       Period(ns)      Frequency(MHz)
+-----     ------------       ----------      --------------
+clk_pl_0  {0.000 5.000}      10.000          100.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+clk_pl_0            1.747        0.000                      0               154314        0.010        0.000                      0               154314        3.500        0.000                       0                 64389  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| User Ignored Path Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+(none)                      clk_pl_0      
+(none)        clk_pl_0      clk_pl_0      
+
+
+------------------------------------------------------------------------------------------------
+| Unconstrained Path Table
+| ------------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+(none)                      clk_pl_0      
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_pl_0
+  To Clock:  clk_pl_0
+
+Setup :            0  Failing Endpoints,  Worst Slack        1.747ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.010ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        3.500ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             1.747ns  (required time - arrival time)
+  Source:                 ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/trunc_ln117_reg_4430_reg[2]_rep/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/value_assign_reg_5217_reg[22]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_pl_0 rise@10.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        7.832ns  (logic 0.479ns (6.116%)  route 7.353ns (93.884%))
+  Logic Levels:           4  (LUT6=1 MUXF7=2 MUXF8=1)
+  Clock Path Skew:        -0.305ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.904ns = ( 12.904 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.401ns
+    Clock Pessimism Removal (CPR):    0.192ns
+  Clock Uncertainty:      0.160ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.312ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.134ns (routing 1.584ns, distribution 1.550ns)
+  Clock Net Delay (Destination): 2.688ns (routing 1.450ns, distribution 1.238ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS8_X0Y0             PS8                          0.000     0.000 r  ffn_overlay_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    ffn_overlay_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  ffn_overlay_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X1Y1 (CLOCK_ROOT)    net (fo=66365, routed)       3.134     3.401    ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/ap_clk
+    SLICE_X17Y177        FDRE                                         r  ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/trunc_ln117_reg_4430_reg[2]_rep/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X17Y177        FDRE (Prop_AFF2_SLICEM_C_Q)
+                                                      0.118     3.519 r  ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/trunc_ln117_reg_4430_reg[2]_rep/Q
+                         net (fo=128, routed)         5.790     9.309    ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/trunc_ln117_reg_4430_reg[2]_rep_n_0
+    SLICE_X33Y225        MUXF7 (Prop_F7MUX_EF_SLICEL_S_O)
+                                                      0.098     9.407 r  ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/value_assign_reg_5217_reg[22]_i_27/O
+                         net (fo=1, routed)           0.000     9.407    ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/value_assign_reg_5217_reg[22]_i_27_n_0
+    SLICE_X33Y225        MUXF8 (Prop_F8MUX_TOP_SLICEL_I1_O)
+                                                      0.031     9.438 r  ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/value_assign_reg_5217_reg[22]_i_11/O
+                         net (fo=1, routed)           1.508    10.946    ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/value_assign_reg_5217_reg[22]_i_11_n_0
+    SLICE_X26Y226        LUT6 (Prop_G6LUT_SLICEL_I5_O)
+                                                      0.137    11.083 r  ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/value_assign_reg_5217[22]_i_3/O
+                         net (fo=1, routed)           0.012    11.095    ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/value_assign_reg_5217[22]_i_3_n_0
+    SLICE_X26Y226        MUXF7 (Prop_F7MUX_GH_SLICEL_I1_O)
+                                                      0.095    11.190 r  ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/value_assign_reg_5217_reg[22]_i_1/O
+                         net (fo=1, routed)           0.043    11.233    ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/value_assign_reg_5217_reg[22]_i_1_n_0
+    SLICE_X26Y226        FDRE                                         r  ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/value_assign_reg_5217_reg[22]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                     10.000    10.000 r  <hidden>
+    PS8_X0Y0             PS8                          0.000    10.000 r  ffn_overlay_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181    10.181    ffn_overlay_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035    10.216 r  ffn_overlay_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X1Y1 (CLOCK_ROOT)    net (fo=66365, routed)       2.688    12.904    ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/ap_clk
+    SLICE_X26Y226        FDRE                                         r  ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/value_assign_reg_5217_reg[22]/C
+                         clock pessimism              0.192    13.096    <hidden>
+                         clock uncertainty           -0.160    12.936    <hidden>
+    SLICE_X26Y226        FDRE (Setup_HFF_SLICEL_C_D)
+                                                      0.044    12.980    ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/value_assign_reg_5217_reg[22]
+  -------------------------------------------------------------------
+                         required time                         12.980    <hidden>
+                         arrival time                         -11.233    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  1.747    <hidden>
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.010ns  (arrival time - required time)
+  Source:                 ffn_overlay_i/ffn_accel_0/inst/fadd_32ns_32ns_32_7_full_dsp_1_U1762/ffn_accel_fadd_32ns_32ns_32_7_full_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            ffn_overlay_i/ffn_accel_0/inst/fadd_32ns_32ns_32_7_full_dsp_1_U1762/ffn_accel_fadd_32ns_32ns_32_7_full_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (clk_pl_0 rise@0.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        0.237ns  (logic 0.111ns (46.835%)  route 0.126ns (53.165%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.124ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.199ns
+    Source Clock Delay      (SCD):    2.844ns
+    Clock Pessimism Removal (CPR):    0.230ns
+  Clock Net Delay (Source):      2.628ns (routing 1.450ns, distribution 1.178ns)
+  Clock Net Delay (Destination): 2.932ns (routing 1.584ns, distribution 1.348ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS8_X0Y0             PS8                          0.000     0.000 r  ffn_overlay_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181     0.181    ffn_overlay_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035     0.216 r  ffn_overlay_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X1Y1 (CLOCK_ROOT)    net (fo=66365, routed)       2.628     2.844    ffn_overlay_i/ffn_accel_0/inst/fadd_32ns_32ns_32_7_full_dsp_1_U1762/ffn_accel_fadd_32ns_32ns_32_7_full_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X34Y40         FDRE                                         r  ffn_overlay_i/ffn_accel_0/inst/fadd_32ns_32ns_32_7_full_dsp_1_U1762/ffn_accel_fadd_32ns_32ns_32_7_full_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+    SLICE_X34Y40         FDRE (Prop_FFF_SLICEM_C_Q)
+                                                      0.111     2.955 r  ffn_overlay_i/ffn_accel_0/inst/fadd_32ns_32ns_32_7_full_dsp_1_U1762/ffn_accel_fadd_32ns_32ns_32_7_full_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.126     3.081    ffn_overlay_i/ffn_accel_0/inst/fadd_32ns_32ns_32_7_full_dsp_1_U1762/ffn_accel_fadd_32ns_32ns_32_7_full_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X33Y41         FDRE                                         r  ffn_overlay_i/ffn_accel_0/inst/fadd_32ns_32ns_32_7_full_dsp_1_U1762/ffn_accel_fadd_32ns_32ns_32_7_full_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS8_X0Y0             PS8                          0.000     0.000 r  ffn_overlay_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    ffn_overlay_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  ffn_overlay_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X1Y1 (CLOCK_ROOT)    net (fo=66365, routed)       2.932     3.199    ffn_overlay_i/ffn_accel_0/inst/fadd_32ns_32ns_32_7_full_dsp_1_U1762/ffn_accel_fadd_32ns_32ns_32_7_full_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X33Y41         FDRE                                         r  ffn_overlay_i/ffn_accel_0/inst/fadd_32ns_32ns_32_7_full_dsp_1_U1762/ffn_accel_fadd_32ns_32ns_32_7_full_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         clock pessimism             -0.230     2.969    <hidden>
+    SLICE_X33Y41         FDRE (Hold_FFF2_SLICEL_C_D)
+                                                      0.103     3.072    ffn_overlay_i/ffn_accel_0/inst/fadd_32ns_32ns_32_7_full_dsp_1_U1762/ffn_accel_fadd_32ns_32ns_32_7_full_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                         -3.072    <hidden>
+                         arrival time                           3.081    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  0.010    <hidden>
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk_pl_0
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { ffn_overlay_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0] }
+
+Check Type        Corner  Lib Pin          Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location  Pin
+Min Period        n/a     PS8/MAXIGP0ACLK  n/a            3.000         10.000      7.000      PS8_X0Y0  ffn_overlay_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP0ACLK
+Low Pulse Width   Slow    PS8/MAXIGP0ACLK  n/a            1.500         5.000       3.500      PS8_X0Y0  ffn_overlay_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP0ACLK
+High Pulse Width  Slow    PS8/MAXIGP0ACLK  n/a            1.500         5.000       3.500      PS8_X0Y0  ffn_overlay_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP0ACLK
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  clk_pl_0
+
+Max Delay             1 Endpoint
+Min Delay             1 Endpoint
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 ffn_overlay_i/zynq_ultra_ps_e_0/inst/PS8_i/EMIOGPIOO[95]
+                            (internal pin)
+  Destination:            ffn_overlay_i/rst_ps8_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/syncstages_ff_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        3.608ns  (logic 0.082ns (2.273%)  route 3.526ns (97.727%))
+  Logic Levels:           1  (LUT1=1)
+  Clock Uncertainty:      0.158ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.312ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 2.659ns (routing 1.450ns, distribution 1.209ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    PS8_X0Y0             PS8                          0.000     0.000 f  ffn_overlay_i/zynq_ultra_ps_e_0/inst/PS8_i/EMIOGPIOO[95]
+                         net (fo=1, routed)           3.283     3.283    ffn_overlay_i/rst_ps8_0/U0/EXT_LPF/ext_reset_in
+    SLICE_X25Y1          LUT1 (Prop_G6LUT_SLICEM_I0_O)
+                                                      0.082     3.365 r  ffn_overlay_i/rst_ps8_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT_i_1/O
+                         net (fo=1, routed)           0.243     3.608    ffn_overlay_i/rst_ps8_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/src_in
+    SLICE_X25Y1          FDRE                                         r  ffn_overlay_i/rst_ps8_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/syncstages_ff_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS8_X0Y0             PS8                          0.000     0.000 r  ffn_overlay_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181     0.181    ffn_overlay_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035     0.216 r  ffn_overlay_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X1Y1 (CLOCK_ROOT)    net (fo=66365, routed)       2.659     2.875    ffn_overlay_i/rst_ps8_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/dest_clk
+    SLICE_X25Y1          FDRE                                         r  ffn_overlay_i/rst_ps8_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/syncstages_ff_reg[0]/C
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 ffn_overlay_i/zynq_ultra_ps_e_0/inst/PS8_i/EMIOGPIOO[95]
+                            (internal pin)
+  Destination:            ffn_overlay_i/rst_ps8_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/syncstages_ff_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        1.486ns  (logic 0.037ns (2.490%)  route 1.449ns (97.510%))
+  Logic Levels:           1  (LUT1=1)
+  Clock Uncertainty:      0.158ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.312ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 1.780ns (routing 0.971ns, distribution 0.809ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    PS8_X0Y0             PS8                          0.000     0.000 f  ffn_overlay_i/zynq_ultra_ps_e_0/inst/PS8_i/EMIOGPIOO[95]
+                         net (fo=1, routed)           1.380     1.380    ffn_overlay_i/rst_ps8_0/U0/EXT_LPF/ext_reset_in
+    SLICE_X25Y1          LUT1 (Prop_G6LUT_SLICEM_I0_O)
+                                                      0.037     1.417 r  ffn_overlay_i/rst_ps8_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT_i_1/O
+                         net (fo=1, routed)           0.069     1.486    ffn_overlay_i/rst_ps8_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/src_in
+    SLICE_X25Y1          FDRE                                         r  ffn_overlay_i/rst_ps8_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/syncstages_ff_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS8_X0Y0             PS8                          0.000     0.000 r  ffn_overlay_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.164     0.164    ffn_overlay_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.023     0.187 r  ffn_overlay_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X1Y1 (CLOCK_ROOT)    net (fo=66365, routed)       1.780     1.967    ffn_overlay_i/rst_ps8_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/dest_clk
+    SLICE_X25Y1          FDRE                                         r  ffn_overlay_i/rst_ps8_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/syncstages_ff_reg[0]/C
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  clk_pl_0
+  To Clock:  clk_pl_0
+
+Max Delay            59 Endpoints
+Min Delay            59 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 ffn_overlay_i/memory_sc/inst/clk_map/psr_aclk/U0/ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            ffn_overlay_i/memory_sc/inst/s00_nodes/s00_r_node/inst/s_sc_xpm_cdc_async_rst_inst/arststages_ff_reg[0]/CLR
+                            (recovery check against rising-edge clock clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Recovery (Max at Slow Process Corner)
+  Data Path Delay:        1.704ns  (logic 0.116ns (6.807%)  route 1.588ns (93.193%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.335ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    3.058ns
+    Source Clock Delay      (SCD):    3.393ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.160ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.312ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.126ns (routing 1.584ns, distribution 1.542ns)
+  Clock Net Delay (Destination): 2.842ns (routing 1.450ns, distribution 1.392ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS8_X0Y0             PS8                          0.000     0.000 r  ffn_overlay_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    ffn_overlay_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  ffn_overlay_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X1Y1 (CLOCK_ROOT)    net (fo=66365, routed)       3.126     3.393    ffn_overlay_i/memory_sc/inst/clk_map/psr_aclk/U0/aclk
+    SLICE_X10Y0          FDRE                                         r  ffn_overlay_i/memory_sc/inst/clk_map/psr_aclk/U0/ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X10Y0          FDRE (Prop_DFF_SLICEM_C_Q)
+                                                      0.116     3.509 r  ffn_overlay_i/memory_sc/inst/clk_map/psr_aclk/U0/ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N/Q
+                         net (fo=57, routed)          1.588     5.097    ffn_overlay_i/memory_sc/inst/s00_nodes/s00_r_node/inst/s_sc_xpm_cdc_async_rst_inst/src_arst
+    SLICE_X5Y66          FDCE                                         f  ffn_overlay_i/memory_sc/inst/s00_nodes/s00_r_node/inst/s_sc_xpm_cdc_async_rst_inst/arststages_ff_reg[0]/CLR  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS8_X0Y0             PS8                          0.000     0.000 r  ffn_overlay_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181     0.181    ffn_overlay_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035     0.216 r  ffn_overlay_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X1Y1 (CLOCK_ROOT)    net (fo=66365, routed)       2.842     3.058    ffn_overlay_i/memory_sc/inst/s00_nodes/s00_r_node/inst/s_sc_xpm_cdc_async_rst_inst/dest_clk
+    SLICE_X5Y66          FDCE                                         r  ffn_overlay_i/memory_sc/inst/s00_nodes/s00_r_node/inst/s_sc_xpm_cdc_async_rst_inst/arststages_ff_reg[0]/C
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 ffn_overlay_i/memory_sc/inst/clk_map/psr_aclk/U0/ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            ffn_overlay_i/memory_sc/inst/s00_nodes/s00_b_node/inst/s_sc_xpm_cdc_async_rst_inst/arststages_ff_reg[0]/CLR
+                            (removal check against rising-edge clock clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Removal (Min at Fast Process Corner)
+  Data Path Delay:        0.282ns  (logic 0.083ns (29.430%)  route 0.199ns (70.570%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.195ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.079ns
+    Source Clock Delay      (SCD):    1.885ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.160ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.312ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.734ns (routing 0.886ns, distribution 0.848ns)
+  Clock Net Delay (Destination): 1.892ns (routing 0.971ns, distribution 0.921ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS8_X0Y0             PS8                          0.000     0.000 r  ffn_overlay_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.129     0.129    ffn_overlay_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.022     0.151 r  ffn_overlay_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X1Y1 (CLOCK_ROOT)    net (fo=66365, routed)       1.734     1.885    ffn_overlay_i/memory_sc/inst/clk_map/psr_aclk/U0/aclk
+    SLICE_X10Y0          FDRE                                         r  ffn_overlay_i/memory_sc/inst/clk_map/psr_aclk/U0/ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X10Y0          FDRE (Prop_DFF_SLICEM_C_Q)
+                                                      0.083     1.968 r  ffn_overlay_i/memory_sc/inst/clk_map/psr_aclk/U0/ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N/Q
+                         net (fo=57, routed)          0.199     2.167    ffn_overlay_i/memory_sc/inst/s00_nodes/s00_b_node/inst/s_sc_xpm_cdc_async_rst_inst/src_arst
+    SLICE_X0Y4           FDCE                                         f  ffn_overlay_i/memory_sc/inst/s00_nodes/s00_b_node/inst/s_sc_xpm_cdc_async_rst_inst/arststages_ff_reg[0]/CLR  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS8_X0Y0             PS8                          0.000     0.000 r  ffn_overlay_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.164     0.164    ffn_overlay_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.023     0.187 r  ffn_overlay_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X1Y1 (CLOCK_ROOT)    net (fo=66365, routed)       1.892     2.079    ffn_overlay_i/memory_sc/inst/s00_nodes/s00_b_node/inst/s_sc_xpm_cdc_async_rst_inst/dest_clk
+    SLICE_X0Y4           FDCE                                         r  ffn_overlay_i/memory_sc/inst/s00_nodes/s00_b_node/inst/s_sc_xpm_cdc_async_rst_inst/arststages_ff_reg[0]/C
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  clk_pl_0
+
+Max Delay         14471 Endpoints
+Min Delay         14471 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (internal pin)
+  Destination:            ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        5.798ns  (logic 3.081ns (53.137%)  route 2.717ns (46.863%))
+  Logic Levels:           10  (DSP_ALU=2 DSP_M_DATA=1 DSP_MULTIPLIER=1 DSP_OUTPUT=2 DSP_PREADD_DATA=1 LUT4=1 LUT5=2)
+  Clock Uncertainty:      0.158ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.312ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 2.672ns (routing 1.450ns, distribution 1.222ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    DSP48E2_X10Y84       DSP_A_B_DATA                 0.000     0.000 r  ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.000     0.000    ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    DSP48E2_X10Y84       DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_DSP48E2_B2_DATA[17]_B2B1[17])
+                                                      0.097     0.097 r  ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.000     0.097    ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    DSP48E2_X10Y84       DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_DSP48E2_B2B1[17]_U[43])
+                                                      0.773     0.870 f  ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.000     0.870    ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    DSP48E2_X10Y84       DSP_M_DATA (Prop_DSP_M_DATA_DSP48E2_U[43]_U_DATA[43])
+                                                      0.067     0.937 r  ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.000     0.937    ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    DSP48E2_X10Y84       DSP_ALU (Prop_DSP_ALU_DSP48E2_U_DATA[43]_ALU_OUT[47])
+                                                      0.727     1.664 f  ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.000     1.664    ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    DSP48E2_X10Y84       DSP_OUTPUT (Prop_DSP_OUTPUT_DSP48E2_ALU_OUT[47]_PCOUT[47])
+                                                      0.167     1.831 r  ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.014     1.845    ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    DSP48E2_X10Y85       DSP_ALU (Prop_DSP_ALU_DSP48E2_PCIN[47]_ALU_OUT[30])
+                                                      0.739     2.584 f  ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.000     2.584    ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    DSP48E2_X10Y85       DSP_OUTPUT (Prop_DSP_OUTPUT_DSP48E2_ALU_OUT[30]_P[30])
+                                                      0.146     2.730 r  ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=29, routed)          1.113     3.843    ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X51Y212        LUT5 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.150     3.993 r  ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=2, routed)           0.259     4.252    ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X51Y205        LUT4 (Prop_F6LUT_SLICEL_I2_O)
+                                                      0.081     4.333 r  ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=9, routed)           1.236     5.568    ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X37Y217        LUT5 (Prop_D6LUT_SLICEM_I4_O)
+                                                      0.134     5.702 r  ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.096     5.798    ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X37Y217        FDRE                                         r  ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS8_X0Y0             PS8                          0.000     0.000 r  ffn_overlay_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181     0.181    ffn_overlay_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035     0.216 r  ffn_overlay_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X1Y1 (CLOCK_ROOT)    net (fo=66365, routed)       2.672     2.888    ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X37Y217        FDRE                                         r  ffn_overlay_i/ffn_accel_0/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_116_13_fu_3191/fmul_32ns_32ns_32_3_max_dsp_1_U870/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 ffn_overlay_i/ffn_accel_0/inst/fadd_32ns_32ns_32_7_full_dsp_1_U1773/ffn_accel_fadd_32ns_32ns_32_7_full_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (internal pin)
+  Destination:            ffn_overlay_i/ffn_accel_0/inst/fadd_32ns_32ns_32_7_full_dsp_1_U1773/ffn_accel_fadd_32ns_32ns_32_7_full_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        0.213ns  (logic 0.147ns (69.014%)  route 0.066ns (30.986%))
+  Logic Levels:           2  (DSP_ALU=1 DSP_OUTPUT=1)
+  Clock Uncertainty:      0.158ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.312ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 1.857ns (routing 0.971ns, distribution 0.886ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    DSP48E2_X4Y43        DSP_C_DATA                   0.000     0.000 r  ffn_overlay_i/ffn_accel_0/inst/fadd_32ns_32ns_32_7_full_dsp_1_U1773/ffn_accel_fadd_32ns_32ns_32_7_full_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=2, routed)           0.000     0.000    ffn_overlay_i/ffn_accel_0/inst/fadd_32ns_32ns_32_7_full_dsp_1_U1773/ffn_accel_fadd_32ns_32ns_32_7_full_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    DSP48E2_X4Y43        DSP_ALU (Prop_DSP_ALU_DSP48E2_C_DATA[14]_ALU_OUT[25])
+                                                      0.114     0.114 f  ffn_overlay_i/ffn_accel_0/inst/fadd_32ns_32ns_32_7_full_dsp_1_U1773/ffn_accel_fadd_32ns_32ns_32_7_full_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.000     0.114    ffn_overlay_i/ffn_accel_0/inst/fadd_32ns_32ns_32_7_full_dsp_1_U1773/ffn_accel_fadd_32ns_32ns_32_7_full_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    DSP48E2_X4Y43        DSP_OUTPUT (Prop_DSP_OUTPUT_DSP48E2_ALU_OUT[25]_P[25])
+                                                      0.033     0.147 r  ffn_overlay_i/ffn_accel_0/inst/fadd_32ns_32ns_32_7_full_dsp_1_U1773/ffn_accel_fadd_32ns_32ns_32_7_full_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.066     0.213    ffn_overlay_i/ffn_accel_0/inst/fadd_32ns_32ns_32_7_full_dsp_1_U1773/ffn_accel_fadd_32ns_32ns_32_7_full_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X16Y108        FDRE                                         r  ffn_overlay_i/ffn_accel_0/inst/fadd_32ns_32ns_32_7_full_dsp_1_U1773/ffn_accel_fadd_32ns_32ns_32_7_full_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  <hidden>
+    PS8_X0Y0             PS8                          0.000     0.000 r  ffn_overlay_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.164     0.164    ffn_overlay_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.023     0.187 r  ffn_overlay_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X1Y1 (CLOCK_ROOT)    net (fo=66365, routed)       1.857     2.044    ffn_overlay_i/ffn_accel_0/inst/fadd_32ns_32ns_32_7_full_dsp_1_U1773/ffn_accel_fadd_32ns_32ns_32_7_full_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X16Y108        FDRE                                         r  ffn_overlay_i/ffn_accel_0/inst/fadd_32ns_32ns_32_7_full_dsp_1_U1773/ffn_accel_fadd_32ns_32ns_32_7_full_dsp_1_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+
+
+
+
+
+

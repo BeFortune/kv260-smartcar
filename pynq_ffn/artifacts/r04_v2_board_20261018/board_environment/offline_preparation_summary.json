@@ -1,0 +1,37 @@
+{
+  "status": "已验证",
+  "scope": "Offline checks only; no new PL programming or computation",
+  "date": "2026-10-18",
+  "harness_tests": {
+    "evidence": "../board_validation/offline_tests_final.xml",
+    "passed": 87,
+    "failed": 0,
+    "skipped": 0,
+    "notes": "Fake MMIO/lifecycle tests and CPU-only original-bundle numerical smoke; not hardware evidence"
+  },
+  "coordinator_helper_tests": {
+    "evidence": "all_helpers_tests05.xml",
+    "passed": 9,
+    "failed": 0,
+    "skipped": 0,
+    "scope": ["official base download call only", "100MHz/idle/raw-clock gates", "pinned old/new identity", "separate PYNQ metadata/runtime timestamps", "existing and dangling-symlink firmware rejection", "pinned argument-list shell=False stage runner", "synthetic complete evidence collection and analysis"],
+    "prior_failure": "loader_tests01.xml retains 1 failed/4 passed from a fake register fixture returning a list instead of the register integer; production loader logic was not changed to accommodate that fixture"
+  },
+  "staging_checks": {
+    "status": "已验证",
+    "code_and_bundle_files_staged_on_board": 22,
+    "source_archive_sha256": "03de846640c53d9cdc2c4c7d1a7adf6adfb23bf593a69398940339ca143ae620",
+    "evidence": "staged_code01.json",
+    "system_payload_temporary_test": "Synthetic temporary payload success and repeated-stage overwrite rejection; no device access",
+    "target_help": "program_overlay.py --help and board_validate.py --help both exit0 on KV260, no PYNQ import",
+    "actual_record_count": 117
+  },
+  "software_baseline": {
+    "runtime_sha256": "49ace8fbf61a29e2e54efc174b45477cd08fc5fe469d13547df17326b9745576",
+    "golden_spinning": null,
+    "split_ort_spinning": false,
+    "split_pl_spinning": false,
+    "model_sha256": "ad58d1fc9168da94b9ce076ba8cc9754c371ead87974da8bc9cc601ad1650d5b"
+  },
+  "authorization_boundary": "New system and board recorded-input tests authorized by user; no boot/firmware maintenance, automatic reset, camera, serial or vehicle action"
+}

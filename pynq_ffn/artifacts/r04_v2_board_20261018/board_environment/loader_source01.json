@@ -1,0 +1,116 @@
+{
+  "status": "已验证",
+  "date_utc": "2026-10-18T10:14:05.431894+00:00",
+  "scope": "Installed source text only; no PYNQ import or device access",
+  "pynq_version": "3.0.1",
+  "files": [
+    {
+      "path": "/usr/local/share/pynq-venv/lib/python3.10/site-packages/pynq/overlay.py",
+      "sha256": "949bbd3a1d296b487702f4c49013de24c3d6eb44da9fb2ebe1ada70d054237d7",
+      "excerpts": [
+        {
+          "class": "Overlay",
+          "method": "__init__",
+          "line": 286,
+          "source": "def __init__(\n        self, bitfile_name, dtbo=None, download=True, ignore_version=False, device=None, gen_cache=False\n    ):\n        \"\"\"Return a new Overlay object.\n\n        An overlay instantiates a bitstream object as a member initially.\n\n        Parameters\n        ----------\n        bitfile_name : str\n            The bitstream name or absolute path as a string.\n        dtbo : str\n            The dtbo file name or absolute path as a string.\n        download : bool\n            Whether the overlay should be downloaded.\n        ignore_version : bool\n            Indicate whether or not to ignore the driver versions.\n        device : pynq.Device\n            Device on which to load the Overlay. Defaults to\n            pynq.Device.active_device\n        gen_cache: bool\n            if true generates a pickeled cache of the metadata\n\n        Note\n        ----\n        This class requires a HWH file to be next to bitstream file\n        with same name (e.g. `base.bit` and `base.hwh`).\n\n        \"\"\"\n        super().__init__(bitfile_name, dtbo, partial=False, device=device)\n\n        self._register_drivers()\n\n        self.device.set_bitfile_name(self.bitfile_name)\n        self.parser = self.device.parser\n\n        self.ip_dict = (\n            self.gpio_dict\n        ) = (\n            self.interrupt_controllers\n        ) = self.interrupt_pins = self.hierarchy_dict = dict()\n        self._deepcopy_dict_from(self.parser)\n        self.clock_dict = self.parser.clock_dict\n        self.pr_dict = dict()\n        self.ignore_version = ignore_version\n        description = _complete_description(\n            self.ip_dict,\n            self.hierarchy_dict,\n            self.ignore_version,\n            self.mem_dict,\n            self.device,\n            self,\n        )\n        self._ip_map = _IPMap(description)\n\n        # If we have a system graph information, expose it\n        if hasattr(self.parser, \"systemgraph\"):\n            self.systemgraph = self.parser.systemgraph\n        else:\n            self.systemgraph = None\n\n        if download:\n            self.download()\n        else:\n            if gen_cache:\n                self.gen_cache()\n\n        self.__doc__ = _build_docstring(\n            self._ip_map._description, bitfile_name, \"overlay\"\n        )"
+        },
+        {
+          "class": "Overlay",
+          "method": "download",
+          "line": 398,
+          "source": "def download(self, dtbo=None):\n        \"\"\"The method to download a full bitstream onto PL.\n\n        After the bitstream has been downloaded, the \"timestamp\" in PL will be\n        updated. In addition, all the dictionaries on PL will\n        be reset automatically.\n\n        This method will use parameter `dtbo` or `self.dtbo` to configure the\n        device tree.\n\n        The download method will also configure some of the PS registers\n        based on the metadata file provided, e.g. PL clocks,\n        AXI master port width.\n\n        Parameters\n        ----------\n        dtbo : str\n            The path of the dtbo file.\n\n        \"\"\"\n        for i in self.clock_dict:\n            if \"enable\" in self.clock_dict[i]:\n                enable = self.clock_dict[i][\"enable\"]\n                div0 = self.clock_dict[i][\"divisor0\"]\n                div1 = self.clock_dict[i][\"divisor1\"]\n                if enable:\n                    Clocks.set_pl_clk(i, div0, div1)\n                else:\n                    Clocks.set_pl_clk(i)\n\n        super().download(self.parser)\n        if dtbo:\n            super().insert_dtbo(dtbo)\n        elif self.dtbo:\n            super().insert_dtbo()"
+        },
+        {
+          "class": "Overlay",
+          "method": "is_loaded",
+          "line": 464,
+          "source": "def is_loaded(self):\n        \"\"\"This method checks whether a bitstream is loaded.\n\n        This method returns true if the loaded PL bitstream is same\n        as this Overlay's member bitstream.\n\n        Returns\n        -------\n        bool\n            True if bitstream is loaded.\n\n        \"\"\"\n        if not self.timestamp == \"\":\n            return self.timestamp == self.device.timestamp\n        else:\n            return self.bitfile_name == self.device.bitfile_name"
+        }
+      ]
+    },
+    {
+      "path": "/usr/local/share/pynq-venv/lib/python3.10/site-packages/pynq/bitstream.py",
+      "sha256": "b7e37302fefca9f2d09ebf487aa14abac8e603e12c544e8888d9ebaca9bf2914",
+      "excerpts": [
+        {
+          "class": "Bitstream",
+          "method": "__init__",
+          "line": 60,
+          "source": "def __init__(self, bitfile_name, dtbo=None, partial=False, device=None):\n        \"\"\"Return a new Bitstream object.\n\n        Users can either specify an absolute path to the bitstream file\n        (e.g. '/home/xilinx/pynq/overlays/base/base.bit'),\n        or a relative path within an overlay folder.\n        (e.g. 'base.bit' for base/base.bit).\n\n        Note\n        ----\n        `self.bitfile_name` always stores the absolute path of the bitstream.\n        `self.dtbo` always stores the absolute path of the dtbo file.\n\n        Parameters\n        ----------\n        bitfile_name : str\n            The absolute path or name of the bit file as a string.\n        dtbo : str\n            The relative or absolute path to the device tree segment.\n        partial : bool\n            Flag to indicate whether or not the bitstream is partial.\n\n        \"\"\"\n        if not isinstance(bitfile_name, str):\n            raise TypeError(\"Bitstream name has to be a string.\")\n        if device is None:\n            from .pl_server.device import Device\n\n            device = Device.active_device\n        self.device = device\n\n        # self.xsa = None\n        # if bitfile_name.endswith(\".xsa\"):\n        #    self.xsa_filepath = bitfile_name\n        #    self.xsa = pynqutils.build_utils.XsaParser(bitfile_name)\n        #    bitfile_name = self.xsa.bitstreamPaths[0]\n        #    self.xsa.load_bdc_metadata()\n\n        bitfile_overlay_abs_lst = []\n        if os.path.isabs(bitfile_name):\n            bitfile_abs = _resolve_bitstream(bitfile_name, device)\n        else:\n            bitfile_abs = _resolve_bitstream(os.path.abspath(bitfile_name), device)\n            overlays_ext_man = pynqutils.setup_utils.ExtensionsManager(OVERLAYS_GROUP)\n            paths = [overlays_ext_man.extension_path(OVERLAYS_GROUP)]\n            paths += overlays_ext_man.paths\n            for path in paths:\n                for p in [os.path.join(path, os.path.splitext(bitfile_name)[0]), path]:\n                    bitfile_overlay_abs = _resolve_bitstream(\n                        os.path.join(p, bitfile_name), device\n                    )\n                    if bitfile_overlay_abs:\n                        bitfile_overlay_abs_lst.append(bitfile_overlay_abs)\n        if bitfile_abs:\n            self.bitfile_name = bitfile_abs\n        elif bitfile_overlay_abs_lst:\n            self.bitfile_name = bitfile_overlay_abs_lst[0]\n        else:\n            raise IOError(\"Bitstream file {} does not exist.\".format(bitfile_name))\n\n        if bitfile_abs and bitfile_overlay_abs_lst or len(bitfile_overlay_abs_lst) > 1:\n            msg = (\n                \"The provided name '{}' resulted in multiple possible \"\n                \"matches:\\n - \".format(bitfile_name)\n            )\n            if bitfile_abs:\n                msg += \"{}\\n - \".format(bitfile_abs)\n            msg += \"\\n - \".join(bitfile_overlay_abs_lst)\n            msg += (\n                \"\\nThe first entry of this list, '{}', will be used, \"\n                \"please provide the full path in case your target file \"\n                \"was a different one in this list.\".format(self.bitfile_name)\n            )\n            warnings.warn(msg, UserWarning)\n\n        self.dtbo = None\n        default_dtbo = get_dtbo_path(self.bitfile_name)\n        if dtbo is None:\n            if os.path.exists(default_dtbo):\n                self.dtbo = default_dtbo\n        else:\n            self.dtbo = _find_dtbo_file(dtbo, self.bitfile_name)\n            if self.dtbo is None:\n                raise IOError(\"DTBO file {} does not exist.\".format(dtbo))\n\n        self.bit_data = dict()\n        self.binfile_name = \"\"\n        self.firmware_path = \"\"\n        self.timestamp = \"\"\n        self.partial = partial"
+        },
+        {
+          "class": "Bitstream",
+          "method": "download",
+          "line": 151,
+          "source": "def download(self, parser=None):\n        \"\"\"Download the bitstream onto PL and update PL information.\n\n        If device tree blob has been specified during initialization, this\n        method will also insert the corresponding device tree blob into the\n        system. This is same for both full bitstream and partial bitstream.\n\n        Note\n        ----\n        For partial bitstream, this method does not guarantee isolation between\n        static and dynamic regions.\n\n        Returns\n        -------\n        None\n\n        \"\"\"\n        self.device.download(self, parser)"
+        }
+      ]
+    },
+    {
+      "path": "/usr/local/share/pynq-venv/lib/python3.10/site-packages/pynq/pl_server/embedded_device.py",
+      "sha256": "cfd41079517552329914c125ecfec97293e0d3160db008ed18de9afa7834dee1",
+      "excerpts": [
+        {
+          "class": null,
+          "method": "_preload_binfile",
+          "line": 118,
+          "source": "def _preload_binfile(bitstream, parser):\n    \"\"\"Dump the data from a parser into a binary file in firmware\"\"\"\n    bin_data = getattr(parser, \"bin_data\", None)\n    if bin_data is None:\n        bin_data = _get_bitstream_handler(bitstream.bitfile_name).get_bin_data()\n    bitstream.binfile_name = Path(bitstream.bitfile_name).stem + \".bin\"\n    bitstream.firmware_path = Path(\"/lib/firmware\") / bitstream.binfile_name\n    bitstream.firmware_path.write_bytes(bin_data)"
+        },
+        {
+          "class": "EmbeddedDevice",
+          "method": "__init__",
+          "line": 567,
+          "source": "def __init__(self):\n        super().__init__(0, \"embedded_xrt{}\")\n        self.capabilities[\"REGISTER_RW\"] = False\n        self.capabilities[\"MEMORY_MAPPED\"] = True\n        self.capabilities[\"CALLABLE\"] = False"
+        },
+        {
+          "class": "EmbeddedDevice",
+          "method": "set_axi_port_width",
+          "line": 602,
+          "source": "def set_axi_port_width(self, parser):\n        \"\"\"This method will set the AXI port width.\n\n        This is useful to resolve discrepancy between the PS configurations\n        during boot and the PS configurations required by the bitstream. It\n        is usually to be resolved for full bitstream reconfiguration.\n\n        Check https://www.xilinx.com/support/answers/66295.html for more\n        information on the meaning of register values.\n\n        Currently only zynq ultrascale devices support data width changes.\n\n        \"\"\"\n        from pynq.registers import Register\n\n        if not hasattr(parser, \"ps_name\"):\n            # Setting port widths not supported for xclbin-only designs\n            return\n        parameter_dict = parser.ip_dict[parser.ps_name][\"parameters\"]\n        if parser.family_ps == \"zynq_ultra_ps_e\":\n            for para in ZU_FPD_SLCR_REG:\n                if para in parameter_dict:\n                    width = parameter_dict[para]\n                    for reg_name in ZU_FPD_SLCR_REG[para]:\n                        addr = ZU_FPD_SLCR_REG[para][reg_name][\"addr\"]\n                        f = ZU_FPD_SLCR_REG[para][reg_name][\"field\"]\n                        Register(addr)[f[0] : f[1]] = ZU_FPD_SLCR_VALUE[width]\n            for para in ZU_AXIFM_REG:\n                if para in parameter_dict:\n                    width = parameter_dict[para]\n                    for reg_name in ZU_AXIFM_REG[para]:\n                        addr = ZU_AXIFM_REG[para][reg_name][\"addr\"]\n                        f = ZU_AXIFM_REG[para][reg_name][\"field\"]\n                        Register(addr)[f[0] : f[1]] = ZU_AXIFM_VALUE[width]"
+        },
+        {
+          "class": "EmbeddedDevice",
+          "method": "download",
+          "line": 662,
+          "source": "def download(self, bitstream, parser=None):\n\n        if parser is None:\n            from .xclbin_parser import XclBin\n\n            parser = XclBin(xclbin_data=DEFAULT_XCLBIN)\n\n        if not bitstream.binfile_name:\n            _preload_binfile(bitstream, parser)\n\n        if not bitstream.partial:\n            self.shutdown()\n            self.gen_cache(bitstream, parser)\n            flag = 0\n        else:\n            flag = 1\n\n        with open(self.BS_FPGA_MAN_FLAGS, \"w\") as fd:\n            fd.write(str(flag))\n        with open(self.BS_FPGA_MAN, \"w\") as fd:\n            fd.write(bitstream.binfile_name)\n\n        self.set_axi_port_width(parser)\n\n        self._xrt_download(parser.xclbin_data)\n        super().post_download(bitstream, parser, self.name)"
+        }
+      ]
+    },
+    {
+      "path": "/usr/local/share/pynq-venv/lib/python3.10/site-packages/pynq/pl_server/device.py",
+      "sha256": "cbfac4c5d0e78b1c2aa726ac18dcd5bf52d3d693159e8f948a0977b4af30ed74",
+      "excerpts": [
+        {
+          "class": "Device",
+          "method": "reset",
+          "line": 147,
+          "source": "def reset(self, parser=None, timestamp=None, bitfile_name=None):\n        \"\"\"Reset all the dictionaries.\n\n        This method must be called after a bitstream download.\n        1. In case there is a `hwh` file, this method will reset\n        the states of the IP, GPIO, and interrupt dictionaries .\n        2. In case there is no `hwh` file, this method will simply\n        clear the state information stored for all dictionaries.\n\n        An existing parser given as the input can significantly reduce\n        the reset time, since the PL can reset based on the\n        information provided by the parser.\n\n        Parameters\n        ----------\n        parser : HWH\n            A parser object to speed up the reset process.\n        timestamp : str\n            The timestamp to embed in the reset\n        bitfile_name : str\n            The bitfile being loaded as part of the reset\n\n        \"\"\"\n        if parser is not None:\n            self.ip_dict = parser.ip_dict\n            self.gpio_dict = parser.gpio_dict\n            self.interrupt_controllers = parser.interrupt_controllers\n            self.interrupt_pins = parser.interrupt_pins\n            self.hierarchy_dict = parser.hierarchy_dict\n            self.mem_dict = parser.mem_dict\n        else:\n            hwh_name = get_hwh_name(self._bitfile_name)\n            if os.path.isfile(hwh_name):\n                self.ip_dict = clear_state(self.ip_dict)\n                self.gpio_dict = clear_state(self.gpio_dict)\n                self.hierarchy_dict = clear_state(self.hierarchy_dict)\n            else:\n                self.clear_dict()\n        if timestamp is not None:\n            self.timestamp = timestamp\n        if bitfile_name is not None:\n            self.bitfile_name = bitfile_name"
+        },
+        {
+          "class": "Device",
+          "method": "shutdown",
+          "line": 383,
+          "source": "def shutdown(self):\n        \"\"\"Shutdown the AXI connections to the PL in preparation for\n        reconfiguration\n\n        \"\"\"\n        from ..mmio import MMIO\n        from .global_state import (\n            GlobalState,\n            global_state_file_exists,\n            load_global_state,\n            initial_global_state_file_boot_check\n        )\n\n        initial_global_state_file_boot_check()\n\n        if global_state_file_exists():\n            gs = load_global_state()\n            for sd_ip in gs.shutdown_ips.values():\n                mmio = MMIO(sd_ip.base_addr, device=self)\n                # Request shutdown\n                mmio.write(0x0, 0x1)\n                i = 0\n                while mmio.read(0x0) != 0x0F and i < 16000:\n                    i += 1\n                if i >= 16000:\n                    warnings.warn(\n                        \"Timeout for shutdown manager. It's likely \"\n                        \"the configured bitstream and metadata \"\n                        \"don't match.\"\n                    )"
+        },
+        {
+          "class": "Device",
+          "method": "post_download",
+          "line": 414,
+          "source": "def post_download(self, bitstream, parser, name: str = \"Unknown\"):\n        if not bitstream.partial:\n            import datetime\n\n            t = datetime.datetime.now()\n            bitstream.timestamp = \"{}/{}/{} {}:{}:{} +{}\".format(\n                t.year, t.month, t.day, t.hour, t.minute, t.second, t.microsecond\n            )\n            self.reset(parser, bitstream.timestamp, bitstream.bitfile_name)"
+        }
+      ]
+    },
+    {
+      "path": "/usr/local/share/pynq-venv/lib/python3.10/site-packages/pynq/pl_server/xrt_device.py",
+      "sha256": "b79765ec53d92ac97657e95a7c990e8d1bdacb133161b278e1a8c3e4159fcd5e",
+      "excerpts": [
+        {
+          "class": "XrtDevice",
+          "method": "_xrt_download",
+          "line": 508,
+          "source": "def _xrt_download(self, data):\n        # Keep copy of old contexts so we can reacquire them if\n        # downloading fails\n        old_contexts = copy.deepcopy(self.contexts)\n        # Close existing contexts\n        for k, v in self.contexts.items():\n            xrt.xclCloseContext(self.handle, v[\"uuid_ctypes\"], v[\"idx\"])\n        self.contexts = dict()\n\n        # Download xclbin file\n        if not self.handle:\n            self._get_handle()\n        err = xrt.xclLockDevice(self.handle)\n        if err:\n            raise RuntimeError(\"Could not lock device for programming - \" + str(err))\n        try:\n            err = xrt.xclLoadXclBin(self.handle, data)\n            if err:\n                for k, v in old_contexts:\n                    xrt.xclOpenContext(self.handle, v[\"uuid_ctypes\"], v[\"idx\"], True)\n                self.contexts = old_contexts\n                raise RuntimeError(\n                    \"Programming Device failed: \" + _format_xrt_error(err)\n                )\n        finally:\n            xrt.xclUnlockDevice(self.handle)"
+        }
+      ]
+    }
+  ]
+}

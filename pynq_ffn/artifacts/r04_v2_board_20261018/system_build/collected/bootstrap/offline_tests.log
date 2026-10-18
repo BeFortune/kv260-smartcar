@@ -1,0 +1,14 @@
+test_actual_windows_batch_exit_code (__main__.OfflineTests.test_actual_windows_batch_exit_code) ... ok
+test_atomic_no_overwrite (__main__.OfflineTests.test_atomic_no_overwrite) ... ok
+test_cmd_quoting_rejects_metachar (__main__.OfflineTests.test_cmd_quoting_rejects_metachar) ... ok
+test_export_same_run_and_subhwh_selection (__main__.OfflineTests.test_export_same_run_and_subhwh_selection) ... ok
+test_safe_ip_and_width (__main__.OfflineTests.test_safe_ip_and_width) ... ok
+test_stage_records_real_exit_no_retry (__main__.OfflineTests.test_stage_records_real_exit_no_retry) ... ok
+test_success_hash_and_tamper (__main__.OfflineTests.test_success_hash_and_tamper) ... ok
+test_tcl_static_balance_only (__main__.OfflineTests.test_tcl_static_balance_only) ... ok
+test_unsafe_ip_rejected (__main__.OfflineTests.test_unsafe_ip_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.069s
+
+OK

@@ -1,0 +1,23 @@
+{
+  "root": "/home/ubuntu/r04_v2_board_20261018/run_inputs/deploy",
+  "deployment_manifest": "/home/ubuntu/r04_v2_board_20261018/deployment_manifest.json",
+  "manifest_sha256": "091ef56ae0a60ba3451b2027c1b30ff73dc784a8ab8e7f8833a076c1890ba2c1",
+  "bit_sha256": "8f438a07fa7cfa2f2db9e276f904388df7a06476cc090d55758ceb231dd34ab7",
+  "hwh_sha256": "7254ea3c456098518917e89b836414592b34ffe3e7a24aec2d7ba772713cec85",
+  "system_acceptance": "/home/ubuntu/r04_v2_board_20261018/run_inputs/system_acceptance/system_acceptance.json",
+  "acceptance_sha256": "fd3a55f428d7e64ccf63e3aa79c9b76f4125bb01fc5f077e24660e6a4579bed9",
+  "output_dir": "/home/ubuntu/r04_v2_board_20261018/board_run01/split_pl4",
+  "bit": "overlay/r04_v2_20261018.bit",
+  "recording": "/home/ubuntu/ffn_migrate/data/1778852165",
+  "allow_pl": true,
+  "reuse_programmed_overlay": true,
+  "ip_name": "ffn_accel_0",
+  "timeout_s": 60.0,
+  "expected_clock_mhz": 100.0,
+  "clock_tolerance_percent": 0.5,
+  "mode": "split_pl4",
+  "run_root": "/home/ubuntu/r04_v2_board_20261018/board_run01",
+  "input_digest": "12c371183f9a0b0cd128eb80af7a97f327dfe5703c9c187ba5253efeea834f53",
+  "reference_index": "/home/ubuntu/r04_v2_board_20261018/board_run01/split_ort4_reference_index.json",
+  "reference_index_sha256": "e330801c113db7722ee9343f010e42c60acb47177d8a7d0a8518a1d629f57539"
+}

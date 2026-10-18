@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="31" time="3.734" timestamp="2026-10-18T18:16:15.305269+08:00" hostname="ENERTCOUNT-EX"><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_cli_refuses_unsafe_or_unfair_overrides[extra0]" time="0.018" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_cli_refuses_unsafe_or_unfair_overrides[extra1]" time="0.009" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_cli_refuses_unsafe_or_unfair_overrides[extra2]" time="0.008" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_cli_refuses_unsafe_or_unfair_overrides[extra3]" time="0.009" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_cli_refuses_unsafe_or_unfair_overrides[extra4]" time="0.008" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_cli_refuses_unsafe_or_unfair_overrides[extra5]" time="0.007" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_cli_refuses_unsafe_or_unfair_overrides[extra6]" time="0.010" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_cli_default_static_and_fixed_clock" time="0.006" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_no_hardware_writers_in_harness_or_gates" time="0.037" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_safe_cleanup_idle_then_close_then_ort" time="0.030" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_uncertainty_never_clears_ort_or_escapes_quarantine[poisoned_idle]" time="0.008" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_uncertainty_never_clears_ort_or_escapes_quarantine[inflight_idle]" time="0.006" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_uncertainty_never_clears_ort_or_escapes_quarantine[busy]" time="0.006" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_uncertainty_never_clears_ort_or_escapes_quarantine[read_error]" time="0.006" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_uncertainty_never_clears_ort_or_escapes_quarantine[close_error]" time="0.006"><failure message="AttributeError: 'types.SimpleNamespace' object has no attribute 'starts'">tmp_path = WindowsPath('C:/Users/BeFortuneEX/AppData/Local/Temp/pytest-of-BeFortuneEX/pytest-17/test_uncertainty_never_clears_4')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x0000020F58010980&gt;
+case = 'close_error'
+
+    @pytest.mark.parametrize("case", ["poisoned_idle", "inflight_idle", "busy", "read_error", "close_error"])
+    def test_uncertainty_never_clears_ort_or_escapes_quarantine(tmp_path, monkeypatch, case):
+        class Parked(BaseException): pass
+        events = []
+        def read(_):
+            if case == "read_error": raise OSError("unknown")
+            return 0 if case == "busy" else 4
+        def close():
+            if case == "close_error": raise HardwareStateError("uncertain close")
+            pytest.fail("Uncertain buffer must never be closed")
+        backend = SimpleNamespace(_poisoned=case=="poisoned_idle", _inflight=case=="inflight_idle", close=close)
+        runtime = SimpleNamespace(sessions=SimpleNamespace(clear=lambda: pytest.fail("No ORT destruction before quarantine")))
+        def quarantine(e, b, error):
+            events.append("parked")
+            assert b is backend and runtime in v.g.LIVE
+            raise Parked()
+        monkeypatch.setattr(v.g, "quarantine", quarantine)
+        with pytest.raises(Parked):
+&gt;           v.safe_cleanup(Evidence(tmp_path), backend, SimpleNamespace(read=read), runtime, TimeoutError("timeout"))
+
+pynq_ffn\artifacts\r04_v2_board_20261018\board_validation\test_board_validate.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+evidence = &lt;test_board_validate.Evidence object at 0x0000020F58010E90&gt;
+backend = namespace(_poisoned=False, _inflight=False, close=&lt;function test_uncertainty_never_clears_ort_or_escapes_quarantine.&lt;locals&gt;.close at 0x0000020F58014CC0&gt;)
+ip = namespace(read=&lt;function test_uncertainty_never_clears_ort_or_escapes_quarantine.&lt;locals&gt;.read at 0x0000020F58016B60&gt;)
+runtime = namespace(sessions=namespace(clear=&lt;function test_uncertainty_never_clears_ort_or_escapes_quarantine.&lt;locals&gt;.&lt;lambda&gt; at 0x0000020F58016160&gt;))
+error = TimeoutError('timeout')
+
+    def safe_cleanup(evidence, backend, ip, runtime, error=None):
+        # Check uncertainty BEFORE close() can free; even a later IDLE does not absolve a timeout.
+        if backend is not None:
+            try:
+                if getattr(backend, "_poisoned", False) or getattr(backend, "_inflight", False):
+                    raise RuntimeError("Backend completion uncertain")
+                control = int(ip.read(0))
+                g.require_idle(control)
+            except BaseException as state_error:
+                g.LIVE.append(runtime)
+                g.quarantine(evidence, backend, error or state_error)
+                raise AssertionError("Quarantine must never return")
+&gt;           evidence.event("cleanup_idle", {"ctrl": control, "kernel_starts": ip.starts})
+                                                                              ^^^^^^^^^
+E           AttributeError: 'types.SimpleNamespace' object has no attribute 'starts'
+
+pynq_ffn\artifacts\r04_v2_board_20261018\board_validation\board_validate.py:186: AttributeError</failure></testcase><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_real_backend_fake_success_free_reverse_order_after_done" time="0.009" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_real_backend_fake_timeout_idle_later_still_no_free" time="0.013" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_one_token_first_37_real_fake_starts_3_inputs" time="0.066" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_parent_wait_survives_interrupt_and_evidence_failure" time="0.001" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_quarantine_child_actual_driver_timeout_never_exits_or_frees" time="1.209" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_clock_snapshot_readonly_pll_cpu_and_frequency_guard[100.0]" time="0.103" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_clock_snapshot_readonly_pll_cpu_and_frequency_guard[99.999]" time="0.031" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_clock_snapshot_readonly_pll_cpu_and_frequency_guard[150.0]" time="0.030" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_static_fresh_process_real_bundle_no_project_or_pynq_import" time="1.013" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_acceptance_refuses_unverified_or_wrong_artifacts[status-\u672a\u6267\u884c]" time="0.018" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_acceptance_refuses_unverified_or_wrong_artifacts[bit_sha256-1111111111111111111111111111111111111111111111111111111111111111]" time="0.022" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_acceptance_refuses_unverified_or_wrong_artifacts[schema-wrong]" time="0.024" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_acceptance_refuses_unverified_or_wrong_artifacts[evidence_files-value3]" time="0.020" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_benchmark_117_frames_warmup3_raw_timing" time="0.343" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_integer_boundary_not_hidden_by_float_tolerance" time="0.001" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_validation.test_board_validate" name="test_production_runtime_still_exact_sha" time="0.002" /></testsuite></testsuites>

@@ -1,0 +1,22 @@
+{
+  "stage": "bd",
+  "cwd": "D:\\g4",
+  "start": "2026-10-18T10:15:56.376701+00:00",
+  "end": "2026-10-18T10:16:48.372351+00:00",
+  "status": "已验证",
+  "exit_code": 0,
+  "input_sha256": "5d3b686e7bb0dc3102647a80049e6a13320b81589c3e1b5fbeb4755ec113c9e4",
+  "log": "D:\\g4\\records\\bd.console.log",
+  "command": "\"C:\\WINDOWS\\system32\\cmd.exe\" /d /s /v:off /c \"\"D:\\Learning\\AMDDesignTools\\2026.1\\Vivado\\bin\\vivado.bat\" \"-mode\" \"batch\" \"-notrace\" \"-source\" \"D:\\g4\\stage_entry.tcl\" \"-log\" \"D:\\g4\\records\\bd.vivado.log\" \"-journal\" \"D:\\g4\\records\\bd.vivado.jou\" \"-tclargs\" \"D:\\g4\\create_overlay_bd.tcl\"\"",
+  "outputs": {
+    "evidence/vivado/bd_address_map.txt": "f9f86047eb4944f4956fb4b7237bd6d02ad165f20f5d3c91c1abb61c60ae5a6f",
+    "evidence/vivado/ffn_overlay_bd.tcl": "f38ee90d8eb6aac5a5518dfcf179cf085856ce521281074faea5c7d4b1c5c33c",
+    "evidence/vivado/high_ddr_target_properties.txt": "9448bdc8f3102fbbce1bc34009ab388655a014fd73c570c337fda9cc87d756b4",
+    "evidence/vivado/hls_gmem0_properties.txt": "37c4ca2bc59ccc4e41cd6340a954f0db910dc79c1e0ca3f8868a5a0c3edbaa2d",
+    "evidence/vivado/hls_gmem1_properties.txt": "19ed9539b0825f0b09c3208771513bf534fa33560f596c515aebf0c073978ea7",
+    "evidence/vivado/low_ddr_target_properties.txt": "4a9233530348611bc802744fc5678a723b1e24a66f9123e7ae40ec3fe79f6307",
+    "evidence/vivado/pl_clock_properties.txt": "810d3716fb58b298a6c8faef4d725b48ac3bd142ee1d024fbd9e8fc571129306",
+    "evidence/vivado/ps_properties.txt": "8ba23af178daa9ee9a849d342026cf3809492de17c035790395d8bb11e6ab348",
+    "evidence/vivado/reset_properties.txt": "9b1e28a7c4d4efddc07d3231ae515667a8107f9c090711f6c11604e64419e88c"
+  }
+}

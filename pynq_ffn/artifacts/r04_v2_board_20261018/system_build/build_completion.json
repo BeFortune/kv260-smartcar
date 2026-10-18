@@ -1,0 +1,24 @@
+{
+  "status": "已验证",
+  "job_id": "job_mvdo6uam_196077ac38b8",
+  "netcatty_status": "completed",
+  "netcatty_exit_code": 0,
+  "bootstrap_exit_code": 0,
+  "stage_exit_codes": {"prepare": 0, "bd": 0, "synth": 0, "impl": 0, "export": 0},
+  "bundle_sha256": "e753a8ba198caf72a5f714a6fc93db4cd5059ebf534043a0048e99096e36007f",
+  "remote_build_root": "D:/g4",
+  "remote_script_root": "D:/g4s",
+  "old_remote_roots_preserved": ["D:/g3", "D:/f3", "D:/i8", "D:/io8"],
+  "local_review_exit_code": 0,
+  "local_collection_first_attempt": {
+    "status": "失败",
+    "exit_code": 1,
+    "first_error": "SyntaxError: unterminated string literal in inline extraction backslash check",
+    "effect": "Python syntax error before execution; no collected directory or artifact changed",
+    "correction": "Use chr(92), then && to ensure review does not run after failed extraction",
+    "corrected_exit_code": 0
+  },
+  "terminal_capture_note": "One poll replayed historical PowerShell terminal buffer; stage facts verified from original finished JSON, subprocess logs, and independently parsed reports, not prompt text.",
+  "board_operations": "未执行; this worker did not connect to KV260 or change hardware state",
+  "final_acceptance_confirmation": "Coordinator review required; no r04v2.system_acceptance.v1 confirmation produced by this worker"
+}

@@ -1,0 +1,302 @@
+{
+  "schema": "r04v2.board_final.v1",
+  "status": "已验证",
+  "experiment_date": "2026-10-18",
+  "closure_utc": "2026-10-18T11:14:03.302366+00:00",
+  "scope": "Completed real KV260 recorded-input run; not simulation, live camera or vehicle",
+  "closure_check": "Local evidence and hashes only; no new remote or hardware action",
+  "evidence_integrity": {
+    "status": "已验证",
+    "board_archive": "board_evidence01.zip",
+    "board_archive_sha256": "f0ef8ff44db105af1e0ad8085ab7c04d7184a1f10d79d51c9a928b71d63348e9",
+    "board_files_rehashed": 385,
+    "system_files_rehashed": 109,
+    "board_manifest_sha256": "6ca707ac0149b4119616ac3e72413925691c1038e531c697750ae08ce32bee0c",
+    "system_delivery_manifest_sha256": "e4dbfacb204c3c86e6db9275c9641648a86cb62b8cce8e7c6e6504d660378603",
+    "independent_analysis_sha256": "03ab0d15256907c8f0335d4a2a1552f791236100d0db1326c0b9e2d4c51ad586"
+  },
+  "source_hashes": {
+    "ps/runtime.py": "49ace8fbf61a29e2e54efc174b45477cd08fc5fe469d13547df17326b9745576",
+    "hls/ffn_accel.cpp": "829c9ec63604e327ad4ea13855b405113ea74fea6a62721d512ded6341b0b9b6",
+    "hls/ffn_accel.hpp": "715f0ca11cc5e9920569654f7296c8443a0186f988557bd27ec1af3f476c7c35",
+    "hls/candidates/interleaved_r04/v2/ffn_accel.cpp": "553b9c9b36fee41d791908f1fc3b8314ea4631db403743f5e80665d18fad1350",
+    "hls/candidates/interleaved_r04/v2/ffn_accel.hpp": "fcdced1362b460a6cea73fc5869564e6797c041469a50b9c56deba1253cd7478"
+  },
+  "artifacts": {
+    "bit_sha256": "8f438a07fa7cfa2f2db9e276f904388df7a06476cc090d55758ceb231dd34ab7",
+    "hwh_sha256": "7254ea3c456098518917e89b836414592b34ffe3e7a24aec2d7ba772713cec85",
+    "xsa_sha256": "895134005bf3e5a887b50d39c4394dd39867c1dc2ec7559f703090a0581d04ff",
+    "xsa_bit_equal_load_bit": true,
+    "xsa_hwh_equal_load_hwh": true
+  },
+  "system_implementation": {
+    "status": "已验证",
+    "gates": {
+      "implemented": {
+        "timing": {
+          "wns_ns": 1.747,
+          "tns_ns": 0.0,
+          "setup_failing": 0.0,
+          "setup_total": 154314.0,
+          "whs_ns": 0.01,
+          "ths_ns": 0.0,
+          "hold_failing": 0.0,
+          "hold_total": 154314.0,
+          "wpws_ns": 3.5,
+          "tpws_ns": 0.0,
+          "pulse_failing": 0.0,
+          "pulse_total": 64389.0,
+          "clocks": [
+            [
+              "clk_pl_0",
+              "10.000",
+              "100.000"
+            ]
+          ]
+        },
+        "route": {
+          "routable nets": 97862,
+          "fully routed nets": 97862,
+          "nets with routing errors": 0
+        },
+        "drc": {
+          "DPIP-2": {
+            "severity": "Warning",
+            "count": 573
+          },
+          "DPOP-3": {
+            "severity": "Warning",
+            "count": 504
+          },
+          "DPOP-4": {
+            "severity": "Warning",
+            "count": 230
+          },
+          "DPREG-7": {
+            "severity": "Warning",
+            "count": 38
+          },
+          "AVAL-155": {
+            "severity": "Advisory",
+            "count": 272
+          },
+          "AVAL-156": {
+            "severity": "Advisory",
+            "count": 79
+          }
+        }
+      },
+      "pre_bitgen": {
+        "timing": {
+          "wns_ns": 1.747,
+          "tns_ns": 0.0,
+          "setup_failing": 0.0,
+          "setup_total": 154314.0,
+          "whs_ns": 0.01,
+          "ths_ns": 0.0,
+          "hold_failing": 0.0,
+          "hold_total": 154314.0,
+          "wpws_ns": 3.5,
+          "tpws_ns": 0.0,
+          "pulse_failing": 0.0,
+          "pulse_total": 64389.0,
+          "clocks": [
+            [
+              "clk_pl_0",
+              "10.000",
+              "100.000"
+            ]
+          ]
+        },
+        "route": {
+          "routable nets": 97862,
+          "fully routed nets": 97862,
+          "nets with routing errors": 0
+        },
+        "drc": {
+          "DPIP-2": {
+            "severity": "Warning",
+            "count": 573
+          },
+          "DPOP-3": {
+            "severity": "Warning",
+            "count": 504
+          },
+          "DPOP-4": {
+            "severity": "Warning",
+            "count": 230
+          },
+          "DPREG-7": {
+            "severity": "Warning",
+            "count": 38
+          },
+          "AVAL-155": {
+            "severity": "Advisory",
+            "count": 272
+          },
+          "AVAL-156": {
+            "severity": "Advisory",
+            "count": 79
+          }
+        }
+      },
+      "post_bitgen": {
+        "timing": {
+          "wns_ns": 1.747,
+          "tns_ns": 0.0,
+          "setup_failing": 0.0,
+          "setup_total": 154314.0,
+          "whs_ns": 0.01,
+          "ths_ns": 0.0,
+          "hold_failing": 0.0,
+          "hold_total": 154314.0,
+          "wpws_ns": 3.5,
+          "tpws_ns": 0.0,
+          "pulse_failing": 0.0,
+          "pulse_total": 64389.0,
+          "clocks": [
+            [
+              "clk_pl_0",
+              "10.000",
+              "100.000"
+            ]
+          ]
+        },
+        "route": {
+          "routable nets": 97862,
+          "fully routed nets": 97862,
+          "nets with routing errors": 0
+        },
+        "drc": {
+          "DPIP-2": {
+            "severity": "Warning",
+            "count": 573
+          },
+          "DPOP-3": {
+            "severity": "Warning",
+            "count": 504
+          },
+          "DPOP-4": {
+            "severity": "Warning",
+            "count": 230
+          },
+          "DPREG-7": {
+            "severity": "Warning",
+            "count": 38
+          },
+          "AVAL-155": {
+            "severity": "Advisory",
+            "count": 272
+          },
+          "AVAL-156": {
+            "severity": "Advisory",
+            "count": 79
+          }
+        }
+      }
+    },
+    "ps_config_comparison": {
+      "config_property_count": 1692,
+      "changes": {},
+      "source": "r03 g3 versus r04 g4 ps_properties CONFIG.*"
+    }
+  },
+  "programming": {
+    "status": "已验证",
+    "download_attempts": 1,
+    "original_warning_gate_status": "失败",
+    "original_report": "collected_board01/supplement/program01/report.json",
+    "independent_verification_status": "已验证",
+    "verification_report": "collected_board01/programming/report.json",
+    "warning": "unclosed file <_io.BufferedWriter name='/usr/local/share/pynq-venv/lib/python3.10/site-packages/pynq/pl_server/_current_metadata.pkl'>",
+    "repeat_downloads": 0,
+    "clock_register_writes_by_scripts": 0,
+    "rollback_executed": false
+  },
+  "real_pl_compute": {
+    "status": "已验证",
+    "frames": 117,
+    "warmup": 3,
+    "threads": 4,
+    "kernel_start_writes_observed": 517,
+    "single_layer_cases": 36,
+    "initial_one_token_smoke": 1,
+    "final_clock_snapshot": {
+      "ctrl": 4,
+      "pl_raw": [
+        16846592,
+        16846592,
+        16846592,
+        16846592
+      ],
+      "pll_raw": {
+        "IOPLL_CTRL": 88576,
+        "RPLL_CTRL": 82176,
+        "APLL_CTRL": 86016,
+        "DPLL_CTRL": 81920,
+        "VPLL_CTRL": 77321
+      },
+      "fclk0_mhz": 99.999,
+      "source_mhz": 1499.985,
+      "cpu_raw": {
+        "ACPU_CTRL": 50331904
+      },
+      "cpu_mhz": 1333.32
+    },
+    "cleanup_order": [
+      "cleanup_idle",
+      "backend_closed_after_idle",
+      "ort_sessions_cleared"
+    ],
+    "timeouts": 0,
+    "four_output_max_abs_error": {
+      "speed_norm": 1.4901161193847656e-07,
+      "speed_raw": 0.0001220703125,
+      "region_logits": 7.078051567077637e-08,
+      "region_probs": 1.4901161193847656e-08
+    },
+    "speed_integer_mismatches": 0,
+    "cumulative_cut_max_abs_error": {
+      "camera_0": 1.1920928955078125e-07,
+      "camera_1": 1.7881393432617188e-07,
+      "cross_0": 1.4901161193847656e-07,
+      "cross_1": 1.7881393432617188e-07
+    }
+  },
+  "performance": {
+    "status": "失败",
+    "criterion": "PS+PL faster than same-board CPU under comparable conditions",
+    "golden4_p50_ms": 65.21087500732392,
+    "split_ort4_spinning_false_p50_ms": 74.86663101008162,
+    "split_pl4_spinning_false_p50_ms": 170.0301439850591,
+    "pl_vs_golden_p50_ratio": 2.6073893958018934,
+    "pl_vs_split_ort_p50_ratio": 2.2711071900933097,
+    "detailed_metrics": "board_analysis01.json"
+  },
+  "last_verified_board_state": {
+    "status": "已验证",
+    "date_utc": "2026-10-18T10:59:50.484207+00:00",
+    "kernel": "r04v2",
+    "ctrl": 4,
+    "fclk0_mhz": 99.999,
+    "buffers": "closed only after confirmed idle",
+    "rollback_executed": false,
+    "scope": "State at end of recorded test, not a later live re-read"
+  },
+  "not_executed": [
+    "full 659/660-token RTL",
+    "long-duration stability/power/temperature",
+    "live camera freshness",
+    "serial and vehicle",
+    "15Hz live closed-loop acceptance",
+    "replace formal r03 source",
+    "refresh delivery ZIP",
+    "automatic reset or rollback"
+  ],
+  "preserved": [
+    "r03 source and prior system artifacts",
+    "original program01 warning failure",
+    "failed helper tests and connection/environment attempts",
+    "round-two simulation/OOC evidence"
+  ]
+}

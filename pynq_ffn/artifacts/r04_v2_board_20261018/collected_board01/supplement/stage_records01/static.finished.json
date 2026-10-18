@@ -1,0 +1,32 @@
+{
+  "status": "已验证",
+  "stage": "static",
+  "command": [
+    "/usr/local/share/pynq-venv/bin/python3",
+    "-B",
+    "/home/ubuntu/r04_v2_board_20261018/run_inputs/board_validation/board_validate.py",
+    "--root",
+    "/home/ubuntu/r04_v2_board_20261018/run_inputs/deploy",
+    "--deployment-manifest",
+    "/home/ubuntu/r04_v2_board_20261018/deployment_manifest.json",
+    "--manifest-sha256",
+    "091ef56ae0a60ba3451b2027c1b30ff73dc784a8ab8e7f8833a076c1890ba2c1",
+    "--bit",
+    "overlay/r04_v2_20261018.bit",
+    "--bit-sha256",
+    "8f438a07fa7cfa2f2db9e276f904388df7a06476cc090d55758ceb231dd34ab7",
+    "--hwh-sha256",
+    "7254ea3c456098518917e89b836414592b34ffe3e7a24aec2d7ba772713cec85",
+    "--system-acceptance",
+    "/home/ubuntu/r04_v2_board_20261018/run_inputs/system_acceptance/system_acceptance.json",
+    "--acceptance-sha256",
+    "fd3a55f428d7e64ccf63e3aa79c9b76f4125bb01fc5f077e24660e6a4579bed9",
+    "--output-dir",
+    "/home/ubuntu/r04_v2_board_20261018/static01"
+  ],
+  "started_utc": "2026-10-18T10:54:28.712897+00:00",
+  "exit_code": 0,
+  "pins_sha256": "28d2d1e801377d51d1d05974b64628d5f4ab6709e716969cfd7e76a213fa4ef1",
+  "cancellation": "No timeout/kill/terminate or automatic recovery",
+  "finished_utc": "2026-10-18T10:54:30.082708+00:00"
+}

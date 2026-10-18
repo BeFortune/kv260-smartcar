@@ -1,0 +1,49 @@
+{
+  "host": "JasonWenDsek",
+  "user": "jw",
+  "cwd": "D:\\g4s",
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "pid": 9424,
+  "start_unix": 1792318555.7658803,
+  "stages": [
+    {
+      "stage": "syntax",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "compileall",
+        "-q",
+        "D:\\g4s\\scripts"
+      ],
+      "exit_code": 0,
+      "log": "D:\\g4s\\syntax.log",
+      "finished_unix": 1792318555.843987
+    },
+    {
+      "stage": "offline_tests",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "D:\\g4s\\scripts\\test_run_system.py"
+      ],
+      "exit_code": 0,
+      "log": "D:\\g4s\\offline_tests.log",
+      "finished_unix": 1792318556.1935768
+    },
+    {
+      "stage": "build",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-u",
+        "D:\\g4s\\scripts\\run_system.py",
+        "all",
+        "--root",
+        "D:\\g4"
+      ],
+      "exit_code": 0,
+      "log": "D:\\g4s\\build.log",
+      "finished_unix": 1792320443.3313663
+    }
+  ],
+  "exit_code": 0,
+  "end_unix": 1792320443.3316345
+}

@@ -1,0 +1,18 @@
+{
+  "stage": "impl",
+  "cwd": "D:\\g4",
+  "start": "2026-10-18T10:25:05.948590+00:00",
+  "end": "2026-10-18T10:41:54.494293+00:00",
+  "status": "已验证",
+  "exit_code": 0,
+  "input_sha256": "5d3b686e7bb0dc3102647a80049e6a13320b81589c3e1b5fbeb4755ec113c9e4",
+  "log": "D:\\g4\\records\\impl.console.log",
+  "command": "\"C:\\WINDOWS\\system32\\cmd.exe\" /d /s /v:off /c \"\"D:\\Learning\\AMDDesignTools\\2026.1\\Vivado\\bin\\vivado.bat\" \"-mode\" \"batch\" \"-notrace\" \"-source\" \"D:\\g4\\stage_entry.tcl\" \"-log\" \"D:\\g4\\records\\impl.vivado.log\" \"-journal\" \"D:\\g4\\records\\impl.vivado.jou\" \"-tclargs\" \"D:\\g4\\run_overlay_impl.tcl\"\"",
+  "outputs": {
+    "evidence/vivado/ffn_overlay_wrapper_routed.dcp": "411789fee62b6ebde2114787b8c300e4171cb04d4d66a9d4454c8eab6b018f83",
+    "evidence/vivado/implemented_drc.rpt": "634b568874d0516ec65a3996fd33f1138bc11c5ddb21a80e8161a95b08a0a0ed",
+    "evidence/vivado/implemented_gate.txt": "88917a91d1bbefa9d92af349b5b58c53804bfb57af789130d2797ce0c20dc5fe",
+    "evidence/vivado/implemented_route_status.rpt": "dc0eba07d267aa1d5aa7b63c596e6a226651e9ec2752f43c01534d4a7210e6e5",
+    "evidence/vivado/implemented_timing_summary.rpt": "61340db78c2b818934c0865ad107aaa86001882b42aae0b58d6622d1ce94f0be"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "stage": "export",
+  "cwd": "D:\\g4",
+  "start": "2026-10-18T10:41:54.537768+00:00",
+  "end": "2026-10-18T10:47:23.320766+00:00",
+  "status": "已验证",
+  "exit_code": 0,
+  "input_sha256": "5d3b686e7bb0dc3102647a80049e6a13320b81589c3e1b5fbeb4755ec113c9e4",
+  "log": "D:\\g4\\records\\export.console.log",
+  "command": "\"C:\\WINDOWS\\system32\\cmd.exe\" /d /s /v:off /c \"\"D:\\Learning\\AMDDesignTools\\2026.1\\Vivado\\bin\\vivado.bat\" \"-mode\" \"batch\" \"-notrace\" \"-source\" \"D:\\g4\\stage_entry.tcl\" \"-log\" \"D:\\g4\\records\\export.vivado.log\" \"-journal\" \"D:\\g4\\records\\export.vivado.jou\" \"-tclargs\" \"D:\\g4\\finalize_bit_xsa.tcl\"\"",
+  "outputs": {
+    "evidence/vivado/post_bitgen_gate.txt": "88917a91d1bbefa9d92af349b5b58c53804bfb57af789130d2797ce0c20dc5fe",
+    "evidence/vivado/pre_bitgen_gate.txt": "88917a91d1bbefa9d92af349b5b58c53804bfb57af789130d2797ce0c20dc5fe",
+    "load/ffn_overlay_wrapper.bit": "8f438a07fa7cfa2f2db9e276f904388df7a06476cc090d55758ceb231dd34ab7",
+    "load/ffn_overlay_wrapper.hwh": "7254ea3c456098518917e89b836414592b34ffe3e7a24aec2d7ba772713cec85",
+    "traceability/artifact_verification.json": "8a064570685a9543d88fa7863cad865427e83adb2ee8b9ce7aaab9b62ed32342",
+    "traceability/ffn_overlay_wrapper.xsa": "895134005bf3e5a887b50d39c4394dd39867c1dc2ec7559f703090a0581d04ff"
+  }
+}

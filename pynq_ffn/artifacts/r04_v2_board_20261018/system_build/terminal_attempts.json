@@ -1,0 +1,30 @@
+{
+  "first_session": "c9e7b065-6649-46a0-b556-8497de4f9310",
+  "failed_short_commands": [
+    {
+      "exit_code": -1,
+      "error": "Command timed out (60s)",
+      "stdout": ""
+    },
+    {
+      "exit_code": -1,
+      "error": "Command timed out (60s)",
+      "stdout": ""
+    }
+  ],
+  "first_job": {
+    "job_id": "job_mvdo3tvr_bb4d80c3fc89",
+    "exit_code": -1,
+    "error": "Background job startup timed out — start marker never arrived",
+    "python_started": false,
+    "sftp_observation": "D:/g4s only bootstrap.py and scripts.zip; no started/scripts/build log"
+  },
+  "new_session": "e6dc9fb9-c6e3-4ed1-8475-c8a9a8eec6e0",
+  "recovery": "New authorized same-host Netcatty session; old session preserved, no Ctrl-C/service restart",
+  "python_preflight": {
+    "exit_code": 0,
+    "version": "3.14.2"
+  },
+  "active_job": "job_mvdo6uam_196077ac38b8",
+  "scope": "4090 system build only; no KV260 operations"
+}

@@ -1,0 +1,18 @@
+{
+  "root": "D:\\g4",
+  "vivado": "D:\\Learning\\AMDDesignTools\\2026.1\\Vivado\\bin\\vivado.bat",
+  "vivado_bat_sha256": "a5f91ee867cea61be4355caf9f7a784c6c34351c5c1d1618562ddda299e38a8b",
+  "ip": "D:/io8/work/ffn_accel.zip",
+  "ip_sha256": "3e7eb615f7fc0ecf61ad5e56443eab6f4665e698045cef2565a4990e340e4185",
+  "scripts": {
+    "run_system.py": "bcd636bbe2c7f3d412318398318d867b9a84b4032af5d968d020af067aadd94f",
+    "create_overlay_bd.tcl": "0a9a5b712fb651b34267ac6616aeb72fd9c8f8fe9a1def88bbd9212c37e227ee",
+    "run_overlay_synth.tcl": "aaffb28590ed1b2e2e1f77f32b23529dcb696a82be7bb4a837e664ac9873fc59",
+    "run_overlay_impl.tcl": "c33c4cad794bb2b60898fc65ff91f27fe0b196d8bedbfad17b0c4bf9c1b3a96c",
+    "finalize_bit_xsa.tcl": "c865dd86879085df3eefc486e2dd33c790e648971439004af5dfdbc43b844cfc",
+    "gate_overlay.tcl": "667bad69423a14f31db1328e145d1a897111e3308cfb837bb54f907a5620d6d8",
+    "extract_verify_hwh.py": "9caf6907dfb6f997a8afaa2ccd9142585f15784e00fe63333f0388f931ef40e1",
+    "abi_reference.py": "99b32eda4ef4f047c6728d8683d2b9d8dfeb7de265763c15b2642969520d7106",
+    "stage_entry.tcl": "eda3da0ccc092cf5d053a1dabe6687f9342a9168fd8fcd47130451970c0f13f5"
+  }
+}

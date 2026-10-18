@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="5" time="0.344" timestamp="2026-10-18T18:25:37.457691+08:00" hostname="ENERTCOUNT-EX"><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_environment.test_program_overlay" name="test_clock_changes_rejected" time="0.001" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_environment.test_program_overlay" name="test_clock_gate_idle_and_real_frequency" time="0.001"><failure message="TypeError: int() argument must be a string, a bytes-like object or a real number, not 'list'">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x000001C0E6A08B90&gt;
+
+    def test_clock_gate_idle_and_real_frequency(monkeypatch):
+        state = {"ctrl": 4, "pl_raw": [1] * 4, "pll_raw": {}, "fclk0_mhz": 99.999}
+        monkeypatch.setattr(loader.gates, "read_clock_snapshot", lambda *a: dict(state))
+        clocks = SimpleNamespace(_instance=SimpleNamespace(_crf_registers=SimpleNamespace(ACPU_CTRL=[3])), cpu_mhz=1333.32)
+&gt;       assert loader.clock_state(clocks, object())["fclk0_mhz"] == 99.999
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+pynq_ffn\artifacts\r04_v2_board_20261018\board_environment\test_program_overlay.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+clocks = namespace(_instance=namespace(_crf_registers=namespace(ACPU_CTRL=[3])), cpu_mhz=1333.32)
+ip = &lt;object object at 0x000001C0E3BF9FC0&gt;
+
+    def clock_state(clocks, ip):
+        value = gates.read_clock_snapshot(clocks, ip)
+&gt;       value["cpu_raw"] = {"ACPU_CTRL": int(clocks._instance._crf_registers.ACPU_CTRL[:])}
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: int() argument must be a string, a bytes-like object or a real number, not 'list'
+
+pynq_ffn\artifacts\r04_v2_board_20261018\board_environment\program_overlay.py:47: TypeError</failure></testcase><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_environment.test_program_overlay" name="test_identity_requires_pinned_pair_and_no_shutdown" time="0.023" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_environment.test_program_overlay" name="test_exact_base_download_only" time="0.007" /><testcase classname="pynq_ffn.artifacts.r04_v2_board_20261018.board_environment.test_program_overlay" name="test_program_order_uses_no_overlay_download" time="0.012" /></testsuite></testsuites>

@@ -1,0 +1,642 @@
+{
+  "schema": "r04v2.system_build_review.v1",
+  "status": "已验证",
+  "scope": "offline Vivado system build only; not board acceptance",
+  "machine": "4090内网 192.168.110.248/JW",
+  "remote_root": "D:/g4",
+  "part": "xck26-sfvc784-2LV-c",
+  "frozen_ip_sha256": "3e7eb615f7fc0ecf61ad5e56443eab6f4665e698045cef2565a4990e340e4185",
+  "candidate_cpp_sha256": "553b9c9b36fee41d791908f1fc3b8314ea4631db403743f5e80665d18fad1350",
+  "candidate_hpp_sha256": "fcdced1362b460a6cea73fc5869564e6797c041469a50b9c56deba1253cd7478",
+  "stage_records": {
+    "prepare": {
+      "stage": "prepare",
+      "cwd": "D:\\g4",
+      "start": "2026-10-18T10:15:56.281611+00:00",
+      "end": "2026-10-18T10:15:56.372489+00:00",
+      "status": "已验证",
+      "exit_code": 0,
+      "input_sha256": "5d3b686e7bb0dc3102647a80049e6a13320b81589c3e1b5fbeb4755ec113c9e4",
+      "log": "D:\\g4\\records\\prepare.console.log",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "D:\\g4s\\scripts\\run_system.py",
+        "prepare"
+      ],
+      "outputs": {
+        "ip_check.json": "66ee6c950cfaad372d7b8de0e1cf444a9dab2fa8d31fc78255fe8ce2ddf75419",
+        "manifest.json": "44bd924ca4523969bfc14325a5bc48d12efdf427e45bd5b1debe4daa8f1dfcb2"
+      }
+    },
+    "bd": {
+      "stage": "bd",
+      "cwd": "D:\\g4",
+      "start": "2026-10-18T10:15:56.376701+00:00",
+      "end": "2026-10-18T10:16:48.372351+00:00",
+      "status": "已验证",
+      "exit_code": 0,
+      "input_sha256": "5d3b686e7bb0dc3102647a80049e6a13320b81589c3e1b5fbeb4755ec113c9e4",
+      "log": "D:\\g4\\records\\bd.console.log",
+      "command": "\"C:\\WINDOWS\\system32\\cmd.exe\" /d /s /v:off /c \"\"D:\\Learning\\AMDDesignTools\\2026.1\\Vivado\\bin\\vivado.bat\" \"-mode\" \"batch\" \"-notrace\" \"-source\" \"D:\\g4\\stage_entry.tcl\" \"-log\" \"D:\\g4\\records\\bd.vivado.log\" \"-journal\" \"D:\\g4\\records\\bd.vivado.jou\" \"-tclargs\" \"D:\\g4\\create_overlay_bd.tcl\"\"",
+      "outputs": {
+        "evidence/vivado/bd_address_map.txt": "f9f86047eb4944f4956fb4b7237bd6d02ad165f20f5d3c91c1abb61c60ae5a6f",
+        "evidence/vivado/ffn_overlay_bd.tcl": "f38ee90d8eb6aac5a5518dfcf179cf085856ce521281074faea5c7d4b1c5c33c",
+        "evidence/vivado/high_ddr_target_properties.txt": "9448bdc8f3102fbbce1bc34009ab388655a014fd73c570c337fda9cc87d756b4",
+        "evidence/vivado/hls_gmem0_properties.txt": "37c4ca2bc59ccc4e41cd6340a954f0db910dc79c1e0ca3f8868a5a0c3edbaa2d",
+        "evidence/vivado/hls_gmem1_properties.txt": "19ed9539b0825f0b09c3208771513bf534fa33560f596c515aebf0c073978ea7",
+        "evidence/vivado/low_ddr_target_properties.txt": "4a9233530348611bc802744fc5678a723b1e24a66f9123e7ae40ec3fe79f6307",
+        "evidence/vivado/pl_clock_properties.txt": "810d3716fb58b298a6c8faef4d725b48ac3bd142ee1d024fbd9e8fc571129306",
+        "evidence/vivado/ps_properties.txt": "8ba23af178daa9ee9a849d342026cf3809492de17c035790395d8bb11e6ab348",
+        "evidence/vivado/reset_properties.txt": "9b1e28a7c4d4efddc07d3231ae515667a8107f9c090711f6c11604e64419e88c"
+      }
+    },
+    "synth": {
+      "stage": "synth",
+      "cwd": "D:\\g4",
+      "start": "2026-10-18T10:16:48.378048+00:00",
+      "end": "2026-10-18T10:25:05.940242+00:00",
+      "status": "已验证",
+      "exit_code": 0,
+      "input_sha256": "5d3b686e7bb0dc3102647a80049e6a13320b81589c3e1b5fbeb4755ec113c9e4",
+      "log": "D:\\g4\\records\\synth.console.log",
+      "command": "\"C:\\WINDOWS\\system32\\cmd.exe\" /d /s /v:off /c \"\"D:\\Learning\\AMDDesignTools\\2026.1\\Vivado\\bin\\vivado.bat\" \"-mode\" \"batch\" \"-notrace\" \"-source\" \"D:\\g4\\stage_entry.tcl\" \"-log\" \"D:\\g4\\records\\synth.vivado.log\" \"-journal\" \"D:\\g4\\records\\synth.vivado.jou\" \"-tclargs\" \"D:\\g4\\run_overlay_synth.tcl\"\"",
+      "outputs": {
+        "evidence/vivado/post_synth_timing.rpt": "38e1041cb0408c56b5b2bd1c992d368ecf344a2b04bed6a68aec2bd492f597e5",
+        "evidence/vivado/post_synth_utilization.rpt": "10ae46e8529d59dc1027be0a2f91a4a567428d075a8f9ba168c81aec24a4abb9",
+        "vivado03/ffn_overlay.runs/synth_1/ffn_overlay_wrapper.dcp": "01a4e9d8129c7e4d0073e0d2b47a706b61aded4b2b2270cf197f99bcf9172580"
+      }
+    },
+    "impl": {
+      "stage": "impl",
+      "cwd": "D:\\g4",
+      "start": "2026-10-18T10:25:05.948590+00:00",
+      "end": "2026-10-18T10:41:54.494293+00:00",
+      "status": "已验证",
+      "exit_code": 0,
+      "input_sha256": "5d3b686e7bb0dc3102647a80049e6a13320b81589c3e1b5fbeb4755ec113c9e4",
+      "log": "D:\\g4\\records\\impl.console.log",
+      "command": "\"C:\\WINDOWS\\system32\\cmd.exe\" /d /s /v:off /c \"\"D:\\Learning\\AMDDesignTools\\2026.1\\Vivado\\bin\\vivado.bat\" \"-mode\" \"batch\" \"-notrace\" \"-source\" \"D:\\g4\\stage_entry.tcl\" \"-log\" \"D:\\g4\\records\\impl.vivado.log\" \"-journal\" \"D:\\g4\\records\\impl.vivado.jou\" \"-tclargs\" \"D:\\g4\\run_overlay_impl.tcl\"\"",
+      "outputs": {
+        "evidence/vivado/ffn_overlay_wrapper_routed.dcp": "411789fee62b6ebde2114787b8c300e4171cb04d4d66a9d4454c8eab6b018f83",
+        "evidence/vivado/implemented_drc.rpt": "634b568874d0516ec65a3996fd33f1138bc11c5ddb21a80e8161a95b08a0a0ed",
+        "evidence/vivado/implemented_gate.txt": "88917a91d1bbefa9d92af349b5b58c53804bfb57af789130d2797ce0c20dc5fe",
+        "evidence/vivado/implemented_route_status.rpt": "dc0eba07d267aa1d5aa7b63c596e6a226651e9ec2752f43c01534d4a7210e6e5",
+        "evidence/vivado/implemented_timing_summary.rpt": "61340db78c2b818934c0865ad107aaa86001882b42aae0b58d6622d1ce94f0be"
+      }
+    },
+    "export": {
+      "stage": "export",
+      "cwd": "D:\\g4",
+      "start": "2026-10-18T10:41:54.537768+00:00",
+      "end": "2026-10-18T10:47:23.320766+00:00",
+      "status": "已验证",
+      "exit_code": 0,
+      "input_sha256": "5d3b686e7bb0dc3102647a80049e6a13320b81589c3e1b5fbeb4755ec113c9e4",
+      "log": "D:\\g4\\records\\export.console.log",
+      "command": "\"C:\\WINDOWS\\system32\\cmd.exe\" /d /s /v:off /c \"\"D:\\Learning\\AMDDesignTools\\2026.1\\Vivado\\bin\\vivado.bat\" \"-mode\" \"batch\" \"-notrace\" \"-source\" \"D:\\g4\\stage_entry.tcl\" \"-log\" \"D:\\g4\\records\\export.vivado.log\" \"-journal\" \"D:\\g4\\records\\export.vivado.jou\" \"-tclargs\" \"D:\\g4\\finalize_bit_xsa.tcl\"\"",
+      "outputs": {
+        "evidence/vivado/post_bitgen_gate.txt": "88917a91d1bbefa9d92af349b5b58c53804bfb57af789130d2797ce0c20dc5fe",
+        "evidence/vivado/pre_bitgen_gate.txt": "88917a91d1bbefa9d92af349b5b58c53804bfb57af789130d2797ce0c20dc5fe",
+        "load/ffn_overlay_wrapper.bit": "8f438a07fa7cfa2f2db9e276f904388df7a06476cc090d55758ceb231dd34ab7",
+        "load/ffn_overlay_wrapper.hwh": "7254ea3c456098518917e89b836414592b34ffe3e7a24aec2d7ba772713cec85",
+        "traceability/artifact_verification.json": "8a064570685a9543d88fa7863cad865427e83adb2ee8b9ce7aaab9b62ed32342",
+        "traceability/ffn_overlay_wrapper.xsa": "895134005bf3e5a887b50d39c4394dd39867c1dc2ec7559f703090a0581d04ff"
+      }
+    }
+  },
+  "gates": {
+    "implemented": {
+      "timing": {
+        "wns_ns": 1.747,
+        "tns_ns": 0.0,
+        "setup_failing": 0.0,
+        "setup_total": 154314.0,
+        "whs_ns": 0.01,
+        "ths_ns": 0.0,
+        "hold_failing": 0.0,
+        "hold_total": 154314.0,
+        "wpws_ns": 3.5,
+        "tpws_ns": 0.0,
+        "pulse_failing": 0.0,
+        "pulse_total": 64389.0,
+        "clocks": [
+          [
+            "clk_pl_0",
+            "10.000",
+            "100.000"
+          ]
+        ]
+      },
+      "route": {
+        "routable nets": 97862,
+        "fully routed nets": 97862,
+        "nets with routing errors": 0
+      },
+      "drc": {
+        "DPIP-2": {
+          "severity": "Warning",
+          "count": 573
+        },
+        "DPOP-3": {
+          "severity": "Warning",
+          "count": 504
+        },
+        "DPOP-4": {
+          "severity": "Warning",
+          "count": 230
+        },
+        "DPREG-7": {
+          "severity": "Warning",
+          "count": 38
+        },
+        "AVAL-155": {
+          "severity": "Advisory",
+          "count": 272
+        },
+        "AVAL-156": {
+          "severity": "Advisory",
+          "count": 79
+        }
+      }
+    },
+    "pre_bitgen": {
+      "timing": {
+        "wns_ns": 1.747,
+        "tns_ns": 0.0,
+        "setup_failing": 0.0,
+        "setup_total": 154314.0,
+        "whs_ns": 0.01,
+        "ths_ns": 0.0,
+        "hold_failing": 0.0,
+        "hold_total": 154314.0,
+        "wpws_ns": 3.5,
+        "tpws_ns": 0.0,
+        "pulse_failing": 0.0,
+        "pulse_total": 64389.0,
+        "clocks": [
+          [
+            "clk_pl_0",
+            "10.000",
+            "100.000"
+          ]
+        ]
+      },
+      "route": {
+        "routable nets": 97862,
+        "fully routed nets": 97862,
+        "nets with routing errors": 0
+      },
+      "drc": {
+        "DPIP-2": {
+          "severity": "Warning",
+          "count": 573
+        },
+        "DPOP-3": {
+          "severity": "Warning",
+          "count": 504
+        },
+        "DPOP-4": {
+          "severity": "Warning",
+          "count": 230
+        },
+        "DPREG-7": {
+          "severity": "Warning",
+          "count": 38
+        },
+        "AVAL-155": {
+          "severity": "Advisory",
+          "count": 272
+        },
+        "AVAL-156": {
+          "severity": "Advisory",
+          "count": 79
+        }
+      }
+    },
+    "post_bitgen": {
+      "timing": {
+        "wns_ns": 1.747,
+        "tns_ns": 0.0,
+        "setup_failing": 0.0,
+        "setup_total": 154314.0,
+        "whs_ns": 0.01,
+        "ths_ns": 0.0,
+        "hold_failing": 0.0,
+        "hold_total": 154314.0,
+        "wpws_ns": 3.5,
+        "tpws_ns": 0.0,
+        "pulse_failing": 0.0,
+        "pulse_total": 64389.0,
+        "clocks": [
+          [
+            "clk_pl_0",
+            "10.000",
+            "100.000"
+          ]
+        ]
+      },
+      "route": {
+        "routable nets": 97862,
+        "fully routed nets": 97862,
+        "nets with routing errors": 0
+      },
+      "drc": {
+        "DPIP-2": {
+          "severity": "Warning",
+          "count": 573
+        },
+        "DPOP-3": {
+          "severity": "Warning",
+          "count": 504
+        },
+        "DPOP-4": {
+          "severity": "Warning",
+          "count": 230
+        },
+        "DPREG-7": {
+          "severity": "Warning",
+          "count": 38
+        },
+        "AVAL-155": {
+          "severity": "Advisory",
+          "count": 272
+        },
+        "AVAL-156": {
+          "severity": "Advisory",
+          "count": 79
+        }
+      }
+    }
+  },
+  "hardware_metadata": {
+    "registers": {
+      "CTRL": {
+        "address_offset": 0,
+        "size": 32,
+        "fields": {
+          "AP_START": {
+            "bit_offset": 0,
+            "bit_width": 1
+          },
+          "AP_DONE": {
+            "bit_offset": 1,
+            "bit_width": 1
+          },
+          "AP_IDLE": {
+            "bit_offset": 2,
+            "bit_width": 1
+          },
+          "AP_READY": {
+            "bit_offset": 3,
+            "bit_width": 1
+          },
+          "RESERVED_1": {
+            "bit_offset": 4,
+            "bit_width": 3
+          },
+          "AUTO_RESTART": {
+            "bit_offset": 7,
+            "bit_width": 1
+          },
+          "RESERVED_2": {
+            "bit_offset": 8,
+            "bit_width": 1
+          },
+          "INTERRUPT": {
+            "bit_offset": 9,
+            "bit_width": 1
+          },
+          "RESERVED_3": {
+            "bit_offset": 10,
+            "bit_width": 22
+          }
+        }
+      },
+      "GIER": {
+        "address_offset": 4,
+        "size": 32,
+        "fields": {
+          "Enable": {
+            "bit_offset": 0,
+            "bit_width": 1
+          },
+          "RESERVED": {
+            "bit_offset": 1,
+            "bit_width": 31
+          }
+        }
+      },
+      "IP_IER": {
+        "address_offset": 8,
+        "size": 32,
+        "fields": {
+          "CHAN0_INT_EN": {
+            "bit_offset": 0,
+            "bit_width": 1
+          },
+          "CHAN1_INT_EN": {
+            "bit_offset": 1,
+            "bit_width": 1
+          },
+          "RESERVED_0": {
+            "bit_offset": 2,
+            "bit_width": 30
+          }
+        }
+      },
+      "IP_ISR": {
+        "address_offset": 12,
+        "size": 32,
+        "fields": {
+          "CHAN0_INT_ST": {
+            "bit_offset": 0,
+            "bit_width": 1
+          },
+          "CHAN1_INT_ST": {
+            "bit_offset": 1,
+            "bit_width": 1
+          },
+          "RESERVED_0": {
+            "bit_offset": 2,
+            "bit_width": 30
+          }
+        }
+      },
+      "x_1": {
+        "address_offset": 16,
+        "size": 32,
+        "fields": {
+          "x": {
+            "bit_offset": 0,
+            "bit_width": 32
+          }
+        }
+      },
+      "x_2": {
+        "address_offset": 20,
+        "size": 32,
+        "fields": {
+          "x": {
+            "bit_offset": 0,
+            "bit_width": 32
+          }
+        }
+      },
+      "y_1": {
+        "address_offset": 28,
+        "size": 32,
+        "fields": {
+          "y": {
+            "bit_offset": 0,
+            "bit_width": 32
+          }
+        }
+      },
+      "y_2": {
+        "address_offset": 32,
+        "size": 32,
+        "fields": {
+          "y": {
+            "bit_offset": 0,
+            "bit_width": 32
+          }
+        }
+      },
+      "w1_1": {
+        "address_offset": 40,
+        "size": 32,
+        "fields": {
+          "w1": {
+            "bit_offset": 0,
+            "bit_width": 32
+          }
+        }
+      },
+      "w1_2": {
+        "address_offset": 44,
+        "size": 32,
+        "fields": {
+          "w1": {
+            "bit_offset": 0,
+            "bit_width": 32
+          }
+        }
+      },
+      "b1_1": {
+        "address_offset": 52,
+        "size": 32,
+        "fields": {
+          "b1": {
+            "bit_offset": 0,
+            "bit_width": 32
+          }
+        }
+      },
+      "b1_2": {
+        "address_offset": 56,
+        "size": 32,
+        "fields": {
+          "b1": {
+            "bit_offset": 0,
+            "bit_width": 32
+          }
+        }
+      },
+      "w2_1": {
+        "address_offset": 64,
+        "size": 32,
+        "fields": {
+          "w2": {
+            "bit_offset": 0,
+            "bit_width": 32
+          }
+        }
+      },
+      "w2_2": {
+        "address_offset": 68,
+        "size": 32,
+        "fields": {
+          "w2": {
+            "bit_offset": 0,
+            "bit_width": 32
+          }
+        }
+      },
+      "b2_1": {
+        "address_offset": 76,
+        "size": 32,
+        "fields": {
+          "b2": {
+            "bit_offset": 0,
+            "bit_width": 32
+          }
+        }
+      },
+      "b2_2": {
+        "address_offset": 80,
+        "size": 32,
+        "fields": {
+          "b2": {
+            "bit_offset": 0,
+            "bit_width": 32
+          }
+        }
+      },
+      "num_tokens": {
+        "address_offset": 88,
+        "size": 32,
+        "fields": {
+          "num_tokens": {
+            "bit_offset": 0,
+            "bit_width": 32
+          }
+        }
+      }
+    },
+    "control_base": "0xA0000000",
+    "master_addr_widths": {
+      "m_axi_gmem0": 64,
+      "m_axi_gmem1": 64
+    },
+    "ddr_segments_inclusive": {
+      "m_axi_gmem0/HP0_DDR_LOW": [
+        0,
+        2147483647
+      ],
+      "m_axi_gmem1/HP0_DDR_LOW": [
+        0,
+        2147483647
+      ],
+      "m_axi_gmem0/HP0_DDR_HIGH": [
+        34359738368,
+        68719476735
+      ],
+      "m_axi_gmem1/HP0_DDR_HIGH": [
+        34359738368,
+        68719476735
+      ]
+    },
+    "modules": {
+      "const_one": "xilinx.com:ip:xlconstant:1.1",
+      "const_zero": "xilinx.com:ip:xlconstant:1.1",
+      "control_sc": "xilinx.com:ip:smartconnect:1.0",
+      "ffn_accel_0": "xilinx.com:hls:ffn_accel:1.0",
+      "memory_sc": "xilinx.com:ip:smartconnect:1.0",
+      "rst_ps8_0": "xilinx.com:ip:proc_sys_reset:5.0",
+      "zynq_ultra_ps_e_0": "xilinx.com:ip:zynq_ultra_ps_e:3.5"
+    },
+    "dma_present": false
+  },
+  "ps_config_comparison": {
+    "config_property_count": 1692,
+    "changes": {},
+    "source": "r03 g3 versus r04 g4 ps_properties CONFIG.*"
+  },
+  "clock": {
+    "design_period_ns": 10,
+    "design_mhz": 100,
+    "new_clocks": [],
+    "ps_pll_cpu_changes": [],
+    "board_clock_measurement": "未执行; coordinator owns board validation"
+  },
+  "same_export": {
+    "bit_sha256": "8f438a07fa7cfa2f2db9e276f904388df7a06476cc090d55758ceb231dd34ab7",
+    "hwh_sha256": "7254ea3c456098518917e89b836414592b34ffe3e7a24aec2d7ba772713cec85",
+    "xsa_sha256": "895134005bf3e5a887b50d39c4394dd39867c1dc2ec7559f703090a0581d04ff",
+    "xsa_bit_equal_load_bit": true,
+    "xsa_hwh_equal_load_hwh": true
+  },
+  "evidence_files": {
+    "collected/abi_reference.py": "99b32eda4ef4f047c6728d8683d2b9d8dfeb7de265763c15b2642969520d7106",
+    "collected/config.json": "18b342ad1ee599819f0a10186de3f0245ebf9c544d31f69d530c94a5b8898387",
+    "collected/create_overlay_bd.tcl": "0a9a5b712fb651b34267ac6616aeb72fd9c8f8fe9a1def88bbd9212c37e227ee",
+    "collected/extract_verify_hwh.py": "9caf6907dfb6f997a8afaa2ccd9142585f15784e00fe63333f0388f931ef40e1",
+    "collected/finalize_bit_xsa.tcl": "c865dd86879085df3eefc486e2dd33c790e648971439004af5dfdbc43b844cfc",
+    "collected/frozen_ip.zip": "3e7eb615f7fc0ecf61ad5e56443eab6f4665e698045cef2565a4990e340e4185",
+    "collected/gate_overlay.tcl": "667bad69423a14f31db1328e145d1a897111e3308cfb837bb54f907a5620d6d8",
+    "collected/ip_check.json": "66ee6c950cfaad372d7b8de0e1cf444a9dab2fa8d31fc78255fe8ce2ddf75419",
+    "collected/manifest.json": "44bd924ca4523969bfc14325a5bc48d12efdf427e45bd5b1debe4daa8f1dfcb2",
+    "collected/retry_open_fs.log": "083dd858c4c37fc7ff63b692bf8a6fa42b32c51d442522b46ba822bac20af194",
+    "collected/run_overlay_impl.tcl": "c33c4cad794bb2b60898fc65ff91f27fe0b196d8bedbfad17b0c4bf9c1b3a96c",
+    "collected/run_overlay_synth.tcl": "aaffb28590ed1b2e2e1f77f32b23529dcb696a82be7bb4a837e664ac9873fc59",
+    "collected/run_system.py": "bcd636bbe2c7f3d412318398318d867b9a84b4032af5d968d020af067aadd94f",
+    "collected/stage_entry.tcl": "eda3da0ccc092cf5d053a1dabe6687f9342a9168fd8fcd47130451970c0f13f5",
+    "collected/bootstrap/bootstrap.finished.json": "90090c0247a5bf16ae7a24ba6657ef8c4e6b93a24600d28d4f3feb4c4ff6cde3",
+    "collected/bootstrap/bootstrap.py": "ab1c511d55efd037f135a274df3ba0e224f8fb24b61ced6fc46fc497e870d86a",
+    "collected/bootstrap/bootstrap.started.json": "f1344dd8c1807516f3541e8f7b0d695db60558dadeaa058fa2e1be408d8b3672",
+    "collected/bootstrap/build.finished.json": "aeafe8204e579d4fcd956dec891684659b4571f596840cceba20707bc11569e8",
+    "collected/bootstrap/build.log": "030f6511c028a8287a57eba833636d4f458ba5702c7793db959f8e05c7d46c37",
+    "collected/bootstrap/collection_manifest.json": "6213fb374e04e981c7839a2d5fcba5a32cdd3e36cf6888870e3f0901a6058899",
+    "collected/bootstrap/offline_tests.finished.json": "d44b6a0b1c794aa7886260437aaadb36e631e8eccdcdd13f0c97e40850f73de6",
+    "collected/bootstrap/offline_tests.log": "bca874051a57af2b1f8eb1cc0774d329e2d1e591c6e4f54ffeb7575df4e2f3be",
+    "collected/bootstrap/scripts.zip": "f41899152e098d63b3831f8998ec6df0489588306a904f4060e767dfb35d0b9f",
+    "collected/bootstrap/syntax.finished.json": "859e823698a9625c0c59468391fb54d9eeb783ce6474a0df19509a747d9557f9",
+    "collected/bootstrap/syntax.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "collected/load/ffn_overlay_wrapper.bit": "8f438a07fa7cfa2f2db9e276f904388df7a06476cc090d55758ceb231dd34ab7",
+    "collected/load/ffn_overlay_wrapper.hwh": "7254ea3c456098518917e89b836414592b34ffe3e7a24aec2d7ba772713cec85",
+    "collected/records/bd.console.log": "a4b0acdab73df96dc07b685b69640f246de1da9451ebb02f6111a8f17142cad5",
+    "collected/records/bd.finished.json": "1830ef05a3b92d4810b9c947ad8f655b9c107702283e52845f0d226eb292d14a",
+    "collected/records/bd.started.json": "b65daa6c3f4533507e95ba6c02c260fb046f8d24395f00a6052629bb4ff49827",
+    "collected/records/bd.vivado.jou": "4f4d3c26fca606be40137bcc9289c4eca28093f632c67ac7601b559486f1967c",
+    "collected/records/bd.vivado.log": "4bf88efff27356649518fb0d5f94d4698fdda11e47c8c6ae3832165efd33e461",
+    "collected/records/export.console.log": "a7423211088d8ccc248361be77105c9bc3cedad1d2a3b4e276aac9af4c01ed0d",
+    "collected/records/export.finished.json": "58c62c97efdae2516d0e8011aa08ad5f0ad5ae6260c4bd9ea19b88b028e3bfee",
+    "collected/records/export.started.json": "607f7387f7b6cc5430ee363db935ff304d35bcfadf4aaf5e7388b343c972aa8b",
+    "collected/records/export.vivado.jou": "085efec8e1d31ce047cf9bb1008d5b3d4cbe239f37586ef1752a95110421e4af",
+    "collected/records/export.vivado.log": "3e3da11e5c2e131bdf8d5afb506fdf1387d865b4c5c7ad0837b369634735cb23",
+    "collected/records/impl.console.log": "210ddb5f4521eeea8638be3f6dbfd6f8604ec263c7bfd2ddf619934254ccbbb2",
+    "collected/records/impl.finished.json": "fefef64a89c2d2bd01c7b7edd3b364fd0b0cc479a39589a1028eb022a0ddfab7",
+    "collected/records/impl.started.json": "4f7d8673427a00e8b855f5469b6a236eb5afa5255ff383850e3624eead406421",
+    "collected/records/impl.vivado.jou": "1aaabed34aa1f8389b762c9ab75ec337adb3e4395cac4b880513137e4c70096b",
+    "collected/records/impl.vivado.log": "91799def8af6915524de6d883b6ce3765eefcb49e9057d77b43c8c4dc5836f8b",
+    "collected/records/prepare.console.log": "67437f735ea854a6cb04338da6a6b30ddc3c6226545e67ed955696a277e6f10e",
+    "collected/records/prepare.finished.json": "d19531a61a25fe67d4de731fef2c74c67aaeb23638f822cde4401d03e2125e60",
+    "collected/records/prepare.started.json": "b12736186a6f656c829fcbe4b005aa67bcb80b5e31fef359c6b69fc52bfaf40b",
+    "collected/records/synth.console.log": "2781694189d719e5dd7584aac73486d449363ca798724312a26a5f20ffce20f1",
+    "collected/records/synth.finished.json": "c7492de90512d5d3e784daefc21bdce671df80cac5fb5465a3b2280dc7397204",
+    "collected/records/synth.started.json": "d92d1835a1fcaf7ed403f5b1c234533876b5aabe58eff664ea95c067dd3e111f",
+    "collected/records/synth.vivado.jou": "cda7c5e5be8eddd76c787ef6ecb14538ae90c52d4f6f12d4b8d7f97390147bd9",
+    "collected/records/synth.vivado.log": "9d02fdb2afe44ea0194ced9f5ec77befe461df7345911751aea4e93d4763e285",
+    "collected/traceability/artifact_verification.json": "8a064570685a9543d88fa7863cad865427e83adb2ee8b9ce7aaab9b62ed32342",
+    "collected/traceability/ffn_overlay_wrapper.xsa": "895134005bf3e5a887b50d39c4394dd39867c1dc2ec7559f703090a0581d04ff",
+    "collected/evidence/vivado/bd_address_map.txt": "f9f86047eb4944f4956fb4b7237bd6d02ad165f20f5d3c91c1abb61c60ae5a6f",
+    "collected/evidence/vivado/clock_utilization.rpt": "b026a30970de49639e28b9407bf2c953327a5bedb4a95bc312391a477f23fd96",
+    "collected/evidence/vivado/ffn_overlay_bd.tcl": "f38ee90d8eb6aac5a5518dfcf179cf085856ce521281074faea5c7d4b1c5c33c",
+    "collected/evidence/vivado/high_ddr_target_properties.txt": "9448bdc8f3102fbbce1bc34009ab388655a014fd73c570c337fda9cc87d756b4",
+    "collected/evidence/vivado/hls_gmem0_properties.txt": "37c4ca2bc59ccc4e41cd6340a954f0db910dc79c1e0ca3f8868a5a0c3edbaa2d",
+    "collected/evidence/vivado/hls_gmem1_properties.txt": "19ed9539b0825f0b09c3208771513bf534fa33560f596c515aebf0c073978ea7",
+    "collected/evidence/vivado/implemented_drc.rpt": "634b568874d0516ec65a3996fd33f1138bc11c5ddb21a80e8161a95b08a0a0ed",
+    "collected/evidence/vivado/implemented_gate.txt": "88917a91d1bbefa9d92af349b5b58c53804bfb57af789130d2797ce0c20dc5fe",
+    "collected/evidence/vivado/implemented_route_status.rpt": "dc0eba07d267aa1d5aa7b63c596e6a226651e9ec2752f43c01534d4a7210e6e5",
+    "collected/evidence/vivado/implemented_timing_paths.rpt": "ea3820858d17e1e063ec096f246d564f30568d34d3c25a0cea941f734a63b5b3",
+    "collected/evidence/vivado/implemented_timing_summary.rpt": "61340db78c2b818934c0865ad107aaa86001882b42aae0b58d6622d1ce94f0be",
+    "collected/evidence/vivado/implemented_utilization.rpt": "9e57b1ec5091f5cc5e8d8030b9b63e7864ddc86fc1dafcea13b9ee343b689e34",
+    "collected/evidence/vivado/low_ddr_target_properties.txt": "4a9233530348611bc802744fc5678a723b1e24a66f9123e7ae40ec3fe79f6307",
+    "collected/evidence/vivado/pl_clock_properties.txt": "810d3716fb58b298a6c8faef4d725b48ac3bd142ee1d024fbd9e8fc571129306",
+    "collected/evidence/vivado/post_bitgen_drc.rpt": "44fd67c636e0677a8269fafb1201c4d29989c0d420f58ad5675e89957514306e",
+    "collected/evidence/vivado/post_bitgen_gate.txt": "88917a91d1bbefa9d92af349b5b58c53804bfb57af789130d2797ce0c20dc5fe",
+    "collected/evidence/vivado/post_bitgen_route_status.rpt": "dc0eba07d267aa1d5aa7b63c596e6a226651e9ec2752f43c01534d4a7210e6e5",
+    "collected/evidence/vivado/post_bitgen_timing_summary.rpt": "0b4161e035c0f8a11459741fd88d04298383c6ceb4564024c5e77ef845074d41",
+    "collected/evidence/vivado/post_synth_timing.rpt": "38e1041cb0408c56b5b2bd1c992d368ecf344a2b04bed6a68aec2bd492f597e5",
+    "collected/evidence/vivado/post_synth_utilization.rpt": "10ae46e8529d59dc1027be0a2f91a4a567428d075a8f9ba168c81aec24a4abb9",
+    "collected/evidence/vivado/pre_bitgen_drc.rpt": "c7efec325cc41c0a25beb8a55f27cb06e17c93751b1606c45fd20d148ff72498",
+    "collected/evidence/vivado/pre_bitgen_gate.txt": "88917a91d1bbefa9d92af349b5b58c53804bfb57af789130d2797ce0c20dc5fe",
+    "collected/evidence/vivado/pre_bitgen_route_status.rpt": "dc0eba07d267aa1d5aa7b63c596e6a226651e9ec2752f43c01534d4a7210e6e5",
+    "collected/evidence/vivado/pre_bitgen_timing_summary.rpt": "a744c1057f27822c8ba9568f4296f2a9dca71c616651ebac4a854311e2587d6a",
+    "collected/evidence/vivado/ps_properties.txt": "8ba23af178daa9ee9a849d342026cf3809492de17c035790395d8bb11e6ab348",
+    "collected/evidence/vivado/reset_properties.txt": "9b1e28a7c4d4efddc07d3231ae515667a8107f9c090711f6c11604e64419e88c"
+  },
+  "not_executed": [
+    "KV260 connection by this worker",
+    "Overlay programming",
+    "clock/register writes",
+    "real PL numerical tests",
+    "board timing/performance",
+    "vehicle commands"
+  ],
+  "notes": [
+    "Timing WNS/WHS/TNS/THS and route reports independently parsed; board performance not implied.",
+    "DCP hashes retained in stage records but checkpoints not included in lightweight evidence collection.",
+    "Final r04v2.system_acceptance.v1 confirmation is reserved for coordinator review."
+  ]
+}

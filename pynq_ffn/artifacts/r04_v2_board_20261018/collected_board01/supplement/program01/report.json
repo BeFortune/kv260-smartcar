@@ -1,0 +1,27 @@
+{
+  "status": "失败",
+  "date_utc": "2026-10-18T10:54:58.672575+00:00",
+  "arguments": {
+    "root": "/home/ubuntu/r04_v2_board_20261018/run_inputs/deploy",
+    "deployment_manifest": "/home/ubuntu/r04_v2_board_20261018/deployment_manifest.json",
+    "manifest_sha256": "091ef56ae0a60ba3451b2027c1b30ff73dc784a8ab8e7f8833a076c1890ba2c1",
+    "bit_sha256": "8f438a07fa7cfa2f2db9e276f904388df7a06476cc090d55758ceb231dd34ab7",
+    "hwh_sha256": "7254ea3c456098518917e89b836414592b34ffe3e7a24aec2d7ba772713cec85",
+    "system_acceptance": "/home/ubuntu/r04_v2_board_20261018/run_inputs/system_acceptance/system_acceptance.json",
+    "acceptance_sha256": "fd3a55f428d7e64ccf63e3aa79c9b76f4125bb01fc5f077e24660e6a4579bed9",
+    "old_inspection": "/home/ubuntu/r04_v2_board_20261018/board_environment/current_pl01.json",
+    "old_inspection_sha256": "7eecbcfa3f1f4227ee3fd0a09ea49bee1acfbbe5d1e8bd97d5954c3f0b2a7033",
+    "output_dir": "/home/ubuntu/r04_v2_board_20261018/program01",
+    "bit": "overlay/r04_v2_20261018.bit",
+    "ip_name": "ffn_accel_0",
+    "program": true
+  },
+  "programming_attempted": true,
+  "hardware_programmed": true,
+  "kernel_starts": 0,
+  "scope": "One reviewed image programming only; no kernel start, clock write or recovery",
+  "loader_sha256": "361b94c05695c92b079ea2bd2106c3a7721d9e985b8b9faaee5b6eb4376f077d",
+  "first_error": "RuntimeError: Programming emitted warnings; do not start a kernel",
+  "operator_action": "No automatic retry/reset/rollback. Inspect journal to determine whether programming began.",
+  "finished_utc": "2026-10-18T10:55:06.533694+00:00"
+}

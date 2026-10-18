@@ -1,0 +1,58 @@
+{
+  "schema": "r04v2.board_validation.offline.v1",
+  "hardware_execution": false,
+  "files": {
+    "board_validate.py": {
+      "sha256": "d3b98a0a0d1dc7ff1d99b667400a48787991a9c6ad83dfa9d896cbc9b37f408f",
+      "bytes": 22310
+    },
+    "command_templates.txt": {
+      "sha256": "79944b90f236ba2dcef91ae79df537067bbde900521a32f35119b75502b22f10",
+      "bytes": 9738
+    },
+    "help_final.txt": {
+      "sha256": "8eaa86ae35776d1d2a99bec8326fc11ff1db9889cb5c56c7c079e0ff37acde48",
+      "bytes": 1465
+    },
+    "offline_tests_01.xml": {
+      "sha256": "23e66a2ba57d337036e40767186b7a6090baa1badd790c5edf9010b95ad2e5ad",
+      "bytes": 9292
+    },
+    "offline_tests_02.xml": {
+      "sha256": "ea0497adc502e02a4465efdd5574f42132a3770f0b4c4c7dbccfade4d59c0f63",
+      "bytes": 12943
+    },
+    "offline_tests_03.xml": {
+      "sha256": "eea40132c0d9d9bd86d88bcfdf57a29fbf3afe3d0f1627630395b1d76f58234e",
+      "bytes": 14269
+    },
+    "offline_tests_04.xml": {
+      "sha256": "407a86b5e2d4e7cedbce726db512dc3f873a30381d19c43fc9459ebee17ba374",
+      "bytes": 14456
+    },
+    "offline_tests_final.log": {
+      "sha256": "840dcfbc5d8e9427afdd83f605a815f2dd4225c7d3ecf97c5b682dd9319f6031",
+      "bytes": 182
+    },
+    "offline_tests_final.xml": {
+      "sha256": "511f67560adceaf5c8ddab49adef6181d26cd59d226c131df6374a976438b40a",
+      "bytes": 14456
+    },
+    "offline_validation_record.json": {
+      "sha256": "9b40367281eff90665894dc8abeaf22d566126b967e73717c824f826244fe57e",
+      "bytes": 1941
+    },
+    "provenance.json": {
+      "sha256": "732434d5c8470c1d2195c6dbe3e7d606f39d904ff83e1753b62efa53af7bcce7",
+      "bytes": 1045
+    },
+    "safety_gates.py": {
+      "sha256": "481504abe7932e8653b622b9ed139a13e0eb4f094927ac987df5740143b5d6d6",
+      "bytes": 22167
+    },
+    "test_board_validate.py": {
+      "sha256": "59f3689d19bb0f7117d6805b7d97f4020bbcc843d4fbd3b1fbcad60a50eaf9af",
+      "bytes": 22648
+    }
+  }
+}

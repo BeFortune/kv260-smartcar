@@ -1,0 +1,13 @@
+{
+  "status": "已验证",
+  "scope": "Locally tested launch source freeze; no programming",
+  "files": {
+    "board_environment/program_overlay.py": "361b94c05695c92b079ea2bd2106c3a7721d9e985b8b9faaee5b6eb4376f077d",
+    "board_environment/run_stage.py": "e5e9a92e4aa9c48f151139c208da5a84be5d565298356daaf993031c3a5fbec1",
+    "board_environment/stage_system.py": "4a942cbc30f23bd0cb5c202dfc421bf7cbcfe891ad717bf08538d75cf98f89fe",
+    "board_environment/collect_board_evidence.py": "9290c98c4eabeb4bb6b4f9e0e78451a2b38ff35077024b9cffa090ba992d86b5",
+    "board_environment/current_pl01.json": "7eecbcfa3f1f4227ee3fd0a09ea49bee1acfbbe5d1e8bd97d5954c3f0b2a7033",
+    "board_validation/board_validate.py": "d3b98a0a0d1dc7ff1d99b667400a48787991a9c6ad83dfa9d896cbc9b37f408f",
+    "board_validation/safety_gates.py": "481504abe7932e8653b622b9ed139a13e0eb4f094927ac987df5740143b5d6d6"
+  }
+}
