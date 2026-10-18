@@ -35,4 +35,5 @@
 - 测试：97 项 = 92 通过、5 显式 skip；原 48 项独立通过，新 policy 21 项通过。
 - r04 v1（4 context/16 lane）主机 27 项、HLS C 27 项通过，但 csynth 关键模块 slack **-3.70 ns**，失败不做 RTL。r04 v2（8 context、fadd6/fmul3）主机 30 项、两套 173 帧逐位零差、HLS C 30 项、小范围 RTL 10 事务/30 token 通过，FC1/FC2 II=1/1；csynth 静态估计 3,620,660 cycles/660 token ≈ 36.2066 ms@100 MHz；OOC WNS **+2.435662 ns**、WHS +0.034 ns、未路由 0。
 - **未执行**：r04 v2 系统 bit/hwh、Overlay 下载/上板、完整 659/660-token RTL、长时稳定性/功耗/温度、实时链路/实车。OOC 不是系统 Overlay，36.21 ms 不是板测成绩。
+- 勘误：csynth XML 的 `AreaEstimates/AvailableResources` 是器件容量，不是核用量；v2 核用量以 csynth.rpt 为准（BRAM_18K 142、DSP 333、FF 64,719、LUT 58,866；XML Resources LUT 58,860，差 6 未解释）。OOC routed 资源 LUT 51,146、FF 46,657、DSP 333、BRAM 131 个 18K 等效块（65.5 个 36K tiles）；127 输入/280 输出缺外部 I/O delay 约束（TIMING-18 427 条），不是系统接口时序签核。详见 `pynq_ffn/artifacts/opt_round2_20261018/closure_notes.md`。
 - 归档说明：Windows 主机 `.exe/.dll` 与 `__pycache__` 未提交；ORT 证据、HLS/RTL/OOC 报告与候选源码保留。证据入口 `pynq_ffn/artifacts/opt_round2_20261018/README.md`。
