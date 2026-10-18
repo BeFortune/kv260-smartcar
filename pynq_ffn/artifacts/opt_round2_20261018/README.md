@@ -32,6 +32,13 @@
 
 新IP包867640字节，SHA-256 `3e7eb615f7fc0ecf61ad5e56443eab6f4665e698045cef2565a4990e340e4185`，原始证据在 `hls/remote_final/v2_ooc/work/ffn_accel.zip`。**没有生成新系统Overlay或替换板上r03，没有新核板测成绩。** 详见 [HLS候选解释](hls_findings.md)、`hls/v2/remote_summary.json`。
 
+## 收尾校验与勘误
+
+- [最终状态清单](final_status_v2.json)：本机离线校验退出码 0，重新核对源码、8 个冻结/证据/IP 包，以及 ORT 144 份、生产复验 21 份、HLS 191 份原始文件；归档成员与本地副本一致，`Runtime.run` 的 AST 与旧冻结版本相同。没有重新运行板测或构建。
+- [归档勘误](closure_notes.md)：保留辅助 runner 误取器件容量、综合 XML 与文本 LUT 差 6、BRAM 单位及 OOC 外部约束的口径。首次收尾检查的路径假设错误保留在 `final_status.json`，第二次成功记录为 `final_status_v2.json`，不覆盖原始记录。
+- 当前测试证据为 92 通过、5 个旧冻结版本集成用例显式跳过；旧冻结源码根另测 27 项全部通过。跳过项不计入通过。
+- **选型判断：** v2 的 660-token FFN 工具估计约 36.21 ms；本轮关闭空转后，KV260 生产 CPU 的 `camera_0`/`camera_1` 平均约 7.95/10.35 ms。二者不是板上同条件 PL 对照，但足以说明“比旧 PL 快”不等于“比优化后的 CPU 快”，不能直接承诺新候选的整模型加速。
+
 ## 连接、工具与留证
 
 本轮优先使用已挂载的 Netcatty 原生工具，先 `get_environment` 核对名称/地址：工具机 **4090内网=192.168.110.248/JW**（不是zt/ts），板卡KV260=192.168.110.200/ubuntu。远程2026.1工具用完整路径 `D:/Learning/AMDDesignTools/2026.1/`。短命令terminal_execute，构建terminal_start后按offset轮询；不再用无支持的waitMs、截断客户端输出或反复检查已完成阶段。全输出写原始文件，前一阶段失败则相关后续停止。
