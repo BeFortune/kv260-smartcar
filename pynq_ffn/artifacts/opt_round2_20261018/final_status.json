@@ -1,0 +1,92 @@
+{
+  "status": "失败",
+  "experiment_date": "2026-10-18",
+  "checked_at_utc": "2026-10-18T09:58:55.435078+00:00",
+  "scope": "Local evidence verification only; no new CPU/HLS benchmark, remote command or hardware action",
+  "checker": {
+    "path": "artifacts/opt_round2_20261018/finalize_round2.py",
+    "bytes": 15571,
+    "sha256": "ea943337b999430f44596c6cdd3acca672a6d7154231962b5bf633038d6676dc"
+  },
+  "source_files": [
+    {
+      "path": "ps/runtime.py",
+      "bytes": 7066,
+      "sha256": "49ace8fbf61a29e2e54efc174b45477cd08fc5fe469d13547df17326b9745576"
+    },
+    {
+      "path": "hls/ffn_accel.cpp",
+      "bytes": 5346,
+      "sha256": "829c9ec63604e327ad4ea13855b405113ea74fea6a62721d512ded6341b0b9b6"
+    },
+    {
+      "path": "hls/ffn_accel.hpp",
+      "bytes": 694,
+      "sha256": "715f0ca11cc5e9920569654f7296c8443a0186f988557bd27ec1af3f476c7c35"
+    },
+    {
+      "path": "hls/candidates/interleaved_r04/ffn_accel.cpp",
+      "bytes": 7332,
+      "sha256": "bb7d5cdce5597b4c09c9a9505953aa5cc171ffd71f66265eb78cd1f6c063a781"
+    },
+    {
+      "path": "hls/candidates/interleaved_r04/ffn_accel.hpp",
+      "bytes": 850,
+      "sha256": "b958fb3cf1ee318ab4fc11295835022c4565df4fc4fd13fe4bc24a5250e58eec"
+    },
+    {
+      "path": "hls/candidates/interleaved_r04/v2/ffn_accel.cpp",
+      "bytes": 7491,
+      "sha256": "553b9c9b36fee41d791908f1fc3b8314ea4631db403743f5e80665d18fad1350"
+    },
+    {
+      "path": "hls/candidates/interleaved_r04/v2/ffn_accel.hpp",
+      "bytes": 877,
+      "sha256": "fcdced1362b460a6cea73fc5869564e6797c041469a50b9c56deba1253cd7478"
+    }
+  ],
+  "archives": [
+    {
+      "path": "artifacts/opt_round2_20261018/ort/ort_thread_study_frozen.zip",
+      "bytes": 15571,
+      "sha256": "bbaab463ea213ac0ebabbea1aea6ff8c26055b5cfa3f8f6651bd6c4504b392ca"
+    },
+    {
+      "path": "artifacts/opt_round2_20261018/ort/runtime_spin_optin_frozen.zip",
+      "bytes": 10492,
+      "sha256": "e07319c0fbe792dfa4b37ba86dc8b44e5e04e427485df9275b71992a641d7c42"
+    },
+    {
+      "path": "artifacts/opt_round2_20261018/ort/run01_evidence.zip",
+      "bytes": 4446931,
+      "sha256": "6f260235a109facb60041b566da01768ce59bca9be084ead662a607d0789078c"
+    },
+    {
+      "path": "artifacts/opt_round2_20261018/ort/production_run01_evidence.zip",
+      "bytes": 68261,
+      "sha256": "339722ab31a1bb8ae72441484cb3026c45f3e02e626f6ce1b3a6cce6545d8974"
+    },
+    {
+      "path": "artifacts/opt_round2_20261018/hls/interleaved_r04_hls_v1.zip",
+      "bytes": 9171,
+      "sha256": "e4c20cf9ed6c7c627767763651ecb83a3f80ffe360ed830b50a9e31e03f1c69a"
+    },
+    {
+      "path": "artifacts/opt_round2_20261018/hls/interleaved_r04_hls_v2.zip",
+      "bytes": 9375,
+      "sha256": "fc40b31a3a73fa838ac6d9be338be5a51f4881313353d50e6806b90ebb8c0ab5"
+    },
+    {
+      "path": "artifacts/opt_round2_20261018/hls/hls_round2_final.zip",
+      "bytes": 1449568,
+      "sha256": "2dbb3e0901c5f17f07cf3ea7dc640a5424457f21981dd8497d5a590e3c301a83"
+    },
+    {
+      "path": "artifacts/opt_round2_20261018/hls/remote_final/v2_ooc/work/ffn_accel.zip",
+      "bytes": 867640,
+      "sha256": "3e7eb615f7fc0ecf61ad5e56443eab6f4665e698045cef2565a4990e340e4185"
+    }
+  ],
+  "first_error": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\artifacts\\\\opt_round2_20261018\\\\ort\\\\remote_run01\\\\manifest.json'",
+  "finished_at_utc": "2026-10-18T09:58:55.457369+00:00"
+}

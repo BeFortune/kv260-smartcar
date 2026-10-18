@@ -14,7 +14,7 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parent
 PROJECT = ROOT.parent.parent
-OUTPUT = ROOT / "final_status.json"
+OUTPUT = ROOT / "final_status_v2.json"
 RUNTIME_SHA = "49ace8fbf61a29e2e54efc174b45477cd08fc5fe469d13547df17326b9745576"
 OLD_RUNTIME_SHA = "023327eadeaa935ec8392ec16095c6df2a1155368595afd37fe233b4cc6ed298"
 
@@ -43,7 +43,9 @@ def check_collection(archive, directory, manifest_name, expected_count):
     with zipfile.ZipFile(archive) as package:
         require(len(package.namelist()) == len(set(package.namelist())), "Duplicate archive entries")
         raw_manifest = package.read(manifest_name)
-        require(raw_manifest == (directory / manifest_name).read_bytes(), "Manifest copy differs")
+        local_manifest = directory / manifest_name
+        if local_manifest.exists():
+            require(raw_manifest == local_manifest.read_bytes(), "Manifest copy differs")
         manifest = json.loads(raw_manifest)
         require(len(manifest["files"]) == expected_count, "Unexpected collection file count")
         for name, expected in manifest["files"].items():
@@ -55,7 +57,9 @@ def check_collection(archive, directory, manifest_name, expected_count):
             require(data == (directory / name).read_bytes(), f"Local collected copy differs: {name}")
     return {"status": "已验证", "files_rehashed": expected_count,
             "archive_and_local_copies_equal": True,
-            "manifest": (directory / manifest_name).relative_to(ROOT).as_posix()}
+            "manifest_archive_member": manifest_name,
+            "manifest_archive": archive.relative_to(ROOT).as_posix(),
+            "separate_local_manifest_present": local_manifest.exists()}
 
 
 def junit(path):
@@ -225,6 +229,9 @@ def main():
             "No new overlay download, PL start, register/clock change, camera, serial or vehicle action during closure",
             "No 15 Hz new-image inference or vehicle performance claim",
         ]
+        report["prior_closure_attempt"] = {"status": "失败", "evidence": file_record(ROOT / "final_status.json"),
+            "cause": "Checker incorrectly required a separately extracted ORT manifest; authoritative ZIP contains it",
+            "resolution": "Read the immutable ZIP manifest; verify every archived member and its collected local copy"}
         report["status"] = "已验证"
     except Exception as error:
         report["status"] = "失败"

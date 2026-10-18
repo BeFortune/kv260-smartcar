@@ -23,7 +23,7 @@ r03单token内部16路输出分组，但浮点累加链需要4拍再用同一结
 - 两套基线各19组合成、各173帧/692层切点逐位零差，整数轮速零差；另有最小buffer紧贴不可访问页验证，无越界读写。
 - HLS C仿真完整30逻辑用例通过，实际exit0；C综合exit0，FC1/FC2实际step **II=1/1**，关键模块Slack **+1.55/+1.62ns**，GELU pass +0.09ns。
 - 最大660-token调用静态估计 **3,620,660 cycles**，目标100MHz换算约36.21ms，r03 11,773,385cycles约117.73ms，周期比约3.25。这是核的静态周期对比，不是实板延迟，也不是整模型/整车加速。
-- 估计资源（`csynth.rpt`文本表）：BRAM_18K142/288、DSP333/1248、FF64719/234240、LUT58866/117120，URAM0。同源`ffn_accel_csynth.xml`的AreaEstimates/Resources/LUT为58860，与文本表58866差6，原因未证实，不能称XML与文本表完全等同（DSP333/BRAM142/FF64719一致）；routed阶段LUT51146是另一口径，不受此差异影响。比r03占更多LUT/寄存器，布局布线必须实测。
+- 估计资源（`csynth.rpt`文本表）：BRAM_18K142/288、DSP333/1248、FF64719/234240、LUT58866/117120，URAM0。同源`ffn_accel_csynth.xml`的AreaEstimates/Resources/LUT为58860，与文本表58866差6，原因未证实，不能称XML与文本表完全等同（DSP333/BRAM142/FF64719一致）；routed阶段LUT51146是另一口径，不受此差异影响。比r03占更多LUT/寄存器；OOC布局布线已实测，但PS+PL系统级布局布线仍未做。
 - 生成RTL已独立数出 **16个fadd、16个fmul实例**（FC阶段共享，不含嵌套GELU算子），见`hls/remote_v2_operator_counts.json`。RTL封装名称7/4的延迟参数与BIND_OP请求6/3不是可直接混用的同一口径。
 - 小范围RTL cosim已通过：**10事务、30有效token**，覆盖1/3/7/8/9、重载/复访、zero/bias和三个非法计数；Verilog Pass且C后检查通过，实际exit0、约2390秒墙钟。报告合计929,038仿真cycles、最长事务169,903cycles，不能当作吞吐。**未覆盖659/660-token RTL。**
 

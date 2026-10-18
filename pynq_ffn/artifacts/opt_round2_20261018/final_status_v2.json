@@ -1,0 +1,501 @@
+{
+  "status": "已验证",
+  "experiment_date": "2026-10-18",
+  "checked_at_utc": "2026-10-18T10:00:22.935792+00:00",
+  "scope": "Local evidence verification only; no new CPU/HLS benchmark, remote command or hardware action",
+  "checker": {
+    "path": "artifacts/opt_round2_20261018/finalize_round2.py",
+    "bytes": 16122,
+    "sha256": "5cb1c53ed9622d597dac6c81ffcfc3d05cee2e476192ec89d9a8b453a9f4b496"
+  },
+  "source_files": [
+    {
+      "path": "ps/runtime.py",
+      "bytes": 7066,
+      "sha256": "49ace8fbf61a29e2e54efc174b45477cd08fc5fe469d13547df17326b9745576"
+    },
+    {
+      "path": "hls/ffn_accel.cpp",
+      "bytes": 5346,
+      "sha256": "829c9ec63604e327ad4ea13855b405113ea74fea6a62721d512ded6341b0b9b6"
+    },
+    {
+      "path": "hls/ffn_accel.hpp",
+      "bytes": 694,
+      "sha256": "715f0ca11cc5e9920569654f7296c8443a0186f988557bd27ec1af3f476c7c35"
+    },
+    {
+      "path": "hls/candidates/interleaved_r04/ffn_accel.cpp",
+      "bytes": 7332,
+      "sha256": "bb7d5cdce5597b4c09c9a9505953aa5cc171ffd71f66265eb78cd1f6c063a781"
+    },
+    {
+      "path": "hls/candidates/interleaved_r04/ffn_accel.hpp",
+      "bytes": 850,
+      "sha256": "b958fb3cf1ee318ab4fc11295835022c4565df4fc4fd13fe4bc24a5250e58eec"
+    },
+    {
+      "path": "hls/candidates/interleaved_r04/v2/ffn_accel.cpp",
+      "bytes": 7491,
+      "sha256": "553b9c9b36fee41d791908f1fc3b8314ea4631db403743f5e80665d18fad1350"
+    },
+    {
+      "path": "hls/candidates/interleaved_r04/v2/ffn_accel.hpp",
+      "bytes": 877,
+      "sha256": "fcdced1362b460a6cea73fc5869564e6797c041469a50b9c56deba1253cd7478"
+    }
+  ],
+  "archives": [
+    {
+      "path": "artifacts/opt_round2_20261018/ort/ort_thread_study_frozen.zip",
+      "bytes": 15571,
+      "sha256": "bbaab463ea213ac0ebabbea1aea6ff8c26055b5cfa3f8f6651bd6c4504b392ca"
+    },
+    {
+      "path": "artifacts/opt_round2_20261018/ort/runtime_spin_optin_frozen.zip",
+      "bytes": 10492,
+      "sha256": "e07319c0fbe792dfa4b37ba86dc8b44e5e04e427485df9275b71992a641d7c42"
+    },
+    {
+      "path": "artifacts/opt_round2_20261018/ort/run01_evidence.zip",
+      "bytes": 4446931,
+      "sha256": "6f260235a109facb60041b566da01768ce59bca9be084ead662a607d0789078c"
+    },
+    {
+      "path": "artifacts/opt_round2_20261018/ort/production_run01_evidence.zip",
+      "bytes": 68261,
+      "sha256": "339722ab31a1bb8ae72441484cb3026c45f3e02e626f6ce1b3a6cce6545d8974"
+    },
+    {
+      "path": "artifacts/opt_round2_20261018/hls/interleaved_r04_hls_v1.zip",
+      "bytes": 9171,
+      "sha256": "e4c20cf9ed6c7c627767763651ecb83a3f80ffe360ed830b50a9e31e03f1c69a"
+    },
+    {
+      "path": "artifacts/opt_round2_20261018/hls/interleaved_r04_hls_v2.zip",
+      "bytes": 9375,
+      "sha256": "fc40b31a3a73fa838ac6d9be338be5a51f4881313353d50e6806b90ebb8c0ab5"
+    },
+    {
+      "path": "artifacts/opt_round2_20261018/hls/hls_round2_final.zip",
+      "bytes": 1449568,
+      "sha256": "2dbb3e0901c5f17f07cf3ea7dc640a5424457f21981dd8497d5a590e3c301a83"
+    },
+    {
+      "path": "artifacts/opt_round2_20261018/hls/remote_final/v2_ooc/work/ffn_accel.zip",
+      "bytes": 867640,
+      "sha256": "3e7eb615f7fc0ecf61ad5e56443eab6f4665e698045cef2565a4990e340e4185"
+    }
+  ],
+  "collections": {
+    "ort_study": {
+      "status": "已验证",
+      "files_rehashed": 144,
+      "archive_and_local_copies_equal": true,
+      "manifest_archive_member": "manifest.json",
+      "manifest_archive": "ort/run01_evidence.zip",
+      "separate_local_manifest_present": false
+    },
+    "ort_production": {
+      "status": "已验证",
+      "files_rehashed": 21,
+      "archive_and_local_copies_equal": true,
+      "manifest_archive_member": "manifest.json",
+      "manifest_archive": "ort/production_run01_evidence.zip",
+      "separate_local_manifest_present": true
+    },
+    "hls": {
+      "status": "已验证",
+      "files_rehashed": 191,
+      "archive_and_local_copies_equal": true,
+      "manifest_archive_member": "collection_manifest.json",
+      "manifest_archive": "hls/hls_round2_final.zip",
+      "separate_local_manifest_present": true
+    }
+  },
+  "production_freeze": [
+    {
+      "path": "tools/runtime_spin_validate.py",
+      "bytes": 11158,
+      "sha256": "5dc364342230ab2520d3ed038aa5fc3ca01daaa7288eb02b70c4d14f376de593"
+    },
+    {
+      "path": "tests/test_runtime_thread_policy.py",
+      "bytes": 4832,
+      "sha256": "d9ac676e27b1efdc72da51e9e9a32987fcf23fba29137d2ef345eba2c5e8c75f"
+    },
+    {
+      "path": "ps/runtime.py",
+      "bytes": 7066,
+      "sha256": "49ace8fbf61a29e2e54efc174b45477cd08fc5fe469d13547df17326b9745576"
+    },
+    {
+      "path": "ps/preprocess.py",
+      "bytes": 3564,
+      "sha256": "6134e12a3a2f67d92c8b43f7801f21b0e9d570d0f153ce81ca75d623d8120ddb"
+    },
+    {
+      "path": "ps/backends.py",
+      "bytes": 1576,
+      "sha256": "9dfa98b816521abd091473366a31f3bd00634a5b1ab4932f82fd93477036fe0f"
+    },
+    {
+      "path": "ps/__init__.py",
+      "bytes": 154,
+      "sha256": "ec1b195299054cdbd0bd19b1f1da0bc22b52a84c9b914931ff0c9fcfdc3b0379"
+    }
+  ],
+  "runtime_policy": {
+    "status": "已验证",
+    "runtime_sha256": "49ace8fbf61a29e2e54efc174b45477cd08fc5fe469d13547df17326b9745576",
+    "default_spinning": null,
+    "explicit_false": "both allow_spinning keys are 0",
+    "runtime_run_ast_unchanged": true,
+    "old_study_freeze_not_relaxed": true
+  },
+  "ort_controlled_study": {
+    "status": "已验证",
+    "formal_conditions": 12,
+    "frames_each": 117,
+    "warmup_each": 3,
+    "forward_and_reverse_orders": true,
+    "split4_p50_on_ms": [
+      404.511755972635,
+      411.0050449962728
+    ],
+    "split4_p50_off_ms": [
+      75.18127199728042,
+      77.31985300779343
+    ],
+    "p50_ratio": [
+      5.380485661206526,
+      5.3156470040734
+    ],
+    "thread_count_on_off": [
+      31,
+      31
+    ],
+    "conclusion": "Spinning contention is a major removable overhead on this four-core multi-session setup; not a unique-root-cause claim"
+  },
+  "ort_production": {
+    "status": "已验证",
+    "location": "KV260 CPU; no PL execution",
+    "golden4": {
+      "status": "已验证",
+      "n": 117,
+      "warmup": 3,
+      "threads": 4,
+      "spinning": null,
+      "run_total_ms": {
+        "mean": 68.17776842578115,
+        "p50": 65.29785902239382,
+        "p95": 77.17538139550014,
+        "p99": 132.93488668510705,
+        "max": 146.39047399396077
+      }
+    },
+    "split4_spinning_off": {
+      "status": "已验证",
+      "n": 117,
+      "warmup": 3,
+      "threads": 4,
+      "spinning": false,
+      "run_total_ms": {
+        "mean": 81.09824829904012,
+        "p50": 79.63220198871568,
+        "p95": 94.67213237658139,
+        "p99": 115.27068966068329,
+        "max": 116.4558749878779
+      }
+    },
+    "max_abs_error": {
+      "speed_norm": 0.0,
+      "speed_raw": 0.0,
+      "region_logits": 0.0,
+      "region_probs": 0.0
+    },
+    "speed_integer_mismatches": 0,
+    "production_same_round_spin_on_pair": "未执行",
+    "timing_scope": "Runtime.run incl. FFN diagnostics; preloaded input; decoding/preprocessing/initialization excluded"
+  },
+  "hls_candidate": {
+    "status": "已验证",
+    "validation_scope": "Host, HLS full C, small RTL and standalone OOC only",
+    "v1_target_timing": "失败",
+    "stages": {
+      "v2/csim": {
+        "status": "已验证",
+        "exit_code": 0,
+        "elapsed_s": 27.277364699999453,
+        "evidence": {
+          "path": "artifacts/opt_round2_20261018/hls/remote_final/v2/records_v1/csim.finished.json",
+          "bytes": 1889,
+          "sha256": "f31b54374b1192127bd8b996dbd589e06d303388aa0419ad57c996226358ce74"
+        }
+      },
+      "v2/csynth": {
+        "status": "已验证",
+        "exit_code": 0,
+        "elapsed_s": 75.57868609999423,
+        "evidence": {
+          "path": "artifacts/opt_round2_20261018/hls/remote_final/v2/records_v1/csynth.finished.json",
+          "bytes": 2246,
+          "sha256": "86962c9903b3480d39755d3fd660e6acbfcf196f62eb98081fd7e0d5bc7c0c98"
+        }
+      },
+      "v2/cosim": {
+        "status": "已验证",
+        "exit_code": 0,
+        "elapsed_s": 2390.2095217000024,
+        "evidence": {
+          "path": "artifacts/opt_round2_20261018/hls/remote_final/v2/records_v1/cosim.finished.json",
+          "bytes": 1894,
+          "sha256": "3e9c6cb9694bc05cd21afa8c75c2883988e7e3cbf9fa66804e451c7ab670dda3"
+        }
+      },
+      "v2_ooc/csynth": {
+        "status": "已验证",
+        "exit_code": 0,
+        "elapsed_s": 77.61644929999602,
+        "evidence": {
+          "path": "artifacts/opt_round2_20261018/hls/remote_final/v2_ooc/records_v1/csynth.finished.json",
+          "bytes": 2251,
+          "sha256": "4608722566afc6fc143ad268b8559ffaffccf4189c9d2a82c116fcf639fd59eb"
+        }
+      },
+      "v2_ooc/impl": {
+        "status": "已验证",
+        "exit_code": 0,
+        "elapsed_s": 1488.2766058000125,
+        "evidence": {
+          "path": "artifacts/opt_round2_20261018/hls/remote_final/v2_ooc/records_v1/impl.finished.json",
+          "bytes": 1894,
+          "sha256": "17f49e55aa659649b894a79563c2213a0f87685c91a4c148f5eb76cf02db060f"
+        }
+      }
+    },
+    "source_sha256": "553b9c9b36fee41d791908f1fc3b8314ea4631db403743f5e80665d18fad1350",
+    "csim": {
+      "status": "已验证",
+      "exit_code": 0,
+      "full_tb_cases": 30,
+      "covers_659_660": true
+    },
+    "csynth": {
+      "status": "已验证",
+      "exit_code": 0,
+      "latency_cycles_max": 3620660,
+      "interval_cycles_max": 3620661,
+      "estimated_top_clock_ns": 7.3,
+      "latency_at_target_100mhz_ms": 36.2066,
+      "latency_scope": "HLS max estimate using 83 token tiles, not board measurement or measured throughput",
+      "resources": {
+        "DSP": 333,
+        "BRAM_18K": 142,
+        "FF": 64719,
+        "LUT": 58866
+      },
+      "loops": {
+        "fc1_steps": {
+          "target_clock_ns": 10.0,
+          "estimated_clock_ns": 5.751,
+          "uncertainty_ns": 2.7,
+          "slack_ns_rounded": 1.55,
+          "loop_latency_cycles": 1034,
+          "iteration_latency_cycles": 12,
+          "achieved_ii": 1,
+          "target_ii": 1,
+          "trip_count": 1024,
+          "pipeline_module_latency_cycles": 1036
+        },
+        "fc2_steps": {
+          "target_clock_ns": 10.0,
+          "estimated_clock_ns": 5.68,
+          "uncertainty_ns": 2.7,
+          "slack_ns_rounded": 1.62,
+          "loop_latency_cycles": 2058,
+          "iteration_latency_cycles": 12,
+          "achieved_ii": 1,
+          "target_ii": 1,
+          "trip_count": 2048,
+          "pipeline_module_latency_cycles": 2060
+        }
+      },
+      "timing_scope": "HLS estimates only; positive FC loop slack is not routed timing sign-off"
+    },
+    "operators": {
+      "fadd": 16,
+      "fmul": 16,
+      "scope": "FC top-level instances shared across FC stages; nested GELU excluded"
+    },
+    "rtl_cosim_small": {
+      "status": "已验证",
+      "exit_code": 0,
+      "wall_elapsed_s": 2390.2095217000024,
+      "tool": "xsim",
+      "rtl": "Verilog",
+      "report_status": "Pass",
+      "transactions": 10,
+      "valid_tokens": 30,
+      "valid_call_counts": [
+        1,
+        3,
+        7,
+        8,
+        9,
+        1,
+        1
+      ],
+      "invalid_call_counts": [
+        0,
+        661,
+        4294967295
+      ],
+      "total_execution_cycles": 929038,
+      "latency_cycles": {
+        "min": 3,
+        "avg": 92880,
+        "max": 169903
+      },
+      "interval_cycles": {
+        "min": 29,
+        "avg": 103226,
+        "max": 169929
+      },
+      "covers_659_660": false,
+      "scope": "Small TB C precheck + RTL + C postcheck passed; not full RTL"
+    },
+    "ooc_implementation": {
+      "status": "已验证",
+      "scope": "Standalone HLS OOC IP place-and-route; not KV260 full-system implementation or hardware execution",
+      "remote_cwd": "D:\\io8",
+      "exit_code": 0,
+      "wall_elapsed_s": 1488.2766058000125,
+      "target_clock_ns": 10,
+      "constrained_clock_mhz": 100,
+      "board_actual_clock_measured": false,
+      "timing": {
+        "WNS_ns_precise_from_final_log": 2.435662,
+        "WHS_ns_precise_from_final_log": 0.034,
+        "TPWS_ns": 0.0,
+        "TNS_ns_report": 0.0,
+        "THS_ns_report": 0.0,
+        "unrouted_nets": 0,
+        "routing_errors": 0,
+        "timing_constraints_met": true,
+        "export_post_synthesis_period_ns": 5.281,
+        "export_post_route_period_ns": 7.564,
+        "interpretation": "100 MHz is the constrained target, not a new measured board clock. Export period and positive OOC slack do not establish integrated-system timing or end-to-end performance."
+      },
+      "routed_resources": {
+        "LUT": 51146,
+        "FF": 46657,
+        "DSP": 333,
+        "BRAM_18K_equivalent": 131,
+        "BRAM_tiles": 65.5,
+        "RAMB36": 64,
+        "RAMB18": 3,
+        "URAM": 0,
+        "SRL": 1183
+      },
+      "constraints_caveat": {
+        "missing_input_delay_ports": 127,
+        "missing_output_delay_ports": 280,
+        "TIMING_18_violations": 427,
+        "unconstrained_internal_endpoints": 0,
+        "note": "Standalone IP external I/O delays are not fully constrained; OOC internal timing pass is not full-system interface sign-off."
+      },
+      "evidence": {
+        "records_v1/impl.finished.json": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\remote_final\\v2_ooc\\records_v1\\impl.finished.json",
+        "records_v1/impl.log": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\remote_final\\v2_ooc\\records_v1\\impl.log",
+        "work/hls/impl/report/verilog/export_impl.rpt": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\remote_final\\v2_ooc\\work\\hls\\impl\\report\\verilog\\export_impl.rpt",
+        "work/hls/impl/verilog/report/ffn_accel_timing_routed.rpt": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\remote_final\\v2_ooc\\work\\hls\\impl\\verilog\\report\\ffn_accel_timing_routed.rpt",
+        "work/hls/impl/verilog/report/ffn_accel_utilization_routed.rpt": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\remote_final\\v2_ooc\\work\\hls\\impl\\verilog\\report\\ffn_accel_utilization_routed.rpt",
+        "work/hls/impl/verilog/report/ffn_accel_status_routed.rpt": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\remote_final\\v2_ooc\\work\\hls\\impl\\verilog\\report\\ffn_accel_status_routed.rpt"
+      }
+    },
+    "ip_archive": {
+      "status": "已验证",
+      "path": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\opt_round2_20261018\\hls\\remote_final\\v2_ooc\\work\\ffn_accel.zip",
+      "bytes": 867640,
+      "sha256": "3e7eb615f7fc0ecf61ad5e56443eab6f4665e698045cef2565a4990e340e4185",
+      "archive_entries": 85,
+      "packaged_top_rtl_path": "hdl/verilog/ffn_accel.v",
+      "scope": "Generated IP-catalog archive, not system bitstream or board overlay; archive read only, not modified"
+    },
+    "full_rtl": "未执行",
+    "new_full_system_bit_hwh_xsa": "未执行",
+    "new_candidate_board_run": "未执行"
+  },
+  "resource_erratum": {
+    "status": "已验证",
+    "evidence": "closure_notes.md",
+    "raw_runner_summary_used_available_not_usage": true,
+    "raw_records_unchanged": true,
+    "xml_resources": {
+      "BRAM_18K": 142,
+      "DSP": 333,
+      "FF": 64719,
+      "LUT": 58860,
+      "URAM": 0
+    },
+    "xml_available_resources": {
+      "BRAM_18K": 288,
+      "DSP": 1248,
+      "FF": 234240,
+      "LUT": 117120,
+      "URAM": 64
+    },
+    "csynth_rpt_top_lut": 58866,
+    "lut_xml_vs_text_difference": 6,
+    "difference_cause": "未执行",
+    "future_runner_fix": "未执行"
+  },
+  "software_tests": {
+    "current": {
+      "status": "已验证",
+      "tests": 97,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 5,
+      "passed": 92,
+      "evidence": {
+        "path": "artifacts/opt_round2_20261018/final_software_tests.xml",
+        "bytes": 14341,
+        "sha256": "dded9c060125add8e1f6f9dcf04fd7b0b449d82bf072b8b1ac405eac5e82fd05"
+      }
+    },
+    "old_frozen_experiment_root": {
+      "status": "已验证",
+      "tests": 27,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 27,
+      "evidence": {
+        "path": "artifacts/opt_round2_20261018/ort/frozen27_recheck2.xml",
+        "bytes": 4713,
+        "sha256": "893464a1cba02a99490a762d0da10836e35d52254cd8545e067343155a1d3c55"
+      }
+    },
+    "skip_explanation": "Five old-runtime integration cases explicitly skipped in production tree; old frozen root separately passed all 27"
+  },
+  "limitations": [
+    "inputs.npy was not collected; its bytes were not rehashed locally",
+    "No combining the ORT 5.3x controlled result with the HLS 3.25x static cycle ratio",
+    "Standalone OOC lacks full external I/O delays and is not PS+PL system sign-off",
+    "No new overlay download, PL start, register/clock change, camera, serial or vehicle action during closure",
+    "No 15 Hz new-image inference or vehicle performance claim"
+  ],
+  "prior_closure_attempt": {
+    "status": "失败",
+    "evidence": {
+      "path": "artifacts/opt_round2_20261018/final_status.json",
+      "bytes": 3569,
+      "sha256": "eb22b508afc7b90091d4ae712dc8101f2fe7c3016fa54ca7e1dbf0545ff3bb92"
+    },
+    "cause": "Checker incorrectly required a separately extracted ORT manifest; authoritative ZIP contains it",
+    "resolution": "Read the immutable ZIP manifest; verify every archived member and its collected local copy"
+  },
+  "finished_at_utc": "2026-10-18T10:00:23.386257+00:00"
+}

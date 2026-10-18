@@ -20,11 +20,11 @@
 The K26 license/device gate passed in the **historical retry04 build on 2026-10-15**. Full HLS C simulation and C synthesis, the emitted register ABI and both 64-bit AXI master address channels, HLS backend implementation/IP packaging, and the KV260 Vivado system implementation have been verified with real tool logs. A matching `ffn_overlay_wrapper.bit` / `.hwh` pair is available in [`artifacts/vivado_20261015/retry04/overlay/`](../artifacts/vivado_20261015/retry04/overlay/).
 System routed WNS is **+2.338 ns**, TNS **0**, and WHS **+0.010 ns**.
 
-**RTL co-simulation for the historical retry04 kernel is deliberately limited to one 1-token smoke transaction.** It completed RTL and C postchecking with exit 0; the preceding 30-token attempt was actively stopped with exit 1 and is not a pass. Full 4/659/660-token, weight reload and invalid-count RTL verification for retry04 remains unperformed. Full C simulation coverage does not replace those RTL checks. The board bring-up in `docs/04_验证记录.md` §17 later documents loading and testing that retry04 overlay; it does not validate the 2026-10-17 source candidate or r03. r03 board evidence is in §19.
+**RTL co-simulation for the historical retry04 kernel is deliberately limited to one 1-token smoke transaction.** It completed RTL and C postchecking with exit 0; the preceding 30-token attempt was actively stopped with exit 1 and is not a pass. Full 4/659/660-token, weight reload and invalid-count RTL verification for retry04 remains unperformed. Full C simulation coverage does not replace those RTL checks. The board bring-up in `docs/04_验证记录.md` §17 later documents loading and testing that retry04 overlay; it does not validate the 2026-10-17 source candidate or r03. r03 board evidence is in §19 (150 MHz first round) and §20 (100 MHz official retest).
 
 See the [delivery notes and five-step board checklist](../artifacts/vivado_20261015/retry04/overlay/README.md)
 and [`docs/04_验证记录.md`](../docs/04_验证记录.md), sections 15–16, for exact reached
-stages, exit codes, failures and scope. The build/acceptance history below records **retry04 from 2026-10-15 only**; it is neither a successful-build claim for the 2026-10-17 four-lane candidate nor for the current r03. See the Chinese status block above and `../docs/04_验证记录.md` §19 for r03.
+stages, exit codes, failures and scope. The build/acceptance history below records **retry04 from 2026-10-15 only**; it is neither a successful-build claim for the 2026-10-17 four-lane candidate nor for the current r03. See the Chinese status block above and `../docs/04_验证记录.md` §19–20 for r03.
 
 
 
