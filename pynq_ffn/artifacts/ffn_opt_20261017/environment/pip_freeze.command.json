@@ -1,0 +1,14 @@
+{
+  "command": [
+    "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+    "-m",
+    "pip",
+    "--isolated",
+    "freeze"
+  ],
+  "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+  "started": "2026-10-17T16:56:52.088010+08:00",
+  "finished": "2026-10-17T16:56:53.266728+08:00",
+  "seconds": 1.1787264999984473,
+  "exit_code": 0
+}

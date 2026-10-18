@@ -1,0 +1,19 @@
+{
+  "status": "已验证",
+  "scope": "Source and portable config staging only, NOT a built IP",
+  "amd_execution_status": "阻塞",
+  "reason": "Vivado/Vitis/HLS unavailable on current host",
+  "part": "xck26-sfvc784-2LV-c",
+  "clock_ns": 10,
+  "output_lanes": 4,
+  "requested_II": 1,
+  "actual_II": null,
+  "files": {
+    "build_hls.tcl": "3ad71f56e358270bdeabc75396ced8df18e17059bfba8c05e0346dcb65b9179a",
+    "ffn_accel.cpp": "c9c2dcbdfc628542aa0cdc77b2a9acc1d31e9b797e82f44558fffac88c45fce0",
+    "ffn_accel.hpp": "d959265b6f4ad392e649f8cf065942ab294c34348d0ae8cc7b4df5fc1f50e5d8",
+    "make_config.py": "0db11be414eff86c39d1c4c25c765d4621e0ac414f04ad05c04be3fb2bc14055",
+    "testbench.cpp": "d6a717629d812901e22bd2ebe5d2e4b051cf49f99abe139d17a534f9336b97b1",
+    "build\\hls_config.cfg": "0e97685bfa76577a6579d185c939771b22361efb668bb030893c5ec5b942a417"
+  }
+}

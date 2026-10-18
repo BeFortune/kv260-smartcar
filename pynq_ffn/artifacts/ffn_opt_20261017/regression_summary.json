@@ -1,0 +1,37 @@
+{
+  "payload_status": "pass",
+  "frames": 173,
+  "layers": {
+    "camera_0": {
+      "max_abs_error": 0.0,
+      "ort_max_abs_error": 1.043081283569336e-07,
+      "pipeline_max_abs_error": 1.043081283569336e-07
+    },
+    "camera_1": {
+      "max_abs_error": 0.0,
+      "ort_max_abs_error": 1.043081283569336e-07,
+      "pipeline_max_abs_error": 1.4901161193847656e-07
+    },
+    "cross_0": {
+      "max_abs_error": 0.0,
+      "ort_max_abs_error": 1.043081283569336e-07,
+      "pipeline_max_abs_error": 1.4901161193847656e-07
+    },
+    "cross_1": {
+      "max_abs_error": 0.0,
+      "ort_max_abs_error": 1.1920928955078125e-07,
+      "pipeline_max_abs_error": 1.9371509552001953e-07
+    }
+  },
+  "outputs": {
+    "speed_norm": 8.940696716308594e-08,
+    "speed_raw": 6.103515625e-05,
+    "region_logits": 8.149072527885437e-08,
+    "region_probs": 1.4901161193847656e-08
+  },
+  "integer_mismatches": 0,
+  "bitwise_elements": 29407232,
+  "bitwise_mismatches": 0,
+  "real_cases": 4,
+  "real_status": "pass"
+}

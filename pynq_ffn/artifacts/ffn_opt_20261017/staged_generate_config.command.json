@@ -1,0 +1,13 @@
+{
+  "command": [
+    "D:\\Programs\\Anaconda3\\python.exe",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\staged_hls\\make_config.py"
+  ],
+  "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\staged_hls",
+  "environment_overrides": {
+    "FPGA_PART": "xck26-sfvc784-2LV-c",
+    "CLOCK_NS": "10"
+  },
+  "started": "2026-10-17T16:59:25.259412+08:00",
+  "exit_code": 0
+}

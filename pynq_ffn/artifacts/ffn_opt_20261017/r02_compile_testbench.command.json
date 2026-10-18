@@ -1,0 +1,22 @@
+{
+  "command": [
+    "D:\\Programs\\TDM-GCC-64\\bin\\g++.exe",
+    "-std=c++11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-Wno-unknown-pragmas",
+    "-ffp-contract=off",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\candidate_r02\\hls\\ffn_accel.cpp",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\candidate_r02\\hls\\testbench.cpp",
+    "-o",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\candidate_r02_host\\testbench.exe"
+  ],
+  "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+  "started": "2026-10-17T16:56:20.954797+08:00",
+  "ended": "2026-10-17T16:56:22.572549+08:00",
+  "exit_code": 0,
+  "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0"
+}

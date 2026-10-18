@@ -1,0 +1,30 @@
+{
+  "status": "failed",
+  "hardware_execution": false,
+  "scope": "Host std::erf only; no HLS/RTL/PL or PL performance claim",
+  "command": [
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\tools\\validate_cpp_parallel.py",
+    "--baseline-library",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\baseline_host\\ffn_host.dll",
+    "--candidate-library",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\candidate_host\\ffn_host.dll",
+    "--output",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\bitwise_synthetic.json"
+  ],
+  "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+  "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+  "executable": "D:\\Programs\\Anaconda3\\python.exe",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "numpy": "1.26.4",
+  "libraries": {
+    "baseline": {
+      "path": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\baseline_host\\ffn_host.dll",
+      "sha256": "9279c4d866c1d0cab487730ab4972787c536af51a346158d545dd3128bf8558a"
+    },
+    "candidate": {
+      "path": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\candidate_host\\ffn_host.dll",
+      "sha256": "df922c968c860a947eabfc6f95ed8cbebc52b73bd01f699874d301581a0f83d0"
+    }
+  },
+  "error": "Traceback (most recent call last):\n  File \"C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\tools\\validate_cpp_parallel.py\", line 212, in main\n    report[\"synthetic\"] = synthetic(baseline, candidate)\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\tools\\validate_cpp_parallel.py\", line 108, in synthetic\n    value[:] = np.ldexp(value, rng.integers(-20, 21, value.shape)).astype(np.float32)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: ufunc 'ldexp' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''\n"
+}

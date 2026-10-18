@@ -1,0 +1,74 @@
+--- baseline/ffn_accel.cpp
++++ hls/ffn_accel.cpp
+@@ -44,6 +44,8 @@
+     // overwrites all weights/biases before use. The host entry is not reentrant.
+     static float local_w1[ffn_config::input_dim][ffn_config::hidden_dim];
+     static float local_w2[ffn_config::hidden_dim][ffn_config::input_dim];
++#pragma HLS ARRAY_PARTITION variable=local_w1 cyclic factor=4 dim=2
++#pragma HLS ARRAY_PARTITION variable=local_w2 cyclic factor=4 dim=2
+     static float local_b1[ffn_config::hidden_dim];
+     static float local_b2[ffn_config::input_dim];
+     float token[ffn_config::input_dim];
+@@ -73,20 +75,40 @@
+ #pragma HLS PIPELINE
+             token[i] = x[t * ffn_config::input_dim + i];
+         }
+-        for (unsigned int j = 0; j < ffn_config::hidden_dim; ++j) {
+-            float sum = 0.0f;
++        for (unsigned int j = 0; j < ffn_config::hidden_dim;
++             j += ffn_config::output_lanes) {
++            float sum[ffn_config::output_lanes] = {};
++#pragma HLS ARRAY_PARTITION variable=sum complete dim=1
+             for (unsigned int i = 0; i < ffn_config::input_dim; ++i) {
+-                // Serial float32 reduction: no claim of an II=1 MAC pipeline.
+-                sum += token[i] * local_w1[i][j];
++#pragma HLS PIPELINE II=1
++                // Each lane retains the original increasing-i FP32 reduction.
++                for (unsigned int lane = 0; lane < ffn_config::output_lanes; ++lane) {
++#pragma HLS UNROLL
++                    sum[lane] += token[i] * local_w1[i][j + lane];
++                }
+             }
+-            hidden[j] = gelu(sum + local_b1[j]);
++            for (unsigned int lane = 0; lane < ffn_config::output_lanes; ++lane) {
++#pragma HLS UNROLL off=true
++#pragma HLS PIPELINE off
++                // Share the expensive exact-erf epilogue across output lanes.
++                hidden[j + lane] = gelu(sum[lane] + local_b1[j + lane]);
++            }
+         }
+-        for (unsigned int k = 0; k < ffn_config::input_dim; ++k) {
+-            float sum = 0.0f;
++        for (unsigned int k = 0; k < ffn_config::input_dim;
++             k += ffn_config::output_lanes) {
++            float sum[ffn_config::output_lanes] = {};
++#pragma HLS ARRAY_PARTITION variable=sum complete dim=1
+             for (unsigned int j = 0; j < ffn_config::hidden_dim; ++j) {
+-                sum += hidden[j] * local_w2[j][k];
++#pragma HLS PIPELINE II=1
++                for (unsigned int lane = 0; lane < ffn_config::output_lanes; ++lane) {
++#pragma HLS UNROLL
++                    sum[lane] += hidden[j] * local_w2[j][k + lane];
++                }
+             }
+-            y[t * ffn_config::input_dim + k] = sum + local_b2[k];
++            for (unsigned int lane = 0; lane < ffn_config::output_lanes; ++lane) {
++#pragma HLS UNROLL off=true
++                y[t * ffn_config::input_dim + k + lane] = sum[lane] + local_b2[k + lane];
++            }
+         }
+     }
+ }
+--- baseline/ffn_accel.hpp
++++ hls/ffn_accel.hpp
+@@ -5,6 +5,10 @@
+ constexpr unsigned int input_dim = 128;
+ constexpr unsigned int hidden_dim = 256;
+ constexpr unsigned int max_tokens = 660;
++constexpr unsigned int output_lanes = 4;
++static_assert(output_lanes == 4, "Keep output lanes and cyclic partition factor in sync.");
++static_assert(input_dim % output_lanes == 0 && hidden_dim % output_lanes == 0,
++              "Output tiles must cover both fixed dimensions exactly.");
+ }
+ 
+ // Row-major, float32 buffers; one weight set per invocation.

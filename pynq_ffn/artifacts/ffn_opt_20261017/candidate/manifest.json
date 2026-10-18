@@ -1,0 +1,8 @@
+{
+  "ffn_accel.cpp": "fc7ff4f775e39e08e440f68ef4fc8459589504e3195e4a5c141c4e567ee8e097",
+  "ffn_accel.hpp": "d959265b6f4ad392e649f8cf065942ab294c34348d0ae8cc7b4df5fc1f50e5d8",
+  "testbench.cpp": "d6a717629d812901e22bd2ebe5d2e4b051cf49f99abe139d17a534f9336b97b1",
+  "make_config.py": "0db11be414eff86c39d1c4c25c765d4621e0ac414f04ad05c04be3fb2bc14055",
+  "build_hls.tcl": "3ad71f56e358270bdeabc75396ced8df18e17059bfba8c05e0346dcb65b9179a",
+  "host_bridge.cpp": "a8cfe5dc62eb66fa3e3102e4d12eb75a265abbea20e04e4d5b104cecfc480740"
+}

@@ -1,0 +1,331 @@
+{
+  "schema": "pynq_ffn.ffn_opt.tool_probe.v1",
+  "probe_date": "2026-10-17",
+  "probe_scope": "read-only local host tool probe; no install, no network, no device/camera/serial access, no PYNQ import, no license content read",
+  "host": {
+    "os": "Windows 10.0.26300 x64",
+    "shell": "Git Bash",
+    "cwd": "C:/Users/BeFortuneEX/Source/Repos/FPGA",
+    "device_access": "none"
+  },
+  "host_tools": {
+    "gpp": {
+      "found": true,
+      "path": "/d/Programs/TDM-GCC-64/bin/g++",
+      "version": "TDM-GCC 10.3.0 (tdm64-1)",
+      "target": "x86_64-w64-mingw32",
+      "raw_outputs": [
+        {
+          "command": "command -v g++",
+          "output": [
+            "/d/Programs/TDM-GCC-64/bin/g++"
+          ]
+        },
+        {
+          "command": "g++ --version | head -3",
+          "output": [
+            "g++.exe (tdm64-1) 10.3.0",
+            "Copyright (C) 2020 Free Software Foundation, Inc."
+          ]
+        },
+        {
+          "command": "g++ -dumpmachine",
+          "output": [
+            "x86_64-w64-mingw32"
+          ]
+        }
+      ]
+    },
+    "gcc": {
+      "found": true,
+      "path": "/d/Programs/TDM-GCC-64/bin/gcc",
+      "version": null,
+      "version_note": "path probed; separate gcc --version was not run",
+      "raw_outputs": [
+        {
+          "command": "command -v gcc",
+          "output": [
+            "/d/Programs/TDM-GCC-64/bin/gcc"
+          ]
+        }
+      ]
+    },
+    "strawberry_gpp_historical": {
+      "path": "C:/Strawberry/c/bin/g++.exe",
+      "found": false,
+      "note": "historically documented g++ 13.2.0 path; not present on this host now",
+      "raw_outputs": [
+        {
+          "command": "ls -d C:/Strawberry/c/bin",
+          "output": [
+            "ls: cannot access 'C:/Strawberry/c/bin': No such file or directory"
+          ]
+        },
+        {
+          "command": "C:/Strawberry/c/bin/g++.exe --version",
+          "output": [
+            "/usr/bin/bash: line 3: C:/Strawberry/c/bin/g++.exe: No such file or directory"
+          ]
+        }
+      ]
+    },
+    "python": {
+      "found": true,
+      "executable": "D:/Programs/Anaconda3/python.exe",
+      "version": "3.12.7",
+      "architecture": "64bit WindowsPE",
+      "raw_outputs": [
+        {
+          "command": "python --version",
+          "output": [
+            "Python 3.12.7"
+          ]
+        },
+        {
+          "command": "python -c \"import sys,platform;print(sys.executable);print(platform.architecture())\"",
+          "output": [
+            "D:\\Programs\\Anaconda3\\python.exe",
+            "('64bit', 'WindowsPE')"
+          ]
+        }
+      ]
+    },
+    "python_packages": {
+      "numpy": {
+        "found": true,
+        "version": "1.26.4"
+      },
+      "pytest": {
+        "found": true,
+        "version": "7.4.4"
+      },
+      "onnxruntime": {
+        "found": false,
+        "raw_output": [
+          "ModuleNotFoundError: No module named 'onnxruntime'"
+        ]
+      },
+      "cv2": {
+        "found": false,
+        "raw_output": [
+          "ModuleNotFoundError: No module named 'cv2'"
+        ]
+      },
+      "raw_outputs": [
+        {
+          "command": "python -m pip list | grep -i -e numpy -e opencv -e onnx -e pytest -e pynq",
+          "output": [
+            "numpy                             1.26.4",
+            "numpydoc                          1.7.0",
+            "pytest                            7.4.4"
+          ]
+        }
+      ],
+      "note": "requirements-runtime pins onnxruntime==1.20.1 and opencv-python-headless==4.10.0.84; neither is installed in the base environment"
+    },
+    "project_venvs": {
+      "pynq_ffn": {
+        "path": "pynq_ffn/.venv",
+        "exists": false
+      },
+      "kv260_v1": {
+        "path": "kv260_v1/.venv",
+        "exists": false
+      },
+      "raw_outputs": [
+        {
+          "command": "ls -d pynq_ffn/.venv kv260_v1/.venv",
+          "output": [
+            "ls: cannot access 'pynq_ffn/.venv': No such file or directory",
+            "ls: cannot access 'kv260_v1/.venv': No such file or directory"
+          ]
+        }
+      ]
+    },
+    "host_usable": {
+      "cpp_reference_build": true,
+      "cpp_reference_build_note": "g++ is available for host_bridge.cpp host DLL builds; no compile was run in this probe",
+      "python_base_tests": "partial",
+      "python_base_tests_note": "numpy and pytest available; onnxruntime and cv2 missing, so suites that need split-ort or image preprocessing cannot run in the base environment"
+    }
+  },
+  "amd_tools": {
+    "status": "blocked_not_present",
+    "summary": "No usable Vivado/Vitis/Vitis HLS 2026.1 installation was found on this machine",
+    "path_lookup": {
+      "vivado": "not on PATH",
+      "vitis_hls": "not on PATH",
+      "v++": "not on PATH",
+      "raw_outputs": [
+        {
+          "command": "command -v vivado",
+          "output": [],
+          "note": "no output"
+        },
+        {
+          "command": "command -v vitis_hls",
+          "output": [],
+          "note": "no output"
+        },
+        {
+          "command": "command -v v++",
+          "output": [],
+          "note": "no output"
+        }
+      ]
+    },
+    "environment_variables": {
+      "XILINX_VIVADO": "",
+      "XILINX_HLS": "",
+      "XILINX_VITIS": "",
+      "raw_outputs": [
+        {
+          "command": "echo XILINX_VIVADO=$XILINX_VIVADO; echo XILINX_HLS=$XILINX_HLS; echo XILINX_VITIS=$XILINX_VITIS",
+          "output": [
+            "XILINX_VIVADO=",
+            "XILINX_HLS=",
+            "XILINX_VITIS="
+          ]
+        }
+      ]
+    },
+    "candidate_paths_checked": [
+      {
+        "path": "D:/Learning/AMDDesignTools/2026.1",
+        "exists": false,
+        "raw_output": [
+          "ls: cannot access 'D:/Learning/AMDDesignTools/2026.1': No such file or directory"
+        ]
+      },
+      {
+        "path": "D:/Learning",
+        "exists": false,
+        "raw_output": [
+          "ls: cannot access 'D:/Learning': No such file or directory"
+        ]
+      },
+      {
+        "path": "D:/ffn_build",
+        "exists": false,
+        "raw_output": [
+          "ls: cannot access 'D:/ffn_build': No such file or directory"
+        ]
+      },
+      {
+        "path": "D:/Xilinx",
+        "exists": false,
+        "raw_output": [
+          "ls: cannot access 'D:/Xilinx': No such file or directory"
+        ]
+      },
+      {
+        "path": "D:/AMD",
+        "exists": false,
+        "raw_output": [
+          "ls: cannot access 'D:/AMD': No such file or directory"
+        ]
+      },
+      {
+        "path": "C:/Xilinx",
+        "exists": false,
+        "raw_output": [
+          "ls: cannot access 'C:/Xilinx': No such file or directory"
+        ]
+      },
+      {
+        "path": "C:/Program Files/AMD",
+        "exists": true,
+        "fpga_tools": false,
+        "entries_seen": [
+          "AMD Privacy View",
+          "AMDInstallManager",
+          "CIM",
+          "CNext",
+          "InstallUEP",
+          "WVR",
+          "atikmdag_dce.log",
+          "Chipset_Software"
+        ],
+        "note": "GPU/chipset software only; no Vivado/Vitis"
+      },
+      {
+        "path": "C:/Program Files (x86)/AMD",
+        "exists": true,
+        "fpga_tools": false,
+        "entries_seen": [
+          "Chipset_Software"
+        ]
+      },
+      {
+        "path": "C:/ProgramData/Xilinx",
+        "exists": true,
+        "entries_seen": [],
+        "raw_output": [
+          "ls -1 C:/ProgramData/Xilinx",
+          "no output"
+        ]
+      },
+      {
+        "path": "C:/Users/BeFortuneEX/AppData/Local",
+        "filtered_entries": [
+          "AMD",
+          "AMD_Common",
+          "vivado-ai"
+        ],
+        "note": "directory-name filter only; 'vivado-ai' was not verified as an AMD toolchain and was not searched further"
+      },
+      {
+        "path": "D:/",
+        "filtered_entries": [
+          "GameTool",
+          "NetTool",
+          "ProgramData",
+          "Tools"
+        ],
+        "note": "top-level name filter for xilinx/amd/vivado/vitis/tool; no FPGA tool directory identified"
+      },
+      {
+        "path": "D:/Programs",
+        "filtered_entries": [],
+        "note": "no xilinx/amd/vivado/vitis match"
+      },
+      {
+        "path": "D:/Engineering",
+        "filtered_entries": [],
+        "note": "no xilinx/amd/vivado/vitis match"
+      },
+      {
+        "path": "D:/Tools",
+        "filtered_entries": [],
+        "note": "no xilinx/amd/vivado/vitis match"
+      }
+    ],
+    "registry": {
+      "command": "reg query 'HKLM\\SOFTWARE\\Xilinx'",
+      "raw_output": [
+        "错误: 系统找不到指定的注册表项或值。"
+      ],
+      "interpretation": "no HKLM\\SOFTWARE\\Xilinx key"
+    },
+    "historical_reference_only": {
+      "note": "archived 2026-10-15 logs reference D:/Learning/AMDDesignTools/2026.1 tool binaries and successful 2026.1 runs; those paths are absent now, so the logs do not establish current tool availability",
+      "historical_paths": [
+        "D:/Learning/AMDDesignTools/2026.1/Vivado/bin/vivado.bat",
+        "D:/Learning/AMDDesignTools/2026.1/Vitis/bin/v++.bat"
+      ],
+      "license": "not inspected; no license content recorded"
+    },
+    "blocking_effect": "HLS csynth/cosim, Vivado synthesis/implementation and overlay rebuild cannot run on this host until 2026.1 tools are installed or a separate AMD tool machine is used"
+  },
+  "raw_outputs_policy": "raw_output arrays are verbatim excerpts from this session's terminal output. Empty arrays mean the command produced no output. No command is listed that was not run, and no result was synthesized.",
+  "provenance": {
+    "written_by": "FastAgent read-only probe",
+    "files_not_modified": [
+      "pynq_ffn hls sources",
+      "existing artifacts",
+      "README and docs",
+      "git state"
+    ],
+    "concurrent_files_note": "This probe owns tool_probe.json only. Other files in the same directory (for example install/pip/pytest outputs) were created concurrently by another process and were neither created nor inspected by this probe."
+  }
+}

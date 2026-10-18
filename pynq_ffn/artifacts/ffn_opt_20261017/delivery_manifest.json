@@ -1,0 +1,144 @@
+{
+  "created": "2026-10-17T17:00:14.614666+08:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "scope": "Local offline only; no board/SSH/serial/camera/PYNQ/Overlay/maintenance/deletions/commit/push",
+  "source_changes": {
+    "hls/ffn_accel.cpp": "c9c2dcbdfc628542aa0cdc77b2a9acc1d31e9b797e82f44558fffac88c45fce0",
+    "hls/ffn_accel.hpp": "d959265b6f4ad392e649f8cf065942ab294c34348d0ae8cc7b4df5fc1f50e5d8",
+    "tools/validate_cpp_parallel.py": "46684d8bce47480112a329e59f15f826b47991d134998cc69bb26a2ce99779be"
+  },
+  "baseline": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\baseline\\manifest.json",
+  "staged_hls": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\staged_hls\\manifest.json",
+  "source_snapshot_matches_current": true,
+  "static_ABI_early_return_preserved": true,
+  "host_testbench": {
+    "status": "已验证",
+    "tests_each": 19,
+    "valid_calls_each": 16,
+    "valid_tokens_each": 2035,
+    "output_elements_each": 260480,
+    "invalid_counts": [
+      0,
+      661,
+      4294967295
+    ],
+    "max_abs_error": 2.22897e-06,
+    "logs": [
+      "baseline_testbench.log",
+      "r02_testbench.log"
+    ]
+  },
+  "host_bitwise_synthetic": {
+    "status": "已验证",
+    "cases": 19,
+    "output_elements": 262656,
+    "mismatches": 0,
+    "report": "r02_bitwise_synthetic.json"
+  },
+  "real_model": {
+    "payload_status": "pass",
+    "frames": 173,
+    "layers": {
+      "camera_0": {
+        "max_abs_error": 0.0,
+        "ort_max_abs_error": 1.043081283569336e-07,
+        "pipeline_max_abs_error": 1.043081283569336e-07
+      },
+      "camera_1": {
+        "max_abs_error": 0.0,
+        "ort_max_abs_error": 1.043081283569336e-07,
+        "pipeline_max_abs_error": 1.4901161193847656e-07
+      },
+      "cross_0": {
+        "max_abs_error": 0.0,
+        "ort_max_abs_error": 1.043081283569336e-07,
+        "pipeline_max_abs_error": 1.4901161193847656e-07
+      },
+      "cross_1": {
+        "max_abs_error": 0.0,
+        "ort_max_abs_error": 1.1920928955078125e-07,
+        "pipeline_max_abs_error": 1.9371509552001953e-07
+      }
+    },
+    "outputs": {
+      "speed_norm": 8.940696716308594e-08,
+      "speed_raw": 6.103515625e-05,
+      "region_logits": 8.149072527885437e-08,
+      "region_probs": 1.4901161193847656e-08
+    },
+    "integer_mismatches": 0,
+    "bitwise_elements": 29407232,
+    "bitwise_mismatches": 0,
+    "real_cases": 4,
+    "real_status": "pass"
+  },
+  "fault_injection": {
+    "status": "已验证",
+    "passed": 8,
+    "total": 8,
+    "report": "fault_injection_r02/results.json"
+  },
+  "software_regression_coordinator": {
+    "status": "已验证",
+    "pytest": {
+      "passed": 48,
+      "skips": 0,
+      "evidence": "environment/pytest.command.json; environment/pytest.xml"
+    },
+    "pip_check_exit": 0,
+    "note": "Executed by coordinator, not rerun by implementation subagent"
+  },
+  "failures_preserved": [
+    {
+      "status": "失败",
+      "evidence": "bitwise_synthetic.json",
+      "cause": "Validation fixture np.ldexp int64 exponent unsupported on Windows NumPy; fixed exponent dtype=int32 in r02"
+    },
+    {
+      "status": "失败",
+      "evidence": "fault_injection/results.json",
+      "cause": "Fault test harness import path missed tools directory; 6/8 did not reach intended rejection gate; fixed only harness in r02"
+    }
+  ],
+  "hls": {
+    "status": "阻塞",
+    "reason": "No Vivado/Vitis/HLS installation available on current machine",
+    "requested_II": 1,
+    "actual_II": null,
+    "csim": "未执行",
+    "csynth": "未执行",
+    "cosim": "未执行",
+    "vivado_impl": "未执行",
+    "PL_performance": "未执行",
+    "note": "Host std::erf does not validate hls::erff or FPGA performance"
+  },
+  "next_build_steps": [
+    {
+      "stage": "HLS C simulation",
+      "command": "vitis-run --mode hls --config <new-local-copy>/staged_hls/build/hls_config.cfg --work_dir <new-local-work-dir> --csim"
+    },
+    {
+      "stage": "HLS C synthesis",
+      "command": "v++ --compile --mode hls --config <new-local-copy>/staged_hls/build/hls_config.cfg --work_dir <new-local-work-dir>"
+    },
+    {
+      "stage": "Inspect before RTL",
+      "checks": [
+        "actual FC1/FC2 II and latency",
+        "resource fit K26 DSP1248/BRAM288/LUT117120/FF234240",
+        "shared exact-erf rather than four duplicated activation units",
+        "emitted six pointer pairs and two AXI master addr64 widths",
+        "no reduction reassociation/FMA policy change"
+      ]
+    },
+    {
+      "stage": "RTL cosimulation",
+      "command": "vitis-run --mode hls --config <new-local-copy>/staged_hls/build/hls_config.cfg --work_dir <same-work-dir> --cosim",
+      "note": "Full original 2035-token testbench; potentially long; smoke must not be called full coverage"
+    },
+    {
+      "stage": "HLS implementation/package then Vivado system",
+      "note": "Only after numerical/ABI/synthesis gates; all new paths, never overwrite retry04; no board programming authorized"
+    }
+  ]
+}

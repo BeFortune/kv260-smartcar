@@ -1,0 +1,3 @@
+Wrote Vitis 2026.1 configuration: C:\Users\BeFortuneEX\Source\Repos\FPGA\pynq_ffn\artifacts\ffn_opt_20261017\candidate_r02\hls\build\hls_config.cfg
+Explicit syn.interface.m_axi_addr64=true; verify generated RTL and ABI.
+No Vitis command was executed by this generator; no build success is claimed.

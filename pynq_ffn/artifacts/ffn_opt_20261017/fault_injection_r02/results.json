@@ -1,0 +1,115 @@
+{
+  "status": "pass",
+  "cases": [
+    {
+      "name": "refuse_report_overwrite",
+      "command": [
+        "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\tools\\validate_cpp_parallel.py",
+        "--baseline-library",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\baseline_host\\ffn_host.dll",
+        "--candidate-library",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\candidate_r02_host\\ffn_host.dll",
+        "--output",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\r02_bitwise_synthetic.json"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "expected_text": "FileExistsError",
+      "pass": true
+    },
+    {
+      "name": "nonfinite_result",
+      "command": [
+        "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+        "-c",
+        "import importlib.util; from pathlib import Path; import sys; sys.path.insert(0, 'C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\tools'); s=importlib.util.spec_from_file_location(\"parallel\", 'C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\tools\\\\validate_cpp_parallel.py'); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); \nclass Nonfinite:\n    def __init__(self, path): pass\n    def forward(self, name, x, weights):\n        return m.np.full_like(x, m.np.nan)\nm.HostFFN = Nonfinite\nsys.argv = [str(m.__file__), '--baseline-library', 'C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\artifacts\\\\ffn_opt_20261017\\\\baseline_host\\\\ffn_host.dll', '--candidate-library', 'C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\artifacts\\\\ffn_opt_20261017\\\\candidate_r02_host\\\\ffn_host.dll', '--output', 'C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\artifacts\\\\ffn_opt_20261017\\\\fault_injection_r02\\\\nonfinite_result.json']\nraise SystemExit(m.main())\n"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "expected_text": "Nonfinite baseline or candidate output",
+      "pass": true
+    },
+    {
+      "name": "duplicate_member",
+      "command": [
+        "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+        "-c",
+        "import importlib.util; from pathlib import Path; import sys; sys.path.insert(0, 'C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\tools'); s=importlib.util.spec_from_file_location(\"parallel\", 'C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\tools\\\\validate_cpp_parallel.py'); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); m.payload_replay(None, None, Path('C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\artifacts\\\\bundle_20261014'), Path('C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\artifacts\\\\ffn_opt_20261017\\\\fault_injection_r02\\\\duplicate_member.zip'))"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "expected_text": "Duplicate archive members",
+      "pass": true
+    },
+    {
+      "name": "empty_recordings",
+      "command": [
+        "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+        "-c",
+        "import importlib.util; from pathlib import Path; import sys; sys.path.insert(0, 'C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\tools'); s=importlib.util.spec_from_file_location(\"parallel\", 'C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\tools\\\\validate_cpp_parallel.py'); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); m.payload_replay(None, None, Path('C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\artifacts\\\\bundle_20261014'), Path('C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\artifacts\\\\ffn_opt_20261017\\\\fault_injection_r02\\\\empty_recordings.zip'))"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "expected_text": "Empty recording manifest",
+      "pass": true
+    },
+    {
+      "name": "duplicate_recording",
+      "command": [
+        "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+        "-c",
+        "import importlib.util; from pathlib import Path; import sys; sys.path.insert(0, 'C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\tools'); s=importlib.util.spec_from_file_location(\"parallel\", 'C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\tools\\\\validate_cpp_parallel.py'); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); m.payload_replay(None, None, Path('C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\artifacts\\\\bundle_20261014'), Path('C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\artifacts\\\\ffn_opt_20261017\\\\fault_injection_r02\\\\duplicate_recording.zip'))"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "expected_text": "Duplicate recording in manifest",
+      "pass": true
+    },
+    {
+      "name": "zero_frame",
+      "command": [
+        "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+        "-c",
+        "import importlib.util; from pathlib import Path; import sys; sys.path.insert(0, 'C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\tools'); s=importlib.util.spec_from_file_location(\"parallel\", 'C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\tools\\\\validate_cpp_parallel.py'); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); m.payload_replay(None, None, Path('C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\artifacts\\\\bundle_20261014'), Path('C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\artifacts\\\\ffn_opt_20261017\\\\fault_injection_r02\\\\zero_frame.zip'))"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "expected_text": "positive frame count",
+      "pass": true
+    },
+    {
+      "name": "bad_model_hash",
+      "command": [
+        "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+        "-c",
+        "import importlib.util; from pathlib import Path; import sys; sys.path.insert(0, 'C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\tools'); s=importlib.util.spec_from_file_location(\"parallel\", 'C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\tools\\\\validate_cpp_parallel.py'); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); m.payload_replay(None, None, Path('C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\artifacts\\\\bundle_20261014'), Path('C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\artifacts\\\\ffn_opt_20261017\\\\fault_injection_r02\\\\bad_model_hash.zip'))"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "expected_text": "Actual payload model differs",
+      "pass": true
+    },
+    {
+      "name": "escape_csv_path",
+      "command": [
+        "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+        "-c",
+        "import importlib.util; from pathlib import Path; import sys; sys.path.insert(0, 'C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\tools'); s=importlib.util.spec_from_file_location(\"parallel\", 'C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\tools\\\\validate_cpp_parallel.py'); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); m.payload_replay(None, None, Path('C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\artifacts\\\\bundle_20261014'), Path('C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\artifacts\\\\ffn_opt_20261017\\\\fault_injection_r02\\\\escape_csv_path.zip'))"
+      ],
+      "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "expected_text": "escapes",
+      "pass": true
+    }
+  ],
+  "report_overwrite_hash_unchanged": true
+}
