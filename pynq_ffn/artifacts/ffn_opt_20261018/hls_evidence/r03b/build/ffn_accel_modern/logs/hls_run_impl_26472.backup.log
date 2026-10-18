@@ -1,0 +1,4 @@
+  **** HLS Build v2026.1 6493734
+INFO: [HLS 200-2005] Using work_dir D:/f3/hls/build/ffn_accel_modern 
+ERROR: Must run -vppflow 'syn' before 'vivado' (missing file D:/f3/hls/build/ffn_accel_modern/hls/syn)
+INFO: [HLS 200-112] Total CPU user time: 0 seconds. Total CPU system time: 0 seconds. Total elapsed time: 0.458 seconds; peak allocated memory: 27.375 MB.

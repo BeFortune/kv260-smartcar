@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "C:\Users\BeFortuneEX\Source\Repos\FPGA\pynq_ffn\artifacts\ffn_opt_20261018\host_validation\source\validate_cpp_parallel.py", line 260, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\BeFortuneEX\Source\Repos\FPGA\pynq_ffn\artifacts\ffn_opt_20261018\host_validation\source\validate_cpp_parallel.py", line 233, in main
+    with args.output.open("x", encoding="utf-8") as stream:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programs\Anaconda3\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: 'C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\results\\host_payload_regression_r03_20261018.json'

@@ -1,0 +1,413 @@
+
+
+================================================================
+== Synthesis Summary Report of 'ffn_accel'
+================================================================
++ General Information: 
+    * Date:           Sat Oct 17 19:28:23 2026
+    * Version:        2026.1 (Build 6493734 on Jun 16 2026)
+    * Project:        ffn_accel_modern
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: zynquplus
+    * Target device:  xck26-sfvc784-2LV-c
+    
+
+* Performance & Resource Estimates: 
++-------------------------------------------------------+--------+---------------+----------+----------+-------+----------+----------+-----------+--------+-----------+---------+------------+-------------+-----+
+|                        Modules                        |  Issue |               | Iteration|          |  Trip |          |        Latency       |        |           |         |            |             |     |
+|                        & Loops                        |  Type  | Violation Type|  Latency | Interval | Count | Pipelined| (cycles) |    (ns)   |  Slack |   BRAM    |   DSP   |     FF     |     LUT     | URAM|
++-------------------------------------------------------+--------+---------------+----------+----------+-------+----------+----------+-----------+--------+-----------+---------+------------+-------------+-----+
+|+ ffn_accel                                            |  Timing|              -|         -|  27553326|      -|        no|  27553325|  7.090e+08|  -18.43|  136 (47%)|  40 (3%)|   7855 (3%)|  11955 (10%)|    -|
+| + ffn_accel_Pipeline_VITIS_LOOP_54_1_VITIS_LOOP_55_2  |       -|              -|         -|     32771|      -|       yes|     32771|  8.433e+05|    0.00|          -|        -|    71 (~0%)|    173 (~0%)|    -|
+|  o VITIS_LOOP_54_1_VITIS_LOOP_55_2                    |       -|              -|         3|         1|  32768|       yes|     32769|  8.432e+05|    7.30|          -|        -|           -|            -|    -|
+| + ffn_accel_Pipeline_VITIS_LOOP_67_5                  |       -|              -|         -|       131|      -|       yes|       131|  3.371e+03|    0.00|          -|        -|    62 (~0%)|     80 (~0%)|    -|
+|  o VITIS_LOOP_67_5                                    |       -|              -|         3|         1|    128|       yes|       129|  3.320e+03|    7.30|          -|        -|           -|            -|    -|
+| o VITIS_LOOP_60_3                                     |       -|              -|       151|         -|    256|        no|     38656|  9.947e+05|    7.30|          -|        -|           -|            -|    -|
+|  + ffn_accel_Pipeline_VITIS_LOOP_61_4                 |       -|              -|         -|       139|      -|       yes|       139|  3.577e+03|    0.00|          -|        -|   263 (~0%)|    285 (~0%)|    -|
+|   o VITIS_LOOP_61_4                                   |       -|              -|        11|         1|    128|       yes|       137|  3.525e+03|    7.30|          -|        -|           -|            -|    -|
+| o VITIS_LOOP_72_6                                     |       -|              -|     41639|         -|    660|        no|  27481740|  7.072e+08|    7.30|          -|        -|           -|            -|    -|
+|  + ffn_accel_Pipeline_VITIS_LOOP_74_7                 |       -|              -|         -|       131|      -|       yes|       131|  3.371e+03|    0.00|          -|        -|    62 (~0%)|     80 (~0%)|    -|
+|   o VITIS_LOOP_74_7                                   |       -|              -|         3|         1|    128|       yes|       129|  3.320e+03|    7.30|          -|        -|           -|            -|    -|
+|  o VITIS_LOOP_78_8                                    |       -|              -|       510|         -|     64|        no|     32640|  8.399e+05|    7.30|          -|        -|           -|            -|    -|
+|   + ffn_accel_Pipeline_VITIS_LOOP_82_9                |  Timing|              -|         -|       134|      -|       yes|       134|  3.448e+03|  -18.43|          -|        -|   340 (~0%)|    173 (~0%)|    -|
+|    o VITIS_LOOP_82_9                                  |       -|              -|         6|         1|    128|       yes|       132|  3.397e+03|    7.30|          -|        -|           -|            -|    -|
+|   o VITIS_LOOP_90_11                                  |       -|              -|        93|         -|      4|        no|       372|  9.573e+03|    7.30|          -|        -|           -|            -|    -|
+|    + generic_erf_float_s                              |  Timing|              -|         -|        75|      -|        no|        75|  1.930e+03|   -0.35|          -|  18 (1%)|  2098 (~0%)|    5195 (4%)|    -|
+|  o VITIS_LOOP_97_12                                   |       -|              -|       277|         -|     32|        no|      8864|  2.281e+05|    7.30|          -|        -|           -|            -|    -|
+|   + ffn_accel_Pipeline_VITIS_LOOP_101_13              |  Timing|              -|         -|       262|      -|       yes|       262|  6.742e+03|  -18.43|          -|        -|   341 (~0%)|    175 (~0%)|    -|
+|    o VITIS_LOOP_101_13                                |       -|              -|         6|         1|    256|       yes|       260|  6.691e+03|    7.30|          -|        -|           -|            -|    -|
+|   + ffn_accel_Pipeline_VITIS_LOOP_108_15              |       -|              -|         -|        11|      -|       yes|        11|    283.063|    0.00|          -|        -|    84 (~0%)|    105 (~0%)|    -|
+|    o VITIS_LOOP_108_15                                |       -|              -|         7|         1|      4|       yes|         9|    231.597|    7.30|          -|        -|           -|            -|    -|
++-------------------------------------------------------+--------+---------------+----------+----------+-------+----------+----------+-----------+--------+-----------+---------+------------+-------------+-----+
+    Name Prefix: '+' for module, 'o' for loop, '*' for dataflow
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++-------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface   | Read/Write | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|             |            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++-------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_gmem0 | READ_WRITE | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=2            |
+| m_axi_gmem1 | READ_ONLY  | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=2            |
++-------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 7             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register   | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL       | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER       | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER     | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR     | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | x_1        | 0x10   | 32    | W      | Data signal of x                 |                                                                      |
+| s_axi_control | x_2        | 0x14   | 32    | W      | Data signal of x                 |                                                                      |
+| s_axi_control | y_1        | 0x1c   | 32    | W      | Data signal of y                 |                                                                      |
+| s_axi_control | y_2        | 0x20   | 32    | W      | Data signal of y                 |                                                                      |
+| s_axi_control | w1_1       | 0x28   | 32    | W      | Data signal of w1                |                                                                      |
+| s_axi_control | w1_2       | 0x2c   | 32    | W      | Data signal of w1                |                                                                      |
+| s_axi_control | b1_1       | 0x34   | 32    | W      | Data signal of b1                |                                                                      |
+| s_axi_control | b1_2       | 0x38   | 32    | W      | Data signal of b1                |                                                                      |
+| s_axi_control | w2_1       | 0x40   | 32    | W      | Data signal of w2                |                                                                      |
+| s_axi_control | w2_2       | 0x44   | 32    | W      | Data signal of w2                |                                                                      |
+| s_axi_control | b2_1       | 0x4c   | 32    | W      | Data signal of b2                |                                                                      |
+| s_axi_control | b2_2       | 0x50   | 32    | W      | Data signal of b2                |                                                                      |
+| s_axi_control | num_tokens | 0x58   | 32    | W      | Data signal of num_tokens        |                                                                      |
++---------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++------------+-----------+---------------+
+| Argument   | Direction | Datatype      |
++------------+-----------+---------------+
+| x          | inout     | float const * |
+| y          | inout     | float*        |
+| w1         | in        | float const * |
+| b1         | in        | float const * |
+| w2         | in        | float const * |
+| b2         | in        | float const * |
+| num_tokens | in        | unsigned int  |
++------------+-----------+---------------+
+
+* SW-to-HW Mapping
++------------+---------------+-----------+----------+--------------------------------------+
+| Argument   | HW Interface  | HW Type   | HW Usage | HW Info                              |
++------------+---------------+-----------+----------+--------------------------------------+
+| x          | m_axi_gmem0   | interface |          | channel=0                            |
+| x          | s_axi_control | register  | offset   | name=x_1 offset=0x10 range=32        |
+| x          | s_axi_control | register  | offset   | name=x_2 offset=0x14 range=32        |
+| y          | m_axi_gmem0   | interface |          | channel=0                            |
+| y          | s_axi_control | register  | offset   | name=y_1 offset=0x1c range=32        |
+| y          | s_axi_control | register  | offset   | name=y_2 offset=0x20 range=32        |
+| w1         | m_axi_gmem1   | interface |          | channel=0                            |
+| w1         | s_axi_control | register  | offset   | name=w1_1 offset=0x28 range=32       |
+| w1         | s_axi_control | register  | offset   | name=w1_2 offset=0x2c range=32       |
+| b1         | m_axi_gmem1   | interface |          | channel=0                            |
+| b1         | s_axi_control | register  | offset   | name=b1_1 offset=0x34 range=32       |
+| b1         | s_axi_control | register  | offset   | name=b1_2 offset=0x38 range=32       |
+| w2         | m_axi_gmem1   | interface |          | channel=0                            |
+| w2         | s_axi_control | register  | offset   | name=w2_1 offset=0x40 range=32       |
+| w2         | s_axi_control | register  | offset   | name=w2_2 offset=0x44 range=32       |
+| b2         | m_axi_gmem1   | interface |          | channel=0                            |
+| b2         | s_axi_control | register  | offset   | name=b2_1 offset=0x4c range=32       |
+| b2         | s_axi_control | register  | offset   | name=b2_2 offset=0x50 range=32       |
+| num_tokens | s_axi_control | register  |          | name=num_tokens offset=0x58 range=32 |
++------------+---------------+-----------+----------+--------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+----------+-------+-----------------+------------------------+
+| HW Interface | Direction | Length   | Width | Loop            | Loop Location          |
++--------------+-----------+----------+-------+-----------------+------------------------+
+| m_axi_gmem0  | write     | variable | 32    |                 |                        |
+| m_axi_gmem0  | read      | variable | 32    |                 |                        |
+| m_axi_gmem1  | read      | 32768    | 32    | VITIS_LOOP_54_1 | ../ffn_accel.cpp:54:22 |
+| m_axi_gmem1  | read      | 128      | 32    | VITIS_LOOP_67_5 | ../ffn_accel.cpp:67:22 |
++--------------+-----------+----------+-------+-----------------+------------------------+
+
+* All M_AXI Variable Accesses
++--------------+----------+-------------------------+-----------+--------------+----------+-------------------+-------------------------+------------+---------------------------------------------------------------------------------------------------------+
+| HW Interface | Variable | Access Location         | Direction | Burst Status | Length   | Loop              | Loop Location           | Resolution | Problem                                                                                                 |
++--------------+----------+-------------------------+-----------+--------------+----------+-------------------+-------------------------+------------+---------------------------------------------------------------------------------------------------------+
+| m_axi_gmem0  | x        | ../ffn_accel.cpp:76:24  | read      | Widen Fail   |          | VITIS_LOOP_74_7   | ../ffn_accel.cpp:74:26  | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem0  | x        | ../ffn_accel.cpp:76:24  | read      | Inferred     | variable | VITIS_LOOP_72_6   | ../ffn_accel.cpp:72:22  |            |                                                                                                         |
+| m_axi_gmem0  | y        | ../ffn_accel.cpp:110:57 | write     | Widen Fail   |          | VITIS_LOOP_108_15 | ../ffn_accel.cpp:108:32 | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem0  | y        | ../ffn_accel.cpp:110:57 | write     | Inferred     | variable | VITIS_LOOP_72_6   | ../ffn_accel.cpp:72:22  |            |                                                                                                         |
+| m_axi_gmem1  | w1       | ../ffn_accel.cpp:57:30  | read      | Widen Fail   |          | VITIS_LOOP_55_2   | ../ffn_accel.cpp:55:26  | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem1  | w1       | ../ffn_accel.cpp:57:30  | read      | Inferred     | 32768    | VITIS_LOOP_54_1   | ../ffn_accel.cpp:54:22  |            |                                                                                                         |
+| m_axi_gmem1  |          | ../ffn_accel.cpp:60:22  | read      | Fail         |          |                   |                         | 214-224    | Could not burst due to multiple potential reads to the same bundle in the same region.                  |
+| m_axi_gmem1  | w2       | ../ffn_accel.cpp:63:30  | read      | Widen Fail   |          | VITIS_LOOP_61_4   | ../ffn_accel.cpp:61:26  | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem1  | w2       | ../ffn_accel.cpp:63:30  | read      | Inferred     | 32768    | VITIS_LOOP_60_3   | ../ffn_accel.cpp:60:22  |            |                                                                                                         |
+| m_axi_gmem1  | b1       | ../ffn_accel.cpp:65:23  | read      | Widen Fail   |          | VITIS_LOOP_60_3   | ../ffn_accel.cpp:60:22  | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem1  | b1       | ../ffn_accel.cpp:65:23  | read      | Inferred     | 256      | VITIS_LOOP_60_3   | ../ffn_accel.cpp:60:22  |            |                                                                                                         |
+| m_axi_gmem1  | b2       | ../ffn_accel.cpp:69:23  | read      | Widen Fail   |          | VITIS_LOOP_67_5   | ../ffn_accel.cpp:67:22  | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem1  | b2       | ../ffn_accel.cpp:69:23  | read      | Inferred     | 128      | VITIS_LOOP_67_5   | ../ffn_accel.cpp:67:22  |            |                                                                                                         |
++--------------+----------+-------------------------+-----------+--------------+----------+-------------------+-------------------------+------------+---------------------------------------------------------------------------------------------------------+
+
+    * Resolution URL: docs.amd.com/access/sources/dita/topic?Doc_Version=2026.1%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++-------------------------------------------------------+-----+--------+------------------------+-----------+--------------------------+---------+
+| Name                                                  | DSP | Pragma | Variable               | Op        | Impl                     | Latency |
++-------------------------------------------------------+-----+--------+------------------------+-----------+--------------------------+---------+
+| + ffn_accel                                           | 40  |        |                        |           |                          |         |
+|   fmul_32ns_32ns_32_3_max_dsp_1_U82                   |     |        | x_read                 | adapter   | s_axilite                | 0       |
+|   add_ln39_fu_542_p2                                  |     |        | add_ln39               | add       | fabric                   | 0       |
+|   fmul_32ns_32ns_32_3_max_dsp_1_U88                   |     |        | icmp_ln39              | setgt     | auto                     | 0       |
+|   fmul_32ns_32ns_32_3_max_dsp_1_U88                   |     |        | icmp_ln60              | seteq     | auto                     | 0       |
+|   add_ln60_fu_611_p2                                  |     |        | add_ln60               | add       | fabric                   | 0       |
+|   add_ln65_fu_635_p2                                  |     |        | add_ln65               | add       | fabric                   | 0       |
+|   icmp_ln72_fu_664_p2                                 |     |        | icmp_ln72              | setne     | auto                     | 0       |
+|   empty_39_fu_685_p3                                  |     |        | empty_39               | select    | auto_sel                 | 0       |
+|   icmp_ln72_1_fu_753_p2                               |     |        | icmp_ln72_1            | seteq     | auto                     | 0       |
+|   add_ln72_fu_758_p2                                  |     |        | add_ln72               | add       | fabric                   | 0       |
+|   fmul_32ns_32ns_32_3_max_dsp_1_U89                   |     |        | icmp_ln90              | seteq     | auto                     | 0       |
+|   add_ln90_fu_805_p2                                  |     |        | add_ln90               | add       | fabric                   | 0       |
+|   sparsemux_9_2_32_1_1_U83                            |     |        | tmp                    | sparsemux | compactencoding_dontcare | 0       |
+|   add_ln94_fu_839_p2                                  |     |        | add_ln94               | add       | fabric                   | 0       |
+|   fadd_32ns_32ns_32_4_full_dsp_1_U81                  | 2   |        | value_assign           | fadd      | fulldsp                  | 3       |
+|   fmul_32ns_32ns_32_3_max_dsp_1_U82                   | 3   |        | x_assign               | fmul      | maxdsp                   | 2       |
+|   fmul_32ns_32ns_32_3_max_dsp_1_U82                   | 3   |        | mul1_i                 | fmul      | maxdsp                   | 2       |
+|   fmul_32ns_32ns_32_3_max_dsp_1_U82                   | 2   |        | add_i                  | fadd      | fulldsp                  | 3       |
+|   fmul_32ns_32ns_32_3_max_dsp_1_U82                   | 3   |        | mul2_i                 | fmul      | maxdsp                   | 2       |
+|   fmul_32ns_32ns_32_3_max_dsp_1_U82                   |     |        | hidden_addr_write_ln94 | ram       | auto                     | 1       |
+|   fmul_32ns_32ns_32_3_max_dsp_1_U88                   |     |        | add_ln79               | add       | fabric                   | 0       |
+|   fmul_32ns_32ns_32_3_max_dsp_1_U82                   |     |        | add_ln98               | add       | fabric                   | 0       |
+|  + ffn_accel_Pipeline_VITIS_LOOP_54_1_VITIS_LOOP_55_2 | 0   |        |                        |           |                          |         |
+|    icmp_ln54_fu_179_p2                                |     |        | icmp_ln54              | seteq     | auto                     | 0       |
+|    add_ln54_1_fu_185_p2                               |     |        | add_ln54_1             | add       | fabric                   | 0       |
+|    icmp_ln55_fu_208_p2                                |     |        | icmp_ln55              | seteq     | auto                     | 0       |
+|    select_ln54_fu_214_p3                              |     |        | select_ln54            | select    | auto_sel                 | 0       |
+|    empty_fu_222_p3                                    |     |        | empty                  | select    | auto_sel                 | 0       |
+|    add_ln54_fu_230_p2                                 |     |        | add_ln54               | add       | fabric                   | 0       |
+|    add_ln55_fu_287_p2                                 |     |        | add_ln55               | add       | fabric                   | 0       |
+|  + ffn_accel_Pipeline_VITIS_LOOP_61_4                 | 0   |        |                        |           |                          |         |
+|    icmp_ln61_fu_186_p2                                |     |        | icmp_ln61              | seteq     | auto                     | 0       |
+|    add_ln61_fu_192_p2                                 |     |        | add_ln61               | add       | fabric                   | 0       |
+|  + ffn_accel_Pipeline_VITIS_LOOP_67_5                 | 0   |        |                        |           |                          |         |
+|    icmp_ln67_fu_92_p2                                 |     |        | icmp_ln67              | seteq     | auto                     | 0       |
+|    add_ln67_fu_98_p2                                  |     |        | add_ln67               | add       | fabric                   | 0       |
+|  + ffn_accel_Pipeline_VITIS_LOOP_74_7                 | 0   |        |                        |           |                          |         |
+|    icmp_ln74_fu_92_p2                                 |     |        | icmp_ln74              | seteq     | auto                     | 0       |
+|    add_ln74_fu_98_p2                                  |     |        | add_ln74               | add       | fabric                   | 0       |
+|  + ffn_accel_Pipeline_VITIS_LOOP_82_9                 | 0   |        |                        |           |                          |         |
+|    icmp_ln82_fu_241_p2                                |     |        | icmp_ln82              | seteq     | auto                     | 0       |
+|    add_ln82_fu_247_p2                                 |     |        | add_ln82               | add       | fabric                   | 0       |
+|  + generic_erf_float_s                                | 18  |        |                        |           |                          |         |
+|    icmp_ln40_fu_422_p2                                |     |        | icmp_ln40              | setne     | auto                     | 0       |
+|    icmp_ln41_fu_428_p2                                |     |        | icmp_ln41              | seteq     | auto                     | 0       |
+|    or_ln40_fu_434_p2                                  |     |        | or_ln40                | or        | auto                     | 0       |
+|    icmp_ln444_fu_440_p2                               |     |        | icmp_ln444             | setgt     | auto                     | 0       |
+|    icmp_ln452_fu_446_p2                               |     |        | icmp_ln452             | setlt     | auto                     | 0       |
+|    icmp_ln475_fu_452_p2                               |     |        | icmp_ln475             | setlt     | auto                     | 0       |
+|    icmp_ln495_fu_458_p2                               |     |        | icmp_ln495             | setgt     | auto                     | 0       |
+|    fdiv_32ns_32ns_32_9_no_dsp_1_U44                   |     |        | s_2                    | fdiv      | fabric                   | 8       |
+|    icmp_ln500_fu_496_p2                               |     |        | icmp_ln500             | setlt     | auto                     | 0       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | R1                     | fadd      | fulldsp                  | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | S1                     | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | R2                     | fadd      | fulldsp                  | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | S2                     | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | R3                     | fadd      | fulldsp                  | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | S3                     | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | R4                     | fadd      | fulldsp                  | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | S4                     | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | add10                  | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | add11                  | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | R                      | fadd      | fulldsp                  | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | add12                  | fadd      | fulldsp                  | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | add13                  | fadd      | fulldsp                  | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | add14                  | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | S                      | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | R1_1                   | fadd      | fulldsp                  | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | S1_1                   | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | R2_1                   | fadd      | fulldsp                  | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | S2_1                   | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | R3_1                   | fadd      | fulldsp                  | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | S3_1                   | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | S4_1                   | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | add15                  | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | add16                  | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | R_1                    | fadd      | fulldsp                  | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | add17                  | fadd      | fulldsp                  | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | add18                  | fadd      | fulldsp                  | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | S_1                    | fadd      | fulldsp                  | 3       |
+|    S_2_fu_508_p3                                      |     |        | S_2                    | select    | auto_sel                 | 0       |
+|    R_2_fu_501_p3                                      |     |        | R_2                    | select    | auto_sel                 | 0       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | x_assign               | fadd      | fulldsp                  | 3       |
+|    fexp_32ns_32ns_32_8_full_dsp_1_U45                 | 7   |        | tmp_3                  | fexp      | fulldsp                  | 7       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | sub5                   | fadd      | fulldsp                  | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | add19                  | fadd      | fulldsp                  | 3       |
+|    fdiv_32ns_32ns_32_9_no_dsp_1_U44                   |     |        | div4                   | fdiv      | fabric                   | 8       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | x_assign_1             | fadd      | fulldsp                  | 3       |
+|    fexp_32ns_32ns_32_8_full_dsp_1_U46                 | 7   |        | tmp_4                  | fexp      | fulldsp                  | 7       |
+|    fdiv_32ns_32ns_32_9_no_dsp_1_U44                   |     |        | div5                   | fdiv      | fabric                   | 8       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | sub6                   | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | sub7                   | fadd      | fulldsp                  | 3       |
+|    select_ln547_fu_547_p3                             |     |        | select_ln547           | select    | auto_sel                 | 0       |
+|    select_ln496_fu_554_p3                             |     |        | select_ln496           | select    | auto_sel                 | 0       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | s_1                    | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | P1                     | fadd      | fulldsp                  | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | Q1                     | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | P2                     | fadd      | fulldsp                  | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | Q2                     | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | P3                     | fadd      | fulldsp                  | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | Q3                     | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | add3                   | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | add4                   | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | P                      | fadd      | fulldsp                  | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | add5                   | fadd      | fulldsp                  | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | add6                   | fadd      | fulldsp                  | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | Q                      | fadd      | fulldsp                  | 3       |
+|    fdiv_32ns_32ns_32_9_no_dsp_1_U44                   |     |        | div2                   | fdiv      | fabric                   | 8       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | add8                   | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | sub2                   | fadd      | fulldsp                  | 3       |
+|    icmp_ln454_fu_484_p2                               |     |        | icmp_ln454             | setlt     | auto                     | 0       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | r1                     | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | r2                     | fadd      | fulldsp                  | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | s1                     | fadd      | fulldsp                  | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | s2                     | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | s3                     | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | add7                   | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | r                      | fadd      | fulldsp                  | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | add9                   | fadd      | fulldsp                  | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U40                 | 2   |        | s                      | fadd      | fulldsp                  | 3       |
+|    fdiv_32ns_32ns_32_9_no_dsp_1_U44                   |     |        | y                      | fdiv      | fabric                   | 8       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | add2                   | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | add1                   | fadd      | fulldsp                  | 3       |
+|    icmp_ln446_fu_490_p2                               |     |        | icmp_ln446             | setgt     | auto                     | 0       |
+|    fdiv_32ns_32ns_32_9_no_dsp_1_U44                   |     |        | div                    | fdiv      | fabric                   | 8       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | sub                    | fadd      | fulldsp                  | 3       |
+|    faddfsub_32ns_32ns_32_4_full_dsp_1_U39             | 2   |        | add                    | fadd      | fulldsp                  | 3       |
+|  + ffn_accel_Pipeline_VITIS_LOOP_101_13               | 0   |        |                        |           |                          |         |
+|    icmp_ln101_fu_241_p2                               |     |        | icmp_ln101             | seteq     | auto                     | 0       |
+|    add_ln101_fu_247_p2                                |     |        | add_ln101              | add       | fabric                   | 0       |
+|  + ffn_accel_Pipeline_VITIS_LOOP_108_15               | 0   |        |                        |           |                          |         |
+|    icmp_ln108_fu_157_p2                               |     |        | icmp_ln108             | seteq     | auto                     | 0       |
+|    add_ln108_fu_163_p2                                |     |        | add_ln108              | add       | fabric                   | 0       |
+|    sparsemux_9_2_32_1_1_U71                           |     |        | tmp_2                  | sparsemux | compactencoding_dontcare | 0       |
+|    add_ln110_fu_177_p2                                |     |        | add_ln110              | add       | fabric                   | 0       |
++-------------------------------------------------------+-----+--------+------------------------+-----------+--------------------------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++------------------------------------------------------------------------------------------+--------------+-----------+------+------+--------+--------+--------------------------------------------------------------------------------------+------+---------+------------------+
+| Name                                                                                     | Usage        | Type      | BRAM | URAM | CE_REG | Pragma | Variable                                                                             | Impl | Latency | Bitwidth, Depth, |
+|                                                                                          |              |           |      |      |        |        |                                                                                      |      |         | Banks            |
++------------------------------------------------------------------------------------------+--------------+-----------+------+------+--------+--------+--------------------------------------------------------------------------------------+------+---------+------------------+
+| + ffn_accel                                                                              |              |           | 136  | 0    |        |        |                                                                                      |      |         |                  |
+|   control_s_axi_U                                                                        | interface    | s_axilite |      |      |        |        |                                                                                      |      |         |                  |
+|   gmem0_m_axi_U                                                                          | interface    | m_axi     | 2    |      |        |        |                                                                                      |      |         |                  |
+|   gmem1_m_axi_U                                                                          | interface    | m_axi     | 2    |      |        |        |                                                                                      |      |         |                  |
+|   fmul_32ns_32ns_32_3_max_dsp_1_U90                                                      | ram_1p array |           | 1    |      | N      |        | token                                                                                | auto | 1       | 32, 128, 1       |
+|   fmul_32ns_32ns_32_3_max_dsp_1_U88                                                      | ram_1p array |           | 1    |      | N      |        | hidden                                                                               | auto | 1       | 32, 256, 1       |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_7_U              | ram_1p       |           | 16   |      | N      |        | ffn_accel_float_const_float_float_const_float_const_float_const_float_7              | auto | 1       | 32, 8192, 1      |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_6_U              | ram_1p       |           | 16   |      | N      |        | ffn_accel_float_const_float_float_const_float_const_float_const_float_6              | auto | 1       | 32, 8192, 1      |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_5_U              | ram_1p       |           | 16   |      | N      |        | ffn_accel_float_const_float_float_const_float_const_float_const_float_5              | auto | 1       | 32, 8192, 1      |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_4_U              | ram_1p       |           | 16   |      | N      |        | ffn_accel_float_const_float_float_const_float_const_float_const_float_4              | auto | 1       | 32, 8192, 1      |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_3_U              | ram_1p       |           | 16   |      | N      |        | ffn_accel_float_const_float_float_const_float_const_float_const_float_3              | auto | 1       | 32, 8192, 1      |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_2_U              | ram_1p       |           | 16   |      | N      |        | ffn_accel_float_const_float_float_const_float_const_float_const_float_2              | auto | 1       | 32, 8192, 1      |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_1_U              | ram_1p       |           | 16   |      | N      |        | ffn_accel_float_const_float_float_const_float_const_float_const_float_1              | auto | 1       | 32, 8192, 1      |
+|   ffn_mulmulmulmulmulaccel_float_const_float_float_const_float_const_float_const_float_U | ram_1p       |           | 16   |      | N      |        | ffn_mulmulmulmulmulaccel_float_const_float_float_const_float_const_float_const_float | auto | 1       | 32, 8192, 1      |
+|   local_b1_U                                                                             | ram_1p       |           | 1    |      | N      |        | local_b1                                                                             | auto | 1       | 32, 256, 1       |
+|   local_b2_U                                                                             | ram_1p       |           | 1    |      | N      |        | local_b2                                                                             | auto | 1       | 32, 128, 1       |
++------------------------------------------------------------------------------------------+--------------+-----------+------+------+--------+--------+--------------------------------------------------------------------------------------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Ignored Pragmas
++--------+----------+-------------------------------------+-----------------+
+| Type   | Options  | Location                            | Messages        |
++--------+----------+-------------------------------------+-----------------+
+| UNROLL |          | in ffn_accel (../ffn_accel.cpp:86)  | Not implemented |
+| UNROLL | off=true | in ffn_accel (../ffn_accel.cpp:91)  | Not implemented |
+| UNROLL |          | in ffn_accel (../ffn_accel.cpp:104) | Not implemented |
+| UNROLL | off=true | in ffn_accel (../ffn_accel.cpp:109) | Not implemented |
++--------+----------+-------------------------------------+-----------------+
+
+* Inferred Pragmas
++--------------+---------+--------------------------------------------------------------------------------------+-------------------------------+
+| Type         | Options | Location                                                                             | Inferred From                 |
++--------------+---------+--------------------------------------------------------------------------------------+-------------------------------+
+| LOOP_FLATTEN |         | loop VITIS_LOOP_55_2 (../ffn_accel.cpp:55:26) in ffn_accel (../ffn_accel.cpp:55)     | pipeline ../ffn_accel.cpp:56  |
+| LOOP_FLATTEN | off     | loop VITIS_LOOP_60_3 (../ffn_accel.cpp:60:22) in ffn_accel (../ffn_accel.cpp:60)     | pipeline ../ffn_accel.cpp:62  |
+| PIPELINE     |         | loop VITIS_LOOP_108_15 (../ffn_accel.cpp:108:32) in ffn_accel (../ffn_accel.cpp:108) | syn.compile.pipeline_loops=64 |
++--------------+---------+--------------------------------------------------------------------------------------+-------------------------------+
+
+* Implemented Pragmas
++-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| Type            | Options                                                                                                                                             | Location                                                                                                                       |
++-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| ARRAY_PARTITION | dim=2 type=cyclic factor=4 variable=ffn_accel(float const*, float*, float const*, float const*, float const*, float const*, unsigned int)::local_w1 | in ffn_accel (../ffn_accel.cpp:47)                                                                                             |
+| ARRAY_PARTITION | dim=2 type=cyclic factor=4 variable=ffn_accel(float const*, float*, float const*, float const*, float const*, float const*, unsigned int)::local_w2 | in ffn_accel (../ffn_accel.cpp:48)                                                                                             |
+| LOOP_TRIPCOUNT  | max=660 min=1 avg=330                                                                                                                               | in ffn_accel (../ffn_accel.cpp:73)                                                                                             |
+| ARRAY_PARTITION | dim=1 type=complete variable=sum                                                                                                                    | in ffn_accel (../ffn_accel.cpp:81)                                                                                             |
+| ARRAY_PARTITION | dim=1 type=complete variable=sum127                                                                                                                 | in ffn_accel (../ffn_accel.cpp:100)                                                                                            |
+| INLINE          |                                                                                                                                                     | in _zn11exp_reduce_3expef (C:/scratch/HEAD/hls_product/738/2026.1/src/shared/hls/clib/hlsmath/src/common/hls_exp_float.cpp:16) |
++-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+
+* Valid Pragma Syntax
++-----------------+------------------------------------------------------+-------------------------------------+
+| Type            | Options                                              | Location                            |
++-----------------+------------------------------------------------------+-------------------------------------+
+| INTERFACE       | m_axi port=x offset=slave bundle=gmem0 depth=84480   | in ffn_accel (../ffn_accel.cpp:24)  |
+| INTERFACE       | m_axi port=y offset=slave bundle=gmem0 depth=84480   | in ffn_accel (../ffn_accel.cpp:25)  |
+| INTERFACE       | m_axi port=w1 offset=slave bundle=gmem1 depth=32768  | in ffn_accel (../ffn_accel.cpp:26)  |
+| INTERFACE       | m_axi port=b1 offset=slave bundle=gmem1 depth=256    | in ffn_accel (../ffn_accel.cpp:27)  |
+| INTERFACE       | m_axi port=w2 offset=slave bundle=gmem1 depth=32768  | in ffn_accel (../ffn_accel.cpp:28)  |
+| INTERFACE       | m_axi port=b2 offset=slave bundle=gmem1 depth=128    | in ffn_accel (../ffn_accel.cpp:29)  |
+| INTERFACE       | s_axilite port=x bundle=control offset=0x10          | in ffn_accel (../ffn_accel.cpp:30)  |
+| INTERFACE       | s_axilite port=y bundle=control offset=0x1c          | in ffn_accel (../ffn_accel.cpp:31)  |
+| INTERFACE       | s_axilite port=w1 bundle=control offset=0x28         | in ffn_accel (../ffn_accel.cpp:32)  |
+| INTERFACE       | s_axilite port=b1 bundle=control offset=0x34         | in ffn_accel (../ffn_accel.cpp:33)  |
+| INTERFACE       | s_axilite port=w2 bundle=control offset=0x40         | in ffn_accel (../ffn_accel.cpp:34)  |
+| INTERFACE       | s_axilite port=b2 bundle=control offset=0x4c         | in ffn_accel (../ffn_accel.cpp:35)  |
+| INTERFACE       | s_axilite port=num_tokens bundle=control offset=0x58 | in ffn_accel (../ffn_accel.cpp:36)  |
+| INTERFACE       | s_axilite port=return bundle=control offset=0x00     | in ffn_accel (../ffn_accel.cpp:37)  |
+| ARRAY_PARTITION | variable=local_w1 cyclic factor=4 dim=2              | in ffn_accel (../ffn_accel.cpp:47)  |
+| ARRAY_PARTITION | variable=local_w2 cyclic factor=4 dim=2              | in ffn_accel (../ffn_accel.cpp:48)  |
+| PIPELINE        |                                                      | in ffn_accel (../ffn_accel.cpp:56)  |
+| PIPELINE        |                                                      | in ffn_accel (../ffn_accel.cpp:62)  |
+| PIPELINE        |                                                      | in ffn_accel (../ffn_accel.cpp:68)  |
+| LOOP_TRIPCOUNT  | min=1 max=660                                        | in ffn_accel (../ffn_accel.cpp:73)  |
+| PIPELINE        |                                                      | in ffn_accel (../ffn_accel.cpp:75)  |
+| ARRAY_PARTITION | variable=sum complete dim=1                          | in ffn_accel (../ffn_accel.cpp:81)  |
+| PIPELINE        | ii=1                                                 | in ffn_accel (../ffn_accel.cpp:83)  |
+| PIPELINE        | off                                                  | in ffn_accel (../ffn_accel.cpp:92)  |
+| ARRAY_PARTITION | variable=sum complete dim=1                          | in ffn_accel (../ffn_accel.cpp:100) |
+| PIPELINE        | ii=1                                                 | in ffn_accel (../ffn_accel.cpp:102) |
++-----------------+------------------------------------------------------+-------------------------------------+
+
+

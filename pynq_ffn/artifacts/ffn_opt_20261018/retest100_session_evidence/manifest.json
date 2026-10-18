@@ -1,0 +1,69 @@
+{
+  "scope": "complete returned facts for authorized PL0-only 100MHz retest; no discovery token/password/key",
+  "files": {
+    "clock_retest_hosts02.json": {
+      "bytes": 514,
+      "sha256": "b597a339ffab3d03e4799bd1a6c6691d303a72d01fde4d563fe0f92de14be9c7"
+    },
+    "clock_retest_open_result.json": {
+      "bytes": 767,
+      "sha256": "4db86af7855a7bfc67f5355d520b6b2b5f1490f0ef0ff5e19bc83c536efe5752"
+    },
+    "clock_retest_api_result.json": {
+      "bytes": 47836,
+      "sha256": "f66db425dc73953c3b04deb751da088499395e6332015088f52e46b6f4fb5609"
+    },
+    "clock_api2_result.json": {
+      "bytes": 11408,
+      "sha256": "3f0fb8e85891ad64b9fd5322df72d1ac5af16930067352297599835f7149dbd3"
+    },
+    "clock_fields_result.json": {
+      "bytes": 13335,
+      "sha256": "5dac522a96df5453fa6e9c9c104ff1d146fc5527df7ac970cd79c9705122d4f1"
+    },
+    "clock_retest_state_result.json": {
+      "bytes": 1273,
+      "sha256": "98e0eb093f426cfc9a4bc38c73f185d9db50678b4ef9551dd7b393c509318b65"
+    },
+    "clock_retest_exclusive_result.json": {
+      "bytes": 205,
+      "sha256": "ecc5a271aad2a09dcd59cacccf5e431d440bcbfa1ac6c715a58f2b8571c799c7"
+    },
+    "clock_retest_upload_result.json": {
+      "bytes": 189,
+      "sha256": "0b45ec766a8ca6a3a0a7a09b9f2edc4b11fd5775d9590400bda48a3782aa3136"
+    },
+    "clock_retest_stage_result.json": {
+      "bytes": 263,
+      "sha256": "80384ec4e6738284429b06b76f0aa5f6af9781c04fabcb4a153f5e9dd7894b4a"
+    },
+    "clock_retest_start_args.json": {
+      "bytes": 1029,
+      "sha256": "a87e6a2e217ca6c249314c63f7d2bcf084367cf9c2b64d50f6e7b1be4a8e19b7"
+    },
+    "clock_retest_start_result.json": {
+      "bytes": 334,
+      "sha256": "400eb978676ff44a48dc229cc4dba03d113222ebda1c59633fba92d27e47feba"
+    },
+    "clock_retest_events01_result.json": {
+      "bytes": 128474,
+      "sha256": "9d9ea63d57e7c694b1b980675bb2abd0e497af1077857a016bb447275757cf1e"
+    },
+    "clock_retest_poll05_result.json": {
+      "bytes": 1519,
+      "sha256": "853007c76bc5044c5c2b205d4fb2b96e3068ed9e840bfd0ab6c8d48f7fec7ffe"
+    },
+    "clock_retest_collect_result.json": {
+      "bytes": 306,
+      "sha256": "26bf64274da8057280de5ead8b74d51ed3899b87dcabb1ce71551e5f53d78ead"
+    },
+    "clock_retest_download_result.json": {
+      "bytes": 188,
+      "sha256": "d4168f7a413dc0917cc6d024f26a9309f8e01322d828bbe824dd34ebee8df09a"
+    },
+    "clock_retest_final_state_result.json": {
+      "bytes": 1271,
+      "sha256": "c6984253aab3d2368d67b0657321c28270c7afb1117d57e488da8c70d66c1738"
+    }
+  }
+}

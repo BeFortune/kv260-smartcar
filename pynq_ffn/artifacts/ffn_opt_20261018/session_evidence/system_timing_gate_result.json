@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"ok\": true,\n  \"path\": \"D:/g3/evidence/vivado/implemented_gate.txt\",\n  \"content\": \"STATUS=PASS\\r\\nWNS_NS=2.433\\r\\nWHS_NS=0.010\\r\\nROUTABLE=63005\\r\\nROUTED=63005\\r\\nROUTE_ERRORS=0\\r\\n\"\n}"
+    }
+  ]
+}

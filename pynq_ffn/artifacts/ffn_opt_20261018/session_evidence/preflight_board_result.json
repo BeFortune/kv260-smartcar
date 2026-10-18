@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"machine\": \"aarch64\",\n  \"python\": \"3.10.12\",\n  \"uname\": {\n    \"system\": \"Linux\",\n    \"node\": \"kria\",\n    \"release\": \"5.15.0-1027-xilinx-zynqmp\",\n    \"version\": \"#31-Ubuntu SMP Wed Feb 21 04:33:09 UTC 2024\",\n    \"machine\": \"aarch64\",\n    \"processor\": \"aarch64\"\n  },\n  \"cma\": [\n    \"CmaTotal:         262144 kB\",\n    \"CmaFree:           48832 kB\"\n  ],\n  \"versions\": {\n    \"pynq\": \"3.0.1\",\n    \"numpy\": \"1.26.4\",\n    \"onnxruntime\": \"1.20.1\",\n    \"opencv-python\": \"4.11.0.86\",\n    \"opencv-python-headless\": null\n  },\n  \"ffn_deployment_exists\": true,\n  \"venv_python_exists\": true,\n  \"xclbinutil_selected\": \"/usr/local/share/pynq-venv/bin/xclbinutil\"\n}\n\nSUDO_CHECK\nsudo: a password is required\n\nPYNQ_VENV_METADATA\n{'pynq': '3.0.1', 'numpy': '1.26.4', 'onnxruntime': '1.20.1'}\n[exit code: 0]"
+    }
+  ]
+}

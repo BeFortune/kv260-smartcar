@@ -1,0 +1,58 @@
+{
+  "schema": "ffn_board.validation.v1",
+  "date_utc": "2026-10-17T16:34:06.345879+00:00",
+  "status": "失败",
+  "phases": {
+    "static": {
+      "status": "失败",
+      "date_utc": "2026-10-17T16:34:06.586280+00:00",
+      "quarantined": true
+    },
+    "hardware": {
+      "status": "未执行"
+    },
+    "references": {
+      "status": "未执行"
+    },
+    "layers": {
+      "status": "未执行"
+    },
+    "regression": {
+      "status": "未执行"
+    },
+    "performance": {
+      "status": "未执行"
+    }
+  },
+  "dependencies": {
+    "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+    "executable": "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "machine": "AMD64",
+    "packages": {
+      "numpy": "1.26.4",
+      "onnxruntime": "1.20.1",
+      "pynq": null,
+      "opencv-python": null,
+      "opencv-python-headless": "4.10.0.84"
+    },
+    "memory": {}
+  },
+  "arguments": {
+    "mock": true
+  },
+  "hardware_execution": false,
+  "not_executed": [
+    "camera",
+    "serial",
+    "vehicle",
+    "live_frame_freshness",
+    "overlay_reset_or_timeout_recovery",
+    "task_accuracy"
+  ],
+  "scope": "recorded inputs; throughput is NOT live inference/fresh-frame rate; joystick labels are NOT task accuracy",
+  "failure_mode": "failed_quarantined",
+  "error_type": "TimeoutError",
+  "error": "MOCK ONLY",
+  "operator_action": "Keep process alive. Separately authorize and verify hardware-safe reset before termination."
+}

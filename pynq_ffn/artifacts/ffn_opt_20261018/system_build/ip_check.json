@@ -1,0 +1,16 @@
+{
+  "identity": [
+    "xilinx.com",
+    "hls",
+    "ffn_accel",
+    "1.0"
+  ],
+  "address_ports": {
+    "m_axi_gmem0_ARADDR": 64,
+    "m_axi_gmem0_AWADDR": 64,
+    "m_axi_gmem1_ARADDR": 64,
+    "m_axi_gmem1_AWADDR": 64
+  },
+  "source": "D:/f3/hls/build/ffn_accel_modern/ffn_accel.zip",
+  "sha256": "de24cf176e36e8ddf8aea03db02faa9b218133e799cd8ba0289c722a29c5e56b"
+}

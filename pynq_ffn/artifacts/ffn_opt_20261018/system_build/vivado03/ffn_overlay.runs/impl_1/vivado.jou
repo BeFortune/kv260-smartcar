@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Sun Oct 18 00:41:49 2026
+# Process ID         : 22280
+# Current directory  : D:/g3/vivado03/ffn_overlay.runs/impl_1
+# Command line       : vivado.exe -log ffn_overlay_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source ffn_overlay_wrapper.tcl -notrace
+# Log file           : D:/g3/vivado03/ffn_overlay.runs/impl_1/ffn_overlay_wrapper.vdi
+# Journal file       : D:/g3/vivado03/ffn_overlay.runs/impl_1\vivado.jou
+# Running On         : JasonWenDsek
+# Platform           : Windows 11
+# Operating System   : 26200
+# Processor Detail   : AMD Ryzen 7 7800X3D 8-Core Processor           
+# CPU Frequency      : 4200 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 33520 MB
+# Swap memory        : 25769 MB
+# Total Virtual      : 59290 MB
+# Available Virtual  : 35304 MB
+#-----------------------------------------------------------
+source ffn_overlay_wrapper.tcl -notrace

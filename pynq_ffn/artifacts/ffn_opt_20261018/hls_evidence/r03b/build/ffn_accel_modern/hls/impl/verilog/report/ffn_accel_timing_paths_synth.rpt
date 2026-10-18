@@ -1,0 +1,808 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
+| Date              : Sat Oct 17 22:50:42 2026
+| Host              : JasonWenDsek running 64-bit major release  (build 9200)
+| Command           : report_timing -max_paths 10 -file ./report/ffn_accel_timing_paths_synth.rpt
+| Design            : bd_0_wrapper
+| Device            : xck26-sfvc784
+| Speed File        : -2LV  PRODUCTION 1.31 12-08-2025
+| Design State      : Synthesized
+| Temperature Grade : C
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             4.719ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        5.278ns  (logic 4.256ns (80.639%)  route 1.022ns (19.361%))
+  Logic Levels:           12  (DSP_A_B_DATA=1 DSP_ALU=3 DSP_M_DATA=1 DSP_MULTIPLIER=1 DSP_OUTPUT=3 DSP_PREADD_DATA=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.012ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.029ns = ( 10.029 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.041ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  <hidden>
+                                                      0.000     0.000 r  ap_clk
+                         net (fo=27874, unset)        0.041     0.041    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.114     0.155 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/Q
+                         net (fo=60, unplaced)        0.504     0.659    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_A_B_DATA (Prop_DSP_A_B_DATA_B[15]_B2_DATA[15])
+                                                      0.216     0.875 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     0.875    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_B2_DATA[15]_B2B1[15])
+                                                      0.097     0.972 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     0.972    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_B2B1[15]_U[43])
+                                                      0.773     1.745 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     1.745    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_M_DATA (Prop_DSP_M_DATA_U[43]_U_DATA[43])
+                                                      0.067     1.812 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     1.812    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_U_DATA[43]_ALU_OUT[47])
+                                                      0.727     2.539 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     2.539    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[47]_PCOUT[47])
+                                                      0.167     2.706 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.014     2.720    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_PCIN[47]_ALU_OUT[47])
+                                                      0.739     3.459 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     3.459    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[47]_PCOUT[47])
+                                                      0.167     3.626 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.014     3.640    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_PCIN[47]_ALU_OUT[29])
+                                                      0.739     4.379 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     4.379    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[29]_P[29])
+                                                      0.146     4.525 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.269     4.794    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         LUT6 (Prop_LUT6_I3_O)        0.152     4.946 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.154     5.100    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         LUT4 (Prop_LUT4_I2_O)        0.152     5.252 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.067     5.319    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  <hidden>
+                                                      0.000    10.000 r  ap_clk
+                         net (fo=27874, unset)        0.029    10.029    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         clock pessimism              0.000    10.029    <hidden>
+                         clock uncertainty           -0.035     9.994    <hidden>
+                         FDRE (Setup_FDRE_C_D)        0.044    10.038    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                         10.038    <hidden>
+                         arrival time                          -5.319    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  4.719    <hidden>
+
+Slack (MET) :             4.728ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        5.269ns  (logic 4.256ns (80.777%)  route 1.013ns (19.223%))
+  Logic Levels:           12  (DSP_A_B_DATA=1 DSP_ALU=3 DSP_M_DATA=1 DSP_MULTIPLIER=1 DSP_OUTPUT=3 DSP_PREADD_DATA=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.012ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.029ns = ( 10.029 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.041ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  <hidden>
+                                                      0.000     0.000 r  ap_clk
+                         net (fo=27874, unset)        0.041     0.041    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.114     0.155 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/Q
+                         net (fo=60, unplaced)        0.495     0.650    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_A_B_DATA (Prop_DSP_A_B_DATA_B[7]_B2_DATA[7])
+                                                      0.216     0.866 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     0.866    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_B2_DATA[7]_B2B1[7])
+                                                      0.097     0.963 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     0.963    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_B2B1[7]_U[38])
+                                                      0.773     1.736 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     1.736    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_M_DATA (Prop_DSP_M_DATA_U[38]_U_DATA[38])
+                                                      0.067     1.803 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     1.803    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_U_DATA[38]_ALU_OUT[47])
+                                                      0.727     2.530 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     2.530    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[47]_PCOUT[47])
+                                                      0.167     2.697 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.014     2.711    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_PCIN[47]_ALU_OUT[47])
+                                                      0.739     3.450 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     3.450    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[47]_PCOUT[47])
+                                                      0.167     3.617 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.014     3.631    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_PCIN[47]_ALU_OUT[29])
+                                                      0.739     4.370 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     4.370    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[29]_P[29])
+                                                      0.146     4.516 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.269     4.785    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         LUT6 (Prop_LUT6_I3_O)        0.152     4.937 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.154     5.091    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         LUT4 (Prop_LUT4_I2_O)        0.152     5.243 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.067     5.310    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  <hidden>
+                                                      0.000    10.000 r  ap_clk
+                         net (fo=27874, unset)        0.029    10.029    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         clock pessimism              0.000    10.029    <hidden>
+                         clock uncertainty           -0.035     9.994    <hidden>
+                         FDRE (Setup_FDRE_C_D)        0.044    10.038    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                         10.038    <hidden>
+                         arrival time                          -5.310    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  4.728    <hidden>
+
+Slack (MET) :             4.729ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        5.268ns  (logic 4.256ns (80.792%)  route 1.012ns (19.208%))
+  Logic Levels:           12  (DSP_A_B_DATA=1 DSP_ALU=3 DSP_M_DATA=1 DSP_MULTIPLIER=1 DSP_OUTPUT=3 DSP_PREADD_DATA=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.012ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.029ns = ( 10.029 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.041ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  <hidden>
+                                                      0.000     0.000 r  ap_clk
+                         net (fo=27874, unset)        0.041     0.041    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.114     0.155 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/Q
+                         net (fo=60, unplaced)        0.494     0.649    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_A_B_DATA (Prop_DSP_A_B_DATA_B[16]_B2_DATA[16])
+                                                      0.216     0.865 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     0.865    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_B2_DATA[16]_B2B1[16])
+                                                      0.097     0.962 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     0.962    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_B2B1[16]_U[43])
+                                                      0.773     1.735 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     1.735    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_M_DATA (Prop_DSP_M_DATA_U[43]_U_DATA[43])
+                                                      0.067     1.802 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     1.802    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_U_DATA[43]_ALU_OUT[47])
+                                                      0.727     2.529 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     2.529    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[47]_PCOUT[47])
+                                                      0.167     2.696 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.014     2.710    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_PCIN[47]_ALU_OUT[47])
+                                                      0.739     3.449 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     3.449    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[47]_PCOUT[47])
+                                                      0.167     3.616 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.014     3.630    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_PCIN[47]_ALU_OUT[29])
+                                                      0.739     4.369 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     4.369    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[29]_P[29])
+                                                      0.146     4.515 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.269     4.784    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         LUT6 (Prop_LUT6_I3_O)        0.152     4.936 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.154     5.090    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         LUT4 (Prop_LUT4_I2_O)        0.152     5.242 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.067     5.309    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  <hidden>
+                                                      0.000    10.000 r  ap_clk
+                         net (fo=27874, unset)        0.029    10.029    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         clock pessimism              0.000    10.029    <hidden>
+                         clock uncertainty           -0.035     9.994    <hidden>
+                         FDRE (Setup_FDRE_C_D)        0.044    10.038    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                         10.038    <hidden>
+                         arrival time                          -5.309    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  4.729    <hidden>
+
+Slack (MET) :             4.729ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        5.268ns  (logic 4.256ns (80.792%)  route 1.012ns (19.208%))
+  Logic Levels:           12  (DSP_A_B_DATA=1 DSP_ALU=3 DSP_M_DATA=1 DSP_MULTIPLIER=1 DSP_OUTPUT=3 DSP_PREADD_DATA=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.012ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.029ns = ( 10.029 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.041ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  <hidden>
+                                                      0.000     0.000 r  ap_clk
+                         net (fo=27874, unset)        0.041     0.041    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.114     0.155 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/Q
+                         net (fo=60, unplaced)        0.494     0.649    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_A_B_DATA (Prop_DSP_A_B_DATA_B[16]_B2_DATA[16])
+                                                      0.216     0.865 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     0.865    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_B2_DATA[16]_B2B1[16])
+                                                      0.097     0.962 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     0.962    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_B2B1[16]_U[43])
+                                                      0.773     1.735 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     1.735    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_M_DATA (Prop_DSP_M_DATA_U[43]_U_DATA[43])
+                                                      0.067     1.802 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     1.802    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_U_DATA[43]_ALU_OUT[47])
+                                                      0.727     2.529 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     2.529    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[47]_PCOUT[47])
+                                                      0.167     2.696 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.014     2.710    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_PCIN[47]_ALU_OUT[47])
+                                                      0.739     3.449 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     3.449    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[47]_PCOUT[47])
+                                                      0.167     3.616 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.014     3.630    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_PCIN[47]_ALU_OUT[29])
+                                                      0.739     4.369 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     4.369    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[29]_P[29])
+                                                      0.146     4.515 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.269     4.784    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         LUT6 (Prop_LUT6_I3_O)        0.152     4.936 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.154     5.090    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         LUT4 (Prop_LUT4_I2_O)        0.152     5.242 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.067     5.309    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  <hidden>
+                                                      0.000    10.000 r  ap_clk
+                         net (fo=27874, unset)        0.029    10.029    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         clock pessimism              0.000    10.029    <hidden>
+                         clock uncertainty           -0.035     9.994    <hidden>
+                         FDRE (Setup_FDRE_C_D)        0.044    10.038    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                         10.038    <hidden>
+                         arrival time                          -5.309    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  4.729    <hidden>
+
+Slack (MET) :             4.729ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        5.268ns  (logic 4.256ns (80.792%)  route 1.012ns (19.208%))
+  Logic Levels:           12  (DSP_A_B_DATA=1 DSP_ALU=3 DSP_M_DATA=1 DSP_MULTIPLIER=1 DSP_OUTPUT=3 DSP_PREADD_DATA=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.012ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.029ns = ( 10.029 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.041ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  <hidden>
+                                                      0.000     0.000 r  ap_clk
+                         net (fo=27874, unset)        0.041     0.041    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.114     0.155 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/Q
+                         net (fo=60, unplaced)        0.494     0.649    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_A_B_DATA (Prop_DSP_A_B_DATA_B[16]_B2_DATA[16])
+                                                      0.216     0.865 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     0.865    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_B2_DATA[16]_B2B1[16])
+                                                      0.097     0.962 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     0.962    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_B2B1[16]_U[43])
+                                                      0.773     1.735 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     1.735    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_M_DATA (Prop_DSP_M_DATA_U[43]_U_DATA[43])
+                                                      0.067     1.802 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     1.802    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_U_DATA[43]_ALU_OUT[47])
+                                                      0.727     2.529 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     2.529    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[47]_PCOUT[47])
+                                                      0.167     2.696 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.014     2.710    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_PCIN[47]_ALU_OUT[47])
+                                                      0.739     3.449 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     3.449    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[47]_PCOUT[47])
+                                                      0.167     3.616 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.014     3.630    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_PCIN[47]_ALU_OUT[29])
+                                                      0.739     4.369 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     4.369    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[29]_P[29])
+                                                      0.146     4.515 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.269     4.784    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         LUT6 (Prop_LUT6_I3_O)        0.152     4.936 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.154     5.090    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         LUT4 (Prop_LUT4_I2_O)        0.152     5.242 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.067     5.309    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  <hidden>
+                                                      0.000    10.000 r  ap_clk
+                         net (fo=27874, unset)        0.029    10.029    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         clock pessimism              0.000    10.029    <hidden>
+                         clock uncertainty           -0.035     9.994    <hidden>
+                         FDRE (Setup_FDRE_C_D)        0.044    10.038    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                         10.038    <hidden>
+                         arrival time                          -5.309    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  4.729    <hidden>
+
+Slack (MET) :             4.729ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        5.268ns  (logic 4.256ns (80.792%)  route 1.012ns (19.208%))
+  Logic Levels:           12  (DSP_A_B_DATA=1 DSP_ALU=3 DSP_M_DATA=1 DSP_MULTIPLIER=1 DSP_OUTPUT=3 DSP_PREADD_DATA=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.012ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.029ns = ( 10.029 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.041ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  <hidden>
+                                                      0.000     0.000 r  ap_clk
+                         net (fo=27874, unset)        0.041     0.041    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.114     0.155 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/Q
+                         net (fo=60, unplaced)        0.494     0.649    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_A_B_DATA (Prop_DSP_A_B_DATA_B[0]_B2_DATA[0])
+                                                      0.216     0.865 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     0.865    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_B2_DATA[0]_B2B1[0])
+                                                      0.097     0.962 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     0.962    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_B2B1[0]_U[31])
+                                                      0.773     1.735 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     1.735    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_M_DATA (Prop_DSP_M_DATA_U[31]_U_DATA[31])
+                                                      0.067     1.802 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     1.802    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_U_DATA[31]_ALU_OUT[47])
+                                                      0.727     2.529 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     2.529    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[47]_PCOUT[47])
+                                                      0.167     2.696 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.014     2.710    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_PCIN[47]_ALU_OUT[47])
+                                                      0.739     3.449 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     3.449    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[47]_PCOUT[47])
+                                                      0.167     3.616 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.014     3.630    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_PCIN[47]_ALU_OUT[29])
+                                                      0.739     4.369 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     4.369    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[29]_P[29])
+                                                      0.146     4.515 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.269     4.784    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         LUT6 (Prop_LUT6_I3_O)        0.152     4.936 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.154     5.090    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         LUT4 (Prop_LUT4_I2_O)        0.152     5.242 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.067     5.309    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  <hidden>
+                                                      0.000    10.000 r  ap_clk
+                         net (fo=27874, unset)        0.029    10.029    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         clock pessimism              0.000    10.029    <hidden>
+                         clock uncertainty           -0.035     9.994    <hidden>
+                         FDRE (Setup_FDRE_C_D)        0.044    10.038    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U182/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                         10.038    <hidden>
+                         arrival time                          -5.309    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  4.729    <hidden>
+
+Slack (MET) :             4.730ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        5.267ns  (logic 4.256ns (80.808%)  route 1.011ns (19.192%))
+  Logic Levels:           12  (DSP_A_B_DATA=1 DSP_ALU=3 DSP_M_DATA=1 DSP_MULTIPLIER=1 DSP_OUTPUT=3 DSP_PREADD_DATA=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.012ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.029ns = ( 10.029 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.041ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  <hidden>
+                                                      0.000     0.000 r  ap_clk
+                         net (fo=27874, unset)        0.041     0.041    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.114     0.155 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/Q
+                         net (fo=60, unplaced)        0.493     0.648    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_A_B_DATA (Prop_DSP_A_B_DATA_B[6]_B2_DATA[6])
+                                                      0.216     0.864 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     0.864    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_B2_DATA[6]_B2B1[6])
+                                                      0.097     0.961 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     0.961    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_B2B1[6]_U[36])
+                                                      0.773     1.734 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     1.734    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_M_DATA (Prop_DSP_M_DATA_U[36]_U_DATA[36])
+                                                      0.067     1.801 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     1.801    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_U_DATA[36]_ALU_OUT[47])
+                                                      0.727     2.528 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     2.528    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[47]_PCOUT[47])
+                                                      0.167     2.695 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.014     2.709    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_PCIN[47]_ALU_OUT[47])
+                                                      0.739     3.448 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     3.448    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[47]_PCOUT[47])
+                                                      0.167     3.615 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.014     3.629    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_PCIN[47]_ALU_OUT[29])
+                                                      0.739     4.368 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     4.368    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[29]_P[29])
+                                                      0.146     4.514 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.269     4.783    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         LUT6 (Prop_LUT6_I3_O)        0.152     4.935 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.154     5.089    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         LUT4 (Prop_LUT4_I2_O)        0.152     5.241 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.067     5.308    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  <hidden>
+                                                      0.000    10.000 r  ap_clk
+                         net (fo=27874, unset)        0.029    10.029    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         clock pessimism              0.000    10.029    <hidden>
+                         clock uncertainty           -0.035     9.994    <hidden>
+                         FDRE (Setup_FDRE_C_D)        0.044    10.038    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U183/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                         10.038    <hidden>
+                         arrival time                          -5.308    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  4.730    <hidden>
+
+Slack (MET) :             4.737ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        5.260ns  (logic 4.162ns (79.128%)  route 1.098ns (20.872%))
+  Logic Levels:           12  (DSP_A_B_DATA=1 DSP_ALU=3 DSP_M_DATA=1 DSP_MULTIPLIER=1 DSP_OUTPUT=3 DSP_PREADD_DATA=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.012ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.029ns = ( 10.029 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.041ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  <hidden>
+                                                      0.000     0.000 r  ap_clk
+                         net (fo=27874, unset)        0.041     0.041    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.114     0.155 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/Q
+                         net (fo=60, unplaced)        0.504     0.659    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_A_B_DATA (Prop_DSP_A_B_DATA_B[15]_B2_DATA[15])
+                                                      0.216     0.875 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     0.875    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_B2_DATA[15]_B2B1[15])
+                                                      0.097     0.972 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     0.972    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_B2B1[15]_U[43])
+                                                      0.773     1.745 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     1.745    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_M_DATA (Prop_DSP_M_DATA_U[43]_U_DATA[43])
+                                                      0.067     1.812 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     1.812    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_U_DATA[43]_ALU_OUT[47])
+                                                      0.727     2.539 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     2.539    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[47]_PCOUT[47])
+                                                      0.167     2.706 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.014     2.720    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_PCIN[47]_ALU_OUT[47])
+                                                      0.739     3.459 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     3.459    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[47]_PCOUT[47])
+                                                      0.167     3.626 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.014     3.640    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_PCIN[47]_ALU_OUT[30])
+                                                      0.739     4.379 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     4.379    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[30]_P[30])
+                                                      0.146     4.525 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.317     4.842    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         LUT4 (Prop_LUT4_I3_O)        0.058     4.900 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=8, unplaced)         0.182     5.082    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         LUT6 (Prop_LUT6_I3_O)        0.152     5.234 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.067     5.301    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  <hidden>
+                                                      0.000    10.000 r  ap_clk
+                         net (fo=27874, unset)        0.029    10.029    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         clock pessimism              0.000    10.029    <hidden>
+                         clock uncertainty           -0.035     9.994    <hidden>
+                         FDRE (Setup_FDRE_C_D)        0.044    10.038    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                         10.038    <hidden>
+                         arrival time                          -5.301    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  4.737    <hidden>
+
+Slack (MET) :             4.746ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        5.251ns  (logic 4.162ns (79.264%)  route 1.089ns (20.736%))
+  Logic Levels:           12  (DSP_A_B_DATA=1 DSP_ALU=3 DSP_M_DATA=1 DSP_MULTIPLIER=1 DSP_OUTPUT=3 DSP_PREADD_DATA=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.012ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.029ns = ( 10.029 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.041ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  <hidden>
+                                                      0.000     0.000 r  ap_clk
+                         net (fo=27874, unset)        0.041     0.041    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.114     0.155 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/Q
+                         net (fo=60, unplaced)        0.495     0.650    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_A_B_DATA (Prop_DSP_A_B_DATA_B[7]_B2_DATA[7])
+                                                      0.216     0.866 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     0.866    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_B2_DATA[7]_B2B1[7])
+                                                      0.097     0.963 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     0.963    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_B2B1[7]_U[38])
+                                                      0.773     1.736 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     1.736    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_M_DATA (Prop_DSP_M_DATA_U[38]_U_DATA[38])
+                                                      0.067     1.803 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     1.803    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_U_DATA[38]_ALU_OUT[47])
+                                                      0.727     2.530 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     2.530    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[47]_PCOUT[47])
+                                                      0.167     2.697 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.014     2.711    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_PCIN[47]_ALU_OUT[47])
+                                                      0.739     3.450 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     3.450    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[47]_PCOUT[47])
+                                                      0.167     3.617 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.014     3.631    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_PCIN[47]_ALU_OUT[30])
+                                                      0.739     4.370 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     4.370    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[30]_P[30])
+                                                      0.146     4.516 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.317     4.833    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         LUT4 (Prop_LUT4_I3_O)        0.058     4.891 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=8, unplaced)         0.182     5.073    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         LUT6 (Prop_LUT6_I3_O)        0.152     5.225 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.067     5.292    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  <hidden>
+                                                      0.000    10.000 r  ap_clk
+                         net (fo=27874, unset)        0.029    10.029    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         clock pessimism              0.000    10.029    <hidden>
+                         clock uncertainty           -0.035     9.994    <hidden>
+                         FDRE (Setup_FDRE_C_D)        0.044    10.038    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                         10.038    <hidden>
+                         arrival time                          -5.292    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  4.746    <hidden>
+
+Slack (MET) :             4.747ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        5.250ns  (logic 4.162ns (79.279%)  route 1.088ns (20.721%))
+  Logic Levels:           12  (DSP_A_B_DATA=1 DSP_ALU=3 DSP_M_DATA=1 DSP_MULTIPLIER=1 DSP_OUTPUT=3 DSP_PREADD_DATA=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.012ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.029ns = ( 10.029 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.041ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  <hidden>
+                                                      0.000     0.000 r  ap_clk
+                         net (fo=27874, unset)        0.041     0.041    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.114     0.155 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/Q
+                         net (fo=60, unplaced)        0.494     0.649    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_A_B_DATA (Prop_DSP_A_B_DATA_B[16]_B2_DATA[16])
+                                                      0.216     0.865 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     0.865    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_B2_DATA[16]_B2B1[16])
+                                                      0.097     0.962 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     0.962    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_B2B1[16]_U[43])
+                                                      0.773     1.735 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     1.735    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_M_DATA (Prop_DSP_M_DATA_U[43]_U_DATA[43])
+                                                      0.067     1.802 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     1.802    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_U_DATA[43]_ALU_OUT[47])
+                                                      0.727     2.529 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     2.529    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[47]_PCOUT[47])
+                                                      0.167     2.696 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.014     2.710    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_PCIN[47]_ALU_OUT[47])
+                                                      0.739     3.449 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     3.449    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[47]_PCOUT[47])
+                                                      0.167     3.616 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.014     3.630    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_ALU (Prop_DSP_ALU_PCIN[47]_ALU_OUT[30])
+                                                      0.739     4.369 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.000     4.369    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         DSP_OUTPUT (Prop_DSP_OUTPUT_ALU_OUT[30]_P[30])
+                                                      0.146     4.515 f  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.317     4.832    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         LUT4 (Prop_LUT4_I3_O)        0.058     4.890 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=8, unplaced)         0.182     5.072    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         LUT6 (Prop_LUT6_I3_O)        0.152     5.224 r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.067     5.291    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  <hidden>
+                                                      0.000    10.000 r  ap_clk
+                         net (fo=27874, unset)        0.029    10.029    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         clock pessimism              0.000    10.029    <hidden>
+                         clock uncertainty           -0.035     9.994    <hidden>
+                         FDRE (Setup_FDRE_C_D)        0.044    10.038    bd_0_i/hls_inst/inst/grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                         10.038    <hidden>
+                         arrival time                          -5.291    <hidden>
+  -------------------------------------------------------------------
+                         slack                                  4.747    <hidden>
+
+
+
+

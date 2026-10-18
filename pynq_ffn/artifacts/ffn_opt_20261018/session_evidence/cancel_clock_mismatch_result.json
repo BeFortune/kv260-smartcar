@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Error: Session already has a long-running command in progress. Wait for it to finish or stop it before starting another command."
+    }
+  ],
+  "isError": true
+}

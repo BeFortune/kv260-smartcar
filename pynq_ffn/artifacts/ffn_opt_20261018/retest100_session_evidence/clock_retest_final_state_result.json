@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"scope\": \"read-only; no clock writes and no Overlay construction/download\",\n  \"loaded_state_path\": \"/usr/local/share/pynq-venv/lib/python3.10/site-packages/pynq/pl_server/global_pl_state.json\",\n  \"state\": {\n    \"bitfile_name\": \"/home/ubuntu/ffn_opt_20261018/deploy/overlay/ffn_overlay_wrapper.bit\",\n    \"timestamp\": \"2026/10/17 16:50:20 +282253\",\n    \"bitfile_hash\": \"d31a200958737e15c785e6e47c21ac36b84f7d14\"\n  },\n  \"PL_bitfile_name\": \"/home/ubuntu/ffn_opt_20261018/deploy/overlay/ffn_overlay_wrapper.bit\",\n  \"PL_timestamp\": \"2026/10/17 16:50:20 +282253\",\n  \"bit_sha256\": \"c67dd63ccd579ab105840a30c4ca1a61715a26b7631cc323473328a821319eb1\",\n  \"hwh_sha256\": \"f4040b704f14ab02ab25b5266226442541be1fc30cc6e786512d9a00ea675649\",\n  \"fclk0_mhz\": 99.999,\n  \"ctrl_raw\": \"0x4\",\n  \"pl_clocks\": [\n    \"0x1010f00\",\n    \"0x1010f00\",\n    \"0x1010f00\",\n    \"0x1010f00\"\n  ],\n  \"crl\": {\n    \"IOPLL_CTRL\": \"0x15a00\",\n    \"RPLL_CTRL\": \"0x14100\"\n  },\n  \"crf\": {\n    \"APLL_CTRL\": \"0x15000\",\n    \"DPLL_CTRL\": \"0x14000\",\n    \"VPLL_CTRL\": \"0x12e09\",\n    \"ACPU_CTRL\": \"0x3000100\"\n  }\n}\n[exit code: 0]"
+    }
+  ]
+}

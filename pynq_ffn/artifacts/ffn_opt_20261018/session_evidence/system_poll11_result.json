@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"ok\": true,\n  \"jobId\": \"job_mvclvpvz_3808f5f74516\",\n  \"sessionId\": \"c9e7b065-6649-46a0-b556-8497de4f9310\",\n  \"command\": \"powershell.exe -NoProfile -EncodedCommand JgAgAEMAOgAvAFAAeQB0AGgAbwBuADMAMQA0AC8AcAB5AHQAaABvAG4ALgBlAHgAZQAgAEQAOgAvAGYAZgBuAF8AYgB1AGkAbABkAF8AbwBwAHQALwBzAHkAcwB0AGUAbQBfADIAMAAyADYAMQAwADEAOAAvAHMAYwByAGkAcAB0AHMALwByAHUAbgBfAHMAeQBzAHQAZQBtAC4AcAB5ACAAYQBsAGwAIAAtAC0AcgBlAHMAdQBtAGUAOwAgAGUAeABpAHQAIAAkAEwAQQBTAFQARQBYAEkAVABDAE8ARABFAA==\",\n  \"status\": \"completed\",\n  \"completed\": true,\n  \"exitCode\": 0,\n  \"error\": null,\n  \"startedAt\": 1792254208463,\n  \"updatedAt\": 1792255456115,\n  \"output\": \"rt: 已验证 (offline system build only)\\n\",\n  \"nextOffset\": 188,\n  \"totalOutputChars\": 188,\n  \"outputBaseOffset\": 0,\n  \"outputTruncated\": false,\n  \"recommendedPollIntervalMs\": 30000\n}"
+    }
+  ]
+}

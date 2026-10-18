@@ -1,0 +1,56 @@
+{
+  "schema": "pynq_ffn.bundle.v1",
+  "source_sha256": "ad58d1fc9168da94b9ce076ba8cc9754c371ead87974da8bc9cc601ad1650d5b",
+  "source": "\\\\ENERTCOUNT-EX\\Source\\Repos\\FPGA\\kv260_v1\\v1_payload.zip",
+  "source_member": "model/model_current.onnx",
+  "files": {
+    "ABI.json": {
+      "sha256": "2be276fe46733e5f746fcabae7e249595088d19bd7060e9bda56b246f0f37be9",
+      "bytes": 9232
+    },
+    "camera_0.onnx": {
+      "sha256": "0ebf5a5309df686d4a6b21ea057ca36edb42a1de233b31f09be6bcab6a773a90",
+      "bytes": 266136
+    },
+    "camera_1.onnx": {
+      "sha256": "67cf178351805292ace31a63b9936889fd563b5a61896d7d838a4b1344315018",
+      "bytes": 266136
+    },
+    "cross_0.onnx": {
+      "sha256": "0b5ad044410fbc32279365addfc7edee92fb20afc0841fea2a520b90b5700665",
+      "bytes": 266010
+    },
+    "cross_1.onnx": {
+      "sha256": "fa7d65aa5682dbebd4192f73edf30b7ed4d87eac2ccce995c8df631d3ca14828",
+      "bytes": 266010
+    },
+    "model.onnx": {
+      "sha256": "ad58d1fc9168da94b9ce076ba8cc9754c371ead87974da8bc9cc601ad1650d5b",
+      "bytes": 2779255
+    },
+    "stage_0.onnx": {
+      "sha256": "e67e0a2ac4b4de22fa59c12f7efc762afc39009a66f05998e36b69e641c69019",
+      "bytes": 491415
+    },
+    "stage_1.onnx": {
+      "sha256": "1cc7316857e71b8e6769789a6dde9244617049de6dea04e137283fd64204aeab",
+      "bytes": 282353
+    },
+    "stage_2.onnx": {
+      "sha256": "78289a0ebe76b46026ceadc3749b63c5765c6b5d6618b48ce1fe17ba98c3a448",
+      "bytes": 284109
+    },
+    "stage_3.onnx": {
+      "sha256": "90c8f648b6d6b7e1a55f40932365a6f83f9c3992b3f970832f2f62cefe7ad999",
+      "bytes": 280919
+    },
+    "stage_4.onnx": {
+      "sha256": "933b70cce1ac6dd5731581e19c4b6cf619741c04cc4c0e13dd5ca8571a9bc2dd",
+      "bytes": 378985
+    },
+    "weights.npz": {
+      "sha256": "7401693d33963989cc8e73501c8a359652810f89bf0f3e2d5862201abef86fca",
+      "bytes": 1058790
+    }
+  }
+}

@@ -44,6 +44,8 @@ void ffn_accel(const float* x, float* y, const float* w1, const float* b1,
     // overwrites all weights/biases before use. The host entry is not reentrant.
     static float local_w1[ffn_config::input_dim][ffn_config::hidden_dim];
     static float local_w2[ffn_config::hidden_dim][ffn_config::input_dim];
+#pragma HLS ARRAY_PARTITION variable=local_w1 cyclic factor=16 dim=2
+#pragma HLS ARRAY_PARTITION variable=local_w2 cyclic factor=16 dim=2
     static float local_b1[ffn_config::hidden_dim];
     static float local_b2[ffn_config::input_dim];
     float token[ffn_config::input_dim];
@@ -73,20 +75,47 @@ void ffn_accel(const float* x, float* y, const float* w1, const float* b1,
 #pragma HLS PIPELINE
             token[i] = x[t * ffn_config::input_dim + i];
         }
-        for (unsigned int j = 0; j < ffn_config::hidden_dim; ++j) {
-            float sum = 0.0f;
+        for (unsigned int j = 0; j < ffn_config::hidden_dim;
+             j += ffn_config::output_lanes) {
+            float sum[ffn_config::output_lanes] = {};
+#pragma HLS ARRAY_PARTITION variable=sum complete dim=1
             for (unsigned int i = 0; i < ffn_config::input_dim; ++i) {
-                // Serial float32 reduction: no claim of an II=1 MAC pipeline.
-                sum += token[i] * local_w1[i][j];
+#pragma HLS PIPELINE II=4
+                // Each lane retains the original increasing-i FP32 reduction.
+                // II=4 matches the fadd_32ns latency: the schedule closes timing
+                // (old kernel measured +7.30 ns slack); r01 II=1 and r02 auto
+                // II=3 both traded timing for throughput (-18.4/-6.0 ns slack).
+                for (unsigned int lane = 0; lane < ffn_config::output_lanes; ++lane) {
+#pragma HLS UNROLL
+                    sum[lane] += token[i] * local_w1[i][j + lane];
+                }
             }
-            hidden[j] = gelu(sum + local_b1[j]);
+            for (unsigned int lane = 0; lane < ffn_config::output_lanes; ++lane) {
+#pragma HLS UNROLL off=true
+                hidden[j + lane] = sum[lane] + local_b1[j + lane];
+            }
         }
-        for (unsigned int k = 0; k < ffn_config::input_dim; ++k) {
-            float sum = 0.0f;
+        // One pipelined pass shares the exact-erf unit across all outputs;
+        // per-output math order is unchanged versus the grouped epilogue.
+        for (unsigned int j = 0; j < ffn_config::hidden_dim; ++j) {
+#pragma HLS PIPELINE
+            hidden[j] = gelu(hidden[j]);
+        }
+        for (unsigned int k = 0; k < ffn_config::input_dim;
+             k += ffn_config::output_lanes) {
+            float sum[ffn_config::output_lanes] = {};
+#pragma HLS ARRAY_PARTITION variable=sum complete dim=1
             for (unsigned int j = 0; j < ffn_config::hidden_dim; ++j) {
-                sum += hidden[j] * local_w2[j][k];
+#pragma HLS PIPELINE II=4
+                for (unsigned int lane = 0; lane < ffn_config::output_lanes; ++lane) {
+#pragma HLS UNROLL
+                    sum[lane] += hidden[j] * local_w2[j][k + lane];
+                }
             }
-            y[t * ffn_config::input_dim + k] = sum + local_b2[k];
+            for (unsigned int lane = 0; lane < ffn_config::output_lanes; ++lane) {
+#pragma HLS UNROLL off=true
+                y[t * ffn_config::input_dim + k + lane] = sum[lane] + local_b2[k + lane];
+            }
         }
     }
 }

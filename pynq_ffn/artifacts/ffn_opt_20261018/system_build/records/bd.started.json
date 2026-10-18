@@ -1,0 +1,11 @@
+{
+  "stage": "bd",
+  "cwd": "D:\\g3",
+  "start": "2026-10-17T16:23:29.347074+00:00",
+  "end": null,
+  "status": "未执行",
+  "exit_code": null,
+  "input_sha256": "071a4baca488b6d3ca570f12fc1e00906bb5b1747970197d14c7e1bce09bac30",
+  "log": "D:\\g3\\records\\bd.console.log",
+  "command": "\"C:\\WINDOWS\\system32\\cmd.exe\" /d /s /v:off /c \"\"D:\\Learning\\AMDDesignTools\\2026.1\\Vivado\\bin\\vivado.bat\" \"-mode\" \"batch\" \"-notrace\" \"-source\" \"D:\\g3\\stage_entry.tcl\" \"-log\" \"D:\\g3\\records\\bd.vivado.log\" \"-journal\" \"D:\\g3\\records\\bd.vivado.jou\" \"-tclargs\" \"D:\\g3\\create_overlay_bd.tcl\"\""
+}

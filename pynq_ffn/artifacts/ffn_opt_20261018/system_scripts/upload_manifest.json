@@ -1,0 +1,16 @@
+{
+  "path": "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261018\\system_scripts.zip",
+  "bytes": 14141,
+  "sha256": "a095fba11006171aef5e3547942d8382a0ae96f29f46e34f887f5ea962ae91b5",
+  "files": {
+    "run_system.py": "93056045f0de6c5bd11d50d93564799fa28db5a8ffc72e8ab2f02037fbe8367a",
+    "create_overlay_bd.tcl": "0a9a5b712fb651b34267ac6616aeb72fd9c8f8fe9a1def88bbd9212c37e227ee",
+    "run_overlay_synth.tcl": "aaffb28590ed1b2e2e1f77f32b23529dcb696a82be7bb4a837e664ac9873fc59",
+    "run_overlay_impl.tcl": "c33c4cad794bb2b60898fc65ff91f27fe0b196d8bedbfad17b0c4bf9c1b3a96c",
+    "finalize_bit_xsa.tcl": "c865dd86879085df3eefc486e2dd33c790e648971439004af5dfdbc43b844cfc",
+    "gate_overlay.tcl": "667bad69423a14f31db1328e145d1a897111e3308cfb837bb54f907a5620d6d8",
+    "stage_entry.tcl": "eda3da0ccc092cf5d053a1dabe6687f9342a9168fd8fcd47130451970c0f13f5",
+    "extract_verify_hwh.py": "9caf6907dfb6f997a8afaa2ccd9142585f15784e00fe63333f0388f931ef40e1",
+    "abi_reference.py": "99b32eda4ef4f047c6728d8683d2b9d8dfeb7de265763c15b2642969520d7106"
+  }
+}

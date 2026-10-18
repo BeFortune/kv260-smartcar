@@ -1,0 +1,26 @@
+{
+  "stage": "compile_dll",
+  "command": [
+    "D:\\Programs\\TDM-GCC-64\\bin\\g++.exe",
+    "-std=c++11",
+    "-O2",
+    "-ffp-contract=off",
+    "-Wno-unknown-pragmas",
+    "-shared",
+    "-static-libgcc",
+    "-static-libstdc++",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\source\\ffn_accel.cpp",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\source\\host_bridge.cpp",
+    "-o",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\build\\ffn_host_r03_20261018.dll"
+  ],
+  "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\build",
+  "started": "2026-10-18T00:39:35.885754+08:00",
+  "ended": "2026-10-18T00:39:36.391060+08:00",
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "combined_log": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\logs\\compile_dll.log",
+  "combined_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "environment_overrides": {}
+}

@@ -1,0 +1,411 @@
+================================================================
+== Vivado RTL Synthesis Results
+================================================================
++ General Information:
+    * Date:            Sat Oct 17 22:59:54 +0800 2026
+    * Version:         2026.1 (Build 6493734 on Jun 16 2026)
+    * Project:         ffn_accel_modern
+    * Solution:        hls (Vivado IP Flow Target)
+    * Product family:  zynquplus
+    * Target device:   xck26-sfvc784-2LV-c
+
+
+================================================================
+== Run Constraints & Options
+================================================================
++ Design Constraints & Options:
+    * RTL Synthesis target clock:  10 ns
+    * C-Synthesis target clock:    10 ns
+    * C-Synthesis uncertainty:     27%
+
++ RTL Synthesis Options:
+    * config_export -vivado_synth_strategy:     default
+    * config_export -vivado_synth_design_args:  -directive sdx_optimization_effort_high
+
++ Reporting Options:
+    * config_export -vivado_report_level:      2
+    * config_export -vivado_max_timing_paths:  10
+
+
+================================================================
+== RTL Synthesis Resource Summary
+================================================================
+LUT:              26280
+FF:               24325
+DSP:              262
+BRAM:             133
+URAM:             0
+SRL:              1768
+
+
+================================================================
+== RTL Synthesis Timing Summary
+================================================================
+* Timing was met
++----------------+-------------+
+| Timing         | Period (ns) |
++----------------+-------------+
+| Target         | 10.000      |
+| Post-Synthesis | 5.281       |
++----------------+-------------+
+
+
+================================================================
+== RTL Synthesis Resources
+================================================================
++------------------------------------------------------------------------------------------+-----+----+-----+------+------+------+--------+------+---------+----------+--------+
+| Name                                                                                     | LUT | FF | DSP | BRAM | URAM | SRL  | Pragma | Impl | Latency | Variable | Source |
++------------------------------------------------------------------------------------------+-----+----+-----+------+------+------+--------+------+---------+----------+--------+
+| inst                                                                                     |     |    |     |      |      | 1768 |        |      |         |          |        |
+|   (inst)                                                                                 |     |    |     |      |      |      |        |      |         |          |        |
+|   control_s_axi_U                                                                        |     |    |     |      |      |      |        |      |         |          |        |
+|   fadd_32ns_32ns_32_4_full_dsp_1_U282                                                    |     |    |     |      |      |      |        |      |         |          |        |
+|     (fadd_32ns_32ns_32_4_full_dsp_1_U282)                                                |     |    |     |      |      |      |        |      |         |          |        |
+|   fadd_32ns_32ns_32_4_full_dsp_1_U283                                                    |     |    |     |      |      |      |        |      |         |          |        |
+|   fadd_32ns_32ns_32_4_full_dsp_1_U284                                                    |     |    |     |      |      |      |        |      |         |          |        |
+|   fadd_32ns_32ns_32_4_full_dsp_1_U285                                                    |     |    |     |      |      |      |        |      |         |          |        |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_10_U             |     |    |     |      |      |      |        |      |         |          |        |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_11_U             |     |    |     |      |      |      |        |      |         |          |        |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_12_U             |     |    |     |      |      |      |        |      |         |          |        |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_13_U             |     |    |     |      |      |      |        |      |         |          |        |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_14_U             |     |    |     |      |      |      |        |      |         |          |        |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_15_U             |     |    |     |      |      |      |        |      |         |          |        |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_16_U             |     |    |     |      |      |      |        |      |         |          |        |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_17_U             |     |    |     |      |      |      |        |      |         |          |        |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_18_U             |     |    |     |      |      |      |        |      |         |          |        |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_19_U             |     |    |     |      |      |      |        |      |         |          |        |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_1_U              |     |    |     |      |      |      |        |      |         |          |        |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_2_U              |     |    |     |      |      |      |        |      |         |          |        |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_3_U              |     |    |     |      |      |      |        |      |         |          |        |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_4_U              |     |    |     |      |      |      |        |      |         |          |        |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_5_U              |     |    |     |      |      |      |        |      |         |          |        |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_6_U              |     |    |     |      |      |      |        |      |         |          |        |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_7_U              |     |    |     |      |      |      |        |      |         |          |        |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_8_U              |     |    |     |      |      |      |        |      |         |          |        |
+|   ffn_accel_float_const_float_float_const_float_const_float_const_float_9_U              |     |    |     |      |      |      |        |      |         |          |        |
+|   ffn_mulmulmulmulmulaccel_float_const_float_float_const_float_const_float_const_float_U |     |    |     |      |      |      |        |      |         |          |        |
+|   fmul_32ns_32ns_32_3_max_dsp_1_U286                                                     |     |    |     |      |      |      |        |      |         |          |        |
+|   fmul_32ns_32ns_32_3_max_dsp_1_U287                                                     |     |    |     |      |      |      |        |      |         |          |        |
+|   fmul_32ns_32ns_32_3_max_dsp_1_U288                                                     |     |    |     |      |      |      |        |      |         |          |        |
+|   fmul_32ns_32ns_32_3_max_dsp_1_U289                                                     |     |    |     |      |      |      |        |      |         |          |        |
+|   gmem0_m_axi_U                                                                          |     |    |     |      |      | 273  |        |      |         |          |        |
+|   gmem1_m_axi_U                                                                          |     |    |     |      |      | 65   |        |      |         |          |        |
+|   grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648                                        |     |    |     |      |      | 1411 |        |      |         |          |        |
+|     (grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648)                                    |     |    |     |      |      | 126  |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U                                             |     |    |     |      |      |      |        |      |         |          |        |
+|     grp_generic_erf_float_s_fu_57                                                        |     |    |     |      |      | 1285 |        |      |         |          |        |
+|       (grp_generic_erf_float_s_fu_57)                                                    |     |    |     |      |      | 1069 |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U110                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U111                                              |     |    |     |      |      |      |        |      |         |          |        |
+|         (fadd_32ns_32ns_32_4_full_dsp_1_x_U111)                                          |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U112                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U113                                              |     |    |     |      |      |      |        |      |         |          |        |
+|         (fadd_32ns_32ns_32_4_full_dsp_1_x_U113)                                          |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U114                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U115                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U116                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U117                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U118                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U119                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U120                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U121                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U122                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U123                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U124                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U125                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U126                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U127                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U128                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U129                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U130                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U131                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U132                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U133                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U134                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U135                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U136                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U137                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U138                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U139                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U140                                              |     |    |     |      |      |      |        |      |         |          |        |
+|         (fadd_32ns_32ns_32_4_full_dsp_1_x_U140)                                          |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U141                                              |     |    |     |      |      |      |        |      |         |          |        |
+|         (fadd_32ns_32ns_32_4_full_dsp_1_x_U141)                                          |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U142                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U143                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U144                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U145                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U146                                              |     |    |     |      |      |      |        |      |         |          |        |
+|         (fadd_32ns_32ns_32_4_full_dsp_1_x_U146)                                          |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U147                                              |     |    |     |      |      |      |        |      |         |          |        |
+|         (fadd_32ns_32ns_32_4_full_dsp_1_x_U147)                                          |     |    |     |      |      |      |        |      |         |          |        |
+|       fadd_32ns_32ns_32_4_full_dsp_1_x_U149                                              |     |    |     |      |      |      |        |      |         |          |        |
+|       faddfsub_32ns_32ns_32_4_full_dsp_1_U109                                            |     |    |     |      |      |      |        |      |         |          |        |
+|       faddfsub_32ns_32ns_32_4_full_dsp_1_U148                                            |     |    |     |      |      |      |        |      |         |          |        |
+|         (faddfsub_32ns_32ns_32_4_full_dsp_1_U148)                                        |     |    |     |      |      |      |        |      |         |          |        |
+|       faddfsub_32ns_32ns_32_4_full_dsp_1_U150                                            |     |    |     |      |      |      |        |      |         |          |        |
+|         (faddfsub_32ns_32ns_32_4_full_dsp_1_U150)                                        |     |    |     |      |      |      |        |      |         |          |        |
+|       fdiv_32ns_32ns_32_9_no_dsp_1_U199                                                  |     |    |     |      |      | 32   |        |      |         |          |        |
+|       fdiv_32ns_32ns_32_9_no_dsp_1_U200                                                  |     |    |     |      |      | 32   |        |      |         |          |        |
+|       fdiv_32ns_32ns_32_9_no_dsp_1_U201                                                  |     |    |     |      |      | 32   |        |      |         |          |        |
+|       fdiv_32ns_32ns_32_9_no_dsp_1_U202                                                  |     |    |     |      |      | 32   |        |      |         |          |        |
+|       fdiv_32ns_32ns_32_9_no_dsp_1_U203                                                  |     |    |     |      |      | 32   |        |      |         |          |        |
+|       fdiv_32ns_32ns_32_9_no_dsp_1_U204                                                  |     |    |     |      |      | 32   |        |      |         |          |        |
+|       fexp_32ns_32ns_32_8_full_dsp_1_U205                                                |     |    |     |      |      | 12   |        |      |         |          |        |
+|       fexp_32ns_32ns_32_8_full_dsp_1_U206                                                |     |    |     |      |      | 12   |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U151                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U152                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U153                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U154                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U155                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U156                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U157                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U158                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U159                                               |     |    |     |      |      |      |        |      |         |          |        |
+|         (fmul_32ns_32ns_32_3_max_dsp_1_x_U159)                                           |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U160                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U161                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U162                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U163                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U164                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U165                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U166                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U167                                               |     |    |     |      |      |      |        |      |         |          |        |
+|         (fmul_32ns_32ns_32_3_max_dsp_1_x_U167)                                           |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U168                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U169                                               |     |    |     |      |      |      |        |      |         |          |        |
+|         (fmul_32ns_32ns_32_3_max_dsp_1_x_U169)                                           |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U170                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U171                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U172                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U173                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U174                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U175                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U176                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U177                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U178                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U179                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U180                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U181                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U182                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U183                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U184                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U185                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U186                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U187                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U188                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U189                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U190                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U191                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U192                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U193                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U194                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U195                                               |     |    |     |      |      |      |        |      |         |          |        |
+|         (fmul_32ns_32ns_32_3_max_dsp_1_x_U195)                                           |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U196                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U197                                               |     |    |     |      |      |      |        |      |         |          |        |
+|       fmul_32ns_32ns_32_3_max_dsp_1_x_U198                                               |     |    |     |      |      |      |        |      |         |          |        |
+|   grp_ffn_accel_Pipeline_VITIS_LOOP_108_14_fu_677                                        |     |    |     |      |      |      |        |      |         |          |        |
+|     (grp_ffn_accel_Pipeline_VITIS_LOOP_108_14_fu_677)                                    |     |    |     |      |      |      |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U                                             |     |    |     |      |      |      |        |      |         |          |        |
+|   grp_ffn_accel_Pipeline_VITIS_LOOP_115_16_fu_731                                        |     |    |     |      |      | 1    |        |      |         |          |        |
+|     (grp_ffn_accel_Pipeline_VITIS_LOOP_115_16_fu_731)                                    |     |    |     |      |      | 1    |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U                                             |     |    |     |      |      |      |        |      |         |          |        |
+|   grp_ffn_accel_Pipeline_VITIS_LOOP_54_1_VITIS_LOOP_55_2_fu_497                          |     |    |     |      |      |      |        |      |         |          |        |
+|     (grp_ffn_accel_Pipeline_VITIS_LOOP_54_1_VITIS_LOOP_55_2_fu_497)                      |     |    |     |      |      |      |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U                                             |     |    |     |      |      |      |        |      |         |          |        |
+|   grp_ffn_accel_Pipeline_VITIS_LOOP_61_4_fu_536                                          |     |    |     |      |      | 8    |        |      |         |          |        |
+|     (grp_ffn_accel_Pipeline_VITIS_LOOP_61_4_fu_536)                                      |     |    |     |      |      | 8    |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U                                             |     |    |     |      |      |      |        |      |         |          |        |
+|   grp_ffn_accel_Pipeline_VITIS_LOOP_67_5_fu_577                                          |     |    |     |      |      |      |        |      |         |          |        |
+|     (grp_ffn_accel_Pipeline_VITIS_LOOP_67_5_fu_577)                                      |     |    |     |      |      |      |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U                                             |     |    |     |      |      |      |        |      |         |          |        |
+|   grp_ffn_accel_Pipeline_VITIS_LOOP_74_7_fu_586                                          |     |    |     |      |      |      |        |      |         |          |        |
+|     (grp_ffn_accel_Pipeline_VITIS_LOOP_74_7_fu_586)                                      |     |    |     |      |      |      |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U                                             |     |    |     |      |      |      |        |      |         |          |        |
+|   grp_ffn_accel_Pipeline_VITIS_LOOP_82_9_fu_594                                          |     |    |     |      |      |      |        |      |         |          |        |
+|     (grp_ffn_accel_Pipeline_VITIS_LOOP_82_9_fu_594)                                      |     |    |     |      |      |      |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U                                             |     |    |     |      |      |      |        |      |         |          |        |
+|   grp_ffn_accel_Pipeline_VITIS_LOOP_93_11_fu_653                                         |     |    |     |      |      | 10   |        |      |         |          |        |
+|     (grp_ffn_accel_Pipeline_VITIS_LOOP_93_11_fu_653)                                     |     |    |     |      |      | 10   |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U                                             |     |    |     |      |      |      |        |      |         |          |        |
+|   hidden_U                                                                               |     |    |     |      |      |      |        |      |         |          |        |
+|   local_b1_U                                                                             |     |    |     |      |      |      |        |      |         |          |        |
+|   local_b2_U                                                                             |     |    |     |      |      |      |        |      |         |          |        |
+|   p_ZZ9ffn_accelPKfPfS0_S0_S0_S0_jE8local_w1_10_U                                        |     |    |     |      |      |      |        |      |         |          |        |
+|   p_ZZ9ffn_accelPKfPfS0_S0_S0_S0_jE8local_w1_11_U                                        |     |    |     |      |      |      |        |      |         |          |        |
+|   p_ZZ9ffn_accelPKfPfS0_S0_S0_S0_jE8local_w1_12_U                                        |     |    |     |      |      |      |        |      |         |          |        |
+|   p_ZZ9ffn_accelPKfPfS0_S0_S0_S0_jE8local_w1_13_U                                        |     |    |     |      |      |      |        |      |         |          |        |
+|   p_ZZ9ffn_accelPKfPfS0_S0_S0_S0_jE8local_w1_14_U                                        |     |    |     |      |      |      |        |      |         |          |        |
+|   p_ZZ9ffn_accelPKfPfS0_S0_S0_S0_jE8local_w1_15_U                                        |     |    |     |      |      |      |        |      |         |          |        |
+|   p_ZZ9ffn_accelPKfPfS0_S0_S0_S0_jE8local_w2_10_U                                        |     |    |     |      |      |      |        |      |         |          |        |
+|   p_ZZ9ffn_accelPKfPfS0_S0_S0_S0_jE8local_w2_11_U                                        |     |    |     |      |      |      |        |      |         |          |        |
+|   p_ZZ9ffn_accelPKfPfS0_S0_S0_S0_jE8local_w2_12_U                                        |     |    |     |      |      |      |        |      |         |          |        |
+|   p_ZZ9ffn_accelPKfPfS0_S0_S0_S0_jE8local_w2_13_U                                        |     |    |     |      |      |      |        |      |         |          |        |
+|   p_ZZ9ffn_accelPKfPfS0_S0_S0_S0_jE8local_w2_14_U                                        |     |    |     |      |      |      |        |      |         |          |        |
+|   p_ZZ9ffn_accelPKfPfS0_S0_S0_S0_jE8local_w2_15_U                                        |     |    |     |      |      |      |        |      |         |          |        |
+|   token_U                                                                                |     |    |     |      |      |      |        |      |         |          |        |
++------------------------------------------------------------------------------------------+-----+----+-----+------+------+------+--------+------+---------+----------+--------+
+
+
+================================================================
+== RTL Synthesis Fail Fast
+================================================================
++-----------------------------------------------------------+-----------+--------+--------+
+| Criteria                                                  | Guideline | Actual | Status |
++-----------------------------------------------------------+-----------+--------+--------+
+| LUT                                                       | 70%       | 22.44% | OK     |
+| FD                                                        | 50%       | 10.38% | OK     |
+| LUTRAM+SRL                                                | 25%       | 3.30%  | OK     |
+| CARRY8                                                    | 25%       | 9.29%  | OK     |
+| MUXF7                                                     | 15%       | 1.00%  | OK     |
+| DSP                                                       | 80%       | 20.99% | OK     |
+| RAMB/FIFO                                                 | 80%       | 46.18% | OK     |
+| URAM                                                      | 80%       | 0.00%  | OK     |
+| DSP+RAMB+URAM (Avg)                                       | 70%       | 33.59% | OK     |
+| BUFGCE* + BUFGCTRL                                        | 24        | 0      | OK     |
+| DONT_TOUCH (cells/nets)                                   | 0         | 6      | REVIEW |
+| MARK_DEBUG (nets)                                         | 0         | 0      | OK     |
+| Control Sets                                              | 2196      | 365    | OK     |
+| Average Fanout for modules > 100k cells                   | 4         | 1.33   | OK     |
+| Max Average Fanout for modules > 100k cells               | 4         | 0      | OK     |
+| Non-FD high fanout nets > 10k loads                       | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| TIMING-6 (No common primary clock between related clocks) | 0         | 0      | OK     |
+| TIMING-7 (No common node between related clocks)          | 0         | 0      | OK     |
+| TIMING-8 (No common period between related clocks)        | 0         | 0      | OK     |
+| TIMING-14 (LUT on the clock tree)                         | 0         | 0      | OK     |
+| TIMING-35 (No common node in paths with the same clock)   | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| Number of paths above max LUT budgeting (0.391ns)         | 0         | 0      | OK     |
+| Number of paths above max Net budgeting (0.263ns)         | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+
+
+================================================================
+== RTL Synthesis Timing Paths
+================================================================
+* Timing was met
++-------+---------------------+----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+------------+---------------------+---------------------+---------------------+
+| Path  |               SLACK | STARTPOINT PIN                                                                                                                         | ENDPOINT PIN                                                                                                                                                                                                                           | LOGIC LEVELS | MAX FANOUT |      DATAPATH DELAY |      DATAPATH LOGIC |        DATAPATH NET |
+|       |                     |                                                                                                                                        |                                                                                                                                                                                                                                        |              |            |                     |               DELAY |               DELAY |
++-------+---------------------+----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+------------+---------------------+---------------------+---------------------+
+| Path1 | 4.71880674362182617 | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.OP/RESULT_REG.NORMAL.mant_op_reg[22]/D |           12 |         60 | 5.27783775329589844 | 4.25600051879882812 | 1.02183759212493896 |
+| Path2 | 4.72780656814575195 | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.OP/RESULT_REG.NORMAL.mant_op_reg[22]/D |           12 |         60 | 5.26883792877197266 | 4.25600051879882812 | 1.01283764839172363 |
+| Path3 | 4.72880649566650391 | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.OP/RESULT_REG.NORMAL.mant_op_reg[22]/D |           12 |         60 | 5.26783752441406250 | 4.25600051879882812 | 1.01183760166168213 |
+| Path4 | 4.72880649566650391 | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.OP/RESULT_REG.NORMAL.mant_op_reg[22]/D |           12 |         60 | 5.26783752441406250 | 4.25600051879882812 | 1.01183760166168213 |
+| Path5 | 4.72880649566650391 | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]/C | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.OP/RESULT_REG.NORMAL.mant_op_reg[22]/D |           12 |         60 | 5.26783752441406250 | 4.25600051879882812 | 1.01183760166168213 |
++-------+---------------------+----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+------------+---------------------+---------------------+---------------------+
+
+    +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path1 Cells                                                                                                                                                                                                                                                                                                | Primitive Type         |
+    +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]                                                                                                                                                                       | REGISTER.SDR.FDRE      |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_A_B_DATA_INST                | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_PREADD_DATA_INST             | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_MULTIPLIER_INST              | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_M_DATA_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_ALU_INST                     | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP/DSP_ALU_INST                     | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP/DSP_ALU_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/RESULT_REG.NORMAL.mant_op[22]_i_2                               | CLB.LUT.LUT6           |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.EXP/EXP_ADD.C_CHAIN/RESULT_REG.NORMAL.mant_op[22]_i_1                                                      | CLB.LUT.LUT4           |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U181/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.OP/RESULT_REG.NORMAL.mant_op_reg[22]                                                                       | REGISTER.SDR.FDRE      |
+    +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path2 Cells                                                                                                                                                                                                                                                                                                | Primitive Type         |
+    +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]                                                                                                                                                                       | REGISTER.SDR.FDRE      |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_A_B_DATA_INST                | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_PREADD_DATA_INST             | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_MULTIPLIER_INST              | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_M_DATA_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_ALU_INST                     | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP/DSP_ALU_INST                     | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP/DSP_ALU_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/RESULT_REG.NORMAL.mant_op[22]_i_2                               | CLB.LUT.LUT6           |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.EXP/EXP_ADD.C_CHAIN/RESULT_REG.NORMAL.mant_op[22]_i_1                                                      | CLB.LUT.LUT4           |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U178/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.OP/RESULT_REG.NORMAL.mant_op_reg[22]                                                                       | REGISTER.SDR.FDRE      |
+    +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path3 Cells                                                                                                                                                                                                                                                                                                | Primitive Type         |
+    +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]                                                                                                                                                                       | REGISTER.SDR.FDRE      |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_A_B_DATA_INST                | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_PREADD_DATA_INST             | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_MULTIPLIER_INST              | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_M_DATA_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_ALU_INST                     | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP/DSP_ALU_INST                     | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP/DSP_ALU_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/RESULT_REG.NORMAL.mant_op[22]_i_2                               | CLB.LUT.LUT6           |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.EXP/EXP_ADD.C_CHAIN/RESULT_REG.NORMAL.mant_op[22]_i_1                                                      | CLB.LUT.LUT4           |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U177/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.OP/RESULT_REG.NORMAL.mant_op_reg[22]                                                                       | REGISTER.SDR.FDRE      |
+    +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path4 Cells                                                                                                                                                                                                                                                                                                | Primitive Type         |
+    +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]                                                                                                                                                                       | REGISTER.SDR.FDRE      |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_A_B_DATA_INST                | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_PREADD_DATA_INST             | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_MULTIPLIER_INST              | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_M_DATA_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_ALU_INST                     | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP/DSP_ALU_INST                     | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP/DSP_ALU_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/RESULT_REG.NORMAL.mant_op[22]_i_2                               | CLB.LUT.LUT6           |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.EXP/EXP_ADD.C_CHAIN/RESULT_REG.NORMAL.mant_op[22]_i_1                                                      | CLB.LUT.LUT4           |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U179/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.OP/RESULT_REG.NORMAL.mant_op_reg[22]                                                                       | REGISTER.SDR.FDRE      |
+    +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path5 Cells                                                                                                                                                                                                                                                                                                | Primitive Type         |
+    +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/din1_buf1_reg[25]                                                                                                                                                                       | REGISTER.SDR.FDRE      |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_A_B_DATA_INST                | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_PREADD_DATA_INST             | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_MULTIPLIER_INST              | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_M_DATA_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_ALU_INST                     | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP/DSP_ALU_INST                     | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP/DSP_ALU_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/RESULT_REG.NORMAL.mant_op[22]_i_2                               | CLB.LUT.LUT6           |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.EXP/EXP_ADD.C_CHAIN/RESULT_REG.NORMAL.mant_op[22]_i_1                                                      | CLB.LUT.LUT4           |
+    | grp_ffn_accel_Pipeline_VITIS_LOOP_100_12_fu_648/grp_generic_erf_float_s_fu_57/fmul_32ns_32ns_32_3_max_dsp_1_x_U180/ffn_accel_fmul_32ns_32ns_32_3_max_dsp_1_x_ip_u/U0/i_synth/MULT.OP/i_non_prim.OP/RESULT_REG.NORMAL.mant_op_reg[22]                                                                       | REGISTER.SDR.FDRE      |
+    +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+
+================================================================
+== RTL Synthesis Vivado Reports
+================================================================
++--------------------------+------------------------------------------------------------------+
+| Report Type              | Report Location                                                  |
++--------------------------+------------------------------------------------------------------+
+| design_analysis          | impl/verilog/report/ffn_accel_design_analysis_synth.rpt          |
+| failfast                 | impl/verilog/report/ffn_accel_failfast_synth.rpt                 |
+| power                    | impl/verilog/report/ffn_accel_power_synth.rpt                    |
+| timing                   | impl/verilog/report/ffn_accel_timing_synth.rpt                   |
+| timing_paths             | impl/verilog/report/ffn_accel_timing_paths_synth.rpt             |
+| utilization              | impl/verilog/report/ffn_accel_utilization_synth.rpt              |
+| utilization_hierarchical | impl/verilog/report/ffn_accel_utilization_hierarchical_synth.rpt |
++--------------------------+------------------------------------------------------------------+
+
+

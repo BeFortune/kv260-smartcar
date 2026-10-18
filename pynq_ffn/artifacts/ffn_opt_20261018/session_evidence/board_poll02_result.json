@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"ok\": true,\n  \"jobId\": \"job_mvcmu3ax_0da2cd0d907a\",\n  \"sessionId\": \"5cfb0a28-bcb4-4c7c-ba7b-dc5e44170d48\",\n  \"command\": \"sudo -n env XILINX_XRT=/usr PATH=/usr/local/share/pynq-venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin PYTHONUNBUFFERED=1 /usr/local/share/pynq-venv/bin/python3 -B /home/ubuntu/ffn_opt_20261018/deploy/board_validate.py --root /home/ubuntu/ffn_opt_20261018/deploy --deployment-manifest /home/ubuntu/ffn_opt_20261018/deployment_manifest.json --manifest-sha256 f6e8810f9d6f286e677ffec36b570cf655c139cd18168ac42b6471de9d0948a2 --bit-sha256 c67dd63ccd579ab105840a30c4ca1a61715a26b7631cc323473328a821319eb1 --hwh-sha256 f4040b704f14ab02ab25b5266226442541be1fc30cc6e786512d9a00ea675649 --output-dir /home/ubuntu/ffn_opt_20261018/validation_run01 --recording /home/ubuntu/ffn_migrate/data/1778852165 --expected-frames 117 --stage all --threads 1 4 --warmup 3 --timing-frames 117 --timeout-s 60 --allow-pl\",\n  \"status\": \"completed\",\n  \"completed\": true,\n  \"exitCode\": 0,\n  \"error\": null,\n  \"startedAt\": 1792255812153,\n  \"updatedAt\": 1792256136260,\n  \"output\": \"\",\n  \"nextOffset\": 0,\n  \"totalOutputChars\": 0,\n  \"outputBaseOffset\": 0,\n  \"outputTruncated\": false,\n  \"recommendedPollIntervalMs\": 30000\n}"
+    }
+  ]
+}

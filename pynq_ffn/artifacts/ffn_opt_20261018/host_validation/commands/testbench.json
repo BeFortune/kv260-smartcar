@@ -1,0 +1,15 @@
+{
+  "stage": "testbench",
+  "command": [
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\build\\testbench_r03_20261018.exe"
+  ],
+  "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\build",
+  "started": "2026-10-18T00:39:38.134597+08:00",
+  "ended": "2026-10-18T00:39:39.003033+08:00",
+  "exit_code": 0,
+  "stdout": "PASS small/boundary tokens=1 max_abs=7.43869e-07 tail_abs=7.43869e-07\r\nPASS small/boundary tokens=2 max_abs=1.47476e-06 tail_abs=1.47476e-06\r\nPASS small/boundary tokens=3 max_abs=1.47476e-06 tail_abs=8.18542e-07\r\nPASS small/boundary tokens=4 max_abs=1.47476e-06 tail_abs=9.82648e-07\r\nPASS small/boundary tokens=5 max_abs=1.47476e-06 tail_abs=9.38147e-07\r\nPASS small/boundary tokens=7 max_abs=1.8403e-06 tail_abs=1.8403e-06\r\nPASS small/boundary tokens=8 max_abs=1.8403e-06 tail_abs=7.45098e-07\r\nPASS small/boundary tokens=9 max_abs=1.8403e-06 tail_abs=1.37338e-06\r\nPASS near-maximum tokens=659 max_abs=2.22897e-06 tail_abs=1.49152e-06\r\nPASS camera-A tokens=660 max_abs=2.22897e-06 tail_abs=8.08659e-07\r\nPASS camera-B/reload tokens=660 max_abs=1.89373e-06 tail_abs=5.63358e-07\r\nPASS cross-A/reload tokens=4 max_abs=1.46859e-06 tail_abs=1.46859e-06\r\nPASS cross-B/reload tokens=4 max_abs=1.39514e-06 tail_abs=7.48595e-07\r\nPASS camera-A/revisit tokens=1 max_abs=7.43869e-07 tail_abs=7.43869e-07\r\nPASS zero tokens=4 max_abs=0 tail_abs=0\r\nPASS bias/exact-erf tokens=4 max_abs=6.26898e-07 tail_abs=6.26898e-07\r\nPASS invalid tokens=0 no buffer accesses\r\nPASS invalid tokens=661 no buffer accesses\r\nPASS invalid tokens=4294967295 no buffer accesses\r\nAll FFN reference tests passed.\r\n",
+  "stderr": "",
+  "combined_log": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\logs\\testbench.log",
+  "combined_log_sha256": "6505b27e67e111f2c5530d36fc2ef737d904e193831df4a6be8f0c26dfeda18e",
+  "environment_overrides": {}
+}

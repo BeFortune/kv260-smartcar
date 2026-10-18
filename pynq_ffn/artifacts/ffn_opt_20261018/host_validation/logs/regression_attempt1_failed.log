@@ -1,0 +1,9 @@
+{"status": "failed", "output": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\results\\host_payload_regression_r03_20261018.json", "synthetic_cases": 19, "payload_frames": 0}
+Traceback (most recent call last):
+  File "C:\Users\BeFortuneEX\Source\Repos\FPGA\pynq_ffn\artifacts\ffn_opt_20261018\host_validation\source\validate_cpp_parallel.py", line 243, in main
+    report["payload"] = (payload_replay(baseline, candidate, args.bundle, args.zip_path)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BeFortuneEX\Source\Repos\FPGA\pynq_ffn\artifacts\ffn_opt_20261018\host_validation\source\validate_cpp_parallel.py", line 123, in payload_replay
+    from ps.preprocess import preprocess_arrays
+ModuleNotFoundError: No module named 'ps'
+

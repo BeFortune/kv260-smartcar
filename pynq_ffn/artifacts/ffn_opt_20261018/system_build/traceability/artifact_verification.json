@@ -1,0 +1,265 @@
+{
+  "status": "已验证",
+  "xsa_sha256": "46dcbd22a08b3e4fdbc5e96ed506ff2fb42d14c64faa3e1dad1690a09e17327d",
+  "bit_sha256": "c67dd63ccd579ab105840a30c4ca1a61715a26b7631cc323473328a821319eb1",
+  "hwh_sha256": "f4040b704f14ab02ab25b5266226442541be1fc30cc6e786512d9a00ea675649",
+  "run_bit_sha256": "c67dd63ccd579ab105840a30c4ca1a61715a26b7631cc323473328a821319eb1",
+  "embedded_hwh": "ffn_overlay.hwh",
+  "members": [
+    "drivers/ffn_accel_v1_0/data/ffn_accel.mdd",
+    "drivers/ffn_accel_v1_0/data/ffn_accel.tcl",
+    "drivers/ffn_accel_v1_0/data/ffn_accel.yaml",
+    "drivers/ffn_accel_v1_0/src/CMakeLists.txt",
+    "drivers/ffn_accel_v1_0/src/Makefile",
+    "drivers/ffn_accel_v1_0/src/xffn_accel.c",
+    "drivers/ffn_accel_v1_0/src/xffn_accel.h",
+    "drivers/ffn_accel_v1_0/src/xffn_accel_hw.h",
+    "drivers/ffn_accel_v1_0/src/xffn_accel_linux.c",
+    "drivers/ffn_accel_v1_0/src/xffn_accel_sinit.c",
+    "ffn_overlay.bda",
+    "ffn_overlay.hwh",
+    "ffn_overlay_control_sc_0.hwh",
+    "ffn_overlay_memory_sc_0.hwh",
+    "ffn_overlay_wrapper.bit",
+    "ffn_overlay_wrapper.nts",
+    "kv260_board.png",
+    "psu_init.c",
+    "psu_init.h",
+    "psu_init.html",
+    "psu_init.tcl",
+    "psu_init_gpl.c",
+    "psu_init_gpl.h",
+    "sysdef.xml",
+    "xsa.json",
+    "xsa.xml"
+  ],
+  "registers": {
+    "CTRL": {
+      "address_offset": 0,
+      "size": 32,
+      "fields": {
+        "AP_START": {
+          "bit_offset": 0,
+          "bit_width": 1
+        },
+        "AP_DONE": {
+          "bit_offset": 1,
+          "bit_width": 1
+        },
+        "AP_IDLE": {
+          "bit_offset": 2,
+          "bit_width": 1
+        },
+        "AP_READY": {
+          "bit_offset": 3,
+          "bit_width": 1
+        },
+        "RESERVED_1": {
+          "bit_offset": 4,
+          "bit_width": 3
+        },
+        "AUTO_RESTART": {
+          "bit_offset": 7,
+          "bit_width": 1
+        },
+        "RESERVED_2": {
+          "bit_offset": 8,
+          "bit_width": 1
+        },
+        "INTERRUPT": {
+          "bit_offset": 9,
+          "bit_width": 1
+        },
+        "RESERVED_3": {
+          "bit_offset": 10,
+          "bit_width": 22
+        }
+      }
+    },
+    "GIER": {
+      "address_offset": 4,
+      "size": 32,
+      "fields": {
+        "Enable": {
+          "bit_offset": 0,
+          "bit_width": 1
+        },
+        "RESERVED": {
+          "bit_offset": 1,
+          "bit_width": 31
+        }
+      }
+    },
+    "IP_IER": {
+      "address_offset": 8,
+      "size": 32,
+      "fields": {
+        "CHAN0_INT_EN": {
+          "bit_offset": 0,
+          "bit_width": 1
+        },
+        "CHAN1_INT_EN": {
+          "bit_offset": 1,
+          "bit_width": 1
+        },
+        "RESERVED_0": {
+          "bit_offset": 2,
+          "bit_width": 30
+        }
+      }
+    },
+    "IP_ISR": {
+      "address_offset": 12,
+      "size": 32,
+      "fields": {
+        "CHAN0_INT_ST": {
+          "bit_offset": 0,
+          "bit_width": 1
+        },
+        "CHAN1_INT_ST": {
+          "bit_offset": 1,
+          "bit_width": 1
+        },
+        "RESERVED_0": {
+          "bit_offset": 2,
+          "bit_width": 30
+        }
+      }
+    },
+    "x_1": {
+      "address_offset": 16,
+      "size": 32,
+      "fields": {
+        "x": {
+          "bit_offset": 0,
+          "bit_width": 32
+        }
+      }
+    },
+    "x_2": {
+      "address_offset": 20,
+      "size": 32,
+      "fields": {
+        "x": {
+          "bit_offset": 0,
+          "bit_width": 32
+        }
+      }
+    },
+    "y_1": {
+      "address_offset": 28,
+      "size": 32,
+      "fields": {
+        "y": {
+          "bit_offset": 0,
+          "bit_width": 32
+        }
+      }
+    },
+    "y_2": {
+      "address_offset": 32,
+      "size": 32,
+      "fields": {
+        "y": {
+          "bit_offset": 0,
+          "bit_width": 32
+        }
+      }
+    },
+    "w1_1": {
+      "address_offset": 40,
+      "size": 32,
+      "fields": {
+        "w1": {
+          "bit_offset": 0,
+          "bit_width": 32
+        }
+      }
+    },
+    "w1_2": {
+      "address_offset": 44,
+      "size": 32,
+      "fields": {
+        "w1": {
+          "bit_offset": 0,
+          "bit_width": 32
+        }
+      }
+    },
+    "b1_1": {
+      "address_offset": 52,
+      "size": 32,
+      "fields": {
+        "b1": {
+          "bit_offset": 0,
+          "bit_width": 32
+        }
+      }
+    },
+    "b1_2": {
+      "address_offset": 56,
+      "size": 32,
+      "fields": {
+        "b1": {
+          "bit_offset": 0,
+          "bit_width": 32
+        }
+      }
+    },
+    "w2_1": {
+      "address_offset": 64,
+      "size": 32,
+      "fields": {
+        "w2": {
+          "bit_offset": 0,
+          "bit_width": 32
+        }
+      }
+    },
+    "w2_2": {
+      "address_offset": 68,
+      "size": 32,
+      "fields": {
+        "w2": {
+          "bit_offset": 0,
+          "bit_width": 32
+        }
+      }
+    },
+    "b2_1": {
+      "address_offset": 76,
+      "size": 32,
+      "fields": {
+        "b2": {
+          "bit_offset": 0,
+          "bit_width": 32
+        }
+      }
+    },
+    "b2_2": {
+      "address_offset": 80,
+      "size": 32,
+      "fields": {
+        "b2": {
+          "bit_offset": 0,
+          "bit_width": 32
+        }
+      }
+    },
+    "num_tokens": {
+      "address_offset": 88,
+      "size": 32,
+      "fields": {
+        "num_tokens": {
+          "bit_offset": 0,
+          "bit_width": 32
+        }
+      }
+    }
+  },
+  "static_ps_validate_registers": true,
+  "not_executed": [
+    "board programming",
+    "real PL numeric/performance tests"
+  ]
+}

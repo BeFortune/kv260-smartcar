@@ -1,0 +1,156 @@
+<ENTRY>
+{
+ "thisFile": "D:/ffn_build_opt\\r01\\hls\\build\\ffn_accel_modern\\ffn_accel_modern.hlsrun_csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "10/17/26 19:20:03",
+ "timestampMillis": "1792236003269",
+ "buildStep": {
+  "cmdId": "729771bc-9476-40ed-ac32-8c4053424fac",
+  "name": "vitis-run",
+  "logFile": "D:/ffn_build_opt\\r01\\hls\\build\\ffn_accel_modern\\logs\\ffn_accel_modern.steps.log",
+  "commandLine": "D:/Learning/AMDDesignTools/2026.1/Vitis/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --config D:/ffn_build_opt/r01/hls/build/hls_config.cfg --work_dir D:/ffn_build_opt/r01/hls/build/ffn_accel_modern --csim ",
+  "args": [
+   "--mode",
+   "hls",
+   "--config",
+   "D:/ffn_build_opt/r01/hls/build/hls_config.cfg",
+   "--work_dir",
+   "D:/ffn_build_opt/r01/hls/build/ffn_accel_modern",
+   "--csim"
+  ],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\JW"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "10/17/26 19:20:03",
+ "timestampMillis": "1792236003269",
+ "status": {
+  "cmdId": "729771bc-9476-40ed-ac32-8c4053424fac",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "10/17/26 19:20:06",
+ "timestampMillis": "1792236006221",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "ffn_accel",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "D:/ffn_build_opt\\r01\\hls\\ffn_accel.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2026.1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "10/17/26 19:20:06",
+ "timestampMillis": "1792236006222",
+ "buildStep": {
+  "cmdId": "a0df17d4-5f48-4669-9c74-4569a8c47038",
+  "name": "",
+  "logFile": "D:/ffn_build_opt\\r01\\hls\\build\\ffn_accel_modern\\hls\\hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "D:\\ffn_build_opt\\r01\\hls\\build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "10/17/26 19:20:06",
+ "timestampMillis": "1792236006222",
+ "status": {
+  "cmdId": "a0df17d4-5f48-4669-9c74-4569a8c47038",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "10/17/26 19:20:25",
+ "timestampMillis": "1792236025378",
+ "status": {
+  "cmdId": "a0df17d4-5f48-4669-9c74-4569a8c47038",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "10/17/26 19:20:25",
+ "timestampMillis": "1792236025457",
+ "status": {
+  "cmdId": "729771bc-9476-40ed-ac32-8c4053424fac",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/17/26 19:20:25",
+ "timestampMillis": "1792236025457",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/17/26 19:20:25",
+ "timestampMillis": "1792236025457",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

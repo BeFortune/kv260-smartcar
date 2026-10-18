@@ -1,0 +1,97 @@
+INFO: [Common 17-3922] A valid Vivado Design Suite ENTERPRISE license has been detected. Your current license is active and will expire on 14-dec-2026.
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Sun Oct 18 00:23:29 2026
+# Process ID         : 8284
+# Current directory  : D:/g3
+# Command line       : vivado.exe -mode batch -notrace -source D:\g3\stage_entry.tcl -log D:\g3\records\bd.vivado.log -journal D:\g3\records\bd.vivado.jou -tclargs D:\g3\create_overlay_bd.tcl
+# Log file           : D:/g3/records/bd.vivado.log
+# Journal file       : D:\g3\records\bd.vivado.jou
+# Running On         : JasonWenDsek
+# Platform           : Windows 11
+# Operating System   : 26200
+# Processor Detail   : AMD Ryzen 7 7800X3D 8-Core Processor           
+# CPU Frequency      : 4200 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 33520 MB
+# Swap memory        : 25769 MB
+# Total Virtual      : 59290 MB
+# Available Virtual  : 38199 MB
+#-----------------------------------------------------------
+source {D:\g3\stage_entry.tcl} -notrace
+create_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 1147.746 ; gain = 786.926
+WARNING: [Board 49-151] The current board 'xilinx.com::kv260_som:2.0' is from a local repo. The vivado install has a corresponding board with version greater than or equal to the local repo board. Please use boards from vivado install to avoid any upgrade/migrate issues
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/g3/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Learning/AMDDesignTools/2026.1/Vivado/data/ip'.
+Wrote  : <D:\g3\vivado03\ffn_overlay.srcs\sources_1\bd\ffn_overlay\ffn_overlay.bd> 
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+INFO: [BD 5-1043] It is recommended to use inline hdl version xilinx.com:inline_hdl:ilconstant:1.0 for the IP type xilinx.com:ip:xlconstant:1.1 for improved performance and reduced disk space. IPs with VLNV xilinx.com:ip:xlconstant:1.1 will not be supported from release 2025.2. More information on inline hdl IP is available in UG994 
+INFO: [BD 5-1043] It is recommended to use inline hdl version xilinx.com:inline_hdl:ilconstant:1.0 for the IP type xilinx.com:ip:xlconstant:1.1 for improved performance and reduced disk space. IPs with VLNV xilinx.com:ip:xlconstant:1.1 will not be supported from release 2025.2. More information on inline hdl IP is available in UG994 
+Slave segment '/ffn_accel_0/s_axi_control/Reg' is being assigned into address space '/zynq_ultra_ps_e_0/Data' at <0xA000_0000 [ 64K ]>.
+Slave segment '/zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_LOW' is being assigned into address space '/ffn_accel_0/Data_m_axi_gmem0' at <0x0000_0000 [ 2G ]>.
+Slave segment '/zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_LOW' is being assigned into address space '/ffn_accel_0/Data_m_axi_gmem1' at <0x0000_0000 [ 2G ]>.
+Slave segment '/zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_HIGH' is being assigned into address space '/ffn_accel_0/Data_m_axi_gmem0' at <0x8_0000_0000 [ 32G ]>.
+Slave segment '/zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_HIGH' is being assigned into address space '/ffn_accel_0/Data_m_axi_gmem1' at <0x8_0000_0000 [ 32G ]>.
+WARNING: [BD 41-3281] Instance '/zynq_ultra_ps_e_0' is connected on both sides by SmartConnects and cannot automatically configure itself to match the endpoints. Please manually configure its AXI interfaces as required for the design.
+WARNING: [BD 41-3281] Instance '/ffn_accel_0' is connected on both sides by SmartConnects and cannot automatically configure itself to match the endpoints. Please manually configure its AXI interfaces as required for the design.
+INFO: [BD 5-943] Reserving offset range <0xA000_0000 [ 64K ]> from slave interface '/control_sc/S00_AXI' to master interface '/control_sc/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [xilinx.com:ip:smartconnect:1.0-1] ffn_overlay_control_sc_0: SmartConnect ffn_overlay_control_sc_0 is in Ultralite mode.
+INFO: [BD 5-943] Reserving offset range <0x0000_0000 [ 2G ]> from slave interface '/memory_sc/S00_AXI' to master interface '/memory_sc/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x8_0000_0000 [ 32G ]> from slave interface '/memory_sc/S00_AXI' to master interface '/memory_sc/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x0000_0000 [ 2G ]> from slave interface '/memory_sc/S01_AXI' to master interface '/memory_sc/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x8_0000_0000 [ 32G ]> from slave interface '/memory_sc/S01_AXI' to master interface '/memory_sc/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [xilinx.com:ip:smartconnect:1.0-1] ffn_overlay_memory_sc_0: SmartConnect ffn_overlay_memory_sc_0 is in High-performance Mode.
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /zynq_ultra_ps_e_0/S_AXI_HP0_FPD(1) and /memory_sc/M00_AXI(0)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /zynq_ultra_ps_e_0/S_AXI_HP0_FPD(1) and /memory_sc/M00_AXI(0)
+Wrote  : <D:\g3\vivado03\ffn_overlay.srcs\sources_1\bd\ffn_overlay\ffn_overlay.bd> 
+WARNING: [BD 41-2937] The design that will be created by this Tcl script contains the following user IPs:
+/ffn_accel_0
+Please add the following user repository(s):
+d:/g3/ip_repo
+before sourcing this Tcl script or use write_project_tcl.
+INFO: [BD 5-148] Tcl file written out <D:/g3/evidence/vivado/ffn_overlay_bd.tcl>.
+
+INFO: [BD 41-1662] The design 'ffn_overlay.bd' is already validated. Therefore parameter propagation will not be re-run.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/memory_sc/S00_AXI_arlock'(1) to pin: '/ffn_accel_0/m_axi_gmem0_ARLOCK'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/memory_sc/S00_AXI_awlock'(1) to pin: '/ffn_accel_0/m_axi_gmem0_AWLOCK'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/memory_sc/S01_AXI_arlock'(1) to pin: '/ffn_accel_0/m_axi_gmem1_ARLOCK'(2) - Only lower order bits will be connected.
+Verilog Output written to : D:/g3/vivado03/ffn_overlay.gen/sources_1/bd/ffn_overlay/synth/ffn_overlay.v
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/memory_sc/S00_AXI_arlock'(1) to pin: '/ffn_accel_0/m_axi_gmem0_ARLOCK'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/memory_sc/S00_AXI_awlock'(1) to pin: '/ffn_accel_0/m_axi_gmem0_AWLOCK'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/memory_sc/S01_AXI_arlock'(1) to pin: '/ffn_accel_0/m_axi_gmem1_ARLOCK'(2) - Only lower order bits will be connected.
+Verilog Output written to : D:/g3/vivado03/ffn_overlay.gen/sources_1/bd/ffn_overlay/sim/ffn_overlay.v
+Verilog Output written to : D:/g3/vivado03/ffn_overlay.gen/sources_1/bd/ffn_overlay/hdl/ffn_overlay_wrapper.v
+INFO: [xilinx.com:ip:zynq_ultra_ps_e:3.5-0] ffn_overlay_zynq_ultra_ps_e_0_0: 
+Changes in your design (including the PCW configuration settings) are not automatically exported from Vivado to Amd's SDK, Petalinux or Yocto.
+This is by design to avoid disrupting existing embedded development efforts. To have any changes of your design taking effect in the embedded software flow please export your
+design by going through Vivado's main menu, click on File, then Export finally select Export Hardware, please ensure you click on the Include BitStream option.
+The auto-generated HDF file is all you need to import in Amd's SDK, Petalinux or Yocto for your changes to be reflected in the Embedded Software Flow.
+For more information, please consult PG201, section: Exporting PCW Settings to Embedded Software Flows
+INFO: [PSU-0] Address Range of DDR (0x7ff00000 to 0x7fffffff) is reserved by PMU for internal purpose.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI_HPM0_FPD'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI_HP0_FPD'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zynq_ultra_ps_e_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ffn_accel_0 .
+Exporting to file d:/g3/vivado03/ffn_overlay.gen/sources_1/bd/ffn_overlay/ip/ffn_overlay_control_sc_0/bd_0/hw_handoff/ffn_overlay_control_sc_0.hwh
+Generated Hardware Definition File d:/g3/vivado03/ffn_overlay.gen/sources_1/bd/ffn_overlay/ip/ffn_overlay_control_sc_0/bd_0/synth/ffn_overlay_control_sc_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block control_sc .
+Exporting to file d:/g3/vivado03/ffn_overlay.gen/sources_1/bd/ffn_overlay/ip/ffn_overlay_memory_sc_0/bd_0/hw_handoff/ffn_overlay_memory_sc_0.hwh
+Generated Hardware Definition File d:/g3/vivado03/ffn_overlay.gen/sources_1/bd/ffn_overlay/ip/ffn_overlay_memory_sc_0/bd_0/synth/ffn_overlay_memory_sc_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block memory_sc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps8_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block const_one .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block const_zero .
+Exporting to file D:/g3/vivado03/ffn_overlay.gen/sources_1/bd/ffn_overlay/hw_handoff/ffn_overlay.hwh
+Generated Hardware Definition File D:/g3/vivado03/ffn_overlay.gen/sources_1/bd/ffn_overlay/synth/ffn_overlay.hwdef
+INFO: [BD 41-3262] Generated VHDL Instantiation Template file d:/g3/vivado03/ffn_overlay.gen/sources_1/bd/ffn_overlay/ffn_overlay.vho
+INFO: [BD 41-3262] Generated Verilog Instantiation Template file d:/g3/vivado03/ffn_overlay.gen/sources_1/bd/ffn_overlay/ffn_overlay.veo
+INFO: [BD 41-3262] Generated System Verilog Instantiation Template file d:/g3/vivado03/ffn_overlay.gen/sources_1/bd/ffn_overlay/ffn_overlay_sv.sveo
+generate_target: Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1517.461 ; gain = 97.879
+FFN_BD_VALIDATED_AND_GENERATED
+INFO: [Common 17-206] Exiting Vivado at Sun Oct 18 00:24:18 2026...

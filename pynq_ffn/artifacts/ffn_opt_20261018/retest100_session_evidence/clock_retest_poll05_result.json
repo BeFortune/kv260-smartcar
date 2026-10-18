@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"ok\": true,\n  \"jobId\": \"job_mvd8t9lc_0b39f1edbaae\",\n  \"sessionId\": \"ac6e1cfc-2851-4d91-8d67-7f643c0faff7\",\n  \"command\": \"sudo -n env XILINX_XRT=/usr PATH=/usr/local/share/pynq-venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin PYTHONUNBUFFERED=1 /usr/local/share/pynq-venv/bin/python3 -B /home/ubuntu/ffn_opt_20261018/retest100/deploy/board_validate.py --root /home/ubuntu/ffn_opt_20261018/retest100/deploy --deployment-manifest /home/ubuntu/ffn_opt_20261018/retest100/deployment_manifest.json --manifest-sha256 d5d227fca6aefc818fa5247adda250c814b47243911f678bc81cf03695cb5868 --bit-sha256 c67dd63ccd579ab105840a30c4ca1a61715a26b7631cc323473328a821319eb1 --hwh-sha256 f4040b704f14ab02ab25b5266226442541be1fc30cc6e786512d9a00ea675649 --output-dir /home/ubuntu/ffn_opt_20261018/validation_run02_100mhz --recording /home/ubuntu/ffn_migrate/data/1778852165 --expected-frames 117 --stage all --threads 1 4 --warmup 3 --timing-frames 117 --expected-clock-mhz 100 --clock-tolerance-percent 0.5 --timeout-s 60 --allow-pl --reuse-programmed-overlay --allow-pl0-divisor0-15\",\n  \"status\": \"completed\",\n  \"completed\": true,\n  \"exitCode\": 0,\n  \"error\": null,\n  \"startedAt\": 1792292725200,\n  \"updatedAt\": 1792293075114,\n  \"output\": \"\",\n  \"nextOffset\": 0,\n  \"totalOutputChars\": 0,\n  \"outputBaseOffset\": 0,\n  \"outputTruncated\": false,\n  \"recommendedPollIntervalMs\": 30000\n}"
+    }
+  ]
+}

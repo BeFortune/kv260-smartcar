@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"ok\": true,\n  \"sessionId\": \"ac6e1cfc-2851-4d91-8d67-7f643c0faff7\",\n  \"hostId\": \"d4d16f6f-eca2-4c0c-8624-bdb2bf068548\",\n  \"status\": \"connecting\",\n  \"protocol\": \"ssh\",\n  \"host\": {\n    \"id\": \"d4d16f6f-eca2-4c0c-8624-bdb2bf068548\",\n    \"label\": \"KV260\",\n    \"hostname\": \"192.168.110.200\",\n    \"port\": 22,\n    \"username\": \"ubuntu\",\n    \"protocol\": \"ssh\",\n    \"group\": \"\",\n    \"tags\": [],\n    \"os\": \"linux\",\n    \"createdAt\": 1790498568660\n  },\n  \"message\": \"Terminal tab opened. Connection may still be establishing; use get_environment or wait briefly before terminal_execute if the session is not ready yet.\"\n}"
+    }
+  ]
+}

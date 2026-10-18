@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"pid\": \"1164\", \"command_program\": \"/usr/local/share/pynq-venv/bin/python3\", \"python_module\": null, \"scripts\": [], \"kernel\": false}\n{\"pid\": \"1185\", \"command_program\": \"python3\", \"python_module\": null, \"scripts\": [], \"kernel\": false}\n{\"pid\": \"1312\", \"command_program\": \"/usr/bin/python3\", \"python_module\": null, \"scripts\": [\"/home/ubuntu/kv260_v1_pynq_20261011/fan_control.py\"], \"kernel\": false}\n/sys/class/fpga_manager/fpga0/state operating\n/sys/class/fpga_manager/fpga0/name Xilinx ZynqMP FPGA Manager\n[exit code: 0]"
+    }
+  ]
+}

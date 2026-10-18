@@ -1,0 +1,211 @@
+{
+  "created": "2026-10-18T00:40:20.194279+08:00",
+  "scope": "Offline host validation only; no remote/board/SSH/serial/camera/overlay. New directory only; no source or old-result modification.",
+  "binding_rule": "Every link in the chain is anchored by sha256 of its bytes; timestamps are recorded for audit only and are not required for identity.",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python_for_regression": {
+    "path": "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+    "sha256": "1eaca0c6c6b306f084e46cd3ac96505cddae0004fb638ff0b69097f9e977d702",
+    "version": "Python 3.12.7"
+  },
+  "compiler": {
+    "path": "D:\\Programs\\TDM-GCC-64\\bin\\g++.exe",
+    "sha256": "8cfa5ea1c1d29be31078cb92cd0cac635b90183d17460c361cc90645b77d11fb",
+    "version_output": "g++.exe (tdm64-1) 10.3.0\r\nCopyright (C) 2020 Free Software Foundation, Inc.\r\nThis is free software; see the source for copying conditions.  There is NO\r\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+  },
+  "source_snapshot": {
+    "ffn_accel.cpp": {
+      "original_absolute_path": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\hls\\ffn_accel.cpp",
+      "snapshot_relative_path": "source/ffn_accel.cpp",
+      "sha256": "829c9ec63604e327ad4ea13855b405113ea74fea6a62721d512ded6341b0b9b6",
+      "bytes": 5346
+    },
+    "ffn_accel.hpp": {
+      "original_absolute_path": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\hls\\ffn_accel.hpp",
+      "snapshot_relative_path": "source/ffn_accel.hpp",
+      "sha256": "715f0ca11cc5e9920569654f7296c8443a0186f988557bd27ec1af3f476c7c35",
+      "bytes": 694
+    },
+    "host_bridge.cpp": {
+      "original_absolute_path": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\hls\\host_bridge.cpp",
+      "snapshot_relative_path": "source/host_bridge.cpp",
+      "sha256": "a8cfe5dc62eb66fa3e3102e4d12eb75a265abbea20e04e4d5b104cecfc480740",
+      "bytes": 503
+    },
+    "testbench.cpp": {
+      "original_absolute_path": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\hls\\testbench.cpp",
+      "snapshot_relative_path": "source/testbench.cpp",
+      "sha256": "d6a717629d812901e22bd2ebe5d2e4b051cf49f99abe139d17a534f9336b97b1",
+      "bytes": 7358
+    },
+    "validate_cpp_parallel.py": {
+      "original_absolute_path": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\tools\\validate_cpp_parallel.py",
+      "snapshot_relative_path": "source/validate_cpp_parallel.py",
+      "sha256": "46684d8bce47480112a329e59f15f826b47991d134998cc69bb26a2ce99779be",
+      "bytes": 13672
+    },
+    "validate_payload.py": {
+      "original_absolute_path": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\tools\\validate_payload.py",
+      "snapshot_relative_path": "source/validate_payload.py",
+      "sha256": "3cc660a124ebc4667118dde7372d64d62a33418517c29589b4d4a53d8fc284cd",
+      "bytes": 16171
+    }
+  },
+  "chain": {
+    "source_snapshot": "sha256 in source_snapshot",
+    "compile_dll": "commands/compile_dll.json",
+    "compile_tb": "commands/compile_tb.json",
+    "candidate_dll": "build/ffn_host_r03_20261018.dll",
+    "testbench_exe": "build/testbench_r03_20261018.exe",
+    "testbench_run": "commands/testbench.json",
+    "regression_run": "commands/regression.json",
+    "regression_report": "results/host_payload_regression_r03_20261018_final2.json"
+  },
+  "compile": {
+    "dll": {
+      "source_files": [
+        "source/ffn_accel.cpp",
+        "source/host_bridge.cpp"
+      ],
+      "command_record": "commands/compile_dll.json",
+      "command": [
+        "D:\\Programs\\TDM-GCC-64\\bin\\g++.exe",
+        "-std=c++11",
+        "-O2",
+        "-ffp-contract=off",
+        "-Wno-unknown-pragmas",
+        "-shared",
+        "-static-libgcc",
+        "-static-libstdc++",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\source\\ffn_accel.cpp",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\source\\host_bridge.cpp",
+        "-o",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\build\\ffn_host_r03_20261018.dll"
+      ],
+      "exit_code": 0,
+      "output_path": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\build\\ffn_host_r03_20261018.dll",
+      "output_sha256": "47c03187c6f561da3273b41ba9ec86aa74a1c8268fa8c775cb2145a65da59338",
+      "output_bytes": 126347
+    },
+    "testbench": {
+      "source_files": [
+        "source/ffn_accel.cpp",
+        "source/testbench.cpp"
+      ],
+      "command_record": "commands/compile_tb.json",
+      "command": [
+        "D:\\Programs\\TDM-GCC-64\\bin\\g++.exe",
+        "-std=c++11",
+        "-O2",
+        "-ffp-contract=off",
+        "-Wno-unknown-pragmas",
+        "-static-libgcc",
+        "-static-libstdc++",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\source\\ffn_accel.cpp",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\source\\testbench.cpp",
+        "-o",
+        "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\build\\testbench_r03_20261018.exe"
+      ],
+      "exit_code": 0,
+      "output_path": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\build\\testbench_r03_20261018.exe",
+      "output_sha256": "9e783c30c0cc6d34cdf0e1d0ee1780c8f686b5fa30dc85db0071a0e46589cac5",
+      "output_bytes": 2935720
+    }
+  },
+  "testbench_run": {
+    "command_record": "commands/testbench.json",
+    "exit_code": 0,
+    "passed": true,
+    "test_lines": [
+      "PASS small/boundary tokens=1 max_abs=7.43869e-07 tail_abs=7.43869e-07",
+      "PASS small/boundary tokens=2 max_abs=1.47476e-06 tail_abs=1.47476e-06",
+      "PASS small/boundary tokens=3 max_abs=1.47476e-06 tail_abs=8.18542e-07",
+      "PASS small/boundary tokens=4 max_abs=1.47476e-06 tail_abs=9.82648e-07",
+      "PASS small/boundary tokens=5 max_abs=1.47476e-06 tail_abs=9.38147e-07",
+      "PASS small/boundary tokens=7 max_abs=1.8403e-06 tail_abs=1.8403e-06",
+      "PASS small/boundary tokens=8 max_abs=1.8403e-06 tail_abs=7.45098e-07",
+      "PASS small/boundary tokens=9 max_abs=1.8403e-06 tail_abs=1.37338e-06",
+      "PASS near-maximum tokens=659 max_abs=2.22897e-06 tail_abs=1.49152e-06",
+      "PASS camera-A tokens=660 max_abs=2.22897e-06 tail_abs=8.08659e-07",
+      "PASS camera-B/reload tokens=660 max_abs=1.89373e-06 tail_abs=5.63358e-07",
+      "PASS cross-A/reload tokens=4 max_abs=1.46859e-06 tail_abs=1.46859e-06",
+      "PASS cross-B/reload tokens=4 max_abs=1.39514e-06 tail_abs=7.48595e-07",
+      "PASS camera-A/revisit tokens=1 max_abs=7.43869e-07 tail_abs=7.43869e-07",
+      "PASS zero tokens=4 max_abs=0 tail_abs=0",
+      "PASS bias/exact-erf tokens=4 max_abs=6.26898e-07 tail_abs=6.26898e-07",
+      "PASS invalid tokens=0 no buffer accesses",
+      "PASS invalid tokens=661 no buffer accesses",
+      "PASS invalid tokens=4294967295 no buffer accesses"
+    ]
+  },
+  "regression": {
+    "command_record": "commands/regression.json",
+    "exit_code": 0,
+    "validator_script": "source/validate_cpp_parallel.py",
+    "validator_script_sha256": "46684d8bce47480112a329e59f15f826b47991d134998cc69bb26a2ce99779be",
+    "baseline_library": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\baseline_host\\ffn_host.dll",
+    "baseline_library_sha256": "9279c4d866c1d0cab487730ab4972787c536af51a346158d545dd3128bf8558a",
+    "candidate_library": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\build\\ffn_host_r03_20261018.dll",
+    "candidate_library_sha256": "47c03187c6f561da3273b41ba9ec86aa74a1c8268fa8c775cb2145a65da59338",
+    "report": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\results\\host_payload_regression_r03_20261018_final2.json",
+    "report_sha256": "09b3696a6715bacad71fefb5ba0d476006765fdc6ff4b8e639512ddd740ba365",
+    "summary": {
+      "report_status": "pass",
+      "synthetic_cases": 19,
+      "synthetic_pass": 19,
+      "synthetic_bit_mismatches": 0,
+      "synthetic_elements": 262656,
+      "real_frames": 173,
+      "real_frames_pass": 173,
+      "real_layer_bit_mismatches": 0,
+      "real_layer_elements": 29407232,
+      "real_integer_mismatches": 0,
+      "model_sha256": "ad58d1fc9168da94b9ce076ba8cc9754c371ead87974da8bc9cc601ad1650d5b",
+      "zip_sha256": "52d10ff0ab25d80fa648abb2bd0a308eb0234db12255e30d43d75caba832b30a",
+      "candidate_dll_sha256": "47c03187c6f561da3273b41ba9ec86aa74a1c8268fa8c775cb2145a65da59338",
+      "baseline_dll_sha256": "9279c4d866c1d0cab487730ab4972787c536af51a346158d545dd3128bf8558a"
+    }
+  },
+  "unmodified_prior_artifacts": {
+    "candidate_r02_host_untouched": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\candidate_r02_host",
+    "baseline_host_used_in_place": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\baseline_host"
+  },
+  "harness_script": {
+    "path": "run_host_validation.py",
+    "sha256": "20cc9b8d1cd8f79d0915c893f26351f8150db23c4eb729e32dd80731b352a3e4"
+  },
+  "preserved_failed_attempts": [
+    {
+      "attempt": 1,
+      "command_record": "commands/regression_attempt1_failed.json",
+      "command_record_sha256": "04f6237e8fbbc213df9414e22a941fb101e75afda80238738922cfaef00ea96c",
+      "log": "logs/regression_attempt1_failed.log",
+      "log_sha256": "d9cf42e59c58d7a629de8f59285cd24493d61dd034af8353739636677bcb8c44",
+      "exit_code": 1,
+      "error_summary": "ModuleNotFoundError: No module named ps (snapshot script dir on sys.path)",
+      "partial_report": "results/host_payload_regression_r03_20261018.attempt1_failed.json",
+      "partial_report_sha256": "680288576107c90b6cd5979698a6b6165d8a7fbd869f00f8dc1d7316900a5bf3"
+    },
+    {
+      "attempt": 2,
+      "command_record": "commands/regression_attempt2_failed.json",
+      "command_record_sha256": "89d315f91511c008f8a39077c1af9672780d6ad31f44a2819c6308a89727dc35",
+      "log": "logs/regression_attempt2_failed.log",
+      "log_sha256": "1bd43dc4715ae226f6025d5aace88e11cab55b53f2ce432cdc4509073ea4d805",
+      "exit_code": 1,
+      "error_summary": "FileExistsError: validator opens --output in x mode"
+    },
+    {
+      "attempt": 3,
+      "command_record": "commands/regression_attempt3_failed.json",
+      "command_record_sha256": "540cce270b381cd5c9c787be9686100eb8770848a3d597964cab6b168d8fcb2c",
+      "log": "logs/regression_attempt3_failed.log",
+      "log_sha256": "4fc56e8d3528328578a860eb1eb15109cefd5990c2e588d65aeec7acc392fb28",
+      "exit_code": 1,
+      "error_summary": "ModuleNotFoundError: No module named ps (before PYTHONPATH fix)",
+      "partial_report": "results/host_payload_regression_r03_20261018_final.attempt3_failed.json",
+      "partial_report_sha256": "d35c4506f92d05af7960981dda90e557e06917eee7b63667d3741cb8d34cae35"
+    }
+  ],
+  "final_evidence_note": "Final run is the 4th regression attempt; commands/regression.json and results/host_payload_regression_r03_20261018_final2.json are the authoritative pair. Earlier failures are preserved with exit code 1."
+}

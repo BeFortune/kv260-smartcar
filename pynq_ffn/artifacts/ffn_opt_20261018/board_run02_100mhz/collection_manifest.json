@@ -1,0 +1,21 @@
+{
+  "scope": "completed authorized PL0-only 10->15 retest at about 100 MHz; no camera/serial/vehicle",
+  "files": {
+    "retest100/deployment_manifest.json": {
+      "bytes": 3502,
+      "sha256": "d5d227fca6aefc818fa5247adda250c814b47243911f678bc81cf03695cb5868"
+    },
+    "retest100/deploy/board_validate.py": {
+      "bytes": 47956,
+      "sha256": "c45449e6923ee827b9e6fe499028812ae855333dcd08623eb651e5d65357da8b"
+    },
+    "validation_run02_100mhz/report.json": {
+      "bytes": 78338,
+      "sha256": "1705595ae5374b90c86bda4e661b397dc0867e80c8f56335c5bbd9ba94748312"
+    },
+    "validation_run02_100mhz/events.jsonl": {
+      "bytes": 1068945,
+      "sha256": "23c432cbd56a8d1fc10efdec5f4b0cb6615d1a97c3a80fb495a2bfafec7b6b29"
+    }
+  }
+}

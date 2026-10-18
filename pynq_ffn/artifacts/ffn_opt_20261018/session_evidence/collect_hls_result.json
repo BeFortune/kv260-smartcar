@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"archive\": \"D:\\\\ffn_build_opt\\\\evidence_20261018\\\\hls_evidence.zip\",\n  \"files\": 193,\n  \"bytes\": 958113,\n  \"sha256\": \"a9aba691b8c343cd4cb2af2f2b4725ca522038be2782e989e5fedf8128d910ef\"\n}\n[exit code: 0]"
+    }
+  ]
+}

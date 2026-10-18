@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-18",
+  "cwd": "C:/Users/BeFortuneEX/Source/Repos/FPGA",
+  "command": [
+    "C:/Users/BeFortuneEX/.zcode/tmp/ffn_opt_20261017/venv/Scripts/python.exe",
+    "-B", "-m", "pytest", "C:/Users/BeFortuneEX/Source/Repos/FPGA/pynq_ffn/tests", "-q", "-rs", "-p", "no:cacheprovider",
+    "--junitxml=C:/Users/BeFortuneEX/Source/Repos/FPGA/pynq_ffn/artifacts/ffn_opt_20261018/software_regression.xml"
+  ],
+  "exit_code": 0,
+  "status": "已验证",
+  "passed": 48,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "pytest_reported_duration_seconds": 1.9,
+  "scope": "host software regression only; not hardware verification",
+  "record_note": "Transcribed after actual tool execution from its return and XML, not a fabricated subprocess transcript"
+}

@@ -5,6 +5,9 @@ namespace ffn_config {
 constexpr unsigned int input_dim = 128;
 constexpr unsigned int hidden_dim = 256;
 constexpr unsigned int max_tokens = 660;
+constexpr unsigned int output_lanes = 16;
+static_assert(input_dim % output_lanes == 0 && hidden_dim % output_lanes == 0,
+              "Output lanes must evenly tile both fixed dimensions.");
 }
 
 // Row-major, float32 buffers; one weight set per invocation.

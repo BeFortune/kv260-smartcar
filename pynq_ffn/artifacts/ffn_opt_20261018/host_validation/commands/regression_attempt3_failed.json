@@ -1,0 +1,25 @@
+{
+  "stage": "regression",
+  "command": [
+    "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\source\\validate_cpp_parallel.py",
+    "--baseline-library",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\baseline_host\\ffn_host.dll",
+    "--candidate-library",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\build\\ffn_host_r03_20261018.dll",
+    "--bundle",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\bundle_20261014",
+    "--zip",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\kv260_v1\\v1_payload.zip",
+    "--output",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\results\\host_payload_regression_r03_20261018_final.json"
+  ],
+  "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+  "started": "2026-10-18T00:38:53.144839+08:00",
+  "ended": "2026-10-18T00:38:54.106186+08:00",
+  "exit_code": 1,
+  "stdout": "{\"status\": \"failed\", \"output\": \"C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\artifacts\\\\ffn_opt_20261018\\\\host_validation\\\\results\\\\host_payload_regression_r03_20261018_final.json\", \"synthetic_cases\": 19, \"payload_frames\": 0}\r\n",
+  "stderr": "Traceback (most recent call last):\r\n  File \"C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\source\\validate_cpp_parallel.py\", line 243, in main\r\n    report[\"payload\"] = (payload_replay(baseline, candidate, args.bundle, args.zip_path)\r\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\source\\validate_cpp_parallel.py\", line 123, in payload_replay\r\n    from ps.preprocess import preprocess_arrays\r\nModuleNotFoundError: No module named 'ps'\r\n\r\n",
+  "combined_log": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\logs\\regression.log",
+  "combined_log_sha256": "4fc56e8d3528328578a860eb1eb15109cefd5990c2e588d65aeec7acc392fb28"
+}

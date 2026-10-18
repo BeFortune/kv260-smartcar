@@ -1,0 +1,268 @@
+<ENTRY>
+{
+ "thisFile": "D:/f3\\hls\\build\\ffn_accel_modern\\ffn_accel_modern.hlsrun_impl_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "10/17/26 22:45:01",
+ "timestampMillis": "1792248301529",
+ "buildStep": {
+  "cmdId": "185da0bf-7278-4684-b218-58ef4b12e64c",
+  "name": "vitis-run",
+  "logFile": "D:/f3\\hls\\build\\ffn_accel_modern\\logs\\ffn_accel_modern.steps.log",
+  "commandLine": "D:/Learning/AMDDesignTools/2026.1/Vitis/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --config D:/f3/hls/build/hls_config.cfg --work_dir D:/f3/hls/build/ffn_accel_modern --impl ",
+  "args": [
+   "--mode",
+   "hls",
+   "--config",
+   "D:/f3/hls/build/hls_config.cfg",
+   "--work_dir",
+   "D:/f3/hls/build/ffn_accel_modern",
+   "--impl"
+  ],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\JW"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "10/17/26 22:45:01",
+ "timestampMillis": "1792248301529",
+ "status": {
+  "cmdId": "185da0bf-7278-4684-b218-58ef4b12e64c",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "10/17/26 22:45:04",
+ "timestampMillis": "1792248304098",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_IMPL",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "ffn_accel",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "D:/f3\\hls\\ffn_accel.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2026.1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "10/17/26 22:45:04",
+ "timestampMillis": "1792248304098",
+ "buildStep": {
+  "cmdId": "80c5ed08-f15e-40f3-8e4c-c7c152b69285",
+  "name": "",
+  "logFile": "D:/f3\\hls\\build\\ffn_accel_modern\\hls\\hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "D:\\f3\\hls\\build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "10/17/26 22:45:04",
+ "timestampMillis": "1792248304098",
+ "status": {
+  "cmdId": "80c5ed08-f15e-40f3-8e4c-c7c152b69285",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/17/26 22:45:04",
+ "timestampMillis": "1792248304099",
+ "report": {
+  "path": "D:/f3\\hls\\build\\ffn_accel_modern\\hls\\impl\\verilog",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_RTL_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/17/26 22:45:04",
+ "timestampMillis": "1792248304100",
+ "report": {
+  "path": "D:/f3\\hls\\build\\ffn_accel_modern\\hls\\impl\\report\\verilog\\export_syn.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_RTL_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/17/26 22:45:04",
+ "timestampMillis": "1792248304100",
+ "report": {
+  "path": "D:/f3\\hls\\build\\ffn_accel_modern\\hls\\impl\\report\\verilog\\export_syn.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "HLS_RTL_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/17/26 22:45:04",
+ "timestampMillis": "1792248304100",
+ "report": {
+  "path": "D:/f3\\hls\\build\\ffn_accel_modern\\hls\\impl\\verilog",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_PLACE_AND_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/17/26 22:45:04",
+ "timestampMillis": "1792248304100",
+ "report": {
+  "path": "D:/f3\\hls\\build\\ffn_accel_modern\\hls\\impl\\report\\verilog\\export_impl.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_PLACE_AND_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/17/26 22:45:04",
+ "timestampMillis": "1792248304100",
+ "report": {
+  "path": "D:/f3\\hls\\build\\ffn_accel_modern\\hls\\impl\\report\\verilog\\export_impl.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "HLS_PLACE_AND_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/17/26 22:59:54",
+ "timestampMillis": "1792249194164",
+ "report": {
+  "path": "D:/f3\\hls\\build\\ffn_accel_modern\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_RTL_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/17/26 22:59:54",
+ "timestampMillis": "1792249194165",
+ "report": {
+  "path": "D:/f3\\hls\\build\\ffn_accel_modern\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_PLACE_AND_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "10/17/26 22:59:54",
+ "timestampMillis": "1792249194165",
+ "status": {
+  "cmdId": "80c5ed08-f15e-40f3-8e4c-c7c152b69285",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "10/17/26 22:59:54",
+ "timestampMillis": "1792249194232",
+ "status": {
+  "cmdId": "185da0bf-7278-4684-b218-58ef4b12e64c",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/17/26 22:59:54",
+ "timestampMillis": "1792249194232",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/17/26 22:59:54",
+ "timestampMillis": "1792249194232",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

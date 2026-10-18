@@ -1,0 +1,28 @@
+{
+  "stage": "regression",
+  "command": [
+    "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\source\\validate_cpp_parallel.py",
+    "--baseline-library",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261017\\baseline_host\\ffn_host.dll",
+    "--candidate-library",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\build\\ffn_host_r03_20261018.dll",
+    "--bundle",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\bundle_20261014",
+    "--zip",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\kv260_v1\\v1_payload.zip",
+    "--output",
+    "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\results\\host_payload_regression_r03_20261018_final2.json"
+  ],
+  "cwd": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn",
+  "started": "2026-10-18T00:39:39.005035+08:00",
+  "ended": "2026-10-18T00:40:20.189155+08:00",
+  "exit_code": 0,
+  "stdout": "payload frames=10 status=pass\r\npayload frames=20 status=pass\r\npayload frames=30 status=pass\r\npayload frames=40 status=pass\r\npayload frames=50 status=pass\r\npayload frames=60 status=pass\r\npayload frames=70 status=pass\r\npayload frames=80 status=pass\r\npayload frames=90 status=pass\r\npayload frames=100 status=pass\r\npayload frames=110 status=pass\r\npayload frames=120 status=pass\r\npayload frames=130 status=pass\r\npayload frames=140 status=pass\r\npayload frames=150 status=pass\r\npayload frames=160 status=pass\r\npayload frames=170 status=pass\r\n{\"status\": \"pass\", \"output\": \"C:\\\\Users\\\\BeFortuneEX\\\\Source\\\\Repos\\\\FPGA\\\\pynq_ffn\\\\artifacts\\\\ffn_opt_20261018\\\\host_validation\\\\results\\\\host_payload_regression_r03_20261018_final2.json\", \"synthetic_cases\": 19, \"payload_frames\": 173}\r\n",
+  "stderr": "",
+  "combined_log": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\host_validation\\logs\\regression.log",
+  "combined_log_sha256": "36e977ec741f69d05fa49cb2f7c700b65d5139161045fc1b0fabae8338379a26",
+  "environment_overrides": {
+    "PYTHONPATH": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn;"
+  }
+}

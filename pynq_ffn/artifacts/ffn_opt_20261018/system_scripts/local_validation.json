@@ -1,0 +1,45 @@
+{
+  "start": "2026-10-17T16:20:43.569520+00:00",
+  "end": "2026-10-17T16:20:44.316201+00:00",
+  "python": "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+  "python_version": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+  "test_exit_code": 0,
+  "test_log": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\system_scripts\\local_validation.log",
+  "test_count": 9,
+  "python_compile": "passed",
+  "real_ip_sha256": "de24cf176e36e8ddf8aea03db02faa9b218133e799cd8ba0289c722a29c5e56b",
+  "real_ip_verification": {
+    "identity": [
+      "xilinx.com",
+      "hls",
+      "ffn_accel",
+      "1.0"
+    ],
+    "address_ports": {
+      "m_axi_gmem0_ARADDR": 64,
+      "m_axi_gmem0_AWADDR": 64,
+      "m_axi_gmem1_ARADDR": 64,
+      "m_axi_gmem1_AWADDR": 64
+    }
+  },
+  "static_ps_validator_ast_equal": true,
+  "frozen_scripts": {
+    "run_system.py": "93056045f0de6c5bd11d50d93564799fa28db5a8ffc72e8ab2f02037fbe8367a",
+    "create_overlay_bd.tcl": "0a9a5b712fb651b34267ac6616aeb72fd9c8f8fe9a1def88bbd9212c37e227ee",
+    "run_overlay_synth.tcl": "aaffb28590ed1b2e2e1f77f32b23529dcb696a82be7bb4a837e664ac9873fc59",
+    "run_overlay_impl.tcl": "c33c4cad794bb2b60898fc65ff91f27fe0b196d8bedbfad17b0c4bf9c1b3a96c",
+    "finalize_bit_xsa.tcl": "c865dd86879085df3eefc486e2dd33c790e648971439004af5dfdbc43b844cfc",
+    "gate_overlay.tcl": "667bad69423a14f31db1328e145d1a897111e3308cfb837bb54f907a5620d6d8",
+    "extract_verify_hwh.py": "9caf6907dfb6f997a8afaa2ccd9142585f15784e00fe63333f0388f931ef40e1",
+    "abi_reference.py": "99b32eda4ef4f047c6728d8683d2b9d8dfeb7de265763c15b2642969520d7106",
+    "stage_entry.tcl": "eda3da0ccc092cf5d053a1dabe6687f9342a9168fd8fcd47130451970c0f13f5"
+  },
+  "tcl_validation": "static text only; Vivado NOT executed",
+  "not_executed": [
+    "SSH",
+    "remote Vivado BD/synth/impl/export",
+    "board access",
+    "PYNQ import",
+    "PL numerical/performance"
+  ]
+}

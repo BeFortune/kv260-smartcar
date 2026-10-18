@@ -1,0 +1,96 @@
+{
+  "schema": "pynq_ffn.retest100.final.v1",
+  "date": "2026-10-18",
+  "supersedes_current_state_only": "artifacts/ffn_opt_20261018/final_status_manifest.json; original run01 preserved",
+  "authorization": "only PL0 DIVISOR0 10->15 and repeat offline verification; no other clocks, overlay reprogramming or new optimizations",
+  "status": "已验证",
+  "goal_acceleration": "失败",
+  "clock_mhz": 99.999,
+  "board_test_exit_code": 0,
+  "board_state_last_observed": {
+    "loaded_bit_sha256": "c67dd63ccd579ab105840a30c4ca1a61715a26b7631cc323473328a821319eb1",
+    "ctrl_raw": "0x4",
+    "idle": true,
+    "pl0_ref_ctrl": "0x01010f00",
+    "iopll_ctrl": "0x00015a00",
+    "acpu_ctrl": "0x03000100",
+    "overlay_downloads_this_round": 0,
+    "single_field_clock_write": true,
+    "buffer_release": "normal",
+    "timeout_or_quarantine": false
+  },
+  "numeric": {
+    "layer_cases": 36,
+    "frames": 117,
+    "all_integer_speeds_match": true,
+    "max_layer_abs_error": 7.450580596923828e-08,
+    "max_speed_raw_abs_error": 0.0001220703125
+  },
+  "four_thread_run_p50_ms": {
+    "golden": 64.7385609918274,
+    "split-ort": 318.34088102914393,
+    "split-pl": 372.2186600207351
+  },
+  "split_pl_vs_golden_run_p50_slowdown": 5.749566476581462,
+  "scope": "117 recorded inputs per timing condition; 3 warmups; same per-mode input/thread settings; not live or long-stability testing",
+  "not_executed": [
+    "new HLS or ORT optimizations",
+    "model or preprocessing changes",
+    "full 659/660-token RTL cosim",
+    "live camera",
+    "serial/motor/vehicle",
+    "power/thermal/long-stability qualification",
+    "boot/CMA/firmware/service configuration",
+    "commit/push"
+  ],
+  "files": {
+    "hls/ffn_accel.cpp": {
+      "bytes": 5346,
+      "sha256": "829c9ec63604e327ad4ea13855b405113ea74fea6a62721d512ded6341b0b9b6"
+    },
+    "hls/ffn_accel.hpp": {
+      "bytes": 694,
+      "sha256": "715f0ca11cc5e9920569654f7296c8443a0186f988557bd27ec1af3f476c7c35"
+    },
+    "artifacts/ffn_opt_20261018/board_evidence_run02_100mhz.zip": {
+      "bytes": 299920,
+      "sha256": "7b820017172a015315de54a15a7bdc8e27c4d148c1b4f0a86355fc409408d7cb"
+    },
+    "artifacts/ffn_opt_20261018/board_run02_100mhz_summary.json": {
+      "bytes": 26881,
+      "sha256": "528aa1a3ea19f0231230e18a6988b518340a3bd8734c5e55c16bd84268750768"
+    },
+    "artifacts/ffn_opt_20261018/board_run02_100mhz/validation_run02_100mhz/report.json": {
+      "bytes": 78338,
+      "sha256": "1705595ae5374b90c86bda4e661b397dc0867e80c8f56335c5bbd9ba94748312"
+    },
+    "artifacts/ffn_opt_20261018/board_run02_100mhz/validation_run02_100mhz/events.jsonl": {
+      "bytes": 1068945,
+      "sha256": "23c432cbd56a8d1fc10efdec5f4b0cb6615d1a97c3a80fb495a2bfafec7b6b29"
+    },
+    "artifacts/ffn_opt_20261018/board_scripts/pl0_retest_v3/board_validate.py": {
+      "bytes": 47956,
+      "sha256": "c45449e6923ee827b9e6fe499028812ae855333dcd08623eb651e5d65357da8b"
+    },
+    "artifacts/ffn_opt_20261018/board_scripts/pl0_retest_v3/tests_02.xml": {
+      "bytes": 12099,
+      "sha256": "0ad985ca77149937ae0292f85ae2b14e7c30c74b87cc51712f8b54bef9b91732"
+    },
+    "artifacts/ffn_opt_20261018/retest100_package/package.json": {
+      "bytes": 623,
+      "sha256": "f3ac54e42dd7bf6a3e719bd3e3ae2ecf0c5f4f315758dfdf4211abb6d141d5b6"
+    },
+    "artifacts/ffn_opt_20261018/retest100_package/authorization.md": {
+      "bytes": 1764,
+      "sha256": "a9179bd40b97acdc4478eaef771a98fa245dcfa9f29d71b7dadfcb6b3f9b688e"
+    },
+    "artifacts/ffn_opt_20261018/retest100_session_evidence/clock_retest_final_state_result.json": {
+      "bytes": 1271,
+      "sha256": "c6984253aab3d2368d67b0657321c28270c7afb1117d57e488da8c70d66c1738"
+    },
+    "artifacts/ffn_opt_20261018/parallelism_bottleneck_analysis.md": {
+      "bytes": 11523,
+      "sha256": "91a42532049a3279edb619cc25a5e3d3e58106b9fe65a4b434aed54d20157089"
+    }
+  }
+}

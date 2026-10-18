@@ -1,0 +1,74 @@
+{
+  "schema": "ffn_board.validation.v1",
+  "date_utc": "2026-10-17T16:34:07.745582+00:00",
+  "status": "失败",
+  "phases": {
+    "static": {
+      "status": "失败",
+      "date_utc": "2026-10-17T16:34:07.880119+00:00"
+    },
+    "hardware": {
+      "status": "未执行"
+    },
+    "references": {
+      "status": "未执行"
+    },
+    "layers": {
+      "status": "未执行"
+    },
+    "regression": {
+      "status": "未执行"
+    },
+    "performance": {
+      "status": "未执行"
+    }
+  },
+  "dependencies": {
+    "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+    "executable": "C:\\Users\\BeFortuneEX\\.zcode\\tmp\\ffn_opt_20261017\\venv\\Scripts\\python.exe",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "machine": "AMD64",
+    "packages": {
+      "numpy": "1.26.4",
+      "onnxruntime": "1.20.1",
+      "pynq": null,
+      "opencv-python": null,
+      "opencv-python-headless": "4.10.0.84"
+    },
+    "memory": {}
+  },
+  "arguments": {
+    "root": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\board_scripts\\test_runs_01\\test_static_hash_tampering_blo0\\deployment",
+    "deployment_manifest": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\board_scripts\\test_runs_01\\test_static_hash_tampering_blo0\\external.json",
+    "manifest_sha256": "ec87b7bdfcb9b2cd4cd1d7287808e8b64ecc10310f26cfdd2eee16a24a7fefff",
+    "bit": "overlay/ffn_overlay_wrapper.bit",
+    "bit_sha256": "479b9049862984a741568e334532a9e6b4ebc8a76caa9949757f98b5e192cd3f",
+    "hwh_sha256": "bc305bab1cf1201bd3182aab2872694fa3d31e7ba54334fbc8e5ed2507fdcf70",
+    "output_dir": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\board_scripts\\test_runs_01\\test_static_hash_tampering_blo0\\result",
+    "allow_pl": false,
+    "stage": "all",
+    "ip_name": "ffn_accel_0",
+    "recording": [],
+    "expected_frames": [],
+    "threads": [
+      1,
+      4
+    ],
+    "warmup": 3,
+    "timing_frames": null,
+    "timing_recording_index": -1,
+    "timeout_s": 60.0
+  },
+  "hardware_execution": false,
+  "not_executed": [
+    "camera",
+    "serial",
+    "vehicle",
+    "live_frame_freshness",
+    "overlay_reset_or_timeout_recovery",
+    "task_accuracy"
+  ],
+  "scope": "recorded inputs; throughput is NOT live inference/fresh-frame rate; joystick labels are NOT task accuracy",
+  "error_type": "ValueError",
+  "error": "Deployment member hash/size mismatch: ps/runtime.py"
+}

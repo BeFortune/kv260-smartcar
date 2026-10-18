@@ -1,0 +1,20 @@
+{
+  "hosts": [
+    {
+      "sessionId": "905f67ce-cc58-442f-860e-83667f8fd06d",
+      "hostname": "192.168.9.101",
+      "label": "飞牛ts",
+      "connected": true,
+      "hostId": "baf8cb46-8b4d-449d-bedb-fd91a226eee1",
+      "os": "linux"
+    },
+    {
+      "sessionId": "c9e7b065-6649-46a0-b556-8497de4f9310",
+      "hostname": "192.168.110.248",
+      "label": "4090内网",
+      "connected": true,
+      "hostId": "cc06fd18-1b33-4ef1-b44f-2c0f063bedd8",
+      "os": "windows"
+    }
+  ]
+}

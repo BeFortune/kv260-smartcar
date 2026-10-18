@@ -1,0 +1,98 @@
+{
+  "schema": "ffn_board.deployment.v1",
+  "scope": "explicit PL0 DIV0 10->15 only; reuse programmed r03; recorded inputs; no camera/serial/vehicle",
+  "files": {
+    "board_validate.py": {
+      "sha256": "c45449e6923ee827b9e6fe499028812ae855333dcd08623eb651e5d65357da8b",
+      "bytes": 47956
+    },
+    "bundle/ABI.json": {
+      "sha256": "2be276fe46733e5f746fcabae7e249595088d19bd7060e9bda56b246f0f37be9",
+      "bytes": 9232
+    },
+    "bundle/camera_0.onnx": {
+      "sha256": "0ebf5a5309df686d4a6b21ea057ca36edb42a1de233b31f09be6bcab6a773a90",
+      "bytes": 266136
+    },
+    "bundle/camera_1.onnx": {
+      "sha256": "67cf178351805292ace31a63b9936889fd563b5a61896d7d838a4b1344315018",
+      "bytes": 266136
+    },
+    "bundle/cross_0.onnx": {
+      "sha256": "0b5ad044410fbc32279365addfc7edee92fb20afc0841fea2a520b90b5700665",
+      "bytes": 266010
+    },
+    "bundle/cross_1.onnx": {
+      "sha256": "fa7d65aa5682dbebd4192f73edf30b7ed4d87eac2ccce995c8df631d3ca14828",
+      "bytes": 266010
+    },
+    "bundle/manifest.json": {
+      "sha256": "de727e32df9f1ebd0fe84bac0d33cc8e786a5962053dc746b955b175527f4b77",
+      "bytes": 1937
+    },
+    "bundle/model.onnx": {
+      "sha256": "ad58d1fc9168da94b9ce076ba8cc9754c371ead87974da8bc9cc601ad1650d5b",
+      "bytes": 2779255
+    },
+    "bundle/stage_0.onnx": {
+      "sha256": "e67e0a2ac4b4de22fa59c12f7efc762afc39009a66f05998e36b69e641c69019",
+      "bytes": 491415
+    },
+    "bundle/stage_1.onnx": {
+      "sha256": "1cc7316857e71b8e6769789a6dde9244617049de6dea04e137283fd64204aeab",
+      "bytes": 282353
+    },
+    "bundle/stage_2.onnx": {
+      "sha256": "78289a0ebe76b46026ceadc3749b63c5765c6b5d6618b48ce1fe17ba98c3a448",
+      "bytes": 284109
+    },
+    "bundle/stage_3.onnx": {
+      "sha256": "90c8f648b6d6b7e1a55f40932365a6f83f9c3992b3f970832f2f62cefe7ad999",
+      "bytes": 280919
+    },
+    "bundle/stage_4.onnx": {
+      "sha256": "933b70cce1ac6dd5731581e19c4b6cf619741c04cc4c0e13dd5ca8571a9bc2dd",
+      "bytes": 378985
+    },
+    "bundle/weights.npz": {
+      "sha256": "7401693d33963989cc8e73501c8a359652810f89bf0f3e2d5862201abef86fca",
+      "bytes": 1058790
+    },
+    "overlay/ffn_overlay_wrapper.bit": {
+      "sha256": "c67dd63ccd579ab105840a30c4ca1a61715a26b7631cc323473328a821319eb1",
+      "bytes": 7797910
+    },
+    "overlay/ffn_overlay_wrapper.hwh": {
+      "sha256": "f4040b704f14ab02ab25b5266226442541be1fc30cc6e786512d9a00ea675649",
+      "bytes": 274963
+    },
+    "ps/__init__.py": {
+      "sha256": "ec1b195299054cdbd0bd19b1f1da0bc22b52a84c9b914931ff0c9fcfdc3b0379",
+      "bytes": 154
+    },
+    "ps/backends.py": {
+      "sha256": "9dfa98b816521abd091473366a31f3bd00634a5b1ab4932f82fd93477036fe0f",
+      "bytes": 1576
+    },
+    "ps/partition.py": {
+      "sha256": "090545d2ef6df055f002f28bf5183fb23488da18c0115bc7aef1f6ed6a71d230",
+      "bytes": 11623
+    },
+    "ps/preprocess.py": {
+      "sha256": "6134e12a3a2f67d92c8b43f7801f21b0e9d570d0f153ce81ca75d623d8120ddb",
+      "bytes": 3564
+    },
+    "ps/pynq_backend.py": {
+      "sha256": "40df956f45d8c2a8f6caf6f09440684b07e4798512d96ff4579db3000e0b4bb7",
+      "bytes": 10142
+    },
+    "ps/replay.py": {
+      "sha256": "3ade1b1c097a1cd2551c953d946900bcc7df1bbb1b3debbd83c897a9dc588cb2",
+      "bytes": 4391
+    },
+    "ps/runtime.py": {
+      "sha256": "023327eadeaa935ec8392ec16095c6df2a1155368595afd37fe233b4cc6ed298",
+      "bytes": 6655
+    }
+  }
+}

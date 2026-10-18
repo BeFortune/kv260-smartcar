@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"jobId\": \"job_mvclvpvz_3808f5f74516\",\n  \"sessionId\": \"c9e7b065-6649-46a0-b556-8497de4f9310\",\n  \"status\": \"running\",\n  \"startedAt\": 1792254208463,\n  \"outputMode\": \"foreground-mirrored\",\n  \"recommendedPollIntervalMs\": 30000\n}"
+    }
+  ]
+}

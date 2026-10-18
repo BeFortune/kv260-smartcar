@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"status\": \"\\u5df2\\u9a8c\\u8bc1\", \"members\": 23, \"scope\": \"staging only; no hardware access\", \"root\": \"/home/ubuntu/ffn_opt_20261018/retest100/deploy\"}\n[exit code: 0]"
+    }
+  ]
+}
