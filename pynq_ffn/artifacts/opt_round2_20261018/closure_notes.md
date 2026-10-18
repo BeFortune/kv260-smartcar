@@ -42,6 +42,8 @@ ORT 约 5.3 倍改善是相对原来多会话空转争用严重的切图配置�
 
 ## 4. 归档与完整性
 
-最终状态和本次本地逐 SHA 检查见 [final_status.json](final_status.json)，生成方法见 [finalize_round2.py](finalize_round2.py)。它单独核对源码、冻结包、取回的原始证据和退出码，不覆盖旧报告。
+最终状态和本次本地逐 SHA 检查见 [final_status_v2.json](final_status_v2.json)，生成方法见 [finalize_round2.py](finalize_round2.py)。它单独核对源码、冻结包、取回的原始证据和退出码，不覆盖旧报告。最终校验覆盖 ORT 实验 144 份、生产复验 21 份、HLS 191 份原始文件，压缩包成员和本地副本均一致。
+
+首次收尾检查退出码为 1，保留在 [final_status.json](final_status.json)：检查器错误要求 ORT 的 `manifest.json` 必须另行解压，而该清单实际上完好保留在原始 ZIP 中。这是新检查器的路径假设错误，不是实验失败。修正为从不可变 ZIP 读取清单、逐个核对归档成员和现有本地副本后，第二次检查退出码为 0；没有重新下载、删除、解压覆盖或改写原始证据。
 
 `inputs.npy` 未取回本机；只核对归档中已记录的输入哈希一致性，不声称本机重新哈希了该输入张量。归档中的 `hardware_execution: false` 指这轮未执行 PL 计算，不否认 CPU 测试实际运行于 KV260。
