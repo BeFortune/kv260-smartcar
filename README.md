@@ -1,3 +1,5 @@
+> 2026-10-19：当前路线与状态见 [STATUS.md](STATUS.md)。
+
 # kv260-smartcar
 CRAIC smart car: NUC to KV260 migration (PYNQ / ONNX / FPGA acceleration), STM32 keeps motor control
 
