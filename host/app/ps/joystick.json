@@ -1,0 +1,11 @@
+{
+  "platform": "kv260",
+  "verified": "2026-10-22",
+  "description": "手柄接收器固定在扩展坞 A 的 2 号口 1-1.2.2，XBOX 360 模式（413d:2104），由 xpad 驱动生成 /dev/input/jsN。只认 USB 口，不认 js0 这种会变的名字。按键编号为 2026-10-22 板上实测：Back=6、Start=7（第二次核对确认，和 NUC 旧代码一致；上午读到的 7 是按到了 Start），右摇杆按下为 10，A=0，B=1，十字键上下为轴 7。手柄超时自动关机时接收器会切到 2106 模式（HID zk），js0 随之消失，程序按停车处理；手柄唤醒后回到 2104，xpad 自动重绑。",
+  "port": "1-1.2.2",
+  "vendor_id": "413d",
+  "product_id": "2104",
+  "driver": "xpad 不认这个厂商号，需要 sudo modprobe xpad 后 echo 413d 2104 > /sys/bus/usb/drivers/xpad/new_id；重启后失效，开机自启时要加回来。",
+  "toggle_button": 6,
+  "stop_button": 10
+}

@@ -1,8 +1,0 @@
-{
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"pid\": \"1185\", \"executables\": [\"/usr/local/bin/redirect_server\"], \"server\": true}\nCMA ['CmaTotal:         262144 kB', 'CmaFree:           47460 kB']\n\nSUDO_STATUS\n[exit code: 0]"
-    }
-  ]
-}

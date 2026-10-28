@@ -1,9 +1,0 @@
-{
-  "archive": "C:\\Users\\BeFortuneEX\\Source\\Repos\\FPGA\\pynq_ffn\\artifacts\\ffn_opt_20261018\\board_deployment.zip",
-  "archive_sha256": "eb700b00a0f805cef8881381be183071a436af55f960fe67769ba220dbdc57a9",
-  "archive_bytes": 7163415,
-  "manifest_sha256": "f6e8810f9d6f286e677ffec36b570cf655c139cd18168ac42b6471de9d0948a2",
-  "members": 23,
-  "bit_sha256": "c67dd63ccd579ab105840a30c4ca1a61715a26b7631cc323473328a821319eb1",
-  "hwh_sha256": "f4040b704f14ab02ab25b5266226442541be1fc30cc6e786512d9a00ea675649"
-}

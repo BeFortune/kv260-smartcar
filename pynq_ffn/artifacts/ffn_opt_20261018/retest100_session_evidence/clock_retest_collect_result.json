@@ -1,8 +1,0 @@
-{
-  "content": [
-    {
-      "type": "text",
-      "text": "{\n  \"archive\": \"/home/ubuntu/ffn_opt_20261018/board_evidence_run02_100mhz.zip\",\n  \"bytes\": 299920,\n  \"sha256\": \"7b820017172a015315de54a15a7bdc8e27c4d148c1b4f0a86355fc409408d7cb\",\n  \"files\": 4\n}\n[exit code: 0]"
-    }
-  ]
-}

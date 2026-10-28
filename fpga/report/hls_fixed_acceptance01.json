@@ -1,0 +1,104 @@
+{
+  "status": "已验证",
+  "date": "2026-10-20",
+  "source_sha256": "91c17a3bf93e09103b68bc9ace6ec7efe148557fbdf8b0ec0e6219e8adb6af07",
+  "verified_archive_members": 402,
+  "stages": {
+    "csim": {
+      "status": "已验证",
+      "exit_code": 0,
+      "elapsed_s": 34.2
+    },
+    "csynth": {
+      "status": "已验证",
+      "exit_code": 0,
+      "elapsed_s": 81.4
+    },
+    "cosim": {
+      "status": "已验证",
+      "exit_code": 0,
+      "elapsed_s": 278.1
+    }
+  },
+  "ooc_exit_code": 0,
+  "ooc_wall_seconds": 1350.313,
+  "csim": {
+    "cases": 124,
+    "real_validation_cases": 120,
+    "other_cases": 4,
+    "bytes": 5356800,
+    "mismatches": 0
+  },
+  "cosim": {
+    "transactions": 4,
+    "cameras_per_transaction": 3,
+    "bytes": 172800,
+    "mismatches": 0,
+    "latency_cycles_min": 410922,
+    "latency_cycles_avg": 410984,
+    "latency_cycles_max": 411046
+  },
+  "csynth_estimates": {
+    "TargetClockPeriod": "10.00",
+    "EstimatedClockPeriod": "7.300",
+    "Best-caseLatency": "412297",
+    "Worst-caseLatency": "412297",
+    "Interval-min": "412298",
+    "Interval-max": "412298",
+    "BRAM_18K": "194",
+    "DSP": "748",
+    "FF": "57965",
+    "LUT": "66616",
+    "URAM": "26"
+  },
+  "postroute_resources": {
+    "CLB LUTs": {
+      "used": 21100,
+      "available": 117120,
+      "percent": 18.02
+    },
+    "CLB Registers": {
+      "used": 22784,
+      "available": 234240,
+      "percent": 9.73
+    },
+    "Block RAM Tile": {
+      "used": 95,
+      "available": 144,
+      "percent": 65.97
+    },
+    "URAM": {
+      "used": 26,
+      "available": 64,
+      "percent": 40.63
+    },
+    "DSPs": {
+      "used": 788,
+      "available": 1248,
+      "percent": 63.14
+    }
+  },
+  "routing": {
+    "routable nets": 76979,
+    "fully routed nets": 76979,
+    "nets with routing errors": 0
+  },
+  "timing": {
+    "target_ns": 10,
+    "wns_ns": 1.806,
+    "tns_ns": 0.0,
+    "whs_ns": 0.035,
+    "ths_ns": 0.0,
+    "external_inputs_without_delay": 122,
+    "external_outputs_without_delay": 250
+  },
+  "scope": "Single IP OOC at 100MHz; not system integration, board timing or PL acceleration validation",
+  "not_executed": [
+    "all120frames_RTL",
+    "postroute_functional_sim",
+    "system_integration",
+    "overlay_programming",
+    "board_PL",
+    "vehicle"
+  ]
+}

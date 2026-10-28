@@ -1,2 +1,0 @@
-PASS RTL-smoke/reduced-scope tokens=1 max_abs=7.43869e-07 tail_abs=7.43869e-07
-One-token reduced-scope RTL smoke test passed.

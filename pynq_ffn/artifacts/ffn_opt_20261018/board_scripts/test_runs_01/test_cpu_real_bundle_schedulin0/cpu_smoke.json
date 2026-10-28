@@ -1,1 +1,0 @@
-{"status": "\u5df2\u9a8c\u8bc1", "hardware_execution": false, "input": "synthetic images; real unchanged bundle", "frames_completed": [1], "output_atol": 0.001, "cumulative_cut_atol": 0.001, "rtol": 0, "integer_speed_exact_match": true}

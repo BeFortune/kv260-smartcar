@@ -1,0 +1,26 @@
+{
+ "frames": 117,
+ "kernel": "integer reference standing in for the PL (offline, x86)",
+ "pl_output_sha256_local": "fcea9f6cc578408622aaf77c7bc347d7d6d89ec25a4611aefe00c89bee4acf32",
+ "pl_output_sha256_board": "fcea9f6cc578408622aaf77c7bc347d7d6d89ec25a4611aefe00c89bee4acf32",
+ "pl_output_matches_board": true,
+ "speed_vs_board_pl": {
+  "max_abs": 9.1552734375e-05,
+  "mean_abs": 1.558483156383547e-05
+ },
+ "truncated_int_mismatch_vs_board": 0,
+ "speed_range": [
+  169.62916564941406,
+  229.3614044189453
+ ],
+ "car_loop": {
+  "frames_written": 118,
+  "speed_frames": 117,
+  "last_frame_is_stop": true,
+  "speed_frames_match_encoding": true,
+  "frames_sent": 117,
+  "frames_rejected": 0,
+  "stop_frames": 1
+ },
+ "hardware": "none: no pynq, no camera, no serial"
+}

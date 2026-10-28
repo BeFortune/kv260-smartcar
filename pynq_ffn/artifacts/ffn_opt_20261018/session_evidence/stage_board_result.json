@@ -1,8 +1,0 @@
-{
-  "content": [
-    {
-      "type": "text",
-      "text": "{\"status\": \"已验证\", \"scope\": \"file staging only; hardware untouched\", \"files\": 23, \"root\": \"/home/ubuntu/ffn_opt_20261018/deploy\", \"manifest\": \"/home/ubuntu/ffn_opt_20261018/deployment_manifest.json\", \"manifest_sha256\": \"f6e8810f9d6f286e677ffec36b570cf655c139cd18168ac42b6471de9d0948a2\"}\n[exit code: 0]"
-    }
-  ]
-}

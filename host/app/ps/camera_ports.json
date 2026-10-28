@@ -1,0 +1,11 @@
+{
+  "platform": "kv260",
+  "verified": "2026-10-22",
+  "description": "KV260 三路相机到模型输入顺序的固定对应。2026-10-22 改为两个扩展坞接法（板载口 1-1.2 和 1-1.4 各接一个 Genesys 05e3:0610 集线器），按口抓帧、用户看图确认。身份只认 USB 口，不认 /dev/videoN。",
+  "by_path_dir": "/dev/v4l/by-path",
+  "cameras": [
+    {"role": "left", "port": "1-1.2.1", "by_path": "platform-xhci-hcd.0.auto-usb-0:1.2.1:1.0-video-index0", "vendor_id": "2993", "product_id": "0858", "product_name": "icSpring", "note": "用户确认为左；压测中持续少量丢帧（约 4%）"},
+    {"role": "front", "port": "1-1.4.2", "by_path": "platform-xhci-hcd.0.auto-usb-0:1.4.2:1.0-video-index0", "vendor_id": "05a3", "product_id": "9230", "product_name": "ARC USB 2.0 Camera", "note": "前"},
+    {"role": "right", "port": "1-1.4.1", "by_path": "platform-xhci-hcd.0.auto-usb-0:1.4.1:1.0-video-index0", "vendor_id": "2993", "product_id": "0858", "product_name": "icSpring", "note": "用户确认为右"}
+  ]
+}

@@ -1,8 +1,0 @@
-{
-  "cwd": "C:/Users/JW/.zcode/tmp/fpga-hls-20261014",
-  "argv": "cmd.exe /d /s /c \"\"D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\bin\\v++.bat\" --mode hls --help\"",
-  "command": "\"D:\\Learning\\AMDDesignTools\\2026.1\\Vitis\\bin\\v++.bat\" --mode hls --help",
-  "started": "2026-10-14T23:38:31.108394",
-  "exit_code": 0,
-  "finished": "2026-10-14T23:38:31.648377"
-}

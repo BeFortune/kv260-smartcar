@@ -1,8 +1,0 @@
-{
-  "content": [
-    {
-      "type": "text",
-      "text": ">> \n{\n  \"archive\": \"D:\\\\ffn_build_opt\\\\evidence_20261018\\\\system_checkpoints.zip\",\n  \"bytes\": 36573174,\n  \"sha256\": \"ddb925019f016d473e2ecd16ce2ac997301f19bb8b0c42757c77c0504db43d11\",\n  \"files\": {\n    \"vivado03/ffn_overlay.runs/impl_1/ffn_overlay_wrapper.bit\": {\n      \"sha256\": \"c67dd63ccd579ab105840a30c4ca1a61715a26b7631cc323473328a821319eb1\",\n      \"bytes\": 7797910\n    },\n    \"vivado03/ffn_overlay.runs/synth_1/ffn_overlay_wrapper.dcp\": {\n      \"sha256\": \"cfea2a3496db169cd5320e634a85b56b9e6befc20151d192480b3a71668dcda4\",\n      \"bytes\": 112884\n    },\n    \"evidence/vivado/ffn_overlay_wrapper_routed.dcp\": {\n      \"sha256\": \"39706516f6b55c7550411e142662f5754f8023db46d7b9e85aaf00d2229add97\",\n      \"bytes\": 36818823\n    }\n  }\n}\n[exit code: 0]"
-    }
-  ]
-}

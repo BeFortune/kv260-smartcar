@@ -1,3 +1,0 @@
-WNS_NS=2.338
-WHS_NS=0.010
-IMPLEMENTATION_STATUS=route_design Complete!

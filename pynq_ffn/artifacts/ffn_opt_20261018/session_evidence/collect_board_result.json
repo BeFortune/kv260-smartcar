@@ -1,8 +1,0 @@
-{
-  "content": [
-    {
-      "type": "text",
-      "text": "{\n  \"archive\": \"/home/ubuntu/ffn_opt_20261018/board_evidence_run01.zip\",\n  \"bytes\": 300596,\n  \"sha256\": \"262beda3edd6b0854fe9ae1df6edc186d46d235b6f0bab4f12bbae6cb87d6d39\",\n  \"files\": 6\n}\n[exit code: 0]"
-    }
-  ]
-}

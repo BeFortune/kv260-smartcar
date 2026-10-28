@@ -1,8 +1,0 @@
-{
-  "content": [
-    {
-      "type": "text",
-      "text": "{\n  \"jobId\": \"job_mvd8t9lc_0b39f1edbaae\",\n  \"sessionId\": \"ac6e1cfc-2851-4d91-8d67-7f643c0faff7\",\n  \"status\": \"running\",\n  \"startedAt\": 1792292725200,\n  \"outputMode\": \"foreground-mirrored\",\n  \"recommendedPollIntervalMs\": 30000\n}"
-    }
-  ]
-}

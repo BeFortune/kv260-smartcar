@@ -1,5 +1,0 @@
-Traceback (most recent call last):
-  File "<string>", line 1, in <module>
-  File "C:\Users\BeFortuneEX\Source\Repos\FPGA\pynq_ffn\tools\validate_cpp_parallel.py", line 156, in payload_replay
-    raise ValueError("Every recording must contain positive frame count")
-ValueError: Every recording must contain positive frame count

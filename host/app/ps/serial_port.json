@@ -1,0 +1,14 @@
+{
+  "platform": "kv260",
+  "verified": "2026-10-22",
+  "description": "KV260 串口固定走扩展坞 A 的 3 号口 1-1.2.3（CH340，1a86:7523）。2026-10-22 改为两个扩展坞接法后重新绑定。只认 USB 口，不认 /dev/ttyUSB0 这种会变的名字。",
+  "port": "1-1.2.3",
+  "hub": "1-1.2",
+  "line": {"baud": 115200, "bytesize": 8, "parity": "N", "stopbits": 1},
+  "cameras_on_same_hub": [
+    {"role": "left", "port": "1-1.2.1"},
+    {"role": "front", "port": "1-1.4.2"},
+    {"role": "right", "port": "1-1.4.1"}
+  ],
+  "wiring": "开发板和车各自供电，转换器的地必须接到 STM32 的地；TX 接 PA3，RX 接 PA2；不接转换器的 VCC。TTL 电平为 3.3V（用户 2026-10-22 确认），和 STM32 匹配。"
+}

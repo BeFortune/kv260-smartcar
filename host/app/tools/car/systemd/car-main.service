@@ -1,0 +1,26 @@
+[Unit]
+Description=KV260 car main loop (cameras + PL + serial, joystick start/stop)
+After=car-pl-load.service car-xpad-bind.service
+Wants=car-pl-load.service car-xpad-bind.service
+# 主程序自己会等 /run/kv260car/pl_loaded.json 对上本次开机，所以 car-pl-load 失败也不会乱发东西
+
+[Service]
+Type=simple
+Environment=XILINX_XRT=/usr
+Environment=PATH=/usr/local/share/pynq-venv/bin:/usr/sbin:/usr/bin:/sbin:/bin
+Environment=PYTHONUNBUFFERED=1
+WorkingDirectory=/opt/kv260car/current
+ExecStart=/usr/local/share/pynq-venv/bin/python3 /opt/kv260car/current/tools/car/car_main.py --runs-dir /home/ubuntu/car_runs
+# SIGTERM：主程序这一轮结束后补停车帧再退出；给它 10 秒
+KillSignal=SIGTERM
+TimeoutStopSec=10
+# 出错（1）5 秒后重启；配置/哈希/PL 自检不对（3）不重启，等人看日志
+Restart=on-failure
+RestartSec=5
+RestartPreventExitStatus=3
+StartLimitIntervalSec=300
+StartLimitBurst=20
+Nice=-5
+
+[Install]
+WantedBy=multi-user.target

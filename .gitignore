@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mimosa/
+.venv/
+.venv-*/
+host/deploy/dist/
+build_runs/
+*.exe
+*.dll
+*.pyd
+*.dcp
+*.npz
+*.npy
