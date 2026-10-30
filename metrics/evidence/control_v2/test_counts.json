@@ -1,0 +1,18 @@
+{
+  "final_new": {
+    "status": "已验证",
+    "total": 59,
+    "passed": 59,
+    "failed": [],
+    "skipped": [],
+    "xml": "pynq_ffn\\artifacts\\roadsign_control_v2_20261030\\run01\\implementation01\\revision02\\final_new.xml"
+  },
+  "final_legacy": {
+    "status": "已验证",
+    "total": 83,
+    "passed": 83,
+    "failed": [],
+    "skipped": [],
+    "xml": "pynq_ffn\\artifacts\\roadsign_control_v2_20261030\\run01\\implementation01\\revision02\\final_legacy.xml"
+  }
+}

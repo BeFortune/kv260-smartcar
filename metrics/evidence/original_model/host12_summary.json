@@ -1,0 +1,39 @@
+{
+  "schema": "original_model_fake_ddr_host_kernel_integration_v1",
+  "status": "已验证",
+  "started_utc": "2026-10-29T09:24:35.116341+00:00",
+  "ended_utc": "2026-10-29T09:24:37.955642+00:00",
+  "elapsed_s_offline_job_only": 2.8386393999971915,
+  "samples": 12,
+  "selection": "same fixed first/middle/last of each of four runs",
+  "output_max_abs": {
+    "speed_norm": 1.1920928955078125e-07,
+    "speed_raw": 6.103515625e-05,
+    "region_logits": 4.470348358154297e-08,
+    "region_probs": 7.450580596923828e-09
+  },
+  "cumulative_camera_cut_max_abs": {
+    "camera_0": 1.1920928955078125e-07,
+    "camera_1": 1.1920928955078125e-07
+  },
+  "integer_speed_mismatch_samples": 0,
+  "host_kernel_calls": 24,
+  "fake_starts": 24,
+  "initial_allocations": 10,
+  "hot_event_counts": {
+    "read": 48,
+    "flush": 24,
+    "write": 336,
+    "invalidate": 24
+  },
+  "hot_flush_bytes": 8110080,
+  "hot_invalidate_bytes": 8110080,
+  "closed_safely": true,
+  "skip": [],
+  "failures": [],
+  "scope": "CPU ONNX stages + prepared Python backend + separated fake CPU/device buffers + C++ host kernel; no FPGA or device used",
+  "real_PL": "未执行",
+  "hls_rtl": "未执行",
+  "board_15hz": "阻塞",
+  "note": "FakeClock timings are synthetic and not performance evidence; job elapsed is not FPGA throughput. This covers 12 representative inputs, not all 635 with the host kernel."
+}

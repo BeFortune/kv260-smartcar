@@ -47,5 +47,25 @@ send_interval_max,recording-driven inference loop,300 speed frames in 20 seconds
 loop_inference_total_max,recording-driven inference loop,351 timed inferences,69.81495799846016,ms,已验证,metrics/evidence/car_loop_board_run01.json,JPEG decode/camera/serial excluded
 loop_kernel_starts,recording-driven inference loop,2026-10-22 run,771,starts,已验证,metrics/evidence/car_loop_board_run01.json,
 field_turning_retention_median,offline field diagnosis,198 old-model |d|>40 reference frames,0.273,ratio,失败,metrics/evidence/field_turning_diagnosis.md,New model cannot safely replace the old CPU fallback
+original_candidate_max_abs,original-model CPU candidate,payload_173,0.0,absolute error,已验证,metrics/evidence/original_model/runtime_recheck_summary.json,Full and split; four outputs; no PL
+original_candidate_integer_mismatches,original-model CPU candidate,payload_173,0,samples/comparisons as recorded,已验证,metrics/evidence/original_model/runtime_recheck_summary.json,
+original_candidate_max_abs,original-model CPU candidate,field_635,0.0,absolute error,已验证,metrics/evidence/original_model/runtime_recheck_summary.json,Full and split; four outputs; no PL
+original_candidate_integer_mismatches,original-model CPU candidate,field_635,0,samples/comparisons as recorded,已验证,metrics/evidence/original_model/runtime_recheck_summary.json,
+original_candidate_host_mean,desktop CPU benchmark,golden; 4 threads; 346 calls,6.025791040462429,ms,已验证,metrics/evidence/original_model/final_status.json,Not KV260; preprocessing and PL excluded
+original_candidate_host_mean,desktop CPU benchmark,layout candidate; 4 threads; 346 calls,5.641603468208093,ms,已验证,metrics/evidence/original_model/final_status.json,Mean improves; maximum regresses
+original_candidate_host_max,desktop CPU benchmark,layout candidate,9.7014,ms,已验证,metrics/evidence/original_model/final_status.json,Worse than golden max 7.4283 ms
+original_candidate_15hz,original-model real PS+PL goal,new HLS/PL/board unavailable,,,阻塞,metrics/evidence/original_model/final_status.json,
+roadsign_detector_p50,desktop CPU offline replay,635 recorded samples; YOLO 1 thread,201.00730001286138,ms,已验证,metrics/evidence/roadsign/full_replay_summary.json,Not KV260 or real camera
+roadsign_detector_p95,desktop CPU offline replay,635 recorded samples; YOLO 1 thread,211.07941000518622,ms,已验证,metrics/evidence/roadsign/full_replay_summary.json,Not KV260 or real camera
+roadsign_detector_p99,desktop CPU offline replay,635 recorded samples; YOLO 1 thread,217.43400400708197,ms,已验证,metrics/evidence/roadsign/full_replay_summary.json,Not KV260 or real camera
+roadsign_detector_max,desktop CPU offline replay,635 recorded samples; YOLO 1 thread,224.22329999972135,ms,已验证,metrics/evidence/roadsign/full_replay_summary.json,Not KV260 or real camera
+roadsign_cpu_total_p50,desktop CPU offline replay,driver 4 threads + YOLO 1 thread + arbiter,205.9507000085432,ms,已验证,metrics/evidence/roadsign/final_status.json,Exceeds 66.7 ms; not board performance
+roadsign_serial_15hz_budget,desktop serial path versus 15 Hz,offline diagnostic,over_budget,conclusion,失败,metrics/evidence/roadsign/final_status.json,
+control_v2_final_new_passed,offline directed pytest,final_new,59,tests,已验证,metrics/evidence/control_v2/test_counts.json,Separate counts; not added to historical totals
+control_v2_final_legacy_passed,offline directed pytest,final_legacy,83,tests,已验证,metrics/evidence/control_v2/test_counts.json,Separate counts; not added to historical totals
+control_v2_red_observations,saved real detections through new policy,635 samples; no new inference,6,samples,已验证,metrics/evidence/control_v2/saved_replay_summary.json,
+control_v2_red_stop_decisions,saved real detections through new policy,6 red observations,6,decisions,已验证,metrics/evidence/control_v2/saved_replay_summary.json,Old v1 was 0/6; not physical braking
+control_v2_confirmation_coverage,saved sparse detections,gaps above fixed 0.5 s confirmation window,631,gaps,未执行,metrics/evidence/control_v2/saved_replay_summary.json,No widening to force junction/crosswalk confirmations
+control_v2_vehicle_activation,control v2 vehicle deployment,no vehicle entry or junction executor,,,阻塞,metrics/evidence/control_v2/final_status.json,
 current_pl_realtime_camera_serial,current PL route,real camera + serial + motor,,,未执行,STATUS.md,
 current_pl_vehicle_task,current PL route,fixed-track vehicle run,,,未执行,STATUS.md,

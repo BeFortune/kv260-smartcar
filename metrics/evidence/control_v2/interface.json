@@ -1,0 +1,65 @@
+{
+  "schema": "control_v2_interface_v1",
+  "status": "已验证",
+  "scope": "Opt-in offline CPU candidate only. No legacy CLI/CarLoop integration or physical device registration.",
+  "revision": "implementation01/revision02",
+  "package": "pynq_ffn/ps/control_v2",
+  "policy": {
+    "exports": ["ControlPolicy", "PolicyConfig", "DriverSnapshot", "SignSnapshot", "Decision", "PolicyState", "RouteIntent", "MODEL_CLASS_NAMES"],
+    "config": "PolicyConfig(max_driver_age_s, max_sign_age_s, confirm_frames, pedestrian_clear_frames, crosswalk_clear_frames, crosswalk_hold_s, speed_limit_factor, command_ttl_s, confirmation_max_gap_s). All explicit, no vehicle defaults. Finite positive timings, positive integer counts, factor in (0,1].",
+    "driver": "DriverSnapshot(generation, frame_seq, grabbed, completed, healthy, error, left, right). Frozen. Healthy values finite; policy rejects raw outside [0,999] before protocol truncation. Unhealthy must carry None/None and nonempty error.",
+    "signs": "SignSnapshot(generation, frame_seq, grabbed, completed, healthy, error, detections). Frozen tuple of ps.roadsign.Detection(class_id,class_name,confidence,width,height). Only exact CLASS_NAMES[:10] ids 0..9. No cone slot is used; old 11-slot parser untouched.",
+    "result_identity": "generation positive int; frame_seq nonnegative int; 0 <= grabbed <= completed <= now. Same generation mandatory. New seq requires strictly newer grabbed and nondecreasing completed; identical seq may only reuse identical snapshot content. Age always now-grabbed, not now-completed.",
+    "construct": "ControlPolicy(config, generation=1)",
+    "step": "step(now, driver|None, signs|None, emergency_stop=False, external_fault=None) -> frozen Decision(left,right,stop,reason,state)",
+    "state": "PolicyState(generation,fault,emergency,red,pedestrian,limited,crosswalk_until,crosswalk_armed,junction)",
+    "reset": "reset(new_generation) strictly increases generation, clears latched faults/emergency/state/counters and waits for two healthy fresh new-generation results. Controller/sender/workers must all be recreated for that new generation; policy.reset alone is not full pipeline restart.",
+    "route": "RouteIntent(generation,intent_seq,direction,source_seq). direction left/right/conflict. complete_route(generation,intent_seq) must exactly match active intent. No executor registry or real route playback exists. Repeated route sign cannot clear intent; no left/right.csv/region head access.",
+    "priority": "emergency/fault/invalid/stale > immediate accepted red/pedestrian > junction conflict/unavailable > crosswalk timed hold > speed limit > unchanged driver",
+    "confirmation": "Distinct new sign results only; when consecutive captured gap > confirmation_max_gap_s, all confirmation/clear counters reset. Repeated snapshots never increment. Accepted red/pedestrian stop immediately. Green without red clears only red after confirm_frames; pedestrian clears after fresh no-pedestrian count. Red/green conflict never clears. Same-frame limit_on/off conflict immediately conservatively limits; other limit toggles confirm and can repeat. Crosswalk repeats do not extend original deadline; fresh clear observations after elapsed hold rearm. Any double route sign immediately conflict-stops; single route signs confirm before locking intent. Warning/change_line do not invent finish or fixed forward. No cone behavior."
+  },
+  "workers": {
+    "imports": "from ps.control_v2.workers import CPUFactory, FixtureFactory, SpawnWorker, OfflineArraySource, LatestSlot",
+    "construct": "SpawnWorker(role='driver'|'signs', factory=CPUFactory(model_path,expected_sha256,threads)|FixtureFactory(...), generation=1)",
+    "ownership": "CPU session initializes inside actual multiprocessing spawn child. Only inert known factory configs accepted, not arbitrary callables/live sessions/PYNQ objects. Driver uses existing CpuOriginalInfer pinned original model; signs uses existing RoadSignONNX and parser. OfflineArraySource has one calling-thread owner; source publishes one left/front/right ArrayFrame package with same generation/frame_seq/grabbed to independent workers. grabbed=min triplet capture timestamp is caller contract.",
+    "latest": "One bounded shared-memory slot replaces old frame/result; no feeder-queue backlog. Input serializes outside tick, reads acquire(False) and return cached snapshot on lock contention. Control never performs inference. New array copies have bytes owners, preventing source buffer reuse or setflags(write=True). Pickle transport is internal trusted-process IPC, not an external input parser.",
+    "lifecycle": "start(); source.publish((left,front,right), grabbed=monotonic()); snapshot() nonblocking; request_stop(); join(timeout_s) -> JoinOutcome(stopped,alive,reason). A join timeout means worker still alive; no terminate/kill or PL memory reclamation. Fixture release is explicit before final successful join.",
+    "errors": "Inference/initialization error becomes unhealthy result and remains latched; later results do not overwrite it. Initializer failure has no frame identity until first submit; before first frame snapshot is None/waiting, not immediate initialization-error health telemetry. No source means no readiness deadline; first-result wait remains STOP."
+  },
+  "sender": {
+    "imports": "from ps.control_v2.sender import Command, Sender, MemorySink, WriteFeedback",
+    "construct": "Sender(injected_sink,generation=1,stop_ttl_s=explicit,clock=time.monotonic,feedback_capacity=1024). Only sender thread invokes sink.write; no SerialLink is constructed anywhere in new package.",
+    "command": "Command(generation,seq,issued,expires,left,right,stop,reason), expires>issued and legal finite raw values. frame property uses ps.packet.encode_side_speed or stop_frame. This project has no ps.protocol module.",
+    "mailbox": "offer(command)->bool is nonblocking try-lock. Contention is explicit sender_mailbox_contention fault/hard stop, never waits for I/O. Selection/commit occurs under a short lock, sink write always outside it. Policy stop before commit overrides selected old speed and is written before later speed. No guarantee to cancel an already committed I/O, including gap from commit to write call.",
+    "stops": "offer(stop=True) is a transient policy hold, released by subsequent decisions only after at least that STOP write. request_stop(reason=...) is a hard latch preventing any speed until stopped new-generation sender construction. request_shutdown hard-stops then exits only after a stop write attempt; no terminate on blocked write.",
+    "ttl": "Submission and pre-commit TTL/generation/ordering checked. Previously written speed is also replaced with STOP on expiry if control stops updating. This is local sender behavior, not firmware communication watchdog or hard real-time bound. Sink write cannot be cancelled.",
+    "feedback": "feedback latest and drain_feedback bounded events; complete write requires exact integer byte count=21 (bool/short count is failure). Write exceptions/short writes fault and hard-stop. Feedback overflow explicitly faults, no silent overwrite of event queue. A post-offer asynchronous error is observed by control on next tick. Successful local write is not STM32 ACK or proof of motor execution."
+  },
+  "controller_audit": {
+    "imports": "from ps.control_v2.controller import Controller, SnapshotSource; from ps.control_v2.audit import AuditChannel, TickAudit, write_audit",
+    "construct": "Controller(policy,driver_source,sign_source,sender,audit,clock=time.monotonic).tick(emergency_stop=False) -> TickAudit",
+    "tick": "Reads immutable snapshots first then samples clock, preventing publication-after-earlier-clock false future faults. Runs pure policy, submits one command/mailbox or hard stop, never invokes model/write/fsync/disk callback. Invalid snapshot types are rejected, recorded with None source fields/healthy=False/error, and still return STOP TickAudit.",
+    "fields": "TickAudit(tick_seq,now,generation,driver_raw,final,driver,signs,decision,encoded_hex,write_result,feedback,write_events); SourceAudit(generation,source_seq,grabbed,completed,age,reused,healthy,error). Driver raw and final values, reasons/state, even reused/waiting/unsent ticks are retained. write_result queued is not sent, feedback can belong to earlier seq.",
+    "channel": "AuditChannel(capacity) nonblocking in-memory queue. preflight full latches audit_overflow before decision/speed. Overflow keeps first_rejected row and rejected_ticks separately; cannot retain unlimited evidence in bounded memory, completeness explicitly failed. Error sets failclosed.",
+    "writer": "write_audit(path,rows,channel=optional) is an exclusive-create final offline writer after run. It refuses overwrite, marks supplied channel on writer exception. No production asynchronous disk writer is provided or claimed verified; tick has no fsync."
+  },
+  "replay": {
+    "tool": "pynq_ffn/tools/control_v2_replay.py",
+    "args": ["--config explicit JSON", "--input saved JSONL OR --fixture", "--out-dir new nonexistent directory"],
+    "no_args": ["camera", "serial", "PL", "device", "model execution"],
+    "normalized_row": "{run,sample_id,now,driver:{frame_seq,grabbed,completed,healthy,error,left,right}|null,signs:{frame_seq,grabbed,completed,healthy,error,detections:[Detection dicts]}|null,emergency_stop?:bool,external_fault?:str,complete_route?:intent_seq}",
+    "legacy_saved_rows": "Existing roadsign_replay records: run/frame_id/sample_id, driver[2], grabbed[3], timing.replay_decision_t_mono, roadsign.grabbed_t_mono/replay_completed_t_mono/detections. Driver completion unavailable in saved rows is reconstructed as decision time and labeled, not invented as original timing. No inference rerun.",
+    "run_generations": "Each contiguous run creates a new independent policy generation; interleaved repeated run blocks refused. No inserted ticks/frame interpolation. Sparse gaps do not prove continuous stale handling, throughput or confirmation between records. Failed parsing writes new failure.json and returns exit1; no overwrite.",
+    "outputs": ["audit.jsonl", "samples.json", "summary.json"],
+    "labels": "All decision-only writes marked not_sent_decision_replay. Synthetic fixture detections explicitly not real YOLO. Diagnostic timing/factors are not safety values."
+  },
+  "verification": {
+    "final_new": "revision02 59 passed, 0 failed, 0 skipped",
+    "legacy": "revision02 83 passed, 0 failed, 0 skipped, 2 protobuf deprecation warnings",
+    "fixture": "revision02/fixture02 33 decision ticks, 0 fault ticks; synthetic accepted detections not trained inference",
+    "cpu_fixture": "old constant_pedestrian.onnx run by actual spawn child CPUExecutionProvider; proves async plumbing not model accuracy",
+    "protected": "133 pre-existing files unchanged; final 13 source/test files frozen and unchanged after revision02 tests. revision01 historical 58/83 retained separately.",
+    "not_executed": ["full-project pytest historical native-abort exposure", "real model accuracy", "PYNQ import/PLowner/Overlay", "camera", "serial", "motor", "vehicle", "production disk writer", "15Hz/performance/physical safety"],
+    "blocking": "No reviewed junction executor, vehicle units/mapping/stop timeout contract not accepted; hardware/vehicle activation remains blocked."
+  }
+}

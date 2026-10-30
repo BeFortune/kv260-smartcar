@@ -95,6 +95,19 @@ for path in ROOT.rglob("*.md"):
         if not (path.parent / target).resolve().exists():
             errors.append(f"broken Markdown link: {relative} -> {target}")
 
+bundle_root = ROOT / "host/model/candidates/original_model_pspl/bundle01"
+bundle_manifest_path = bundle_root / "manifest.json"
+if bundle_manifest_path.is_file():
+    bundle_manifest = json.loads(bundle_manifest_path.read_text(encoding="utf-8"))
+    for name, item in bundle_manifest["files"].items():
+        path = bundle_root / name
+        if not path.is_file():
+            errors.append(f"candidate bundle file missing: {name}")
+            continue
+        data = path.read_bytes()
+        if len(data) != item["bytes"] or sha256(data) != item["sha256"]:
+            errors.append(f"candidate bundle hash/size mismatch: {name}")
+
 result = {
     "status": "已验证" if not errors else "失败",
     "files": len(listed),

@@ -1,0 +1,60 @@
+{
+  "schema": "roadsign_final_preboard_status_v1",
+  "date": "2026-10-29",
+  "offline_verification_status": "已验证",
+  "host_serial_cycle_budget_status": "失败",
+  "deployment_status": "阻塞",
+  "scope": "最终源码的本机离线CPU验证；不代表检测准确率、KV260、PS+PL或车辆验收。",
+  "stages": [
+    {"name": "真实模型完整身份与接口", "status": "已验证", "evidence": "results/model_inspection.json"},
+    {"name": "最终源码635样本回放", "status": "已验证", "count": 635, "exit_code": 0, "skipped": 0, "evidence": "results/full_replay02/summary.json"},
+    {"name": "相对上一版驾驶与控制输出一致性", "status": "已验证", "equal_samples": 635, "max_abs": 0, "evidence": "final_verify01/replay_comparison_summary.json"},
+    {"name": "最终定向pytest", "status": "已验证", "passed": 83, "failed": 0, "errors": 0, "skipped": 0, "warnings": 2, "evidence": "results/targeted_tests02.xml"},
+    {"name": "合成解析对拍", "status": "已验证", "cases": 30, "numeric_equal": 24, "both_rejected": 6, "skipped": 0, "evidence": "results/final_tensor_recheck01/summary.json"},
+    {"name": "保存实图输出解析对拍", "status": "已验证", "frames": 45, "accepted_boxes_before_nms": 624, "max_abs": 0, "max_ulp": 0, "skipped": 0, "evidence": "results/final_tensor_recheck01/summary.json"},
+    {"name": "五项受保护原件不变", "status": "已验证", "evidence": "final_verify01/hashes_final.json"},
+    {"name": "本机当前串行路径相对15Hz周期预算", "status": "失败", "budget_ms": 66.66666666666667, "detector_p50_ms": 201.00730001286138, "cpu_total_p50_ms": 205.9507000085432, "note": "主机诊断比较，不是新增模型门禁，不是KV260性能或实际发送频率测量。"},
+    {"name": "红灯与固定前行策略批注", "status": "阻塞", "red_positive_frames": 6, "red_positive_stop_frames": 0, "limit_off_positive_frames": 0, "note": "保留原is_limit_off前置条件，未擅改。"},
+    {"name": "完赛主链路接入", "status": "阻塞", "note": "规则依赖外部set_replay_direction；当前主入口未接入，合成测试不代替实际接入。"},
+    {"name": "锥桶检测及绕行（若要求）", "status": "阻塞", "actual_model_classes": 10, "cone_class_present": false},
+    {"name": "独立标注检测准确率", "status": "未执行"},
+    {"name": "完整ROS和C++OpenCV前处理对照", "status": "未执行"},
+    {"name": "真实行人绿灯解除限速完赛场景覆盖", "status": "未执行"},
+    {"name": "最新源码全工程pytest", "status": "未执行"},
+    {"name": "KV260综合性能", "status": "阻塞", "note": "核心板短路按用户报告；本轮没有连接或独立电气诊断。"},
+    {"name": "新HLS综合RTL实现Overlay或真实PL", "status": "未执行"},
+    {"name": "相机串口电机安全隔离与实车", "status": "未执行"},
+    {"name": "新训练强化学习生产配置发布或部署", "status": "未执行"}
+  ],
+  "skip": [],
+  "test_count_note": "83单元/集成测试、30合成边界及45真实tensor为不同范围，不相加为统一通过数量；历史34/42重叠测试及535通过6跳过不累加。",
+  "preserved_failures": [
+    {"name": "模型下载中断与截断", "status": "失败", "evidence": "results/model_download03_blocked.json", "resolved_by": "results/model_download06.json"},
+    {"name": "零宽图像用例曾失败却误标跳过", "status": "失败", "evidence": "parser_parity01/revision02/results/legacy_record_reference.json", "resolved_by": "parser_parity01/revision02/results/parity_results.json"},
+    {"name": "复验准备脚本包元数据探针", "status": "失败", "exit_code": 1, "evidence": "final_verify01/prepare_failure.json", "note": "旧文件状态为阻塞，表示流程被挡；检查本身实际失败，不是跳过。修自有留证脚本后首次真实回放才启动。"},
+    {"name": "复验准备脚本误将CPP交给Python AST", "status": "失败", "exit_code": 1, "evidence": "final_verify01/prepare_failure02.json", "note": "旧文件保留，限制AST检查为Python文件；未改变C++或业务源码。"}
+  ],
+  "timing": {
+    "samples": 635,
+    "real_replay_processes": 1,
+    "process_wall_s": 144.9427710000018,
+    "max_result_age_s_offline_only": 0.5,
+    "driver_threads": 4,
+    "roadsign_threads": 1,
+    "not_board_fps": true,
+    "no_tuning_or_fastest_run_selection": true
+  },
+  "deliverables": {
+    "report": "report.md",
+    "migration_notes": "../../../docs/roadsign_migration.md",
+    "review": "delivery01/review_checklist.md",
+    "gates": "delivery01/preboard_gates.json",
+    "manifest": "delivery01/artifact_manifest.json",
+    "manifest_verification": "delivery01/manifest_verification.json"
+  },
+  "deployment_enabled": false,
+  "hardware_authorization_inferred": false,
+  "requested_six_direction_reviews_complete": true,
+  "additional_direction_review_requested": false,
+  "training_authorization": false
+}

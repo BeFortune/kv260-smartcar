@@ -9,6 +9,10 @@
 - `tools/car/frame_capture_replay.py`：录像/帧回放。
 - `tools/car/README.md`：原部署与现场操作说明。
 - `tools/car/systemd/`：三个服务单元。
+- `ps/roadsign*.py`、`ps/control_arbiter.py`：默认不启用的旧路标监督路径。
+- `ps/control_v2/`、`tools/control_v2_replay.py`：2026-10-30 独立离线控制候选，没有实车入口。
+- `candidates/original_model_pspl/`：2026-10-29 原模型布局优化候选，未接入生产。
+- `tests/`：可选路标、v2 和旧路径的定向测试。
 
 文件仅从 `pynq_ffn` 白名单复制，未为交付目录重排业务代码。程序导入时不要求连接硬件；但显式调用 PL、相机、串口或主循环会改变设备状态。
 

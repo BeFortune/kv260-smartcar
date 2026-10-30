@@ -1,0 +1,60 @@
+{
+  "schema": "roadsign_control_v2_final_status_v1",
+  "date": "2026-10-30",
+  "offline_implementation_status": "已验证",
+  "vehicle_activation_status": "阻塞",
+  "revision": "implementation01/revision02",
+  "old_default_path_unchanged": true,
+  "cones_in_scope": false,
+  "junction_meaning": "左右牌表示岔路口支路意图，不是直接轮速指令",
+  "real_junction_executor_registered": false,
+  "stages": [
+    {"name": "状态机和异步控制新定向测试", "status": "已验证", "passed": 59, "skipped": 0, "evidence": "implementation01/revision02/final_new.xml"},
+    {"name": "旧路标仲裁主循环主入口定向回归", "status": "已验证", "passed": 83, "skipped": 0, "warnings": 2, "evidence": "implementation01/revision02/final_legacy.xml"},
+    {"name": "最终源码冻结与语法", "status": "已验证", "files": 13, "evidence": "implementation01/revision02/source_after_tests.json"},
+    {"name": "实际spawn阻塞释放与CPU常量ONNX", "status": "已验证", "scope": "测试仅证明控制tick不调用推理或等待完成；不是实时性或检测准确率"},
+    {"name": "唯一发送者停锁有效期短写反馈", "status": "已验证", "scope": "受控内存sink和阻塞fixture，不是物理串口；commit后写入不可取消"},
+    {"name": "合成规则回放", "status": "已验证", "ticks": 33, "fault_ticks": 0, "fixture": true, "evidence": "implementation01/revision02/fixture02/summary.json"},
+    {"name": "保存真实检测策略回放", "status": "已验证", "samples": 635, "red_positive": 6, "red_positive_stop": 6, "old_v1_red_positive_stop": 0, "evidence": "integration01/saved_replay02/summary.json"},
+    {"name": "岔路意图与无执行器保护", "status": "已验证", "scope": "合成左/右确认及冲突测试，无执行器停车；没有自动驾驶路段"},
+    {"name": "岔路实际回放路线绑定", "status": "阻塞", "reason": "旧left/right.csv入口出口与当前路段适用性未确认", "evidence": "route_review01/legacy_routes.json"},
+    {"name": "旧文件及模型工件保护", "status": "已验证", "agent_checked": 133, "coordinator_checked": 23, "counts_overlap_not_additive": true},
+    {"name": "真实相机串口电机车辆与PLowner", "status": "未执行"},
+    {"name": "新真实YOLO异步性能及准确率", "status": "未执行"},
+    {"name": "生产异步磁盘日志", "status": "未执行", "reason": "当前仅有界内存审计和运行后写出，溢出显式锁停"},
+    {"name": "全工程pytest", "status": "未执行"},
+    {"name": "模型优化训练量化生产部署发布", "status": "未执行"}
+  ],
+  "final_policy_sha256": "1bbbfb47f49d24f6eeee638bc86b782dd13b9c4b04116ae28bf771dcd55d2d06",
+  "final_snapshots_sha256": "8571b5c084dd51a516254facbd0f37ac7219b7dfd970d29b74dc1dfc765c8081",
+  "final_controller_sha256": "5d9253ad66d44025659c26310053b9af29298f5fc1bc70d6ae8b67e17f18d32a",
+  "saved_replay": {
+    "driver": 441,
+    "red_latched_stop": 194,
+    "red_observations": 6,
+    "capture_gaps_above_confirmation_limit": 631,
+    "total_capture_gaps": 631,
+    "confirmation_max_gap_s_diagnostic_only": 0.5,
+    "junction_limit_crosswalk_multi_frame_real_coverage": "未执行",
+    "reason": "全部相邻帧超过预先固定确认间隔；没有调宽窗口凑触发，没有插入中间控制tick"
+  },
+  "critical_limits": [
+    "同帧同内容未过期可复用，不增加新帧确认计数；不是重复即故障",
+    "single left/right需确认；双牌冲突首帧就停车",
+    "任何accepted红灯/行人立即停，绿灯只能解除红灯原因",
+    "sender邮箱争用/审计溢出保守锁故障；不保证实际车辆可用性",
+    "已经commit的I/O无法取消，写成功不等于STM32 ACK",
+    "join超时不等于worker已停，不能强杀或释放未知在途PL资源",
+    "所有注入时钟须同一单调时基，当前未校验自定义clock同源性",
+    "内存审计有界，溢出明确失败，不承诺无限完整日志"
+  ],
+  "failures_preserved": [
+    "sender选择旧speed后、commit前的停车竞争反例及修复",
+    "坏快照审计访问错误反例及修复",
+    "revision01先取now后读新结果误判未来时间，revision02修复与复验",
+    "开发期RED、测试和路径查找失败日志"
+  ],
+  "skip": [],
+  "hardware_authorization_inferred": false,
+  "note": "实现只交付离线候选，旧CLI/CarLoop没有新v2开关，不启用到实车。"
+}

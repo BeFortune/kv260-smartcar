@@ -68,6 +68,40 @@ if not match:
     raise RuntimeError("field turning retention metric not found")
 add("field_turning_retention_median", "offline field diagnosis", "198 old-model |d|>40 reference frames", match.group(1), "ratio", "失败", field_path, "New model cannot safely replace the old CPU fallback")
 
+original_path = "metrics/evidence/original_model/final_status.json"
+original = load("original_model/final_status.json")
+runtime_path = "metrics/evidence/original_model/runtime_recheck_summary.json"
+runtime = load("original_model/runtime_recheck_summary.json")
+for dataset in runtime["datasets"]:
+    max_abs = max(value for mode in dataset["max_abs"].values() for value in mode.values())
+    integer_mismatch = sum(dataset["integer_mismatch_samples"].values())
+    add("original_candidate_max_abs", "original-model CPU candidate", dataset["dataset"], max_abs, "absolute error", "已验证", runtime_path, "Full and split; four outputs; no PL")
+    add("original_candidate_integer_mismatches", "original-model CPU candidate", dataset["dataset"], integer_mismatch, "samples/comparisons as recorded", "已验证", runtime_path)
+add("original_candidate_host_mean", "desktop CPU benchmark", "golden; 4 threads; 346 calls", original["host_benchmark"]["mean_golden_ms"], "ms", "已验证", original_path, "Not KV260; preprocessing and PL excluded")
+add("original_candidate_host_mean", "desktop CPU benchmark", "layout candidate; 4 threads; 346 calls", original["host_benchmark"]["mean_candidate_ms"], "ms", "已验证", original_path, "Mean improves; maximum regresses")
+add("original_candidate_host_max", "desktop CPU benchmark", "layout candidate", original["host_benchmark"]["max_candidate_ms"], "ms", "已验证", original_path, "Worse than golden max 7.4283 ms")
+add("original_candidate_15hz", "original-model real PS+PL goal", "new HLS/PL/board unavailable", "", "", "阻塞", original_path)
+
+road_path = "metrics/evidence/roadsign/full_replay_summary.json"
+road = load("roadsign/full_replay_summary.json")
+for stat in ("p50", "p95", "p99", "max"):
+    add(f"roadsign_detector_{stat}", "desktop CPU offline replay", "635 recorded samples; YOLO 1 thread", road["detector_latency_ms"][stat], "ms", "已验证", road_path, "Not KV260 or real camera")
+road_status = load("roadsign/final_status.json")
+road_timing = next(item for item in road_status["stages"] if "cpu_total_p50_ms" in item)
+add("roadsign_cpu_total_p50", "desktop CPU offline replay", "driver 4 threads + YOLO 1 thread + arbiter", road_timing["cpu_total_p50_ms"], "ms", "已验证", "metrics/evidence/roadsign/final_status.json", "Exceeds 66.7 ms; not board performance")
+add("roadsign_serial_15hz_budget", "desktop serial path versus 15 Hz", "offline diagnostic", "over_budget", "conclusion", "失败", "metrics/evidence/roadsign/final_status.json")
+
+v2_counts_path = "metrics/evidence/control_v2/test_counts.json"
+v2_counts = load("control_v2/test_counts.json")
+for name in ("final_new", "final_legacy"):
+    add(f"control_v2_{name}_passed", "offline directed pytest", name, v2_counts[name]["passed"], "tests", "已验证", v2_counts_path, "Separate counts; not added to historical totals")
+v2_path = "metrics/evidence/control_v2/saved_replay_summary.json"
+v2 = load("control_v2/saved_replay_summary.json")
+add("control_v2_red_observations", "saved real detections through new policy", "635 samples; no new inference", v2["red_positive_frames"], "samples", "已验证", v2_path)
+add("control_v2_red_stop_decisions", "saved real detections through new policy", "6 red observations", v2["red_positive_stop_decisions"], "decisions", "已验证", v2_path, "Old v1 was 0/6; not physical braking")
+add("control_v2_confirmation_coverage", "saved sparse detections", "gaps above fixed 0.5 s confirmation window", v2["capture_gap_over_confirmation_limit"], "gaps", "未执行", v2_path, "No widening to force junction/crosswalk confirmations")
+add("control_v2_vehicle_activation", "control v2 vehicle deployment", "no vehicle entry or junction executor", "", "", "阻塞", "metrics/evidence/control_v2/final_status.json")
+
 add("current_pl_realtime_camera_serial", "current PL route", "real camera + serial + motor", "", "", "未执行", "STATUS.md")
 add("current_pl_vehicle_task", "current PL route", "fixed-track vehicle run", "", "", "未执行", "STATUS.md")
 

@@ -19,3 +19,5 @@ metrics/evidence/field_turning_diagnosis.md -whitespace
 *.hwh binary
 *.onnx binary
 *.bin binary
+*.npz binary
+*.npy binary

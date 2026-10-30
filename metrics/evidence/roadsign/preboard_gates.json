@@ -1,0 +1,71 @@
+{
+  "schema": "roadsign_preboard_review_gates_v1",
+  "date": "2026-10-29",
+  "deployment_status": "阻塞",
+  "authorization": "仅本机离线复验、文档与证据封存；不连接KV260、相机、串口、电机或车辆，不导入PYNQ，不安装生产配置。",
+  "board_availability": {
+    "status": "阻塞",
+    "evidence_type": "用户报告",
+    "fact": "核心板短路",
+    "independent_electrical_diagnosis": "未执行"
+  },
+  "review_items": [
+    {
+      "id": "red_light_policy",
+      "status": "阻塞",
+      "current_behavior": "先识别limit_off后才对红灯响应，170/190前行1.15秒后停车。",
+      "required_decision": "是否保留该前置条件与固定前行策略；物理轮速意义及安全约束待确认。",
+      "source": "pynq_ffn/ps/control_arbiter.py:69",
+      "changed_this_stage": false
+    },
+    {
+      "id": "other_rule_semantics",
+      "status": "阻塞",
+      "current_behavior": "人行横道每次规则复位后只触发一次；完赛依赖外部设置的左右转回放状态，当前car_main/CarLoop/supervisor没有set_replay_direction调用。",
+      "required_decision": "确认这些场景假设与实际赛道一致，不能把代码存在当成赛道验收。",
+      "changed_this_stage": false
+    },
+    {
+      "id": "cone_requirement",
+      "status": "阻塞",
+      "current_behavior": "真实best.onnx输出10类，没有cone_bucket；没有锥桶绕行策略。",
+      "required_decision": "若要求锥桶识别及绕行，需要另行确认有效模型与策略范围；不自动替换best.onnx.new。"
+    },
+    {
+      "id": "detection_accuracy",
+      "status": "未执行",
+      "reason": "没有独立的类别、边界框或控制事件真值；635样本仅供软件一致性回放。"
+    },
+    {
+      "id": "complete_upstream_preprocessing_equivalence",
+      "status": "未执行",
+      "reason": "仅有标量解析器和256像素值归一化算术对照；不是完整ROS/OpenCV前处理逐元素对照。"
+    },
+    {
+      "id": "target_performance_and_age_limit",
+      "status": "阻塞",
+      "reason": "板卡不可用；尚无驾驶+YOLO+仲裁在KV260上的持续新推理率、图像新鲜度及P50/P95/P99/最大间隔。",
+      "offline_age_threshold_seconds": 0.5,
+      "vehicle_safe_age_threshold_seconds": null,
+      "threshold_widened": false
+    },
+    {
+      "id": "command_audit",
+      "status": "阻塞",
+      "reason": "frames.csv为驾驶原始输出；control_decision只在原因变化时记录，非逐帧最终命令审计，更不是STM32接收或电机执行证明。"
+    },
+    {
+      "id": "physical_safety_and_closed_loop",
+      "status": "未执行",
+      "reason": "未隔离验证实际方向、速度单位、制动、断联停车和独立急停；本轮没有发送控制指令。"
+    }
+  ],
+  "scope_not_expanded": {
+    "hardware_actions": "未执行",
+    "new_training_or_rl": "未执行",
+    "dpu_or_overlay_rebuild": "未执行",
+    "deployment_or_service_changes": "未执行",
+    "new_direction_annotation_request": "未执行",
+    "note": "本轮六个代表性驾驶方向审阅已齐，不重复索审，不自动入训。"
+  }
+}

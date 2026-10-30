@@ -12,3 +12,4 @@ build_runs/
 *.dcp
 *.npz
 *.npy
+!host/model/candidates/**/weights.npz

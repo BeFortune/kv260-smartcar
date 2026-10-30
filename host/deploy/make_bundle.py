@@ -15,7 +15,8 @@ APP = ROOT / "host" / "app"
 HWH_SHA256 = "c2b5c8138087c8e398d509df40e1c854311ebcca249f7a0e232c107d8db6d067"
 SOURCES = [
     "ps/__init__.py", "ps/packet.py", "ps/car_loop.py", "ps/pl_infer.py", "ps/capture.py",
-    "ps/preprocess.py", "ps/cpu_infer.py", "ps/frame_capture.py",
+    "ps/preprocess.py", "ps/cpu_infer.py", "ps/frame_capture.py", "ps/control_arbiter.py",
+    "ps/roadsign.py", "ps/roadsign_supervisor.py",
     "ps/serial_link.py", "ps/serial_port.py", "ps/serial_port.json", "ps/camera_ports.py",
     "ps/camera_ports.json", "ps/devices.py", "ps/joystick.py", "ps/joystick.json",
     "tools/car/car_main.py", "tools/car/carwatch.py", "tools/car/cpu_check.py",

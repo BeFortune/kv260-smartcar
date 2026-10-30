@@ -1,0 +1,40 @@
+{
+  "schema": "control_v2_offline_replay_v1",
+  "status": "已验证",
+  "date": "2026-10-29T17:42:40.682751+00:00",
+  "fixture": true,
+  "scope": "synthetic accepted detections, not real YOLO; decision-only, no writes",
+  "config": {
+    "max_driver_age_s": 0.5,
+    "max_sign_age_s": 0.5,
+    "confirm_frames": 2,
+    "pedestrian_clear_frames": 3,
+    "crosswalk_clear_frames": 3,
+    "crosswalk_hold_s": 3.0,
+    "speed_limit_factor": 0.75,
+    "command_ttl_s": 0.2,
+    "confirmation_max_gap_s": 0.5
+  },
+  "config_sha256": "1553c918924f387bdd71821e51ee6dfc49790c2a40cadfbc7b84d2e120213cb5",
+  "input_sha256": null,
+  "policy_sha256": "1bbbfb47f49d24f6eeee638bc86b782dd13b9c4b04116ae28bf771dcd55d2d06",
+  "ticks": 33,
+  "fault_ticks": 0,
+  "reasons": {
+    "red_light": 4,
+    "pedestrian": 3,
+    "driver": 13,
+    "speed_limit": 3,
+    "crosswalk": 4,
+    "junction_route_unavailable": 3,
+    "junction_conflict": 3
+  },
+  "timing_note": "saved driver completed is reconstructed as recorded replay decision time; driver grabbed=min triplet, signs use saved grabbed/completed. No inserted ticks/frames; large gaps cannot demonstrate intermediate stale handling or multi-frame confirmation.",
+  "limitations": [
+    "diagnostic config only, not vehicle safety values",
+    "no physical sends or STM32 ACK",
+    "fixture is not detection accuracy",
+    "no PL/camera/serial/vehicle/15Hz verification",
+    "post-run exclusive disk writer, not validated production asynchronous logging"
+  ]
+}
