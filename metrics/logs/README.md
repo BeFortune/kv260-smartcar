@@ -1,5 +1,5 @@
 # 原始日志说明
 
-`pl_board_run01_report.json` 是 2026-10-21 真实 KV260 板测的精选原始报告：一次 Overlay 下载、117 帧数值和 300 次性能测量。路径字段保留历史板端位置，不能当作当前本机路径执行。
+`integrated_sim_predictions.jsonl` 是本次 635 组全链的逐样本记录，包含整数参考驾驶输出、真实 YOLO 检测、v2 决策、报文和离线时间。它不是连续视频、真实 PL、物理串口或车辆日志。
 
-大型原始证据包、NPZ、录像、完整构建目录和备份未纳入 GitHub 交付。汇总数字见 `../metrics.csv`。
+原始图像、metadata、第三方 YOLO 和大型 profile 未纳入。汇总数字见 `../metrics.csv` 与 `../evidence/integrated_sim/`。

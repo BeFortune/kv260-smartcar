@@ -8,9 +8,18 @@ import sys
 ROOT = Path(__file__).resolve().parents[2]
 REQUIRED = [
     "README.md", "docs/architecture.md", "docs/interface.md", "docs/hardware_setup.md",
+    "docs/reproduction.md", "docs/fixed_left_fallback.md",
     "fpga/build/conv_front_int8_20261021.bit", "fpga/build/conv_front_int8_20261021.hwh",
-    "host/model/s16_j1c2_cut2int8_ps.onnx", "host/deploy/make_bundle.py",
-    "metrics/metrics.csv", "skill/README.md", "report/design_report.md", "delivery_manifest.json",
+    "host/model/s16_j1c2_cut2int8_ps.onnx", "host/app/tools/integrated_sim_replay.py",
+    "host/app/assets/fixed_left/left.csv", "metrics/evidence/integrated_sim/summary.json",
+    "metrics/metrics.csv", "skill/README.md", "skill/amd-pynq/modules/e_integrated_sim.md",
+    "report/design_report.md", "delivery_manifest.json",
+]
+FORBIDDEN = [
+    "fpga/src/candidates", "host/app/candidates", "host/model/candidates",
+    "metrics/evidence/original_model", "metrics/evidence/roadsign",
+    "host/app/ps/control_arbiter.py", "host/app/ps/roadsign_supervisor.py",
+    "host/app/tools/car", "host/model/roadsign_best.onnx",
 ]
 PINNED = {
     "fpga/build/conv_front_int8_20261021.bit": "8ab0f411cc3ddee74045a753b379d265a121871dc656a53ef25b7c2edfe8da24",
@@ -18,6 +27,7 @@ PINNED = {
     "host/model/s16_j1c2_cut2int8_ps.onnx": "61bcec8f01ffca61ecc611f12bdf61a177f8ee0e9dc0febd256e02b8132cecdb",
     "host/model/params.json": "889703bc0ea80da1a1f49f647c11714b249ee1eaea3149894f35dbbf4eb86a3f",
     "host/model/ref_int8.py": "02feef12ea147f5b772a726ebd3c90d5f1e66bd33ff9fcefa50c3618a040edb4",
+    "host/app/assets/fixed_left/left.csv": "031339b47d8a7254aceadb846a1253dbb6b28e9b084393666f86a466d13b96bb",
 }
 errors = []
 warnings = []
@@ -29,12 +39,16 @@ def sha256(data):
 
 def ignored(relative):
     return (relative == "delivery_manifest.json" or relative.startswith((".git/", "host/deploy/dist/", "build_runs/"))
-            or "__pycache__" in relative.split("/") or ".pytest_cache" in relative.split("/"))
+            or "__pycache__" in relative.split("/") or ".pytest_cache" in relative.split("/")
+            or ".mimosa" in relative.split("/"))
 
 
 for relative in REQUIRED:
     if not (ROOT / relative).is_file():
         errors.append(f"missing required file: {relative}")
+for relative in FORBIDDEN:
+    if (ROOT / relative).exists():
+        errors.append(f"outdated or excluded scheme path present: {relative}")
 
 manifest_path = ROOT / "delivery_manifest.json"
 manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -72,7 +86,7 @@ for path in ROOT.rglob("*"):
             compile(path.read_bytes(), relative, "exec")
         except SyntaxError as exc:
             errors.append(f"Python syntax: {relative}:{exc.lineno}: {exc.msg}")
-    if path.suffix.lower() in (".md", ".py", ".json", ".txt", ".csv", ".cfg", ".rpt", ".sh", ".service"):
+    if path.suffix.lower() in (".md", ".py", ".json", ".jsonl", ".txt", ".csv", ".cfg", ".rpt", ".sh", ".service"):
         text = path.read_text(encoding="utf-8")
         for lineno, line in enumerate(text.splitlines(), 1):
             if re.search(r"(?<![A-Za-z0-9])[A-Za-z]:[\\/]", line):
@@ -95,18 +109,16 @@ for path in ROOT.rglob("*.md"):
         if not (path.parent / target).resolve().exists():
             errors.append(f"broken Markdown link: {relative} -> {target}")
 
-bundle_root = ROOT / "host/model/candidates/original_model_pspl/bundle01"
-bundle_manifest_path = bundle_root / "manifest.json"
-if bundle_manifest_path.is_file():
-    bundle_manifest = json.loads(bundle_manifest_path.read_text(encoding="utf-8"))
-    for name, item in bundle_manifest["files"].items():
-        path = bundle_root / name
-        if not path.is_file():
-            errors.append(f"candidate bundle file missing: {name}")
-            continue
-        data = path.read_bytes()
-        if len(data) != item["bytes"] or sha256(data) != item["sha256"]:
-            errors.append(f"candidate bundle hash/size mismatch: {name}")
+sim = json.loads((ROOT / "metrics/evidence/integrated_sim/summary.json").read_text(encoding="utf-8"))
+if sim["samples"] != 635 or sim["requested_samples"] != 635 or sim["unprocessed_samples"] != 0:
+    errors.append("integrated simulation does not cover exactly 635/635 samples")
+if sim["kernel_starts"] != 635 or not sim["packets_valid_21_bytes"]:
+    errors.append("integrated simulation kernel-start or packet gate mismatch")
+if sim["status"] != "失败" or sim["fault_ticks"] != 42:
+    errors.append("integrated simulation preserved outcome changed unexpectedly")
+verification = json.loads((ROOT / "metrics/evidence/integrated_sim/independent_verification.json").read_text(encoding="utf-8"))
+if verification["initial_fault_triggers"] != 1 or verification["red_stop_decisions"] != 6:
+    errors.append("integrated independent verification mismatch")
 
 result = {
     "status": "已验证" if not errors else "失败",

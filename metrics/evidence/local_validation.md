@@ -1,50 +1,28 @@
-# 本轮本地离线验证记录
+# 最新交付离线验证记录
 
-日期：2026-10-28
-执行环境：Windows，Git Bash，工作区为本次新建交付副本。未连接或操作 KV260、相机、串口和车辆，未安装依赖。
-
-## 结果
+日期：2026-10-31。范围：当前 conv_front_int8 + PS partB + 真实 YOLO + v2 主方案，以及固定左独立附录。未连接或操作 KV260、相机、串口、电机或车辆，未安装新依赖。
 
 | 检查 | 状态 | 实际结果 |
 |---|---|---|
-| 白名单复制与 manifest | 已验证 | `metrics/scripts/build_delivery.py` 退出 0，逐文件记录来源、大小和 SHA-256 |
-| 交付离线校验 | 已验证 | `metrics/scripts/verify_delivery.py` 退出 0；覆盖清单哈希、Python 语法、Markdown 本地链接、GitHub 大小限制、绝对 Windows 路径和高置信凭据模式 |
-| 指标重建 | 已验证 | `metrics/scripts/build_metrics.py` 从随附证据生成 50 行指标 |
-| 车端打包 | 已验证 | `host/deploy/make_bundle.py` 退出 0，生成 36 个 tar 成员（含 MANIFEST） |
-| 车端包哈希 | 已验证 | 35 个清单文件的内部大小/SHA-256 全部一致，外置 tar SHA-256 一致 |
-| 纯离线 pytest | 已验证（开发主源） | `test_packet.py + test_car_loop.py`：250 passed，0.49 s |
-| HLS 主机 C++ | 已验证（交付副本） | TDM g++ 10.3.0 重新编译；4 cases，172,800 elements，0 mismatches |
-| PL Python/ORT 回归 | 未执行 | 项目 venv 缺 pytest，系统 Python 缺 cv2；本轮不安装依赖 |
-| HLS/Vivado/板上复验 | 未执行 | 本轮只做文件整理和离线验证，历史板测状态见各自证据 |
+| 集成工具小测试 | 已验证 | 3 项：正常输出、红灯优先、非有限值拒绝；首次夹具未来时间修正后通过 |
+| 完整全链覆盖 | 已验证（执行） | 635/635、4 次运行、635 唯一样本、635 次整数参考核调用 |
+| 完整全链验收 | **失败** | 1 次 `driver_stale` 首次触发，帧龄 0.5462195 s；随后锁存 42 tick |
+| 独立输出复核 | 已验证 | 样本顺序、核调用序号、全部 21 字节报文和原因计数一致；首次故障与锁存分开 |
+| 红灯 | 已验证（离线） | 6 个真实 YOLO 红灯观测全部停车 |
+| 反号与转弯 | **待优化** | 本次输出重算：`>40` 强反号 27/198、减半 150/198、保留中位 0.2663 |
+| 最新保留测试 | 已验证 | 交付副本 9 个测试文件共 342 passed，0 skipped |
+| 固定左 | 已验证（离线附录） | 35 项新测试、16 个虚拟示例、98 行；无模型推理或实车 |
+| 交付全链冒烟 | 已验证 | 脱敏合同和包内辅助模块实际执行 3/3，0 fault |
+| PL 主机 C++ | 已验证 | TDM g++ 10.3.0；4 cases、172,800 elements、0 mismatches |
+| ONNX 结构 | 已验证 | 当前 partB、常量测试模型、真实 YOLO 共 3 个通过 checker |
+| 清单与发布检查 | 已验证 | 文件/模型/CSV 哈希、Python 语法、Markdown 链接、旧方案路径、文件大小和敏感路径 |
+| HLS/RTL 同帧全链 | 未执行 | 当前全链为整数参考；HLS C/RTL 只作 PL 模块证据 |
+| 真实 PL、15 Hz、实时车辆 | 未执行 | 本记录全部来自离线仿真与主机测试 |
 
-## 实际命令
+## 失败保留与自我纠正
 
-```bash
-python metrics/scripts/build_metrics.py
-python metrics/scripts/build_delivery.py
-python metrics/scripts/verify_delivery.py
-python host/deploy/make_bundle.py
-python -m pytest -q ../pynq_ffn/tests/test_packet.py ../pynq_ffn/tests/test_car_loop.py
-```
-
-HLS 主机构建使用本机已有的 TDM g++ 10.3.0，输入为 `fpga/src/conv_front_int8.cpp`、`testbench.cpp` 和 `fpga/src/vectors/`；输出在已忽略的 `build_runs/`。tar 包另用 Python 逐成员核对 `MANIFEST.json` 和外置 `.sha256`。
-
-## 口径说明
-
-- 250 项 pytest 在开发主源运行；交付复制文件另由 manifest 核对。部分 supervisor 测试使用主源的可选模块，本交付不包含 roadsign supervisor，因此这 250 项不称为本包全覆盖。
-- 第一轮交付自检发现含旧 Windows 路径的非必要证据、一个文档链接和路径检测误判，已在交付副本中修正或移除；原始开发主源和历史证据未改。
-- 离线通过不等于竞赛、板卡或实车验收完成。
-
-## 2026-10-30 新增内容复验
-
-| 检查 | 状态 | 实际结果 |
-|---|---|---|
-| 新增指标重建 | 已验证 | `build_metrics.py` 生成 70 行，新增原模型、路标和控制 v2 的离线指标与阻塞状态 |
-| 原模型候选包 | 已验证 | bundle manifest 中 12 个文件的大小/SHA-256 全部一致；源路径已脱敏为相对路径 |
-| ONNX 结构 | 已验证 | 8 个候选/黄金 ONNX、当前 partB 和常量测试模型，共 10 个通过 `onnx.checker.check_model` |
-| 开发主源定向测试 | 已验证 | 控制 v2 59 passed；旧路标/仲裁/CarLoop/主入口 83 passed，0 skipped |
-| 交付副本定向测试 | 已验证 | 同样 59 + 83 passed，0 skipped；2 条既有 protobuf 弃用警告 |
-| 更新后车端包 | 已验证 | 39 个 tar 成员（含 MANIFEST），38 个内容文件内外 SHA-256 一致 |
-| 新 HLS/真实 PL/实时车辆 | 未执行或阻塞 | 新增候选仍只有离线证据，不改变硬件和实车状态 |
-
-交付副本首次自测出现 58 通过、1 失败，原因是常量 ONNX 夹具未复制；补齐后旧测试收集又发现缺少 `tools/field_replay.py`，已补齐。随后 59 + 83 全部通过。`test_car_main.py` 只调整交付工件路径，未改测试断言。上述过程保留在此，不把首次缺件写成一次通过。
+- 集成小测试最初因假 YOLO 完成时间晚于控制 tick 被正确拒绝，修正夹具时间后通过；没有放宽策略。
+- 完整 635 运行返回退出码 1，因为真实验收失败，不是脚本未跑完。没有调大 0.5 秒诊断窗口。
+- 独立复核最初误把所有 42 个锁存 tick 当成独立超时；已更正为 1 次首次触发和 42 个锁存 tick，并保留 `fault_samples.json`。
+- 清理旧方案后，技能包出现 3 个失效链接，已改为包内路径和当前证据，复核无错误。
+- 原始图像、第三方 YOLO、旧候选和大型 profile 未纳入最新快照；开发主源原件未删除。

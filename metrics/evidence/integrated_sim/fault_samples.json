@@ -1,0 +1,212 @@
+[
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000871",
+    "driver_age_s": 0.5462195289946976,
+    "initial_trigger": true
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000876",
+    "driver_age_s": 0.4185358300005646,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000881",
+    "driver_age_s": 0.41423212499285,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000886",
+    "driver_age_s": 0.41739188499104785,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000891",
+    "driver_age_s": 0.3954595430059271,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000896",
+    "driver_age_s": 0.40469817900793714,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000901",
+    "driver_age_s": 0.46215069599793424,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000906",
+    "driver_age_s": 0.4294601600026908,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000911",
+    "driver_age_s": 0.44153965999475986,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000916",
+    "driver_age_s": 0.41610538400482255,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000921",
+    "driver_age_s": 0.4234119160064438,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000926",
+    "driver_age_s": 0.42325448200426763,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000931",
+    "driver_age_s": 0.4018771519963593,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000936",
+    "driver_age_s": 0.4065037860013945,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000941",
+    "driver_age_s": 0.47062188199925004,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000946",
+    "driver_age_s": 0.4032563299924732,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000951",
+    "driver_age_s": 0.3644095629979347,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000956",
+    "driver_age_s": 0.36339633498892,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000961",
+    "driver_age_s": 0.3622220640008891,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000966",
+    "driver_age_s": 0.38144212999941374,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000971",
+    "driver_age_s": 0.41007843800935007,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000976",
+    "driver_age_s": 0.4412678450025851,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000981",
+    "driver_age_s": 0.40955822799924135,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000986",
+    "driver_age_s": 0.3724077669921826,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000991",
+    "driver_age_s": 0.39710974599893234,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_000996",
+    "driver_age_s": 0.39391579099674345,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_001001",
+    "driver_age_s": 0.39762676700365773,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_001006",
+    "driver_age_s": 0.40157555399218836,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_001011",
+    "driver_age_s": 0.4070764219945886,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_001016",
+    "driver_age_s": 0.4281227509973178,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_001021",
+    "driver_age_s": 0.40637307699535086,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_001026",
+    "driver_age_s": 0.42713997400915105,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_001031",
+    "driver_age_s": 0.4162779350067467,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_001036",
+    "driver_age_s": 0.39853951700160906,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_001041",
+    "driver_age_s": 0.3854222950053554,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_001046",
+    "driver_age_s": 0.3799917399928745,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_001051",
+    "driver_age_s": 0.39904671099520783,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_001056",
+    "driver_age_s": 0.38799039799869206,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_001061",
+    "driver_age_s": 0.38296988799811515,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_001066",
+    "driver_age_s": 0.39023850300600316,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_001071",
+    "driver_age_s": 0.3838303219986301,
+    "initial_trigger": false
+  },
+  {
+    "sample_id": "run_20261026_142207_115d6e87/frame_001076",
+    "driver_age_s": 0.3822960059878824,
+    "initial_trigger": false
+  }
+]

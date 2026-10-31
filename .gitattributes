@@ -12,8 +12,11 @@ LICENSE text eol=lf
 *.cpp text eol=lf
 *.hpp text eol=lf
 *.json -text -whitespace
+*.jsonl text eol=lf
 *.rpt -text -whitespace
 fpga/src/vectors/cases.txt -text -whitespace
+host/app/assets/fixed_left/left.csv -whitespace
+host/app/tests/golden/side_speed_golden.txt -text -whitespace
 metrics/evidence/field_turning_diagnosis.md -whitespace
 *.bit binary
 *.hwh binary

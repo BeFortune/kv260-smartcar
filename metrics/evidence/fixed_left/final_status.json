@@ -1,0 +1,60 @@
+{
+  "schema": "fixed_left_fallback_final_status_v1",
+  "date": "2026-10-31",
+  "revision": "implementation01/revision01",
+  "offline_implementation_status": "已验证",
+  "document_update_status": "已验证",
+  "vehicle_activation_status": "阻塞",
+  "production_default_changed": false,
+  "route": {
+    "selection": "fixed left only; left/right signs do not choose route",
+    "sha256": "031339b47d8a7254aceadb846a1253dbb6b28e9b084393666f86a466d13b96bb",
+    "rows": 98,
+    "nominal_period_ns": 100000000,
+    "nominal_duration_s": 9.8,
+    "stop_at_eof": true,
+    "automatic_driver_handback": false,
+    "resume_after_abort": false,
+    "observed_origin_is_caller_assertion_not_localization": true
+  },
+  "frozen_sources": {
+    "pynq_ffn/ps/control_v2/fixed_left.py": "d35da3cc539247d772c61a890dea1f905b45d0c40288dba1ca091e06402d06fa",
+    "pynq_ffn/tests/test_control_v2_fixed_left.py": "1836f6c3df715c81e5f6dbf415d476e8168d85774c6b2b2ed993edf0b0e5eb0d",
+    "pynq_ffn/tools/fixed_left_replay.py": "239003438244203a0d2acd5feadbe59d812f4f5292e651d1af869f7c045560a9"
+  },
+  "verification": [
+    {"name": "新固定左测试", "status": "已验证", "passed": 35, "skipped": 0},
+    {"name": "既有v2回归", "status": "已验证", "passed": 59, "skipped": 0},
+    {"name": "旧路标主循环回归", "status": "已验证", "passed": 83, "skipped": 0, "warnings": 2},
+    {"name": "16组CLI离线示例", "status": "已验证", "count": 16},
+    {"name": "完整98行独立核对", "status": "已验证", "control_tick_hz": [10, 15, 50], "repeat_counts": [0, 49, 392], "first_observed_max_lateness_ns": [0, 33333333, 0], "eof_elapsed_ns": 9800000000},
+    {"name": "11种中断不恢复", "status": "已验证", "count": 11},
+    {"name": "原值报文和时序独立复算", "status": "已验证", "evidence": "integration01/independent_check.json"},
+    {"name": "旧原件保护", "status": "已验证", "coordinator_count": 37, "frozen_dependency_count": 54, "overlapping_counts_not_additive": true},
+    {"name": "实际固定起点和出口验证", "status": "阻塞"},
+    {"name": "相机串口PL电机车辆与性能", "status": "未执行"},
+    {"name": "完整仓库pytest", "status": "未执行"},
+    {"name": "训练模型优化和生产部署", "status": "未执行"}
+  ],
+  "safety_policy": {
+    "red_pedestrian_crosswalk_stop_abort": true,
+    "active_limit_start_reject_or_abort": true,
+    "stale_fault_emergency_sender_audit_abort": true,
+    "raw_sign_identity_validated_before_direction_filter": true,
+    "missed_slot_or_first_observation_lateness_abort": true,
+    "same_slot_reuse_allowed": true,
+    "audit_append_failure_boundary": "当tick硬锁Sender，policy下一tick通过audit.fault中止；不能撤销在途I/O"
+  },
+  "critical_limits": [
+    "98行覆盖是按时产生候选，实际Sender可能覆盖待发速度，不等于98条物理发送或车辆到出口",
+    "示例虚拟时间与MemorySink不是实车节奏、真实性能或STM32 ACK",
+    "旧sleep-before-row与本候选row0-at-t0相位不同，保留名义10Hz而非原绝对时序等价",
+    "诊断max_raw_speed和max_lateness不是验证过的车辆安全值",
+    "完成后再发生安全故障，路线状态可保持completed但最终输出仍stop，不能仅看路线状态"
+  ],
+  "documents": ["pynq_ffn/docs/fixed_left_fallback.md", "pynq_ffn/docs/roadsign_control_v2.md"],
+  "retained_failure": "开发期directions fixture同seq内容改变导致拒绝，修fixture后冻结复验；不放宽原身份检查",
+  "skip": [],
+  "no_hardware_actions": true,
+  "no_original_csv_model_bit_params_changes": true
+}
