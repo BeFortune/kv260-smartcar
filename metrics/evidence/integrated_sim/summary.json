@@ -1,0 +1,154 @@
+{
+  "schema": "integrated_integer_reference_yolo_pl_ps_v1",
+  "status": "失败",
+  "date_utc": "2026-10-31T14:32:43.958413+00:00",
+  "scope": "Actual recorded-image replay through integer-reference PL, PS partB, real YOLO ONNX, control v2 and packet encoding; no HLS/RTL, physical PL, camera, serial or vehicle",
+  "samples": 635,
+  "requested_samples": 635,
+  "unprocessed_samples": 0,
+  "unique_sample_ids": 635,
+  "runs": 4,
+  "kernel_starts": 635,
+  "decision_reasons": {
+    "driver": 441,
+    "red_light": 152,
+    "fault:driver_stale": 42
+  },
+  "stop_count": 194,
+  "fault_ticks": 42,
+  "red_observations": 6,
+  "red_stop_decisions": 6,
+  "packets_valid_21_bytes": true,
+  "timing_ms": {
+    "integer_reference_driver_total": {
+      "n": 635,
+      "mean": 95.63153763782915,
+      "p50": 94.01780000189319,
+      "p95": 112.36917000642278,
+      "p99": 126.91679799725532,
+      "max": 148.4304999903543
+    },
+    "yolo_detector": {
+      "n": 635,
+      "mean": 264.8526029917732,
+      "p50": 261.7813999968348,
+      "p95": 292.4490800054627,
+      "p99": 312.30786999920366,
+      "max": 364.3246999999974
+    },
+    "driver_stages": {
+      "pre": {
+        "n": 635,
+        "mean": 1.0953853545732444,
+        "p50": 1.0385000059613958,
+        "p95": 1.5439300041180102,
+        "p99": 2.2179260067059636,
+        "max": 2.6772000128403306
+      },
+      "kernel": {
+        "n": 635,
+        "mean": 92.76162440935333,
+        "p50": 91.33380001003388,
+        "p95": 108.4369099975447,
+        "p99": 122.6108660016325,
+        "max": 144.8149000061676
+      },
+      "dequant": {
+        "n": 635,
+        "mean": 0.3042478737921828,
+        "p50": 0.26569998590275645,
+        "p95": 0.49328000313835196,
+        "p99": 0.8535879995906697,
+        "max": 1.9214999920222908
+      },
+      "partb": {
+        "n": 635,
+        "mean": 1.4702800001103915,
+        "p50": 1.2344999995548278,
+        "p95": 2.736830007052049,
+        "p99": 4.505206006288053,
+        "max": 6.497700000181794
+      }
+    },
+    "note": "Windows offline wall times only; not KV260, HLS, RTL, physical PL or end-to-end board latency"
+  },
+  "inputs": {
+    "contract": {
+      "path": "pynq_ffn\\artifacts\\field_capture_analysis_20261026\\replay_identity02\\contract.json",
+      "bytes": 2052853,
+      "sha256": "2a4bebfa39bc9d55529febdef303c86f870e6f9ad79c55d602b07ac043008033"
+    },
+    "policy_scope": {
+      "path": "pynq_ffn\\artifacts\\roadsign_control_v2_20261030\\run01\\saved_replay_scope.json",
+      "bytes": 2213,
+      "sha256": "4da7e3f816d83244845f01a050147c249de58978f1f3cd31f58253504da3eece"
+    },
+    "ref": {
+      "path": "pynq_ffn\\hls\\conv_front_int8\\ref_int8.py",
+      "bytes": 3946,
+      "sha256": "02feef12ea147f5b772a726ebd3c90d5f1e66bd33ff9fcefa50c3618a040edb4"
+    },
+    "params": {
+      "path": "pynq_ffn\\hls\\conv_front_int8\\params.json",
+      "bytes": 806721,
+      "sha256": "889703bc0ea80da1a1f49f647c11714b249ee1eaea3149894f35dbbf4eb86a3f"
+    },
+    "partb": {
+      "path": "pynq_ffn\\artifacts\\route_b_quant_20261020\\cut2_01_board\\s16_j1c2_cut2int8_ps.onnx",
+      "bytes": 792542,
+      "sha256": "61bcec8f01ffca61ecc611f12bdf61a177f8ee0e9dc0febd256e02b8132cecdb"
+    },
+    "roadsign_model": {
+      "path": "pynq_ffn\\artifacts\\roadsign_real_validation_20261028\\run01\\model\\roadsign_best.onnx",
+      "bytes": 28577915,
+      "sha256": "dff54ac921f3898fcf2f06f04662cc68b19e6034c2c9472b275e1ec01ddb22ee"
+    }
+  },
+  "source": {
+    "integrated_sim_replay.py": {
+      "path": "pynq_ffn\\tools\\integrated_sim_replay.py",
+      "bytes": 12027,
+      "sha256": "f09479aa5e3c5296f132806e25bfca3babcb019f985d748d2f987fdc36a9e549"
+    },
+    "pl_infer.py": {
+      "path": "pynq_ffn\\ps\\pl_infer.py",
+      "bytes": 10140,
+      "sha256": "bbda3cab352476157752a3ee83bb9789c68cad3e3026fa0567a0fdb760aba8e0"
+    },
+    "roadsign.py": {
+      "path": "pynq_ffn\\ps\\roadsign.py",
+      "bytes": 8809,
+      "sha256": "75733ee5ce53573651d6ac6921f9c784a0cccb1861e8af041b1ae3bca9849778"
+    },
+    "policy.py": {
+      "path": "pynq_ffn\\ps\\control_v2\\policy.py",
+      "bytes": 8123,
+      "sha256": "1bbbfb47f49d24f6eeee638bc86b782dd13b9c4b04116ae28bf771dcd55d2d06"
+    },
+    "snapshots.py": {
+      "path": "pynq_ffn\\ps\\control_v2\\snapshots.py",
+      "bytes": 4352,
+      "sha256": "8571b5c084dd51a516254facbd0f37ac7219b7dfd970d29b74dc1dfc765c8081"
+    }
+  },
+  "config_diagnostic_only": {
+    "max_driver_age_s": 0.5,
+    "max_sign_age_s": 0.5,
+    "confirm_frames": 2,
+    "pedestrian_clear_frames": 3,
+    "crosswalk_clear_frames": 3,
+    "crosswalk_hold_s": 3.0,
+    "speed_limit_factor": 0.75,
+    "command_ttl_s": 0.2,
+    "confirmation_max_gap_s": 0.5
+  },
+  "pynq_imported": false,
+  "not_executed": [
+    "HLS or RTL integrated replay",
+    "physical PL",
+    "real camera",
+    "physical serial or STM32 ACK",
+    "motor or vehicle",
+    "15 Hz or fixed-track acceptance"
+  ]
+}

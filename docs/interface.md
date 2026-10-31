@@ -1,58 +1,32 @@
-# 接口定义
+# 最新接口定义
 
-## 1. 图像与 PL 接口
+## PL 与 PS partB
 
-输入为三幅 `uint8 BGR 640x480`，顺序固定 **左、前、右**。每幅图执行：
+PL 输入为连续 `int8[3][3][66][200]`（118,800 字节），输出为 `int8[3][64][9][25]`（43,200 字节）。相机顺序固定左、前、右。PS 使用固定量化参数反量化并运行 `s16_j1c2_cut2int8_ps.onnx`，得到左右 `speed_raw`。
 
-1. 裁剪 `[150:479, 0:640]`。
-2. 双线性缩放到 `200x66`。
-3. BGR 转 YUV，CHW 排列。
-4. 查表完成与原浮点预处理等价的 INT8 量化；输入 zero-point 为 0。
-
-PL 输入为连续 `int8[3][3][66][200]`（118,800 字节），输出为连续 `int8[3][64][9][25]`（43,200 字节）。PS 用 `(q + 18) * 0.0806707814335823` 的 float32 查表结果反量化，再交给 `s16_j1c2_cut2int8_ps.onnx`。
-
-寄存器以 `host/app/ps/pl_infer.py` 和 `metrics/evidence/system_artifact_verification.json` 为准：
-
-| 名称 | 偏移 | 用途 |
-|---|---:|---|
-| CTRL | `0x00` | bit0 START、bit1 DONE、bit2 IDLE；采用 ap_ctrl_hs |
-| in_r 低/高 32 位 | `0x10` / `0x14` | 输入缓冲 64 位设备地址 |
-| out_r 低/高 32 位 | `0x1c` / `0x20` | 输出缓冲 64 位设备地址 |
-
-控制地址预期为 `0xA0000000`，IP 名为 `conv_front_int8_0`。缓冲写地址后先 `flush`，启动并等待 DONE，再 `invalidate`。超时不代表硬件停止访问内存，不能立即释放或复用缓冲。
-
-## 2. 模型文件身份
-
-运行前核对固定 SHA-256：
+当前基线 SHA-256：
 
 - bit：`8ab0f411cc3ddee74045a753b379d265a121871dc656a53ef25b7c2edfe8da24`
 - HWH：`c2b5c8138087c8e398d509df40e1c854311ebcca249f7a0e232c107d8db6d067`
-- PS ONNX：`61bcec8f01ffca61ecc611f12bdf61a177f8ee0e9dc0febd256e02b8132cecdb`
+- partB：`61bcec8f01ffca61ecc611f12bdf61a177f8ee0e9dc0febd256e02b8132cecdb`
 - params：`889703bc0ea80da1a1f49f647c11714b249ee1eaea3149894f35dbbf4eb86a3f`
 - 整数参考：`02feef12ea147f5b772a726ebd3c90d5f1e66bd33ff9fcefa50c3618a040edb4`
 
-禁止把早期 FFN 或其他候选的文件混入这一组。
+## YOLO
 
-## 3. KV260 -> STM32 串口帧
+真实模型固定上游提交 `5f28cbabff90ee318ddd0877257516fa03e95adb`，SHA-256 `dff54ac921f3898fcf2f06f04662cc68b19e6034c2c9472b275e1ec01ddb22ee`。输入为前视原图，float32 `[1,3,640,640]`；输出为 `[1,25200,15]`，4 框值 + 1 目标分 + 10 类分。没有锥桶类别。获取方式见 `../host/model/roadsign_MODEL.md`。
 
-串口参数为 115200、8N1。每帧固定 21 字节：
+## v2 快照与决策
 
-```text
-'%' '@' '1'
-+ 左速度3位 + '1' + 左速度3位 + '1'
-+ 右速度3位 + '1' + 右速度3位 + '1'
-+ 0xFF 0xFF
-```
+- `DriverSnapshot`：运行代号、帧序号、三路最早抓帧时间、驾驶完成时间、健康状态和左右输出。
+- `SignSnapshot`：运行代号、帧序号、前视抓帧/完成时间、健康状态和接受的检测列表。
+- `Decision`：最终左右输出、stop、原因和锁存状态。
+- 只有合法最终决定才进入 `encode_side_speed()`；停车帧为四个 `000`，标志均为 `1`。
 
-当前自动路径只接受 0–999 的左右速度，浮点向零截断。负数、超范围和非有限值拒绝编码。停车帧为四个 `000` 且标志均为 `1`。这与旧 NUC 自动路径的发送语义一致；停车补帧是 KV260 侧新增安全行为，仍需与当前 STM32 固件和实车隔离验证。
+报文固定 21 字节，串口物理发送不在本次验收内。编码成功不表示 STM32 已接收或电机已执行。
 
-无 ACK 时，日志只能证明 KV260 写串口成功，不能证明 STM32 已接收或电机已执行。
+## 集成仿真入口
 
-## 4. 部署配置文件
+`host/app/tools/integrated_sim_replay.py` 显式接收输入合同、策略配置、ref/params/partB 和真实 YOLO 路径。输出目录必须不存在；逐样本写入 `predictions.jsonl` 和 `summary.json`，任何阶段失败都保留失败文件并返回非零。
 
-- 相机口位：`host/app/ps/camera_ports.json`
-- 串口口位与接线：`host/app/ps/serial_port.json`
-- 手柄配置：`host/app/ps/joystick.json`
-- 运行主入口：`host/app/tools/car/car_main.py`
-
-这些文件是当前接法的配置证据，不应在其他接线或车辆上未经核对直接复用。
+`host/app/tools/field_replay.py` 与 `roadsign_replay.py` 在交付包中只是图像哈希和时间/统计辅助模块，不含旧驾驶或旧仲裁实现。

@@ -1,19 +1,12 @@
-# 车端程序入口
+# 最新车端与仿真源码
 
-本目录保留开发主源的相对结构：
+- `ps/pl_infer.py`：整数参考/物理 PL 可替换的驾驶链；本验收只用整数参考。
+- `ps/roadsign.py`：真实 YOLO 身份、CPU 推理与解析。
+- `ps/control_v2/`：快照、策略、worker、唯一 Sender 与固定左附录。
+- `tools/integrated_sim_replay.py`：635 组全链入口。
+- `tools/control_v2_replay.py`：保存结果或合成场景策略回放。
+- `tools/fixed_left_replay.py`：固定左虚拟时序工具。
+- `tools/field_replay.py`、`roadsign_replay.py`：仅图像哈希和时间/统计辅助，不含旧驾驶或旧仲裁。
+- `tests/`：当前保留的 9 个测试文件，共 342 项。
 
-- `ps/`：预处理、PL 接口、推理、采集、串口、手柄和控制循环。
-- `tools/car/car_main.py`：车端主程序。
-- `tools/car/pl_load.py`：哈希门禁与 Overlay 加载，属于硬件操作。
-- `tools/car/cpu_check.py`：CPU 性能检查。
-- `tools/car/frame_capture_replay.py`：录像/帧回放。
-- `tools/car/README.md`：原部署与现场操作说明。
-- `tools/car/systemd/`：三个服务单元。
-- `ps/roadsign*.py`、`ps/control_arbiter.py`：默认不启用的旧路标监督路径。
-- `ps/control_v2/`、`tools/control_v2_replay.py`：2026-10-30 独立离线控制候选，没有实车入口。
-- `candidates/original_model_pspl/`：2026-10-29 原模型布局优化候选，未接入生产。
-- `tests/`：可选路标、v2 和旧路径的定向测试。
-
-文件仅从 `pynq_ffn` 白名单复制，未为交付目录重排业务代码。程序导入时不要求连接硬件；但显式调用 PL、相机、串口或主循环会改变设备状态。
-
-部署打包从仓库根目录使用 `python host/deploy/make_bundle.py`，不要在 `host/app/` 内寻找另一个打包器。
+完整运行方法见 `../../docs/reproduction.md`。本目录不包含旧 FFN 候选、旧路标仲裁或生产控车入口；源码存在不代表硬件/车辆已启用。

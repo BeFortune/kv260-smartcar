@@ -1,0 +1,40 @@
+{
+  "status": "已验证",
+  "source_revision": "revision01",
+  "test_groups": {
+    "final_fixed_left": {
+      "passed": 35,
+      "failed": 0,
+      "skipped": 0,
+      "exit_code": 0
+    },
+    "final_control_v2": {
+      "passed": 59,
+      "failed": 0,
+      "skipped": 0,
+      "exit_code": 0
+    },
+    "final_roadsign_car": {
+      "passed": 83,
+      "failed": 0,
+      "skipped": 0,
+      "exit_code": 0
+    }
+  },
+  "legacy_warnings": 2,
+  "offline_demos": 16,
+  "sha_files_checked": 54,
+  "sha_changed": [],
+  "candidate_scope": "on-time candidates only, not actual per-row physical writes; latest sender mailbox can overwrite pending speed",
+  "start_phase": "start performs health/hold check at t0; first Controller tick must be at t0; no queued delayed start",
+  "audit_append_boundary": "existing Controller hard-stops Sender immediately on append failure; policy abort follows at next tick via audit.fault",
+  "retained_development_failure": "all_scenarios07: directions fixture changed same-seq initial snapshot; unified initial fixture before final freeze, green_final09 and final_fixed_left passed",
+  "unexecuted": [
+    "devices/remote/camera/serial/motors",
+    "PYNQ/Overlay/PL",
+    "actual inference or end-to-end performance",
+    "vehicle alignment/safe raw speed/exit",
+    "full repository pytest",
+    "production deployment/config/docs handled by coordinator"
+  ]
+}

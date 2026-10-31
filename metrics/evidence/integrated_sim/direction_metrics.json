@@ -1,0 +1,31 @@
+{
+  "schema": "integrated_direction_disagreement_v1",
+  "scope": "integer-reference driver versus recorded old teacher; not independent physical truth",
+  "definitions": {
+    "d": "(left-right)/2",
+    "strong_reverse": "teacher_d*prediction_d<0 and abs(prediction_d)>5",
+    "half": "abs(prediction_d)<0.5*abs(teacher_d)"
+  },
+  "gt15": {
+    "n": 352,
+    "strong_reverse_count": 89,
+    "strong_reverse_rate": 0.2528409090909091,
+    "ordinary_reverse_count": 114,
+    "ordinary_reverse_rate": 0.32386363636363635,
+    "half_count": 209,
+    "half_rate": 0.59375,
+    "absolute_retention_median": 0.3941557543427803,
+    "d_mae": 39.880478317087345
+  },
+  "gt40": {
+    "n": 198,
+    "strong_reverse_count": 27,
+    "strong_reverse_rate": 0.13636363636363635,
+    "ordinary_reverse_count": 42,
+    "ordinary_reverse_rate": 0.21212121212121213,
+    "half_count": 150,
+    "half_rate": 0.7575757575757576,
+    "absolute_retention_median": 0.2662820040143098,
+    "d_mae": 45.99578468245689
+  }
+}

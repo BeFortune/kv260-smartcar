@@ -1,0 +1,31 @@
+{
+  "schema": "direction_closeout_status_v1",
+  "date": "2026-10-31",
+  "documentation_status": "已验证",
+  "saved_prediction_recomputation_status": "已验证",
+  "decision": "End the current repair effort within scope; retain known limitations for future optimization, without declaring repair success.",
+  "decision_basis": "On the same saved joystick-reference masks, strong reverse rates differ by 0.3755 and 0.3311 percentage points. This does not establish model equivalence or comparable field correctness.",
+  "future_repair_experiment_status": "未执行",
+  "existing_candidate_field_teacher_consistency_status": "失败",
+  "old_nuc_field_truth_comparison_status": "阻塞",
+  "old_nuc_field_truth_comparison_reason": "No synchronized correct-action reference for the 635 field samples.",
+  "old_nuc_training_split_overlap": "待确认",
+  "target_hardware_and_vehicle_acceptance_status": "阻塞",
+  "hardware_condition_source": "User reports the core board is unavailable; not independently electrically inspected in this task.",
+  "current_task_hardware_operations": "未执行",
+  "new_model_inference": "未执行",
+  "training": "未执行",
+  "production_promoted": false,
+  "fixed_left_fallback_changed": false,
+  "yolo_changed": false,
+  "production_configuration_changed": false,
+  "commit_push_publish": "未执行",
+  "modified_existing_documents": [
+    "pynq_ffn/README.md",
+    "docs/agents/project_context.md"
+  ],
+  "new_document": "pynq_ffn/docs/direction_repair_closeout.md",
+  "statistics": "results/statistics.json",
+  "failure_record": "statistics01_failure.json",
+  "note": "Closing this stage is not a hardware or vehicle safety acceptance and does not weaken historical experiment gates."
+}

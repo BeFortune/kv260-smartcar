@@ -1,71 +1,50 @@
 metric,scope,condition,value,unit,status,evidence_path,notes
-csim_cases,HLS C simulation,120 real validation + 4 other,124,cases,已验证,fpga/report/hls_fixed_acceptance01.json,
-csim_mismatches,HLS C simulation,124 cases,0,bytes,已验证,fpga/report/hls_fixed_acceptance01.json,5356800 output bytes checked
-csynth_latency,HLS C synthesis,100 MHz target; static estimate,412297,cycles/transaction,已验证,fpga/report/hls_fixed_acceptance01.json,Not board latency
-rtl_transactions,RTL cosimulation,complete three-camera transactions,4,transactions,已验证,fpga/report/hls_fixed_acceptance01.json,120-frame full RTL not executed
-rtl_mismatches,RTL cosimulation,4 transactions,0,bytes,已验证,fpga/report/hls_fixed_acceptance01.json,172800 output bytes checked
-rtl_latency_average,RTL cosimulation,4 transactions,410984,cycles/transaction,已验证,fpga/report/hls_fixed_acceptance01.json,
-ooc_wns,single-IP OOC implementation,10 ns target,1.806,ns,已验证,fpga/report/hls_fixed_acceptance01.json,External I/O delays incomplete; not system signoff
-ooc_whs,single-IP OOC implementation,10 ns target,0.035,ns,已验证,fpga/report/hls_fixed_acceptance01.json,
-ooc_resource_clb_luts,single-IP OOC implementation,post-route,21100,of 117120 (18.02%),已验证,fpga/report/hls_fixed_acceptance01.json,
-ooc_resource_clb_registers,single-IP OOC implementation,post-route,22784,of 234240 (9.73%),已验证,fpga/report/hls_fixed_acceptance01.json,
-ooc_resource_block_ram_tile,single-IP OOC implementation,post-route,95,of 144 (65.97%),已验证,fpga/report/hls_fixed_acceptance01.json,
-ooc_resource_uram,single-IP OOC implementation,post-route,26,of 64 (40.63%),已验证,fpga/report/hls_fixed_acceptance01.json,
-ooc_resource_dsps,single-IP OOC implementation,post-route,788,of 1248 (63.14%),已验证,fpga/report/hls_fixed_acceptance01.json,
-pl_numeric_frames,KV260 real PL,2026-10-21 recording replay,117,frames,已验证,metrics/logs/pl_board_run01_report.json,
-pl_numeric_mismatches,KV260 real PL vs integer reference,117 frames,0,bytes,已验证,metrics/logs/pl_board_run01_report.json,5054400 bytes checked
-pl_speed_max_error_vs_int8,KV260 real PL vs CPU INT8 ORT,117 frames,0.0180816650390625,speed_raw,已验证,metrics/logs/pl_board_run01_report.json,
-pl_speed_max_error_vs_fp32,KV260 real PL vs CPU FP32,117 frames; includes quantization,5.2712860107421875,speed_raw,已验证,metrics/logs/pl_board_run01_report.json,
-inference_total_p50,KV260 same-process timing,PS+PL; 4 threads; 300 iterations; warmup 20,19.654478994198143,ms,已验证,metrics/logs/pl_board_run01_report.json,JPEG decode excluded
-inference_total_p95,KV260 same-process timing,PS+PL; 4 threads; 300 iterations; warmup 20,21.458097994764103,ms,已验证,metrics/logs/pl_board_run01_report.json,JPEG decode excluded
-inference_total_p99,KV260 same-process timing,PS+PL; 4 threads; 300 iterations; warmup 20,33.42074855710959,ms,已验证,metrics/logs/pl_board_run01_report.json,JPEG decode excluded
-inference_total_max,KV260 same-process timing,PS+PL; 4 threads; 300 iterations; warmup 20,39.01849400426727,ms,已验证,metrics/logs/pl_board_run01_report.json,JPEG decode excluded
-inference_total_p50,KV260 same-process timing,CPU FP32; 4 threads; 300 iterations; warmup 20,25.500149007712025,ms,已验证,metrics/logs/pl_board_run01_report.json,JPEG decode excluded
-inference_total_p95,KV260 same-process timing,CPU FP32; 4 threads; 300 iterations; warmup 20,34.5349088493095,ms,已验证,metrics/logs/pl_board_run01_report.json,JPEG decode excluded
-inference_total_p99,KV260 same-process timing,CPU FP32; 4 threads; 300 iterations; warmup 20,51.70007765627815,ms,已验证,metrics/logs/pl_board_run01_report.json,JPEG decode excluded
-inference_total_max,KV260 same-process timing,CPU FP32; 4 threads; 300 iterations; warmup 20,58.04607199388556,ms,已验证,metrics/logs/pl_board_run01_report.json,JPEG decode excluded
-pl_pre_lut_p50,KV260 PS+PL component timing,4 threads; 300 iterations,5.243754501861986,ms,已验证,metrics/logs/pl_board_run01_report.json,
-pl_kernel_p50,KV260 PS+PL component timing,4 threads; 300 iterations,4.160753000178374,ms,已验证,metrics/logs/pl_board_run01_report.json,
-pl_partb_p50,KV260 PS+PL component timing,4 threads; 300 iterations,9.245505993021652,ms,已验证,metrics/logs/pl_board_run01_report.json,
-speedup_vs_cpu_fp32_p50,KV260 same-process timing,PS+PL versus CPU FP32,1.2974217742042147,ratio,已验证,metrics/logs/pl_board_run01_report.json,Not a speedup claim versus CPU INT8
-kernel_starts,KV260 real PL,2026-10-21 run,437,starts,已验证,metrics/logs/pl_board_run01_report.json,Final idle=true; clock writes=0
-cpu_total_p50,KV260 pure CPU ORT,s16_j1c2_cut2int8_full_t4,17.92209049926896,ms,已验证,metrics/evidence/cpu_timing_run01.json,No PYNQ imported; separate run from PL timing
-cpu_total_p95,KV260 pure CPU ORT,s16_j1c2_cut2int8_full_t4,19.76012925042593,ms,已验证,metrics/evidence/cpu_timing_run01.json,No PYNQ imported; separate run from PL timing
-cpu_total_p99,KV260 pure CPU ORT,s16_j1c2_cut2int8_full_t4,36.7668630697517,ms,已验证,metrics/evidence/cpu_timing_run01.json,No PYNQ imported; separate run from PL timing
-cpu_total_p50,KV260 pure CPU ORT,s16_j1c2_trained_full_t4,19.888723498297622,ms,已验证,metrics/evidence/cpu_timing_run01.json,No PYNQ imported; separate run from PL timing
-cpu_total_p95,KV260 pure CPU ORT,s16_j1c2_trained_full_t4,26.301042797967934,ms,已验证,metrics/evidence/cpu_timing_run01.json,No PYNQ imported; separate run from PL timing
-cpu_total_p99,KV260 pure CPU ORT,s16_j1c2_trained_full_t4,47.244842597829106,ms,已验证,metrics/evidence/cpu_timing_run01.json,No PYNQ imported; separate run from PL timing
-acceleration_vs_cpu_int8,end-to-end comparison,PS+PL 19.6545 ms versus CPU INT8 17.9221 ms,not_faster,conclusion,失败,metrics/evidence/cpu_timing_run01.json,Do not claim acceleration over CPU INT8
-scheduled_speed_frames,recording-driven inference loop,20 seconds; loaded PL; no camera/serial,300,frames,已验证,metrics/evidence/car_loop_board_run01.json,
-send_interval_p50,recording-driven inference loop,300 speed frames in 20 seconds,66.79851000080816,ms,已验证,metrics/evidence/car_loop_board_run01.json,Not physical serial or vehicle timing
-loop_inference_total_p50,recording-driven inference loop,351 timed inferences,19.5560620049946,ms,已验证,metrics/evidence/car_loop_board_run01.json,JPEG decode/camera/serial excluded
-send_interval_p95,recording-driven inference loop,300 speed frames in 20 seconds,68.23295140929984,ms,已验证,metrics/evidence/car_loop_board_run01.json,Not physical serial or vehicle timing
-loop_inference_total_p95,recording-driven inference loop,351 timed inferences,28.198487489135005,ms,已验证,metrics/evidence/car_loop_board_run01.json,JPEG decode/camera/serial excluded
-send_interval_p99,recording-driven inference loop,300 speed frames in 20 seconds,82.79063146503177,ms,已验证,metrics/evidence/car_loop_board_run01.json,Not physical serial or vehicle timing
-loop_inference_total_p99,recording-driven inference loop,351 timed inferences,40.15955000068061,ms,已验证,metrics/evidence/car_loop_board_run01.json,JPEG decode/camera/serial excluded
-send_interval_max,recording-driven inference loop,300 speed frames in 20 seconds,86.2388789828401,ms,已验证,metrics/evidence/car_loop_board_run01.json,Not physical serial or vehicle timing
-loop_inference_total_max,recording-driven inference loop,351 timed inferences,69.81495799846016,ms,已验证,metrics/evidence/car_loop_board_run01.json,JPEG decode/camera/serial excluded
-loop_kernel_starts,recording-driven inference loop,2026-10-22 run,771,starts,已验证,metrics/evidence/car_loop_board_run01.json,
-field_turning_retention_median,offline field diagnosis,198 old-model |d|>40 reference frames,0.273,ratio,失败,metrics/evidence/field_turning_diagnosis.md,New model cannot safely replace the old CPU fallback
-original_candidate_max_abs,original-model CPU candidate,payload_173,0.0,absolute error,已验证,metrics/evidence/original_model/runtime_recheck_summary.json,Full and split; four outputs; no PL
-original_candidate_integer_mismatches,original-model CPU candidate,payload_173,0,samples/comparisons as recorded,已验证,metrics/evidence/original_model/runtime_recheck_summary.json,
-original_candidate_max_abs,original-model CPU candidate,field_635,0.0,absolute error,已验证,metrics/evidence/original_model/runtime_recheck_summary.json,Full and split; four outputs; no PL
-original_candidate_integer_mismatches,original-model CPU candidate,field_635,0,samples/comparisons as recorded,已验证,metrics/evidence/original_model/runtime_recheck_summary.json,
-original_candidate_host_mean,desktop CPU benchmark,golden; 4 threads; 346 calls,6.025791040462429,ms,已验证,metrics/evidence/original_model/final_status.json,Not KV260; preprocessing and PL excluded
-original_candidate_host_mean,desktop CPU benchmark,layout candidate; 4 threads; 346 calls,5.641603468208093,ms,已验证,metrics/evidence/original_model/final_status.json,Mean improves; maximum regresses
-original_candidate_host_max,desktop CPU benchmark,layout candidate,9.7014,ms,已验证,metrics/evidence/original_model/final_status.json,Worse than golden max 7.4283 ms
-original_candidate_15hz,original-model real PS+PL goal,new HLS/PL/board unavailable,,,阻塞,metrics/evidence/original_model/final_status.json,
-roadsign_detector_p50,desktop CPU offline replay,635 recorded samples; YOLO 1 thread,201.00730001286138,ms,已验证,metrics/evidence/roadsign/full_replay_summary.json,Not KV260 or real camera
-roadsign_detector_p95,desktop CPU offline replay,635 recorded samples; YOLO 1 thread,211.07941000518622,ms,已验证,metrics/evidence/roadsign/full_replay_summary.json,Not KV260 or real camera
-roadsign_detector_p99,desktop CPU offline replay,635 recorded samples; YOLO 1 thread,217.43400400708197,ms,已验证,metrics/evidence/roadsign/full_replay_summary.json,Not KV260 or real camera
-roadsign_detector_max,desktop CPU offline replay,635 recorded samples; YOLO 1 thread,224.22329999972135,ms,已验证,metrics/evidence/roadsign/full_replay_summary.json,Not KV260 or real camera
-roadsign_cpu_total_p50,desktop CPU offline replay,driver 4 threads + YOLO 1 thread + arbiter,205.9507000085432,ms,已验证,metrics/evidence/roadsign/final_status.json,Exceeds 66.7 ms; not board performance
-roadsign_serial_15hz_budget,desktop serial path versus 15 Hz,offline diagnostic,over_budget,conclusion,失败,metrics/evidence/roadsign/final_status.json,
-control_v2_final_new_passed,offline directed pytest,final_new,59,tests,已验证,metrics/evidence/control_v2/test_counts.json,Separate counts; not added to historical totals
-control_v2_final_legacy_passed,offline directed pytest,final_legacy,83,tests,已验证,metrics/evidence/control_v2/test_counts.json,Separate counts; not added to historical totals
-control_v2_red_observations,saved real detections through new policy,635 samples; no new inference,6,samples,已验证,metrics/evidence/control_v2/saved_replay_summary.json,
-control_v2_red_stop_decisions,saved real detections through new policy,6 red observations,6,decisions,已验证,metrics/evidence/control_v2/saved_replay_summary.json,Old v1 was 0/6; not physical braking
-control_v2_confirmation_coverage,saved sparse detections,gaps above fixed 0.5 s confirmation window,631,gaps,未执行,metrics/evidence/control_v2/saved_replay_summary.json,No widening to force junction/crosswalk confirmations
-control_v2_vehicle_activation,control v2 vehicle deployment,no vehicle entry or junction executor,,,阻塞,metrics/evidence/control_v2/final_status.json,
-current_pl_realtime_camera_serial,current PL route,real camera + serial + motor,,,未执行,STATUS.md,
-current_pl_vehicle_task,current PL route,fixed-track vehicle run,,,未执行,STATUS.md,
+integrated_acceptance,YOLO+integer-reference PL+PS+v2,635 samples; original 0.5 s diagnostic gate,失败,conclusion,失败,metrics/evidence/integrated_sim/summary.json,"Complete run, not HLS/RTL or physical PL"
+integrated_samples,integrated offline replay,4 runs,635,samples,已验证,metrics/evidence/integrated_sim/summary.json,All samples executed
+integrated_unique_ids,integrated offline replay,ordered input contract,635,unique IDs,已验证,metrics/evidence/integrated_sim/independent_verification.json,
+integer_reference_kernel_starts,integer-reference PL,635 samples,635,starts,已验证,metrics/evidence/integrated_sim/independent_verification.json,
+fault_ticks,control v2 freshness gate,latched driver_stale,42,ticks,失败,metrics/evidence/integrated_sim/independent_verification.json,Not independent timeout count
+initial_fault_triggers,control v2 freshness gate,first stale event before latch,1,events,失败,metrics/evidence/integrated_sim/independent_verification.json,Initial age 0.5462195 s
+red_observations,real YOLO + v2,635 samples,6,observations,已验证,metrics/evidence/integrated_sim/summary.json,
+red_stop_decisions,real YOLO + v2,6 red observations,6,decisions,已验证,metrics/evidence/integrated_sim/summary.json,"Offline decisions, not physical braking"
+valid_packets,packet encoding,all final decisions,1,boolean,已验证,metrics/evidence/integrated_sim/independent_verification.json,Independent recomputation
+decision_reason_driver,control v2 decisions,driver,441,samples,已验证,metrics/evidence/integrated_sim/summary.json,
+decision_reason_red_light,control v2 decisions,red_light,152,samples,已验证,metrics/evidence/integrated_sim/summary.json,
+decision_reason_fault_driver_stale,control v2 decisions,fault:driver_stale,42,samples,已验证,metrics/evidence/integrated_sim/summary.json,
+integer_reference_driver_total_p50,Windows offline timing,integer-reference driver,94.01780000189319,ms,已验证,metrics/evidence/integrated_sim/summary.json,Not KV260 or physical PL
+integer_reference_driver_total_p95,Windows offline timing,integer-reference driver,112.36917000642278,ms,已验证,metrics/evidence/integrated_sim/summary.json,Not KV260 or physical PL
+integer_reference_driver_total_p99,Windows offline timing,integer-reference driver,126.91679799725532,ms,已验证,metrics/evidence/integrated_sim/summary.json,Not KV260 or physical PL
+integer_reference_driver_total_max,Windows offline timing,integer-reference driver,148.4304999903543,ms,已验证,metrics/evidence/integrated_sim/summary.json,Not KV260 or physical PL
+yolo_detector_p50,Windows offline timing,real YOLO,261.7813999968348,ms,已验证,metrics/evidence/integrated_sim/summary.json,Not KV260 or physical PL
+yolo_detector_p95,Windows offline timing,real YOLO,292.4490800054627,ms,已验证,metrics/evidence/integrated_sim/summary.json,Not KV260 or physical PL
+yolo_detector_p99,Windows offline timing,real YOLO,312.30786999920366,ms,已验证,metrics/evidence/integrated_sim/summary.json,Not KV260 or physical PL
+yolo_detector_max,Windows offline timing,real YOLO,364.3246999999974,ms,已验证,metrics/evidence/integrated_sim/summary.json,Not KV260 or physical PL
+driver_pre_p50,Windows offline timing,pre,1.0385000059613958,ms,已验证,metrics/evidence/integrated_sim/summary.json,
+driver_kernel_p50,Windows offline timing,kernel,91.33380001003388,ms,已验证,metrics/evidence/integrated_sim/summary.json,
+driver_dequant_p50,Windows offline timing,dequant,0.26569998590275645,ms,已验证,metrics/evidence/integrated_sim/summary.json,
+driver_partb_p50,Windows offline timing,partb,1.2344999995548278,ms,已验证,metrics/evidence/integrated_sim/summary.json,
+strong_reverse_gt15,direction disagreement,old teacher |d|>15; n=352; not physical truth,89,samples,失败,metrics/evidence/integrated_sim/direction_metrics.json,rate=0.252841
+turn_half_gt15,turning sensitivity,old teacher |d|>15; n=352; not physical truth,209,samples,失败,metrics/evidence/integrated_sim/direction_metrics.json,rate=0.593750
+turn_retention_median_gt15,turning sensitivity,old teacher |d|>15; n=352; not physical truth,0.3941557543427803,ratio,失败,metrics/evidence/integrated_sim/direction_metrics.json,
+turn_d_mae_gt15,direction disagreement,old teacher |d|>15; n=352; not physical truth,39.880478317087345,speed difference,失败,metrics/evidence/integrated_sim/direction_metrics.json,
+strong_reverse_gt40,direction disagreement,old teacher |d|>40; n=198; not physical truth,27,samples,失败,metrics/evidence/integrated_sim/direction_metrics.json,rate=0.136364
+turn_half_gt40,turning sensitivity,old teacher |d|>40; n=198; not physical truth,150,samples,失败,metrics/evidence/integrated_sim/direction_metrics.json,rate=0.757576
+turn_retention_median_gt40,turning sensitivity,old teacher |d|>40; n=198; not physical truth,0.2662820040143098,ratio,失败,metrics/evidence/integrated_sim/direction_metrics.json,
+turn_d_mae_gt40,direction disagreement,old teacher |d|>40; n=198; not physical truth,45.99578468245689,speed difference,失败,metrics/evidence/integrated_sim/direction_metrics.json,
+hls_csim_cases,PL module HLS C,120 real validation + 4 other,124,cases,已验证,fpga/report/hls_fixed_acceptance01.json,
+hls_csim_mismatches,PL module HLS C,124 cases,0,bytes,已验证,fpga/report/hls_fixed_acceptance01.json,5356800 bytes checked
+hls_csynth_latency,PL module synthesis,static estimate,412297,cycles/transaction,已验证,fpga/report/hls_fixed_acceptance01.json,
+rtl_transactions,PL module RTL cosimulation,complete three-camera transactions,4,transactions,已验证,fpga/report/hls_fixed_acceptance01.json,120-frame full RTL not executed
+rtl_mismatches,PL module RTL cosimulation,4 transactions,0,bytes,已验证,fpga/report/hls_fixed_acceptance01.json,172800 bytes checked
+ooc_wns,single-IP OOC,10 ns target,1.806,ns,已验证,fpga/report/hls_fixed_acceptance01.json,Not system signoff
+ooc_whs,single-IP OOC,10 ns target,0.035,ns,已验证,fpga/report/hls_fixed_acceptance01.json,
+fixed_left_rows,fixed-left offline appendix,pinned left.csv,98,rows,已验证,metrics/evidence/fixed_left/final_status.json,No model inference or vehicle
+fixed_left_nominal_duration,fixed-left offline appendix,nominal 10 Hz slots,9.8,s,已验证,metrics/evidence/fixed_left/final_status.json,Not measured driving time
+fixed_left_test_新固定左测试,fixed-left and regression tests,新固定左测试,35,tests,已验证,metrics/evidence/fixed_left/final_status.json,Separate historical scopes
+fixed_left_test_既有v2回归,fixed-left and regression tests,既有v2回归,59,tests,已验证,metrics/evidence/fixed_left/final_status.json,Separate historical scopes
+fixed_left_test_旧路标主循环回归,fixed-left and regression tests,旧路标主循环回归,83,tests,已验证,metrics/evidence/fixed_left/final_status.json,Separate historical scopes
+fixed_left_cli_examples,fixed-left offline appendix,virtual clock and MemorySink,16,examples,已验证,metrics/evidence/fixed_left/final_status.json,
+latest_selected_tests,latest delivery offline tests,9 retained test files,342,tests,已验证,metrics/evidence/local_validation.md,"Integrated, v2, fixed-left, YOLO parser and packet"
+hls_rtl_integrated_chain,HLS/RTL integrated YOLO+PL+PS,same-frame full chain,,,未执行,metrics/evidence/integrated_sim/summary.json,
+physical_pl_integrated_chain,physical PL integrated YOLO+PL+PS,KV260 full chain,,,未执行,metrics/evidence/integrated_sim/summary.json,
+realtime_15hz_vehicle,real camera/serial/motor/vehicle,15 Hz and fixed track,,,未执行,metrics/evidence/integrated_sim/summary.json,

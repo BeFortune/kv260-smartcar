@@ -1,64 +1,66 @@
-# KV260 三摄智能车：PS + PL 推理工程
+# 面向低算力平台的视觉自动驾驶车：YOLO + PS + PL
 
-本仓库是 2026 年 AMD FPGA 创新设计赛道 **3.3 自主选题初级组** 的当前交付快照。目标是把原 NUC 三摄驾驶模型迁到 KV260：PS（处理器）负责采图、预处理、后半段推理与通信，PL（可编程逻辑）执行前三层 INT8 卷积，STM32 继续负责电机执行。
+本仓库是 2026 年 AMD FPGA 创新设计赛道 **3.3 自主选题初级组** 的最新交付快照。唯一主方案为：**conv_front_int8 PL + PS partB + 真实 YOLO + 控制层 v2**。固定左 CSV 仅作独立保底附录。旧 FFN、旧仲裁和其他候选只留在 Git 历史、历史分支与 Pull Request 中。
 
-**状态日期：2026-10-30。当前主线是 `kv260car + conv_front_int8`，不是早期 FFN 分图卸载。** 旧 FFN 实验保留在远程历史分支，其源码、bit/HWH 和指标不与本目录混用。新增原模型优化和 YOLO 控制 v2 只作为独立离线候选，不改变生产基线。
+## 最新结果先说结论
 
-## 已验证与尚未完成
+已完成 **635 组同帧全链离线仿真**：整数参考 PL、PS partB、真实 YOLO、v2 决策和 21 字节报文均实际执行。635/635 样本、635 次核调用、报文全部合法，6 个红灯观测全部停车。
 
-| 项目 | 状态与范围 |
-|---|---|
-| HLS C 仿真 | 已验证：124 组，5,356,800 个输出字节，0 差异 |
-| RTL 协同仿真 | 已验证：4 个完整三摄事务，172,800 字节，0 差异；120 帧全量 RTL 未执行 |
-| 单 IP OOC 实现 | 已验证：100 MHz 目标，WNS +1.806 ns、WHS +0.035 ns；不是整系统时序签核 |
-| KV260 真实 PL 数值 | 已验证：2026-10-21，117 帧、5,054,400 字节，PL 对整数参考 0 差异 |
-| 同轮性能 | PS+PL P50 19.65 ms，CPU FP32 25.50 ms，P50 约 1.30 倍；**CPU INT8 整图 P50 17.92 ms，仍更快** |
-| 15 Hz 推理调度 | 已验证：2026-10-22，录像输入 20 秒 300 帧；不含实时相机、JPEG 解码或串口闭环 |
-| 当前 PL 路线实车 | **未执行**。实时三摄 + PL + 串口 + 电机整链不能由上述结果推导为已验收 |
-| 新模型现场任务效果 | **失败/阻塞**：现场大转弯差速明显不足，当前不能安全替换旧模型 CPU 保底路线 |
-| 原模型布局优化候选 | 173/635 软件等价已验证；新 HLS、真实 PL 和 15 Hz 仍阻塞，未接入生产 |
-| 路标 YOLO 与控制 v2 | 真实模型 635 条回放、v2 新 59/旧 83 定向测试已验证；均为离线结果，未接车 |
+**验收状态仍为失败**：第 4 次运行出现 1 次 `driver_stale`，帧龄 0.5462 秒，超过预先固定的 0.5 秒诊断上限；故障随后锁存 42 tick。没有调宽窗口或把锁存 tick 数写成 42 次独立超时。
 
-完整数字见 [metrics/metrics.csv](metrics/metrics.csv)，状态边界见 [STATUS.md](STATUS.md)，报告见 [report/design_report.md](report/design_report.md)。
+转弯问题没有消除：以旧教师为参照，`>40` 的 198 组中，整数参考驾驶强反号 27 组（13.64%），幅度减半 150 组（75.76%），绝对幅度保留中位数 0.2663。它们表示模型间分歧，不是独立实车错误率。
 
-## 目录
+本交付不包含 HLS 全链、真实 PL、实时相机/串口/电机或固定赛道验收结论。
+
+## 官方参考目录
 
 ```text
 README.md
-docs/                    架构、接口和硬件搭建
+docs/
+  architecture.md          系统架构与数据流
+  interface.md             YOLO / PL / PS / v2 接口
+  hardware_setup.md        硬件与接线边界
+  fixed_left_fallback.md   固定左保底附录
+  reproduction.md          从零复现步骤
 fpga/
-  src/                   当前 conv_front_int8 HLS 源码与测试向量
-  build/                 同源 bit/HWH 与校验说明
-  report/                HLS、OOC 和板测报告
+  src/                     当前 conv_front_int8 源码与向量
+  build/                   同源 bit / HWH
+  report/                  HLS C、RTL、OOC 模块证据
 host/
-  model/                 PS 后半段 ONNX、量化参数和整数参考
-  app/                   可运行的 ps/ 与 tools/car/ 程序
-  deploy/                打包入口、依赖清单和部署说明
+  model/                   partB、params、整数参考、YOLO身份说明
+  app/                     PS、YOLO、v2、集成仿真与固定左源码
+  deploy/                  依赖清单与离线运行说明
 metrics/
-  metrics.csv            指标汇总及证据路径
-  logs/                  精选原始板测日志
-  scripts/               交付、指标和校验脚本
-  evidence/              小型 JSON/Markdown 证据
-skill/                   技能交付状态与可复用清单
-report/                  设计报告草稿
-delivery_manifest.json   逐文件来源、大小和 SHA-256
+  metrics.csv              最新指标汇总
+  logs/                    635组逐样本全链记录
+  scripts/                 清单、指标与校验脚本
+  evidence/                小型机器证据
+skill/
+  README.md                可复用仿真工作流与失效条件
+report/
+  design_report.md         最新设计报告
+delivery_manifest.json     逐文件来源、大小和 SHA-256
 ```
 
-这是按官方参考结构整理的交付副本；开发主源仍是相邻的 `pynq_ffn/`。`host/app/` 保留程序原有的相对目录，避免为了换目录名拆坏运行路径。
+## 离线复核
 
-## 本机离线复核
-
-前提：Windows Git Bash 或 Linux Bash，Python 3，仓库根目录为当前工作目录。以下命令不导入 PYNQ，也不访问板卡、相机、串口或车辆。
+在仓库根目录、已有 Python 依赖的 Bash 环境中执行：
 
 ```bash
 python metrics/scripts/verify_delivery.py
-python host/deploy/make_bundle.py
+python -m pytest host/app/tests -q
 ```
 
-第一条核对交付清单、文件哈希、文档链接和文件大小。第二条按当前目录重新生成车端 tar 包及外置 SHA-256，输出到已被 Git 忽略的 `host/deploy/dist/`。生成包不等于已在板上安装或验证。
+当前保留测试共 **342 项通过**。完整 635 组仿真还需要原始图像、固定输入合同和真实 YOLO 模型；这些原始录像和第三方 YOLO 不直接放在仓库中。具体输入身份、命令和停止条件见 [docs/reproduction.md](docs/reproduction.md)。
 
-HLS 复现入口见 [fpga/src/README.md](fpga/src/README.md)；车端安装与安全边界见 [host/deploy/README.md](host/deploy/README.md)。任何 Overlay 下载、串口发送、服务启动和车辆动作都需要单独现场授权。
+## 报告与证据
 
-## 许可证与第三方材料
+- [最新设计报告](report/design_report.md)
+- [全链仿真摘要](metrics/evidence/integrated_sim/summary.json)
+- [独立复核](metrics/evidence/integrated_sim/independent_verification.json)
+- [反号与转弯幅度](metrics/evidence/integrated_sim/direction_metrics.json)
+- [固定左保底说明](docs/fixed_left_fallback.md)
 
-原创代码采用 [MIT License](LICENSE)。模型、训练数据、录像、第三方依赖以及 AMD/Xilinx 生成内容不当然由该许可证覆盖。当前快照不包含原始训练集、现场录像、整板备份或第三方运行库；公开仓库前仍须逐项确认模型与证据的再分发权。
+## 许可证
+
+原创代码采用 [MIT License](LICENSE)。模型、录像、训练数据、第三方依赖及 AMD/Xilinx 生成内容不当然由 MIT 覆盖。真实 YOLO 使用固定上游提交和 SHA-256 获取，公开仓库前仍须核查全部当前内容及历史/PR 的再分发权。

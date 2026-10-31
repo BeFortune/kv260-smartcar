@@ -1,0 +1,31 @@
+{
+  "verification_status": "已验证",
+  "acceptance_status": "失败",
+  "samples": 635,
+  "unique_ordered_ids": true,
+  "independent_packet_recheck": true,
+  "kernel_start_sequence": true,
+  "decision_reasons": {
+    "driver": 441,
+    "red_light": 152,
+    "fault:driver_stale": 42
+  },
+  "red_observations": 6,
+  "red_stop_decisions": 6,
+  "fault_ticks": 42,
+  "initial_fault_triggers": 1,
+  "fault_by_run": {
+    "run_20261026_142207_115d6e87": 42
+  },
+  "fault_driver_age_s_all_latched_ticks": {
+    "min": 0.3622220640008891,
+    "median": 0.40397725450020516,
+    "max": 0.5462195289946976
+  },
+  "initial_fault_age_s": {
+    "min": 0.5462195289946976,
+    "median": 0.5462195289946976,
+    "max": 0.5462195289946976
+  },
+  "note": "Output checks passed. 42 is latched fault tick count, not 42 independent timeouts; initial stale events exceed 0.5 s. No hardware or timing claim."
+}

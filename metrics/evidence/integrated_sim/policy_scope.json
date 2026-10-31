@@ -1,0 +1,39 @@
+{
+  "schema": "control_v2_saved_detection_replay_scope_v1",
+  "date": "2026-10-30",
+  "status": "未执行",
+  "source": "pynq_ffn/artifacts/roadsign_real_validation_20261028/run01/results/full_replay02/predictions.jsonl",
+  "samples": 635,
+  "source_type": "已保存的真实模型检测/旧驾驶推理结果，当前只重放控制策略，不重新推理模型、不读取相机、不发送串口。",
+  "time_policy": {
+    "generation": "每个run独立generation与新policy，不跨run沿用锁存",
+    "frame_seq": "原frame_id，保持原顺序，不补帧/插值",
+    "driver_grabbed": "三路原grabbed最早值，保守表示驾驶输入年龄",
+    "sign_grabbed": "roadsign.grabbed_t_mono",
+    "sign_completed": "roadsign.replay_completed_t_mono（历史回放重建值，不是当时实车完成时刻）",
+    "driver_completed": "timing.replay_decision_t_mono（仅离线快照适配边界，原recorded_decision为空，不能伪称原始驾驶完成时刻）",
+    "now": "timing.replay_decision_t_mono",
+    "no_between_sample_ticks": true,
+    "limitation": "稀疏记录之间没有补控制tick；不评估中间失联/过期停车实时性，相关性质靠合成测试独立验证。"
+  },
+  "fixed_diagnostic_policy_config": {
+    "max_driver_age_s": 0.5,
+    "max_sign_age_s": 0.5,
+    "confirm_frames": 2,
+    "pedestrian_clear_frames": 3,
+    "crosswalk_clear_frames": 3,
+    "crosswalk_hold_s": 3.0,
+    "speed_limit_factor": 0.75,
+    "command_ttl_s": 0.2,
+    "confirmation_max_gap_s": 0.5
+  },
+  "config_meaning": "仅预先固定的离线诊断值，不是车辆安全预算；稀疏样本导致确认不足如实报告，不调大间隔凑触发。",
+  "expected_safety_invariants": [
+    "新策略不处理锥桶槽位",
+    "任何accepted红灯/行人立即锁停，不依赖limit_off或固定前行",
+    "左/右意图若确认且无执行器只能停车，不发固定转向轮速",
+    "故障或停车原因不得被驾驶建议覆盖",
+    "重复结果不算新的确认帧，时间倒退/旧代等必须拒绝"
+  ],
+  "not_claimed": ["635新图像推理", "检测准确率", "连续录像", "实际异步频率", "KV260性能", "实车安全或停车距离"]
+}
